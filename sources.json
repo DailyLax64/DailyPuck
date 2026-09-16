@@ -1,6 +1,15 @@
 {
   "leagues": {
-    "OMHA Exhibition": 15556
+    "OMHA Exhibition": 15556,
+    "Tri-County AA": 15497,
+    "Lakeshore AA": 15493,
+    "York Simcoe AA": 15489,
+    "Alliance AA": 15448,
+    "Alliance Exhibition": 15559,
+    "HEO AA": 15454
   },
-  "tournaments": {}
+  "tournaments": {
+    "Garden City Early": 15764,
+    "Belleville Early": 15909
+  }
 }
