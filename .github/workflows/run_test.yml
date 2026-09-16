@@ -1,11 +1,16 @@
-name: Run OMHA Test
+name: Compile DailyPuck Stats
 
 on:
   workflow_dispatch:
+  schedule:
+    # Runs automatically every morning at 08:00 UTC
+    - cron: '0 8 * * *'
 
 jobs:
-  run-test:
+  compile:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out repo code
         uses: actions/checkout@v4
@@ -15,7 +20,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Execute test script
+      - name: Run Stats Compiler
         env:
           GAMESHEET_COOKIE: ${{ secrets.GAMESHEET_COOKIE }}
-        run: python test_omha.py
+        run: python compile_stats.py
+
+      - name: Commit and Push Updated Stats
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add hockey_stats.json
+          git commit -m "Auto-update hockey_stats.json [skip ci]" || echo "No changes to commit"
+          git push
