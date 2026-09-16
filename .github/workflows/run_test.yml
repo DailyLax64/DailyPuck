@@ -3,8 +3,8 @@ name: Compile DailyPuck Stats
 on:
   workflow_dispatch:
   schedule:
-    # Runs automatically every morning at 08:00 UTC
-    - cron: '0 8 * * *'
+    # Runs every day at 09:00 UTC (5:00 AM EDT / 4:00 AM EST)
+    - cron: '0 9 * * *'
 
 jobs:
   compile:
