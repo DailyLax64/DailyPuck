@@ -16,4 +16,6 @@ jobs:
           python-version: '3.11'
 
       - name: Execute test script
+        env:
+          GAMESHEET_COOKIE: ${{ secrets.GAMESHEET_COOKIE }}
         run: python test_omha.py
