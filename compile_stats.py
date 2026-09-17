@@ -281,22 +281,34 @@ for src in all_sources:
         }
     time.sleep(0.2)
 
-all_compiled_games = sorted(list(games_dict.values()), key=lambda x: x["timestamp"] or x["date"])
-
 # 5. STAGE 3: INGEST SKATERS & GOALIES
 skaters_db = {}
 goalies_db = {}
 
 for src in all_sources:
     s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
-    print(f"📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})...")
+    print(f"\n📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})")
 
-    # Skaters
-    sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0")
-    if sk_data and "data" in sk_data:
-        for p in sk_data.get("data", []):
+    # --- SKATERS ---
+    sk_url = f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0"
+    print(f"   ➤ Fetching Skaters URL: {sk_url}")
+    sk_data = fetch_json(sk_url)
+    
+    if sk_data is None:
+        print("   ❌ Request failed (Network error or Timeout).")
+    elif "data" not in sk_data:
+        print(f"   ⚠️ API responded, but no 'data' array found. Keys: {list(sk_data.keys())}")
+    else:
+        raw_skaters = sk_data.get("data", [])
+        print(f"   ✅ API returned {len(raw_skaters)} raw skater records.")
+        
+        mapped_sk = 0
+        skipped_sk = 0
+        
+        for p in raw_skaters:
             p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
             if not p_name:
+                skipped_sk += 1
                 continue
             jersey, pos = p.get("jersey", ""), clean_name(p.get("position", "F"))
             p_div = clean_name(p.get("division", {}).get("title") or "") if isinstance(p.get("division"), dict) else ""
@@ -321,8 +333,10 @@ for src in all_sources:
                     cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
 
                 if not cohort or not canonical_name:
+                    skipped_sk += 1
                     continue
 
+                mapped_sk += 1
                 age, tier = cohort.split()[0], cohort.split()[1]
                 player_key = f"{p_name}_{canonical_name}_{age}".upper()
                 if player_key not in skaters_db:
@@ -340,14 +354,30 @@ for src in all_sources:
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
                     "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
                 })
+        print(f"   🧮 Summary: {mapped_sk} Skaters mapped into dashboard | {skipped_sk} skipped.")
+
     time.sleep(0.2)
 
-    # Goalies
-    gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0")
-    if gk_data and "data" in gk_data:
-        for g in gk_data.get("data", []):
+    # --- GOALIES ---
+    gk_url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0"
+    print(f"   ➤ Fetching Goalies URL: {gk_url}")
+    gk_data = fetch_json(gk_url)
+    
+    if gk_data is None:
+        print("   ❌ Request failed (Network error or Timeout).")
+    elif "data" not in gk_data:
+        print(f"   ⚠️ API responded, but no 'data' array found. Keys: {list(gk_data.keys())}")
+    else:
+        raw_goalies = gk_data.get("data", [])
+        print(f"   ✅ API returned {len(raw_goalies)} raw goalie records.")
+        
+        mapped_gk = 0
+        skipped_gk = 0
+        
+        for g in raw_goalies:
             g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
             if not g_name:
+                skipped_gk += 1
                 continue
             jersey = g.get("jersey", "")
             g_div = clean_name(g.get("division", {}).get("title") or "") if isinstance(g.get("division"), dict) else ""
@@ -368,8 +398,10 @@ for src in all_sources:
                     cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
 
                 if not cohort or not canonical_name:
+                    skipped_gk += 1
                     continue
 
+                mapped_gk += 1
                 age, tier = cohort.split()[0], cohort.split()[1]
                 ga = int(st.get("ga") or 0)
                 mins = int(st.get("min") or st.get("min_played") or 0)
@@ -399,6 +431,8 @@ for src in all_sources:
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
                     "gp": gp, "ga": ga, "min": mins, "gaa": gaa, "so": so, "w": w, "l": l, "t": t_val
                 })
+        print(f"   🧮 Summary: {mapped_gk} Goalies mapped into dashboard | {skipped_gk} skipped.")
+    
     time.sleep(0.2)
 
 # 6. EXPORT COMPILED STATS
