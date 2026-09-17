@@ -433,12 +433,30 @@ for src in all_sources:
                 goalies_db[goalie_key]["total_w"] += w
                 goalies_db[goalie_key]["total_l"] += l
                 goalies_db[goalie_key]["total_t"] += t_val
+                
                 tot_min = goalies_db[goalie_key]["total_min"]
                 tot_ga = goalies_db[goalie_key]["total_ga"]
-                goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2) if tot_min > 0 else gaa
+                tot_gp = goalies_db[goalie_key]["total_gp"]
+
+                # Cumulative GAA calculation with standard-game fallback for missing TOI
+                if tot_min > 0:
+                    goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2)
+                elif tot_gp > 0:
+                    goalies_db[goalie_key]["total_gaa"] = round(tot_ga / tot_gp, 2)
+                else:
+                    goalies_db[goalie_key]["total_gaa"] = gaa
+
+                # Source-level GAA calculation for schedule/event breakdown sub-rows
+                if mins > 0:
+                    clean_gaa = round((ga * 45.0) / mins, 2)
+                elif gp > 0:
+                    clean_gaa = round(ga / gp, 2)
+                else:
+                    clean_gaa = gaa
+
                 goalies_db[goalie_key]["sources"].append({
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
-                    "gp": gp, "ga": ga, "min": mins, "gaa": gaa, "so": so, "w": w, "l": l, "t": t_val
+                    "gp": gp, "ga": ga, "min": mins, "gaa": clean_gaa, "so": so, "w": w, "l": l, "t": t_val
                 })
         print(f"   🧮 Summary: {mapped_gk} Goalies mapped into dashboard | {skipped_gk} skipped.")
     
