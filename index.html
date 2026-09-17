@@ -6,25 +6,6 @@
     <title>Daily Puck Scouting Hub | Minor Hockey Analytics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @keyframes marquee {
-            0% { transform: translateX(100vw); }
-            100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-            display: flex;
-            width: max-content;
-            animation: marquee 60s linear infinite;
-        }
-        .animate-marquee:hover {
-            animation-play-state: paused;
-        }
-        .marquee-fade-viewport {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
-        }
         .neon-glow-cyan {
             box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
         }
@@ -58,7 +39,7 @@
                 size: portrait;
                 margin: 0.15in 0.2in 0.15in 0.2in;
             }
-            .hide-on-print, #hot-marquee-ribbon, #my-team-ribbon, header, footer, select, input, button, label, #game-dropdown-arrow, #standings-dropdown-arrow {
+            .hide-on-print, #my-team-ribbon, header, footer, select, input, button, label, #game-dropdown-arrow, #standings-dropdown-arrow {
                 display: none !important;
                 visibility: hidden !important;
                 height: 0 !important;
@@ -153,13 +134,6 @@
     </style>
 </head>
 <body class="bg-slate-100 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white text-sm">
-
-    <!-- High-Contrast Top Ticker Ribbon -->
-    <div id="hot-marquee-ribbon" class="bg-slate-950 border-b border-slate-800 py-2 overflow-hidden select-none">
-        <div class="max-w-6xl mx-auto px-4 marquee-fade-viewport h-5 flex items-center">
-            <div id="top-ribbon-ticker" class="text-cyan-400 font-extrabold tracking-widest uppercase text-xs sm:text-sm"></div>
-        </div>
-    </div>
 
     <!-- My Team Filter Bar -->
     <div id="my-team-ribbon" class="bg-white border-b border-slate-200 py-2.5 select-none shadow-sm">
@@ -307,21 +281,17 @@
                         </div>
                     </div>
 
-                    <!-- Performance Metrics Capsule -->
+                    <!-- Performance Metrics Capsule (Streamlined 3-Card Grid) -->
                     <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative overflow-hidden shadow-xl text-white">
                         <span class="text-sm font-black uppercase tracking-widest text-cyan-400 block mb-4 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🏆 Performance Metrics</span>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-sm font-black text-slate-400 uppercase tracking-wider mb-1.5">Division Rank</span>
-                                <span id="perf-ranking" class="text-2xl font-mono font-black text-white">-</span>
+                                <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Games Tracked</span>
+                                <span id="perf-gp" class="text-2xl font-mono font-black text-cyan-400">-</span>
                             </div>
                             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
                                 <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Record (W-L-T)</span>
                                 <span id="perf-record" class="text-2xl font-mono font-black text-white">-</span>
-                            </div>
-                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Points</span>
-                                <span id="perf-pts" class="text-2xl font-mono font-black text-cyan-400">-</span>
                             </div>
                             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
                                 <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Goal Diff</span>
@@ -567,7 +537,7 @@
                         </div>
                     </div>
 
-                </div> <!-- End Page 2 Print Wrapper -->
+                </div> <!-- End Page 1 Print Wrapper -->
 
                 <!-- Print Action Controls -->
                 <div class="flex flex-col items-end pt-4 hide-on-print space-y-4">
@@ -819,28 +789,6 @@
             console.log(`📋 Populated ${divKeys.length} divisions into selectors.`);
         }
 
-        function updateTopRibbonMarqueeContent(divKey) {
-            const tickerEl = document.getElementById('top-ribbon-ticker');
-            if (!tickerEl) return;
-
-            if (!divKey || !hotTeamsDatabaseMap[divKey] || hotTeamsDatabaseMap[divKey].length === 0) {
-                tickerEl.className = "";
-                tickerEl.innerHTML = `<span class="text-cyan-400 font-mono tracking-wider">🏒 DAILY PUCK MINOR HOCKEY SCOUTING ACTIVE</span>`;
-                return;
-            }
-
-            const hotTeamName = hotTeamsDatabaseMap[divKey][0];
-            const profile = scoutingReportDatabase[divKey][hotTeamName];
-            let segmentHtml = `
-                <div class="flex space-x-12 pr-12 items-center">
-                    <span class="text-cyan-400 tracking-wider whitespace-nowrap font-black">🔥 ${divKey} DIVISION LEADER:</span>
-                    <span class="text-white font-black tracking-tight whitespace-nowrap">#${profile.rank} ${hotTeamName} (${profile.w}-${profile.l}-${profile.t}, ${profile.pts} PTS)</span>
-                </div>
-            `;
-            tickerEl.className = "animate-marquee text-xs sm:text-sm uppercase tracking-wider font-extrabold flex";
-            tickerEl.innerHTML = segmentHtml;
-        }
-
         function onMyTeamDivChange(isUserAction = false) {
             const divEl = document.getElementById('my-team-div-select');
             const nameEl = document.getElementById('my-team-name-select');
@@ -855,8 +803,6 @@
                 localStorage.setItem('cachedMyTeamDiv', selectedDiv);
                 localStorage.removeItem('cachedMyTeamName');
             }
-
-            updateTopRibbonMarqueeContent(selectedDiv);
 
             if (scoutDivSelect && selectedDiv && scoutDivSelect.value !== selectedDiv) {
                 scoutDivSelect.value = selectedDiv;
@@ -1079,12 +1025,18 @@
                 }
             }
 
-            document.getElementById('perf-ranking').innerText = `#${teamPayload.rank || '-'}`;
-            document.getElementById('perf-record').innerText = `${teamPayload.w}-${teamPayload.l}-${teamPayload.t}`;
-            document.getElementById('perf-pts').innerText = teamPayload.pts;
+            // Performance Cards (Clean 3-Card Grid)
+            const gpEl = document.getElementById('perf-gp');
+            if (gpEl) gpEl.innerText = teamPayload.gp || 0;
+
+            const recEl = document.getElementById('perf-record');
+            if (recEl) recEl.innerText = `${teamPayload.w}-${teamPayload.l}-${teamPayload.t}`;
+
             const diffEl = document.getElementById('perf-diff');
-            diffEl.innerText = teamPayload.diff >= 0 ? `+${teamPayload.diff}` : `${teamPayload.diff}`;
-            diffEl.className = `text-2xl font-mono font-black ${teamPayload.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+            if (diffEl) {
+                diffEl.innerText = teamPayload.diff >= 0 ? `+${teamPayload.diff}` : `${teamPayload.diff}`;
+                diffEl.className = `text-2xl font-mono font-black ${teamPayload.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+            }
 
             const teamGames = [...(teamPayload.games || [])].sort((a, b) => {
                 const tsA = a.timestamp || a.date || "";
@@ -1243,7 +1195,7 @@
             document.getElementById('stat-pim-rank').innerText = `#${pimRank} of ${totalTeamsInDivision}`;
             document.getElementById('stat-diff-rank').innerText = `#${diffRank} of ${totalTeamsInDivision}`;
 
-            // Skaters (List ALL skaters, sorted by PTS, then G, then GP, then Name)
+            // Skaters (All Rostered Players)
             const rosterTbody = document.getElementById('scout-roster-tbody');
             rosterTbody.innerHTML = '';
             const skaterCountEl = document.getElementById('scout-skater-count');
