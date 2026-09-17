@@ -141,20 +141,14 @@
             }
             #scout-roster-tbody, #scout-roster-tbody *,
             #scout-goalie-tbody, #scout-goalie-tbody *,
-            #scout-standings-breakdown-tbody, #scout-standings-breakdown-tbody * {
+            #scout-recent-games-tbody, #scout-recent-games-tbody * {
                 color: #000000 !important;
                 -webkit-text-fill-color: #000000 !important;
                 background: transparent !important;
             }
             h2, h3, h4, th, td, span, div, p { color: #000000 !important; }
-            h2 { font-size: 11pt !important; margin: 0 0 0.05rem 0 !important; padding: 0 !important; }
-            h3, h4 { font-size: 8pt !important; margin: 0 0 0.02rem 0 !important; }
             table { width: 100% !important; border-collapse: collapse !important; font-size: 6.5pt !important; }
             th, td { border-bottom: 1px solid #cbd5e1 !important; padding: 1px 2px !important; vertical-align: middle !important; }
-            .bg-gradient-to-r { background: #f1f5f9 !important; border: 1px solid #94a3b8 !important; }
-            #gauge-gf-indicator, #gauge-ga-indicator, #gauge-pim-indicator, #gauge-diff-indicator {
-                background: #000000 !important; border: 1px solid #000000 !important; height: 8px !important; width: 4px !important;
-            }
         }
     </style>
 </head>
@@ -183,7 +177,7 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header (Clean White + Backdrop Blur) -->
+    <!-- Main Navigation Header -->
     <header class="bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-3.5 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
@@ -219,12 +213,12 @@
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-700">Hockey Coaches</span>
                     </h2>
                     <p class="text-slate-600 text-base max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                        Welcome to your internal bench command center. This system links regular season league schedules, early-season tournaments, and synchronized skater & goalie data into an automated scouting suite.
+                        Welcome to your internal bench command center. This system links regular season league schedules, early-season tournaments, completed game logs, and synchronized skater & goalie data into an automated scouting suite.
                     </p>
                     <div class="mt-6 pt-6 border-t border-slate-200 text-left max-w-xl mx-auto lg:mx-0">
                         <span class="block text-xs font-mono font-bold uppercase tracking-widest text-cyan-700 mb-2">Automated Capabilities</span>
                         <p class="text-sm text-slate-600 normal-case leading-relaxed">
-                            Calculates offensive depth, goals-against metrics, penalty trouble risk, and goaltending trends across OMHA, Alliance, and regional tournaments.
+                            Calculates offensive depth, goals-against metrics, penalty trouble risk, and chronological schedule results across OMHA, Alliance, and regional tournaments.
                         </p>
                     </div>
                     <div class="pt-2">
@@ -234,7 +228,7 @@
                     </div>
                 </div>
                 
-                <!-- Home Summary Capsule (Dark High-Contrast Card on White Canvas) -->
+                <!-- Home Summary Capsule -->
                 <div class="lg:col-span-5 relative group">
                     <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
                     <div class="relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl p-6 space-y-4 text-white">
@@ -252,6 +246,10 @@
                             <div class="flex justify-between border-b border-slate-800 pb-1.5">
                                 <span>Tracked Standings Rows:</span>
                                 <span id="stat-count-teams" class="text-cyan-400 font-bold">-</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                                <span>Tracked Games & Matchups:</span>
+                                <span id="stat-count-games" class="text-cyan-400 font-bold">-</span>
                             </div>
                         </div>
                         <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex items-center justify-between">
@@ -294,7 +292,7 @@
                 <!-- PAGE 1 PRINT WRAPPER -->
                 <div id="print-page-1" class="space-y-6">
                     
-                    <!-- Dynamic Team Name Header (Dark Text on White Canvas) -->
+                    <!-- Dynamic Team Name Header -->
                     <div class="border-b border-slate-300 pb-4 relative">
                         <span class="text-xs font-mono font-bold text-cyan-600 uppercase tracking-widest block hide-on-print">Active Scouting Target Profile</span>
                         <div class="flex flex-wrap items-center justify-between gap-2 mt-1">
@@ -329,6 +327,36 @@
                                 <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Goal Diff</span>
                                 <span id="perf-diff" class="text-2xl font-mono font-black text-emerald-400">-</span>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 🏒 Last 5 Games Timeline Form -->
+                    <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-white">
+                        <div>
+                            <h4 class="text-sm font-black uppercase tracking-widest text-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">Last 5 Games Form Timeline</h4>
+                            <p class="text-xs font-mono text-slate-400 mt-0.5">Most recent completed regular season & tournament results.</p>
+                        </div>
+                        <div id="scout-form-row" class="flex flex-wrap gap-2"></div>
+                    </div>
+
+                    <!-- ⚔️ Head-to-Head Past & Upcoming Meetings Capsule -->
+                    <div id="capsule-past-meetings" class="hidden bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4 animate-fadeIn text-white">
+                        <div class="border-b border-slate-800 pb-2 flex justify-between items-center">
+                            <h4 class="text-sm font-black uppercase tracking-widest text-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">⚔️ Head-to-Head Meetings History</h4>
+                            <span id="h2h-summary-badge" class="text-xs font-mono text-slate-400"></span>
+                        </div>
+                        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950">
+                            <table class="w-full text-left border-collapse whitespace-nowrap text-sm font-mono">
+                                <thead>
+                                    <tr class="bg-slate-950 border-b border-slate-800 text-xs text-slate-400 uppercase tracking-widest font-black">
+                                        <th class="py-3 px-4 w-28 text-center">Date</th>
+                                        <th class="py-3 px-4">Event / Venue</th>
+                                        <th class="py-3 px-4">Matchup</th>
+                                        <th class="py-3 px-4 text-center w-28">Score / Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="scout-past-meetings-tbody" class="divide-y divide-slate-800/40 text-sm"></tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -484,16 +512,42 @@
                         </div>
                     </div>
 
-                    <!-- Event Breakdown Drawer Capsule -->
+                    <!-- 📋 Full Chronological Schedule & Box Scores Drawer -->
                     <div class="border border-slate-800 rounded-2xl bg-slate-900 shadow-xl overflow-hidden text-white">
                         <button onclick="toggleGameDataDropdown()" class="w-full p-5 bg-slate-950/50 flex items-center justify-between hover:bg-slate-950/80 transition-colors group focus:outline-none">
                             <div class="text-left">
-                                <h3 class="text-sm font-black uppercase tracking-widest text-cyan-400 group-hover:text-cyan-300 transition-colors drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">📋 Event & League Standings Footprint</h3>
-                                <p class="text-xs font-mono text-slate-400 mt-1">Breakdown of this team across each tracked GameSheet tournament and league entry.</p>
+                                <h3 class="text-sm font-black uppercase tracking-widest text-cyan-400 group-hover:text-cyan-300 transition-colors drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">📋 Full Chronological Schedule & Game Log</h3>
+                                <p class="text-xs font-mono text-slate-400 mt-1">Complete chronological listing of completed box scores and upcoming scheduled fixtures.</p>
                             </div>
-                            <span id="game-dropdown-arrow" class="text-xs font-mono text-slate-400 group-hover:text-cyan-400 transition-transform duration-200 transform">▼ EXPAND BREAKDOWN</span>
+                            <span id="game-dropdown-arrow" class="text-xs font-mono text-slate-400 group-hover:text-cyan-400 transition-transform duration-200 transform">▼ EXPAND SCHEDULE</span>
                         </button>
                         <div id="game-dropdown-drawer" class="hidden border-t border-slate-800 overflow-x-auto bg-slate-950">
+                            <table class="w-full text-left border-collapse whitespace-nowrap text-sm font-mono">
+                                <thead>
+                                    <tr class="bg-slate-950 border-b border-slate-800 text-xs text-slate-400 uppercase tracking-widest font-black">
+                                        <th class="py-3 px-4 w-28 text-center">Date</th>
+                                        <th class="py-3 px-4">Opposing Team</th>
+                                        <th class="py-3 px-4 text-center w-24">Location / Rink</th>
+                                        <th class="py-3 px-4 text-center w-20">Result</th>
+                                        <th class="py-3 px-4 text-center w-28">Score / Time</th>
+                                        <th class="py-3 px-4 text-center w-24">Source</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="scout-recent-games-tbody" class="divide-y divide-slate-800/40 text-slate-300 font-medium"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Event Standings Footprint Drawer -->
+                    <div class="border border-slate-800 rounded-2xl bg-slate-900 shadow-xl overflow-hidden text-white">
+                        <button onclick="toggleStandingsDropdown()" class="w-full p-5 bg-slate-950/50 flex items-center justify-between hover:bg-slate-950/80 transition-colors group focus:outline-none">
+                            <div class="text-left">
+                                <h3 class="text-sm font-black uppercase tracking-widest text-cyan-400 group-hover:text-cyan-300 transition-colors drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🏆 Event & League Standings Footprint</h3>
+                                <p class="text-xs font-mono text-slate-400 mt-1">Breakdown of this team across each tracked GameSheet tournament and league entry.</p>
+                            </div>
+                            <span id="standings-dropdown-arrow" class="text-xs font-mono text-slate-400 group-hover:text-cyan-400 transition-transform duration-200 transform">▼ EXPAND STANDINGS</span>
+                        </button>
+                        <div id="standings-dropdown-drawer" class="hidden border-t border-slate-800 overflow-x-auto bg-slate-950">
                             <table class="w-full text-left border-collapse whitespace-nowrap text-sm font-mono">
                                 <thead>
                                     <tr class="bg-slate-950 border-b border-slate-800 text-xs text-slate-400 uppercase tracking-widest font-black">
@@ -525,7 +579,7 @@
         </section>
     </main>
 
-    <!-- Global Layout Footer (Clean White) -->
+    <!-- Global Layout Footer -->
     <footer class="bg-white text-center py-6 text-xs font-mono text-slate-500 border-t border-slate-200 mt-auto tracking-wider uppercase shadow-inner">
         &copy; 2026 Daily Puck Analytics Suite | Connected to GameSheet Stats Stream.
     </footer>
@@ -571,6 +625,7 @@
                 document.getElementById('stat-count-skaters').innerText = rawHockeyDb.total_skaters || 0;
                 document.getElementById('stat-count-goalies').innerText = rawHockeyDb.total_goalies || 0;
                 document.getElementById('stat-count-teams').innerText = rawHockeyDb.total_standings_rows || 0;
+                document.getElementById('stat-count-games').innerText = rawHockeyDb.total_games || (rawHockeyDb.games || []).length;
                 document.getElementById('home-status-badge').innerText = `Synced: ${new Date(rawHockeyDb.generated_at).toLocaleDateString()}`;
 
                 buildScoutingReportDatabase();
@@ -582,9 +637,14 @@
             }
         }
 
+        function cleanKey(str) {
+            return String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
+        }
+
         function buildScoutingReportDatabase() {
             scoutingReportDatabase = {};
 
+            // 1. Build Standings
             (rawHockeyDb.standings || []).forEach(row => {
                 const divKey = `${row.age} ${row.tier}`.trim();
                 const teamName = row.team_name;
@@ -594,13 +654,15 @@
                 if (!scoutingReportDatabase[divKey][teamName]) {
                     scoutingReportDatabase[divKey][teamName] = {
                         team_name: teamName,
+                        team_id: row.team_id,
                         division: divKey,
                         age: row.age,
                         tier: row.tier,
                         gp: 0, w: 0, l: 0, t: 0, pts: 0, gf: 0, ga: 0, diff: 0, pim: 0,
                         standings_entries: [],
                         roster: [],
-                        goalies: []
+                        goalies: [],
+                        games: []
                     };
                 }
 
@@ -617,6 +679,7 @@
                 teamProfile.standings_entries.push(row);
             });
 
+            // 2. Map Skaters
             (rawHockeyDb.skaters || []).forEach(p => {
                 const divKey = `${p.age} ${p.tier}`.trim();
                 if (scoutingReportDatabase[divKey] && scoutingReportDatabase[divKey][p.team]) {
@@ -624,6 +687,7 @@
                 }
             });
 
+            // 3. Map Goalies
             (rawHockeyDb.goalies || []).forEach(g => {
                 const divKey = `${g.age} ${g.tier}`.trim();
                 if (scoutingReportDatabase[divKey] && scoutingReportDatabase[divKey][g.team]) {
@@ -631,6 +695,18 @@
                 }
             });
 
+            // 4. Map Games (Completed & Scheduled) to Team Profiles
+            (rawHockeyDb.games || []).forEach(g => {
+                const hName = g.home_name;
+                const vName = g.visitor_name;
+                const hId = g.home_id;
+                const vId = g.visitor_id;
+
+                attachGameToMatchingTeams(hName, hId, g, true);
+                attachGameToMatchingTeams(vName, vId, g, false);
+            });
+
+            // 5. Calculate Division Rankings
             hotTeamsDatabaseMap = {};
             Object.keys(scoutingReportDatabase).forEach(divKey => {
                 const divTeams = Object.values(scoutingReportDatabase[divKey]);
@@ -644,6 +720,56 @@
                     hotTeamsDatabaseMap[divKey].push(hotCandidates[0].team_name);
                 }
             });
+        }
+
+        function attachGameToMatchingTeams(teamName, teamId, game, isHome) {
+            const isFinal = game.status === 'final';
+            const teamGoals = isHome ? game.home_goals : game.visitor_goals;
+            const oppGoals = isHome ? game.visitor_goals : game.home_goals;
+            const result = isHome ? game.home_result : game.visitor_result;
+            const oppName = isHome ? game.visitor_name : game.home_name;
+            const oppId = isHome ? game.visitor_id : game.home_id;
+
+            const record = {
+                game_id: game.game_id,
+                date: game.date,
+                time: game.time,
+                timestamp: game.timestamp,
+                status: game.status,
+                location: game.location,
+                source_name: game.source_name,
+                source_type: game.source_type,
+                is_home: isHome,
+                opponent: oppName,
+                opponent_id: oppId,
+                team_goals: teamGoals,
+                opponent_goals: oppGoals,
+                result: result,
+                score_str: isFinal ? `${teamGoals} - ${oppGoals}` : (game.time || "Scheduled")
+            };
+
+            // Direct ID match or cleaned name search across divisions
+            let matched = false;
+            Object.keys(scoutingReportDatabase).forEach(divKey => {
+                const teams = scoutingReportDatabase[divKey];
+                if (teams[teamName]) {
+                    teams[teamName].games.push(record);
+                    matched = true;
+                }
+            });
+
+            if (!matched) {
+                const targetKey = cleanKey(teamName);
+                Object.keys(scoutingReportDatabase).forEach(divKey => {
+                    const teams = scoutingReportDatabase[divKey];
+                    for (const tName in teams) {
+                        if (cleanKey(tName) === targetKey) {
+                            teams[tName].games.push(record);
+                            break;
+                        }
+                    }
+                });
+            }
         }
 
         function populateDivisionSelector() {
@@ -879,10 +1005,24 @@
             if (!drawer || !arrow) return;
             drawer.classList.toggle('hidden');
             if (drawer.classList.contains('hidden')) {
-                arrow.innerText = "▼ EXPAND BREAKDOWN";
+                arrow.innerText = "▼ EXPAND SCHEDULE";
                 arrow.className = "text-xs font-mono text-slate-400 group-hover:text-cyan-400 transform rotate-0 duration-200";
             } else {
-                arrow.innerText = "▲ COLLAPSE BREAKDOWN";
+                arrow.innerText = "▲ COLLAPSE SCHEDULE";
+                arrow.className = "text-xs font-mono text-cyan-400 transform rotate-180 duration-200";
+            }
+        }
+
+        function toggleStandingsDropdown() {
+            const drawer = document.getElementById('standings-dropdown-drawer');
+            const arrow = document.getElementById('standings-dropdown-arrow');
+            if (!drawer || !arrow) return;
+            drawer.classList.toggle('hidden');
+            if (drawer.classList.contains('hidden')) {
+                arrow.innerText = "▼ EXPAND STANDINGS";
+                arrow.className = "text-xs font-mono text-slate-400 group-hover:text-cyan-400 transform rotate-0 duration-200";
+            } else {
+                arrow.innerText = "▲ COLLAPSE STANDINGS";
                 arrow.className = "text-xs font-mono text-cyan-400 transform rotate-180 duration-200";
             }
         }
@@ -912,6 +1052,7 @@
                 }
             }
 
+            // Top Performance Capsule
             document.getElementById('perf-ranking').innerText = `#${teamPayload.rank || '-'}`;
             document.getElementById('perf-record').innerText = `${teamPayload.w}-${teamPayload.l}-${teamPayload.t}`;
             document.getElementById('perf-pts').innerText = teamPayload.pts;
@@ -919,6 +1060,123 @@
             diffEl.innerText = teamPayload.diff >= 0 ? `+${teamPayload.diff}` : `${teamPayload.diff}`;
             diffEl.className = `text-2xl font-mono font-black ${teamPayload.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
 
+            // Process Team Games Chronologically
+            const teamGames = [...(teamPayload.games || [])].sort((a, b) => {
+                const tsA = a.timestamp || a.date || "";
+                const tsB = b.timestamp || b.date || "";
+                return tsA.localeCompare(tsB);
+            });
+
+            // 🏒 Render Last 5 Games Timeline Form
+            const formRow = document.getElementById('scout-form-row');
+            formRow.innerHTML = '';
+            const completedGames = teamGames.filter(g => g.status === 'final' && g.result);
+            const last5 = completedGames.slice(-5);
+
+            if (last5.length > 0) {
+                last5.forEach(g => {
+                    let badgeClass = "bg-slate-800 text-slate-300";
+                    if (g.result === 'W') badgeClass = "bg-emerald-500 text-slate-950 font-black shadow-[0_0_10px_rgba(16,185,129,0.5)]";
+                    if (g.result === 'L') badgeClass = "bg-rose-600 text-white font-black";
+                    if (g.result === 'T') badgeClass = "bg-amber-400 text-slate-950 font-black";
+
+                    const venueTag = g.is_home ? "vs" : "@";
+                    const tooltip = `${venueTag} ${g.opponent} (${g.score_str}) - ${g.date}`;
+                    formRow.innerHTML += `
+                        <div title="${tooltip}" class="w-10 h-10 rounded-xl flex items-center justify-center font-mono text-base font-black cursor-pointer transform hover:scale-110 transition-transform ${badgeClass}">
+                            ${g.result}
+                        </div>
+                    `;
+                });
+            } else {
+                formRow.innerHTML = `<span class="text-xs font-mono text-slate-500 uppercase">No completed game results on record</span>`;
+            }
+
+            // ⚔️ Render Head-to-Head Meetings (Past & Upcoming)
+            const pastMeetingsCapsule = document.getElementById('capsule-past-meetings');
+            const pastMeetingsTbody = document.getElementById('scout-past-meetings-tbody');
+            pastMeetingsTbody.innerHTML = '';
+
+            let h2hMatches = [];
+            if (activeSelectedMyTeam && activeSelectedMyTeam !== teamName) {
+                const myClean = cleanKey(activeSelectedMyTeam);
+                h2hMatches = teamGames.filter(g => cleanKey(g.opponent) === myClean);
+            }
+
+            if (h2hMatches.length > 0) {
+                pastMeetingsCapsule.classList.remove('hidden');
+                let h2hW = 0, h2hL = 0, h2hT = 0;
+                h2hMatches.forEach(g => {
+                    if (g.result === 'W') h2hW++;
+                    else if (g.result === 'L') h2hL++;
+                    else if (g.result === 'T') h2hT++;
+
+                    const isFinal = g.status === 'final';
+                    let statusBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-slate-800 text-cyan-400 border border-cyan-800">SCHEDULED</span>`;
+                    let scoreBadge = `<span class="text-slate-400">${g.time || 'TBD'}</span>`;
+
+                    if (isFinal) {
+                        let resCol = g.result === 'W' ? 'text-emerald-400 font-black' : (g.result === 'L' ? 'text-rose-400 font-black' : 'text-amber-400 font-bold');
+                        statusBadge = `<span class="${resCol}">${g.result} (${g.score_str})</span>`;
+                        scoreBadge = `<span class="font-bold text-white">${g.team_goals} - ${g.opponent_goals}</span>`;
+                    }
+
+                    pastMeetingsTbody.innerHTML += `
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-3 px-4 text-center text-slate-400 font-bold">${g.date}</td>
+                            <td class="py-3 px-4 font-sans text-xs text-slate-300">
+                                <span class="font-bold text-white block">${g.source_name}</span>
+                                <span class="text-slate-500">${g.location || 'Standard Arena'}</span>
+                            </td>
+                            <td class="py-3 px-4">
+                                <span class="font-bold text-slate-200">${teamName}</span>
+                                <span class="text-slate-500 text-xs px-1">${g.is_home ? 'vs' : '@'}</span>
+                                <span class="font-bold text-cyan-400">${activeSelectedMyTeam}</span>
+                            </td>
+                            <td class="py-3 px-4 text-center">${statusBadge}</td>
+                        </tr>
+                    `;
+                });
+                document.getElementById('h2h-summary-badge').innerText = `Target Team Record: ${h2hW}W - ${h2hL}L - ${h2hT}T`;
+            } else {
+                pastMeetingsCapsule.classList.add('hidden');
+            }
+
+            // 📋 Render Chronological Schedule & Box Scores Drawer
+            const recentGamesTbody = document.getElementById('scout-recent-games-tbody');
+            recentGamesTbody.innerHTML = '';
+
+            if (teamGames.length > 0) {
+                teamGames.forEach(g => {
+                    const isFinal = g.status === 'final';
+                    let resClass = "text-slate-500";
+                    let resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-900 border border-slate-700 text-slate-400">UPCOMING</span>`;
+                    
+                    if (isFinal) {
+                        if (g.result === 'W') resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-950 border border-emerald-500 text-emerald-400">WIN</span>`;
+                        else if (g.result === 'L') resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-black bg-rose-950 border border-rose-500 text-rose-400">LOSS</span>`;
+                        else resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-950 border border-amber-500 text-amber-400">TIE</span>`;
+                    }
+
+                    recentGamesTbody.innerHTML += `
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-3 px-4 text-center text-slate-400 font-bold">${g.date}</td>
+                            <td class="py-3 px-4">
+                                <span class="text-slate-500 text-xs mr-1.5 font-sans">${g.is_home ? 'vs' : '@'}</span>
+                                <span class="font-sans font-bold text-slate-100 uppercase tracking-tight">${g.opponent}</span>
+                            </td>
+                            <td class="py-3 px-4 text-center text-xs text-slate-400 truncate max-w-xs">${g.location || 'Local Rink'}</td>
+                            <td class="py-3 px-4 text-center">${resBadge}</td>
+                            <td class="py-3 px-4 text-center font-bold ${isFinal ? 'text-white' : 'text-cyan-400'}">${g.score_str}</td>
+                            <td class="py-3 px-4 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${g.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : 'text-cyan-400 bg-cyan-950/40'}">${g.source_type === 'tournament' ? 'TOURN' : 'LEAG'}</span></td>
+                        </tr>
+                    `;
+                });
+            } else {
+                recentGamesTbody.innerHTML = `<tr><td colspan="6" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">⚠️ No games tracked on schedule records.</td></tr>`;
+            }
+
+            // Gauges & Team Efficiency Calculations
             const allDivTeams = Object.values(divisionPayload);
             const totalTeamsInDivision = allDivTeams.length;
             document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
@@ -963,6 +1221,7 @@
             document.getElementById('stat-pim-rank').innerText = `#${pimRank} of ${totalTeamsInDivision}`;
             document.getElementById('stat-diff-rank').innerText = `#${diffRank} of ${totalTeamsInDivision}`;
 
+            // Render Skaters Leaderboard
             const rosterTbody = document.getElementById('scout-roster-tbody');
             rosterTbody.innerHTML = '';
             const sortedSkaters = [...(teamPayload.roster || [])].sort((a, b) => b.total_pts !== a.total_pts ? b.total_pts - a.total_pts : b.total_g - a.total_g);
@@ -1019,6 +1278,7 @@
                 `;
             });
 
+            // Render Goaltenders
             const goalieCapsule = document.getElementById('capsule-goalies');
             const goalieTbody = document.getElementById('scout-goalie-tbody');
             goalieTbody.innerHTML = '';
@@ -1079,6 +1339,7 @@
                 goalieCapsule.classList.add('hidden');
             }
 
+            // Render Event Standings Footprint Drawer
             const standingsDrawerTbody = document.getElementById('scout-standings-breakdown-tbody');
             standingsDrawerTbody.innerHTML = '';
             teamPayload.standings_entries.forEach(st => {
