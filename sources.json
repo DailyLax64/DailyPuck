@@ -1,15 +1,15 @@
 {
   "leagues": {
-    "OMHA Exhibition": 15556,
-    "Tri-County AA": 15497,
-    "Lakeshore AA": 15493,
-    "York Simcoe AA": 15489,
-    "Alliance AA": 15448,
-    "Alliance Exhibition": 15559,
-    "HEO AA": 15454
+    "Tri-County AA": { "id": 15497, "tier": "AA" },
+    "Lakeshore AA": { "id": 15493, "tier": "AA" },
+    "York Simcoe AA": { "id": 15489, "tier": "AA" },
+    "Alliance AA": { "id": 15448, "tier": "AA" },
+    "Alliance Exhibition": { "id": 15559, "tier": "AA" },
+    "HEO AA": { "id": 15454, "tier": "AA" },
+    "OMHA Exhibition": { "id": 15556, "tier": "Auto" }
   },
   "tournaments": {
-    "Garden City Early": 15764,
-    "Belleville Early": 15909
+    "Garden City Early": { "id": 15764, "tier": "Auto" },
+    "Belleville Early": { "id": 15909, "tier": "Auto" }
   }
 }
