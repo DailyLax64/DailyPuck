@@ -13,41 +13,33 @@ headers = {
 if session_cookie:
     headers['Cookie'] = session_cookie
 
-# Test 1: Check Standings structure for Tri-County AA (15497)
-print("\n=== STANDINGS ENDPOINT SAMPLE (Tri-County AA: 15497) ===")
+# Check Tri-County AA (15497)
 url_standings = "https://gamesheetstats.com/api/standings/15497?"
-try:
-    req = urllib.request.Request(url_standings, headers=headers)
-    with urllib.request.urlopen(req) as resp:
-        data = json.loads(resp.read().decode('utf-8'))
-        div_groups = data.get("data", [])
-        if div_groups:
-            first_group = div_groups[0]
-            print("Division Group Top-Level Keys:", list(first_group.keys()))
-            print("Division Title:", first_group.get("title") or first_group.get("name"))
-            print("Division Metadata:", {k: v for k, v in first_group.items() if k != "standings"})
-            
-            standings_rows = first_group.get("standings", [])
-            if standings_rows:
-                first_row = standings_rows[0]
-                print("\nStandings Row Keys:", list(first_row.keys()))
-                print("Team Object Details:", json.dumps(first_row.get("team", {}), indent=2))
-        else:
-            print("No standings data returned.")
-except Exception as e:
-    print(f"Standings check failed: {e}")
+req = urllib.request.Request(url_standings, headers=headers)
+with urllib.request.urlopen(req) as resp:
+    data = json.loads(resp.read().decode('utf-8'))
+    first_row = data["data"][0]["standings"][0]
+    
+    print("=== WHAT IS INSIDE row['division']? ===")
+    print(json.dumps(first_row.get("division"), indent=2))
 
-# Test 2: Check Player / Team structure
-print("\n=== PLAYER ENDPOINT SAMPLE ===")
-url_player = "https://gamesheetstats.com/api/players/standings/15497?limit=1&offset=0"
-try:
-    req = urllib.request.Request(url_player, headers=headers)
-    with urllib.request.urlopen(req) as resp:
-        data = json.loads(resp.read().decode('utf-8'))
-        players = data.get("data", [])
-        if players:
-            p = players[0]
-            print("Player Top-Level Keys:", list(p.keys()))
-            print("Player Teams Array:", json.dumps(p.get("teams", []), indent=2))
-except Exception as e:
-    print(f"Player check failed: {e}")
+# Test possible Division / Season endpoints to see if we can get all division names
+division_id = data["data"][0].get("divisionId")
+print(f"\nTesting divisionId: {division_id}")
+
+test_urls = [
+    f"https://gamesheetstats.com/api/divisions/{division_id}",
+    f"https://gamesheetstats.com/api/seasons/15497/divisions",
+    f"https://gamesheetstats.com/api/divisions?seasonId=15497"
+]
+
+for url in test_urls:
+    try:
+        r = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(r) as res:
+            res_data = json.loads(res.read().decode('utf-8'))
+            print(f"\n✅ SUCCESS endpoint: {url}")
+            print(json.dumps(res_data, indent=2)[:300] + "...")
+            break
+    except Exception as e:
+        print(f"❌ Failed {url}: {e}")
