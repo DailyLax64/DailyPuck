@@ -76,20 +76,21 @@ for cohort in ["U11 AA", "U14 AA"]:
     for canonical, data in master_teams_db.get(cohort, {}).items():
         c_norm = normalize(canonical)
         lookup[cohort][c_norm] = canonical
-        c_base = re.sub(r'\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', c_norm).strip()
+        c_base = re.sub(r'\bU\d{1,2}AA\b|\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', c_norm).strip()
         c_base = ' '.join(c_base.split())
         if c_base:
             lookup[cohort][c_base] = canonical
         for alias in data.get("aliases", []):
             a_norm = normalize(alias)
             lookup[cohort][a_norm] = canonical
-            a_base = re.sub(r'\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', a_norm).strip()
+            a_base = re.sub(r'\bU\d{1,2}AA\b|\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', a_norm).strip()
             a_base = ' '.join(a_base.split())
             if a_base:
                 lookup[cohort][a_base] = canonical
 
 def resolve_master_team(team_name, div_title="", source_name="", forced_tier=None):
-    full_text = f"{team_name} {div_title} {source_name}".upper()
+    team_div_text = f"{team_name} {div_title}".upper()
+    full_text = f"{team_div_text} {source_name}".upper()
 
     # 1. Determine Age
     age = None
@@ -101,12 +102,13 @@ def resolve_master_team(team_name, div_title="", source_name="", forced_tier=Non
     if not age:
         return None, None
 
-    # 2. Determine Tier (Reject explicit non-AA unless overridden)
-    is_explicit_other_tier = bool(re.search(r'\b(AAA|BB|CC|MD|SELECT|HL)\b', full_text))
-    has_explicit_single_a = bool(re.search(r'\bU\d{1,2}\s+A\b|\bTIER\s*2\b', f"{team_name} {div_title}".upper()))
-    
-    if is_explicit_other_tier or has_explicit_single_a:
-        if not re.search(r'\bAA\b', full_text):
+    # 2. Strict Non-AA Filter (Detects Tier A seeded teams regardless of league title)
+    if re.search(r'\bU\d{1,2}\s+A\b|\bTIER\s*2\b', team_div_text):
+        if not re.search(r'\bAA\b', team_div_text):
+            return None, None
+
+    if re.search(r'\b(AAA|BB|CC|MD|SELECT|HL)\b', team_div_text):
+        if not re.search(r'\bAA\b', team_div_text):
             return None, None
 
     is_aa = bool(re.search(r'\bAA\b', full_text)) or (forced_tier and forced_tier.upper() == "AA")
@@ -120,8 +122,8 @@ def resolve_master_team(team_name, div_title="", source_name="", forced_tier=Non
     if t_norm in lookup[cohort]:
         return cohort, lookup[cohort][t_norm]
 
-    # 4. Base Match (Stripped of age/tier tokens)
-    t_base = re.sub(r'\b(U11|U14|U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', t_norm).strip()
+    # 4. Base Match (Stripped of age, tier, and merged tokens like U11AA)
+    t_base = re.sub(r'\bU\d{1,2}AA\b|\b(U11|U14|U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', t_norm).strip()
     t_base = ' '.join(t_base.split())
     if t_base in lookup[cohort]:
         return cohort, lookup[cohort][t_base]
@@ -129,7 +131,7 @@ def resolve_master_team(team_name, div_title="", source_name="", forced_tier=Non
     # 5. Association Root Fuzzy Match
     for canonical in master_teams_db.get(cohort, {}):
         assoc_base = canonical.split()[0].upper()
-        if len(assoc_base) > 4 and assoc_base in t_base:
+        if len(assoc_base) >= 4 and assoc_base in t_base:
             return cohort, canonical
 
     return cohort, None
