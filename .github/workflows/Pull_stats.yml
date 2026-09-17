@@ -23,6 +23,7 @@ jobs:
       - name: Run Stats Compiler
         env:
           GAMESHEET_COOKIE: ${{ secrets.GAMESHEET_COOKIE }}
+          GAMESHEET_AUTH: ${{ secrets.GAMESHEET_AUTH }}
         run: python compile_stats.py
 
       - name: Commit and Push Updated Stats
