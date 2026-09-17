@@ -293,10 +293,10 @@ for src in all_sources:
     print(f"📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
     # --- SKATERS PAGINATION LOOP ---
-    offset = 0
-    limit = 500
+    skip = 0
     while True:
-        url = f"https://gamesheetstats.com/api/players/standings/{s_id}?limit={limit}&offset={offset}"
+        # Proper LoopBack syntax: filter[limit] and filter[skip]
+        url = f"https://gamesheetstats.com/api/players/standings/{s_id}?filter[limit]=1000&filter[skip]={skip}"
         sk_data = fetch_json(url)
         rows = sk_data.get("data", []) if sk_data else []
         
@@ -352,15 +352,14 @@ for src in all_sources:
                     "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
                 })
                 
-        if len(rows) < limit:
-            break
-        offset += limit
+        # Advance the skip pointer by exactly the number of rows received
+        skip += len(rows)
         time.sleep(0.1)
 
     # --- GOALIES PAGINATION LOOP ---
-    offset = 0
+    skip = 0
     while True:
-        url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit={limit}&offset={offset}"
+        url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?filter[limit]=1000&filter[skip]={skip}"
         gk_data = fetch_json(url)
         rows = gk_data.get("data", []) if gk_data else []
         
@@ -426,9 +425,7 @@ for src in all_sources:
                     "gp": gp, "ga": ga, "min": mins, "gaa": gaa, "so": so, "w": w, "l": l, "t": t_val
                 })
                 
-        if len(rows) < limit:
-            break
-        offset += limit
+        skip += len(rows)
         time.sleep(0.1)
 
 # 6. EXPORT COMPILED STATS
