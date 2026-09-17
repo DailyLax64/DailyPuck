@@ -1,0 +1,42 @@
+name: Update MHR Rankings
+
+on:
+  schedule:
+    # Every Wednesday at 10:00 UTC (6:00 AM EDT)
+    - cron: '0 10 * * 3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-rankings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run MHR Scraper
+        env:
+          SCRAPER_API_KEY: ${{ secrets.SCRAPER_API_KEY }}
+        run: |
+          python fetch_mhr.py
+
+      - name: Recompile Daily Puck Database
+        env:
+          GAMESHEET_COOKIE: ${{ secrets.GAMESHEET_COOKIE }}
+        run: |
+          python compile_stats.py
+
+      - name: Commit and Push Updated Rankings
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add master_teams.json hockey_stats.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated weekly MHR rankings update [skip ci]" && git push)
