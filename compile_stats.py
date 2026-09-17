@@ -281,6 +281,8 @@ for src in all_sources:
         }
     time.sleep(0.2)
 
+all_compiled_games = sorted(list(games_dict.values()), key=lambda x: x["timestamp"] or x["date"])
+
 # 5. STAGE 3: INGEST SKATERS & GOALIES
 skaters_db = {}
 goalies_db = {}
