@@ -102,7 +102,7 @@ def resolve_master_team(team_name, div_title="", source_name="", forced_tier=Non
     if not age:
         return None, None
 
-    # 2. Strict Non-AA Filter (Exclude Tier A seeded teams unless explicitly AA)
+    # 2. Strict Non-AA Filter
     if re.search(r'\bU\d{1,2}\s+A\b|\bTIER\s*2\b', team_div_text):
         if not re.search(r'\bAA\b', team_div_text):
             return None, None
@@ -122,7 +122,7 @@ def resolve_master_team(team_name, div_title="", source_name="", forced_tier=Non
     if t_norm in lookup[cohort]:
         return cohort, lookup[cohort][t_norm]
 
-    # 4. Base Match (Stripped of age, tier, and merged tokens like U11AA)
+    # 4. Base Match
     t_base = re.sub(r'\bU\d{1,2}AA\b|\b(U11|U14|U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', t_norm).strip()
     t_base = ' '.join(t_base.split())
     if t_base in lookup[cohort]:
@@ -150,7 +150,6 @@ for src in all_sources:
     st_data = fetch_json(standings_url)
     if st_data and "data" in st_data:
         for div_group in st_data.get("data", []):
-            # Extract division title from parent div_group
             parent_div_title = clean_name(
                 div_group.get("title") or 
                 div_group.get("division", {}).get("title") or 
@@ -292,18 +291,10 @@ for src in all_sources:
     s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
-    # --- SKATERS PAGINATION LOOP ---
-    skip = 0
-    while True:
-        # Proper LoopBack syntax: filter[limit] and filter[skip]
-        url = f"https://gamesheetstats.com/api/players/standings/{s_id}?filter[limit]=1000&filter[skip]={skip}"
-        sk_data = fetch_json(url)
-        rows = sk_data.get("data", []) if sk_data else []
-        
-        if not rows:
-            break
-
-        for p in rows:
+    # Skaters
+    sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0")
+    if sk_data and "data" in sk_data:
+        for p in sk_data.get("data", []):
             p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
             if not p_name:
                 continue
@@ -334,14 +325,12 @@ for src in all_sources:
 
                 age, tier = cohort.split()[0], cohort.split()[1]
                 player_key = f"{p_name}_{canonical_name}_{age}".upper()
-                
                 if player_key not in skaters_db:
                     skaters_db[player_key] = {
                         "name": p_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": pos,
                         "age": age, "tier": tier, "total_gp": 0, "total_g": 0, "total_a": 0, "total_pts": 0, "total_pim": 0,
                         "sources": []
                     }
-                
                 skaters_db[player_key]["total_gp"] += gp
                 skaters_db[player_key]["total_g"] += g
                 skaters_db[player_key]["total_a"] += a
@@ -351,22 +340,12 @@ for src in all_sources:
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
                     "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
                 })
-                
-        # Advance the skip pointer by exactly the number of rows received
-        skip += len(rows)
-        time.sleep(0.1)
+    time.sleep(0.2)
 
-    # --- GOALIES PAGINATION LOOP ---
-    skip = 0
-    while True:
-        url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?filter[limit]=1000&filter[skip]={skip}"
-        gk_data = fetch_json(url)
-        rows = gk_data.get("data", []) if gk_data else []
-        
-        if not rows:
-            break
-
-        for g in rows:
+    # Goalies
+    gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0")
+    if gk_data and "data" in gk_data:
+        for g in gk_data.get("data", []):
             g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
             if not g_name:
                 continue
@@ -399,7 +378,6 @@ for src in all_sources:
                 w, l, t_val = int(st.get("w") or 0), int(st.get("l") or 0), int(st.get("t") or 0)
 
                 goalie_key = f"{g_name}_{canonical_name}_{age}".upper()
-                
                 if goalie_key not in goalies_db:
                     goalies_db[goalie_key] = {
                         "name": g_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": "G",
@@ -407,7 +385,6 @@ for src in all_sources:
                         "total_so": 0, "total_w": 0, "total_l": 0, "total_t": 0,
                         "sources": []
                     }
-                    
                 goalies_db[goalie_key]["total_gp"] += gp
                 goalies_db[goalie_key]["total_ga"] += ga
                 goalies_db[goalie_key]["total_min"] += mins
@@ -415,18 +392,14 @@ for src in all_sources:
                 goalies_db[goalie_key]["total_w"] += w
                 goalies_db[goalie_key]["total_l"] += l
                 goalies_db[goalie_key]["total_t"] += t_val
-                
                 tot_min = goalies_db[goalie_key]["total_min"]
                 tot_ga = goalies_db[goalie_key]["total_ga"]
                 goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2) if tot_min > 0 else gaa
-                
                 goalies_db[goalie_key]["sources"].append({
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
                     "gp": gp, "ga": ga, "min": mins, "gaa": gaa, "so": so, "w": w, "l": l, "t": t_val
                 })
-                
-        skip += len(rows)
-        time.sleep(0.1)
+    time.sleep(0.2)
 
 # 6. EXPORT COMPILED STATS
 output_data = {
