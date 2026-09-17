@@ -713,7 +713,7 @@
                 }
             });
 
-            // 4. Map Games to Team Profiles
+            // 4. Map Games to Team Profiles (Strictly Division-Locked)
             (rawHockeyDb.games || []).forEach(g => {
                 if (!g) return;
                 attachGameToMatchingTeams(g.home_name, g.home_id, g, true);
@@ -739,7 +739,11 @@
         }
 
         function attachGameToMatchingTeams(teamName, teamId, game, isHome) {
-            if (!teamName) return;
+            if (!teamName || !game || !game.division) return;
+            const targetDiv = game.division;
+            const divTree = scoutingReportDatabase[targetDiv];
+            if (!divTree) return;
+
             const isFinal = game.status === 'final';
             const teamGoals = isHome ? game.home_goals : game.visitor_goals;
             const oppGoals = isHome ? game.visitor_goals : game.home_goals;
@@ -765,27 +769,20 @@
                 score_str: isFinal ? `${teamGoals} - ${oppGoals}` : (game.time || "Scheduled")
             };
 
-            let matched = false;
-            Object.keys(scoutingReportDatabase).forEach(divKey => {
-                const teams = scoutingReportDatabase[divKey];
-                if (teams[teamName] && Array.isArray(teams[teamName].games)) {
-                    teams[teamName].games.push(record);
-                    matched = true;
-                }
-            });
+            // 1. Direct match in target division ONLY
+            if (divTree[teamName] && Array.isArray(divTree[teamName].games)) {
+                divTree[teamName].games.push(record);
+                return;
+            }
 
-            if (!matched) {
-                const targetKey = cleanKey(teamName);
-                if (!targetKey) return;
-                Object.keys(scoutingReportDatabase).forEach(divKey => {
-                    const teams = scoutingReportDatabase[divKey];
-                    for (const tName in teams) {
-                        if (cleanKey(tName) === targetKey && Array.isArray(teams[tName].games)) {
-                            teams[tName].games.push(record);
-                            break;
-                        }
-                    }
-                });
+            // 2. Fallback key match in target division ONLY
+            const targetKey = cleanKey(teamName);
+            if (!targetKey) return;
+            for (const tName in divTree) {
+                if (cleanKey(tName) === targetKey && Array.isArray(divTree[tName].games)) {
+                    divTree[tName].games.push(record);
+                    return;
+                }
             }
         }
 
