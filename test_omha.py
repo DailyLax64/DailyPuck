@@ -13,33 +13,16 @@ headers = {
 if session_cookie:
     headers['Cookie'] = session_cookie
 
-# Check Tri-County AA (15497)
-url_standings = "https://gamesheetstats.com/api/standings/15497?"
-req = urllib.request.Request(url_standings, headers=headers)
-with urllib.request.urlopen(req) as resp:
-    data = json.loads(resp.read().decode('utf-8'))
-    first_row = data["data"][0]["standings"][0]
-    
-    print("=== WHAT IS INSIDE row['division']? ===")
-    print(json.dumps(first_row.get("division"), indent=2))
+# Test Tri-County AA (15497) Schedule
+url = "https://gamesheetstats.com/api/useSchedule/getSeasonSchedule/15497?filter[limit]=5"
+req = urllib.request.Request(url, headers=headers)
 
-# Test possible Division / Season endpoints to see if we can get all division names
-division_id = data["data"][0].get("divisionId")
-print(f"\nTesting divisionId: {division_id}")
-
-test_urls = [
-    f"https://gamesheetstats.com/api/divisions/{division_id}",
-    f"https://gamesheetstats.com/api/seasons/15497/divisions",
-    f"https://gamesheetstats.com/api/divisions?seasonId=15497"
-]
-
-for url in test_urls:
-    try:
-        r = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(r) as res:
-            res_data = json.loads(res.read().decode('utf-8'))
-            print(f"\n✅ SUCCESS endpoint: {url}")
-            print(json.dumps(res_data, indent=2)[:300] + "...")
-            break
-    except Exception as e:
-        print(f"❌ Failed {url}: {e}")
+try:
+    with urllib.request.urlopen(req) as resp:
+        data = json.loads(resp.read().decode('utf-8'))
+        games = data.get("data", [])
+        print(f"Retrieved {len(games)} sample game records:\n")
+        for g in games[:3]:
+            print(json.dumps(g, indent=2))
+except Exception as e:
+    print(f"Schedule fetch failed: {e}")
