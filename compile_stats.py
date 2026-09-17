@@ -187,7 +187,7 @@ for src in all_sources:
                 })
     time.sleep(0.2)
 
-# 4. STAGE 2: INGEST UNIFIED GAMES (Populates remaining Team IDs before rosters run)
+# 4. STAGE 2: INGEST UNIFIED GAMES
 games_dict = {}
 valid_final_states = ["final", "official", "completed", "complete", "played", "finished", "2", "3"]
 
@@ -214,7 +214,6 @@ for src in all_sources:
         h_div = home_obj.get("division", {}).get("title") if isinstance(home_obj.get("division"), dict) else ""
         g_div = v_div or h_div or ""
 
-        # Resolve Home and Visitor
         h_cohort, h_canonical = None, None
         if h_id and int(h_id) in team_id_to_master:
             h_cohort, h_canonical = team_id_to_master[int(h_id)]
@@ -274,7 +273,7 @@ for src in all_sources:
 
 all_compiled_games = sorted(list(games_dict.values()), key=lambda x: x["timestamp"] or x["date"])
 
-# 5. STAGE 3: INGEST SKATERS & GOALIES (All Team IDs & Divisions Now Known)
+# 5. STAGE 3: INGEST SKATERS & GOALIES
 skaters_db = {}
 goalies_db = {}
 
@@ -402,7 +401,8 @@ output_data = {
     "skaters": sorted(list(skaters_db.values()), key=lambda x: x["total_pts"], reverse=True),
     "goalies": sorted(list(goalies_db.values()), key=lambda x: (x["total_gaa"], -x["total_gp"])),
     "standings": standings_db,
-    "games": all_compiled_games
+    "games": all_compiled_games,
+    "master_teams": master_teams_db
 }
 
 output_path = "hockey_stats.json"
