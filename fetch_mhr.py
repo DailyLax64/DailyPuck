@@ -9,7 +9,6 @@ from html.parser import HTMLParser
 
 SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
 
-# Target division URLs (alphabetical views for comprehensive team listings)
 MHR_DIVISIONS = {
     "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&a=1&v=142&view=alphabetic",
     "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&a=1&v=145&view=alphabetic"
@@ -83,16 +82,23 @@ def fetch_html(target_url, api_key):
         print("   ⚠️  SCRAPER_API_KEY secret not found. Attempting direct connection...")
         req_url = target_url
     else:
-        params = urllib.parse.urlencode({"api_key": api_key, "url": target_url, "render": "false"})
+        # Enable JS rendering and premium residential routing to solve Cloudflare Turnstile
+        params = urllib.parse.urlencode({
+            "api_key": api_key,
+            "url": target_url,
+            "render": "true",
+            "premium": "true",
+            "country_code": "ca"
+        })
         req_url = f"https://api.scraperapi.com?{params}"
 
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     }
 
     req = urllib.request.Request(req_url, headers=headers)
-    with urllib.request.urlopen(req, timeout=90) as resp:
+    with urllib.request.urlopen(req, timeout=120) as resp:
         return resp.read().decode("utf-8", errors="ignore")
 
 def parse_mhr_table(html_content):
@@ -154,40 +160,46 @@ def update_master_teams():
 
     for cohort, url in MHR_DIVISIONS.items():
         print(f"\n🌐 Fetching MHR table for [{cohort}]...")
-        try:
-            html = fetch_html(url, SCRAPER_API_KEY)
-            parsed_rows = parse_mhr_table(html)
-            print(f"   📊 Found {len(parsed_rows)} team records in MHR table.")
+        for attempt in range(1, 3):
+            try:
+                html = fetch_html(url, SCRAPER_API_KEY)
+                parsed_rows = parse_mhr_table(html)
+                print(f"   📊 Found {len(parsed_rows)} team records in MHR table.")
 
-            cohort_updated = 0
-            for r in parsed_rows:
-                clean_name = clean_team_name(r["team_raw"])
-                canonical = find_canonical_team(clean_name, cohort, master_db)
-                
-                if canonical and canonical in master_db.get(cohort, {}):
-                    t_entry = master_db[cohort][canonical]
+                cohort_updated = 0
+                for r in parsed_rows:
+                    clean_name = clean_team_name(r["team_raw"])
+                    canonical = find_canonical_team(clean_name, cohort, master_db)
                     
-                    raw_rank = str(r["rank"]).strip()
-                    rank_clean = int(raw_rank) if raw_rank.isdigit() else raw_rank
-                    
-                    try:
-                        rating_float = float(r["rating"])
-                    except ValueError:
-                        rating_float = 0.0
+                    if canonical and canonical in master_db.get(cohort, {}):
+                        t_entry = master_db[cohort][canonical]
+                        
+                        raw_rank = str(r["rank"]).strip()
+                        rank_clean = int(raw_rank) if raw_rank.isdigit() else raw_rank
+                        
+                        try:
+                            rating_float = float(r["rating"])
+                        except ValueError:
+                            rating_float = 0.0
 
-                    t_entry["mhr_rank"] = rank_clean
-                    t_entry["mhr_rating"] = rating_float
-                    t_entry["mhr_record"] = r["record"]
-                    t_entry["mhr_agd"] = r["agd"]
-                    t_entry["mhr_sched"] = r["sched"]
-                    t_entry["mhr_updated_at"] = timestamp
-                    cohort_updated += 1
+                        t_entry["mhr_rank"] = rank_clean
+                        t_entry["mhr_rating"] = rating_float
+                        t_entry["mhr_record"] = r["record"]
+                        t_entry["mhr_agd"] = r["agd"]
+                        t_entry["mhr_sched"] = r["sched"]
+                        t_entry["mhr_updated_at"] = timestamp
+                        cohort_updated += 1
 
-            print(f"   ✅ Successfully mapped and updated {cohort_updated} teams for {cohort}.")
-            total_updated += cohort_updated
-            time.sleep(1.0)
-        except Exception as e:
-            print(f"   ❌ Error updating {cohort}: {e}")
+                print(f"   ✅ Successfully mapped and updated {cohort_updated} teams for {cohort}.")
+                total_updated += cohort_updated
+                break
+            except Exception as e:
+                print(f"   ⚠️ Attempt {attempt} error for {cohort}: {e}")
+                if attempt < 2:
+                    time.sleep(5.0)
+                else:
+                    print(f"   ❌ Failed to update {cohort} after {attempt} attempts.")
+        time.sleep(1.0)
 
     with open(master_path, "w", encoding="utf-8") as f:
         json.dump(master_db, f, indent=2)
