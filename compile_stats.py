@@ -102,7 +102,7 @@ def resolve_master_team(team_name, div_title="", source_name="", forced_tier=Non
     if not age:
         return None, None
 
-    # 2. Strict Non-AA Filter (Detects Tier A seeded teams regardless of league title)
+    # 2. Strict Non-AA Filter (Exclude Tier A seeded teams unless explicitly AA)
     if re.search(r'\bU\d{1,2}\s+A\b|\bTIER\s*2\b', team_div_text):
         if not re.search(r'\bAA\b', team_div_text):
             return None, None
@@ -150,14 +150,22 @@ for src in all_sources:
     st_data = fetch_json(standings_url)
     if st_data and "data" in st_data:
         for div_group in st_data.get("data", []):
+            # Extract division title from parent div_group
+            parent_div_title = clean_name(
+                div_group.get("title") or 
+                div_group.get("division", {}).get("title") or 
+                div_group.get("name") or 
+                ""
+            )
             for row in div_group.get("standings", []):
                 t_info = row.get("team", {})
                 t_name = clean_name(t_info.get("title") or t_info.get("name", ""))
                 t_id = t_info.get("id")
                 stats = row.get("stats", {})
-                div_title = clean_name(row.get("division", {}).get("title") or "")
+                row_div_title = clean_name(row.get("division", {}).get("title") or "")
+                effective_div = row_div_title or parent_div_title
 
-                cohort, canonical_name = resolve_master_team(t_name, div_title, s_name, forced_tier=s_tier)
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
 
                 if cohort and not canonical_name:
                     unmapped_audit.add((cohort, t_name, s_name, t_id))
@@ -212,9 +220,10 @@ for src in all_sources:
         v_id = visitor_obj.get("id")
         h_id = home_obj.get("id")
 
-        v_div = visitor_obj.get("division", {}).get("title") if isinstance(visitor_obj.get("division"), dict) else ""
-        h_div = home_obj.get("division", {}).get("title") if isinstance(home_obj.get("division"), dict) else ""
-        g_div = v_div or h_div or ""
+        game_div_title = clean_name(g.get("division", {}).get("title") or "") if isinstance(g.get("division"), dict) else ""
+        v_div = clean_name(visitor_obj.get("division", {}).get("title") or "") if isinstance(visitor_obj.get("division"), dict) else ""
+        h_div = clean_name(home_obj.get("division", {}).get("title") or "") if isinstance(home_obj.get("division"), dict) else ""
+        g_div = game_div_title or v_div or h_div or ""
 
         h_cohort, h_canonical = None, None
         if h_id and int(h_id) in team_id_to_master:
@@ -283,8 +292,11 @@ for src in all_sources:
     s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
-    # Skaters
-    sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0")
+    # Skaters with proper filter[limit]
+    sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?filter[limit]=10000")
+    if not sk_data or not sk_data.get("data"):
+        sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0")
+
     if sk_data and "data" in sk_data:
         for p in sk_data.get("data", []):
             p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
@@ -334,8 +346,11 @@ for src in all_sources:
                 })
     time.sleep(0.2)
 
-    # Goalies
-    gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0")
+    # Goalies with proper filter[limit]
+    gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?filter[limit]=10000")
+    if not gk_data or not gk_data.get("data"):
+        gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0")
+
     if gk_data and "data" in gk_data:
         for g in gk_data.get("data", []):
             g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
@@ -421,12 +436,11 @@ print(f"💾 Saved to {output_path}")
 print("="*70)
 
 # 7. UNMAPPED AUDIT REPORT
-print("\n📋 UNMAPPED TEAM AUDIT LOG (U11 / U14 Teams Ignored Due to Missing Rule)")
+print("\n📋 UNMAPPED TEAM AUDIT LOG")
 print("-" * 70)
 if unmapped_audit:
     for cohort, name, src, tid in sorted(list(unmapped_audit)):
         print(f"⚠️  [{cohort}] '{name}' (ID: {tid}) in {src}")
-    print("\n👉 To track any of these, simply add their exact name as an alias in master_teams.json!")
 else:
     print("💯 Perfect Structural Integrity! All encountered teams were matched.")
 print("-" * 70)
