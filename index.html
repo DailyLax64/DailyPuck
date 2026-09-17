@@ -241,7 +241,6 @@
 
         <!-- 🏒 SCOREBOARD TAB CONTAINER -->
         <section id="content-scoreboard" class="tab-content hidden space-y-6 animate-fadeIn">
-            <!-- Filter & Status Bar -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 text-white">
                 <div class="flex items-center space-x-3">
                     <span class="text-2xl">🏒</span>
@@ -260,12 +259,11 @@
                 </div>
             </div>
 
-            <!-- 2-Column Responsive Layout -->
+            <!-- 2-Column Responsive Scoreboard Layout -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
                 
                 <!-- LEFT COLUMN: RECENT RESULTS -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 text-white">
-                    <!-- Header & Date Stepper -->
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
                         <div>
                             <h4 class="text-sm font-black uppercase tracking-widest text-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🏁 Completed Results</h4>
@@ -283,14 +281,11 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Results List -->
                     <div id="scoreboard-results-list" class="space-y-3"></div>
                 </div>
 
                 <!-- RIGHT COLUMN: FUTURE MATCHUPS -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 text-white">
-                    <!-- Header & Date Stepper -->
                     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
                         <div>
                             <h4 class="text-sm font-black uppercase tracking-widest text-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">📅 Upcoming Matchups</h4>
@@ -308,8 +303,6 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Matchups List -->
                     <div id="scoreboard-matchups-list" class="space-y-3"></div>
                 </div>
 
@@ -362,21 +355,58 @@
                         </div>
                     </div>
 
-                    <!-- Performance Metrics Capsule (Streamlined 3-Card Grid) -->
+                    <!-- Enhanced Performance Metrics Capsule with MHR Integration -->
                     <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl relative overflow-hidden shadow-xl text-white">
                         <span class="text-sm font-black uppercase tracking-widest text-cyan-400 block mb-4 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🏆 Performance Metrics</span>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        
+                        <!-- Top Row: Games Tracked, MHR Rank, MHR Rating, SoS -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
                             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
                                 <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Games Tracked</span>
                                 <span id="perf-gp" class="text-2xl font-mono font-black text-cyan-400">-</span>
                             </div>
                             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Record (W-L-T)</span>
-                                <span id="perf-record" class="text-2xl font-mono font-black text-white">-</span>
+                                <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">MHR Rank</span>
+                                <span id="perf-mhr-rank" class="text-2xl font-mono font-black text-white">-</span>
                             </div>
                             <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">Goal Diff</span>
-                                <span id="perf-diff" class="text-2xl font-mono font-black text-emerald-400">-</span>
+                                <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">MHR Rating</span>
+                                <span id="perf-mhr-rating" class="text-2xl font-mono font-black text-cyan-400">-</span>
+                            </div>
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+                                <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1.5">SoS</span>
+                                <span id="perf-mhr-sos" class="text-2xl font-mono font-black text-white">-</span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Row: Comparison Cards (MHR Baseline vs GameSheet Feed) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                                <span class="block text-[11px] font-mono font-bold uppercase tracking-widest text-cyan-400 mb-2">MyHockeyRankings Baseline</span>
+                                <div class="grid grid-cols-2 gap-3 text-center">
+                                    <div>
+                                        <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1">MHR Record</span>
+                                        <span id="perf-mhr-record" class="text-xl font-mono font-black text-white">-</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1">MHR Goal Diff</span>
+                                        <span id="perf-mhr-diff" class="text-xl font-mono font-black text-emerald-400">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+                                <span class="block text-[11px] font-mono font-bold uppercase tracking-widest text-blue-400 mb-2">GameSheet Ingested Feed</span>
+                                <div class="grid grid-cols-2 gap-3 text-center">
+                                    <div>
+                                        <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Tracked Record</span>
+                                        <span id="perf-tracked-record" class="text-xl font-mono font-black text-white">-</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Tracked Goal Diff</span>
+                                        <span id="perf-tracked-diff" class="text-xl font-mono font-black text-emerald-400">-</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -618,7 +648,7 @@
                         </div>
                     </div>
 
-                </div> <!-- End Page 2 Print Wrapper -->
+                </div> <!-- End Page 1 Print Wrapper -->
 
                 <!-- Print Action Controls -->
                 <div class="flex flex-col items-end pt-4 hide-on-print space-y-4">
@@ -782,7 +812,7 @@
             const yesterday = shiftDateStr(today, -1);
             const allGames = rawHockeyDb ? (rawHockeyDb.games || []) : [];
 
-            // 1. Setup Results Date (Defaults to Yesterday; if empty, finds nearest completed date)
+            // Results Date
             const finalDates = Array.from(new Set(allGames.filter(g => g.status === 'final').map(g => getStandardDateKey(g)))).filter(Boolean).sort();
             if (finalDates.includes(yesterday)) {
                 scoreboardResultsDate = yesterday;
@@ -791,7 +821,7 @@
                 scoreboardResultsDate = pastCompleted.length > 0 ? pastCompleted[pastCompleted.length - 1] : (finalDates.length > 0 ? finalDates[finalDates.length - 1] : yesterday);
             }
 
-            // 2. Setup Matchups Date (Defaults to Today; if empty, finds nearest upcoming date)
+            // Matchups Date
             const scheduledDates = Array.from(new Set(allGames.filter(g => g.status !== 'final').map(g => getStandardDateKey(g)))).filter(Boolean).sort();
             if (scheduledDates.includes(today)) {
                 scoreboardMatchupsDate = today;
@@ -835,7 +865,7 @@
             if (resultsPill) resultsPill.innerText = formatPillDate(scoreboardResultsDate);
             if (matchupsPill) matchupsPill.innerText = formatPillDate(scoreboardMatchupsDate);
 
-            // 2. Filter Completed Results for scoreboardResultsDate
+            // 2. Filter Completed Results
             let completedGames = allGames.filter(g => {
                 const isMatch = getStandardDateKey(g) === scoreboardResultsDate;
                 const isFinal = g.status === 'final' || g.home_goals !== null;
@@ -843,7 +873,7 @@
                 return isMatch && isFinal && matchesCohort;
             });
 
-            // 3. Filter Scheduled Matchups for scoreboardMatchupsDate
+            // 3. Filter Scheduled Matchups
             let scheduledGames = allGames.filter(g => {
                 const isMatch = getStandardDateKey(g) === scoreboardMatchupsDate;
                 const isSched = g.status !== 'final' && g.home_goals === null;
@@ -1002,7 +1032,7 @@
         function buildScoutingReportDatabase() {
             scoutingReportDatabase = {};
 
-            // 1. Ingest Standings Rows into Division Trees
+            // 1. Ingest Standings Rows
             (rawHockeyDb.standings || []).forEach(row => {
                 const age = row.age || row.detected_age || "Other";
                 const tier = row.tier || "AA";
@@ -1062,7 +1092,27 @@
                 attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
             });
 
-            // 5. Calculate Division Contenders
+            // 5. Precompute Strength of Schedule (SoS) Rankings from MHR Data
+            if (rawHockeyDb.master_teams) {
+                Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
+                    const cohortTeams = rawHockeyDb.master_teams[divKey];
+                    const sortedBySched = Object.entries(cohortTeams)
+                        .map(([name, data]) => ({
+                            name,
+                            sched: parseFloat(data.mhr_sched || 0)
+                        }))
+                        .filter(t => t.sched > 0)
+                        .sort((a, b) => b.sched - a.sched);
+                    
+                    sortedBySched.forEach((item, idx) => {
+                        if (cohortTeams[item.name]) {
+                            cohortTeams[item.name].sos_rank = idx + 1;
+                        }
+                    });
+                });
+            }
+
+            // 6. Calculate Division Contenders
             hotTeamsDatabaseMap = {};
             Object.keys(scoutingReportDatabase).forEach(divKey => {
                 const divTeams = Object.values(scoutingReportDatabase[divKey]);
@@ -1401,17 +1451,90 @@
                 }
             }
 
-            // Streamlined 3-Metric Display
+            // Fetch MHR Canonical Team Profile
+            const masterCohort = rawHockeyDb.master_teams?.[divName] || {};
+            let mhrData = masterCohort[teamName];
+            if (!mhrData) {
+                const cleanTarget = cleanKey(teamName);
+                for (const [mName, mObj] of Object.entries(masterCohort)) {
+                    if (cleanKey(mName) === cleanTarget) {
+                        mhrData = mObj;
+                        break;
+                    }
+                    if (mObj.aliases && mObj.aliases.some(a => cleanKey(a) === cleanTarget)) {
+                        mhrData = mObj;
+                        break;
+                    }
+                }
+            }
+            mhrData = mhrData || {};
+
+            // 1. TOP ROW: Games Tracked, MHR Rank, MHR Rating, SoS Rank
             const gpEl = document.getElementById('perf-gp');
             if (gpEl) gpEl.innerText = teamPayload.gp || 0;
 
-            const recEl = document.getElementById('perf-record');
-            if (recEl) recEl.innerText = `${teamPayload.w}-${teamPayload.l}-${teamPayload.t}`;
+            const rankVal = mhrData.mhr_rank;
+            const rankEl = document.getElementById('perf-mhr-rank');
+            if (rankEl) {
+                if (rankVal && String(rankVal).toLowerCase() !== 'n/a' && String(rankVal) !== '0') {
+                    rankEl.innerText = `#${rankVal}`;
+                    rankEl.className = "text-2xl font-mono font-black text-white";
+                } else {
+                    rankEl.innerText = "n/a";
+                    rankEl.className = "text-2xl font-mono font-bold text-slate-500";
+                }
+            }
 
-            const diffEl = document.getElementById('perf-diff');
-            if (diffEl) {
-                diffEl.innerText = teamPayload.diff >= 0 ? `+${teamPayload.diff}` : `${teamPayload.diff}`;
-                diffEl.className = `text-2xl font-mono font-black ${teamPayload.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+            const ratingVal = parseFloat(mhrData.mhr_rating || 0);
+            const ratingEl = document.getElementById('perf-mhr-rating');
+            if (ratingEl) {
+                if (ratingVal > 0) {
+                    ratingEl.innerText = ratingVal.toFixed(2);
+                    ratingEl.className = "text-2xl font-mono font-black text-cyan-400";
+                } else {
+                    ratingEl.innerText = "0.00";
+                    ratingEl.className = "text-2xl font-mono font-bold text-slate-500";
+                }
+            }
+
+            const sosEl = document.getElementById('perf-mhr-sos');
+            if (sosEl) {
+                if (mhrData.sos_rank) {
+                    sosEl.innerText = `#${mhrData.sos_rank}`;
+                    sosEl.title = `Schedule Rating: ${mhrData.mhr_sched || '0.00'}`;
+                    sosEl.className = "text-2xl font-mono font-black text-white";
+                } else if (mhrData.mhr_sched && parseFloat(mhrData.mhr_sched) > 0) {
+                    sosEl.innerText = parseFloat(mhrData.mhr_sched).toFixed(1);
+                    sosEl.className = "text-2xl font-mono font-black text-white";
+                } else {
+                    sosEl.innerText = "n/a";
+                    sosEl.className = "text-2xl font-mono font-bold text-slate-500";
+                }
+            }
+
+            // 2. BOTTOM ROW: MHR Record & AGD vs Tracked Record & Diff
+            const mhrRecEl = document.getElementById('perf-mhr-record');
+            if (mhrRecEl) mhrRecEl.innerText = mhrData.mhr_record || '-';
+
+            const mhrDiffEl = document.getElementById('perf-mhr-diff');
+            if (mhrDiffEl) {
+                const agdVal = parseFloat(mhrData.mhr_agd || 0);
+                if (mhrData.mhr_agd !== undefined && mhrData.mhr_agd !== "") {
+                    mhrDiffEl.innerText = agdVal > 0 ? `+${mhrData.mhr_agd}` : `${mhrData.mhr_agd}`;
+                    mhrDiffEl.className = `text-xl font-mono font-black ${agdVal >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+                } else {
+                    mhrDiffEl.innerText = '-';
+                    mhrDiffEl.className = 'text-xl font-mono font-black text-slate-500';
+                }
+            }
+
+            const trackedRecEl = document.getElementById('perf-tracked-record');
+            if (trackedRecEl) trackedRecEl.innerText = `${teamPayload.w}-${teamPayload.l}-${teamPayload.t}`;
+
+            const trackedDiffEl = document.getElementById('perf-tracked-diff');
+            if (trackedDiffEl) {
+                trackedDiffEl.innerText = teamPayload.diff >= 0 ? `+${teamPayload.diff}` : `${teamPayload.diff}`;
+                trackedDiffEl.className = `text-xl font-mono font-black ${teamPayload.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
             }
 
             const teamGames = [...(teamPayload.games || [])].sort((a, b) => {
