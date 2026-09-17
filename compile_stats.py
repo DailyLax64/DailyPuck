@@ -21,28 +21,21 @@ if SESSION_COOKIE:
 else:
     print("⚠️ Warning: GAMESHEET_COOKIE not found. Fetching anonymously.")
 
-# 2. Advanced Minor Hockey Division Parser
+# 2. Division & Age Parsing Helper
 def clean_name(name):
     return ' '.join(str(name or "").split()).strip()
 
-def parse_hockey_division(team_name, div_title="", source_name=""):
-    """
-    Robust extractor for minor hockey Age bracket (U7-U21) and Tier (AAA-HL).
-    Examines team_name, division title, and source/league name.
-    """
+def parse_hockey_division(team_name, div_title="", source_name="", forced_tier=None):
     full_text = f"{team_name} {div_title} {source_name}".upper()
     name_and_div = f"{team_name} {div_title}".upper()
     
-    # --- 1. AGE DETECTION ---
+    # --- 1. AGE EXTRACTION ---
     age = None
-    
-    # Check U-prefixed patterns (U11, U11AA, U-11, U 11, Under 11, Under-11)
     m_age = re.search(r'\bU[- ]?(\d{1,2})(?:[A-Z]|\b)|\bUNDER[- ]?(\d{1,2})\b', full_text)
     if m_age:
         digits = m_age.group(1) or m_age.group(2)
         age = f"U{digits}"
         
-    # Traditional Ontario Minor Hockey naming fallback
     if not age:
         traditional_map = [
             (r'\bMINOR\s+NOVICE\b', 'U8'),
@@ -61,49 +54,38 @@ def parse_hockey_division(team_name, div_title="", source_name=""):
             if re.search(pattern, full_text):
                 age = trad_age
                 break
-                
-    # --- 2. TIER DETECTION ---
+
+    # --- 2. TIER EXTRACTION ---
     tier = None
-    
-    # Priority A: Attached directly to age (e.g., U11AA, U11AAA, U11A, U11BB, U11MD, U13A)
-    m_attached = re.search(r'\bU\d{1,2}[- ]?(AAA|AA|BB|CC|MD|A|B|C)\b', name_and_div)
-    if m_attached:
-        tier = m_attached.group(1)
-        
-    # Priority B: Standalone tiers in team name or division title
-    standalone_tiers = [
-        (r'\bAAA\b', 'AAA'),
-        (r'\bAA\b', 'AA'),
-        (r'\bBB\b', 'BB'),
-        (r'\bCC\b', 'CC'),
-        (r'\bMD\b', 'MD'),
-        (r'\bTIER\s*1\b', 'Tier 1'),
-        (r'\bTIER\s*2\b', 'Tier 2'),
-        (r'\bTIER\s*3\b', 'Tier 3'),
-        (r'\bSELECT\b', 'Select'),
-        (r'\b(HOUSE\s*LEAGUE|HL)\b', 'HL'),
-        (r'\bA\b', 'A'),
-        (r'\bB\b', 'B'),
-        (r'\bC\b', 'C')
-    ]
+    if forced_tier and forced_tier.upper() != "AUTO":
+        tier = forced_tier.upper()
+
     if not tier:
+        # Check attached to age (e.g., U11AA, U13A)
+        m_attached = re.search(r'\bU\d{1,2}[- ]?(AAA|AA|BB|CC|MD|A|B|C)\b', name_and_div)
+        if m_attached:
+            tier = m_attached.group(1)
+
+    if not tier:
+        standalone_tiers = [
+            (r'\bAAA\b', 'AAA'), (r'\bAA\b', 'AA'), (r'\bBB\b', 'BB'),
+            (r'\bCC\b', 'CC'), (r'\bMD\b', 'MD'), (r'\bTIER\s*1\b', 'Tier 1'),
+            (r'\bTIER\s*2\b', 'Tier 2'), (r'\bSELECT\b', 'Select'),
+            (r'\b(HOUSE\s*LEAGUE|HL)\b', 'HL'), (r'\bA\b', 'A'),
+            (r'\bB\b', 'B'), (r'\bC\b', 'C')
+        ]
         for pattern, val in standalone_tiers:
             if re.search(pattern, name_and_div):
                 tier = val
                 break
-                
-    # Priority C: Inherit tier from league/source name (e.g., "Tri-County AA" -> AA)
+
     if not tier:
         for pattern, val in standalone_tiers:
             if re.search(pattern, source_name.upper()):
                 tier = val
                 break
 
-    # Priority D: Fallback for minor hockey circuit
-    if not tier:
-        tier = "AA" if "AA" in source_name.upper() else "A"
-        
-    return age or "Other", tier
+    return age or "Other", tier or "AA"
 
 def fetch_json(url):
     req = urllib.request.Request(url, headers=headers)
@@ -114,7 +96,7 @@ def fetch_json(url):
         print(f"   ❌ Fetch error for {url}: {e}")
         return None
 
-# 3. Load Sources
+# 3. Load Sources Configuration
 if not os.path.exists("sources.json"):
     raise FileNotFoundError("Critical error: sources.json is missing.")
 
@@ -122,55 +104,59 @@ with open("sources.json", "r") as f:
     sources = json.load(f)
 
 all_sources = []
-for name, sid in sources.get("leagues", {}).items():
-    all_sources.append({"name": name, "id": str(sid), "type": "league"})
-for name, sid in sources.get("tournaments", {}).items():
-    all_sources.append({"name": name, "id": str(sid), "type": "tournament"})
+for stype in ["leagues", "tournaments"]:
+    for name, config in sources.get(stype, {}).items():
+        if isinstance(config, dict):
+            sid = str(config.get("id"))
+            forced_tier = config.get("tier", "Auto")
+        else:
+            sid = str(config)
+            forced_tier = "Auto"
+        all_sources.append({
+            "name": name,
+            "id": sid,
+            "type": stype[:-1],
+            "forced_tier": forced_tier
+        })
 
 print(f"📡 Found {len(all_sources)} sources to compile.\n")
 
-# Master Containers & Team Metadata Cross-Reference Map
-team_id_metadata = {}  # team_id (int) -> {"age": age, "tier": tier, "team_name": t_name}
-club_tier_map = {}     # (club_base, age) -> tier
+team_id_metadata = {}
 standings_db = []
-raw_standings_entries = []
 
-# 4. STAGE 1: SCRAPE STANDINGS & BUILD TEAM RESOLUTION MAP
+# 4. STAGE 1: SCRAPE STANDINGS (Reading row['division']['title'])
 for src in all_sources:
     s_id = src["id"]
     s_name = src["name"]
     s_type = src["type"]
+    s_tier = src["forced_tier"]
     print(f"📥 Processing Standings: [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
     standings_url = f"https://gamesheetstats.com/api/standings/{s_id}?"
     st_data = fetch_json(standings_url)
     if st_data and "data" in st_data:
         for div_group in st_data.get("data", []):
-            div_title = clean_name(div_group.get("title") or div_group.get("name", ""))
             for row in div_group.get("standings", []):
                 t_info = row.get("team", {})
                 t_name = clean_name(t_info.get("title") or t_info.get("name", "Unknown Team"))
                 t_id = t_info.get("id")
                 stats = row.get("stats", {})
                 
-                age, tier = parse_hockey_division(t_name, div_title, s_name)
+                # Extract division title directly from the row object
+                div_obj = row.get("division", {})
+                div_title = clean_name(div_obj.get("title") or div_obj.get("name", ""))
+                
+                age, tier = parse_hockey_division(t_name, div_title, s_name, forced_tier=s_tier)
                 
                 if t_id:
                     team_id_metadata[int(t_id)] = {"age": age, "tier": tier, "team_name": t_name}
                 
-                # Register known club tier for cross-resolution
-                club_base = re.sub(r'\b(U\d{1,2}|AAA|AA|BB|CC|MD|A|B|C)\b', '', t_name.upper()).strip()
-                club_base = ' '.join(club_base.split())
-                if age != "Other" and tier:
-                    club_tier_map[(club_base, age)] = tier
-                
-                raw_standings_entries.append({
+                standings_db.append({
                     "team_id": t_id,
                     "team_name": t_name,
                     "division_title": div_title,
                     "age": age,
                     "tier": tier,
-                    "club_base": club_base,
                     "source_id": s_id,
                     "source_name": s_name,
                     "source_type": s_type,
@@ -186,31 +172,7 @@ for src in all_sources:
                 })
     time.sleep(0.3)
 
-# Resolve any missing tiers in standings entries via cross-referencing
-for entry in raw_standings_entries:
-    age = entry["age"]
-    tier = entry["tier"]
-    if age != "Other" and (tier == "Other" or not tier):
-        tier = club_tier_map.get((entry["club_base"], age), "AA")
-        entry["tier"] = tier
-        if entry["team_id"]:
-            team_id_metadata[int(entry["team_id"])]["tier"] = tier
-
-    standings_db.append({
-        "team_id": entry["team_id"],
-        "team_name": entry["team_name"],
-        "division_title": entry["division_title"],
-        "age": entry["age"],
-        "tier": entry["tier"],
-        "source_id": entry["source_id"],
-        "source_name": entry["source_name"],
-        "source_type": entry["source_type"],
-        "gp": entry["gp"], "w": entry["w"], "l": entry["l"], "t": entry["t"],
-        "pts": entry["pts"], "gf": entry["gf"], "ga": entry["ga"],
-        "diff": entry["diff"], "pim": entry["pim"]
-    })
-
-# 5. STAGE 2: SCRAPE SKATERS & GOALIES (ROBUST TEAM MAPPING)
+# 5. STAGE 2: SCRAPE SKATERS & GOALIES
 skaters_db = {}
 goalies_db = {}
 
@@ -218,9 +180,10 @@ for src in all_sources:
     s_id = src["id"]
     s_name = src["name"]
     s_type = src["type"]
+    s_tier = src["forced_tier"]
     print(f"📥 Processing Rosters:   [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
-    # --- Skaters ---
+    # Skaters
     skaters_url = f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0"
     sk_data = fetch_json(skaters_url)
     if sk_data and "data" in sk_data:
@@ -245,15 +208,14 @@ for src in all_sources:
                 if gp == 0 and pts == 0:
                     continue
                 
-                # Inherit confirmed division from standings map first
+                # Match against confirmed team_id metadata from Standings
                 if t_id and int(t_id) in team_id_metadata:
                     age = team_id_metadata[int(t_id)]["age"]
                     tier = team_id_metadata[int(t_id)]["tier"]
                 else:
-                    age, tier = parse_hockey_division(t_name, "", s_name)
+                    age, tier = parse_hockey_division(t_name, "", s_name, forced_tier=s_tier)
 
                 player_key = f"{p_name}_{t_name}".upper()
-                
                 if player_key not in skaters_db:
                     skaters_db[player_key] = {
                         "name": p_name,
@@ -278,7 +240,7 @@ for src in all_sources:
                 })
     time.sleep(0.3)
 
-    # --- Goalies ---
+    # Goalies
     goalies_url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0"
     gk_data = fetch_json(goalies_url)
     if gk_data and "data" in gk_data:
@@ -305,15 +267,13 @@ for src in all_sources:
                 if gp == 0:
                     continue
                 
-                # Inherit confirmed division from standings map first
                 if t_id and int(t_id) in team_id_metadata:
                     age = team_id_metadata[int(t_id)]["age"]
                     tier = team_id_metadata[int(t_id)]["tier"]
                 else:
-                    age, tier = parse_hockey_division(t_name, "", s_name)
+                    age, tier = parse_hockey_division(t_name, "", s_name, forced_tier=s_tier)
 
                 goalie_key = f"{g_name}_{t_name}".upper()
-                
                 if goalie_key not in goalies_db:
                     goalies_db[goalie_key] = {
                         "name": g_name,
