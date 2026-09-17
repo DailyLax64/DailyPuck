@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-17T21:31:12.681814+00:00",
+  "generated_at": "2026-09-17T22:51:41.244351+00:00",
   "total_skaters": 185,
   "total_goalies": 24,
   "total_standings_rows": 286,
-  "total_games": 87,
+  "total_games": 88,
   "skaters": [
     {
       "name": "LEVI AKESON",
@@ -12719,6 +12719,26 @@
       "home_result": null,
       "visitor_id": 558475,
       "visitor_name": "St Thomas Jr Stars",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U14 AA"
+    },
+    {
+      "game_id": 3016481,
+      "date": "Sep 21, 2026",
+      "time": "7:45 PM",
+      "timestamp": "2026-09-21T23:45:00Z",
+      "status": "scheduled",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541199,
+      "home_name": "Halton Hills Thunder",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 541209,
+      "visitor_name": "Guelph Gryphons",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
