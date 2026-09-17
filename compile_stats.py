@@ -26,7 +26,8 @@ def clean_name(name):
     return ' '.join(str(name or "").split()).strip()
 
 def normalize(s):
-    if not s: return ""
+    if not s:
+        return ""
     s = str(s).upper()
     s = re.sub(r'[^A-Z0-9\s]', ' ', s)
     return ' '.join(s.split())
@@ -43,19 +44,29 @@ def fetch_json(url):
 # 2. Load Master Whitelist & Sources
 if not os.path.exists("master_teams.json"):
     raise FileNotFoundError("Critical error: master_teams.json is missing.")
-with open("master_teams.json", "r") as f:
+with open("master_teams.json", "r", encoding="utf-8") as f:
     master_teams_db = json.load(f)
 
 if not os.path.exists("sources.json"):
     raise FileNotFoundError("Critical error: sources.json is missing.")
-with open("sources.json", "r") as f:
+with open("sources.json", "r", encoding="utf-8") as f:
     sources = json.load(f)
 
 all_sources = []
 for stype in ["leagues", "tournaments"]:
     for name, config in sources.get(stype, {}).items():
-        sid = str(config.get("id")) if isinstance(config, dict) else str(config)
-        all_sources.append({"name": name, "id": sid, "type": stype[:-1]})
+        if isinstance(config, dict):
+            sid = str(config.get("id"))
+            forced_tier = config.get("tier", "Auto")
+        else:
+            sid = str(config)
+            forced_tier = "Auto"
+        all_sources.append({
+            "name": name,
+            "id": sid,
+            "type": stype[:-1],
+            "forced_tier": forced_tier
+        })
 
 print(f"📡 Found {len(all_sources)} sources to compile across U11 AA and U14 AA.\n")
 
@@ -77,28 +88,51 @@ for cohort in ["U11 AA", "U14 AA"]:
             if a_base:
                 lookup[cohort][a_base] = canonical
 
-def resolve_master_team(team_name, div_title="", source_name=""):
+def resolve_master_team(team_name, div_title="", source_name="", forced_tier=None):
     full_text = f"{team_name} {div_title} {source_name}".upper()
-    
-    cohort = None
-    if re.search(r'\bU[- ]?11\b|\bATOM\b', full_text):
-        cohort = "U11 AA"
-    elif re.search(r'\bU[- ]?14\b|\bBANTAM\b', full_text):
-        cohort = "U14 AA"
-        
-    if not cohort:
-        return None, None  # Other age bracket, skip cleanly
 
+    # 1. Determine Age
+    age = None
+    if re.search(r'\bU[- ]?11\b|\bATOM\b', full_text):
+        age = "U11"
+    elif re.search(r'\bU[- ]?14\b|\bBANTAM\b', full_text):
+        age = "U14"
+
+    if not age:
+        return None, None
+
+    # 2. Determine Tier (Reject explicit non-AA unless overridden)
+    is_explicit_other_tier = bool(re.search(r'\b(AAA|BB|CC|MD|SELECT|HL)\b', full_text))
+    has_explicit_single_a = bool(re.search(r'\bU\d{1,2}\s+A\b|\bTIER\s*2\b', f"{team_name} {div_title}".upper()))
+    
+    if is_explicit_other_tier or has_explicit_single_a:
+        if not re.search(r'\bAA\b', full_text):
+            return None, None
+
+    is_aa = bool(re.search(r'\bAA\b', full_text)) or (forced_tier and forced_tier.upper() == "AA")
+    if not is_aa:
+        return None, None
+
+    cohort = f"{age} AA"
+
+    # 3. Direct Match via Normalized String
     t_norm = normalize(team_name)
     if t_norm in lookup[cohort]:
         return cohort, lookup[cohort][t_norm]
 
-    t_base = re.sub(r'\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', t_norm).strip()
+    # 4. Base Match (Stripped of age/tier tokens)
+    t_base = re.sub(r'\b(U11|U14|U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', t_norm).strip()
     t_base = ' '.join(t_base.split())
     if t_base in lookup[cohort]:
         return cohort, lookup[cohort][t_base]
 
-    return cohort, None  # Unmapped in cohort
+    # 5. Association Root Fuzzy Match
+    for canonical in master_teams_db.get(cohort, {}):
+        assoc_base = canonical.split()[0].upper()
+        if len(assoc_base) > 4 and assoc_base in t_base:
+            return cohort, canonical
+
+    return cohort, None
 
 # Master Storage
 team_id_to_master = {}
@@ -107,7 +141,7 @@ unmapped_audit = set()
 
 # 3. STAGE 1: INGEST STANDINGS
 for src in all_sources:
-    s_id, s_name, s_type = src["id"], src["name"], src["type"]
+    s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"📥 Standings Ingestion: [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
     standings_url = f"https://gamesheetstats.com/api/standings/{s_id}?"
@@ -121,7 +155,7 @@ for src in all_sources:
                 stats = row.get("stats", {})
                 div_title = clean_name(row.get("division", {}).get("title") or "")
 
-                cohort, canonical_name = resolve_master_team(t_name, div_title, s_name)
+                cohort, canonical_name = resolve_master_team(t_name, div_title, s_name, forced_tier=s_tier)
 
                 if cohort and not canonical_name:
                     unmapped_audit.add((cohort, t_name, s_name, t_id))
@@ -158,7 +192,7 @@ skaters_db = {}
 goalies_db = {}
 
 for src in all_sources:
-    s_id, s_name, s_type = src["id"], src["name"], src["type"]
+    s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
     # Skaters
@@ -166,7 +200,8 @@ for src in all_sources:
     if sk_data and "data" in sk_data:
         for p in sk_data.get("data", []):
             p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
-            if not p_name: continue
+            if not p_name:
+                continue
             jersey, pos = p.get("jersey", ""), clean_name(p.get("position", "F"))
 
             for t in p.get("teams", []):
@@ -178,15 +213,17 @@ for src in all_sources:
                 a = int(st.get("a") or 0)
                 pts = int(st.get("pts") if st.get("pts") is not None else (g + a))
                 pim = int(st.get("pim") or 0)
-                if gp == 0 and pts == 0: continue
+                if gp == 0 and pts == 0:
+                    continue
 
                 cohort, canonical_name = None, None
                 if t_id and int(t_id) in team_id_to_master:
                     cohort, canonical_name = team_id_to_master[int(t_id)]
                 else:
-                    cohort, canonical_name = resolve_master_team(t_name, "", s_name)
+                    cohort, canonical_name = resolve_master_team(t_name, "", s_name, forced_tier=s_tier)
 
-                if not cohort or not canonical_name: continue
+                if not cohort or not canonical_name:
+                    continue
 
                 age, tier = cohort.split()[0], cohort.split()[1]
                 player_key = f"{p_name}_{canonical_name}_{age}".upper()
@@ -212,7 +249,8 @@ for src in all_sources:
     if gk_data and "data" in gk_data:
         for g in gk_data.get("data", []):
             g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
-            if not g_name: continue
+            if not g_name:
+                continue
             jersey = g.get("jersey", "")
 
             for t in g.get("teams", []):
@@ -220,15 +258,17 @@ for src in all_sources:
                 t_id = t.get("id")
                 st = t.get("stats", {})
                 gp = int(st.get("gp") or 0)
-                if gp == 0: continue
+                if gp == 0:
+                    continue
 
                 cohort, canonical_name = None, None
                 if t_id and int(t_id) in team_id_to_master:
                     cohort, canonical_name = team_id_to_master[int(t_id)]
                 else:
-                    cohort, canonical_name = resolve_master_team(t_name, "", s_name)
+                    cohort, canonical_name = resolve_master_team(t_name, "", s_name, forced_tier=s_tier)
 
-                if not cohort or not canonical_name: continue
+                if not cohort or not canonical_name:
+                    continue
 
                 age, tier = cohort.split()[0], cohort.split()[1]
                 ga = int(st.get("ga") or 0)
@@ -261,12 +301,12 @@ for src in all_sources:
                 })
     time.sleep(0.2)
 
-# 5. STAGE 3: INGEST UNIFIED GAMES (DETERMINISTIC COHORT FILTER)
+# 5. STAGE 3: INGEST UNIFIED GAMES
 games_dict = {}
 valid_final_states = ["final", "official", "completed", "complete", "played", "finished", "2", "3"]
 
 for src in all_sources:
-    s_id, s_name, s_type = src["id"], src["name"], src["type"]
+    s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"📥 Schedule Ingestion:   [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
     g_data = fetch_json(f"https://gamesheetstats.com/api/unified-games/{s_id}?filter[limit]=10000")
@@ -274,7 +314,8 @@ for src in all_sources:
 
     for g in raw_games:
         gid = g.get("gameId")
-        if not gid: continue
+        if not gid:
+            continue
 
         visitor_obj = g.get("visitor") or {}
         home_obj = g.get("home") or {}
@@ -292,15 +333,14 @@ for src in all_sources:
         if h_id and int(h_id) in team_id_to_master:
             h_cohort, h_canonical = team_id_to_master[int(h_id)]
         else:
-            h_cohort, h_canonical = resolve_master_team(h_name, g_div, s_name)
+            h_cohort, h_canonical = resolve_master_team(h_name, g_div, s_name, forced_tier=s_tier)
 
         v_cohort, v_canonical = None, None
         if v_id and int(v_id) in team_id_to_master:
             v_cohort, v_canonical = team_id_to_master[int(v_id)]
         else:
-            v_cohort, v_canonical = resolve_master_team(v_name, g_div, s_name)
+            v_cohort, v_canonical = resolve_master_team(v_name, g_div, s_name, forced_tier=s_tier)
 
-        # Ingest only if at least one team belongs to U11 AA or U14 AA
         if not h_canonical and not v_canonical:
             continue
 
@@ -313,9 +353,12 @@ for src in all_sources:
 
         v_res, h_res = None, None
         if is_final:
-            if v_goals > h_goals: v_res, h_res = "W", "L"
-            elif h_goals > v_goals: v_res, h_res = "L", "W"
-            else: v_res, h_res = "T", "T"
+            if v_goals > h_goals:
+                v_res, h_res = "W", "L"
+            elif h_goals > v_goals:
+                v_res, h_res = "L", "W"
+            else:
+                v_res, h_res = "T", "T"
 
         games_dict[str(gid)] = {
             "game_id": gid,
