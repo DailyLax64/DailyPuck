@@ -7,7 +7,10 @@ from datetime import datetime, timezone
 
 # 1. Setup Auth & Network Headers
 RAW_COOKIE = os.environ.get("GAMESHEET_COOKIE", "")
+AUTH_TOKEN = os.environ.get("GAMESHEET_AUTH", "")
+
 SESSION_COOKIE = RAW_COOKIE.strip().replace('\n', '').replace('\r', '') if RAW_COOKIE else None
+API_AUTH = AUTH_TOKEN.strip().replace('\n', '').replace('\r', '') if AUTH_TOKEN else None
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -19,8 +22,12 @@ headers = {
 if SESSION_COOKIE:
     headers['Cookie'] = SESSION_COOKIE
     print("🍪 Session cookie attached to headers.")
-else:
-    print("⚠️ Warning: GAMESHEET_COOKIE not found. Fetching anonymously.")
+if API_AUTH:
+    headers['Authorization'] = API_AUTH
+    print("🔑 API Authorization token attached to headers.")
+    
+if not SESSION_COOKIE and not API_AUTH:
+    print("⚠️ Warning: No authentication secrets found. Fetching anonymously.")
 
 def clean_name(name):
     return ' '.join(str(name or "").split()).strip()
