@@ -292,13 +292,18 @@ for src in all_sources:
     s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
-    # Skaters with proper filter[limit]
-    sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?filter[limit]=10000")
-    if not sk_data or not sk_data.get("data"):
-        sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0")
+    # --- SKATERS PAGINATION LOOP ---
+    offset = 0
+    limit = 500
+    while True:
+        url = f"https://gamesheetstats.com/api/players/standings/{s_id}?limit={limit}&offset={offset}"
+        sk_data = fetch_json(url)
+        rows = sk_data.get("data", []) if sk_data else []
+        
+        if not rows:
+            break
 
-    if sk_data and "data" in sk_data:
-        for p in sk_data.get("data", []):
+        for p in rows:
             p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
             if not p_name:
                 continue
@@ -329,12 +334,14 @@ for src in all_sources:
 
                 age, tier = cohort.split()[0], cohort.split()[1]
                 player_key = f"{p_name}_{canonical_name}_{age}".upper()
+                
                 if player_key not in skaters_db:
                     skaters_db[player_key] = {
                         "name": p_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": pos,
                         "age": age, "tier": tier, "total_gp": 0, "total_g": 0, "total_a": 0, "total_pts": 0, "total_pim": 0,
                         "sources": []
                     }
+                
                 skaters_db[player_key]["total_gp"] += gp
                 skaters_db[player_key]["total_g"] += g
                 skaters_db[player_key]["total_a"] += a
@@ -344,15 +351,23 @@ for src in all_sources:
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
                     "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
                 })
-    time.sleep(0.2)
+                
+        if len(rows) < limit:
+            break
+        offset += limit
+        time.sleep(0.1)
 
-    # Goalies with proper filter[limit]
-    gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?filter[limit]=10000")
-    if not gk_data or not gk_data.get("data"):
-        gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0")
+    # --- GOALIES PAGINATION LOOP ---
+    offset = 0
+    while True:
+        url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit={limit}&offset={offset}"
+        gk_data = fetch_json(url)
+        rows = gk_data.get("data", []) if gk_data else []
+        
+        if not rows:
+            break
 
-    if gk_data and "data" in gk_data:
-        for g in gk_data.get("data", []):
+        for g in rows:
             g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
             if not g_name:
                 continue
@@ -385,6 +400,7 @@ for src in all_sources:
                 w, l, t_val = int(st.get("w") or 0), int(st.get("l") or 0), int(st.get("t") or 0)
 
                 goalie_key = f"{g_name}_{canonical_name}_{age}".upper()
+                
                 if goalie_key not in goalies_db:
                     goalies_db[goalie_key] = {
                         "name": g_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": "G",
@@ -392,6 +408,7 @@ for src in all_sources:
                         "total_so": 0, "total_w": 0, "total_l": 0, "total_t": 0,
                         "sources": []
                     }
+                    
                 goalies_db[goalie_key]["total_gp"] += gp
                 goalies_db[goalie_key]["total_ga"] += ga
                 goalies_db[goalie_key]["total_min"] += mins
@@ -399,14 +416,20 @@ for src in all_sources:
                 goalies_db[goalie_key]["total_w"] += w
                 goalies_db[goalie_key]["total_l"] += l
                 goalies_db[goalie_key]["total_t"] += t_val
+                
                 tot_min = goalies_db[goalie_key]["total_min"]
                 tot_ga = goalies_db[goalie_key]["total_ga"]
                 goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2) if tot_min > 0 else gaa
+                
                 goalies_db[goalie_key]["sources"].append({
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
                     "gp": gp, "ga": ga, "min": mins, "gaa": gaa, "so": so, "w": w, "l": l, "t": t_val
                 })
-    time.sleep(0.2)
+                
+        if len(rows) < limit:
+            break
+        offset += limit
+        time.sleep(0.1)
 
 # 6. EXPORT COMPILED STATS
 output_data = {
