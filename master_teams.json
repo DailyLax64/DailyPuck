@@ -1,531 +1,1290 @@
 {
   "U11 AA": {
     "Ajax Pickering Raiders": {
-      "aliases": ["Ajax Pickering Raiders U11 AA", "Ajax Pickering Raiders U11", "AJAX-PICKERING AA U11", "Ajax Pickering", "Ajax-Pickering", "Raiders"]
+      "aliases": [
+        "Ajax Pickering Raiders U11 AA",
+        "Ajax Pickering Raiders U11",
+        "AJAX-PICKERING AA U11",
+        "Ajax Pickering",
+        "Ajax-Pickering",
+        "Raiders"
+      ]
     },
     "Aurora Tigers": {
-      "aliases": ["Aurora Tigers U11 AA", "Aurora Tigers U11", "Aurora"]
+      "aliases": [
+        "Aurora Tigers U11 AA",
+        "Aurora Tigers U11",
+        "Aurora"
+      ]
     },
     "Barrie Colts": {
-      "aliases": ["Barrie Colts U11 AA", "Barrie Colts U11", "Barrie"]
+      "aliases": [
+        "Barrie Colts U11 AA",
+        "Barrie Colts U11",
+        "Barrie"
+      ]
     },
     "Belleville Jr Bulls": {
-      "aliases": ["Belleville Jr Bulls U11 AA", "Belleville Jr Bulls U11", "BELLEVILLE AA U11", "Belleville Bulls", "Belleville"]
+      "aliases": [
+        "Belleville Jr Bulls U11 AA",
+        "Belleville Jr Bulls U11",
+        "BELLEVILLE AA U11",
+        "Belleville Bulls",
+        "Belleville"
+      ]
     },
     "Brampton 45s": {
-      "aliases": ["Brampton 45s U11 AA", "Brampton 45s U11", "Brampton 45's", "Brampton"]
+      "aliases": [
+        "Brampton 45s U11 AA",
+        "Brampton 45s U11",
+        "Brampton 45's",
+        "Brampton"
+      ]
     },
     "Brantford 99ers": {
-      "aliases": ["Brantford 99ers U11 AA", "Brantford 99ers U11", "Brantford"]
+      "aliases": [
+        "Brantford 99ers U11 AA",
+        "Brantford 99ers U11",
+        "Brantford"
+      ]
     },
     "Burlington Eagles": {
-      "aliases": ["Burlington Eagles U11 AA", "Burlington Eagles U11", "Burlington Eagles (Gold)", "Burlington"]
+      "aliases": [
+        "Burlington Eagles U11 AA",
+        "Burlington Eagles U11",
+        "Burlington Eagles (Gold)",
+        "Burlington"
+      ]
     },
     "Centre Wellington Fusion": {
-      "aliases": ["Centre Wellington Fusion U11 AA", "Centre Wellington Fusion U11", "Centre Wellington", "CW Fusion"]
+      "aliases": [
+        "Centre Wellington Fusion U11 AA",
+        "Centre Wellington Fusion U11",
+        "Centre Wellington",
+        "CW Fusion"
+      ]
     },
     "Clarington Toros": {
-      "aliases": ["Clarington Toros U11 AA", "Clarington Toros U11", "CLARINGTON AA U11", "Clarington"]
+      "aliases": [
+        "Clarington Toros U11 AA",
+        "Clarington Toros U11",
+        "CLARINGTON AA U11",
+        "Clarington"
+      ]
     },
     "Collingwood Jr Blues": {
-      "aliases": ["Collingwood Jr Blues U11 AA", "Collingwood Jr Blues U11", "Collingwood Blues", "Collingwood"]
+      "aliases": [
+        "Collingwood Jr Blues U11 AA",
+        "Collingwood Jr Blues U11",
+        "Collingwood Blues",
+        "Collingwood"
+      ]
     },
     "Copper Cliff Reds": {
-      "aliases": ["Copper Cliff Reds U11 AA", "Copper Cliff Reds U11", "Copper Cliff"]
+      "aliases": [
+        "Copper Cliff Reds U11 AA",
+        "Copper Cliff Reds U11",
+        "Copper Cliff"
+      ]
     },
     "Current River Jr Storm": {
-      "aliases": ["Current River Jr Storm U11 AA", "Current River Jr Storm U11", "Current River Storm"]
+      "aliases": [
+        "Current River Jr Storm U11 AA",
+        "Current River Jr Storm U11",
+        "Current River Storm"
+      ]
     },
     "Dryden Paperkings": {
-      "aliases": ["Dryden Paperkings U11 AA", "Dryden Paperkings U11", "Dryden"]
+      "aliases": [
+        "Dryden Paperkings U11 AA",
+        "Dryden Paperkings U11",
+        "Dryden"
+      ]
     },
     "Duffield Devils": {
-      "aliases": ["Duffield Devils U11 AA", "Duffield Devils U11", "Duffield"]
+      "aliases": [
+        "Duffield Devils U11 AA",
+        "Duffield Devils U11",
+        "Duffield"
+      ]
     },
     "East Enders Ticats": {
-      "aliases": ["East Enders Ticats U11 AA", "East Enders Ticats U11", "East Enders"]
+      "aliases": [
+        "East Enders Ticats U11 AA",
+        "East Enders Ticats U11",
+        "East Enders"
+      ]
     },
     "Emo Cowboys": {
-      "aliases": ["Emo Cowboys U11 AA", "Emo Cowboys U11", "Emo"]
+      "aliases": [
+        "Emo Cowboys U11 AA",
+        "Emo Cowboys U11",
+        "Emo"
+      ]
     },
     "Faustina Toros": {
-      "aliases": ["Faustina Toros U11 AA", "Faustina Toros U11", "Faustina"]
+      "aliases": [
+        "Faustina Toros U11 AA",
+        "Faustina Toros U11",
+        "Faustina"
+      ]
     },
     "Flamborough Sabres": {
-      "aliases": ["Flamborough Sabres U11 AA", "Flamborough Sabres U11", "Flamborough"]
+      "aliases": [
+        "Flamborough Sabres U11 AA",
+        "Flamborough Sabres U11",
+        "Flamborough"
+      ]
     },
     "Fort Frances Canadians": {
-      "aliases": ["Fort Frances Canadians U11 AA", "Fort Frances Canadians U11", "Fort Frances"]
+      "aliases": [
+        "Fort Frances Canadians U11 AA",
+        "Fort Frances Canadians U11",
+        "Fort Frances"
+      ]
     },
     "Glancaster Bombers": {
-      "aliases": ["Glancaster Bombers U11 AA", "Glancaster Bombers U11", "Glancaster"]
+      "aliases": [
+        "Glancaster Bombers U11 AA",
+        "Glancaster Bombers U11",
+        "Glancaster"
+      ]
     },
     "Gloucester Rangers": {
-      "aliases": ["Gloucester Rangers U11 AA", "Gloucester Rangers U11", "Gloucester Rangers U11 A"]
+      "aliases": [
+        "Gloucester Rangers U11 AA",
+        "Gloucester Rangers U11",
+        "Gloucester Rangers U11 A"
+      ]
     },
     "Guelph Gryphons": {
-      "aliases": ["Guelph Gryphons U11 AA", "Guelph Gryphons U11", "Guelph"]
+      "aliases": [
+        "Guelph Gryphons U11 AA",
+        "Guelph Gryphons U11",
+        "Guelph"
+      ]
     },
     "Halton Hills Thunder": {
-      "aliases": ["Halton Hills Thunder U11 AA", "Halton Hills Thunder U11", "Halton Hills"]
+      "aliases": [
+        "Halton Hills Thunder U11 AA",
+        "Halton Hills Thunder U11",
+        "Halton Hills"
+      ]
     },
     "Hamilton Steel": {
-      "aliases": ["Hamilton Steel U11 AA", "Hamilton Steel U11", "Hamilton Huskies", "Hamilton"]
+      "aliases": [
+        "Hamilton Steel U11 AA",
+        "Hamilton Steel U11",
+        "Hamilton Huskies",
+        "Hamilton"
+      ]
     },
     "Humber Valley Sharks": {
-      "aliases": ["Humber Valley Sharks U11 AA", "Humber Valley Sharks U11", "Humber Valley"]
+      "aliases": [
+        "Humber Valley Sharks U11 AA",
+        "Humber Valley Sharks U11",
+        "Humber Valley"
+      ]
     },
     "Kanata Blazers": {
-      "aliases": ["Kanata Blazers U11 AA", "Kanata Blazers U11", "Kanata Blazers U11 A"]
+      "aliases": [
+        "Kanata Blazers U11 AA",
+        "Kanata Blazers U11",
+        "Kanata Blazers U11 A"
+      ]
     },
     "KC Sabres": {
-      "aliases": ["KC Sabres U11 AA", "KC Sabres U11"]
+      "aliases": [
+        "KC Sabres U11 AA",
+        "KC Sabres U11"
+      ]
     },
     "Kenora Thistles": {
-      "aliases": ["Kenora Thistles U11 AA", "Kenora Thistles U11", "Kenora"]
+      "aliases": [
+        "Kenora Thistles U11 AA",
+        "Kenora Thistles U11",
+        "Kenora"
+      ]
     },
     "King Rebellion": {
-      "aliases": ["King Rebellion U11 AA", "King Rebellion U11", "King"]
+      "aliases": [
+        "King Rebellion U11 AA",
+        "King Rebellion U11",
+        "King"
+      ]
     },
     "Kingston Canadians": {
-      "aliases": ["Kingston Canadians U11 AA", "Kingston Canadians U11", "KINGSTON AA U11", "Kingston"]
+      "aliases": [
+        "Kingston Canadians U11 AA",
+        "Kingston Canadians U11",
+        "KINGSTON AA U11",
+        "Kingston"
+      ]
     },
     "Kitchener Jr Rangers (Red)": {
-      "aliases": ["Kitchener Jr Rangers (Red) U11 AA", "Kitchener Jr Rangers (Red) U11", "Kitchener Jr Rangers Red", "Kitchener Red", "Kitchener Jr Rangers"]
+      "aliases": [
+        "Kitchener Jr Rangers (Red) U11 AA",
+        "Kitchener Jr Rangers (Red) U11",
+        "Kitchener Jr Rangers Red",
+        "Kitchener Red",
+        "Kitchener Jr Rangers"
+      ]
     },
     "Leaside Flames": {
-      "aliases": ["Leaside Flames U11 AA", "Leaside Flames U11", "Leaside"]
+      "aliases": [
+        "Leaside Flames U11 AA",
+        "Leaside Flames U11",
+        "Leaside"
+      ]
     },
     "London Jr Knights (Green)": {
-      "aliases": ["London Jr Knights (Green) U11 AA", "London Jr Knights (Green) U11", "London Jr Knights Green", "London Green", "London Jr Knights"]
+      "aliases": [
+        "London Jr Knights (Green) U11 AA",
+        "London Jr Knights (Green) U11",
+        "London Jr Knights Green",
+        "London Green",
+        "London Jr Knights"
+      ]
     },
     "London Jr Knights (White)": {
-      "aliases": ["London Jr Knights (White) U11 AA", "London Jr Knights (White) U11", "London Jr Knights White", "London White"]
+      "aliases": [
+        "London Jr Knights (White) U11 AA",
+        "London Jr Knights (White) U11",
+        "London Jr Knights White",
+        "London White"
+      ]
     },
     "Markham Islanders": {
-      "aliases": ["Markham Islanders U11 AA", "Markham Islanders U11"]
+      "aliases": [
+        "Markham Islanders U11 AA",
+        "Markham Islanders U11"
+      ]
     },
     "Markham Waxers": {
-      "aliases": ["Markham Waxers U11 AA", "Markham Waxers U11", "Markham"]
+      "aliases": [
+        "Markham Waxers U11 AA",
+        "Markham Waxers U11",
+        "Markham"
+      ]
     },
     "Milton Winterhawks": {
-      "aliases": ["Milton Winterhawks U11 AA", "Milton Winterhawks U11", "Milton"]
+      "aliases": [
+        "Milton Winterhawks U11 AA",
+        "Milton Winterhawks U11",
+        "Milton"
+      ]
     },
     "Mississauga Beast": {
-      "aliases": ["Mississauga Beast U11 AA", "Mississauga Beast U11"]
+      "aliases": [
+        "Mississauga Beast U11 AA",
+        "Mississauga Beast U11"
+      ]
     },
     "Mississauga Jets": {
-      "aliases": ["Mississauga Jets U11 AA", "Mississauga Jets U11"]
+      "aliases": [
+        "Mississauga Jets U11 AA",
+        "Mississauga Jets U11"
+      ]
     },
     "Mississauga North Stars": {
-      "aliases": ["Mississauga North Stars U11 AA", "Mississauga North Stars U11"]
+      "aliases": [
+        "Mississauga North Stars U11 AA",
+        "Mississauga North Stars U11"
+      ]
     },
     "Mississauga Terriers": {
-      "aliases": ["Mississauga Terriers U11 AA", "Mississauga Terriers U11"]
+      "aliases": [
+        "Mississauga Terriers U11 AA",
+        "Mississauga Terriers U11"
+      ]
     },
     "Mt Brydges Cougars": {
-      "aliases": ["Mt Brydges Cougars U11 AA", "Mt Brydges Cougars U11", "Mount Brydges Cougars", "Mt. Brydges Cougars", "Mt Brydges", "Mount Brydges"]
+      "aliases": [
+        "Mt Brydges Cougars U11 AA",
+        "Mt Brydges Cougars U11",
+        "Mount Brydges Cougars",
+        "Mt. Brydges Cougars",
+        "Mt Brydges",
+        "Mount Brydges"
+      ]
     },
     "Nepean Raiders": {
-      "aliases": ["Nepean Raiders U11 AA", "Nepean Raiders U11", "Nepean Raiders U11 A"]
+      "aliases": [
+        "Nepean Raiders U11 AA",
+        "Nepean Raiders U11",
+        "Nepean Raiders U11 A"
+      ]
     },
     "Newmarket Renegades": {
-      "aliases": ["Newmarket Renegades U11 AA", "Newmarket Renegades U11", "Newmarket"]
+      "aliases": [
+        "Newmarket Renegades U11 AA",
+        "Newmarket Renegades U11",
+        "Newmarket"
+      ]
     },
     "Niagara Falls Canucks": {
-      "aliases": ["Niagara Falls Canucks U11 AA", "Niagara Falls Canucks U11", "Niagara Falls"]
+      "aliases": [
+        "Niagara Falls Canucks U11 AA",
+        "Niagara Falls Canucks U11",
+        "Niagara Falls"
+      ]
     },
     "Nickel City Cubs": {
-      "aliases": ["Nickel City Cubs U11 AA", "Nickel City Cubs U11", "Nickel City"]
+      "aliases": [
+        "Nickel City Cubs U11 AA",
+        "Nickel City Cubs U11",
+        "Nickel City"
+      ]
     },
     "Norfolk Knights": {
-      "aliases": ["Norfolk Knights U11 AA", "Norfolk Knights U11", "Norfolk"]
+      "aliases": [
+        "Norfolk Knights U11 AA",
+        "Norfolk Knights U11",
+        "Norfolk"
+      ]
     },
     "North Bay Trappers": {
-      "aliases": ["North Bay Trappers U11 AA", "North Bay Trappers U11", "North Bay"]
+      "aliases": [
+        "North Bay Trappers U11 AA",
+        "North Bay Trappers U11",
+        "North Bay"
+      ]
     },
     "North Durham Warriors": {
-      "aliases": ["North Durham Warriors U11 AA", "North Durham Warriors U11", "North Durham"]
+      "aliases": [
+        "North Durham Warriors U11 AA",
+        "North Durham Warriors U11",
+        "North Durham"
+      ]
     },
     "North End Flames": {
-      "aliases": ["North End Flames U11 AA", "North End Flames U11"]
+      "aliases": [
+        "North End Flames U11 AA",
+        "North End Flames U11"
+      ]
     },
     "North Toronto": {
-      "aliases": ["North Toronto U11 AA", "North Toronto U11"]
+      "aliases": [
+        "North Toronto U11 AA",
+        "North Toronto U11"
+      ]
     },
     "North York Knights": {
-      "aliases": ["North York Knights U11 AA", "North York Knights U11"]
+      "aliases": [
+        "North York Knights U11 AA",
+        "North York Knights U11"
+      ]
     },
     "Northumberland Nighthawks": {
-      "aliases": ["Northumberland Nighthawks U11 AA", "Northumberland Nighthawks U11", "NORTHUMBERLAND AA U11", "Northumberland"]
+      "aliases": [
+        "Northumberland Nighthawks U11 AA",
+        "Northumberland Nighthawks U11",
+        "NORTHUMBERLAND AA U11",
+        "Northumberland"
+      ]
     },
     "Oakville Rangers": {
-      "aliases": ["Oakville Rangers U11 AA", "Oakville Rangers U11", "Oakville Rangers Blue", "Oakville Rangers Red", "Oakville Blue", "Oakville Red", "Oakville"]
+      "aliases": [
+        "Oakville Rangers U11 AA",
+        "Oakville Rangers U11",
+        "Oakville Rangers Blue",
+        "Oakville Rangers Red",
+        "Oakville Blue",
+        "Oakville Red",
+        "Oakville"
+      ]
     },
     "Orangeville Flyers": {
-      "aliases": ["Orangeville Flyers U11 AA", "Orangeville Flyers U11", "Orangeville"]
+      "aliases": [
+        "Orangeville Flyers U11 AA",
+        "Orangeville Flyers U11",
+        "Orangeville"
+      ]
     },
     "Oshawa Generals": {
-      "aliases": ["Oshawa Generals U11 AA", "Oshawa Generals U11", "OSHAWA AA U11", "Oshawa"]
+      "aliases": [
+        "Oshawa Generals U11 AA",
+        "Oshawa Generals U11",
+        "OSHAWA AA U11",
+        "Oshawa"
+      ]
     },
     "Ottawa Sting": {
-      "aliases": ["Ottawa Sting U11 AA", "Ottawa Sting U11", "Ottawa Sting U11 A"]
+      "aliases": [
+        "Ottawa Sting U11 AA",
+        "Ottawa Sting U11",
+        "Ottawa Sting U11 A"
+      ]
     },
     "Ottawa Valley Silver Seven": {
-      "aliases": ["Ottawa Valley Silver Seven U11 AA", "Ottawa Valley Silver Seven U11", "Ottawa Valley Silver Seven U11 A"]
+      "aliases": [
+        "Ottawa Valley Silver Seven U11 AA",
+        "Ottawa Valley Silver Seven U11",
+        "Ottawa Valley Silver Seven U11 A"
+      ]
     },
     "Peterborough Petes": {
-      "aliases": ["Peterborough Petes U11 AA", "Peterborough Petes U11", "PETERBOROUGH AA U11", "Peterborough"]
+      "aliases": [
+        "Peterborough Petes U11 AA",
+        "Peterborough Petes U11",
+        "PETERBOROUGH AA U11",
+        "Peterborough"
+      ]
     },
     "Quinte West Golden Hawks": {
-      "aliases": ["Quinte West Golden Hawks U11 AA", "Quinte West Golden Hawks U11", "QUINTE WEST AA U11", "Quinte West"]
+      "aliases": [
+        "Quinte West Golden Hawks U11 AA",
+        "Quinte West Golden Hawks U11",
+        "QUINTE WEST AA U11",
+        "Quinte West"
+      ]
     },
     "Red Lake Rockets": {
-      "aliases": ["Red Lake Rockets U11 AA", "Red Lake Rockets U11", "Red Lake"]
+      "aliases": [
+        "Red Lake Rockets U11 AA",
+        "Red Lake Rockets U11",
+        "Red Lake"
+      ]
     },
     "Richmond Hill Jaguars": {
-      "aliases": ["Richmond Hill Jaguars U11 AA", "Richmond Hill Jaguars U11", "Richmond Hill"]
+      "aliases": [
+        "Richmond Hill Jaguars U11 AA",
+        "Richmond Hill Jaguars U11",
+        "Richmond Hill"
+      ]
     },
     "Scarborough Ice Raiders": {
-      "aliases": ["Scarborough Ice Raiders U11 AA", "Scarborough Ice Raiders U11"]
+      "aliases": [
+        "Scarborough Ice Raiders U11 AA",
+        "Scarborough Ice Raiders U11"
+      ]
     },
     "Scarborough Young Bruins": {
-      "aliases": ["Scarborough Young Bruins U11 AA", "Scarborough Young Bruins U11"]
+      "aliases": [
+        "Scarborough Young Bruins U11 AA",
+        "Scarborough Young Bruins U11"
+      ]
     },
     "Seaway Valley Rapids": {
-      "aliases": ["Seaway Valley Rapids U11 AA", "Seaway Valley Rapids U11", "Seaway Valley Rapids U11 A"]
+      "aliases": [
+        "Seaway Valley Rapids U11 AA",
+        "Seaway Valley Rapids U11",
+        "Seaway Valley Rapids U11 A"
+      ]
     },
     "Sioux Lookout Jr Bombers": {
-      "aliases": ["Sioux Lookout Jr Bombers U11 AA", "Sioux Lookout Jr Bombers U11", "Sioux Lookout"]
+      "aliases": [
+        "Sioux Lookout Jr Bombers U11 AA",
+        "Sioux Lookout Jr Bombers U11",
+        "Sioux Lookout"
+      ]
     },
     "Soo Jr Greyhounds": {
-      "aliases": ["Soo Jr Greyhounds U11 AA", "Soo Jr Greyhounds U11", "Soo Greyhounds"]
+      "aliases": [
+        "Soo Jr Greyhounds U11 AA",
+        "Soo Jr Greyhounds U11",
+        "Soo Greyhounds"
+      ]
     },
     "South Simcoe Storm": {
-      "aliases": ["South Simcoe Storm U11 AA", "South Simcoe Storm U11", "South Simcoe"]
+      "aliases": [
+        "South Simcoe Storm U11 AA",
+        "South Simcoe Storm U11",
+        "South Simcoe"
+      ]
     },
     "St Catharines Jr Falcons": {
-      "aliases": ["St Catharines Jr Falcons U11 AA", "St Catharines Jr Falcons U11", "Garden City Falcons", "Garden City Minor Falcons", "St. Catharines Falcons", "St Catharines Falcons", "Garden City"]
+      "aliases": [
+        "St Catharines Jr Falcons U11 AA",
+        "St Catharines Jr Falcons U11",
+        "Garden City Minor Falcons",
+        "Garden City Falcons",
+        "Garden City Minor Falcons U11",
+        "Garden City Minor Falcons U11 AA",
+        "Garden City Falcons U11",
+        "Garden City Falcons U11 AA",
+        "St. Catharines Falcons",
+        "St Catharines Falcons",
+        "Garden City"
+      ]
     },
     "St Thomas Jr Stars": {
-      "aliases": ["St Thomas Jr Stars U11 AA", "St Thomas Jr Stars U11", "St. Thomas Stars", "St Thomas Stars", "St Thomas", "St. Thomas"]
+      "aliases": [
+        "St Thomas Jr Stars U11 AA",
+        "St Thomas Jr Stars U11",
+        "St. Thomas Stars",
+        "St Thomas Stars",
+        "St Thomas",
+        "St. Thomas"
+      ]
     },
     "Stoney Creek Warriors": {
-      "aliases": ["Stoney Creek Warriors U11 AA", "Stoney Creek Warriors U11", "Stoney Creek"]
+      "aliases": [
+        "Stoney Creek Warriors U11 AA",
+        "Stoney Creek Warriors U11",
+        "Stoney Creek"
+      ]
     },
     "Stouffville Clippers": {
-      "aliases": ["Stouffville Clippers U11 AA", "Stouffville Clippers U11", "Stouffville"]
+      "aliases": [
+        "Stouffville Clippers U11 AA",
+        "Stouffville Clippers U11",
+        "Stouffville"
+      ]
     },
     "Streetsville Tigers": {
-      "aliases": ["Streetsville Tigers U11 AA", "Streetsville Tigers U11", "Streetsville"]
+      "aliases": [
+        "Streetsville Tigers U11 AA",
+        "Streetsville Tigers U11",
+        "Streetsville"
+      ]
     },
     "Sudbury Wolves": {
-      "aliases": ["Sudbury Wolves U11 AA", "Sudbury Wolves U11", "Sudbury"]
+      "aliases": [
+        "Sudbury Wolves U11 AA",
+        "Sudbury Wolves U11",
+        "Sudbury"
+      ]
     },
     "Ted Reeve Thunder": {
-      "aliases": ["Ted Reeve Thunder U11 AA", "Ted Reeve Thunder U11", "Ted Reeve"]
+      "aliases": [
+        "Ted Reeve Thunder U11 AA",
+        "Ted Reeve Thunder U11",
+        "Ted Reeve"
+      ]
     },
     "Thunder Bay Elks": {
-      "aliases": ["Thunder Bay Elks U11 AA", "Thunder Bay Elks U11"]
+      "aliases": [
+        "Thunder Bay Elks U11 AA",
+        "Thunder Bay Elks U11"
+      ]
     },
     "Timmins North Stars": {
-      "aliases": ["Timmins North Stars U11 AA", "Timmins North Stars U11", "Timmins"]
+      "aliases": [
+        "Timmins North Stars U11 AA",
+        "Timmins North Stars U11",
+        "Timmins"
+      ]
     },
     "TNT Tornados": {
-      "aliases": ["TNT Tornados U11 AA", "TNT Tornados U11", "Alliston TNT Tornados", "TNT Tornadoes", "TNT"]
+      "aliases": [
+        "TNT Tornados U11 AA",
+        "TNT Tornados U11",
+        "Alliston TNT Tornados",
+        "TNT Tornadoes",
+        "TNT"
+      ]
     },
     "Toronto Aeros": {
-      "aliases": ["Toronto Aeros U11 AA", "Toronto Aeros U11"]
+      "aliases": [
+        "Toronto Aeros U11 AA",
+        "Toronto Aeros U11"
+      ]
     },
     "Toronto Attack": {
-      "aliases": ["Toronto Attack U11 AA", "Toronto Attack U11"]
+      "aliases": [
+        "Toronto Attack U11 AA",
+        "Toronto Attack U11"
+      ]
     },
     "Toronto Eagles": {
-      "aliases": ["Toronto Eagles U11 AA", "Toronto Eagles U11"]
+      "aliases": [
+        "Toronto Eagles U11 AA",
+        "Toronto Eagles U11"
+      ]
     },
     "Toronto Wolverines": {
-      "aliases": ["Toronto Wolverines U11 AA", "Toronto Wolverines U11"]
+      "aliases": [
+        "Toronto Wolverines U11 AA",
+        "Toronto Wolverines U11"
+      ]
     },
     "Upper Ottawa Valley Aces": {
-      "aliases": ["Upper Ottawa Valley Aces U11 AA", "Upper Ottawa Valley Aces U11", "Upper Ottawa Valley Aces U11 A"]
+      "aliases": [
+        "Upper Ottawa Valley Aces U11 AA",
+        "Upper Ottawa Valley Aces U11",
+        "Upper Ottawa Valley Aces U11 A"
+      ]
     },
     "Upper York Admirals": {
-      "aliases": ["Upper York Admirals U11 AA", "Upper York Admirals U11", "Upper York"]
+      "aliases": [
+        "Upper York Admirals U11 AA",
+        "Upper York Admirals U11",
+        "Upper York"
+      ]
     },
     "Vaughan Panthers": {
-      "aliases": ["Vaughan Panthers U11 AA", "Vaughan Panthers U11"]
+      "aliases": [
+        "Vaughan Panthers U11 AA",
+        "Vaughan Panthers U11"
+      ]
     },
     "Vaughan Rangers": {
-      "aliases": ["Vaughan Rangers U11 AA", "Vaughan Rangers U11"]
+      "aliases": [
+        "Vaughan Rangers U11 AA",
+        "Vaughan Rangers U11"
+      ]
     },
     "Volunteer Pool Bearcats": {
-      "aliases": ["Volunteer Pool Bearcats U11 AA", "Volunteer Pool Bearcats U11", "Volunteer Pool"]
+      "aliases": [
+        "Volunteer Pool Bearcats U11 AA",
+        "Volunteer Pool Bearcats U11",
+        "Volunteer Pool"
+      ]
     },
     "Waterloo Wolves": {
-      "aliases": ["Waterloo Wolves U11 AA", "Waterloo Wolves U11", "Waterloo"]
+      "aliases": [
+        "Waterloo Wolves U11 AA",
+        "Waterloo Wolves U11",
+        "Waterloo"
+      ]
     },
     "West Mall Lightning": {
-      "aliases": ["West Mall Lightning U11 AA", "West Mall Lightning U11"]
+      "aliases": [
+        "West Mall Lightning U11 AA",
+        "West Mall Lightning U11"
+      ]
     },
     "West Niagara Flying Aces": {
-      "aliases": ["West Niagara Flying Aces U11 AA", "West Niagara Flying Aces U11", "West Niagara"]
+      "aliases": [
+        "West Niagara Flying Aces U11 AA",
+        "West Niagara Flying Aces U11",
+        "West Niagara"
+      ]
     },
     "Westfort Rangers": {
-      "aliases": ["Westfort Rangers U11 AA", "Westfort Rangers U11"]
+      "aliases": [
+        "Westfort Rangers U11 AA",
+        "Westfort Rangers U11"
+      ]
     },
     "Whitby Wildcats": {
-      "aliases": ["Whitby Wildcats U11 AA", "Whitby Wildcats U11", "WHITBY AA U11", "Whitby Wildcats Blue", "Whitby Wildcats White", "Whitby Blue", "Whitby White", "Whitby"]
+      "aliases": [
+        "Whitby Wildcats U11 AA",
+        "Whitby Wildcats U11",
+        "WHITBY AA U11",
+        "Whitby Wildcats Blue",
+        "Whitby Wildcats White",
+        "Whitby Blue",
+        "Whitby White",
+        "Whitby"
+      ]
     },
     "Woodstock Jr Navy Vets": {
-      "aliases": ["Woodstock Jr Navy Vets U11 AA", "Woodstock Jr Navy Vets U11", "Woodstock"]
+      "aliases": [
+        "Woodstock Jr Navy Vets U11 AA",
+        "Woodstock Jr Navy Vets U11",
+        "Woodstock"
+      ]
     }
   },
   "U14 AA": {
     "Ajax Pickering Raiders": {
-      "aliases": ["Ajax Pickering Raiders U14 AA", "Ajax Pickering Raiders U14", "AJAX-PICKERING AA U14", "Ajax Pickering", "Ajax-Pickering", "Raiders"]
+      "aliases": [
+        "Ajax Pickering Raiders U14 AA",
+        "Ajax Pickering Raiders U14",
+        "AJAX-PICKERING AA U14",
+        "Ajax Pickering",
+        "Ajax-Pickering",
+        "Raiders"
+      ]
     },
     "Aurora Tigers": {
-      "aliases": ["Aurora Tigers U14 AA", "Aurora Tigers U14", "Aurora"]
+      "aliases": [
+        "Aurora Tigers U14 AA",
+        "Aurora Tigers U14",
+        "Aurora"
+      ]
     },
     "Barrie Colts": {
-      "aliases": ["Barrie Colts U14 AA", "Barrie Colts U14", "Barrie"]
+      "aliases": [
+        "Barrie Colts U14 AA",
+        "Barrie Colts U14",
+        "Barrie"
+      ]
     },
     "Belleville Jr Bulls": {
-      "aliases": ["Belleville Jr Bulls U14 AA", "Belleville Jr Bulls U14", "BELLEVILLE AA U14", "Belleville Bulls", "Belleville"]
+      "aliases": [
+        "Belleville Jr Bulls U14 AA",
+        "Belleville Jr Bulls U14",
+        "BELLEVILLE AA U14",
+        "Belleville Bulls",
+        "Belleville"
+      ]
     },
     "Brampton 45s": {
-      "aliases": ["Brampton 45s U14 AA", "Brampton 45s U14", "Brampton 45's", "Brampton"]
+      "aliases": [
+        "Brampton 45s U14 AA",
+        "Brampton 45s U14",
+        "Brampton 45's",
+        "Brampton"
+      ]
     },
     "Brantford 99ers": {
-      "aliases": ["Brantford 99ers U14 AA", "Brantford 99ers U14", "Brantford"]
+      "aliases": [
+        "Brantford 99ers U14 AA",
+        "Brantford 99ers U14",
+        "Brantford"
+      ]
     },
     "Burlington Eagles": {
-      "aliases": ["Burlington Eagles U14 AA", "Burlington Eagles U14", "Burlington Eagles (Gold)", "Burlington"]
+      "aliases": [
+        "Burlington Eagles U14 AA",
+        "Burlington Eagles U14",
+        "Burlington Eagles (Gold)",
+        "Burlington"
+      ]
     },
     "Caledon Hawks": {
-      "aliases": ["Caledon Hawks U14 AA", "Caledon Hawks U14", "Caledon"]
+      "aliases": [
+        "Caledon Hawks U14 AA",
+        "Caledon Hawks U14",
+        "Caledon"
+      ]
     },
     "Centre Wellington Fusion": {
-      "aliases": ["Centre Wellington Fusion U14 AA", "Centre Wellington Fusion U14", "Centre Wellington", "CW Fusion"]
+      "aliases": [
+        "Centre Wellington Fusion U14 AA",
+        "Centre Wellington Fusion U14",
+        "Centre Wellington",
+        "CW Fusion"
+      ]
     },
     "Clarington Toros": {
-      "aliases": ["Clarington Toros U14 AA", "Clarington Toros U14", "CLARINGTON AA U14", "Clarington"]
+      "aliases": [
+        "Clarington Toros U14 AA",
+        "Clarington Toros U14",
+        "CLARINGTON AA U14",
+        "Clarington"
+      ]
     },
     "Collingwood Jr Blues": {
-      "aliases": ["Collingwood Jr Blues U14 AA", "Collingwood Jr Blues U14", "Collingwood Blues", "Collingwood"]
+      "aliases": [
+        "Collingwood Jr Blues U14 AA",
+        "Collingwood Jr Blues U14",
+        "Collingwood Blues",
+        "Collingwood"
+      ]
     },
     "Copper Cliff Reds": {
-      "aliases": ["Copper Cliff Reds U14 AA", "Copper Cliff Reds U14", "Copper Cliff"]
+      "aliases": [
+        "Copper Cliff Reds U14 AA",
+        "Copper Cliff Reds U14",
+        "Copper Cliff"
+      ]
     },
     "Cumberland Jr Grads": {
-      "aliases": ["Cumberland Jr Grads U14 AA", "Cumberland Jr Grads U14", "Cumberland"]
+      "aliases": [
+        "Cumberland Jr Grads U14 AA",
+        "Cumberland Jr Grads U14",
+        "Cumberland"
+      ]
     },
     "Duffield Devils": {
-      "aliases": ["Duffield Devils U14 AA", "Duffield Devils U14", "Duffield"]
+      "aliases": [
+        "Duffield Devils U14 AA",
+        "Duffield Devils U14",
+        "Duffield"
+      ]
     },
     "East Enders Ticats": {
-      "aliases": ["East Enders Ticats U14 AA", "East Enders Ticats U14", "East Enders"]
+      "aliases": [
+        "East Enders Ticats U14 AA",
+        "East Enders Ticats U14",
+        "East Enders"
+      ]
     },
     "Eastern Ontario Cobras": {
-      "aliases": ["Eastern Ontario Cobras U14 AA", "Eastern Ontario Cobras U14", "Eastern Ontario"]
+      "aliases": [
+        "Eastern Ontario Cobras U14 AA",
+        "Eastern Ontario Cobras U14",
+        "Eastern Ontario"
+      ]
     },
     "Faustina Toros": {
-      "aliases": ["Faustina Toros U14 AA", "Faustina Toros U14", "Faustina"]
+      "aliases": [
+        "Faustina Toros U14 AA",
+        "Faustina Toros U14",
+        "Faustina"
+      ]
     },
     "Flamborough Sabres": {
-      "aliases": ["Flamborough Sabres U14 AA", "Flamborough Sabres U14", "Flamborough"]
+      "aliases": [
+        "Flamborough Sabres U14 AA",
+        "Flamborough Sabres U14",
+        "Flamborough"
+      ]
     },
     "Forest Hill Force": {
-      "aliases": ["Forest Hill Force U14 AA", "Forest Hill Force U14", "Forest Hill"]
+      "aliases": [
+        "Forest Hill Force U14 AA",
+        "Forest Hill Force U14",
+        "Forest Hill"
+      ]
     },
     "Glancaster Bombers": {
-      "aliases": ["Glancaster Bombers U14 AA", "Glancaster Bombers U14", "Glancaster"]
+      "aliases": [
+        "Glancaster Bombers U14 AA",
+        "Glancaster Bombers U14",
+        "Glancaster"
+      ]
     },
     "Gloucester Rangers": {
-      "aliases": ["Gloucester Rangers U14 AA", "Gloucester Rangers U14", "Gloucester"]
+      "aliases": [
+        "Gloucester Rangers U14 AA",
+        "Gloucester Rangers U14",
+        "Gloucester"
+      ]
     },
     "Greater Toronto Capitals": {
-      "aliases": ["Greater Toronto Capitals U14 AA", "Greater Toronto Capitals U14", "GT Capitals"]
+      "aliases": [
+        "Greater Toronto Capitals U14 AA",
+        "Greater Toronto Capitals U14",
+        "GT Capitals"
+      ]
     },
     "Guelph Gryphons": {
-      "aliases": ["Guelph Gryphons U14 AA", "Guelph Gryphons U14", "Guelph"]
+      "aliases": [
+        "Guelph Gryphons U14 AA",
+        "Guelph Gryphons U14",
+        "Guelph"
+      ]
     },
     "Halton Hills Thunder": {
-      "aliases": ["Halton Hills Thunder U14 AA", "Halton Hills Thunder U14", "Halton Hills"]
+      "aliases": [
+        "Halton Hills Thunder U14 AA",
+        "Halton Hills Thunder U14",
+        "Halton Hills"
+      ]
     },
     "Hamilton Steel": {
-      "aliases": ["Hamilton Steel U14 AA", "Hamilton Steel U14", "Hamilton Huskies", "Hamilton"]
+      "aliases": [
+        "Hamilton Steel U14 AA",
+        "Hamilton Steel U14",
+        "Hamilton Huskies",
+        "Hamilton"
+      ]
     },
     "Hespeler Shamrocks": {
-      "aliases": ["Hespeler Shamrocks U14 AA", "Hespeler Shamrocks U14", "Hespeler"]
+      "aliases": [
+        "Hespeler Shamrocks U14 AA",
+        "Hespeler Shamrocks U14",
+        "Hespeler"
+      ]
     },
     "Humber Valley Sharks": {
-      "aliases": ["Humber Valley Sharks U14 AA", "Humber Valley Sharks U14", "Humber Valley"]
+      "aliases": [
+        "Humber Valley Sharks U14 AA",
+        "Humber Valley Sharks U14",
+        "Humber Valley"
+      ]
     },
     "Kanata Blazers": {
-      "aliases": ["Kanata Blazers U14 AA", "Kanata Blazers U14", "Kanata"]
+      "aliases": [
+        "Kanata Blazers U14 AA",
+        "Kanata Blazers U14",
+        "Kanata"
+      ]
     },
     "King Rebellion": {
-      "aliases": ["King Rebellion U14 AA", "King Rebellion U14", "King"]
+      "aliases": [
+        "King Rebellion U14 AA",
+        "King Rebellion U14",
+        "King"
+      ]
     },
     "Kingston Canadians": {
-      "aliases": ["Kingston Canadians U14 AA", "Kingston Canadians U14", "KINGSTON AA U14", "Kingston"]
+      "aliases": [
+        "Kingston Canadians U14 AA",
+        "Kingston Canadians U14",
+        "KINGSTON AA U14",
+        "Kingston"
+      ]
     },
     "Kitchener Jr Rangers (Red)": {
-      "aliases": ["Kitchener Jr Rangers (Red) U14 AA", "Kitchener Jr Rangers (Red) U14", "Kitchener Jr Rangers Red", "Kitchener Red", "Kitchener Jr Rangers"]
+      "aliases": [
+        "Kitchener Jr Rangers (Red) U14 AA",
+        "Kitchener Jr Rangers (Red) U14",
+        "Kitchener Jr Rangers Red",
+        "Kitchener Red",
+        "Kitchener Jr Rangers"
+      ]
     },
     "Leaside Flames": {
-      "aliases": ["Leaside Flames U14 AA", "Leaside Flames U14", "Leaside"]
+      "aliases": [
+        "Leaside Flames U14 AA",
+        "Leaside Flames U14",
+        "Leaside"
+      ]
     },
     "London Jr Knights (Green)": {
-      "aliases": ["London Jr Knights (Green) U14 AA", "London Jr Knights (Green) U14", "London Jr Knights Green", "London Green", "London Jr Knights"]
+      "aliases": [
+        "London Jr Knights (Green) U14 AA",
+        "London Jr Knights (Green) U14",
+        "London Jr Knights Green",
+        "London Green",
+        "London Jr Knights"
+      ]
     },
     "London Jr Knights (White)": {
-      "aliases": ["London Jr Knights (White) U14 AA", "London Jr Knights (White) U14", "London Jr Knights White", "London White"]
+      "aliases": [
+        "London Jr Knights (White) U14 AA",
+        "London Jr Knights (White) U14",
+        "London Jr Knights White",
+        "London White"
+      ]
     },
     "Markham Islanders": {
-      "aliases": ["Markham Islanders U14 AA", "Markham Islanders U14"]
+      "aliases": [
+        "Markham Islanders U14 AA",
+        "Markham Islanders U14"
+      ]
     },
     "Markham Waxers": {
-      "aliases": ["Markham Waxers U14 AA", "Markham Waxers U14", "Markham"]
+      "aliases": [
+        "Markham Waxers U14 AA",
+        "Markham Waxers U14",
+        "Markham"
+      ]
     },
     "Milton Winterhawks": {
-      "aliases": ["Milton Winterhawks U14 AA", "Milton Winterhawks U14", "Milton"]
+      "aliases": [
+        "Milton Winterhawks U14 AA",
+        "Milton Winterhawks U14",
+        "Milton"
+      ]
     },
     "Mississauga Beast": {
-      "aliases": ["Mississauga Beast U14 AA", "Mississauga Beast U14"]
+      "aliases": [
+        "Mississauga Beast U14 AA",
+        "Mississauga Beast U14"
+      ]
     },
     "Mississauga North Stars": {
-      "aliases": ["Mississauga North Stars U14 AA", "Mississauga North Stars U14"]
+      "aliases": [
+        "Mississauga North Stars U14 AA",
+        "Mississauga North Stars U14"
+      ]
     },
     "Mississauga Rattlers": {
-      "aliases": ["Mississauga Rattlers U14 AA", "Mississauga Rattlers U14"]
+      "aliases": [
+        "Mississauga Rattlers U14 AA",
+        "Mississauga Rattlers U14"
+      ]
     },
     "Mississauga Terriers": {
-      "aliases": ["Mississauga Terriers U14 AA", "Mississauga Terriers U14"]
+      "aliases": [
+        "Mississauga Terriers U14 AA",
+        "Mississauga Terriers U14"
+      ]
     },
     "Mt Brydges Cougars": {
-      "aliases": ["Mt Brydges Cougars U14 AA", "Mt Brydges Cougars U14", "Mount Brydges Cougars", "Mt. Brydges Cougars", "Mt Brydges", "Mount Brydges"]
+      "aliases": [
+        "Mt Brydges Cougars U14 AA",
+        "Mt Brydges Cougars U14",
+        "Mount Brydges Cougars",
+        "Mt. Brydges Cougars",
+        "Mt Brydges",
+        "Mount Brydges"
+      ]
     },
     "Nepean Raiders": {
-      "aliases": ["Nepean Raiders U14 AA", "Nepean Raiders U14", "Nepean"]
+      "aliases": [
+        "Nepean Raiders U14 AA",
+        "Nepean Raiders U14",
+        "Nepean"
+      ]
     },
     "Newmarket Renegades": {
-      "aliases": ["Newmarket Renegades U14 AA", "Newmarket Renegades U14", "Newmarket"]
+      "aliases": [
+        "Newmarket Renegades U14 AA",
+        "Newmarket Renegades U14",
+        "Newmarket"
+      ]
     },
     "Niagara Falls Canucks": {
-      "aliases": ["Niagara Falls Canucks U14 AA", "Niagara Falls Canucks U14", "Niagara Falls"]
+      "aliases": [
+        "Niagara Falls Canucks U14 AA",
+        "Niagara Falls Canucks U14",
+        "Niagara Falls"
+      ]
     },
     "Nickel City Cubs": {
-      "aliases": ["Nickel City Cubs U14 AA", "Nickel City Cubs U14", "Nickel City"]
+      "aliases": [
+        "Nickel City Cubs U14 AA",
+        "Nickel City Cubs U14",
+        "Nickel City"
+      ]
     },
     "Norfolk Knights": {
-      "aliases": ["Norfolk Knights U14 AA", "Norfolk Knights U14", "Norfolk"]
+      "aliases": [
+        "Norfolk Knights U14 AA",
+        "Norfolk Knights U14",
+        "Norfolk"
+      ]
     },
     "North Bay Trappers": {
-      "aliases": ["North Bay Trappers U14 AA", "North Bay Trappers U14", "North Bay"]
+      "aliases": [
+        "North Bay Trappers U14 AA",
+        "North Bay Trappers U14",
+        "North Bay"
+      ]
     },
     "North Durham Warriors": {
-      "aliases": ["North Durham Warriors U14 AA", "North Durham Warriors U14", "North Durham"]
+      "aliases": [
+        "North Durham Warriors U14 AA",
+        "North Durham Warriors U14",
+        "North Durham"
+      ]
     },
     "North Toronto": {
-      "aliases": ["North Toronto U14 AA", "North Toronto U14"]
+      "aliases": [
+        "North Toronto U14 AA",
+        "North Toronto U14"
+      ]
     },
     "North York Knights": {
-      "aliases": ["North York Knights U14 AA", "North York Knights U14"]
+      "aliases": [
+        "North York Knights U14 AA",
+        "North York Knights U14"
+      ]
     },
     "Northumberland Nighthawks": {
-      "aliases": ["Northumberland Nighthawks U14 AA", "Northumberland Nighthawks U14", "NORTHUMBERLAND AA U14", "Northumberland"]
+      "aliases": [
+        "Northumberland Nighthawks U14 AA",
+        "Northumberland Nighthawks U14",
+        "NORTHUMBERLAND AA U14",
+        "Northumberland"
+      ]
     },
     "Oakville Rangers": {
-      "aliases": ["Oakville Rangers U14 AA", "Oakville Rangers U14", "Oakville Rangers Blue", "Oakville Rangers Red", "Oakville Blue", "Oakville Red", "Oakville"]
+      "aliases": [
+        "Oakville Rangers U14 AA",
+        "Oakville Rangers U14",
+        "Oakville Rangers Blue",
+        "Oakville Rangers Red",
+        "Oakville Blue",
+        "Oakville Red",
+        "Oakville"
+      ]
     },
     "Orangeville Flyers": {
-      "aliases": ["Orangeville Flyers U14 AA", "Orangeville Flyers U14", "Orangeville"]
+      "aliases": [
+        "Orangeville Flyers U14 AA",
+        "Orangeville Flyers U14",
+        "Orangeville"
+      ]
     },
     "Oshawa Generals": {
-      "aliases": ["Oshawa Generals U14 AA", "Oshawa Generals U14", "OSHAWA AA U14", "Oshawa"]
+      "aliases": [
+        "Oshawa Generals U14 AA",
+        "Oshawa Generals U14",
+        "OSHAWA AA U14",
+        "Oshawa"
+      ]
     },
     "Ottawa Sting": {
-      "aliases": ["Ottawa Sting U14 AA", "Ottawa Sting U14", "Ottawa"]
+      "aliases": [
+        "Ottawa Sting U14 AA",
+        "Ottawa Sting U14",
+        "Ottawa"
+      ]
     },
     "Ottawa Valley Silver Seven": {
-      "aliases": ["Ottawa Valley Silver Seven U14 AA", "Ottawa Valley Silver Seven U14", "Silver Seven"]
+      "aliases": [
+        "Ottawa Valley Silver Seven U14 AA",
+        "Ottawa Valley Silver Seven U14",
+        "Silver Seven"
+      ]
     },
     "Peterborough Petes": {
-      "aliases": ["Peterborough Petes U14 AA", "Peterborough Petes U14", "PETERBOROUGH AA U14", "Peterborough"]
+      "aliases": [
+        "Peterborough Petes U14 AA",
+        "Peterborough Petes U14",
+        "PETERBOROUGH AA U14",
+        "Peterborough"
+      ]
     },
     "Quinte West Golden Hawks": {
-      "aliases": ["Quinte West Golden Hawks U14 AA", "Quinte West Golden Hawks U14", "QUINTE WEST AA U14", "Quinte West"]
+      "aliases": [
+        "Quinte West Golden Hawks U14 AA",
+        "Quinte West Golden Hawks U14",
+        "QUINTE WEST AA U14",
+        "Quinte West"
+      ]
     },
     "Rideau St Lawrence Kings": {
-      "aliases": ["Rideau St Lawrence Kings U14 AA", "Rideau St Lawrence Kings U14", "Rideau St Lawrence"]
+      "aliases": [
+        "Rideau St Lawrence Kings U14 AA",
+        "Rideau St Lawrence Kings U14",
+        "Rideau St Lawrence"
+      ]
     },
     "Scarborough Ice Raiders": {
-      "aliases": ["Scarborough Ice Raiders U14 AA", "Scarborough Ice Raiders U14"]
+      "aliases": [
+        "Scarborough Ice Raiders U14 AA",
+        "Scarborough Ice Raiders U14"
+      ]
     },
     "Scarborough Young Bruins": {
-      "aliases": ["Scarborough Young Bruins U14 AA", "Scarborough Young Bruins U14"]
+      "aliases": [
+        "Scarborough Young Bruins U14 AA",
+        "Scarborough Young Bruins U14"
+      ]
     },
     "Seaway Valley Rapids": {
-      "aliases": ["Seaway Valley Rapids U14 AA", "Seaway Valley Rapids U14", "Seaway Valley"]
+      "aliases": [
+        "Seaway Valley Rapids U14 AA",
+        "Seaway Valley Rapids U14",
+        "Seaway Valley"
+      ]
     },
     "Soo Jr Greyhounds": {
-      "aliases": ["Soo Jr Greyhounds U14 AA", "Soo Jr Greyhounds U14", "Soo Greyhounds"]
+      "aliases": [
+        "Soo Jr Greyhounds U14 AA",
+        "Soo Jr Greyhounds U14",
+        "Soo Greyhounds"
+      ]
     },
     "South Simcoe Storm": {
-      "aliases": ["South Simcoe Storm U14 AA", "South Simcoe Storm U14", "South Simcoe"]
+      "aliases": [
+        "South Simcoe Storm U14 AA",
+        "South Simcoe Storm U14",
+        "South Simcoe"
+      ]
     },
     "St Catharines Jr Falcons": {
-      "aliases": ["St Catharines Jr Falcons U14 AA", "St Catharines Jr Falcons U14", "Garden City Falcons", "Garden City Minor Falcons", "St. Catharines Falcons", "St Catharines Falcons", "Garden City"]
+      "aliases": [
+        "St Catharines Jr Falcons U14 AA",
+        "St Catharines Jr Falcons U14",
+        "Garden City Minor Falcons",
+        "Garden City Falcons",
+        "Garden City Minor Falcons U14",
+        "Garden City Minor Falcons U14 AA",
+        "Garden City Falcons U14",
+        "Garden City Falcons U14 AA",
+        "St. Catharines Falcons",
+        "St Catharines Falcons",
+        "Garden City"
+      ]
     },
     "St Thomas Jr Stars": {
-      "aliases": ["St Thomas Jr Stars U14 AA", "St Thomas Jr Stars U14", "St. Thomas Stars", "St Thomas Stars", "St Thomas", "St. Thomas"]
+      "aliases": [
+        "St Thomas Jr Stars U14 AA",
+        "St Thomas Jr Stars U14",
+        "St. Thomas Stars",
+        "St Thomas Stars",
+        "St Thomas",
+        "St. Thomas"
+      ]
     },
     "Stouffville Clippers": {
-      "aliases": ["Stouffville Clippers U14 AA", "Stouffville Clippers U14", "Stouffville"]
+      "aliases": [
+        "Stouffville Clippers U14 AA",
+        "Stouffville Clippers U14",
+        "Stouffville"
+      ]
     },
     "Stratford Warriors": {
-      "aliases": ["Stratford Warriors U14 AA", "Stratford Warriors U14", "Stratford"]
+      "aliases": [
+        "Stratford Warriors U14 AA",
+        "Stratford Warriors U14",
+        "Stratford"
+      ]
     },
     "Streetsville Tigers": {
-      "aliases": ["Streetsville Tigers U14 AA", "Streetsville Tigers U14", "Streetsville"]
+      "aliases": [
+        "Streetsville Tigers U14 AA",
+        "Streetsville Tigers U14",
+        "Streetsville"
+      ]
     },
     "Sudbury Wolves": {
-      "aliases": ["Sudbury Wolves U14 AA", "Sudbury Wolves U14", "Sudbury"]
+      "aliases": [
+        "Sudbury Wolves U14 AA",
+        "Sudbury Wolves U14",
+        "Sudbury"
+      ]
     },
     "Ted Reeve Thunder": {
-      "aliases": ["Ted Reeve Thunder U14 AA", "Ted Reeve Thunder U14", "Ted Reeve"]
+      "aliases": [
+        "Ted Reeve Thunder U14 AA",
+        "Ted Reeve Thunder U14",
+        "Ted Reeve"
+      ]
     },
     "Timmins North Stars": {
-      "aliases": ["Timmins North Stars U14 AA", "Timmins North Stars U14", "Timmins"]
+      "aliases": [
+        "Timmins North Stars U14 AA",
+        "Timmins North Stars U14",
+        "Timmins"
+      ]
     },
     "TNT Tornados": {
-      "aliases": ["TNT Tornados U14 AA", "TNT Tornados U14", "Alliston TNT Tornados", "TNT Tornadoes", "TNT"]
+      "aliases": [
+        "TNT Tornados U14 AA",
+        "TNT Tornados U14",
+        "Alliston TNT Tornados",
+        "TNT Tornadoes",
+        "TNT"
+      ]
     },
     "Toronto Avalanche": {
-      "aliases": ["Toronto Avalanche U14 AA", "Toronto Avalanche U14"]
+      "aliases": [
+        "Toronto Avalanche U14 AA",
+        "Toronto Avalanche U14"
+      ]
     },
     "Toronto Eagles": {
-      "aliases": ["Toronto Eagles U14 AA", "Toronto Eagles U14"]
+      "aliases": [
+        "Toronto Eagles U14 AA",
+        "Toronto Eagles U14"
+      ]
     },
     "Upper Ottawa Valley Aces": {
-      "aliases": ["Upper Ottawa Valley Aces U14 AA", "Upper Ottawa Valley Aces U14"]
+      "aliases": [
+        "Upper Ottawa Valley Aces U14 AA",
+        "Upper Ottawa Valley Aces U14"
+      ]
     },
     "Upper York Admirals": {
-      "aliases": ["Upper York Admirals U14 AA", "Upper York Admirals U14", "Upper York"]
+      "aliases": [
+        "Upper York Admirals U14 AA",
+        "Upper York Admirals U14",
+        "Upper York"
+      ]
     },
     "Vaughan Rangers": {
-      "aliases": ["Vaughan Rangers U14 AA", "Vaughan Rangers U14"]
+      "aliases": [
+        "Vaughan Rangers U14 AA",
+        "Vaughan Rangers U14"
+      ]
     },
     "West Niagara Flying Aces": {
-      "aliases": ["West Niagara Flying Aces U14 AA", "West Niagara Flying Aces U14", "West Niagara"]
+      "aliases": [
+        "West Niagara Flying Aces U14 AA",
+        "West Niagara Flying Aces U14",
+        "West Niagara"
+      ]
     },
     "Whitby Wildcats": {
-      "aliases": ["Whitby Wildcats U14 AA", "Whitby Wildcats U14", "WHITBY AA U14", "Whitby Wildcats Blue", "Whitby Wildcats White", "Whitby Blue", "Whitby White", "Whitby"]
+      "aliases": [
+        "Whitby Wildcats U14 AA",
+        "Whitby Wildcats U14",
+        "WHITBY AA U14",
+        "Whitby Wildcats Blue",
+        "Whitby Wildcats White",
+        "Whitby Blue",
+        "Whitby White",
+        "Whitby"
+      ]
     },
     "Woodstock Jr Navy Vets": {
-      "aliases": ["Woodstock Jr Navy Vets U14 AA", "Woodstock Jr Navy Vets U14", "Woodstock"]
+      "aliases": [
+        "Woodstock Jr Navy Vets U14 AA",
+        "Woodstock Jr Navy Vets U14",
+        "Woodstock"
+      ]
     }
   }
 }
