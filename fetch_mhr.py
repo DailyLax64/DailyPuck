@@ -11,7 +11,7 @@ SCRAPER_API_KEY = os.environ.get("SCRAPER_API_KEY", "").strip()
 
 MHR_DIVISIONS = {
     "U11 AA": "https://myhockeyrankings.com/rank.php?y=2026&a=1&v=142&view=alphabetic",
-    "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&a=1&v=145&view=alphabetic"
+    "U14 AA": "https://myhockeyrankings.com/rank.php?y=2026&v=145&view=alphabetic"
 }
 
 class MHRTableParser(HTMLParser):
@@ -82,7 +82,6 @@ def fetch_html(target_url, api_key):
         print("   ⚠️  SCRAPER_API_KEY secret not found. Attempting direct connection...")
         req_url = target_url
     else:
-        # Enable JS rendering and premium residential routing to solve Cloudflare Turnstile
         params = urllib.parse.urlencode({
             "api_key": api_key,
             "url": target_url,
