@@ -25,83 +25,11 @@ else:
 def clean_name(name):
     return ' '.join(str(name or "").split()).strip()
 
-# 2. Strict Precedence Division & Tier Parser
-def parse_hockey_division(team_name, div_title="", source_name="", fallback_tier=None):
-    team_clean = str(team_name or "").upper()
-    div_clean = str(div_title or "").upper()
-    source_clean = str(source_name or "").upper()
-
-    age = None
-    for txt in [team_clean, div_clean, source_clean]:
-        m_age = re.search(r'\bU[- ]?(\d{1,2})(?:[A-Z]|\b)|\bUNDER[- ]?(\d{1,2})\b', txt)
-        if m_age:
-            digits = m_age.group(1) or m_age.group(2)
-            age = f"U{digits}"
-            break
-
-    if not age:
-        traditional_map = [
-            (r'\bMINOR\s+NOVICE\b', 'U8'), (r'\b(MAJOR\s+NOVICE|NOVICE)\b', 'U9'),
-            (r'\bMINOR\s+ATOM\b', 'U10'), (r'\b(MAJOR\s+ATOM|ATOM)\b', 'U11'),
-            (r'\bMINOR\s+PEEWEE\b', 'U12'), (r'\b(MAJOR\s+PEEWEE|PEEWEE)\b', 'U13'),
-            (r'\bMINOR\s+BANTAM\b', 'U14'), (r'\b(MAJOR\s+BANTAM|BANTAM)\b', 'U15'),
-            (r'\bMINOR\s+MIDGET\b', 'U16'), (r'\b(MAJOR\s+MIDGET|MIDGET)\b', 'U18'),
-            (r'\bJUVENILE\b', 'U21')
-        ]
-        for txt in [team_clean, div_clean, source_clean]:
-            for pattern, trad_age in traditional_map:
-                if re.search(pattern, txt):
-                    age = trad_age
-                    break
-            if age: break
-
-    tier = None
-    confidence = 0
-
-    tier_patterns = [
-        (r'\bAAA\b', 'AAA'), (r'\bAA\b', 'AA'), (r'\bBB\b', 'BB'),
-        (r'\bCC\b', 'CC'), (r'\bMD\b', 'MD'), (r'\bTIER\s*1\b', 'Tier 1'),
-        (r'\bTIER\s*2\b', 'Tier 2'), (r'\bTIER\s*3\b', 'Tier 3'),
-        (r'\bSELECT\b', 'Select'), (r'\b(HOUSE\s*LEAGUE|HL)\b', 'HL'),
-        (r'\bA\b', 'A'), (r'\bB\b', 'B'), (r'\bC\b', 'C')
-    ]
-
-    m_attached = re.search(r'\bU\d{1,2}[- ]?(AAA|AA|BB|CC|MD|A|B|C)\b', team_clean)
-    if m_attached:
-        tier = m_attached.group(1)
-        confidence = 3
-    else:
-        for pat, val in tier_patterns:
-            if re.search(pat, team_clean):
-                tier = val
-                confidence = 3
-                break
-
-    if not tier and div_clean:
-        sanitized_div = re.sub(r'\b(POOL|GROUP|FLIGHT|BRACKET|ROUND|DIV|DIVISION|CONFERENCE)\s+[A-Z0-9]\b', '', div_clean).strip()
-        m_div_att = re.search(r'\bU\d{1,2}[- ]?(AAA|AA|BB|CC|MD|A|B|C)\b', sanitized_div)
-        if m_div_att:
-            tier = m_div_att.group(1)
-            confidence = 2
-        else:
-            for pat, val in tier_patterns:
-                if re.search(pat, sanitized_div):
-                    tier = val
-                    confidence = 2
-                    break
-
-    if not tier and fallback_tier and fallback_tier.upper() != "AUTO":
-        tier = fallback_tier.upper()
-        confidence = 1
-
-    if not tier:
-        for pat, val in tier_patterns:
-            if re.search(pat, source_clean):
-                tier = val
-                confidence = 1
-                break
-
-    return age or "Other", tier or "AA", confidence
+def normalize(s):
+    if not s: return ""
+    s = str(s).upper()
+    s = re.sub(r'[^A-Z0-9\s]', ' ', s)
+    return ' '.join(s.split())
 
 def fetch_json(url):
     req = urllib.request.Request(url, headers=headers)
@@ -112,41 +40,74 @@ def fetch_json(url):
         print(f"   ❌ Fetch error for {url}: {e}")
         return None
 
-# 3. Load Sources Configuration
+# 2. Load Master Whitelist & Sources
+if not os.path.exists("master_teams.json"):
+    raise FileNotFoundError("Critical error: master_teams.json is missing.")
+with open("master_teams.json", "r") as f:
+    master_teams_db = json.load(f)
+
 if not os.path.exists("sources.json"):
     raise FileNotFoundError("Critical error: sources.json is missing.")
-
 with open("sources.json", "r") as f:
     sources = json.load(f)
 
 all_sources = []
 for stype in ["leagues", "tournaments"]:
     for name, config in sources.get(stype, {}).items():
-        if isinstance(config, dict):
-            sid = str(config.get("id"))
-            forced_tier = config.get("tier", "Auto")
-        else:
-            sid = str(config)
-            forced_tier = "Auto"
-        all_sources.append({
-            "name": name,
-            "id": sid,
-            "type": stype[:-1],
-            "forced_tier": forced_tier
-        })
+        sid = str(config.get("id")) if isinstance(config, dict) else str(config)
+        all_sources.append({"name": name, "id": sid, "type": stype[:-1]})
 
-print(f"📡 Found {len(all_sources)} sources to compile.\n")
+print(f"📡 Found {len(all_sources)} sources to compile across U11 AA and U14 AA.\n")
 
-canonical_teams = {}
-team_id_to_canonical = {}
-raw_standings_entries = []
+# Build normalized lookup dictionaries
+lookup = {"U11 AA": {}, "U14 AA": {}}
+for cohort in ["U11 AA", "U14 AA"]:
+    for canonical, data in master_teams_db.get(cohort, {}).items():
+        c_norm = normalize(canonical)
+        lookup[cohort][c_norm] = canonical
+        c_base = re.sub(r'\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', c_norm).strip()
+        c_base = ' '.join(c_base.split())
+        if c_base:
+            lookup[cohort][c_base] = canonical
+        for alias in data.get("aliases", []):
+            a_norm = normalize(alias)
+            lookup[cohort][a_norm] = canonical
+            a_base = re.sub(r'\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', a_norm).strip()
+            a_base = ' '.join(a_base.split())
+            if a_base:
+                lookup[cohort][a_base] = canonical
 
-# 4. STAGE 1: INGEST STANDINGS
+def resolve_master_team(team_name, div_title="", source_name=""):
+    full_text = f"{team_name} {div_title} {source_name}".upper()
+    
+    cohort = None
+    if re.search(r'\bU[- ]?11\b|\bATOM\b', full_text):
+        cohort = "U11 AA"
+    elif re.search(r'\bU[- ]?14\b|\bBANTAM\b', full_text):
+        cohort = "U14 AA"
+        
+    if not cohort:
+        return None, None  # Other age bracket, skip cleanly
+
+    t_norm = normalize(team_name)
+    if t_norm in lookup[cohort]:
+        return cohort, lookup[cohort][t_norm]
+
+    t_base = re.sub(r'\b(U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', t_norm).strip()
+    t_base = ' '.join(t_base.split())
+    if t_base in lookup[cohort]:
+        return cohort, lookup[cohort][t_base]
+
+    return cohort, None  # Unmapped in cohort
+
+# Master Storage
+team_id_to_master = {}
+standings_db = []
+unmapped_audit = set()
+
+# 3. STAGE 1: INGEST STANDINGS
 for src in all_sources:
-    s_id = src["id"]
-    s_name = src["name"]
-    s_type = src["type"]
-    s_tier = src["forced_tier"]
+    s_id, s_name, s_type = src["id"], src["name"], src["type"]
     print(f"📥 Standings Ingestion: [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
     standings_url = f"https://gamesheetstats.com/api/standings/{s_id}?"
@@ -155,28 +116,28 @@ for src in all_sources:
         for div_group in st_data.get("data", []):
             for row in div_group.get("standings", []):
                 t_info = row.get("team", {})
-                t_name = clean_name(t_info.get("title") or t_info.get("name", "Unknown Team"))
+                t_name = clean_name(t_info.get("title") or t_info.get("name", ""))
                 t_id = t_info.get("id")
                 stats = row.get("stats", {})
-                
-                div_obj = row.get("division", {})
-                div_title = clean_name(div_obj.get("title") or div_obj.get("name", ""))
-                
-                age, tier, confidence = parse_hockey_division(t_name, div_title, s_name, fallback_tier=s_tier)
-                
-                team_key = (t_name.upper(), age)
-                if team_key not in canonical_teams or confidence > canonical_teams[team_key]["confidence"]:
-                    canonical_teams[team_key] = {"age": age, "tier": tier, "confidence": confidence}
+                div_title = clean_name(row.get("division", {}).get("title") or "")
+
+                cohort, canonical_name = resolve_master_team(t_name, div_title, s_name)
+
+                if cohort and not canonical_name:
+                    unmapped_audit.add((cohort, t_name, s_name, t_id))
+                    continue
+                if not cohort or not canonical_name:
+                    continue
 
                 if t_id:
-                    team_id_to_canonical[int(t_id)] = team_key
+                    team_id_to_master[int(t_id)] = (cohort, canonical_name)
 
-                raw_standings_entries.append({
+                standings_db.append({
                     "team_id": t_id,
-                    "team_name": t_name,
-                    "division_title": div_title,
-                    "detected_age": age,
-                    "team_key": team_key,
+                    "team_name": canonical_name,
+                    "division_title": cohort,
+                    "age": cohort.split()[0],
+                    "tier": cohort.split()[1],
                     "source_id": s_id,
                     "source_name": s_name,
                     "source_type": s_type,
@@ -192,74 +153,49 @@ for src in all_sources:
                 })
     time.sleep(0.2)
 
-standings_db = []
-for entry in raw_standings_entries:
-    c_info = canonical_teams.get(entry["team_key"], {"age": entry["detected_age"], "tier": "AA"})
-    standings_db.append({
-        "team_id": entry["team_id"],
-        "team_name": entry["team_name"],
-        "division_title": entry["division_title"],
-        "age": c_info["age"],
-        "tier": c_info["tier"],
-        "source_id": entry["source_id"],
-        "source_name": entry["source_name"],
-        "source_type": entry["source_type"],
-        "gp": entry["gp"], "w": entry["w"], "l": entry["l"], "t": entry["t"],
-        "pts": entry["pts"], "gf": entry["gf"], "ga": entry["ga"],
-        "diff": entry["diff"], "pim": entry["pim"]
-    })
-
-# 5. STAGE 2: INGEST SKATERS & GOALIES
+# 4. STAGE 2: INGEST SKATERS & GOALIES
 skaters_db = {}
 goalies_db = {}
 
 for src in all_sources:
-    s_id = src["id"]
-    s_name = src["name"]
-    s_type = src["type"]
-    s_tier = src["forced_tier"]
+    s_id, s_name, s_type = src["id"], src["name"], src["type"]
     print(f"📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
     # Skaters
-    skaters_url = f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0"
-    sk_data = fetch_json(skaters_url)
+    sk_data = fetch_json(f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0")
     if sk_data and "data" in sk_data:
         for p in sk_data.get("data", []):
             p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
             if not p_name: continue
-            
-            jersey = p.get("jersey", "")
-            pos = clean_name(p.get("position", "F"))
-            
+            jersey, pos = p.get("jersey", ""), clean_name(p.get("position", "F"))
+
             for t in p.get("teams", []):
-                t_name = clean_name(t.get("title") or t.get("name", "Unknown Team"))
+                t_name = clean_name(t.get("title") or t.get("name", ""))
                 t_id = t.get("id")
                 st = t.get("stats", {})
-                
                 gp = int(st.get("gp") or 0)
                 g = int(st.get("g") or 0)
                 a = int(st.get("a") or 0)
                 pts = int(st.get("pts") if st.get("pts") is not None else (g + a))
                 pim = int(st.get("pim") or 0)
-                
                 if gp == 0 and pts == 0: continue
 
-                c_info = None
-                if t_id and int(t_id) in team_id_to_canonical:
-                    c_info = canonical_teams.get(team_id_to_canonical[int(t_id)])
-                if not c_info:
-                    d_age, d_tier, _ = parse_hockey_division(t_name, "", s_name, fallback_tier=s_tier)
-                    c_info = canonical_teams.get((t_name.upper(), d_age), {"age": d_age, "tier": d_tier})
+                cohort, canonical_name = None, None
+                if t_id and int(t_id) in team_id_to_master:
+                    cohort, canonical_name = team_id_to_master[int(t_id)]
+                else:
+                    cohort, canonical_name = resolve_master_team(t_name, "", s_name)
 
-                age, tier = c_info["age"], c_info["tier"]
-                player_key = f"{p_name}_{t_name}_{age}".upper()
+                if not cohort or not canonical_name: continue
+
+                age, tier = cohort.split()[0], cohort.split()[1]
+                player_key = f"{p_name}_{canonical_name}_{age}".upper()
                 if player_key not in skaters_db:
                     skaters_db[player_key] = {
-                        "name": p_name, "team": t_name, "team_id": t_id, "jersey": jersey, "position": pos,
+                        "name": p_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": pos,
                         "age": age, "tier": tier, "total_gp": 0, "total_g": 0, "total_a": 0, "total_pts": 0, "total_pim": 0,
                         "sources": []
                     }
-                
                 skaters_db[player_key]["total_gp"] += gp
                 skaters_db[player_key]["total_g"] += g
                 skaters_db[player_key]["total_a"] += a
@@ -272,47 +208,43 @@ for src in all_sources:
     time.sleep(0.2)
 
     # Goalies
-    goalies_url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0"
-    gk_data = fetch_json(goalies_url)
+    gk_data = fetch_json(f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0")
     if gk_data and "data" in gk_data:
         for g in gk_data.get("data", []):
             g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
             if not g_name: continue
             jersey = g.get("jersey", "")
-            
+
             for t in g.get("teams", []):
-                t_name = clean_name(t.get("title") or t.get("name", "Unknown Team"))
+                t_name = clean_name(t.get("title") or t.get("name", ""))
                 t_id = t.get("id")
                 st = t.get("stats", {})
-                
                 gp = int(st.get("gp") or 0)
+                if gp == 0: continue
+
+                cohort, canonical_name = None, None
+                if t_id and int(t_id) in team_id_to_master:
+                    cohort, canonical_name = team_id_to_master[int(t_id)]
+                else:
+                    cohort, canonical_name = resolve_master_team(t_name, "", s_name)
+
+                if not cohort or not canonical_name: continue
+
+                age, tier = cohort.split()[0], cohort.split()[1]
                 ga = int(st.get("ga") or 0)
                 mins = int(st.get("min") or st.get("min_played") or 0)
                 gaa = float(st.get("gaa") or 0.0)
                 so = int(st.get("so") or st.get("shutouts") or 0)
-                w = int(st.get("w") or 0)
-                l = int(st.get("l") or 0)
-                t_val = int(st.get("t") or 0)
-                
-                if gp == 0: continue
+                w, l, t_val = int(st.get("w") or 0), int(st.get("l") or 0), int(st.get("t") or 0)
 
-                c_info = None
-                if t_id and int(t_id) in team_id_to_canonical:
-                    c_info = canonical_teams.get(team_id_to_canonical[int(t_id)])
-                if not c_info:
-                    d_age, d_tier, _ = parse_hockey_division(t_name, "", s_name, fallback_tier=s_tier)
-                    c_info = canonical_teams.get((t_name.upper(), d_age), {"age": d_age, "tier": d_tier})
-
-                age, tier = c_info["age"], c_info["tier"]
-                goalie_key = f"{g_name}_{t_name}_{age}".upper()
+                goalie_key = f"{g_name}_{canonical_name}_{age}".upper()
                 if goalie_key not in goalies_db:
                     goalies_db[goalie_key] = {
-                        "name": g_name, "team": t_name, "team_id": t_id, "jersey": jersey, "position": "G",
+                        "name": g_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": "G",
                         "age": age, "tier": tier, "total_gp": 0, "total_ga": 0, "total_min": 0, "total_gaa": 0.0,
                         "total_so": 0, "total_w": 0, "total_l": 0, "total_t": 0,
                         "sources": []
                     }
-                
                 goalies_db[goalie_key]["total_gp"] += gp
                 goalies_db[goalie_key]["total_ga"] += ga
                 goalies_db[goalie_key]["total_min"] += mins
@@ -320,63 +252,70 @@ for src in all_sources:
                 goalies_db[goalie_key]["total_w"] += w
                 goalies_db[goalie_key]["total_l"] += l
                 goalies_db[goalie_key]["total_t"] += t_val
-                
                 tot_min = goalies_db[goalie_key]["total_min"]
                 tot_ga = goalies_db[goalie_key]["total_ga"]
                 goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2) if tot_min > 0 else gaa
-                    
                 goalies_db[goalie_key]["sources"].append({
                     "source_id": s_id, "source_name": s_name, "source_type": s_type,
                     "gp": gp, "ga": ga, "min": mins, "gaa": gaa, "so": so, "w": w, "l": l, "t": t_val
                 })
     time.sleep(0.2)
 
-# 6. STAGE 3: INGEST UNIFIED GAMES & SCHEDULES
+# 5. STAGE 3: INGEST UNIFIED GAMES (DETERMINISTIC COHORT FILTER)
 games_dict = {}
 valid_final_states = ["final", "official", "completed", "complete", "played", "finished", "2", "3"]
 
 for src in all_sources:
-    s_id = src["id"]
-    s_name = src["name"]
-    s_type = src["type"]
+    s_id, s_name, s_type = src["id"], src["name"], src["type"]
     print(f"📥 Schedule Ingestion:   [{s_type.upper()}] {s_name} (ID: {s_id})...")
 
-    games_url = f"https://gamesheetstats.com/api/unified-games/{s_id}?filter[limit]=10000"
-    g_data = fetch_json(games_url)
-    
+    g_data = fetch_json(f"https://gamesheetstats.com/api/unified-games/{s_id}?filter[limit]=10000")
     raw_games = g_data if isinstance(g_data, list) else (g_data.get("games") or g_data.get("data") or []) if isinstance(g_data, dict) else []
-    
+
     for g in raw_games:
         gid = g.get("gameId")
         if not gid: continue
 
         visitor_obj = g.get("visitor") or {}
         home_obj = g.get("home") or {}
-
-        v_name = clean_name(visitor_obj.get("title") or visitor_obj.get("name", "Unknown Team"))
-        h_name = clean_name(home_obj.get("title") or home_obj.get("name", "Unknown Team"))
+        v_name = clean_name(visitor_obj.get("title") or visitor_obj.get("name", ""))
+        h_name = clean_name(home_obj.get("title") or home_obj.get("name", ""))
         v_id = visitor_obj.get("id")
         h_id = home_obj.get("id")
 
+        v_div = visitor_obj.get("division", {}).get("title") if isinstance(visitor_obj.get("division"), dict) else ""
+        h_div = home_obj.get("division", {}).get("title") if isinstance(home_obj.get("division"), dict) else ""
+        g_div = v_div or h_div or ""
+
+        # Resolve Home and Visitor
+        h_cohort, h_canonical = None, None
+        if h_id and int(h_id) in team_id_to_master:
+            h_cohort, h_canonical = team_id_to_master[int(h_id)]
+        else:
+            h_cohort, h_canonical = resolve_master_team(h_name, g_div, s_name)
+
+        v_cohort, v_canonical = None, None
+        if v_id and int(v_id) in team_id_to_master:
+            v_cohort, v_canonical = team_id_to_master[int(v_id)]
+        else:
+            v_cohort, v_canonical = resolve_master_team(v_name, g_div, s_name)
+
+        # Ingest only if at least one team belongs to U11 AA or U14 AA
+        if not h_canonical and not v_canonical:
+            continue
+
+        assigned_cohort = h_cohort or v_cohort
+
         raw_status = str(g.get("status") or "").strip().lower()
         is_final = raw_status in valid_final_states
-
         v_goals = int(visitor_obj.get("goals") or 0) if is_final else None
         h_goals = int(home_obj.get("goals") or 0) if is_final else None
 
         v_res, h_res = None, None
         if is_final:
-            if v_goals > h_goals:
-                v_res, h_res = "W", "L"
-            elif h_goals > v_goals:
-                v_res, h_res = "L", "W"
-            else:
-                v_res, h_res = "T", "T"
-
-        # Division determination
-        v_div = visitor_obj.get("division", {}).get("title") if isinstance(visitor_obj.get("division"), dict) else ""
-        h_div = home_obj.get("division", {}).get("title") if isinstance(home_obj.get("division"), dict) else ""
-        g_div = v_div or h_div or ""
+            if v_goals > h_goals: v_res, h_res = "W", "L"
+            elif h_goals > v_goals: v_res, h_res = "L", "W"
+            else: v_res, h_res = "T", "T"
 
         games_dict[str(gid)] = {
             "game_id": gid,
@@ -389,21 +328,20 @@ for src in all_sources:
             "source_name": s_name,
             "source_type": s_type,
             "home_id": h_id,
-            "home_name": h_name,
+            "home_name": h_canonical or h_name,
             "home_goals": h_goals,
             "home_result": h_res,
             "visitor_id": v_id,
-            "visitor_name": v_name,
+            "visitor_name": v_canonical or v_name,
             "visitor_goals": v_goals,
             "visitor_result": v_res,
-            "division": g_div
+            "division": assigned_cohort
         }
-
     time.sleep(0.2)
 
 all_compiled_games = sorted(list(games_dict.values()), key=lambda x: x["timestamp"] or x["date"])
 
-# 7. EXPORT COMPILED STATS & COMPLETE GAME MATRIX
+# 6. EXPORT COMPILED STATS
 output_data = {
     "generated_at": datetime.now(timezone.utc).isoformat(),
     "total_skaters": len(skaters_db),
@@ -420,11 +358,22 @@ output_path = "hockey_stats.json"
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(output_data, f, indent=2)
 
-print("\n" + "="*55)
-print("🎉 Minor Hockey Matrix Compilation Complete!")
+print("\n" + "="*70)
+print("🎉 Clean U11 AA & U14 AA Compilation Complete!")
 print(f"🏒 Skaters Processed: {len(skaters_db)}")
 print(f"🥅 Goalies Processed: {len(goalies_db)}")
 print(f"📊 Standings Rows:    {len(standings_db)}")
-print(f"📋 Total Games Tracked: {len(all_compiled_games)}")
-print(f"💾 Saved cleanly to {output_path}")
-print("="*55)
+print(f"📋 Games Tracked:     {len(all_compiled_games)}")
+print(f"💾 Saved to {output_path}")
+print("="*70)
+
+# 7. UNMAPPED AUDIT REPORT
+print("\n📋 UNMAPPED TEAM AUDIT LOG (U11 / U14 Teams Ignored Due to Missing Rule)")
+print("-" * 70)
+if unmapped_audit:
+    for cohort, name, src, tid in sorted(list(unmapped_audit)):
+        print(f"⚠️  [{cohort}] '{name}' (ID: {tid}) in {src}")
+    print("\n👉 To track any of these, simply add their exact name as an alias in master_teams.json!")
+else:
+    print("💯 Perfect Structural Integrity! All encountered teams were matched.")
+print("-" * 70)
