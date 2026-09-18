@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-09-18T00:44:04.185245+00:00",
-  "total_skaters": 1652,
-  "total_goalies": 216,
+  "generated_at": "2026-09-18T00:50:48.888993+00:00",
+  "total_skaters": 1682,
+  "total_goalies": 220,
   "total_standings_rows": 286,
   "total_games": 88,
   "skaters": [
@@ -53588,6 +53588,136 @@
       ]
     },
     {
+      "name": "GREGORY BALCH",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ANTHONY BALLIN",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MATTEO BARBATANO",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "KELDON BARRY",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "BOWEN BASSI",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ROBERT BAUER",
       "team": "Niagara Falls Canucks",
       "team_id": 558472,
@@ -53718,6 +53848,84 @@
       ]
     },
     {
+      "name": "DRYDEN BOCCHINFUSO",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "KENTYN BOYCE",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "NASH BRAY",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "COOPER BROSIUS",
       "team": "Niagara Falls Canucks",
       "team_id": 558472,
@@ -53744,12 +53952,90 @@
       ]
     },
     {
+      "name": "RONAN BROWN",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LANGDON BRUNO",
       "team": "Niagara Falls Canucks",
       "team_id": 558472,
       "jersey": "9",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DEVON BULHOES",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "LEANDRO CALLIPARI",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -53848,6 +54134,32 @@
       ]
     },
     {
+      "name": "THEO DECAL",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ELI DOYLE",
       "team": "Niagara Falls Canucks",
       "team_id": 558472,
@@ -53926,6 +54238,58 @@
       ]
     },
     {
+      "name": "MIGUEL FRADA",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "AUGUST FRASER",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ROBERT FRIESEN",
       "team": "Streetsville Tigers",
       "team_id": 558476,
@@ -53952,10 +54316,114 @@
       ]
     },
     {
+      "name": "HAYDEN GONZALEZ-VERHAVERBEKE",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CARTER GREENWAY",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "VINCENT GRIECO",
       "team": "Niagara Falls Canucks",
       "team_id": 558472,
       "jersey": "95",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "LEO HAYNES",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "NATHAN HEMSLEY",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -54010,6 +54478,32 @@
       "jersey": "17",
       "position": "F",
       "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MARK HRYNYK",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -54160,10 +54654,244 @@
       ]
     },
     {
+      "name": "RHYS KLASSEN",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ARS\u00c8NE LENFERNA DE LA MOTTE",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JAX LIFFITON",
       "team": "Niagara Falls Canucks",
       "team_id": 558472,
       "jersey": "6",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ZAKARY LINDBERG",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JAGGER LIPINSKI",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "RYDER LUMLEY",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ALEXANDER MANEY",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JOHN CHRISTIAN MCLEAN",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "RYER MILBURN",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "GIANCARLO MONTEMURRO",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -54192,6 +54920,58 @@
       "jersey": "87",
       "position": "F",
       "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "PEYTON PIETRANGELO",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "SAMSON PIETRANGELO",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -61012,10 +61792,138 @@
       ]
     },
     {
+      "name": "DEXTER GIROUX",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "EMMETT PANCHUK",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "JAKE RYNBERK",
+      "team": "Niagara Falls Canucks",
+      "team_id": 558473,
+      "jersey": "",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "NICHOLAS TOMPA",
       "team": "Glancaster Bombers",
       "team_id": 558438,
       "jersey": "39",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "BROOKS WAIN",
+      "team": "London Jr Knights (Green)",
+      "team_id": 558441,
+      "jersey": "",
       "position": "G",
       "age": "U11",
       "tier": "AA",
