@@ -679,6 +679,9 @@
         let activeSelectedMyTeam = "";
         let hotTeamsDatabaseMap = {};
 
+        // In-memory cache for on-demand AI session
+        const aiInsightsCache = {};
+
         // Scoreboard State Variables
         let scoreboardResultsDate = "";
         let scoreboardMatchupsDate = "";
@@ -1856,34 +1859,164 @@
             renderHockeyTacticalIntelligence(teamPayload, curMetrics, divName);
         }
 
+        // ==========================================
+        // 🧠 ON-DEMAND CLIENT-SIDE GEMINI SCOUTING
+        // ==========================================
+
+        function saveGeminiKey() {
+            const input = document.getElementById('gemini-key-input');
+            if (input && input.value.trim()) {
+                localStorage.setItem('gemini_api_key', input.value.trim());
+                loadScoutingDashboard();
+            }
+        }
+
+        function clearGeminiKey() {
+            localStorage.removeItem('gemini_api_key');
+            loadScoutingDashboard();
+        }
+
+        async function fetchTeamAiIntelligence(teamName, divName, forceRefresh = false) {
+            const apiKey = localStorage.getItem('gemini_api_key');
+            if (!apiKey) return;
+
+            const cacheKey = `${divName}_${teamName}`;
+            if (!forceRefresh && aiInsightsCache[cacheKey]) {
+                renderAiCards(aiInsightsCache[cacheKey], teamName, divName);
+                return;
+            }
+
+            const aiContainer = document.getElementById('ai-insights-container');
+            aiContainer.innerHTML = `
+                <div class="py-8 text-center flex flex-col items-center justify-center space-y-2">
+                    <div class="w-6 h-6 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Synthesizing live scouting directives via Gemini AI...</span>
+                </div>
+            `;
+
+            const teamPayload = scoutingReportDatabase[divName]?.[teamName];
+            if (!teamPayload) return;
+
+            // Extract context from compiled stats
+            const gfAvg = teamPayload.gp > 0 ? (teamPayload.gf / teamPayload.gp).toFixed(1) : "0.0";
+            const gaAvg = teamPayload.gp > 0 ? (teamPayload.ga / teamPayload.gp).toFixed(1) : "0.0";
+            const pimAvg = teamPayload.gp > 0 ? (teamPayload.pim / teamPayload.gp).toFixed(1) : "0.0";
+
+            const topSkaters = [...(teamPayload.roster || [])]
+                .sort((a, b) => b.total_pts - a.total_pts)
+                .slice(0, 3)
+                .map(s => `#${s.jersey || '?'} ${s.name} (${s.total_pts} pts in ${s.total_gp} GP)`)
+                .join(", ") || "Balanced scoring distribution";
+
+            const topGoalie = [...(teamPayload.goalies || [])]
+                .sort((a, b) => b.total_gp - a.total_gp)[0];
+            const goalieStr = topGoalie 
+                ? `${topGoalie.name} (${topGoalie.total_gaa.toFixed(2)} GAA, ${topGoalie.total_gp} GP)` 
+                : "Rotation in net";
+
+            const recentGames = [...(teamPayload.games || [])]
+                .filter(g => g.status === 'final')
+                .slice(-3)
+                .map(g => `${g.is_home ? 'vs' : '@'} ${g.opponent} (${g.score_str})`)
+                .join(", ") || "Early season play";
+
+            const prompt = `You are an elite minor hockey scout preparing tactical bench notes for a coach playing against ${teamName} (${divName}).
+Opponent Profile:
+- Record: ${teamPayload.w}W-${teamPayload.l}L-${teamPayload.t}T (Goal Diff: ${teamPayload.diff >= 0 ? '+' : ''}${teamPayload.diff})
+- Rates: ${gfAvg} GF/G | ${gaAvg} GA/G | ${pimAvg} PIM/G
+- Top Offensive Threats: ${topSkaters}
+- Primary Netminder: ${goalieStr}
+- Recent Matchups: ${recentGames}
+
+Return a JSON array of exactly 3 tactical cards:
+[
+  {"title": "Offensive Threats & Key Skaters", "data": "1 concise sentence identifying specific player names and scoring habits.", "advice": "1 concrete instruction for defensemen on neutralizing them."},
+  {"title": "Goaltender Tendencies & Rebound Control", "data": "1 concise sentence evaluating the goalie's form or defense-in-front.", "advice": "1 specific shooting directive (e.g. low pads, traffic screens, high glove)."},
+  {"title": "Bench Tactical Directive", "data": "1 concise sentence regarding pace, penalty risk, or neutral zone play.", "advice": "1 actionable command for line changes, forecheck schemes, or zone breakouts."}
+]`;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { response_mime_type: "application/json" }
+                    })
+                });
+
+                if (!response.ok) {
+                    const err = await response.json();
+                    throw new Error(err.error?.message || `HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
+                rawText = rawText.replace(/```json/g, "").replace(/```/g, "").trim();
+                const cards = JSON.parse(rawText);
+
+                aiInsightsCache[cacheKey] = cards;
+                renderAiCards(cards, teamName, divName);
+            } catch (err) {
+                aiContainer.innerHTML = `
+                    <div class="p-4 rounded-xl bg-rose-950/30 border border-rose-800 text-rose-300 text-xs font-mono space-y-2">
+                        <p class="font-bold">⚠️ AI Generation Failed: ${err.message}</p>
+                        <button onclick="clearGeminiKey()" class="underline text-cyan-400 hover:text-white">Reset API Key</button>
+                    </div>
+                `;
+            }
+        }
+
+        function renderAiCards(cards, teamName, divName) {
+            const aiContainer = document.getElementById('ai-insights-container');
+            const colorPencils = ["text-cyan-400", "text-blue-400", "text-indigo-400"];
+            
+            let html = `
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-widest font-bold">● Active Matchup Directive</span>
+                    <div class="flex items-center space-x-2 hide-on-print">
+                        <button onclick="fetchTeamAiIntelligence('${teamName}', '${divName}', true)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] font-mono uppercase transition-colors">🔄 Re-Analyze</button>
+                        <button onclick="clearGeminiKey()" title="Change Key" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white text-[10px] font-mono uppercase transition-colors">⚙️ Key</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 font-sans text-slate-300">
+            `;
+
+            cards.slice(0, 3).forEach((c, idx) => {
+                html += `
+                    <div class="p-3.5 sm:p-4 bg-slate-950 rounded-xl border border-slate-800">
+                        <span class="${colorPencils[idx]} uppercase block mb-1 text-xs font-black tracking-wide">${c.title}</span>
+                        <p class="text-xs text-slate-400 mb-1.5 leading-relaxed"><strong>Data Profile:</strong> ${c.data}</p>
+                        <p class="text-xs text-slate-200 leading-relaxed"><strong>Bench Directive:</strong> ${c.advice}</p>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            aiContainer.innerHTML = html;
+        }
+
         function renderHockeyTacticalIntelligence(targetTeam, metrics, divName) {
             const aiContainer = document.getElementById('ai-insights-container');
             if (!aiContainer) return;
 
-            // Retrieve pre-generated Gemini AI tactical cards from hockey_stats.json
-            const cards = (rawHockeyDb?.ai_insights?.[divName]?.[targetTeam.team_name]) || [];
-
-            if (cards.length > 0) {
-                const colorPencils = ["text-cyan-400", "text-blue-400", "text-indigo-400"];
-                let html = `<div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 font-sans text-slate-300">`;
-                cards.slice(0, 3).forEach((c, idx) => {
-                    html += `
-                        <div class="p-3.5 sm:p-4 bg-slate-950 rounded-xl border border-slate-800">
-                            <span class="${colorPencils[idx % 3]} uppercase block mb-1 text-xs font-black tracking-wide">${c.title}</span>
-                            <p class="text-xs text-slate-400 mb-1.5 leading-relaxed"><strong>Data Profile:</strong> ${c.data}</p>
-                            <p class="text-xs text-slate-200 leading-relaxed"><strong>Bench Directive:</strong> ${c.advice}</p>
-                        </div>
-                    `;
-                });
-                html += `</div>`;
-                aiContainer.innerHTML = html;
-            } else {
+            const apiKey = localStorage.getItem('gemini_api_key');
+            if (!apiKey) {
                 aiContainer.innerHTML = `
-                    <div class="py-4 px-3 text-center text-slate-500 font-mono text-xs">
-                        ⚠️ Tactical intelligence awaiting sample. AI will synthesize matchup directives on the next scheduled sync.
+                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+                        <div>
+                            <span class="block text-xs font-bold text-white uppercase tracking-wider">Enable On-Demand AI Scouting Intelligence</span>
+                            <span class="text-[11px] text-slate-400">Generate tactical cheat sheets against opponents using Google Gemini.</span>
+                        </div>
+                        <div class="flex items-center space-x-2 w-full sm:w-auto">
+                            <input type="password" id="gemini-key-input" placeholder="Paste Gemini API Key..." class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-400 flex-1 sm:w-52">
+                            <button onclick="saveGeminiKey()" class="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs uppercase rounded-lg transition-colors whitespace-nowrap">Save</button>
+                        </div>
                     </div>
                 `;
+                return;
             }
+
+            fetchTeamAiIntelligence(targetTeam.team_name, divName, false);
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
