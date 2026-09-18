@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T00:50:48.888993+00:00",
+  "generated_at": "2026-09-18T00:55:13.510883+00:00",
   "total_skaters": 1682,
   "total_goalies": 220,
   "total_standings_rows": 286,
@@ -4363,16 +4363,6 @@
           "g": 2,
           "a": 0,
           "pts": 2,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
           "pim": 0
         }
       ]
@@ -28568,6 +28558,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -29103,6 +29103,16 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -29684,6 +29694,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -30224,6 +30244,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -30476,6 +30506,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -30658,6 +30698,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -30757,6 +30807,16 @@
           "source_id": "15489",
           "source_name": "York Simcoe AA",
           "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -30892,6 +30952,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -30913,6 +30983,16 @@
           "source_id": "15489",
           "source_name": "York Simcoe AA",
           "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -31282,6 +31362,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -31412,6 +31502,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -31511,6 +31611,16 @@
           "source_id": "15489",
           "source_name": "York Simcoe AA",
           "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -33102,6 +33212,16 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -33357,6 +33477,16 @@
           "source_id": "15489",
           "source_name": "York Simcoe AA",
           "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -33669,6 +33799,16 @@
           "source_id": "15489",
           "source_name": "York Simcoe AA",
           "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -53425,7 +53565,7 @@
       "name": "ANTHONY BORG",
       "team": "West Mall Lightning",
       "team_id": 560524,
-      "jersey": "16",
+      "jersey": "5",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -57838,6 +57978,19 @@
           "w": 0,
           "l": 0,
           "t": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
         }
       ]
     },
@@ -58492,6 +58645,19 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 0,
           "ga": 0,
           "min": 0,
@@ -75243,9 +75409,5 @@
         "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
       }
     }
-  },
-  "ai_insights": {
-    "U11 AA": {},
-    "U14 AA": {}
   }
 }
