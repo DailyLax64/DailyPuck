@@ -518,7 +518,7 @@ ai_insights_db = {"U11 AA": {}, "U14 AA": {}}
 def call_gemini_api(prompt_text):
     if not GEMINI_API_KEY:
         return None
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
     payload = json.dumps({
         "contents": [{"parts": [{"text": prompt_text}]}],
         "generationConfig": {
@@ -527,16 +527,23 @@ def call_gemini_api(prompt_text):
     }).encode("utf-8")
     
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            candidate = data.get("candidates", [{}])[0]
-            raw_text = candidate.get("content", {}).get("parts", [{}])[0].get("text", "")
-            return json.loads(raw_text)
-    except urllib.error.HTTPError as he:
-        print(f"   ⚠️ Gemini HTTP error: {he.code} {he.reason}")
-    except Exception as e:
-        print(f"   ⚠️ Gemini request error: {e}")
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+                candidate = data.get("candidates", [{}])[0]
+                raw_text = candidate.get("content", {}).get("parts", [{}])[0].get("text", "")
+                return json.loads(raw_text)
+        except urllib.error.HTTPError as he:
+            if he.code == 429:
+                print(f"   ⏳ Rate limited (429), waiting 10s before retry (attempt {attempt+1}/3)...")
+                time.sleep(10)
+                continue
+            print(f"   ⚠️ Gemini HTTP error: {he.code} {he.reason}")
+            break
+        except Exception as e:
+            print(f"   ⚠️ Gemini request error: {e}")
+            break
     return None
 
 if GEMINI_API_KEY:
@@ -608,8 +615,8 @@ Return a JSON array of exactly 3 objects:
             else:
                 print(f"   ⚠️ Fallback applied for: [{cohort}] {t_name}")
 
-            # Sleep 2.5s between calls to stay well within free tier limits
-            time.sleep(2.5)
+            # Sleep 4.2s to stay safely under the 15 RPM free tier quota
+            time.sleep(4.2)
 
     print(f"🎯 AI Tactical Scouting Generation Complete ({teams_analyzed} teams updated).")
 else:
