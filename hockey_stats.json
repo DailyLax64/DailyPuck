@@ -1,10 +1,56 @@
 {
-  "generated_at": "2026-09-18T00:55:13.510883+00:00",
-  "total_skaters": 1682,
-  "total_goalies": 220,
+  "generated_at": "2026-09-18T13:27:56.018115+00:00",
+  "total_skaters": 1696,
+  "total_goalies": 222,
   "total_standings_rows": 286,
-  "total_games": 88,
+  "total_games": 87,
   "skaters": [
+    {
+      "name": "RORY VANDERBURGH",
+      "team": "West Niagara Flying Aces",
+      "team_id": 534727,
+      "jersey": "89",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 3,
+      "total_a": 5,
+      "total_pts": 8,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 4,
+          "pts": 5,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 2,
+          "a": 1,
+          "pts": 3,
+          "pim": 0
+        }
+      ]
+    },
     {
       "name": "LUKE HUNTER",
       "team": "St Catharines Jr Falcons",
@@ -144,6 +190,52 @@
       ]
     },
     {
+      "name": "JACE URBAN",
+      "team": "West Niagara Flying Aces",
+      "team_id": 534727,
+      "jersey": "12",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 4,
+      "total_a": 2,
+      "total_pts": 6,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 3,
+          "a": 1,
+          "pts": 4,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JACOB SILVA",
       "team": "South Simcoe Storm",
       "team_id": 534140,
@@ -211,52 +303,6 @@
           "g": 2,
           "a": 2,
           "pts": 4,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "RORY VANDERBURGH",
-      "team": "West Niagara Flying Aces",
-      "team_id": 534727,
-      "jersey": "89",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 1,
-      "total_a": 4,
-      "total_pts": 5,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 4,
-          "pts": 5,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
           "pim": 0
         }
       ]
@@ -400,18 +446,18 @@
       ]
     },
     {
-      "name": "JACE URBAN",
+      "name": "LOGAN GOULDING",
       "team": "West Niagara Flying Aces",
       "team_id": 534727,
-      "jersey": "12",
+      "jersey": "22",
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
-      "total_g": 3,
-      "total_a": 1,
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 4,
       "total_pts": 4,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15497",
@@ -428,19 +474,111 @@
           "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 2,
-          "g": 3,
-          "a": 1,
-          "pts": 4,
-          "pim": 0
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 2
         },
         {
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
+          "gp": 1,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MILES KOPINAK",
+      "team": "West Niagara Flying Aces",
+      "team_id": 534727,
+      "jersey": "72",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 1,
+          "pts": 3,
+          "pim": 2
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "LUCAS WILLIAMSON",
+      "team": "West Niagara Flying Aces",
+      "team_id": 534727,
+      "jersey": "85",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 3,
+      "total_a": 1,
+      "total_pts": 4,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
           "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 4
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
           "pim": 0
         }
       ]
@@ -790,18 +928,18 @@
       ]
     },
     {
-      "name": "MILES KOPINAK",
+      "name": "LIAM HUDD",
       "team": "West Niagara Flying Aces",
       "team_id": 534727,
-      "jersey": "72",
+      "jersey": "91",
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
-      "total_g": 2,
-      "total_a": 1,
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 2,
       "total_pts": 3,
-      "total_pim": 2,
+      "total_pim": 4,
       "sources": [
         {
           "source_id": "15497",
@@ -811,26 +949,26 @@
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         },
         {
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 2,
-          "g": 2,
-          "a": 1,
-          "pts": 3,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
           "pim": 2
         },
         {
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
-          "a": 0,
-          "pts": 0,
+          "a": 2,
+          "pts": 2,
           "pim": 0
         }
       ]
@@ -2052,52 +2190,6 @@
       ]
     },
     {
-      "name": "LOGAN GOULDING",
-      "team": "West Niagara Flying Aces",
-      "team_id": 534727,
-      "jersey": "22",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 2,
-      "total_pts": 2,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 2,
-          "g": 0,
-          "a": 2,
-          "pts": 2,
-          "pim": 2
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "RYAN HARDY",
       "team": "St Catharines Jr Falcons",
       "team_id": 534701,
@@ -2510,52 +2602,6 @@
           "a": 2,
           "pts": 2,
           "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "LUCAS WILLIAMSON",
-      "team": "West Niagara Flying Aces",
-      "team_id": 534727,
-      "jersey": "85",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 2,
-      "total_a": 0,
-      "total_pts": 2,
-      "total_pim": 4,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 2,
-          "a": 0,
-          "pts": 2,
-          "pim": 4
         },
         {
           "source_id": "15764",
@@ -5446,6 +5492,52 @@
       ]
     },
     {
+      "name": "RORY BEEDLING",
+      "team": "West Niagara Flying Aces",
+      "team_id": 534727,
+      "jersey": "98",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "MAX BENNETT",
       "team": "Glancaster Bombers",
       "team_id": 534728,
@@ -5682,6 +5774,52 @@
       ]
     },
     {
+      "name": "THEO CENTEA",
+      "team": "West Niagara Flying Aces",
+      "team_id": 534727,
+      "jersey": "88",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "MASON COCHREN",
       "team": "Milton Winterhawks",
       "team_id": 534777,
@@ -5712,6 +5850,98 @@
           "gp": 1,
           "g": 1,
           "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "GAVIN DOUGLAS",
+      "team": "West Niagara Flying Aces",
+      "team_id": 534727,
+      "jersey": "87",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 6,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 6
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "HUDSON DRUMM",
+      "team": "Hamilton Steel",
+      "team_id": 534787,
+      "jersey": "88",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
           "pts": 1,
           "pim": 0
         }
@@ -6052,6 +6282,42 @@
       ]
     },
     {
+      "name": "DAMON HARRISON",
+      "team": "Hamilton Steel",
+      "team_id": 534787,
+      "jersey": "23",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 4
+        }
+      ]
+    },
+    {
       "name": "CLARK HELIK",
       "team": "Brampton 45s",
       "team_id": 534781,
@@ -6134,18 +6400,18 @@
       ]
     },
     {
-      "name": "LIAM HUDD",
+      "name": "CHARLES JAMES",
       "team": "West Niagara Flying Aces",
       "team_id": 534727,
-      "jersey": "91",
+      "jersey": "8",
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 2,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
-      "total_pim": 4,
+      "total_pim": 0,
       "sources": [
         {
           "source_id": "15497",
@@ -6155,26 +6421,16 @@
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 2
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 2
+          "pim": 0
         },
         {
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
+          "gp": 1,
+          "g": 1,
           "a": 0,
-          "pts": 0,
+          "pts": 1,
           "pim": 0
         }
       ]
@@ -6304,6 +6560,42 @@
           "a": 0,
           "pts": 1,
           "pim": 4
+        }
+      ]
+    },
+    {
+      "name": "FINLEY KERR",
+      "team": "Hamilton Steel",
+      "team_id": 534787,
+      "jersey": "89",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
         }
       ]
     },
@@ -6705,7 +6997,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -6735,7 +7027,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -6751,7 +7043,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -6781,7 +7073,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -7315,7 +7607,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -7345,7 +7637,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -14124,52 +14416,6 @@
       ]
     },
     {
-      "name": "RORY BEEDLING",
-      "team": "West Niagara Flying Aces",
-      "team_id": 534727,
-      "jersey": "98",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "CAMDEN BENCH",
       "team": "Hamilton Steel",
       "team_id": 534787,
@@ -14177,7 +14423,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -14207,7 +14453,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -14223,7 +14469,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -14253,7 +14499,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -14407,7 +14653,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -14437,7 +14683,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -15057,52 +15303,6 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "THEO CENTEA",
-      "team": "West Niagara Flying Aces",
-      "team_id": 534727,
-      "jersey": "88",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -15949,7 +16149,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -15979,7 +16179,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -16116,98 +16316,6 @@
       ]
     },
     {
-      "name": "GAVIN DOUGLAS",
-      "team": "West Niagara Flying Aces",
-      "team_id": 534727,
-      "jersey": "87",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 6,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 6
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "HUDSON DRUMM",
-      "team": "Hamilton Steel",
-      "team_id": 534787,
-      "jersey": "88",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "SIDNEY DRYNGIEWICZ",
       "team": "Flamborough Sabres",
       "team_id": 534744,
@@ -16276,16 +16384,6 @@
           "a": 0,
           "pts": 0,
           "pim": 2
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
         }
       ]
     },
@@ -16316,16 +16414,6 @@
         {
           "source_id": "15559",
           "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 0,
           "g": 0,
@@ -17071,7 +17159,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -17091,7 +17179,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -17257,7 +17345,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -17277,7 +17365,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -17342,42 +17430,6 @@
       "team": "Flamborough Sabres",
       "team_id": 534725,
       "jersey": "38",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "DAMON HARRISON",
-      "team": "Hamilton Steel",
-      "team_id": 534787,
-      "jersey": "23",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -17736,10 +17788,10 @@
       ]
     },
     {
-      "name": "CHARLES JAMES",
-      "team": "West Niagara Flying Aces",
-      "team_id": 534727,
-      "jersey": "8",
+      "name": "LANDYN JEYSMAN",
+      "team": "Hamilton Steel",
+      "team_id": 534787,
+      "jersey": "6",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -17753,53 +17805,17 @@
           "source_id": "15497",
           "source_name": "Tri-County AA",
           "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
           "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "LANDYN JEYSMAN",
-      "team": "Hamilton Steel",
-      "team_id": 534787,
-      "jersey": "6",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -17974,42 +17990,6 @@
       ]
     },
     {
-      "name": "FINLEY KERR",
-      "team": "Hamilton Steel",
-      "team_id": 534787,
-      "jersey": "89",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "JACKSON KINART",
       "team": "Flamborough Sabres",
       "team_id": 534744,
@@ -18079,7 +18059,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -18099,7 +18079,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -19421,11 +19401,11 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15497",
@@ -19441,11 +19421,11 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -19731,7 +19711,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -19751,7 +19731,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -20505,7 +20485,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -20525,7 +20505,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -21331,7 +21311,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -21351,7 +21331,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -21599,7 +21579,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -21619,7 +21599,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -22089,7 +22069,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -22109,7 +22089,7 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -23869,7 +23849,7 @@
       "name": "CARTER EVANS",
       "team": "Ajax Pickering Raiders",
       "team_id": 534519,
-      "jersey": "12",
+      "jersey": "16",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -23895,7 +23875,7 @@
       "name": "CARTER EVANS",
       "team": "King Rebellion",
       "team_id": 534521,
-      "jersey": "12",
+      "jersey": "16",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -28382,6 +28362,42 @@
       ]
     },
     {
+      "name": "BRAYDEN AMBROSIO",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "77",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JACE ANDERSON",
       "team": "TNT Tornados",
       "team_id": 534103,
@@ -28518,6 +28534,42 @@
           "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "NATHAN AUCOIN",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "14",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -29852,6 +29904,42 @@
       ]
     },
     {
+      "name": "MASSIMO COMITO",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "13",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "RYAN CONNELLY",
       "team": "Stouffville Clippers",
       "team_id": 534101,
@@ -30072,6 +30160,42 @@
       "team": "King Rebellion",
       "team_id": 534151,
       "jersey": "86",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DAMIEN D\u2019ARDIS",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "37",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -30490,16 +30614,6 @@
         {
           "source_id": "15489",
           "source_name": "York Simcoe AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 0,
           "g": 0,
@@ -31376,6 +31490,58 @@
       ]
     },
     {
+      "name": "NATHAN HUGHES",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "88",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CARTER HUNTER",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JORDAN HWANG",
       "team": "King Rebellion",
       "team_id": 534151,
@@ -32098,6 +32264,32 @@
       ]
     },
     {
+      "name": "LOGAN MACRI",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "17",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "MASON MACRI",
       "team": "King Rebellion",
       "team_id": 534151,
@@ -32260,6 +32452,58 @@
       "jersey": "9",
       "position": "F",
       "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DANTE MCCAGUE",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ROCCO MCCAGUE",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -32904,6 +33148,58 @@
       ]
     },
     {
+      "name": "CHRISTIAN O\u2019SHEA",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "GABRIEL PANACCI",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "11",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ISAAC PANG",
       "team": "Markham Waxers",
       "team_id": 534182,
@@ -33232,6 +33528,32 @@
       "jersey": "23",
       "position": "F",
       "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DANIEL RASO",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "18",
+      "position": "F",
+      "age": "U14",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -33734,6 +34056,58 @@
       "team": "South Simcoe Storm",
       "team_id": 534140,
       "jersey": "14",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CARTER SIEMENS",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ERIK SIMOES",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "10",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -37784,16 +38158,6 @@
           "a": 0,
           "pts": 0,
           "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
         }
       ]
     },
@@ -39369,7 +39733,7 @@
       "name": "EVAN JOHNSTONE",
       "team": "St Thomas Jr Stars",
       "team_id": 532765,
-      "jersey": "77",
+      "jersey": "97",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -53565,7 +53929,7 @@
       "name": "ANTHONY BORG",
       "team": "West Mall Lightning",
       "team_id": 560524,
-      "jersey": "5",
+      "jersey": "16",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -56888,64 +57252,6 @@
       ]
     },
     {
-      "name": "WILLIAM RANSOM",
-      "team": "Hamilton Steel",
-      "team_id": 534787,
-      "jersey": "29",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "Garden City Early",
-          "source_type": "tournament",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "LUCAS STADNIK",
       "team": "Oakville Rangers",
       "team_id": 537295,
@@ -58130,6 +58436,51 @@
       ]
     },
     {
+      "name": "MASON DHAMRAIT",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "30",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "SYDNEY FINKELSTEIN",
       "team": "Upper York Admirals",
       "team_id": 534145,
@@ -58224,6 +58575,51 @@
       "team": "King Rebellion",
       "team_id": 534151,
       "jersey": "53",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "York Simcoe AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "JACK HUGHES",
+      "team": "Caledon Hawks",
+      "team_id": 534165,
+      "jersey": "33",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -63644,10 +64040,10 @@
       "position": "G",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
-      "total_ga": 6,
+      "total_gp": 3,
+      "total_ga": 7,
       "total_min": 0,
-      "total_gaa": 3.0,
+      "total_gaa": 2.33,
       "total_so": 0,
       "total_w": 0,
       "total_l": 0,
@@ -63683,10 +64079,10 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
-          "gp": 0,
-          "ga": 0,
+          "gp": 1,
+          "ga": 1,
           "min": 0,
-          "gaa": 0.0,
+          "gaa": 1.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -65206,6 +65602,64 @@
           "ga": 0,
           "min": 0,
           "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "WILLIAM RANSOM",
+      "team": "Hamilton Steel",
+      "team_id": 534787,
+      "jersey": "29",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_ga": 7,
+      "total_min": 0,
+      "total_gaa": 7.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "Garden City Early",
+          "source_type": "tournament",
+          "gp": 1,
+          "ga": 7,
+          "min": 0,
+          "gaa": 7.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -70682,6 +71136,44 @@
       "pim": 28
     },
     {
+      "team_id": 558444,
+      "team_name": "West Niagara Flying Aces",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15764",
+      "source_name": "Garden City Early",
+      "source_type": "tournament",
+      "gp": 1,
+      "w": 1,
+      "l": 0,
+      "t": 0,
+      "pts": 2,
+      "gf": 7,
+      "ga": 1,
+      "diff": 6,
+      "pim": 6
+    },
+    {
+      "team_id": 558438,
+      "team_name": "Glancaster Bombers",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15764",
+      "source_name": "Garden City Early",
+      "source_type": "tournament",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0
+    },
+    {
       "team_id": 558434,
       "team_name": "Burlington Eagles",
       "division_title": "U11 AA",
@@ -70758,46 +71250,8 @@
       "pim": 0
     },
     {
-      "team_id": 558438,
-      "team_name": "Glancaster Bombers",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15764",
-      "source_name": "Garden City Early",
-      "source_type": "tournament",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0
-    },
-    {
       "team_id": 558439,
       "team_name": "Halton Hills Thunder",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15764",
-      "source_name": "Garden City Early",
-      "source_type": "tournament",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0
-    },
-    {
-      "team_id": 558440,
-      "team_name": "Hamilton Steel",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -70872,23 +71326,23 @@
       "pim": 0
     },
     {
-      "team_id": 558444,
-      "team_name": "West Niagara Flying Aces",
+      "team_id": 558440,
+      "team_name": "Hamilton Steel",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
       "source_id": "15764",
       "source_name": "Garden City Early",
       "source_type": "tournament",
-      "gp": 0,
+      "gp": 1,
       "w": 0,
-      "l": 0,
+      "l": 1,
       "t": 0,
       "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0
+      "gf": 1,
+      "ga": 7,
+      "diff": -6,
+      "pim": 4
     },
     {
       "team_id": 558469,
@@ -71947,19 +72401,19 @@
       "date": "Sep 18, 2026",
       "time": "8:30 AM",
       "timestamp": "2026-09-18T12:30:00Z",
-      "status": "scheduled",
+      "status": "final",
       "location": "Welland JBM",
       "source_id": "15764",
       "source_name": "Garden City Early",
       "source_type": "tournament",
       "home_id": 558440,
       "home_name": "Hamilton Steel",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 1,
+      "home_result": "L",
       "visitor_id": 558444,
       "visitor_name": "West Niagara Flying Aces",
-      "visitor_goals": null,
-      "visitor_result": null,
+      "visitor_goals": 7,
+      "visitor_result": "W",
       "division": "U11 AA"
     },
     {
@@ -72778,26 +73232,6 @@
       "home_result": null,
       "visitor_id": 558475,
       "visitor_name": "St Thomas Jr Stars",
-      "visitor_goals": null,
-      "visitor_result": null,
-      "division": "U14 AA"
-    },
-    {
-      "game_id": 3016481,
-      "date": "Sep 21, 2026",
-      "time": "7:45 PM",
-      "timestamp": "2026-09-21T23:45:00Z",
-      "status": "scheduled",
-      "location": "",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "home_id": 541199,
-      "home_name": "Halton Hills Thunder",
-      "home_goals": null,
-      "home_result": null,
-      "visitor_id": 541209,
-      "visitor_name": "Guelph Gryphons",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
