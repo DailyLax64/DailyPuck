@@ -1858,72 +1858,32 @@
 
         function renderHockeyTacticalIntelligence(targetTeam, metrics, divName) {
             const aiContainer = document.getElementById('ai-insights-container');
-            let cards = [];
+            if (!aiContainer) return;
 
-            if (metrics.gfAvg >= 4.0) {
-                cards.push({
-                    title: "High-Powered Forecheck & Scoring",
-                    data: `Averaging ${metrics.gfAvg.toFixed(1)} goals per game in ${divName}.`,
-                    advice: "Protect the defensive slot and prevent odd-man rushes. Quick, clean breakout passes are critical to avoid their trap."
-                });
-            } else if (metrics.gfAvg <= 2.0 && targetTeam.gp >= 2) {
-                cards.push({
-                    title: "Low-Scoring Output",
-                    data: `Limited to ${metrics.gfAvg.toFixed(1)} goals/game across tracked events.`,
-                    advice: "Pressure their defensemen on zone entries. Play disciplined positional hockey and avoid giving up power play opportunities."
-                });
-            }
+            // Retrieve pre-generated Gemini AI tactical cards from hockey_stats.json
+            const cards = (rawHockeyDb?.ai_insights?.[divName]?.[targetTeam.team_name]) || [];
 
-            if (metrics.gaAvg <= 2.0 && targetTeam.gp >= 2) {
-                cards.push({
-                    title: "Stingy Defensive Core / Strong Goaltending",
-                    data: `Allowing just ${metrics.gaAvg.toFixed(1)} goals per contest.`,
-                    advice: "Traffic in front of the net will be key. Crash the crease for second-chance rebounds and screen the goalie on point shots."
+            if (cards.length > 0) {
+                const colorPencils = ["text-cyan-400", "text-blue-400", "text-indigo-400"];
+                let html = `<div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 font-sans text-slate-300">`;
+                cards.slice(0, 3).forEach((c, idx) => {
+                    html += `
+                        <div class="p-3.5 sm:p-4 bg-slate-950 rounded-xl border border-slate-800">
+                            <span class="${colorPencils[idx % 3]} uppercase block mb-1 text-xs font-black tracking-wide">${c.title}</span>
+                            <p class="text-xs text-slate-400 mb-1.5 leading-relaxed"><strong>Data Profile:</strong> ${c.data}</p>
+                            <p class="text-xs text-slate-200 leading-relaxed"><strong>Bench Directive:</strong> ${c.advice}</p>
+                        </div>
+                    `;
                 });
-            } else if (metrics.gaAvg >= 4.0) {
-                cards.push({
-                    title: "Vulnerable Defensive Zone Coverage",
-                    data: `Surrendering ${metrics.gaAvg.toFixed(1)} goals per game.`,
-                    advice: "Cycle the puck down low in their zone. Attack the middle of the ice and shoot with purpose early in shifts."
-                });
-            }
-
-            if (metrics.pimAvg >= 10.0) {
-                cards.push({
-                    title: "Physical Play & Penalty Exposure",
-                    data: `Averaging ${metrics.pimAvg.toFixed(1)} penalty minutes per game.`,
-                    advice: "Keep feet moving to draw interference and hooking calls. Capitalize with patient puck circulation on the power play."
-                });
-            }
-
-            if (cards.length < 3) {
-                cards.push({
-                    title: "Neutral Zone Transition",
-                    data: "Neutral zone puck battles dictate possession in minor hockey tournaments.",
-                    advice: "Chip and chase when the blue line is clogged; avoid east-west passes across the center ice logo."
-                });
-            }
-            if (cards.length < 3) {
-                cards.push({
-                    title: "Puck Support & Cycling",
-                    data: "Low board battles create high-danger scoring chances.",
-                    advice: "Support the puck carrier along the perimeter and look for the weak-side winger cutting back-door."
-                });
-            }
-
-            const colorPencils = ["text-cyan-400", "text-blue-400", "text-indigo-400"];
-            let html = `<div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 font-sans text-slate-300">`;
-            cards.slice(0, 3).forEach((c, idx) => {
-                html += `
-                    <div class="p-3.5 sm:p-4 bg-slate-950 rounded-xl border border-slate-800">
-                        <span class="${colorPencils[idx]} uppercase block mb-1 text-xs font-black tracking-wide">${c.title}</span>
-                        * <strong>Data Profile:</strong> ${c.data}<br>
-                        * <strong>Bench Directive:</strong> ${c.advice}
+                html += `</div>`;
+                aiContainer.innerHTML = html;
+            } else {
+                aiContainer.innerHTML = `
+                    <div class="py-4 px-3 text-center text-slate-500 font-mono text-xs">
+                        ⚠️ Tactical intelligence awaiting sample. AI will synthesize matchup directives on the next scheduled sync.
                     </div>
                 `;
-            });
-            html += `</div>`;
-            aiContainer.innerHTML = html;
+            }
         }
 
         document.addEventListener('DOMContentLoaded', async () => {
