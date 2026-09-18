@@ -1,16 +1,19 @@
 import urllib.request
+import urllib.error
 import json
 import os
 import re
 import time
 from datetime import datetime, timezone
 
-# 1. Setup Auth & Network Headers
-RAW_COOKIE = os.environ.get("GAMESHEET_COOKIE", "")
-AUTH_TOKEN = os.environ.get("GAMESHEET_AUTH", "")
+# 1. Setup Automated Authentication & Network Headers
+FIREBASE_API_KEY = "AIzaSyCk5pKBFxvCMuwPchzXgvvz4XmmscJTvs8"
+AUTH_GATEWAY_URL = "https://gateway-authserver-awy26srzoa-nn.a.run.app/auth/v4/tokens"
 
-SESSION_COOKIE = RAW_COOKIE.strip().replace('\n', '').replace('\r', '') if RAW_COOKIE else None
-API_AUTH = AUTH_TOKEN.strip().replace('\n', '').replace('\r', '') if AUTH_TOKEN else None
+GAMESHEET_EMAIL = os.environ.get("GAMESHEET_EMAIL", "").strip()
+GAMESHEET_PASSWORD = os.environ.get("GAMESHEET_PASSWORD", "").strip()
+FALLBACK_AUTH = os.environ.get("GAMESHEET_AUTH", "").strip()
+FALLBACK_COOKIE = os.environ.get("GAMESHEET_COOKIE", "").strip()
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -19,15 +22,68 @@ headers = {
     'Origin': 'https://gamesheetstats.com'
 }
 
-if SESSION_COOKIE:
-    headers['Cookie'] = SESSION_COOKIE
-    print("🍪 Session cookie attached to headers.")
-if API_AUTH:
-    headers['Authorization'] = API_AUTH
-    print("🔑 API Authorization token attached to headers.")
-    
-if not SESSION_COOKIE and not API_AUTH:
-    print("⚠️ Warning: No authentication secrets found. Fetching anonymously.")
+def authenticate_gamesheet(email, password):
+    """Logs into Firebase and exchanges the token with GameSheet's auth gateway."""
+    try:
+        # Step 1: Sign in with Firebase
+        firebase_url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={FIREBASE_API_KEY}"
+        fb_payload = json.dumps({
+            "email": email,
+            "password": password,
+            "returnSecureToken": True
+        }).encode('utf-8')
+        
+        fb_req = urllib.request.Request(
+            firebase_url,
+            data=fb_payload,
+            headers={"Content-Type": "application/json"}
+        )
+        with urllib.request.urlopen(fb_req, timeout=15) as resp:
+            fb_data = json.loads(resp.read().decode('utf-8'))
+            firebase_id_token = fb_data.get("idToken")
+
+        if not firebase_id_token:
+            print("   ❌ Firebase authentication succeeded but no idToken returned.")
+            return None
+
+        # Step 2: Mint GameSheet 10-minute access token via Cloud Run gateway
+        gw_req = urllib.request.Request(
+            AUTH_GATEWAY_URL,
+            headers={
+                "Authorization": f"Bearer {firebase_id_token}",
+                "Origin": "https://gamesheet.app",
+                "Referer": "https://gamesheet.app/",
+                "Accept": "application/json, text/plain, */*",
+                "User-Agent": "Mozilla/5.0"
+            }
+        )
+        with urllib.request.urlopen(gw_req, timeout=15) as resp:
+            gw_data = json.loads(resp.read().decode('utf-8'))
+            access_token = gw_data.get("access")
+            if access_token:
+                return access_token
+
+    except Exception as e:
+        print(f"   ❌ Automated login failed: {e}")
+    return None
+
+# Authenticate dynamically if credentials exist
+active_token = None
+if GAMESHEET_EMAIL and GAMESHEET_PASSWORD:
+    print(f"🔐 Authenticating session for {GAMESHEET_EMAIL}...")
+    active_token = authenticate_gamesheet(GAMESHEET_EMAIL, GAMESHEET_PASSWORD)
+
+if active_token:
+    headers['Authorization'] = f"Bearer {active_token}"
+    headers['Cookie'] = f"__session={active_token}"
+    print("🔑 Successfully generated and attached fresh GameSheet access token.")
+elif FALLBACK_AUTH:
+    headers['Authorization'] = FALLBACK_AUTH
+    if FALLBACK_COOKIE:
+        headers['Cookie'] = FALLBACK_COOKIE
+    print("🍪 Using manual fallback token from secrets.")
+else:
+    print("⚠️ Warning: No active credentials found. Fetching anonymously.")
 
 def clean_name(name):
     return ' '.join(str(name or "").split()).strip()
@@ -438,7 +494,7 @@ for src in all_sources:
                 tot_ga = goalies_db[goalie_key]["total_ga"]
                 tot_gp = goalies_db[goalie_key]["total_gp"]
 
-                # Cumulative GAA calculation with standard-game fallback for missing TOI
+                # Cumulative GAA: estimate using 45-min games if scorekeepers omit TOI
                 if tot_min > 0:
                     goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2)
                 elif tot_gp > 0:
@@ -446,7 +502,7 @@ for src in all_sources:
                 else:
                     goalies_db[goalie_key]["total_gaa"] = gaa
 
-                # Source-level GAA calculation for schedule/event breakdown sub-rows
+                # Per-source GAA for breakdown drawer
                 if mins > 0:
                     clean_gaa = round((ga * 45.0) / mins, 2)
                 elif gp > 0:
