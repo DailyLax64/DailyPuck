@@ -1880,7 +1880,13 @@
         }
 
         async function resolveGeminiModel(apiKey) {
+            // Purge outdated models if cached
+            if (activeGeminiModel && (activeGeminiModel.includes('2.5') || activeGeminiModel.includes('1.5') || activeGeminiModel.includes('2.0'))) {
+                localStorage.removeItem('gemini_model_name');
+                activeGeminiModel = "";
+            }
             if (activeGeminiModel) return activeGeminiModel;
+
             try {
                 const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
                 if (res.ok) {
@@ -1889,9 +1895,8 @@
                         .filter(m => m.supportedGenerationMethods && m.supportedGenerationMethods.includes("generateContent"))
                         .map(m => m.name.replace(/^models\//, ''));
                     
-                    const best = available.find(m => m === 'gemini-2.5-flash') ||
-                                 available.find(m => m === 'gemini-2.0-flash') ||
-                                 available.find(m => m === 'gemini-2.5-flash-lite') ||
+                    const priorityList = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-3.5-flash-lite'];
+                    const best = priorityList.find(p => available.includes(p)) ||
                                  available.find(m => m.includes('flash')) ||
                                  available[0];
 
@@ -1902,9 +1907,9 @@
                     }
                 }
             } catch (e) {
-                console.warn("Could not auto-detect model list, falling back to gemini-2.5-flash:", e);
+                console.warn("Could not auto-detect model list, falling back to gemini-3.6-flash:", e);
             }
-            return "gemini-2.5-flash";
+            return "gemini-3.6-flash";
         }
 
         async function fetchTeamAiIntelligence(teamName, divName, forceRefresh = false) {
