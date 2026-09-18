@@ -681,6 +681,7 @@
 
         // In-memory cache for on-demand AI session
         const aiInsightsCache = {};
+        let activeGeminiModel = localStorage.getItem('gemini_model_name') || "";
 
         // Scoreboard State Variables
         let scoreboardResultsDate = "";
@@ -1873,7 +1874,37 @@
 
         function clearGeminiKey() {
             localStorage.removeItem('gemini_api_key');
+            localStorage.removeItem('gemini_model_name');
+            activeGeminiModel = "";
             loadScoutingDashboard();
+        }
+
+        async function resolveGeminiModel(apiKey) {
+            if (activeGeminiModel) return activeGeminiModel;
+            try {
+                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    const available = (data.models || [])
+                        .filter(m => m.supportedGenerationMethods && m.supportedGenerationMethods.includes("generateContent"))
+                        .map(m => m.name.replace(/^models\//, ''));
+                    
+                    const best = available.find(m => m === 'gemini-2.5-flash') ||
+                                 available.find(m => m === 'gemini-2.0-flash') ||
+                                 available.find(m => m === 'gemini-2.5-flash-lite') ||
+                                 available.find(m => m.includes('flash')) ||
+                                 available[0];
+
+                    if (best) {
+                        activeGeminiModel = best;
+                        localStorage.setItem('gemini_model_name', best);
+                        return best;
+                    }
+                }
+            } catch (e) {
+                console.warn("Could not auto-detect model list, falling back to gemini-2.5-flash:", e);
+            }
+            return "gemini-2.5-flash";
         }
 
         async function fetchTeamAiIntelligence(teamName, divName, forceRefresh = false) {
@@ -1894,10 +1925,10 @@
                 </div>
             `;
 
+            const model = await resolveGeminiModel(apiKey);
             const teamPayload = scoutingReportDatabase[divName]?.[teamName];
             if (!teamPayload) return;
 
-            // Extract context from compiled stats
             const gfAvg = teamPayload.gp > 0 ? (teamPayload.gf / teamPayload.gp).toFixed(1) : "0.0";
             const gaAvg = teamPayload.gp > 0 ? (teamPayload.ga / teamPayload.gp).toFixed(1) : "0.0";
             const pimAvg = teamPayload.gp > 0 ? (teamPayload.pim / teamPayload.gp).toFixed(1) : "0.0";
@@ -1936,7 +1967,7 @@ Return a JSON array of exactly 3 tactical cards:
 ]`;
 
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -1951,7 +1982,10 @@ Return a JSON array of exactly 3 tactical cards:
                 }
 
                 const data = await response.json();
-                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
+                const candidate = data.candidates?.[0];
+                const parts = candidate?.content?.parts || [];
+                const textPart = parts.find(p => p.text && !p.thought) || parts[parts.length - 1];
+                let rawText = textPart?.text || "[]";
                 rawText = rawText.replace(/```json/g, "").replace(/```/g, "").trim();
                 const cards = JSON.parse(rawText);
 
