@@ -14,7 +14,6 @@ GAMESHEET_EMAIL = os.environ.get("GAMESHEET_EMAIL", "").strip()
 GAMESHEET_PASSWORD = os.environ.get("GAMESHEET_PASSWORD", "").strip()
 FALLBACK_AUTH = os.environ.get("GAMESHEET_AUTH", "").strip()
 FALLBACK_COOKIE = os.environ.get("GAMESHEET_COOKIE", "").strip()
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -512,117 +511,7 @@ for src in all_sources:
     
     time.sleep(0.2)
 
-# 6. STAGE 4: GENERATE AI BENCH INTELLIGENCE (GOOGLE GEMINI)
-ai_insights_db = {"U11 AA": {}, "U14 AA": {}}
-
-def call_gemini_api(prompt_text):
-    if not GEMINI_API_KEY:
-        return None
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
-    payload = json.dumps({
-        "contents": [{"parts": [{"text": prompt_text}]}],
-        "generationConfig": {
-            "response_mime_type": "application/json"
-        }
-    }).encode("utf-8")
-    
-    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                data = json.loads(resp.read().decode('utf-8'))
-                candidate = data.get("candidates", [{}])[0]
-                raw_text = candidate.get("content", {}).get("parts", [{}])[0].get("text", "")
-                return json.loads(raw_text)
-        except urllib.error.HTTPError as he:
-            if he.code == 429:
-                print(f"   ⏳ Rate limited (429), waiting 10s before retry (attempt {attempt+1}/3)...")
-                time.sleep(10)
-                continue
-            print(f"   ⚠️ Gemini HTTP error: {he.code} {he.reason}")
-            break
-        except Exception as e:
-            print(f"   ⚠️ Gemini request error: {e}")
-            break
-    return None
-
-if GEMINI_API_KEY:
-    print("\n🧠 Generating AI Tactical Bench Intelligence via Gemini...")
-    
-    # Pre-aggregate team stats across all standings entries
-    team_totals = {}
-    for st in standings_db:
-        t_key = (st["division_title"], st["team_name"])
-        if t_key not in team_totals:
-            team_totals[t_key] = {"gp": 0, "w": 0, "l": 0, "t": 0, "gf": 0, "ga": 0, "pim": 0, "diff": 0}
-        team_totals[t_key]["gp"] += st["gp"]
-        team_totals[t_key]["w"] += st["w"]
-        team_totals[t_key]["l"] += st["l"]
-        team_totals[t_key]["t"] += st["t"]
-        team_totals[t_key]["gf"] += st["gf"]
-        team_totals[t_key]["ga"] += st["ga"]
-        team_totals[t_key]["pim"] += st["pim"]
-        team_totals[t_key]["diff"] += st["diff"]
-
-    teams_analyzed = 0
-    for cohort in ["U11 AA", "U14 AA"]:
-        age = cohort.split()[0]
-        cohort_teams = sorted(list(master_teams_db.get(cohort, {}).keys()))
-
-        for t_name in cohort_teams:
-            stats = team_totals.get((cohort, t_name), {"gp": 0, "w": 0, "l": 0, "t": 0, "gf": 0, "ga": 0, "pim": 0, "diff": 0})
-            if stats["gp"] == 0:
-                continue
-
-            # Top 3 Skaters
-            team_skaters = [s for s in skaters_db.values() if s["team"] == t_name and s["age"] == age]
-            team_skaters.sort(key=lambda x: (x["total_pts"], x["total_g"]), reverse=True)
-            skaters_str = ", ".join([f"#{s['jersey']} {s['name']} ({s['total_pts']} pts in {s['total_gp']} GP)" for s in team_skaters[:3]]) or "Roster points distributed"
-
-            # Primary Goalie
-            team_goalies = [g for g in goalies_db.values() if g["team"] == t_name and g["age"] == age]
-            team_goalies.sort(key=lambda x: x["total_gp"], reverse=True)
-            goalie_str = f"{team_goalies[0]['name']} ({team_goalies[0]['total_gaa']} GAA, {team_goalies[0]['total_gp']} GP)" if team_goalies else "Rotation in net"
-
-            # Recent 3 Games
-            team_games = [g for g in all_compiled_games if (g["home_name"] == t_name or g["visitor_name"] == t_name) and g["status"] == "final"]
-            recent_str = ", ".join([f"{'vs' if g['home_name'] == t_name else '@'} {g['visitor_name'] if g['home_name'] == t_name else g['home_name']} ({g['home_goals']}-{g['visitor_goals']})" for g in team_games[-3:]]) or "Early regular season"
-
-            gf_avg = round(stats["gf"] / stats["gp"], 1)
-            ga_avg = round(stats["ga"] / stats["gp"], 1)
-            pim_avg = round(stats["pim"] / stats["gp"], 1)
-
-            prompt = f"""You are a hockey scout writing tactical notes for an opposing bench playing against {t_name} ({cohort}).
-TEAM PROFILE:
-- Record: {stats['w']}W - {stats['l']}L - {stats['t']}T (Goal Diff: {stats['diff']:+d})
-- Scoring: {gf_avg} GF/G | Defense: {ga_avg} GA/G | Discipline: {pim_avg} PIM/G
-- Top Scorers: {skaters_str}
-- Starting Netminder: {goalie_str}
-- Recent Matchups: {recent_str}
-
-Return a JSON array of exactly 3 objects:
-[
-  {{"title": "Offensive Threat & Key Players", "data": "1 concise sentence with player names and scoring habits.", "advice": "1 practical bench instruction to neutralize them."}},
-  {{"title": "Goaltending & Rebound Tendencies", "data": "1 concise sentence on their goalie stats or defensive zone coverage.", "advice": "1 concrete instruction on how to create scoring chances."}},
-  {{"title": "Bench Tactical Directive", "data": "1 concise sentence regarding their penalty risk, pace, or recent streak.", "advice": "1 definitive directive for line changes, forecheck, or neutral zone play."}}
-]"""
-
-            cards = call_gemini_api(prompt)
-            if cards and isinstance(cards, list) and len(cards) >= 3:
-                ai_insights_db[cohort][t_name] = cards[:3]
-                teams_analyzed += 1
-                print(f"   ✅ Generated scout notes for: [{cohort}] {t_name}")
-            else:
-                print(f"   ⚠️ Fallback applied for: [{cohort}] {t_name}")
-
-            # Sleep 4.2s to stay safely under the 15 RPM free tier quota
-            time.sleep(4.2)
-
-    print(f"🎯 AI Tactical Scouting Generation Complete ({teams_analyzed} teams updated).")
-else:
-    print("ℹ️ GEMINI_API_KEY not provided. Skipping automated tactical notes.")
-
-# 7. EXPORT COMPILED STATS
+# 6. EXPORT COMPILED STATS
 output_data = {
     "generated_at": datetime.now(timezone.utc).isoformat(),
     "total_skaters": len(skaters_db),
@@ -633,8 +522,7 @@ output_data = {
     "goalies": sorted(list(goalies_db.values()), key=lambda x: (x["total_gaa"], -x["total_gp"])),
     "standings": standings_db,
     "games": all_compiled_games,
-    "master_teams": master_teams_db,
-    "ai_insights": ai_insights_db
+    "master_teams": master_teams_db
 }
 
 output_path = "hockey_stats.json"
@@ -650,7 +538,7 @@ print(f"📋 Games Tracked:     {len(all_compiled_games)}")
 print(f"💾 Saved to {output_path}")
 print("="*70)
 
-# 8. UNMAPPED AUDIT REPORT
+# 7. UNMAPPED AUDIT REPORT
 print("\n📋 UNMAPPED TEAM AUDIT LOG")
 print("-" * 70)
 if unmapped_audit:
