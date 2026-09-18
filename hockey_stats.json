@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T00:10:57.278479+00:00",
+  "generated_at": "2026-09-18T00:38:11.454928+00:00",
   "total_skaters": 1652,
   "total_goalies": 216,
   "total_standings_rows": 286,
@@ -37690,16 +37690,6 @@
           "a": 0,
           "pts": 0,
           "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
         }
       ]
     },
@@ -37732,16 +37722,6 @@
           "source_name": "Alliance Exhibition",
           "source_type": "league",
           "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -53445,7 +53425,7 @@
       "name": "ANTHONY BORG",
       "team": "West Mall Lightning",
       "team_id": 560524,
-      "jersey": "5",
+      "jersey": "16",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -74355,5 +74335,9 @@
         "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
       }
     }
+  },
+  "ai_insights": {
+    "U11 AA": {},
+    "U14 AA": {}
   }
 }
