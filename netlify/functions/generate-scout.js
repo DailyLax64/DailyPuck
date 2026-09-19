@@ -7,7 +7,7 @@ exports.handler = async function(event, context) {
     if (!apiKey) {
         return { 
             statusCode: 500, 
-            body: JSON.stringify({ error: "GEMINI_API_KEY environment variable is not configured in Netlify." }) 
+            body: JSON.stringify({ error: "GEMINI_API_KEY is not configured in Netlify environment variables." }) 
         };
     }
 
@@ -15,11 +15,12 @@ exports.handler = async function(event, context) {
         const payload = JSON.parse(event.body || "{}");
         const prompt = payload.prompt;
 
+        // Current active models in order of speed and capability
         const candidateModels = [
-            "gemini-2.5-flash",
-            "gemini-2.5-flash-lite",
-            "gemini-2.0-flash",
-            "gemini-1.5-flash"
+            "gemini-3.6-flash",
+            "gemini-3.5-flash",
+            "gemini-3.5-flash-lite",
+            "gemini-2.5-flash"
         ];
 
         let lastErr = null;
@@ -36,7 +37,7 @@ exports.handler = async function(event, context) {
 
                 if (!response.ok) {
                     const errJson = await response.json().catch(() => ({}));
-                    lastErr = errJson.error?.message || `HTTP ${response.status}`;
+                    lastErr = errJson.error?.message || `HTTP ${response.status} on ${model}`;
                     continue;
                 }
 
