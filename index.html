@@ -416,40 +416,6 @@
                         </div>
                     </div>
 
-                    <!-- ⚡ Special Teams Execution Capsule -->
-                    <div class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
-                        <div class="flex items-center justify-between mb-3 sm:mb-4">
-                            <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 block drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">⚡ Special Teams Execution</span>
-                            <span class="text-[10px] sm:text-xs font-mono text-slate-400">Cumulative Multi-Source Counts</span>
-                        </div>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
-                            <!-- Power Play % -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Power Play %</span>
-                                <span id="spec-pp-pct" class="text-xl sm:text-3xl font-mono font-black text-cyan-400">-</span>
-                                <span id="spec-pp-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Opps</span>
-                            </div>
-                            <!-- Penalty Kill % -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Penalty Kill %</span>
-                                <span id="spec-pk-pct" class="text-xl sm:text-3xl font-mono font-black text-emerald-400">-</span>
-                                <span id="spec-pk-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Killed</span>
-                            </div>
-                            <!-- Shorthanded Goals For -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals For</span>
-                                <span id="spec-shgf" class="text-xl sm:text-3xl font-mono font-black text-white">-</span>
-                                <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Scored Shorthanded</span>
-                            </div>
-                            <!-- Shorthanded Goals Against -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals Against</span>
-                                <span id="spec-shga" class="text-xl sm:text-3xl font-mono font-black text-rose-400">-</span>
-                                <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Allowed on PP</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Last 5 Games Timeline Form -->
                     <div class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 text-white">
                         <div>
@@ -563,6 +529,40 @@
                                         <span class="gauge-total-teams-label">Total</span>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ⚡ Special Teams Execution Capsule (Moved After Team Efficiency Profiles) -->
+                    <div class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
+                        <div class="flex items-center justify-between mb-3 sm:mb-4">
+                            <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 block drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">⚡ Special Teams Execution</span>
+                            <span class="text-[10px] sm:text-xs font-mono text-slate-400">Cumulative Multi-Source Counts</span>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+                            <!-- Power Play % -->
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Power Play %</span>
+                                <span id="spec-pp-pct" class="text-xl sm:text-3xl font-mono font-black text-cyan-400">-</span>
+                                <span id="spec-pp-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Opps</span>
+                            </div>
+                            <!-- Penalty Kill % -->
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Penalty Kill %</span>
+                                <span id="spec-pk-pct" class="text-xl sm:text-3xl font-mono font-black text-emerald-400">-</span>
+                                <span id="spec-pk-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Killed</span>
+                            </div>
+                            <!-- Shorthanded Goals For -->
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals For</span>
+                                <span id="spec-shgf" class="text-xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Scored Shorthanded</span>
+                            </div>
+                            <!-- Shorthanded Goals Against -->
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals Against</span>
+                                <span id="spec-shga" class="text-xl sm:text-3xl font-mono font-black text-rose-400">-</span>
+                                <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Allowed on PP</span>
                             </div>
                         </div>
                     </div>
