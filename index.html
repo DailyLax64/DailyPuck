@@ -33,7 +33,6 @@
             background: #475569;
         }
 
-        /* Smooth scrolling on mobile table wrappers */
         .touch-scroll {
             -webkit-overflow-scrolling: touch;
         }
@@ -446,7 +445,7 @@
                         </div>
                     </div>
 
-                    <!-- Efficiency Profiles Capsule -->
+                    <!-- Team Efficiency Profiles Capsule -->
                     <div class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
                         <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 block mb-3 sm:mb-4 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">📊 Team Efficiency Profiles</span>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
@@ -533,7 +532,7 @@
                         </div>
                     </div>
 
-                    <!-- ⚡ Special Teams Execution Capsule (Moved After Team Efficiency Profiles) -->
+                    <!-- ⚡ Special Teams Execution Capsule -->
                     <div class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
                         <div class="flex items-center justify-between mb-3 sm:mb-4">
                             <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 block drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">⚡ Special Teams Execution</span>
@@ -580,9 +579,12 @@
                 <!-- PAGE 2 PRINT WRAPPER -->
                 <div id="print-page-2" class="space-y-5 sm:space-y-6 mt-5 sm:mt-6 print:mt-0">
                     
-                    <!-- Tactical Advice Capsule -->
+                    <!-- Tactical Scouting Insights Capsule -->
                     <div id="capsule-ai-commentary" class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl relative overflow-hidden text-white">
-                        <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 block mb-3 sm:mb-4 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🧠 Bench Intelligence & Matchup Notes</span>
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3 sm:mb-4">
+                            <span id="ai-section-title" class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🧠 Matchup Scouting Insights & Tendency Analysis</span>
+                            <span id="ai-matchup-subtitle" class="text-[10px] sm:text-xs font-mono text-slate-400"></span>
+                        </div>
                         <div id="ai-insights-container" class="text-xs sm:text-sm leading-relaxed text-slate-300"></div>
                     </div>
 
@@ -753,7 +755,7 @@
 
         async function loadHockeyDatabase() {
             if (window.location.protocol === 'file:') {
-                alert("⚠️ You are opening index.html directly from your computer file system (file://). Browsers block JSON fetching on local files. Please view via your GitHub Pages link!");
+                alert("⚠️ You are opening index.html directly from your computer file system (file://). Browsers block JSON fetching on local files. Please view via your web server!");
                 return;
             }
 
@@ -856,7 +858,6 @@
             const yesterday = shiftDateStr(today, -1);
             const allGames = rawHockeyDb ? (rawHockeyDb.games || []) : [];
 
-            // Results Date
             const finalDates = Array.from(new Set(allGames.filter(g => g.status === 'final').map(g => getStandardDateKey(g)))).filter(Boolean).sort();
             if (finalDates.includes(yesterday)) {
                 scoreboardResultsDate = yesterday;
@@ -865,7 +866,6 @@
                 scoreboardResultsDate = pastCompleted.length > 0 ? pastCompleted[pastCompleted.length - 1] : (finalDates.length > 0 ? finalDates[finalDates.length - 1] : yesterday);
             }
 
-            // Matchups Date
             const scheduledDates = Array.from(new Set(allGames.filter(g => g.status !== 'final').map(g => getStandardDateKey(g)))).filter(Boolean).sort();
             if (scheduledDates.includes(today)) {
                 scoreboardMatchupsDate = today;
@@ -903,13 +903,11 @@
             if (!rawHockeyDb) return;
             const allGames = rawHockeyDb.games || [];
             
-            // 1. Update Date Navigator Pills
             const resultsPill = document.getElementById('scoreboard-results-date-pill');
             const matchupsPill = document.getElementById('scoreboard-matchups-date-pill');
             if (resultsPill) resultsPill.innerText = formatPillDate(scoreboardResultsDate);
             if (matchupsPill) matchupsPill.innerText = formatPillDate(scoreboardMatchupsDate);
 
-            // 2. Filter Completed Results
             let completedGames = allGames.filter(g => {
                 const isMatch = getStandardDateKey(g) === scoreboardResultsDate;
                 const isFinal = g.status === 'final' || g.home_goals !== null;
@@ -917,7 +915,6 @@
                 return isMatch && isFinal && matchesCohort;
             });
 
-            // 3. Filter Scheduled Matchups
             let scheduledGames = allGames.filter(g => {
                 const isMatch = getStandardDateKey(g) === scoreboardMatchupsDate;
                 const isSched = g.status !== 'final' && g.home_goals === null;
@@ -925,13 +922,11 @@
                 return isMatch && isSched && matchesCohort;
             });
 
-            // 4. Update Header Count Badges
             const resultsCountEl = document.getElementById('scoreboard-results-count');
             const matchupsCountEl = document.getElementById('scoreboard-matchups-count');
             if (resultsCountEl) resultsCountEl.innerText = `${completedGames.length} Game${completedGames.length === 1 ? '' : 's'} Final`;
             if (matchupsCountEl) matchupsCountEl.innerText = `${scheduledGames.length} Matchup${scheduledGames.length === 1 ? '' : 's'} Scheduled`;
 
-            // 5. Render Completed Results Column
             const resultsContainer = document.getElementById('scoreboard-results-list');
             if (resultsContainer) {
                 resultsContainer.innerHTML = '';
@@ -955,7 +950,6 @@
                 }
             }
 
-            // 6. Render Upcoming Matchups Column
             const matchupsContainer = document.getElementById('scoreboard-matchups-list');
             if (matchupsContainer) {
                 matchupsContainer.innerHTML = '';
@@ -1076,7 +1070,6 @@
         function buildScoutingReportDatabase() {
             scoutingReportDatabase = {};
 
-            // 1. Ingest Standings Rows & Aggregate Special Teams Counts
             (rawHockeyDb.standings || []).forEach(row => {
                 const age = row.age || row.detected_age || "Other";
                 const tier = row.tier || "AA";
@@ -1112,7 +1105,6 @@
                 teamProfile.diff += Number(row.diff) || 0;
                 teamProfile.pim += Number(row.pim) || 0;
 
-                // Special Teams cumulative counts
                 teamProfile.ppg += Number(row.ppg) || 0;
                 teamProfile.ppo += Number(row.ppo) || 0;
                 teamProfile.ppga += Number(row.ppga) || 0;
@@ -1123,7 +1115,6 @@
                 teamProfile.standings_entries.push(row);
             });
 
-            // 2. Map Skaters
             (rawHockeyDb.skaters || []).forEach(p => {
                 const divKey = `${p.age} ${p.tier}`.trim();
                 if (scoutingReportDatabase[divKey] && scoutingReportDatabase[divKey][p.team]) {
@@ -1131,7 +1122,6 @@
                 }
             });
 
-            // 3. Map Goalies
             (rawHockeyDb.goalies || []).forEach(g => {
                 const divKey = `${g.age} ${g.tier}`.trim();
                 if (scoutingReportDatabase[divKey] && scoutingReportDatabase[divKey][g.team]) {
@@ -1139,14 +1129,12 @@
                 }
             });
 
-            // 4. Map Games to Team Profiles (Strictly Division-Locked)
             (rawHockeyDb.games || []).forEach(g => {
                 if (!g) return;
                 attachGameToMatchingTeams(g.home_name, g.home_id, g, true);
                 attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
             });
 
-            // 5. Precompute Strength of Schedule (SoS) Rankings from MHR Data
             if (rawHockeyDb.master_teams) {
                 Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
                     const cohortTeams = rawHockeyDb.master_teams[divKey];
@@ -1166,7 +1154,6 @@
                 });
             }
 
-            // 6. Calculate Division Contenders
             hotTeamsDatabaseMap = {};
             Object.keys(scoutingReportDatabase).forEach(divKey => {
                 const divTeams = Object.values(scoutingReportDatabase[divKey]);
@@ -1180,8 +1167,6 @@
                     hotTeamsDatabaseMap[divKey].push(hotCandidates[0].team_name);
                 }
             });
-
-            console.log("🎯 Compiled Divisions Count:", Object.keys(scoutingReportDatabase).length);
         }
 
         function attachGameToMatchingTeams(teamName, teamId, game, isHome) {
@@ -1215,13 +1200,11 @@
                 score_str: isFinal ? `${teamGoals} - ${oppGoals}` : (game.time || "Scheduled")
             };
 
-            // 1. Direct match in target division ONLY
             if (divTree[teamName] && Array.isArray(divTree[teamName].games)) {
                 divTree[teamName].games.push(record);
                 return;
             }
 
-            // 2. Fallback key match in target division ONLY
             const targetKey = cleanKey(teamName);
             if (!targetKey) return;
             for (const tName in divTree) {
@@ -1261,8 +1244,6 @@
                 opt2.style.color = "#0f172a";
                 myTeamDivEl.appendChild(opt2);
             });
-
-            console.log(`📋 Populated ${divKeys.length} divisions into selectors.`);
         }
 
         function onMyTeamDivChange(isUserAction = false) {
@@ -1308,6 +1289,7 @@
             if (isUserAction) {
                 localStorage.setItem('cachedMyTeamName', activeSelectedMyTeam);
             }
+            
             const dashboardView = document.getElementById('scouting-dashboard-view');
             if (dashboardView && !dashboardView.classList.contains('hidden')) {
                 loadScoutingDashboard();
@@ -1505,7 +1487,6 @@
                 }
             }
 
-            // Fetch MHR Canonical Team Profile
             const masterCohort = rawHockeyDb.master_teams?.[divName] || {};
             let mhrData = masterCohort[teamName];
             if (!mhrData) {
@@ -1940,65 +1921,20 @@
             renderHockeyTacticalIntelligence(teamPayload, curMetrics, divName);
         }
 
-        // ==========================================
-        // 🧠 ON-DEMAND CLIENT-SIDE GEMINI SCOUTING
-        // ==========================================
+        // =========================================================================
+        // 🧠 MATCHUP SCOUTING INSIGHTS ENGINE (NETLIFY SERVERLESS PROXY)
+        // =========================================================================
 
-        function saveGeminiKey() {
-            const input = document.getElementById('gemini-key-input');
-            if (input && input.value.trim()) {
-                localStorage.setItem('gemini_api_key', input.value.trim());
-                loadScoutingDashboard();
-            }
-        }
+        async function fetchTeamAiIntelligence(oppTeamName, divName, forceRefresh = false) {
+            const myTeamName = activeSelectedMyTeam || "";
+            const isMatchup = myTeamName && myTeamName !== oppTeamName;
 
-        function clearGeminiKey() {
-            localStorage.removeItem('gemini_api_key');
-            loadScoutingDashboard();
-        }
+            const cacheKey = isMatchup 
+                ? `${divName}__${cleanKey(myTeamName)}__VS__${cleanKey(oppTeamName)}`
+                : `${divName}__SOLO__${cleanKey(oppTeamName)}`;
 
-        async function getCandidateModels(apiKey) {
-            try {
-                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
-                if (res.ok) {
-                    const data = await res.json();
-                    const available = (data.models || [])
-                        .filter(m => m.supportedGenerationMethods && m.supportedGenerationMethods.includes("generateContent"))
-                        .map(m => m.name.replace(/^models\//, ''));
-
-                    const priority = [
-                        'gemini-2.5-flash',
-                        'gemini-2.5-flash-lite',
-                        'gemini-2.0-flash',
-                        'gemini-2.0-flash-lite',
-                        'gemini-1.5-flash',
-                        'gemini-3.6-flash'
-                    ];
-                    const sorted = [];
-                    for (const p of priority) {
-                        if (available.includes(p)) sorted.push(p);
-                    }
-                    for (const a of available) {
-                        if (!sorted.includes(a) && a.includes('flash')) sorted.push(a);
-                    }
-                    for (const a of available) {
-                        if (!sorted.includes(a)) sorted.push(a);
-                    }
-                    if (sorted.length > 0) return sorted;
-                }
-            } catch (e) {
-                console.warn("Model listing failed, using fallback list:", e);
-            }
-            return ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-2.0-flash', 'gemini-1.5-flash'];
-        }
-
-        async function fetchTeamAiIntelligence(teamName, divName, forceRefresh = false) {
-            const apiKey = localStorage.getItem('gemini_api_key');
-            if (!apiKey) return;
-
-            const cacheKey = `${divName}_${teamName}`;
             if (!forceRefresh && aiInsightsCache[cacheKey]) {
-                renderAiCards(aiInsightsCache[cacheKey], teamName, divName);
+                renderAiCards(aiInsightsCache[cacheKey], oppTeamName, myTeamName, divName);
                 return;
             }
 
@@ -2006,138 +1942,135 @@
             aiContainer.innerHTML = `
                 <div class="py-8 text-center flex flex-col items-center justify-center space-y-2">
                     <div class="w-6 h-6 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
-                    <span id="ai-loading-text" class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Synthesizing live scouting directives via Gemini AI...</span>
+                    <span id="ai-loading-text" class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">
+                        ${isMatchup ? `Synthesizing matchup scouting profile: ${myTeamName} vs${oppTeamName}...` : `Synthesizing analytical breakdown for ${oppTeamName}...`}
+                    </span>
                 </div>
             `;
 
-            const teamPayload = scoutingReportDatabase[divName]?.[teamName];
-            if (!teamPayload) return;
+            const oppPayload = scoutingReportDatabase[divName]?.[oppTeamName];
+            if (!oppPayload) return;
 
-            const gfAvg = teamPayload.gp > 0 ? (teamPayload.gf / teamPayload.gp).toFixed(1) : "0.0";
-            const gaAvg = teamPayload.gp > 0 ? (teamPayload.ga / teamPayload.gp).toFixed(1) : "0.0";
-            const pimAvg = teamPayload.gp > 0 ? (teamPayload.pim / teamPayload.gp).toFixed(1) : "0.0";
+            const oppGfAvg = oppPayload.gp > 0 ? (oppPayload.gf / oppPayload.gp).toFixed(1) : "0.0";
+            const oppGaAvg = oppPayload.gp > 0 ? (oppPayload.ga / oppPayload.gp).toFixed(1) : "0.0";
+            const oppPimAvg = oppPayload.gp > 0 ? (oppPayload.pim / oppPayload.gp).toFixed(1) : "0.0";
+            const oppPpPct = oppPayload.ppo > 0 ? ((oppPayload.ppg / oppPayload.ppo) * 100).toFixed(1) : "0.0";
+            const oppPkKilled = Math.max(0, oppPayload.ppoa - oppPayload.ppga);
+            const oppPkPct = oppPayload.ppoa > 0 ? ((oppPkKilled / oppPayload.ppoa) * 100).toFixed(1) : "100.0";
 
-            // Special Teams context for Gemini
-            const ppg = teamPayload.ppg || 0;
-            const ppo = teamPayload.ppo || 0;
-            const ppga = teamPayload.ppga || 0;
-            const ppoa = teamPayload.ppoa || 0;
-            const shg = teamPayload.shg || 0;
-            const shga = teamPayload.shga || 0;
-            const ppPct = ppo > 0 ? ((ppg / ppo) * 100).toFixed(1) : "0.0";
-            const pkKilled = Math.max(0, ppoa - ppga);
-            const pkPct = ppoa > 0 ? ((pkKilled / ppoa) * 100).toFixed(1) : "100.0";
-
-            const topSkaters = [...(teamPayload.roster || [])]
+            const oppTopSkaters = [...(oppPayload.roster || [])]
                 .sort((a, b) => b.total_pts - a.total_pts)
                 .slice(0, 3)
-                .map(s => `#${s.jersey || '?'} ${s.name} (${s.total_pts} pts in ${s.total_gp} GP)`)
-                .join(", ") || "Balanced scoring distribution";
+                .map(s => `#${s.jersey || '?'} ${s.name} (${s.total_pts} pts)`)
+                .join(", ") || "Balanced scoring";
 
-            const topGoalie = [...(teamPayload.goalies || [])]
-                .sort((a, b) => b.total_gp - a.total_gp)[0];
-            const goalieStr = topGoalie 
-                ? `${topGoalie.name} (${topGoalie.total_gaa.toFixed(2)} GAA, ${topGoalie.total_gp} GP)` 
-                : "Rotation in net";
+            const oppGoalie = [...(oppPayload.goalies || [])].sort((a, b) => b.total_gp - a.total_gp)[0];
+            const oppGoalieStr = oppGoalie ? `${oppGoalie.name} (${oppGoalie.total_gaa.toFixed(2)} GAA, ${oppGoalie.total_gp} GP)` : "TBD";
 
-            const recentGames = [...(teamPayload.games || [])]
-                .filter(g => g.status === 'final')
-                .slice(-3)
-                .map(g => `${g.is_home ? 'vs' : '@'} ${g.opponent} (${g.score_str})`)
-                .join(", ") || "Early season play";
+            let myTeamContext = "";
+            if (isMatchup) {
+                const myPayload = scoutingReportDatabase[divName]?.[myTeamName] || {};
+                const myGf = myPayload.gp > 0 ? (myPayload.gf / myPayload.gp).toFixed(1) : "0.0";
+                const myGa = myPayload.gp > 0 ? (myPayload.ga / myPayload.gp).toFixed(1) : "0.0";
+                const myPim = myPayload.gp > 0 ? (myPayload.pim / myPayload.gp).toFixed(1) : "0.0";
+                const myPpPct = myPayload.ppo > 0 ? ((myPayload.ppg / myPayload.ppo) * 100).toFixed(1) : "0.0";
+                const myPkKilled = Math.max(0, myPayload.ppoa - myPayload.ppga);
+                const myPkPct = myPayload.ppoa > 0 ? ((myPkKilled / myPayload.ppoa) * 100).toFixed(1) : "100.0";
 
-            const prompt = `You are an elite minor hockey scout preparing tactical bench notes for a coach playing against ${teamName} (${divName}).
-Opponent Profile:
-- Record: ${teamPayload.w}W-${teamPayload.l}L-${teamPayload.t}T (Goal Diff: ${teamPayload.diff >= 0 ? '+' : ''}${teamPayload.diff})
-- Rates: ${gfAvg} GF/G | ${gaAvg} GA/G | ${pimAvg} PIM/G
-- Special Teams: PP: ${ppPct}% (${ppg}/${ppo}) | PK: ${pkPct}% (${pkKilled}/${ppoa}) | SHGF: ${shg} | SHGA: ${shga}
-- Top Offensive Threats: ${topSkaters}
-- Primary Netminder: ${goalieStr}
-- Recent Matchups: ${recentGames}
+                const myTopSkaters = [...(myPayload.roster || [])]
+                    .sort((a, b) => b.total_pts - a.total_pts)
+                    .slice(0, 3)
+                    .map(s => `#${s.jersey || '?'} ${s.name} (${s.total_pts} pts)`)
+                    .join(", ") || "Balanced attack";
 
-Return a JSON array of exactly 3 tactical cards:
-[
-  {"title": "Offensive Threats & Key Skaters", "data": "1 concise sentence identifying specific player names and scoring habits.", "advice": "1 concrete instruction for defensemen on neutralizing them."},
-  {"title": "Goaltender Tendencies & Rebound Control", "data": "1 concise sentence evaluating the goalie's form or defense-in-front.", "advice": "1 specific shooting directive (e.g. low pads, traffic screens, high glove)."},
-  {"title": "Bench Tactical Directive", "data": "1 concise sentence regarding pace, penalty risk, special teams tendencies, or neutral zone play.", "advice": "1 actionable command for line changes, forecheck schemes, powerplay setup, or zone breakouts."}
-]`;
+                const myGoalie = [...(myPayload.goalies || [])].sort((a, b) => b.total_gp - a.total_gp)[0];
+                const myGoalieStr = myGoalie ? `${myGoalie.name} (${myGoalie.total_gaa.toFixed(2)} GAA)` : "Rotation";
 
-            const candidateModels = await getCandidateModels(apiKey);
-            let lastErrorMessage = "Cluster temporarily busy";
+                const oppGames = oppPayload.games || [];
+                const h2h = oppGames.filter(g => cleanKey(g.opponent) === cleanKey(myTeamName) && g.status === 'final');
+                const h2hRecord = h2h.length > 0 
+                    ? `${h2h.map(g => `${g.result} (${g.score_str})`).join(", ")}` 
+                    : "First meeting of the season";
 
-            for (const model of candidateModels.slice(0, 4)) {
-                try {
-                    const loadingText = document.getElementById('ai-loading-text');
-                    if (loadingText) {
-                        loadingText.innerText = `Connecting to ${model}...`;
-                    }
-
-                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            contents: [{ parts: [{ text: prompt }] }],
-                            generationConfig: { response_mime_type: "application/json" }
-                        })
-                    });
-
-                    if (!response.ok) {
-                        const err = await response.json().catch(() => ({}));
-                        const errMsg = err.error?.message || `HTTP ${response.status}`;
-                        lastErrorMessage = errMsg;
-
-                        const isHighDemand = response.status === 503 || 
-                                             response.status === 429 || 
-                                             errMsg.toLowerCase().includes("high demand") || 
-                                             errMsg.toLowerCase().includes("overloaded") || 
-                                             errMsg.toLowerCase().includes("unavailable");
-
-                        if (isHighDemand) {
-                            console.warn(`[${model}] server busy, hopping to next candidate model...`);
-                            continue;
-                        }
-                        throw new Error(errMsg);
-                    }
-
-                    const data = await response.json();
-                    const candidate = data.candidates?.[0];
-                    const parts = candidate?.content?.parts || [];
-                    const textPart = parts.find(p => p.text && !p.thought) || parts[parts.length - 1];
-                    let rawText = textPart?.text || "[]";
-                    rawText = rawText.replace(/```json/g, "").replace(/```/g, "").trim();
-                    const cards = JSON.parse(rawText);
-
-                    aiInsightsCache[cacheKey] = cards;
-                    renderAiCards(cards, teamName, divName);
-                    return;
-                } catch (err) {
-                    lastErrorMessage = err.message || lastErrorMessage;
-                    console.warn(`Attempt with ${model} failed:`, err);
-                }
+                myTeamContext = `
+Our Club Data [${myTeamName}]:
+- Record: ${myPayload.w}W-${myPayload.l}L-${myPayload.t}T (Goal Diff: ${myPayload.diff >= 0 ? '+' : ''}${myPayload.diff})
+- Rates: ${myGf} GF/G | ${myGa} GA/G | ${myPim} PIM/G
+- Special Teams: PP: ${myPpPct}% (${myPayload.ppg || 0}/${myPayload.ppo || 0}) | PK: ${myPkPct}% | SHGF: ${myPayload.shg || 0}
+- Offensive Leaders: ${myTopSkaters}
+- Primary Netminder: ${myGoalieStr}
+- Season Head-to-Head: ${h2hRecord}
+`;
             }
 
-            aiContainer.innerHTML = `
-                <div class="p-4 rounded-xl bg-rose-950/30 border border-rose-800 text-rose-300 text-xs font-mono space-y-2">
-                    <p class="font-bold">⚠️ AI Cluster Temporarily Busy: ${lastErrorMessage}</p>
-                    <p class="text-[11px] text-slate-400">Google's public free cluster is momentarily experiencing peak traffic. Tap below to retry.</p>
-                    <div class="flex items-center space-x-3 pt-1">
-                        <button onclick="fetchTeamAiIntelligence('${teamName}', '${divName}', true)" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold rounded uppercase text-[10px]">Retry Now</button>
-                        <button onclick="clearGeminiKey()" class="underline text-slate-400 hover:text-white text-[10px]">Reset Key</button>
+            const prompt = `You are a professional hockey advance scout providing objective analytical matchup notes for a game between [${myTeamName || 'Team A'}] and [${oppTeamName}] in [${divName}].
+${myTeamContext}
+Target Opponent Profile [${oppTeamName}]:
+- Record: ${oppPayload.w}W-${oppPayload.l}L-${oppPayload.t}T (Goal Diff: ${oppPayload.diff >= 0 ? '+' : ''}${oppPayload.diff})
+- Rates: ${oppGfAvg} GF/G | ${oppGaAvg} GA/G | ${oppPimAvg} PIM/G
+- Special Teams: PP: ${oppPpPct}% (${oppPayload.ppg || 0}/${oppPayload.ppo || 0}) | PK: ${oppPkPct}% | SHGF: ${oppPayload.shg || 0} | SHGA: ${oppPayload.shga || 0}
+- Top Offensive Threats: ${oppTopSkaters}
+- Starting Netminder: ${oppGoalieStr}
+
+STRICT RULE: Do NOT give coach directives, advice, tactical commands, or instructions. Provide ONLY objective scouting observations, statistical realities, and stylistic tendencies.
+
+Return a JSON array of exactly 3 analytical cards:
+[
+  {"title": "1. Offensive Production & Scoring Habits", "data": "1 concise sentence identifying specific skater names, scoring depth, and goal-generation habits.", "insight": "1 concise sentence analyzing shot selection, transition speed, or high-danger tendencies."},
+  {"title": "2. Defensive Structure & Goaltending Form", "data": "1 concise sentence evaluating the goalie's statistical form, save consistency, and slot protection.", "insight": "1 concise sentence analyzing rebound control patterns, defensive breakdowns, or blue-line gap control."},
+  {"title": "3. Special Teams Profile & Discipline Trends", "data": "1 concise sentence breaking down PP conversion rates and PK resilience numbers.", "insight": "1 concise sentence analyzing discipline risk, shorthanded danger, or penalty differential."}
+]`;
+
+            try {
+                const response = await fetch('/api/generate-scout', {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ prompt })
+                });
+
+                if (!response.ok) {
+                    const errData = await response.json().catch(() => ({}));
+                    throw new Error(errData.error || `HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                if (data.cards && Array.isArray(data.cards)) {
+                    aiInsightsCache[cacheKey] = data.cards;
+                    renderAiCards(data.cards, oppTeamName, myTeamName, divName);
+                } else {
+                    throw new Error("Invalid payload format received from scout server.");
+                }
+            } catch (err) {
+                aiContainer.innerHTML = `
+                    <div class="p-4 rounded-xl bg-rose-950/30 border border-rose-800 text-rose-300 text-xs font-mono space-y-2">
+                        <p class="font-bold">⚠️ Scouting Report Unavailable: ${err.message}</p>
+                        <div class="pt-1">
+                            <button onclick="fetchTeamAiIntelligence('${oppTeamName}', '${divName}', true)" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold rounded uppercase text-[10px]">Retry</button>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
         }
 
-        function renderAiCards(cards, teamName, divName) {
+        function renderAiCards(cards, oppTeamName, myTeamName, divName) {
             const aiContainer = document.getElementById('ai-insights-container');
-            const colorPencils = ["text-cyan-400", "text-blue-400", "text-indigo-400"];
-            
+            const colorPencils = ["text-cyan-400", "text-blue-400", "text-emerald-400"];
+            const isMatchup = myTeamName && myTeamName !== oppTeamName;
+
+            const subTitleEl = document.getElementById('ai-matchup-subtitle');
+            if (subTitleEl) {
+                subTitleEl.innerText = isMatchup 
+                    ? `Matchup Scouting: ${myTeamName} vs ${oppTeamName}`
+                    : `Team Scouting: ${oppTeamName}`;
+            }
+
             let html = `
                 <div class="flex justify-between items-center mb-3">
-                    <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-widest font-bold">● Active Matchup Directive</span>
+                    <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
+                        ${isMatchup ? `● Live Matchup Scouting Profile: ${myTeamName} vs${oppTeamName}` : `● Live Scouting Profile: ${oppTeamName}`}
+                    </span>
                     <div class="flex items-center space-x-2 hide-on-print">
-                        <button onclick="fetchTeamAiIntelligence('${teamName}', '${divName}', true)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] font-mono uppercase transition-colors">🔄 Re-Analyze</button>
-                        <button onclick="clearGeminiKey()" title="Change Key" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white text-[10px] font-mono uppercase transition-colors">⚙️ Key</button>
+                        <button onclick="fetchTeamAiIntelligence('${oppTeamName}', '${divName}', true)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] font-mono uppercase transition-colors">🔄 Re-Analyze</button>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 font-sans text-slate-300">
@@ -2148,7 +2081,7 @@ Return a JSON array of exactly 3 tactical cards:
                     <div class="p-3.5 sm:p-4 bg-slate-950 rounded-xl border border-slate-800">
                         <span class="${colorPencils[idx]} uppercase block mb-1 text-xs font-black tracking-wide">${c.title}</span>
                         <p class="text-xs text-slate-400 mb-1.5 leading-relaxed"><strong>Data Profile:</strong> ${c.data}</p>
-                        <p class="text-xs text-slate-200 leading-relaxed"><strong>Bench Directive:</strong> ${c.advice}</p>
+                        <p class="text-xs text-slate-200 leading-relaxed"><strong>Scouting Tendency:</strong> ${c.insight || ''}</p>
                     </div>
                 `;
             });
@@ -2159,24 +2092,6 @@ Return a JSON array of exactly 3 tactical cards:
         function renderHockeyTacticalIntelligence(targetTeam, metrics, divName) {
             const aiContainer = document.getElementById('ai-insights-container');
             if (!aiContainer) return;
-
-            const apiKey = localStorage.getItem('gemini_api_key');
-            if (!apiKey) {
-                aiContainer.innerHTML = `
-                    <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-                        <div>
-                            <span class="block text-xs font-bold text-white uppercase tracking-wider">Enable On-Demand AI Scouting Intelligence</span>
-                            <span class="text-[11px] text-slate-400">Generate tactical cheat sheets against opponents using Google Gemini.</span>
-                        </div>
-                        <div class="flex items-center space-x-2 w-full sm:w-auto">
-                            <input type="password" id="gemini-key-input" placeholder="Paste Gemini API Key..." class="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-400 flex-1 sm:w-52">
-                            <button onclick="saveGeminiKey()" class="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs uppercase rounded-lg transition-colors whitespace-nowrap">Save</button>
-                        </div>
-                    </div>
-                `;
-                return;
-            }
-
             fetchTeamAiIntelligence(targetTeam.team_name, divName, false);
         }
 
