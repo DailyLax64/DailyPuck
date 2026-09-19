@@ -320,7 +320,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-slate-900 p-4 sm:p-6 rounded-2xl border border-slate-800 shadow-xl neon-glow-blue hide-on-print text-white">
                 <div>
                     <label class="block text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 mb-2">1. Select Division Bracket</label>
-                    <select id="scout-division-select" onchange="onDivisionChange()" style="color-scheme: dark;" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white focus:outline-none focus:border-cyan-400 cursor-pointer">
+                    <select id="scout-division-select" onchange="onDivisionChange(true)" style="color-scheme: dark;" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white focus:outline-none focus:border-cyan-400 cursor-pointer">
                         <option value="" style="background-color: #0f172a; color: #ffffff;">Choose Division...</option>
                     </select>
                 </div>
@@ -725,6 +725,16 @@
         let scoreboardMatchupsDate = "";
         let scoreboardCohortFilter = "";
 
+        function isBurlingtonEagles(teamName) {
+            const clean = cleanKey(teamName);
+            return clean.includes("BURLINGTON") && clean.includes("EAGLES");
+        }
+
+        function findBurlingtonEaglesTeam(teamsArray) {
+            if (!teamsArray || teamsArray.length === 0) return "";
+            return teamsArray.find(t => isBurlingtonEagles(t)) || "";
+        }
+
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.nav-btn').forEach(el => {
@@ -748,7 +758,7 @@
                 const scoutDivSelect = document.getElementById('scout-division-select');
                 if (myTeamDivValue && scoutDivSelect && scoutDivSelect.value !== myTeamDivValue) {
                     scoutDivSelect.value = myTeamDivValue;
-                    onDivisionChange(); 
+                    onDivisionChange(false); 
                 }
             }
         }
@@ -1258,12 +1268,12 @@
 
             if (isUserAction) {
                 localStorage.setItem('cachedMyTeamDiv', selectedDiv);
-                localStorage.removeItem('cachedMyTeamName');
             }
 
+            // Sync with Scouting tab division dropdown without looping
             if (scoutDivSelect && selectedDiv && scoutDivSelect.value !== selectedDiv) {
                 scoutDivSelect.value = selectedDiv;
-                onDivisionChange();
+                onDivisionChange(false);
             }
 
             if (!selectedDiv || !scoutingReportDatabase[selectedDiv]) {
@@ -1281,6 +1291,26 @@
                 nameEl.appendChild(opt);
             });
             nameEl.disabled = false;
+
+            // Always jump My Team to Burlington Eagles when division changes
+            const eagles = findBurlingtonEaglesTeam(teams);
+            if (eagles) {
+                nameEl.value = eagles;
+                activeSelectedMyTeam = eagles;
+                localStorage.setItem('cachedMyTeamName', eagles);
+            } else {
+                activeSelectedMyTeam = "";
+                localStorage.removeItem('cachedMyTeamName');
+            }
+
+            const dashboardView = document.getElementById('scouting-dashboard-view');
+            if (dashboardView && !dashboardView.classList.contains('hidden')) {
+                loadScoutingDashboard();
+            }
+            const scoreboardView = document.getElementById('content-scoreboard');
+            if (scoreboardView && !scoreboardView.classList.contains('hidden')) {
+                renderScoreboard();
+            }
         }
 
         function onMyTeamNameChange(isUserAction = false) {
@@ -1302,36 +1332,48 @@
 
         function loadMyTeamPreferenceFromStorage() {
             const storedDiv = localStorage.getItem('cachedMyTeamDiv');
-            const storedName = localStorage.getItem('cachedMyTeamName');
-            if (storedDiv && scoutingReportDatabase[storedDiv]) {
-                const divEl = document.getElementById('my-team-div-select');
-                if (divEl) {
-                    divEl.value = storedDiv;
-                    onMyTeamDivChange(false);
-                    if (storedName) {
-                        const nameEl = document.getElementById('my-team-name-select');
-                        if (nameEl) {
-                            nameEl.value = storedName;
-                            onMyTeamNameChange(false);
-                        }
-                    }
+            const divEl = document.getElementById('my-team-div-select');
+            const scoutDivSelect = document.getElementById('scout-division-select');
+            
+            let targetDiv = storedDiv;
+            if (!targetDiv || !scoutingReportDatabase[targetDiv]) {
+                const divKeys = Object.keys(scoutingReportDatabase);
+                targetDiv = divKeys.find(dk => findBurlingtonEaglesTeam(Object.keys(scoutingReportDatabase[dk]))) || divKeys[0] || "";
+            }
+
+            if (targetDiv && divEl) {
+                divEl.value = targetDiv;
+                if (scoutDivSelect) scoutDivSelect.value = targetDiv;
+                onMyTeamDivChange(false);
+                
+                // If user had manually chosen another team, restore it on initial page refresh
+                const storedName = localStorage.getItem('cachedMyTeamName');
+                const nameEl = document.getElementById('my-team-name-select');
+                if (storedName && nameEl && Array.from(nameEl.options).some(o => o.value === storedName)) {
+                    nameEl.value = storedName;
+                    activeSelectedMyTeam = storedName;
                 }
-            } else {
-                localStorage.removeItem('cachedMyTeamDiv');
-                localStorage.removeItem('cachedMyTeamName');
             }
         }
 
-        function onDivisionChange() {
+        function onDivisionChange(syncMyTeam = true) {
             const divSelect = document.getElementById('scout-division-select');
             const teamSearch = document.getElementById('scout-team-search');
             const teamDropdown = document.getElementById('scout-team-dropdown');
             const labelTeam = document.querySelector('.id-label-team');
             const dashboardView = document.getElementById('scouting-dashboard-view');
+            const myTeamDivEl = document.getElementById('my-team-div-select');
             
             if (!divSelect || !teamSearch || !teamDropdown || !dashboardView) return;
             const selectedDivision = divSelect.value;
             
+            // If division changed from the scouting selector, synchronize My Team's division which forces Burlington Eagles
+            if (syncMyTeam && myTeamDivEl && selectedDivision && myTeamDivEl.value !== selectedDivision) {
+                myTeamDivEl.value = selectedDivision;
+                onMyTeamDivChange(true);
+                return;
+            }
+
             teamSearch.value = "";
             teamDropdown.innerHTML = "";
             teamDropdown.classList.add('hidden');
@@ -1348,7 +1390,11 @@
                 return;
             }
             
-            currentDivisionTeams = Object.keys(scoutingReportDatabase[selectedDivision]).sort();
+            // Exclude Burlington Eagles from target opponent search & selection
+            currentDivisionTeams = Object.keys(scoutingReportDatabase[selectedDivision])
+                .filter(t => !isBurlingtonEagles(t))
+                .sort();
+
             teamSearch.disabled = false;
             teamSearch.placeholder = "Type to search hockey club...";
             if (labelTeam) labelTeam.className = "block text-xs font-black uppercase tracking-widest text-cyan-400 id-label-team mb-2";
