@@ -579,10 +579,10 @@
                 <!-- PAGE 2 PRINT WRAPPER -->
                 <div id="print-page-2" class="space-y-5 sm:space-y-6 mt-5 sm:mt-6 print:mt-0">
                     
-                    <!-- Tactical Scouting Insights Capsule (Pure Analytics / No Directives) -->
+                    <!-- Tactical Scouting Insights Capsule (Data Profile Only) -->
                     <div id="capsule-ai-commentary" class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl relative overflow-hidden text-white">
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3 sm:mb-4">
-                            <span id="ai-section-title" class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🧠 Matchup Scouting Insights & Tendency Analysis</span>
+                            <span id="ai-section-title" class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">🧠 Matchup Scouting Insights</span>
                             <span id="ai-matchup-subtitle" class="text-[10px] sm:text-xs font-mono text-slate-400"></span>
                         </div>
                         <div id="ai-insights-container" class="text-xs sm:text-sm leading-relaxed text-slate-300"></div>
@@ -2012,13 +2012,13 @@ Target Opponent Profile [${oppTeamName}]:
 - Top Offensive Threats: ${oppTopSkaters}
 - Starting Netminder: ${oppGoalieStr}
 
-STRICT RULE: Do NOT give coach directives, advice, tactical commands, or instructions. Provide ONLY objective scouting observations, statistical realities, and stylistic tendencies.
+STRICT RULE: Do NOT give coach directives, tactical commands, advice, or instructions. Provide ONLY concise objective statistical observations and data profiles.
 
 Return a JSON array of exactly 3 analytical cards:
 [
-  {"title": "1. Offensive Production & Scoring Habits", "data": "1 concise sentence identifying specific skater names, scoring depth, and goal-generation habits.", "insight": "1 concise sentence analyzing shot selection, transition speed, or high-danger tendencies."},
-  {"title": "2. Defensive Structure & Goaltending Form", "data": "1 concise sentence evaluating the goalie's statistical form, save consistency, and slot protection.", "insight": "1 concise sentence analyzing rebound control patterns, defensive breakdowns, or blue-line gap control."},
-  {"title": "3. Special Teams Profile & Discipline Trends", "data": "1 concise sentence breaking down PP conversion rates and PK resilience numbers.", "insight": "1 concise sentence analyzing discipline risk, shorthanded danger, or penalty differential."}
+  {"title": "1. Offensive Production & Scoring Habits", "data": "1 concise sentence identifying specific skater names, scoring depth, and goal-generation habits."},
+  {"title": "2. Defensive Structure & Goaltending Form", "data": "1 concise sentence evaluating the goalie's statistical form, save consistency, and slot protection."},
+  {"title": "3. Special Teams Profile & Discipline Trends", "data": "1 concise sentence breaking down PP conversion rates and PK resilience numbers."}
 ]`;
 
             try {
@@ -2079,9 +2079,8 @@ Return a JSON array of exactly 3 analytical cards:
             cards.slice(0, 3).forEach((c, idx) => {
                 html += `
                     <div class="p-3.5 sm:p-4 bg-slate-950 rounded-xl border border-slate-800">
-                        <span class="${colorPencils[idx]} uppercase block mb-1 text-xs font-black tracking-wide">${c.title}</span>
-                        <p class="text-xs text-slate-400 mb-1.5 leading-relaxed"><strong>Data Profile:</strong> ${c.data}</p>
-                        <p class="text-xs text-slate-200 leading-relaxed"><strong>Scouting Tendency:</strong> ${c.insight || ''}</p>
+                        <span class="${colorPencils[idx]} uppercase block mb-1.5 text-xs font-black tracking-wide">${c.title}</span>
+                        <p class="text-xs text-slate-300 leading-relaxed"><strong>Data Profile:</strong> ${c.data || ''}</p>
                     </div>
                 `;
             });
