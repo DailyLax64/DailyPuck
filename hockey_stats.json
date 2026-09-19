@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T00:25:05.352176+00:00",
+  "generated_at": "2026-09-19T00:52:39.457427+00:00",
   "total_skaters": 1723,
   "total_goalies": 225,
   "total_standings_rows": 287,
@@ -19738,16 +19738,6 @@
         {
           "source_id": "15497",
           "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 0,
           "g": 0,
@@ -66901,7 +66891,13 @@
       "gf": 6,
       "ga": 0,
       "diff": 6,
-      "pim": 4
+      "pim": 4,
+      "ppg": 2,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534702,
@@ -66920,7 +66916,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534724,
@@ -66939,7 +66941,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534725,
@@ -66958,7 +66966,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534726,
@@ -66977,7 +66991,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534728,
@@ -66996,7 +67016,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534777,
@@ -67015,7 +67041,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534778,
@@ -67034,7 +67066,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534781,
@@ -67053,7 +67091,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534784,
@@ -67072,7 +67116,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534787,
@@ -67091,7 +67141,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534795,
@@ -67110,7 +67166,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 537288,
@@ -67129,7 +67191,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 537289,
@@ -67148,7 +67216,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534727,
@@ -67167,7 +67241,13 @@
       "gf": 0,
       "ga": 6,
       "diff": -6,
-      "pim": 12
+      "pim": 12,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 2,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534743,
@@ -67186,7 +67266,13 @@
       "gf": 7,
       "ga": 4,
       "diff": 3,
-      "pim": 6
+      "pim": 6,
+      "ppg": 3,
+      "ppo": 6,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534709,
@@ -67205,7 +67291,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534710,
@@ -67224,7 +67316,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534740,
@@ -67243,7 +67341,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534746,
@@ -67262,7 +67366,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534747,
@@ -67281,7 +67391,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534790,
@@ -67300,7 +67416,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534797,
@@ -67319,7 +67441,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 537295,
@@ -67338,7 +67466,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 537296,
@@ -67357,7 +67491,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 537297,
@@ -67376,7 +67516,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 537298,
@@ -67395,7 +67541,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534744,
@@ -67414,7 +67566,13 @@
       "gf": 4,
       "ga": 7,
       "diff": -3,
-      "pim": 28
+      "pim": 28,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 3,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534493,
@@ -67433,7 +67591,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534494,
@@ -67452,7 +67616,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534495,
@@ -67471,7 +67641,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534496,
@@ -67490,7 +67666,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534497,
@@ -67509,7 +67691,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534498,
@@ -67528,7 +67716,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534499,
@@ -67547,7 +67741,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534518,
@@ -67566,7 +67766,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534519,
@@ -67585,7 +67791,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534560,
@@ -67604,7 +67816,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534521,
@@ -67623,7 +67841,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534522,
@@ -67642,7 +67866,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534523,
@@ -67661,7 +67891,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534524,
@@ -67680,7 +67916,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534525,
@@ -67699,7 +67941,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534526,
@@ -67718,7 +67966,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534527,
@@ -67737,7 +67991,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534528,
@@ -67756,7 +68016,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534529,
@@ -67775,7 +68041,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534562,
@@ -67794,7 +68066,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534090,
@@ -67813,7 +68091,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534091,
@@ -67832,7 +68116,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534092,
@@ -67851,7 +68141,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534121,
@@ -67870,7 +68166,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534122,
@@ -67889,7 +68191,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534123,
@@ -67908,7 +68216,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534137,
@@ -67927,7 +68241,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534145,
@@ -67946,7 +68266,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534159,
@@ -67965,7 +68291,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534160,
@@ -67984,7 +68316,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534175,
@@ -68003,7 +68341,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534183,
@@ -68022,7 +68366,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534100,
@@ -68041,7 +68391,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534101,
@@ -68060,7 +68416,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534102,
@@ -68079,7 +68441,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534103,
@@ -68098,7 +68466,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534128,
@@ -68117,7 +68491,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534140,
@@ -68136,7 +68516,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534148,
@@ -68155,7 +68541,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534151,
@@ -68174,7 +68566,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534165,
@@ -68193,7 +68591,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534166,
@@ -68212,7 +68616,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534178,
@@ -68231,7 +68641,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 534182,
@@ -68250,7 +68666,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532720,
@@ -68269,7 +68691,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532721,
@@ -68288,7 +68716,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532725,
@@ -68307,7 +68741,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532726,
@@ -68326,7 +68766,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532727,
@@ -68345,7 +68791,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532728,
@@ -68364,7 +68816,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532729,
@@ -68383,7 +68841,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532730,
@@ -68402,7 +68866,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532768,
@@ -68421,7 +68891,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532772,
@@ -68440,7 +68916,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533300,
@@ -68459,7 +68941,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533301,
@@ -68478,7 +68966,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533302,
@@ -68497,7 +68991,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532688,
@@ -68516,7 +69016,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532692,
@@ -68535,7 +69041,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532693,
@@ -68554,7 +69066,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532694,
@@ -68573,7 +69091,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532695,
@@ -68592,7 +69116,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532696,
@@ -68611,7 +69141,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532697,
@@ -68630,7 +69166,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532758,
@@ -68649,7 +69191,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532765,
@@ -68668,7 +69216,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533266,
@@ -68687,7 +69241,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533267,
@@ -68706,7 +69266,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533293,
@@ -68725,7 +69291,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532792,
@@ -68744,7 +69316,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 532793,
@@ -68763,7 +69341,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541453,
@@ -68782,7 +69366,13 @@
       "gf": 5,
       "ga": 2,
       "diff": 3,
-      "pim": 2
+      "pim": 2,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541472,
@@ -68801,7 +69391,13 @@
       "gf": 7,
       "ga": 5,
       "diff": 2,
-      "pim": 10
+      "pim": 10,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 5,
+      "shg": 2,
+      "shga": 1
     },
     {
       "team_id": 541456,
@@ -68820,7 +69416,13 @@
       "gf": 1,
       "ga": 1,
       "diff": 0,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541451,
@@ -68839,7 +69441,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541452,
@@ -68858,7 +69466,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541454,
@@ -68877,7 +69491,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541455,
@@ -68896,7 +69516,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541457,
@@ -68915,7 +69541,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541458,
@@ -68934,7 +69566,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541469,
@@ -68953,7 +69591,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541470,
@@ -68972,7 +69616,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541471,
@@ -68991,7 +69641,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541468,
@@ -69010,7 +69666,13 @@
       "gf": 5,
       "ga": 7,
       "diff": -2,
-      "pim": 6
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 5,
+      "ppga": 1,
+      "ppoa": 3,
+      "shg": 1,
+      "shga": 2
     },
     {
       "team_id": 541459,
@@ -69029,7 +69691,13 @@
       "gf": 2,
       "ga": 5,
       "diff": -3,
-      "pim": 6
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 0,
+      "ppoa": 3,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541563,
@@ -69048,7 +69716,13 @@
       "gf": 6,
       "ga": 1,
       "diff": 5,
-      "pim": 6
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 4,
+      "shg": 2,
+      "shga": 0
     },
     {
       "team_id": 541559,
@@ -69067,7 +69741,13 @@
       "gf": 4,
       "ga": 2,
       "diff": 2,
-      "pim": 4
+      "pim": 4,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 541579,
@@ -69086,7 +69766,13 @@
       "gf": 2,
       "ga": 1,
       "diff": 1,
-      "pim": 8
+      "pim": 8,
+      "ppg": 1,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541562,
@@ -69105,7 +69791,13 @@
       "gf": 2,
       "ga": 2,
       "diff": 0,
-      "pim": 10
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 1,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541581,
@@ -69124,7 +69816,13 @@
       "gf": 2,
       "ga": 2,
       "diff": 0,
-      "pim": 8
+      "pim": 8,
+      "ppg": 1,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 3,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541560,
@@ -69143,7 +69841,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541561,
@@ -69162,7 +69866,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541565,
@@ -69181,7 +69891,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541566,
@@ -69200,7 +69916,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541567,
@@ -69219,7 +69941,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541568,
@@ -69238,7 +69966,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541574,
@@ -69257,7 +69991,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541575,
@@ -69276,7 +70016,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541580,
@@ -69295,7 +70041,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558340,
@@ -69314,7 +70066,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558341,
@@ -69333,7 +70091,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558343,
@@ -69352,7 +70116,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558344,
@@ -69371,7 +70141,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558345,
@@ -69390,7 +70166,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558346,
@@ -69409,7 +70191,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558347,
@@ -69428,7 +70216,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558348,
@@ -69447,7 +70241,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558349,
@@ -69466,7 +70266,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559375,
@@ -69485,7 +70291,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541564,
@@ -69504,7 +70316,13 @@
       "gf": 1,
       "ga": 2,
       "diff": -1,
-      "pim": 10
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 1,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559374,
@@ -69523,7 +70341,13 @@
       "gf": 2,
       "ga": 4,
       "diff": -2,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 1,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 533211,
@@ -69542,7 +70366,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533212,
@@ -69561,7 +70391,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533213,
@@ -69580,7 +70416,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533214,
@@ -69599,7 +70441,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533215,
@@ -69618,7 +70466,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533216,
@@ -69637,7 +70491,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533217,
@@ -69656,7 +70516,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533218,
@@ -69675,7 +70541,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533219,
@@ -69694,7 +70566,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533220,
@@ -69713,7 +70591,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533221,
@@ -69732,7 +70616,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533178,
@@ -69751,7 +70641,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533179,
@@ -69770,7 +70666,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533180,
@@ -69789,7 +70691,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533181,
@@ -69808,7 +70716,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533182,
@@ -69827,7 +70741,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533183,
@@ -69846,7 +70766,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533184,
@@ -69865,7 +70791,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533185,
@@ -69884,7 +70816,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533186,
@@ -69903,7 +70841,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533187,
@@ -69922,7 +70866,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 533188,
@@ -69941,7 +70891,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541007,
@@ -69960,7 +70916,13 @@
       "gf": 12,
       "ga": 1,
       "diff": 11,
-      "pim": 14
+      "pim": 14,
+      "ppg": 2,
+      "ppo": 6,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 552115,
@@ -69979,7 +70941,13 @@
       "gf": 15,
       "ga": 1,
       "diff": 14,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 2,
+      "shga": 0
     },
     {
       "team_id": 542878,
@@ -69998,7 +70966,13 @@
       "gf": 8,
       "ga": 1,
       "diff": 7,
-      "pim": 4
+      "pim": 4,
+      "ppg": 2,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541019,
@@ -70017,7 +70991,13 @@
       "gf": 8,
       "ga": 1,
       "diff": 7,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559092,
@@ -70036,7 +71016,13 @@
       "gf": 8,
       "ga": 1,
       "diff": 7,
-      "pim": 6
+      "pim": 6,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541020,
@@ -70055,7 +71041,13 @@
       "gf": 7,
       "ga": 0,
       "diff": 7,
-      "pim": 8
+      "pim": 8,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 4,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 552110,
@@ -70074,7 +71066,13 @@
       "gf": 7,
       "ga": 3,
       "diff": 4,
-      "pim": 4
+      "pim": 4,
+      "ppg": 2,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542883,
@@ -70093,7 +71091,13 @@
       "gf": 8,
       "ga": 5,
       "diff": 3,
-      "pim": 4
+      "pim": 4,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 1,
+      "ppoa": 2,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 542881,
@@ -70112,7 +71116,13 @@
       "gf": 7,
       "ga": 4,
       "diff": 3,
-      "pim": 2
+      "pim": 2,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 560524,
@@ -70131,7 +71141,13 @@
       "gf": 7,
       "ga": 4,
       "diff": 3,
-      "pim": 2
+      "pim": 2,
+      "ppg": 2,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 541013,
@@ -70150,7 +71166,13 @@
       "gf": 4,
       "ga": 1,
       "diff": 3,
-      "pim": 6
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557293,
@@ -70169,7 +71191,13 @@
       "gf": 4,
       "ga": 2,
       "diff": 2,
-      "pim": 2
+      "pim": 2,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552109,
@@ -70188,7 +71216,13 @@
       "gf": 3,
       "ga": 1,
       "diff": 2,
-      "pim": 14
+      "pim": 14,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 5,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 541012,
@@ -70207,7 +71241,13 @@
       "gf": 9,
       "ga": 8,
       "diff": 1,
-      "pim": 26
+      "pim": 26,
+      "ppg": 4,
+      "ppo": 9,
+      "ppga": 3,
+      "ppoa": 11,
+      "shg": 0,
+      "shga": 2
     },
     {
       "team_id": 552111,
@@ -70226,7 +71266,13 @@
       "gf": 4,
       "ga": 3,
       "diff": 1,
-      "pim": 4
+      "pim": 4,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541011,
@@ -70245,7 +71291,13 @@
       "gf": 6,
       "ga": 9,
       "diff": -3,
-      "pim": 18
+      "pim": 18,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 1,
+      "ppoa": 8,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559086,
@@ -70264,7 +71316,13 @@
       "gf": 5,
       "ga": 5,
       "diff": 0,
-      "pim": 10
+      "pim": 10,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 1,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542884,
@@ -70283,7 +71341,13 @@
       "gf": 4,
       "ga": 4,
       "diff": 0,
-      "pim": 4
+      "pim": 4,
+      "ppg": 3,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542882,
@@ -70302,7 +71366,13 @@
       "gf": 3,
       "ga": 3,
       "diff": 0,
-      "pim": 2
+      "pim": 2,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552113,
@@ -70321,7 +71391,13 @@
       "gf": 5,
       "ga": 7,
       "diff": -2,
-      "pim": 20
+      "pim": 20,
+      "ppg": 0,
+      "ppo": 7,
+      "ppga": 3,
+      "ppoa": 7,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 542879,
@@ -70340,7 +71416,13 @@
       "gf": 4,
       "ga": 11,
       "diff": -7,
-      "pim": 10
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 3,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559094,
@@ -70359,7 +71441,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 565015,
@@ -70378,7 +71466,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 554665,
@@ -70397,7 +71491,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541008,
@@ -70416,7 +71516,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541010,
@@ -70435,7 +71541,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541017,
@@ -70454,7 +71566,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541018,
@@ -70473,7 +71591,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541021,
@@ -70492,7 +71616,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542876,
@@ -70511,7 +71641,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542877,
@@ -70530,7 +71666,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542880,
@@ -70549,7 +71691,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552116,
@@ -70568,7 +71716,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552118,
@@ -70587,7 +71741,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552119,
@@ -70606,7 +71766,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552120,
@@ -70625,7 +71791,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 554666,
@@ -70644,7 +71816,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559083,
@@ -70663,7 +71841,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559084,
@@ -70682,7 +71866,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559085,
@@ -70701,7 +71891,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559087,
@@ -70720,7 +71916,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559089,
@@ -70739,7 +71941,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559091,
@@ -70758,7 +71966,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559093,
@@ -70777,7 +71991,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557203,
@@ -70796,7 +72016,13 @@
       "gf": 3,
       "ga": 4,
       "diff": -1,
-      "pim": 6
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 1,
+      "ppoa": 3,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541014,
@@ -70815,7 +72041,13 @@
       "gf": 2,
       "ga": 4,
       "diff": -2,
-      "pim": 16
+      "pim": 16,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 0,
+      "ppoa": 3,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542885,
@@ -70834,7 +72066,13 @@
       "gf": 5,
       "ga": 8,
       "diff": -3,
-      "pim": 4
+      "pim": 4,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 1,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 541016,
@@ -70853,7 +72091,13 @@
       "gf": 4,
       "ga": 7,
       "diff": -3,
-      "pim": 10
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 2,
+      "ppoa": 5,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 552112,
@@ -70872,7 +72116,13 @@
       "gf": 4,
       "ga": 7,
       "diff": -3,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 1,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541015,
@@ -70891,7 +72141,13 @@
       "gf": 1,
       "ga": 4,
       "diff": -3,
-      "pim": 2
+      "pim": 2,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552117,
@@ -70910,7 +72166,13 @@
       "gf": 3,
       "ga": 7,
       "diff": -4,
-      "pim": 8
+      "pim": 8,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 2,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541009,
@@ -70929,7 +72191,13 @@
       "gf": 1,
       "ga": 5,
       "diff": -4,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 6,
+      "ppga": 1,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559090,
@@ -70948,7 +72216,13 @@
       "gf": 0,
       "ga": 7,
       "diff": -7,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 552114,
@@ -70967,7 +72241,13 @@
       "gf": 1,
       "ga": 15,
       "diff": -14,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 2
     },
     {
       "team_id": 552215,
@@ -70986,7 +72266,13 @@
       "gf": 10,
       "ga": 2,
       "diff": 8,
-      "pim": 28
+      "pim": 28,
+      "ppg": 6,
+      "ppo": 14,
+      "ppga": 2,
+      "ppoa": 14,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557714,
@@ -71005,7 +72291,13 @@
       "gf": 4,
       "ga": 0,
       "diff": 4,
-      "pim": 6
+      "pim": 6,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 3,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541200,
@@ -71024,7 +72316,13 @@
       "gf": 7,
       "ga": 4,
       "diff": 3,
-      "pim": 2
+      "pim": 2,
+      "ppg": 1,
+      "ppo": 2,
+      "ppga": 1,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542915,
@@ -71043,7 +72341,13 @@
       "gf": 4,
       "ga": 1,
       "diff": 3,
-      "pim": 10
+      "pim": 10,
+      "ppg": 2,
+      "ppo": 4,
+      "ppga": 1,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542913,
@@ -71062,7 +72366,13 @@
       "gf": 3,
       "ga": 0,
       "diff": 3,
-      "pim": 8
+      "pim": 8,
+      "ppg": 1,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542910,
@@ -71081,7 +72391,13 @@
       "gf": 6,
       "ga": 4,
       "diff": 2,
-      "pim": 30
+      "pim": 30,
+      "ppg": 3,
+      "ppo": 5,
+      "ppga": 3,
+      "ppoa": 8,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542909,
@@ -71100,7 +72416,13 @@
       "gf": 4,
       "ga": 2,
       "diff": 2,
-      "pim": 14
+      "pim": 14,
+      "ppg": 1,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552214,
@@ -71119,7 +72441,13 @@
       "gf": 3,
       "ga": 2,
       "diff": 1,
-      "pim": 6
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 1,
+      "ppoa": 3,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558395,
@@ -71138,7 +72466,13 @@
       "gf": 3,
       "ga": 2,
       "diff": 1,
-      "pim": 6
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 541208,
@@ -71157,7 +72491,13 @@
       "gf": 3,
       "ga": 3,
       "diff": 0,
-      "pim": 8
+      "pim": 8,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 1,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557713,
@@ -71176,7 +72516,13 @@
       "gf": 3,
       "ga": 3,
       "diff": 0,
-      "pim": 8
+      "pim": 8,
+      "ppg": 1,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542912,
@@ -71195,7 +72541,13 @@
       "gf": 2,
       "ga": 2,
       "diff": 0,
-      "pim": 2
+      "pim": 2,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552221,
@@ -71214,7 +72566,13 @@
       "gf": 2,
       "ga": 2,
       "diff": 0,
-      "pim": 4
+      "pim": 4,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 0,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552213,
@@ -71233,7 +72591,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552216,
@@ -71252,7 +72616,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552217,
@@ -71271,7 +72641,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552218,
@@ -71290,7 +72666,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552219,
@@ -71309,7 +72691,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552220,
@@ -71328,7 +72716,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557704,
@@ -71347,7 +72741,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557705,
@@ -71366,7 +72766,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557706,
@@ -71385,7 +72791,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557707,
@@ -71404,7 +72816,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557708,
@@ -71423,7 +72841,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557709,
@@ -71442,7 +72866,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557710,
@@ -71461,7 +72891,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557712,
@@ -71480,7 +72916,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557715,
@@ -71499,7 +72941,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557786,
@@ -71518,7 +72966,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 559563,
@@ -71537,7 +72991,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557703,
@@ -71556,7 +73016,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541197,
@@ -71575,7 +73041,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541198,
@@ -71594,7 +73066,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541199,
@@ -71613,7 +73091,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541202,
@@ -71632,7 +73116,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541204,
@@ -71651,7 +73141,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541205,
@@ -71670,7 +73166,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541206,
@@ -71689,7 +73191,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541207,
@@ -71708,7 +73216,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541209,
@@ -71727,7 +73241,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542914,
@@ -71746,7 +73266,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542916,
@@ -71765,7 +73291,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552211,
@@ -71784,7 +73316,13 @@
       "gf": 0,
       "ga": 0,
       "diff": 0,
-      "pim": 0
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542907,
@@ -71803,7 +73341,13 @@
       "gf": 2,
       "ga": 3,
       "diff": -1,
-      "pim": 10
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 0,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 541203,
@@ -71822,7 +73366,13 @@
       "gf": 2,
       "ga": 3,
       "diff": -1,
-      "pim": 8
+      "pim": 8,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 557711,
@@ -71841,7 +73391,13 @@
       "gf": 4,
       "ga": 6,
       "diff": -2,
-      "pim": 16
+      "pim": 16,
+      "ppg": 3,
+      "ppo": 8,
+      "ppga": 3,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542911,
@@ -71860,7 +73416,13 @@
       "gf": 2,
       "ga": 4,
       "diff": -2,
-      "pim": 30
+      "pim": 30,
+      "ppg": 0,
+      "ppo": 6,
+      "ppga": 1,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 541201,
@@ -71879,7 +73441,13 @@
       "gf": 4,
       "ga": 7,
       "diff": -3,
-      "pim": 8
+      "pim": 8,
+      "ppg": 1,
+      "ppo": 1,
+      "ppga": 1,
+      "ppoa": 2,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552210,
@@ -71898,7 +73466,13 @@
       "gf": 1,
       "ga": 4,
       "diff": -3,
-      "pim": 10
+      "pim": 10,
+      "ppg": 1,
+      "ppo": 5,
+      "ppga": 2,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 542908,
@@ -71917,7 +73491,13 @@
       "gf": 0,
       "ga": 3,
       "diff": -3,
-      "pim": 10
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 1,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 552212,
@@ -71936,7 +73516,13 @@
       "gf": 2,
       "ga": 10,
       "diff": -8,
-      "pim": 28
+      "pim": 28,
+      "ppg": 2,
+      "ppo": 14,
+      "ppga": 6,
+      "ppoa": 14,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558437,
@@ -71955,7 +73541,13 @@
       "gf": 15,
       "ga": 1,
       "diff": 14,
-      "pim": 6
+      "pim": 6,
+      "ppg": 1,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 3,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558441,
@@ -71974,7 +73566,13 @@
       "gf": 13,
       "ga": 1,
       "diff": 12,
-      "pim": 18
+      "pim": 18,
+      "ppg": 2,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 9,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558444,
@@ -71993,7 +73591,13 @@
       "gf": 13,
       "ga": 4,
       "diff": 9,
-      "pim": 12
+      "pim": 12,
+      "ppg": 2,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 6,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 558434,
@@ -72012,7 +73616,13 @@
       "gf": 10,
       "ga": 7,
       "diff": 3,
-      "pim": 20
+      "pim": 20,
+      "ppg": 3,
+      "ppo": 9,
+      "ppga": 2,
+      "ppoa": 9,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558443,
@@ -72031,7 +73641,13 @@
       "gf": 10,
       "ga": 8,
       "diff": 2,
-      "pim": 18
+      "pim": 18,
+      "ppg": 3,
+      "ppo": 9,
+      "ppga": 3,
+      "ppoa": 7,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558438,
@@ -72050,7 +73666,13 @@
       "gf": 3,
       "ga": 3,
       "diff": 0,
-      "pim": 10
+      "pim": 10,
+      "ppg": 3,
+      "ppo": 8,
+      "ppga": 1,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558436,
@@ -72069,7 +73691,13 @@
       "gf": 3,
       "ga": 4,
       "diff": -1,
-      "pim": 12
+      "pim": 12,
+      "ppg": 1,
+      "ppo": 6,
+      "ppga": 1,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558442,
@@ -72088,7 +73716,13 @@
       "gf": 3,
       "ga": 7,
       "diff": -4,
-      "pim": 24
+      "pim": 24,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 4,
+      "ppoa": 9,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558435,
@@ -72107,7 +73741,13 @@
       "gf": 4,
       "ga": 11,
       "diff": -7,
-      "pim": 8
+      "pim": 8,
+      "ppg": 0,
+      "ppo": 10,
+      "ppga": 3,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558440,
@@ -72126,7 +73766,13 @@
       "gf": 2,
       "ga": 15,
       "diff": -13,
-      "pim": 12
+      "pim": 12,
+      "ppg": 0,
+      "ppo": 5,
+      "ppga": 2,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 558439,
@@ -72145,7 +73791,13 @@
       "gf": 0,
       "ga": 15,
       "diff": -15,
-      "pim": 2
+      "pim": 2,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558475,
@@ -72164,7 +73816,13 @@
       "gf": 7,
       "ga": 3,
       "diff": 4,
-      "pim": 2
+      "pim": 2,
+      "ppg": 1,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558473,
@@ -72183,7 +73841,13 @@
       "gf": 5,
       "ga": 2,
       "diff": 3,
-      "pim": 20
+      "pim": 20,
+      "ppg": 0,
+      "ppo": 6,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558470,
@@ -72202,7 +73866,13 @@
       "gf": 6,
       "ga": 3,
       "diff": 3,
-      "pim": 10
+      "pim": 10,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 1,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558471,
@@ -72221,7 +73891,13 @@
       "gf": 8,
       "ga": 4,
       "diff": 4,
-      "pim": 10
+      "pim": 10,
+      "ppg": 3,
+      "ppo": 9,
+      "ppga": 1,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558477,
@@ -72240,7 +73916,13 @@
       "gf": 4,
       "ga": 3,
       "diff": 1,
-      "pim": 2
+      "pim": 2,
+      "ppg": 2,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 1
     },
     {
       "team_id": 558469,
@@ -72259,7 +73941,13 @@
       "gf": 3,
       "ga": 4,
       "diff": -1,
-      "pim": 32
+      "pim": 32,
+      "ppg": 0,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558474,
@@ -72278,7 +73966,13 @@
       "gf": 5,
       "ga": 6,
       "diff": -1,
-      "pim": 24
+      "pim": 24,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 2,
+      "ppoa": 6,
+      "shg": 1,
+      "shga": 0
     },
     {
       "team_id": 558472,
@@ -72297,7 +73991,13 @@
       "gf": 4,
       "ga": 6,
       "diff": -2,
-      "pim": 12
+      "pim": 12,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 4,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558478,
@@ -72316,7 +74016,13 @@
       "gf": 3,
       "ga": 7,
       "diff": -4,
-      "pim": 18
+      "pim": 18,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 1,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 0
     },
     {
       "team_id": 558476,
@@ -72335,7 +74041,13 @@
       "gf": 0,
       "ga": 7,
       "diff": -7,
-      "pim": 10
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 2,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 0
     }
   ],
   "games": [
