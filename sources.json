@@ -10,6 +10,9 @@
   },
   "tournaments": {
     "Garden City Early": { "id": 15764, "tier": "Auto" },
-    "Belleville Early": { "id": 15909, "tier": "Auto" }
+    "Belleville Early": { "id": 15909, "tier": "Auto" },
+    "Orangeville Fall Classic": { "id": 15905, "tier": "Auto" },
+    "Mary Parkinson Early Bird": { "id": 15746, "tier": "Auto" },
+    "TNT Early Bird": { "id": 15940, "tier": "Auto" }
   }
 }
