@@ -197,7 +197,7 @@ team_id_to_master = {}
 standings_db = []
 unmapped_audit = set()
 
-# 3. STAGE 1: INGEST STANDINGS
+# 3. STAGE 1: INGEST STANDINGS & RAW SPECIAL TEAMS COUNTS
 for src in all_sources:
     s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"📥 Standings Ingestion: [{s_type.upper()}] {s_name} (ID: {s_id})...")
@@ -231,6 +231,25 @@ for src in all_sources:
                 if t_id:
                     team_id_to_master[int(t_id)] = (cohort, canonical_name)
 
+                # Standard Standings Metrics
+                gp = int(stats.get("gp") or stats.get("GP") or 0)
+                w = int(stats.get("w") or stats.get("W") or 0)
+                l = int(stats.get("l") or stats.get("L") or 0)
+                t = int(stats.get("t") or stats.get("T") or 0)
+                pts = int(stats.get("pts") or stats.get("PTS") or 0)
+                gf = int(stats.get("gf") or stats.get("GF") or 0)
+                ga = int(stats.get("ga") or stats.get("GA") or 0)
+                diff = int(stats.get("diff") or stats.get("DIFF") or 0)
+                pim = int(stats.get("pim") or stats.get("PIM") or 0)
+
+                # Raw Special Teams Opportunities & Goals
+                ppg = int(stats.get("ppg") or stats.get("PPG") or 0)
+                ppo = int(stats.get("ppo") or stats.get("PPO") or 0)
+                ppga = int(stats.get("ppga") or stats.get("PPGA") or 0)
+                ppoa = int(stats.get("ppoa") or stats.get("PPOA") or 0)
+                shg = int(stats.get("shg") or stats.get("SHG") or 0)
+                shga = int(stats.get("shga") or stats.get("SHGA") or 0)
+
                 standings_db.append({
                     "team_id": t_id,
                     "team_name": canonical_name,
@@ -240,15 +259,21 @@ for src in all_sources:
                     "source_id": s_id,
                     "source_name": s_name,
                     "source_type": s_type,
-                    "gp": int(stats.get("gp") or stats.get("GP") or 0),
-                    "w": int(stats.get("w") or stats.get("W") or 0),
-                    "l": int(stats.get("l") or stats.get("L") or 0),
-                    "t": int(stats.get("t") or stats.get("T") or 0),
-                    "pts": int(stats.get("pts") or stats.get("PTS") or 0),
-                    "gf": int(stats.get("gf") or stats.get("GF") or 0),
-                    "ga": int(stats.get("ga") or stats.get("GA") or 0),
-                    "diff": int(stats.get("diff") or stats.get("DIFF") or 0),
-                    "pim": int(stats.get("pim") or stats.get("PIM") or 0)
+                    "gp": gp,
+                    "w": w,
+                    "l": l,
+                    "t": t,
+                    "pts": pts,
+                    "gf": gf,
+                    "ga": ga,
+                    "diff": diff,
+                    "pim": pim,
+                    "ppg": ppg,
+                    "ppo": ppo,
+                    "ppga": ppga,
+                    "ppoa": ppoa,
+                    "shg": shg,
+                    "shga": shga
                 })
     time.sleep(0.2)
 
@@ -487,7 +512,6 @@ for src in all_sources:
                 tot_ga = goalies_db[goalie_key]["total_ga"]
                 tot_gp = goalies_db[goalie_key]["total_gp"]
 
-                # Cumulative GAA: estimate using 45-min games if scorekeepers omit TOI
                 if tot_min > 0:
                     goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2)
                 elif tot_gp > 0:
@@ -495,7 +519,6 @@ for src in all_sources:
                 else:
                     goalies_db[goalie_key]["total_gaa"] = gaa
 
-                # Per-source GAA for breakdown drawer
                 if mins > 0:
                     clean_gaa = round((ga * 45.0) / mins, 2)
                 elif gp > 0:
