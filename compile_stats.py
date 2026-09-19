@@ -364,7 +364,7 @@ for src in all_sources:
 
 all_compiled_games = sorted(list(games_dict.values()), key=lambda x: x["timestamp"] or x["date"])
 
-# 5. STAGE 3: INGEST SKATERS & GOALIES
+# 5. STAGE 3: INGEST SKATERS & GOALIES (WITH PAGINATION)
 skaters_db = {}
 goalies_db = {}
 
@@ -372,166 +372,192 @@ for src in all_sources:
     s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
     print(f"\n📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})")
 
-    # --- SKATERS ---
-    sk_url = f"https://gamesheetstats.com/api/players/standings/{s_id}?limit=10000&offset=0"
-    print(f"   ➤ Fetching Skaters URL: {sk_url}")
-    sk_data = fetch_json(sk_url)
-    
-    if sk_data is None:
-        print("   ❌ Request failed (Network error or Timeout).")
-    elif "data" not in sk_data:
-        print(f"   ⚠️ API responded, but no 'data' array found. Keys: {list(sk_data.keys())}")
-    else:
-        raw_skaters = sk_data.get("data", [])
-        print(f"   ✅ API returned {len(raw_skaters)} raw skater records.")
+    # --- SKATERS (Paginated Loop) ---
+    raw_skaters = []
+    sk_offset = 0
+    sk_page_size = 10000
+    while True:
+        sk_url = f"https://gamesheetstats.com/api/players/standings/{s_id}?limit={sk_page_size}&offset={sk_offset}"
+        if sk_offset == 0:
+            print(f"   ➤ Fetching Skaters URL: {sk_url}")
+        else:
+            print(f"   ➤ Fetching Next Skaters Page (Offset {sk_offset}): {sk_url}")
         
-        mapped_sk = 0
-        skipped_sk = 0
+        sk_data = fetch_json(sk_url)
+        if sk_data is None or "data" not in sk_data:
+            break
         
-        for p in raw_skaters:
-            p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
-            if not p_name:
+        chunk = sk_data.get("data", [])
+        if not chunk:
+            break
+            
+        raw_skaters.extend(chunk)
+        if len(chunk) < sk_page_size:
+            break
+        sk_offset += len(chunk)
+        time.sleep(0.2)
+
+    print(f"   ✅ Total Skater records retrieved: {len(raw_skaters)}")
+
+    mapped_sk = 0
+    skipped_sk = 0
+
+    for p in raw_skaters:
+        p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
+        if not p_name:
+            skipped_sk += 1
+            continue
+        jersey, pos = p.get("jersey", ""), clean_name(p.get("position", "F"))
+        p_div = clean_name(p.get("division", {}).get("title") or "") if isinstance(p.get("division"), dict) else ""
+
+        for t in p.get("teams", []):
+            t_name = clean_name(t.get("title") or t.get("name", ""))
+            t_id = t.get("id")
+            t_div = clean_name(t.get("division", {}).get("title") or "") if isinstance(t.get("division"), dict) else ""
+            effective_div = t_div or p_div
+
+            st = t.get("stats", {})
+            gp = int(st.get("gp") or 0)
+            g = int(st.get("g") or 0)
+            a = int(st.get("a") or 0)
+            pts = int(st.get("pts") if st.get("pts") is not None else (g + a))
+            pim = int(st.get("pim") or 0)
+
+            cohort, canonical_name = None, None
+            if t_id and int(t_id) in team_id_to_master:
+                cohort, canonical_name = team_id_to_master[int(t_id)]
+            else:
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
+
+            if not cohort or not canonical_name:
                 skipped_sk += 1
                 continue
-            jersey, pos = p.get("jersey", ""), clean_name(p.get("position", "F"))
-            p_div = clean_name(p.get("division", {}).get("title") or "") if isinstance(p.get("division"), dict) else ""
 
-            for t in p.get("teams", []):
-                t_name = clean_name(t.get("title") or t.get("name", ""))
-                t_id = t.get("id")
-                t_div = clean_name(t.get("division", {}).get("title") or "") if isinstance(t.get("division"), dict) else ""
-                effective_div = t_div or p_div
-
-                st = t.get("stats", {})
-                gp = int(st.get("gp") or 0)
-                g = int(st.get("g") or 0)
-                a = int(st.get("a") or 0)
-                pts = int(st.get("pts") if st.get("pts") is not None else (g + a))
-                pim = int(st.get("pim") or 0)
-
-                cohort, canonical_name = None, None
-                if t_id and int(t_id) in team_id_to_master:
-                    cohort, canonical_name = team_id_to_master[int(t_id)]
-                else:
-                    cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
-
-                if not cohort or not canonical_name:
-                    skipped_sk += 1
-                    continue
-
-                mapped_sk += 1
-                age, tier = cohort.split()[0], cohort.split()[1]
-                player_key = f"{p_name}_{canonical_name}_{age}".upper()
-                if player_key not in skaters_db:
-                    skaters_db[player_key] = {
-                        "name": p_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": pos,
-                        "age": age, "tier": tier, "total_gp": 0, "total_g": 0, "total_a": 0, "total_pts": 0, "total_pim": 0,
-                        "sources": []
-                    }
-                skaters_db[player_key]["total_gp"] += gp
-                skaters_db[player_key]["total_g"] += g
-                skaters_db[player_key]["total_a"] += a
-                skaters_db[player_key]["total_pts"] += pts
-                skaters_db[player_key]["total_pim"] += pim
-                skaters_db[player_key]["sources"].append({
-                    "source_id": s_id, "source_name": s_name, "source_type": s_type,
-                    "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
-                })
-        print(f"   🧮 Summary: {mapped_sk} Skaters mapped into dashboard | {skipped_sk} skipped.")
-
+            mapped_sk += 1
+            age, tier = cohort.split()[0], cohort.split()[1]
+            player_key = f"{p_name}_{canonical_name}_{age}".upper()
+            if player_key not in skaters_db:
+                skaters_db[player_key] = {
+                    "name": p_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": pos,
+                    "age": age, "tier": tier, "total_gp": 0, "total_g": 0, "total_a": 0, "total_pts": 0, "total_pim": 0,
+                    "sources": []
+                }
+            skaters_db[player_key]["total_gp"] += gp
+            skaters_db[player_key]["total_g"] += g
+            skaters_db[player_key]["total_a"] += a
+            skaters_db[player_key]["total_pts"] += pts
+            skaters_db[player_key]["total_pim"] += pim
+            skaters_db[player_key]["sources"].append({
+                "source_id": s_id, "source_name": s_name, "source_type": s_type,
+                "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
+            })
+    print(f"   🧮 Summary: {mapped_sk} Skaters mapped into dashboard | {skipped_sk} skipped.")
     time.sleep(0.2)
 
-    # --- GOALIES ---
-    gk_url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit=10000&offset=0"
-    print(f"   ➤ Fetching Goalies URL: {gk_url}")
-    gk_data = fetch_json(gk_url)
-    
-    if gk_data is None:
-        print("   ❌ Request failed (Network error or Timeout).")
-    elif "data" not in gk_data:
-        print(f"   ⚠️ API responded, but no 'data' array found. Keys: {list(gk_data.keys())}")
-    else:
-        raw_goalies = gk_data.get("data", [])
-        print(f"   ✅ API returned {len(raw_goalies)} raw goalie records.")
-        
-        mapped_gk = 0
-        skipped_gk = 0
-        
-        for g in raw_goalies:
-            g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
-            if not g_name:
+    # --- GOALIES (Paginated Loop) ---
+    raw_goalies = []
+    gk_offset = 0
+    gk_page_size = 10000
+    while True:
+        gk_url = f"https://gamesheetstats.com/api/goalies/standings/{s_id}?limit={gk_page_size}&offset={gk_offset}"
+        if gk_offset == 0:
+            print(f"   ➤ Fetching Goalies URL: {gk_url}")
+        else:
+            print(f"   ➤ Fetching Next Goalies Page (Offset {gk_offset}): {gk_url}")
+            
+        gk_data = fetch_json(gk_url)
+        if gk_data is None or "data" not in gk_data:
+            break
+            
+        chunk = gk_data.get("data", [])
+        if not chunk:
+            break
+            
+        raw_goalies.extend(chunk)
+        if len(chunk) < gk_page_size:
+            break
+        gk_offset += len(chunk)
+        time.sleep(0.2)
+
+    print(f"   ✅ Total Goalie records retrieved: {len(raw_goalies)}")
+
+    mapped_gk = 0
+    skipped_gk = 0
+
+    for g in raw_goalies:
+        g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
+        if not g_name:
+            skipped_gk += 1
+            continue
+        jersey = g.get("jersey", "")
+        g_div = clean_name(g.get("division", {}).get("title") or "") if isinstance(g.get("division"), dict) else ""
+
+        for t in g.get("teams", []):
+            t_name = clean_name(t.get("title") or t.get("name", ""))
+            t_id = t.get("id")
+            t_div = clean_name(t.get("division", {}).get("title") or "") if isinstance(t.get("division"), dict) else ""
+            effective_div = t_div or g_div
+
+            st = t.get("stats", {})
+            gp = int(st.get("gp") or 0)
+
+            cohort, canonical_name = None, None
+            if t_id and int(t_id) in team_id_to_master:
+                cohort, canonical_name = team_id_to_master[int(t_id)]
+            else:
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
+
+            if not cohort or not canonical_name:
                 skipped_gk += 1
                 continue
-            jersey = g.get("jersey", "")
-            g_div = clean_name(g.get("division", {}).get("title") or "") if isinstance(g.get("division"), dict) else ""
 
-            for t in g.get("teams", []):
-                t_name = clean_name(t.get("title") or t.get("name", ""))
-                t_id = t.get("id")
-                t_div = clean_name(t.get("division", {}).get("title") or "") if isinstance(t.get("division"), dict) else ""
-                effective_div = t_div or g_div
+            mapped_gk += 1
+            age, tier = cohort.split()[0], cohort.split()[1]
+            ga = int(st.get("ga") or 0)
+            mins = int(st.get("min") or st.get("min_played") or 0)
+            gaa = float(st.get("gaa") or 0.0)
+            so = int(st.get("so") or st.get("shutouts") or 0)
+            w, l, t_val = int(st.get("w") or 0), int(st.get("l") or 0), int(st.get("t") or 0)
 
-                st = t.get("stats", {})
-                gp = int(st.get("gp") or 0)
+            goalie_key = f"{g_name}_{canonical_name}_{age}".upper()
+            if goalie_key not in goalies_db:
+                goalies_db[goalie_key] = {
+                    "name": g_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": "G",
+                    "age": age, "tier": tier, "total_gp": 0, "total_ga": 0, "total_min": 0, "total_gaa": 0.0,
+                    "total_so": 0, "total_w": 0, "total_l": 0, "total_t": 0,
+                    "sources": []
+                }
+            goalies_db[goalie_key]["total_gp"] += gp
+            goalies_db[goalie_key]["total_ga"] += ga
+            goalies_db[goalie_key]["total_min"] += mins
+            goalies_db[goalie_key]["total_so"] += so
+            goalies_db[goalie_key]["total_w"] += w
+            goalies_db[goalie_key]["total_l"] += l
+            goalies_db[goalie_key]["total_t"] += t_val
 
-                cohort, canonical_name = None, None
-                if t_id and int(t_id) in team_id_to_master:
-                    cohort, canonical_name = team_id_to_master[int(t_id)]
-                else:
-                    cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
+            tot_min = goalies_db[goalie_key]["total_min"]
+            tot_ga = goalies_db[goalie_key]["total_ga"]
+            tot_gp = goalies_db[goalie_key]["total_gp"]
 
-                if not cohort or not canonical_name:
-                    skipped_gk += 1
-                    continue
+            if tot_min > 0:
+                goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2)
+            elif tot_gp > 0:
+                goalies_db[goalie_key]["total_gaa"] = round(tot_ga / tot_gp, 2)
+            else:
+                goalies_db[goalie_key]["total_gaa"] = gaa
 
-                mapped_gk += 1
-                age, tier = cohort.split()[0], cohort.split()[1]
-                ga = int(st.get("ga") or 0)
-                mins = int(st.get("min") or st.get("min_played") or 0)
-                gaa = float(st.get("gaa") or 0.0)
-                so = int(st.get("so") or st.get("shutouts") or 0)
-                w, l, t_val = int(st.get("w") or 0), int(st.get("l") or 0), int(st.get("t") or 0)
+            if mins > 0:
+                clean_gaa = round((ga * 45.0) / mins, 2)
+            elif gp > 0:
+                clean_gaa = round(ga / gp, 2)
+            else:
+                clean_gaa = gaa
 
-                goalie_key = f"{g_name}_{canonical_name}_{age}".upper()
-                if goalie_key not in goalies_db:
-                    goalies_db[goalie_key] = {
-                        "name": g_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": "G",
-                        "age": age, "tier": tier, "total_gp": 0, "total_ga": 0, "total_min": 0, "total_gaa": 0.0,
-                        "total_so": 0, "total_w": 0, "total_l": 0, "total_t": 0,
-                        "sources": []
-                    }
-                goalies_db[goalie_key]["total_gp"] += gp
-                goalies_db[goalie_key]["total_ga"] += ga
-                goalies_db[goalie_key]["total_min"] += mins
-                goalies_db[goalie_key]["total_so"] += so
-                goalies_db[goalie_key]["total_w"] += w
-                goalies_db[goalie_key]["total_l"] += l
-                goalies_db[goalie_key]["total_t"] += t_val
-                
-                tot_min = goalies_db[goalie_key]["total_min"]
-                tot_ga = goalies_db[goalie_key]["total_ga"]
-                tot_gp = goalies_db[goalie_key]["total_gp"]
-
-                if tot_min > 0:
-                    goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2)
-                elif tot_gp > 0:
-                    goalies_db[goalie_key]["total_gaa"] = round(tot_ga / tot_gp, 2)
-                else:
-                    goalies_db[goalie_key]["total_gaa"] = gaa
-
-                if mins > 0:
-                    clean_gaa = round((ga * 45.0) / mins, 2)
-                elif gp > 0:
-                    clean_gaa = round(ga / gp, 2)
-                else:
-                    clean_gaa = gaa
-
-                goalies_db[goalie_key]["sources"].append({
-                    "source_id": s_id, "source_name": s_name, "source_type": s_type,
-                    "gp": gp, "ga": ga, "min": mins, "gaa": clean_gaa, "so": so, "w": w, "l": l, "t": t_val
-                })
-        print(f"   🧮 Summary: {mapped_gk} Goalies mapped into dashboard | {skipped_gk} skipped.")
-    
+            goalies_db[goalie_key]["sources"].append({
+                "source_id": s_id, "source_name": s_name, "source_type": s_type,
+                "gp": gp, "ga": ga, "min": mins, "gaa": clean_gaa, "so": so, "w": w, "l": l, "t": t_val
+            })
+    print(f"   🧮 Summary: {mapped_gk} Goalies mapped into dashboard | {skipped_gk} skipped.")
     time.sleep(0.2)
 
 # 6. EXPORT COMPILED STATS
