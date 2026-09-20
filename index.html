@@ -532,37 +532,98 @@
                         </div>
                     </div>
 
-                    <!-- ⚡ Special Teams Execution Capsule -->
+                    <!-- ⚡ Special Teams Execution Capsule (With Gradient Gauge Bars) -->
                     <div class="bg-slate-900 border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
                         <div class="flex items-center justify-between mb-3 sm:mb-4">
                             <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-cyan-400 block drop-shadow-[0_0_6px_rgba(34,211,238,0.2)]">⚡ Special Teams Execution</span>
                             <span class="text-[10px] sm:text-xs font-mono text-slate-400">Cumulative Multi-Source Counts</span>
                         </div>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+                            
                             <!-- Power Play % -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Power Play %</span>
-                                <span id="spec-pp-pct" class="text-xl sm:text-3xl font-mono font-black text-cyan-400">-</span>
-                                <span id="spec-pp-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Opps</span>
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                                <div>
+                                    <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Power Play %</span>
+                                    <div class="flex items-baseline justify-between mt-1">
+                                        <span id="spec-pp-pct" class="text-2xl sm:text-3xl font-mono font-black text-cyan-400">-</span>
+                                        <span id="spec-pp-rank" class="text-xs sm:text-sm font-mono font-bold text-slate-300">-</span>
+                                    </div>
+                                    <span id="spec-pp-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Opps</span>
+                                </div>
+                                <div class="mt-3 sm:mt-4">
+                                    <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500">
+                                        <div id="gauge-pp-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                        <span class="gauge-total-teams-label">Total</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Penalty Kill % -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Penalty Kill %</span>
-                                <span id="spec-pk-pct" class="text-xl sm:text-3xl font-mono font-black text-emerald-400">-</span>
-                                <span id="spec-pk-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Killed</span>
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                                <div>
+                                    <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Penalty Kill %</span>
+                                    <div class="flex items-baseline justify-between mt-1">
+                                        <span id="spec-pk-pct" class="text-2xl sm:text-3xl font-mono font-black text-emerald-400">-</span>
+                                        <span id="spec-pk-rank" class="text-xs sm:text-sm font-mono font-bold text-slate-300">-</span>
+                                    </div>
+                                    <span id="spec-pk-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Killed</span>
+                                </div>
+                                <div class="mt-3 sm:mt-4">
+                                    <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500">
+                                        <div id="gauge-pk-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                        <span class="gauge-total-teams-label">Total</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Shorthanded Goals For -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals For</span>
-                                <span id="spec-shgf" class="text-xl sm:text-3xl font-mono font-black text-white">-</span>
-                                <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Scored Shorthanded</span>
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                                <div>
+                                    <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals For</span>
+                                    <div class="flex items-baseline justify-between mt-1">
+                                        <span id="spec-shgf" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                        <span id="spec-shgf-rank" class="text-xs sm:text-sm font-mono font-bold text-slate-300">-</span>
+                                    </div>
+                                    <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Scored Shorthanded</span>
+                                </div>
+                                <div class="mt-3 sm:mt-4">
+                                    <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500">
+                                        <div id="gauge-shgf-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                        <span class="gauge-total-teams-label">Total</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
                             </div>
+
                             <!-- Shorthanded Goals Against -->
-                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
-                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals Against</span>
-                                <span id="spec-shga" class="text-xl sm:text-3xl font-mono font-black text-rose-400">-</span>
-                                <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Allowed on PP</span>
+                            <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                                <div>
+                                    <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals Against</span>
+                                    <div class="flex items-baseline justify-between mt-1">
+                                        <span id="spec-shga" class="text-2xl sm:text-3xl font-mono font-black text-rose-400">-</span>
+                                        <span id="spec-shga-rank" class="text-xs sm:text-sm font-mono font-bold text-slate-300">-</span>
+                                    </div>
+                                    <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Allowed on PP</span>
+                                </div>
+                                <div class="mt-3 sm:mt-4">
+                                    <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-emerald-500 via-amber-400 to-rose-500">
+                                        <div id="gauge-shga-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                        <span>1</span>
+                                        <span class="gauge-total-teams-label">Total</span>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -1634,7 +1695,7 @@
                 trackedDiffEl.className = `text-base sm:text-xl font-mono font-black ${teamPayload.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
             }
 
-            // 3. SPECIAL TEAMS CALCULATION & INJECTION
+            // 3. SPECIAL TEAMS VALUES CALCULATION
             const ppg = teamPayload.ppg || 0;
             const ppo = teamPayload.ppo || 0;
             const ppga = teamPayload.ppga || 0;
@@ -1772,7 +1833,7 @@
                 recentGamesTbody.innerHTML = `<tr><td colspan="6" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">⚠️ No games tracked on schedule records.</td></tr>`;
             }
 
-            // Gauges
+            // Gauges: Team Efficiency
             const allDivTeams = Object.values(divisionPayload);
             const totalTeamsInDivision = allDivTeams.length;
             document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
@@ -1816,6 +1877,57 @@
             document.getElementById('stat-ga-rank').innerText = `#${gaRank} of ${totalTeamsInDivision}`;
             document.getElementById('stat-pim-rank').innerText = `#${pimRank} of ${totalTeamsInDivision}`;
             document.getElementById('stat-diff-rank').innerText = `#${diffRank} of ${totalTeamsInDivision}`;
+
+            // Gauges: Special Teams Execution Rankings & Indicator Placement
+            const specMetrics = allDivTeams.map(t => {
+                const tPpg = t.ppg || 0;
+                const tPpo = t.ppo || 0;
+                const tPpga = t.ppga || 0;
+                const tPpoa = t.ppoa || 0;
+                const tPpPct = tPpo > 0 ? (tPpg / tPpo) * 100 : 0;
+                const tPkKilled = Math.max(0, tPpoa - tPpga);
+                const tPkPct = tPpoa > 0 ? (tPkKilled / tPpoa) * 100 : (t.gp > 0 ? 100 : 0);
+                return {
+                    name: t.team_name,
+                    ppPct: tPpPct,
+                    pkPct: tPkPct,
+                    shgf: t.shg || 0,
+                    shga: t.shga || 0
+                };
+            });
+
+            const sortedPP = [...specMetrics].sort((a, b) => b.ppPct - a.ppPct);
+            const sortedPK = [...specMetrics].sort((a, b) => b.pkPct - a.pkPct);
+            const sortedSHGF = [...specMetrics].sort((a, b) => b.shgf - a.shgf);
+            const sortedSHGA = [...specMetrics].sort((a, b) => a.shga - b.shga); // Fewer allowed is better
+
+            const ppRank = sortedPP.findIndex(x => x.name === teamName) + 1;
+            const pkRank = sortedPK.findIndex(x => x.name === teamName) + 1;
+            const shgfRank = sortedSHGF.findIndex(x => x.name === teamName) + 1;
+            const shgaRank = sortedSHGA.findIndex(x => x.name === teamName) + 1;
+
+            const pctPP = totalTeamsInDivision > 1 ? 100 - (((ppRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctPK = totalTeamsInDivision > 1 ? 100 - (((pkRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctSHGF = totalTeamsInDivision > 1 ? 100 - (((shgfRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctSHGA = totalTeamsInDivision > 1 ? ((shgaRank - 1) / (totalTeamsInDivision - 1)) * 100 : 0;
+
+            const gPp = document.getElementById('gauge-pp-indicator');
+            const gPk = document.getElementById('gauge-pk-indicator');
+            const gShgf = document.getElementById('gauge-shgf-indicator');
+            const gShga = document.getElementById('gauge-shga-indicator');
+            if (gPp) gPp.style.left = `${pctPP}%`;
+            if (gPk) gPk.style.left = `${pctPK}%`;
+            if (gShgf) gShgf.style.left = `${pctSHGF}%`;
+            if (gShga) gShga.style.left = `${pctSHGA}%`;
+
+            const rPp = document.getElementById('spec-pp-rank');
+            const rPk = document.getElementById('spec-pk-rank');
+            const rShgf = document.getElementById('spec-shgf-rank');
+            const rShga = document.getElementById('spec-shga-rank');
+            if (rPp) rPp.innerText = `#${ppRank} of ${totalTeamsInDivision}`;
+            if (rPk) rPk.innerText = `#${pkRank} of ${totalTeamsInDivision}`;
+            if (rShgf) rShgf.innerText = `#${shgfRank} of ${totalTeamsInDivision}`;
+            if (rShga) rShga.innerText = `#${shgaRank} of ${totalTeamsInDivision}`;
 
             // Top 5 Skaters (Sorted by PTS)
             const rosterTbody = document.getElementById('scout-roster-tbody');
