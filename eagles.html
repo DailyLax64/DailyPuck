@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Burlington Eagles | U11 & U14 Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Burlington Eagles Brand Colors (Navy & Gold) */
+        .bg-eagles-navy { background-color: #0b1d3a; }
+        .text-eagles-gold { color: #facc15; }
+        .border-eagles-gold { border-color: #facc15; }
+        .glow-gold { box-shadow: 0 0 15px rgba(250, 204, 21, 0.2); }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0b1d3a; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 4px; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade { animation: fadeIn 0.4s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Eagles Custom Header -->
+    <header class="bg-eagles-navy text-white shadow-xl border-b-4 border-yellow-400 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="text-3xl">🦅</div>
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white leading-none">Burlington <span class="text-eagles-gold">Eagles</span></h1>
+                    <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">U11 & U14 Team Dashboard</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2 bg-slate-900/50 px-3 py-1.5 rounded-full border border-slate-700/50">
+                <span id="sync-ping" class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                <span id="sync-status" class="text-[10px] sm:text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Loading Live Data...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-8 flex-grow space-y-8" id="eagles-dashboard-container">
+        <!-- Javascript will inject U11 and U14 cards here -->
+    </main>
+
+    <footer class="bg-eagles-navy text-center py-6 text-xs font-mono text-slate-400 uppercase tracking-widest border-t-2 border-yellow-400 mt-auto">
+        Powered by Daily Puck Analytics | Live GameSheet Feed
+    </footer>
+
+    <script>
+        // Utilities
+        const cleanKey = str => String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
+        const isBurlingtonEagles = name => cleanKey(name).includes("BURLINGTON") && cleanKey(name).includes("EAGLES");
+
+        // Global Data
+        let eaglesData = {
+            "U11": null,
+            "U14": null
+        };
+
+        async function initDashboard() {
+            try {
+                // Fetch the exact same file the main app uses
+                const response = await fetch('hockey_stats.json?v=' + Date.now());
+                if (!response.ok) throw new Error("Could not load hockey_stats.json");
+                
+                const rawDb = await response.json();
+                const genDate = rawDb.generated_at ? new Date(rawDb.generated_at).toLocaleDateString() : 'Active';
+                document.getElementById('sync-status').innerText = `Synced: ${genDate}`;
+
+                processEaglesData(rawDb);
+                renderDashboard();
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('sync-status').innerText = "Data Offline";
+                document.getElementById('sync-ping').classList.replace('bg-yellow-400', 'bg-rose-500');
+                document.getElementById('eagles-dashboard-container').innerHTML = `
+                    <div class="text-center py-12">
+                        <p class="text-rose-600 font-bold">⚠️ Unable to load hockey_stats.json. Ensure you are viewing this via GitHub Pages.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function processEaglesData(db) {
+            // 1. Identify U11 and U14 Eagles Teams
+            (db.standings || []).forEach(row => {
+                if (!isBurlingtonEagles(row.team_name)) return;
+                
+                const age = String(row.age || row.detected_age || "").toUpperCase();
+                let targetCohort = null;
+                if (age.includes("U11")) targetCohort = "U11";
+                if (age.includes("U14")) targetCohort = "U14";
+
+                if (targetCohort) {
+                    if (!eaglesData[targetCohort]) {
+                        eaglesData[targetCohort] = {
+                            name: row.team_name,
+                            division: `${row.age || age} ${row.tier || 'AA'}`,
+                            gp: 0, w: 0, l: 0, t: 0, gf: 0, ga: 0, pts: 0,
+                            roster: [], goalies: [], games: []
+                        };
+                    }
+                    
+                    eaglesData[targetCohort].gp += Number(row.gp) || 0;
+                    eaglesData[targetCohort].w += Number(row.w) || 0;
+                    eaglesData[targetCohort].l += Number(row.l) || 0;
+                    eaglesData[targetCohort].t += Number(row.t) || 0;
+                    eaglesData[targetCohort].gf += Number(row.gf) || 0;
+                    eaglesData[targetCohort].ga += Number(row.ga) || 0;
+                    eaglesData[targetCohort].pts += Number(row.pts) || 0;
+                }
+            });
+
+            // 2. Attach Skaters
+            (db.skaters || []).forEach(p => {
+                if (!isBurlingtonEagles(p.team)) return;
+                const age = String(p.age || "").toUpperCase();
+                let cohort = age.includes("U11") ? "U11" : (age.includes("U14") ? "U14" : null);
+                if (cohort && eaglesData[cohort]) {
+                    eaglesData[cohort].roster.push(p);
+                }
+            });
+
+            // 3. Attach Goalies
+            (db.goalies || []).forEach(g => {
+                if (!isBurlingtonEagles(g.team)) return;
+                const age = String(g.age || "").toUpperCase();
+                let cohort = age.includes("U11") ? "U11" : (age.includes("U14") ? "U14" : null);
+                if (cohort && eaglesData[cohort]) {
+                    eaglesData[cohort].goalies.push(g);
+                }
+            });
+
+            // 4. Attach Games
+            (db.games || []).forEach(g => {
+                const isHomeEagles = isBurlingtonEagles(g.home_name);
+                const isVisEagles = isBurlingtonEagles(g.visitor_name);
+                if (!isHomeEagles && !isVisEagles) return;
+
+                const age = String(g.division || "").toUpperCase();
+                let cohort = age.includes("U11") ? "U11" : (age.includes("U14") ? "U14" : null);
+                
+                if (cohort && eaglesData[cohort]) {
+                    const isHome = isHomeEagles;
+                    eaglesData[cohort].games.push({
+                        date: g.date || g.timestamp?.substring(0,10) || "",
+                        time: g.time || "",
+                        opponent: isHome ? g.visitor_name : g.home_name,
+                        is_home: isHome,
+                        status: g.status,
+                        team_goals: isHome ? g.home_goals : g.visitor_goals,
+                        opp_goals: isHome ? g.visitor_goals : g.home_goals,
+                        result: isHome ? g.home_result : g.visitor_result,
+                        source: g.source_name || ""
+                    });
+                }
+            });
+        }
+
+        function renderDashboard() {
+            const container = document.getElementById('eagles-dashboard-container');
+            container.innerHTML = "";
+
+            ["U11", "U14"].forEach(cohort => {
+                const team = eaglesData[cohort];
+                if (!team) {
+                    container.innerHTML += `
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
+                            <span class="text-slate-400 font-bold uppercase tracking-widest text-sm">No data tracked for ${cohort} Eagles yet.</span>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Sort Roster: Top 5 by PTS
+                const topSkaters = team.roster.sort((a, b) => b.total_pts - a.total_pts).slice(0, 5);
+                
+                // Sort Goalies: Top 2 by GP
+                const topGoalies = team.goalies.sort((a, b) => b.total_gp - a.total_gp).slice(0, 2);
+
+                // Sort Games Chronologically
+                const sortedGames = team.games.sort((a, b) => a.date.localeCompare(b.date));
+                const completedGames = sortedGames.filter(g => g.status === 'final' && g.result);
+                const upcomingGames = sortedGames.filter(g => g.status !== 'final').slice(0, 3);
+                const last5 = completedGames.slice(-5);
+
+                const diffSign = (team.gf - team.ga) >= 0 ? '+' : '';
+
+                // Build UI
+                container.innerHTML += `
+                    <div class="bg-eagles-navy rounded-3xl overflow-hidden shadow-2xl glow-gold animate-fade">
+                        <!-- Card Header -->
+                        <div class="bg-slate-900/40 p-4 sm:p-6 border-b border-slate-700/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div>
+                                <span class="px-3 py-1 rounded-full text-xs font-black bg-yellow-400 text-eagles-navy uppercase tracking-widest">${team.division}</span>
+                                <h2 class="text-3xl font-black text-white mt-2 tracking-tight">${team.name}</h2>
+                            </div>
+                            <div class="flex space-x-3 text-center">
+                                <div class="bg-slate-900 rounded-xl px-4 py-2 border border-slate-700">
+                                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Record</span>
+                                    <span class="text-xl font-black text-white font-mono">${team.w}-${team.l}-${team.t}</span>
+                                </div>
+                                <div class="bg-slate-900 rounded-xl px-4 py-2 border border-slate-700">
+                                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Diff</span>
+                                    <span class="text-xl font-black text-yellow-400 font-mono">${diffSign}${team.gf - team.ga}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Grid -->
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-px bg-slate-700">
+                            
+                            <!-- Left Col: Roster & Goalies -->
+                            <div class="lg:col-span-7 bg-eagles-navy p-4 sm:p-6 space-y-6">
+                                
+                                <!-- Skaters -->
+                                <div>
+                                    <h3 class="text-sm font-black uppercase tracking-widest text-yellow-400 mb-3 drop-shadow-md">🏒 Offensive Leaders (Top 5 Pts)</h3>
+                                    <div class="bg-slate-900/50 rounded-xl border border-slate-700/50 overflow-hidden custom-scrollbar overflow-x-auto">
+                                        <table class="w-full text-left text-sm whitespace-nowrap">
+                                            <thead>
+                                                <tr class="text-[10px] text-slate-400 uppercase tracking-widest border-b border-slate-700/50">
+                                                    <th class="py-2 px-3 text-center">#</th>
+                                                    <th class="py-2 px-3">Player</th>
+                                                    <th class="py-2 px-3 text-center">GP</th>
+                                                    <th class="py-2 px-3 text-center">G</th>
+                                                    <th class="py-2 px-3 text-center">A</th>
+                                                    <th class="py-2 px-3 text-center text-yellow-400 font-black">PTS</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-slate-800 font-bold text-slate-200">
+                                                ${topSkaters.length ? topSkaters.map(p => `
+                                                    <tr class="hover:bg-slate-800/40">
+                                                        <td class="py-2.5 px-3 text-center text-slate-500 font-mono">${p.jersey || '-'}</td>
+                                                        <td class="py-2.5 px-3 uppercase tracking-tight">${p.name}</td>
+                                                        <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${p.total_gp}</td>
+                                                        <td class="py-2.5 px-3 text-center font-mono">${p.total_g}</td>
+                                                        <td class="py-2.5 px-3 text-center font-mono">${p.total_a}</td>
+                                                        <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-black">${p.total_pts}</td>
+                                                    </tr>
+                                                `).join('') : `<tr><td colspan="6" class="py-4 text-center text-slate-500 text-xs uppercase">No player stats recorded.</td></tr>`}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Goalies -->
+                                <div>
+                                    <h3 class="text-sm font-black uppercase tracking-widest text-yellow-400 mb-3 drop-shadow-md">🥅 Crease Command (Top 2 GP)</h3>
+                                    <div class="bg-slate-900/50 rounded-xl border border-slate-700/50 overflow-hidden custom-scrollbar overflow-x-auto">
+                                        <table class="w-full text-left text-sm whitespace-nowrap">
+                                            <thead>
+                                                <tr class="text-[10px] text-slate-400 uppercase tracking-widest border-b border-slate-700/50">
+                                                    <th class="py-2 px-3 text-center">#</th>
+                                                    <th class="py-2 px-3">Goalie</th>
+                                                    <th class="py-2 px-3 text-center text-yellow-400 font-black">GP</th>
+                                                    <th class="py-2 px-3 text-center">GAA</th>
+                                                    <th class="py-2 px-3 text-center text-emerald-400">SO</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-slate-800 font-bold text-slate-200">
+                                                ${topGoalies.length ? topGoalies.map(g => `
+                                                    <tr class="hover:bg-slate-800/40">
+                                                        <td class="py-2.5 px-3 text-center text-slate-500 font-mono">${g.jersey || '-'}</td>
+                                                        <td class="py-2.5 px-3 uppercase tracking-tight">${g.name}</td>
+                                                        <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-black">${g.total_gp}</td>
+                                                        <td class="py-2.5 px-3 text-center font-mono">${g.total_gaa.toFixed(2)}</td>
+                                                        <td class="py-2.5 px-3 text-center text-emerald-400 font-mono">${g.total_so}</td>
+                                                    </tr>
+                                                `).join('') : `<tr><td colspan="5" class="py-4 text-center text-slate-500 text-xs uppercase">No goalie stats recorded.</td></tr>`}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Right Col: Form & Schedule -->
+                            <div class="lg:col-span-5 bg-eagles-navy p-4 sm:p-6 flex flex-col gap-6">
+                                
+                                <!-- Form Guide -->
+                                <div>
+                                    <h3 class="text-sm font-black uppercase tracking-widest text-slate-300 mb-3">🔥 Form Guide (Last 5)</h3>
+                                    <div class="flex gap-2">
+                                        ${last5.length ? last5.map(g => {
+                                            let badgeClass = "bg-slate-800 text-slate-400";
+                                            if (g.result === 'W') badgeClass = "bg-emerald-500 text-slate-900";
+                                            if (g.result === 'L') badgeClass = "bg-rose-600 text-white";
+                                            if (g.result === 'T') badgeClass = "bg-yellow-400 text-slate-900";
+                                            return `<div title="${g.is_home ? 'vs' : '@'} ${g.opponent} (${g.team_goals}-${g.opp_goals})" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-black font-mono shadow-md ${badgeClass}">${g.result}</div>`;
+                                        }).join('') : '<span class="text-xs text-slate-500 uppercase font-mono">No completed games</span>'}
+                                    </div>
+                                </div>
+
+                                <!-- Upcoming Schedule -->
+                                <div class="flex-grow">
+                                    <h3 class="text-sm font-black uppercase tracking-widest text-slate-300 mb-3">📅 On Deck</h3>
+                                    <div class="space-y-2">
+                                        ${upcomingGames.length ? upcomingGames.map(g => `
+                                            <div class="bg-slate-900 rounded-xl p-3 border border-slate-700/50">
+                                                <div class="flex justify-between items-center mb-1">
+                                                    <span class="text-[10px] font-black uppercase text-yellow-400 tracking-wider">${g.date}</span>
+                                                    <span class="text-[10px] font-mono text-slate-400">${g.time || 'TBD'}</span>
+                                                </div>
+                                                <div class="font-bold text-white text-sm tracking-tight uppercase truncate">
+                                                    <span class="text-slate-500 mr-1">${g.is_home ? 'VS' : '@'}</span> ${g.opponent}
+                                                </div>
+                                                <div class="text-[10px] text-slate-400 mt-1 truncate font-mono">${g.source}</div>
+                                            </div>
+                                        `).join('') : `
+                                            <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                                                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">No scheduled games.</span>
+                                            </div>
+                                        `}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initDashboard);
+    </script>
+</body>
+</html>
