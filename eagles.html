@@ -155,7 +155,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Goals For / Game</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="stat-gf-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-gf-val" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="stat-gf-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Goals Against / Game</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="stat-ga-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-ga-val" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="stat-ga-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Average Goal Margin</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="stat-diff-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-diff-val" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="stat-diff-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Penalty Minutes / G</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="stat-pim-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-pim-val" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="stat-pim-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                         </div>
@@ -246,7 +246,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Power Play %</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="spec-pp-pct" class="text-2xl sm:text-3xl font-mono font-black text-yellow-400">-</span>
+                                <span id="spec-pp-pct" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="spec-pp-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                             <span id="spec-pp-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Opps</span>
@@ -267,7 +267,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Penalty Kill %</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="spec-pk-pct" class="text-2xl sm:text-3xl font-mono font-black text-emerald-400">-</span>
+                                <span id="spec-pk-pct" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="spec-pk-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                             <span id="spec-pk-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Killed</span>
@@ -288,7 +288,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals For</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="spec-shgf" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="spec-shgf" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="spec-shgf-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                             <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Scored Shorthanded</span>
@@ -309,7 +309,7 @@
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals Against</span>
                             <div class="flex items-baseline justify-between mt-1">
-                                <span id="spec-shga" class="text-2xl sm:text-3xl font-mono font-black text-rose-400">-</span>
+                                <span id="spec-shga" class="text-2xl sm:text-3xl font-mono font-black">-</span>
                                 <span id="spec-shga-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
                             </div>
                             <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Allowed on PP</span>
@@ -413,6 +413,41 @@
             const c = cleanKey(name);
             return c.includes("BURLINGTON") && c.includes("EAGLES");
         };
+
+        function getGradientColor(pct, type = 'rose-to-emerald') {
+            const p = Math.max(0, Math.min(100, pct)) / 100;
+            const rose = [244, 63, 94];     // #f43f5e (rose-500)
+            const amber = [251, 191, 36];   // #fbbf24 (amber-400)
+            const emerald = [16, 185, 129]; // #10b981 (emerald-500)
+
+            let c1, c2, factor;
+            if (type === 'rose-to-emerald') {
+                if (p < 0.5) {
+                    c1 = rose;
+                    c2 = amber;
+                    factor = p / 0.5;
+                } else {
+                    c1 = amber;
+                    c2 = emerald;
+                    factor = (p - 0.5) / 0.5;
+                }
+            } else { // 'emerald-to-rose'
+                if (p < 0.5) {
+                    c1 = emerald;
+                    c2 = amber;
+                    factor = p / 0.5;
+                } else {
+                    c1 = amber;
+                    c2 = rose;
+                    factor = (p - 0.5) / 0.5;
+                }
+            }
+
+            const r = Math.round(c1[0] + factor * (c2[0] - c1[0]));
+            const g = Math.round(c1[1] + factor * (c2[1] - c1[1]));
+            const b = Math.round(c1[2] + factor * (c2[2] - c1[2]));
+            return `rgb(${r}, ${g}, ${b})`;
+        }
 
         async function initApp() {
             try {
@@ -727,10 +762,15 @@
             const pimRank = sortedPIM.findIndex(x => x.name === eaglesTeamName) + 1;
             const diffRank = sortedDiff.findIndex(x => x.name === eaglesTeamName) + 1;
 
-            document.getElementById('stat-gf-val').innerText = curMetrics.gfAvg.toFixed(1);
-            document.getElementById('stat-ga-val').innerText = curMetrics.gaAvg.toFixed(1);
-            document.getElementById('stat-pim-val').innerText = curMetrics.pimAvg.toFixed(1);
-            document.getElementById('stat-diff-val').innerText = curMetrics.diffAvg >= 0 ? `+${curMetrics.diffAvg.toFixed(1)}` : curMetrics.diffAvg.toFixed(1);
+            const elGfVal = document.getElementById('stat-gf-val');
+            const elGaVal = document.getElementById('stat-ga-val');
+            const elPimVal = document.getElementById('stat-pim-val');
+            const elDiffVal = document.getElementById('stat-diff-val');
+
+            elGfVal.innerText = curMetrics.gfAvg.toFixed(1);
+            elGaVal.innerText = curMetrics.gaAvg.toFixed(1);
+            elPimVal.innerText = curMetrics.pimAvg.toFixed(1);
+            elDiffVal.innerText = curMetrics.diffAvg >= 0 ? `+${curMetrics.diffAvg.toFixed(1)}` : curMetrics.diffAvg.toFixed(1);
 
             const pctGF = totalTeamsInDivision > 1 ? 100 - (((gfRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
             const pctGA = totalTeamsInDivision > 1 ? ((gaRank - 1) / (totalTeamsInDivision - 1)) * 100 : 0;
@@ -741,6 +781,12 @@
             document.getElementById('gauge-ga-indicator').style.left = `${pctGA}%`;
             document.getElementById('gauge-pim-indicator').style.left = `${pctPIM}%`;
             document.getElementById('gauge-diff-indicator').style.left = `${pctDiff}%`;
+
+            // Dynamically match stat value color to gauge marker position
+            elGfVal.style.color = getGradientColor(pctGF, 'rose-to-emerald');
+            elGaVal.style.color = getGradientColor(pctGA, 'emerald-to-rose');
+            elDiffVal.style.color = getGradientColor(pctDiff, 'rose-to-emerald');
+            elPimVal.style.color = getGradientColor(pctPIM, 'emerald-to-rose');
 
             document.getElementById('stat-gf-rank').innerText = `#${gfRank} of ${totalTeamsInDivision}`;
             document.getElementById('stat-ga-rank').innerText = `#${gaRank} of ${totalTeamsInDivision}`;
@@ -759,12 +805,17 @@
             const pkKilled = Math.max(0, ppoa - ppga);
             const pkPct = ppoa > 0 ? ((pkKilled / ppoa) * 100).toFixed(1) : (team.gp > 0 ? "100.0" : "0.0");
 
-            document.getElementById('spec-pp-pct').innerText = `${ppPct}%`;
+            const elPpPct = document.getElementById('spec-pp-pct');
+            const elPkPct = document.getElementById('spec-pk-pct');
+            const elShgf = document.getElementById('spec-shgf');
+            const elShga = document.getElementById('spec-shga');
+
+            elPpPct.innerText = `${ppPct}%`;
             document.getElementById('spec-pp-ratio').innerText = `${ppg} / ${ppo} Opps`;
-            document.getElementById('spec-pk-pct').innerText = `${pkPct}%`;
+            elPkPct.innerText = `${pkPct}%`;
             document.getElementById('spec-pk-ratio').innerText = `${pkKilled} / ${ppoa} Killed`;
-            document.getElementById('spec-shgf').innerText = `${shg}`;
-            document.getElementById('spec-shga').innerText = `${shga}`;
+            elShgf.innerText = `${shg}`;
+            elShga.innerText = `${shga}`;
 
             // Calculate division-relative Special Teams ranks
             const specMetrics = allDivTeams.map(t => {
@@ -803,6 +854,12 @@
             document.getElementById('gauge-pk-indicator').style.left = `${pctPK}%`;
             document.getElementById('gauge-shgf-indicator').style.left = `${pctSHGF}%`;
             document.getElementById('gauge-shga-indicator').style.left = `${pctSHGA}%`;
+
+            // Dynamically match special teams stat value color to gauge marker position
+            elPpPct.style.color = getGradientColor(pctPP, 'rose-to-emerald');
+            elPkPct.style.color = getGradientColor(pctPK, 'rose-to-emerald');
+            elShgf.style.color = getGradientColor(pctSHGF, 'rose-to-emerald');
+            elShga.style.color = getGradientColor(pctSHGA, 'emerald-to-rose');
 
             document.getElementById('spec-pp-rank').innerText = `#${ppRank} of ${totalTeamsInDivision}`;
             document.getElementById('spec-pk-rank').innerText = `#${pkRank} of ${totalTeamsInDivision}`;
