@@ -3,332 +3,887 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Burlington Eagles | U11 & U14 Dashboard</title>
+    <title>Burlington Eagles | U11 & U14 Analytics Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Burlington Eagles Brand Colors (Navy & Gold) */
         .bg-eagles-navy { background-color: #0b1d3a; }
         .text-eagles-gold { color: #facc15; }
         .border-eagles-gold { border-color: #facc15; }
-        .glow-gold { box-shadow: 0 0 15px rgba(250, 204, 21, 0.2); }
-        
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #0b1d3a; }
+        .glow-gold { box-shadow: 0 0 20px rgba(250, 204, 21, 0.25); }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #071224; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 4px; }
-        
+
+        .touch-scroll { -webkit-overflow-scrolling: touch; }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade { animation: fadeIn 0.4s ease-out forwards; }
+        .animate-fade { animation: fadeIn 0.3s ease-out forwards; }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-slate-100 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-yellow-400 selection:text-slate-950 text-sm">
 
-    <!-- Eagles Custom Header -->
-    <header class="bg-eagles-navy text-white shadow-xl border-b-4 border-yellow-400 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
-            <div class="flex items-center space-x-3">
-                <div class="text-3xl">🦅</div>
+    <!-- Top Command Ribbon -->
+    <div class="bg-slate-900 border-b border-slate-800 py-2.5 px-4 shadow-sm text-white">
+        <div class="max-w-6xl mx-auto flex flex-row items-center justify-between gap-3 text-xs">
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span id="sync-status" class="font-mono font-bold text-slate-300 uppercase tracking-widest text-[11px]">Connecting to hockey_stats.json...</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <label for="cohort-select" class="text-slate-400 font-bold uppercase tracking-wider text-[11px] hidden sm:inline">Active Squad:</label>
+                <select id="cohort-select" onchange="onCohortChange()" style="color-scheme: dark;" class="bg-slate-950 border border-yellow-400/60 text-yellow-400 text-xs font-black uppercase tracking-wider rounded-lg px-3 py-1.5 focus:outline-none focus:border-yellow-400 cursor-pointer shadow-sm">
+                    <option value="U11">🦅 U11 AA Burlington Eagles</option>
+                    <option value="U14">🦅 U14 AA Burlington Eagles</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eagles Main Header -->
+    <header class="bg-eagles-navy text-white shadow-xl border-b-4 border-yellow-400 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3.5">
+                <div class="bg-gradient-to-br from-yellow-400 to-yellow-600 text-slate-950 font-black p-2.5 rounded-2xl shadow-md text-2xl flex items-center justify-center">
+                    🦅
+                </div>
                 <div>
-                    <h1 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white leading-none">Burlington <span class="text-eagles-gold">Eagles</span></h1>
-                    <span class="text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">U11 & U14 Team Dashboard</span>
+                    <div class="flex items-baseline space-x-1.5">
+                        <h1 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white leading-none">Burlington <span class="text-eagles-gold">Eagles</span></h1>
+                    </div>
+                    <span id="cohort-banner-label" class="text-xs font-mono font-bold text-slate-300 uppercase tracking-widest">U11 AA Rep Hockey Analytics</span>
                 </div>
             </div>
-            <div class="flex items-center space-x-2 bg-slate-900/50 px-3 py-1.5 rounded-full border border-slate-700/50">
-                <span id="sync-ping" class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-                <span id="sync-status" class="text-[10px] sm:text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">Loading Live Data...</span>
+
+            <!-- Quick Cohort Selector Buttons -->
+            <div class="flex items-center bg-slate-950/60 p-1 rounded-xl border border-slate-700/60 space-x-1">
+                <button onclick="setCohort('U11')" id="btn-u11" class="px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md">U11 AA</button>
+                <button onclick="setCohort('U14')" id="btn-u14" class="px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all">U14 AA</button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-6xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-8 flex-grow space-y-8" id="eagles-dashboard-container">
-        <!-- Javascript will inject U11 and U14 cards here -->
+    <!-- Main Content Canvas -->
+    <main class="max-w-6xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-8 flex-grow space-y-6">
+
+        <!-- Loading Pill -->
+        <div id="loading-state" class="py-16 text-center">
+            <div class="w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+            <p class="text-slate-600 font-mono font-bold uppercase tracking-wider text-xs">Parsing Burlington Eagles Metrics...</p>
+        </div>
+
+        <div id="dashboard-view" class="hidden space-y-6 animate-fade">
+
+            <!-- 1. Header Title & Overall Record Pill -->
+            <div class="flex flex-col sm:flex-row justify-between sm:items-end gap-3 border-b border-slate-300 pb-3">
+                <div>
+                    <span class="text-[10px] sm:text-xs font-mono font-bold text-yellow-600 uppercase tracking-widest block">Burlington City Rep Hockey Club</span>
+                    <h2 id="team-title" class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-slate-950">Burlington Eagles</h2>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span id="hot-badge" class="hidden inline-flex items-center px-3 py-1 rounded-xl text-xs font-black bg-yellow-400 text-slate-950 shadow-md animate-pulse">🔥 CONTENDER</span>
+                    <span id="tracked-record-pill" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-black bg-eagles-navy text-yellow-400 border border-slate-800 shadow">0-0-0</span>
+                </div>
+            </div>
+
+            <!-- 2. Performance Metrics & MHR Rankings -->
+            <div class="bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
+                <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 block mb-3">🏆 Performance & Ranking Metrics</span>
+                
+                <!-- Top Row: Games, Rank, Rating, SoS -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 mb-3 sm:mb-4">
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Games Tracked</span>
+                        <span id="perf-gp" class="text-xl sm:text-2xl font-mono font-black text-yellow-400">-</span>
+                    </div>
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">MHR Rank</span>
+                        <span id="perf-mhr-rank" class="text-xl sm:text-2xl font-mono font-black text-white">-</span>
+                    </div>
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">MHR Rating</span>
+                        <span id="perf-mhr-rating" class="text-xl sm:text-2xl font-mono font-black text-yellow-400">-</span>
+                    </div>
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SoS</span>
+                        <span id="perf-mhr-sos" class="text-xl sm:text-2xl font-mono font-black text-white">-</span>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Comparison Cards (MHR vs GameSheet) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800">
+                        <span class="block text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-widest text-yellow-400 mb-2">MyHockeyRankings Baseline</span>
+                        <div class="grid grid-cols-2 gap-2 text-center">
+                            <div>
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-0.5">MHR Record</span>
+                                <span id="perf-mhr-record" class="text-base sm:text-xl font-mono font-black text-white">-</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-0.5">MHR Goal Diff</span>
+                                <span id="perf-mhr-diff" class="text-base sm:text-xl font-mono font-black text-emerald-400">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800">
+                        <span class="block text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-widest text-blue-400 mb-2">GameSheet Ingested Feed</span>
+                        <div class="grid grid-cols-2 gap-2 text-center">
+                            <div>
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-0.5">Tracked Record</span>
+                                <span id="perf-tracked-record" class="text-base sm:text-xl font-mono font-black text-white">-</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-0.5">Tracked Goal Diff</span>
+                                <span id="perf-tracked-diff" class="text-base sm:text-xl font-mono font-black text-emerald-400">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Team Efficiency Profiles -->
+            <div class="bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
+                <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 block mb-3">📊 Team Efficiency Profiles</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+                    
+                    <!-- Goals For -->
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Goals For / Game</span>
+                            <div class="flex items-baseline justify-between mt-1">
+                                <span id="stat-gf-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-gf-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
+                            </div>
+                        </div>
+                        <div class="mt-3 sm:mt-4">
+                            <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500">
+                                <div id="gauge-gf-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                            </div>
+                            <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                <span class="gauge-total-teams-label">Total</span>
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Goals Against -->
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Goals Against / Game</span>
+                            <div class="flex items-baseline justify-between mt-1">
+                                <span id="stat-ga-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-ga-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
+                            </div>
+                        </div>
+                        <div class="mt-3 sm:mt-4">
+                            <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-emerald-500 via-amber-400 to-rose-500">
+                                <div id="gauge-ga-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                            </div>
+                            <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                <span>1</span>
+                                <span class="gauge-total-teams-label">Total</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Average Goal Margin -->
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Average Goal Margin</span>
+                            <div class="flex items-baseline justify-between mt-1">
+                                <span id="stat-diff-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-diff-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
+                            </div>
+                        </div>
+                        <div class="mt-3 sm:mt-4">
+                            <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500">
+                                <div id="gauge-diff-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                            </div>
+                            <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                <span class="gauge-total-teams-label">Total</span>
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Penalty Minutes -->
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Penalty Minutes / G</span>
+                            <div class="flex items-baseline justify-between mt-1">
+                                <span id="stat-pim-val" class="text-2xl sm:text-3xl font-mono font-black text-white">-</span>
+                                <span id="stat-pim-rank" class="text-xs sm:text-sm font-mono font-bold text-yellow-400">-</span>
+                            </div>
+                        </div>
+                        <div class="mt-3 sm:mt-4">
+                            <div class="relative w-full h-2 rounded-full bg-gradient-to-r from-emerald-500 via-amber-400 to-rose-500">
+                                <div id="gauge-pim-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
+                            </div>
+                            <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
+                                <span>1</span>
+                                <span class="gauge-total-teams-label">Total</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 4. Special Teams Execution -->
+            <div class="bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 block">⚡ Special Teams Execution</span>
+                    <span class="text-[10px] sm:text-xs font-mono text-slate-400">Cumulative Multi-Source Counts</span>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Power Play %</span>
+                        <span id="spec-pp-pct" class="text-xl sm:text-3xl font-mono font-black text-yellow-400">-</span>
+                        <span id="spec-pp-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Opps</span>
+                    </div>
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Penalty Kill %</span>
+                        <span id="spec-pk-pct" class="text-xl sm:text-3xl font-mono font-black text-emerald-400">-</span>
+                        <span id="spec-pk-ratio" class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">0 / 0 Killed</span>
+                    </div>
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals For</span>
+                        <span id="spec-shgf" class="text-xl sm:text-3xl font-mono font-black text-white">-</span>
+                        <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Scored Shorthanded</span>
+                    </div>
+                    <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
+                        <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals Against</span>
+                        <span id="spec-shga" class="text-xl sm:text-3xl font-mono font-black text-rose-400">-</span>
+                        <span class="block text-[10px] sm:text-xs font-mono text-slate-400 mt-1">Allowed on PP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Top 15 Skaters (Sorted by Games Played) -->
+            <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
+                <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
+                    <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🎯 Team Skaters (Top 15 by Games Played)</h3>
+                    <span id="skater-count-badge" class="text-[10px] sm:text-xs font-mono text-slate-400 font-bold uppercase"></span>
+                </div>
+                <div class="overflow-x-auto touch-scroll">
+                    <table class="w-full text-left border-collapse whitespace-nowrap text-xs sm:text-sm">
+                        <thead>
+                            <tr class="bg-slate-950 border-b border-slate-800 text-slate-400 text-[10px] sm:text-xs uppercase tracking-widest font-black">
+                                <th class="py-3 px-3 text-center w-14">#</th>
+                                <th class="py-3 px-4">Player Name</th>
+                                <th class="py-3 px-3 text-center text-yellow-400">GP</th>
+                                <th class="py-3 px-3 text-center">G</th>
+                                <th class="py-3 px-3 text-center">A</th>
+                                <th class="py-3 px-3 text-center font-bold text-white">PTS</th>
+                                <th class="py-3 px-3 text-center">PIM</th>
+                            </tr>
+                        </thead>
+                        <tbody id="roster-tbody" class="divide-y divide-slate-800/60 font-bold uppercase tracking-wider"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 6. Top 2 Netminders (Sorted by Games Played) -->
+            <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
+                <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60">
+                    <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🧤 Team Netminders (Top 2 by Games Played)</h3>
+                </div>
+                <div class="overflow-x-auto touch-scroll">
+                    <table class="w-full text-left border-collapse whitespace-nowrap text-xs sm:text-sm">
+                        <thead>
+                            <tr class="bg-slate-950 border-b border-slate-800 text-slate-400 text-[10px] sm:text-xs uppercase tracking-widest font-black">
+                                <th class="py-3 px-3 text-center w-14">#</th>
+                                <th class="py-3 px-4">Goalie Name</th>
+                                <th class="py-3 px-3 text-center text-yellow-400">GP</th>
+                                <th class="py-3 px-3 text-center text-rose-400">GA</th>
+                                <th class="py-3 px-3 text-center">GAA</th>
+                                <th class="py-3 px-3 text-center text-emerald-400">SO</th>
+                                <th class="py-3 px-3 text-center">W-L-T</th>
+                            </tr>
+                        </thead>
+                        <tbody id="goalie-tbody" class="divide-y divide-slate-800/60 font-bold uppercase tracking-wider"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 7. Last 5 Form & Next On Deck Schedule -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- Last 5 Form -->
+                <div class="lg:col-span-5 bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
+                    <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 mb-3">🔥 Recent Form (Last 5)</h3>
+                    <div id="form-guide-row" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <!-- On Deck Fixtures -->
+                <div class="lg:col-span-7 bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
+                    <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 mb-3">📅 Upcoming Matchups</h3>
+                    <div id="on-deck-list" class="space-y-2.5"></div>
+                </div>
+
+            </div>
+
+        </div>
+
     </main>
 
+    <!-- Footer -->
     <footer class="bg-eagles-navy text-center py-6 text-xs font-mono text-slate-400 uppercase tracking-widest border-t-2 border-yellow-400 mt-auto">
-        Powered by Daily Puck Analytics | Live GameSheet Feed
+        &copy; 2026 Burlington Eagles Analytics Hub | GameSheet Stats Stream
     </footer>
 
+    <!-- Core Automation Script -->
     <script>
-        // Utilities
-        const cleanKey = str => String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
-        const isBurlingtonEagles = name => cleanKey(name).includes("BURLINGTON") && cleanKey(name).includes("EAGLES");
+        let rawHockeyDb = null;
+        let scoutingReportDatabase = {};
+        let hotTeamsDatabaseMap = {};
+        let activeCohort = "U11";
 
-        // Global Data
-        let eaglesData = {
-            "U11": null,
-            "U14": null
+        const cleanKey = str => String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
+        const isBurlingtonEagles = name => {
+            const c = cleanKey(name);
+            return c.includes("BURLINGTON") && c.includes("EAGLES");
         };
 
-        async function initDashboard() {
+        async function initApp() {
             try {
-                // Fetch the exact same file the main app uses
                 const response = await fetch('hockey_stats.json?v=' + Date.now());
-                if (!response.ok) throw new Error("Could not load hockey_stats.json");
-                
-                const rawDb = await response.json();
-                const genDate = rawDb.generated_at ? new Date(rawDb.generated_at).toLocaleDateString() : 'Active';
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                rawHockeyDb = await response.json();
+
+                const genDate = rawHockeyDb.generated_at ? new Date(rawHockeyDb.generated_at).toLocaleDateString() : 'Active';
                 document.getElementById('sync-status').innerText = `Synced: ${genDate}`;
 
-                processEaglesData(rawDb);
-                renderDashboard();
+                buildDivisionTree();
+                renderSelectedCohort();
 
             } catch (err) {
-                console.error(err);
-                document.getElementById('sync-status').innerText = "Data Offline";
-                document.getElementById('sync-ping').classList.replace('bg-yellow-400', 'bg-rose-500');
-                document.getElementById('eagles-dashboard-container').innerHTML = `
-                    <div class="text-center py-12">
-                        <p class="text-rose-600 font-bold">⚠️ Unable to load hockey_stats.json. Ensure you are viewing this via GitHub Pages.</p>
-                    </div>
+                console.error("Error loading hockey_stats.json:", err);
+                document.getElementById('sync-status').innerText = "Database Offline";
+                document.getElementById('loading-state').innerHTML = `
+                    <p class="text-rose-600 font-bold font-mono text-xs uppercase">⚠️ Could not load hockey_stats.json. Ensure file exists in repository root.</p>
                 `;
             }
         }
 
-        function processEaglesData(db) {
-            // 1. Identify U11 and U14 Eagles Teams
-            (db.standings || []).forEach(row => {
-                if (!isBurlingtonEagles(row.team_name)) return;
-                
-                const age = String(row.age || row.detected_age || "").toUpperCase();
-                let targetCohort = null;
-                if (age.includes("U11")) targetCohort = "U11";
-                if (age.includes("U14")) targetCohort = "U14";
+        function buildDivisionTree() {
+            scoutingReportDatabase = {};
 
-                if (targetCohort) {
-                    if (!eaglesData[targetCohort]) {
-                        eaglesData[targetCohort] = {
-                            name: row.team_name,
-                            division: `${row.age || age} ${row.tier || 'AA'}`,
-                            gp: 0, w: 0, l: 0, t: 0, gf: 0, ga: 0, pts: 0,
-                            roster: [], goalies: [], games: []
-                        };
-                    }
+            (rawHockeyDb.standings || []).forEach(row => {
+                const age = row.age || row.detected_age || "Other";
+                const tier = row.tier || "AA";
+                const divKey = `${age} ${tier}`.trim();
+                const teamName = row.team_name;
+                if (!divKey || !teamName) return;
+
+                if (!scoutingReportDatabase[divKey]) scoutingReportDatabase[divKey] = {};
+                if (!scoutingReportDatabase[divKey][teamName]) {
+                    scoutingReportDatabase[divKey][teamName] = {
+                        team_name: teamName,
+                        team_id: row.team_id,
+                        division: divKey,
+                        age: age,
+                        tier: tier,
+                        gp: 0, w: 0, l: 0, t: 0, pts: 0, gf: 0, ga: 0, diff: 0, pim: 0,
+                        ppg: 0, ppo: 0, ppga: 0, ppoa: 0, shg: 0, shga: 0,
+                        standings_entries: [],
+                        roster: [],
+                        goalies: [],
+                        games: []
+                    };
+                }
+
+                const t = scoutingReportDatabase[divKey][teamName];
+                t.gp += Number(row.gp) || 0;
+                t.w += Number(row.w) || 0;
+                t.l += Number(row.l) || 0;
+                t.t += Number(row.t) || 0;
+                t.pts += Number(row.pts) || 0;
+                t.gf += Number(row.gf) || 0;
+                t.ga += Number(row.ga) || 0;
+                t.diff += Number(row.diff) || 0;
+                t.pim += Number(row.pim) || 0;
+
+                t.ppg += Number(row.ppg) || 0;
+                t.ppo += Number(row.ppo) || 0;
+                t.ppga += Number(row.ppga) || 0;
+                t.ppoa += Number(row.ppoa) || 0;
+                t.shg += Number(row.shg) || 0;
+                t.shga += Number(row.shga) || 0;
+
+                t.standings_entries.push(row);
+            });
+
+            // Skaters
+            (rawHockeyDb.skaters || []).forEach(p => {
+                const divKey = `${p.age} ${p.tier}`.trim();
+                if (scoutingReportDatabase[divKey] && scoutingReportDatabase[divKey][p.team]) {
+                    scoutingReportDatabase[divKey][p.team].roster.push(p);
+                }
+            });
+
+            // Goalies
+            (rawHockeyDb.goalies || []).forEach(g => {
+                const divKey = `${g.age} ${g.tier}`.trim();
+                if (scoutingReportDatabase[divKey] && scoutingReportDatabase[divKey][g.team]) {
+                    scoutingReportDatabase[divKey][g.team].goalies.push(g);
+                }
+            });
+
+            // Games
+            (rawHockeyDb.games || []).forEach(g => {
+                if (!g || !g.division) return;
+                attachGame(g.home_name, g, true);
+                attachGame(g.visitor_name, g, false);
+            });
+
+            // Calculate SoS rank
+            if (rawHockeyDb.master_teams) {
+                Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
+                    const cohortTeams = rawHockeyDb.master_teams[divKey];
+                    const sortedBySched = Object.entries(cohortTeams)
+                        .map(([name, data]) => ({ name, sched: parseFloat(data.mhr_sched || 0) }))
+                        .filter(t => t.sched > 0)
+                        .sort((a, b) => b.sched - a.sched);
                     
-                    eaglesData[targetCohort].gp += Number(row.gp) || 0;
-                    eaglesData[targetCohort].w += Number(row.w) || 0;
-                    eaglesData[targetCohort].l += Number(row.l) || 0;
-                    eaglesData[targetCohort].t += Number(row.t) || 0;
-                    eaglesData[targetCohort].gf += Number(row.gf) || 0;
-                    eaglesData[targetCohort].ga += Number(row.ga) || 0;
-                    eaglesData[targetCohort].pts += Number(row.pts) || 0;
-                }
-            });
-
-            // 2. Attach Skaters
-            (db.skaters || []).forEach(p => {
-                if (!isBurlingtonEagles(p.team)) return;
-                const age = String(p.age || "").toUpperCase();
-                let cohort = age.includes("U11") ? "U11" : (age.includes("U14") ? "U14" : null);
-                if (cohort && eaglesData[cohort]) {
-                    eaglesData[cohort].roster.push(p);
-                }
-            });
-
-            // 3. Attach Goalies
-            (db.goalies || []).forEach(g => {
-                if (!isBurlingtonEagles(g.team)) return;
-                const age = String(g.age || "").toUpperCase();
-                let cohort = age.includes("U11") ? "U11" : (age.includes("U14") ? "U14" : null);
-                if (cohort && eaglesData[cohort]) {
-                    eaglesData[cohort].goalies.push(g);
-                }
-            });
-
-            // 4. Attach Games
-            (db.games || []).forEach(g => {
-                const isHomeEagles = isBurlingtonEagles(g.home_name);
-                const isVisEagles = isBurlingtonEagles(g.visitor_name);
-                if (!isHomeEagles && !isVisEagles) return;
-
-                const age = String(g.division || "").toUpperCase();
-                let cohort = age.includes("U11") ? "U11" : (age.includes("U14") ? "U14" : null);
-                
-                if (cohort && eaglesData[cohort]) {
-                    const isHome = isHomeEagles;
-                    eaglesData[cohort].games.push({
-                        date: g.date || g.timestamp?.substring(0,10) || "",
-                        time: g.time || "",
-                        opponent: isHome ? g.visitor_name : g.home_name,
-                        is_home: isHome,
-                        status: g.status,
-                        team_goals: isHome ? g.home_goals : g.visitor_goals,
-                        opp_goals: isHome ? g.visitor_goals : g.home_goals,
-                        result: isHome ? g.home_result : g.visitor_result,
-                        source: g.source_name || ""
+                    sortedBySched.forEach((item, idx) => {
+                        if (cohortTeams[item.name]) {
+                            cohortTeams[item.name].sos_rank = idx + 1;
+                        }
                     });
+                });
+            }
+
+            // Contender map
+            hotTeamsDatabaseMap = {};
+            Object.keys(scoutingReportDatabase).forEach(divKey => {
+                const divTeams = Object.values(scoutingReportDatabase[divKey]);
+                divTeams.sort((a, b) => b.pts !== a.pts ? b.pts - a.pts : b.diff - a.diff);
+                divTeams.forEach((team, idx) => { team.rank = idx + 1; });
+
+                hotTeamsDatabaseMap[divKey] = [];
+                const hotCandidates = [...divTeams].filter(t => t.gp >= 2)
+                    .sort((a, b) => ((b.pts / Math.max(1, b.gp * 2)) - (a.pts / Math.max(1, a.gp * 2))));
+                if (hotCandidates.length > 0) {
+                    hotTeamsDatabaseMap[divKey].push(hotCandidates[0].team_name);
                 }
             });
         }
 
-        function renderDashboard() {
-            const container = document.getElementById('eagles-dashboard-container');
-            container.innerHTML = "";
+        function attachGame(teamName, game, isHome) {
+            const divTree = scoutingReportDatabase[game.division];
+            if (!divTree || !teamName) return;
 
-            ["U11", "U14"].forEach(cohort => {
-                const team = eaglesData[cohort];
-                if (!team) {
-                    container.innerHTML += `
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center">
-                            <span class="text-slate-400 font-bold uppercase tracking-widest text-sm">No data tracked for ${cohort} Eagles yet.</span>
-                        </div>
-                    `;
+            const isFinal = game.status === 'final';
+            const rec = {
+                date: game.date || "",
+                time: game.time || "",
+                status: game.status || "scheduled",
+                location: game.location || "",
+                source_name: game.source_name || "",
+                is_home: isHome,
+                opponent: isHome ? game.visitor_name : game.home_name,
+                team_goals: isHome ? game.home_goals : game.visitor_goals,
+                opp_goals: isHome ? game.visitor_goals : game.home_goals,
+                result: isHome ? game.home_result : game.visitor_result,
+                score_str: isFinal ? `${isHome ? game.home_goals : game.visitor_goals} - ${isHome ? game.visitor_goals : game.home_goals}` : (game.time || "Scheduled")
+            };
+
+            if (divTree[teamName]) {
+                divTree[teamName].games.push(rec);
+                return;
+            }
+
+            const targetKey = cleanKey(teamName);
+            for (const tName in divTree) {
+                if (cleanKey(tName) === targetKey) {
+                    divTree[tName].games.push(rec);
                     return;
                 }
-
-                // Sort Roster: Top 5 by PTS
-                const topSkaters = team.roster.sort((a, b) => b.total_pts - a.total_pts).slice(0, 5);
-                
-                // Sort Goalies: Top 2 by GP
-                const topGoalies = team.goalies.sort((a, b) => b.total_gp - a.total_gp).slice(0, 2);
-
-                // Sort Games Chronologically
-                const sortedGames = team.games.sort((a, b) => a.date.localeCompare(b.date));
-                const completedGames = sortedGames.filter(g => g.status === 'final' && g.result);
-                const upcomingGames = sortedGames.filter(g => g.status !== 'final').slice(0, 3);
-                const last5 = completedGames.slice(-5);
-
-                const diffSign = (team.gf - team.ga) >= 0 ? '+' : '';
-
-                // Build UI
-                container.innerHTML += `
-                    <div class="bg-eagles-navy rounded-3xl overflow-hidden shadow-2xl glow-gold animate-fade">
-                        <!-- Card Header -->
-                        <div class="bg-slate-900/40 p-4 sm:p-6 border-b border-slate-700/50 flex flex-col sm:flex-row justify-between items-center gap-4">
-                            <div>
-                                <span class="px-3 py-1 rounded-full text-xs font-black bg-yellow-400 text-eagles-navy uppercase tracking-widest">${team.division}</span>
-                                <h2 class="text-3xl font-black text-white mt-2 tracking-tight">${team.name}</h2>
-                            </div>
-                            <div class="flex space-x-3 text-center">
-                                <div class="bg-slate-900 rounded-xl px-4 py-2 border border-slate-700">
-                                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Record</span>
-                                    <span class="text-xl font-black text-white font-mono">${team.w}-${team.l}-${team.t}</span>
-                                </div>
-                                <div class="bg-slate-900 rounded-xl px-4 py-2 border border-slate-700">
-                                    <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Diff</span>
-                                    <span class="text-xl font-black text-yellow-400 font-mono">${diffSign}${team.gf - team.ga}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Content Grid -->
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-px bg-slate-700">
-                            
-                            <!-- Left Col: Roster & Goalies -->
-                            <div class="lg:col-span-7 bg-eagles-navy p-4 sm:p-6 space-y-6">
-                                
-                                <!-- Skaters -->
-                                <div>
-                                    <h3 class="text-sm font-black uppercase tracking-widest text-yellow-400 mb-3 drop-shadow-md">🏒 Offensive Leaders (Top 5 Pts)</h3>
-                                    <div class="bg-slate-900/50 rounded-xl border border-slate-700/50 overflow-hidden custom-scrollbar overflow-x-auto">
-                                        <table class="w-full text-left text-sm whitespace-nowrap">
-                                            <thead>
-                                                <tr class="text-[10px] text-slate-400 uppercase tracking-widest border-b border-slate-700/50">
-                                                    <th class="py-2 px-3 text-center">#</th>
-                                                    <th class="py-2 px-3">Player</th>
-                                                    <th class="py-2 px-3 text-center">GP</th>
-                                                    <th class="py-2 px-3 text-center">G</th>
-                                                    <th class="py-2 px-3 text-center">A</th>
-                                                    <th class="py-2 px-3 text-center text-yellow-400 font-black">PTS</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-slate-800 font-bold text-slate-200">
-                                                ${topSkaters.length ? topSkaters.map(p => `
-                                                    <tr class="hover:bg-slate-800/40">
-                                                        <td class="py-2.5 px-3 text-center text-slate-500 font-mono">${p.jersey || '-'}</td>
-                                                        <td class="py-2.5 px-3 uppercase tracking-tight">${p.name}</td>
-                                                        <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${p.total_gp}</td>
-                                                        <td class="py-2.5 px-3 text-center font-mono">${p.total_g}</td>
-                                                        <td class="py-2.5 px-3 text-center font-mono">${p.total_a}</td>
-                                                        <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-black">${p.total_pts}</td>
-                                                    </tr>
-                                                `).join('') : `<tr><td colspan="6" class="py-4 text-center text-slate-500 text-xs uppercase">No player stats recorded.</td></tr>`}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                                <!-- Goalies -->
-                                <div>
-                                    <h3 class="text-sm font-black uppercase tracking-widest text-yellow-400 mb-3 drop-shadow-md">🥅 Crease Command (Top 2 GP)</h3>
-                                    <div class="bg-slate-900/50 rounded-xl border border-slate-700/50 overflow-hidden custom-scrollbar overflow-x-auto">
-                                        <table class="w-full text-left text-sm whitespace-nowrap">
-                                            <thead>
-                                                <tr class="text-[10px] text-slate-400 uppercase tracking-widest border-b border-slate-700/50">
-                                                    <th class="py-2 px-3 text-center">#</th>
-                                                    <th class="py-2 px-3">Goalie</th>
-                                                    <th class="py-2 px-3 text-center text-yellow-400 font-black">GP</th>
-                                                    <th class="py-2 px-3 text-center">GAA</th>
-                                                    <th class="py-2 px-3 text-center text-emerald-400">SO</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-slate-800 font-bold text-slate-200">
-                                                ${topGoalies.length ? topGoalies.map(g => `
-                                                    <tr class="hover:bg-slate-800/40">
-                                                        <td class="py-2.5 px-3 text-center text-slate-500 font-mono">${g.jersey || '-'}</td>
-                                                        <td class="py-2.5 px-3 uppercase tracking-tight">${g.name}</td>
-                                                        <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-black">${g.total_gp}</td>
-                                                        <td class="py-2.5 px-3 text-center font-mono">${g.total_gaa.toFixed(2)}</td>
-                                                        <td class="py-2.5 px-3 text-center text-emerald-400 font-mono">${g.total_so}</td>
-                                                    </tr>
-                                                `).join('') : `<tr><td colspan="5" class="py-4 text-center text-slate-500 text-xs uppercase">No goalie stats recorded.</td></tr>`}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Right Col: Form & Schedule -->
-                            <div class="lg:col-span-5 bg-eagles-navy p-4 sm:p-6 flex flex-col gap-6">
-                                
-                                <!-- Form Guide -->
-                                <div>
-                                    <h3 class="text-sm font-black uppercase tracking-widest text-slate-300 mb-3">🔥 Form Guide (Last 5)</h3>
-                                    <div class="flex gap-2">
-                                        ${last5.length ? last5.map(g => {
-                                            let badgeClass = "bg-slate-800 text-slate-400";
-                                            if (g.result === 'W') badgeClass = "bg-emerald-500 text-slate-900";
-                                            if (g.result === 'L') badgeClass = "bg-rose-600 text-white";
-                                            if (g.result === 'T') badgeClass = "bg-yellow-400 text-slate-900";
-                                            return `<div title="${g.is_home ? 'vs' : '@'} ${g.opponent} (${g.team_goals}-${g.opp_goals})" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-black font-mono shadow-md ${badgeClass}">${g.result}</div>`;
-                                        }).join('') : '<span class="text-xs text-slate-500 uppercase font-mono">No completed games</span>'}
-                                    </div>
-                                </div>
-
-                                <!-- Upcoming Schedule -->
-                                <div class="flex-grow">
-                                    <h3 class="text-sm font-black uppercase tracking-widest text-slate-300 mb-3">📅 On Deck</h3>
-                                    <div class="space-y-2">
-                                        ${upcomingGames.length ? upcomingGames.map(g => `
-                                            <div class="bg-slate-900 rounded-xl p-3 border border-slate-700/50">
-                                                <div class="flex justify-between items-center mb-1">
-                                                    <span class="text-[10px] font-black uppercase text-yellow-400 tracking-wider">${g.date}</span>
-                                                    <span class="text-[10px] font-mono text-slate-400">${g.time || 'TBD'}</span>
-                                                </div>
-                                                <div class="font-bold text-white text-sm tracking-tight uppercase truncate">
-                                                    <span class="text-slate-500 mr-1">${g.is_home ? 'VS' : '@'}</span> ${g.opponent}
-                                                </div>
-                                                <div class="text-[10px] text-slate-400 mt-1 truncate font-mono">${g.source}</div>
-                                            </div>
-                                        `).join('') : `
-                                            <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
-                                                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">No scheduled games.</span>
-                                            </div>
-                                        `}
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
+            }
         }
 
-        document.addEventListener('DOMContentLoaded', initDashboard);
+        function onCohortChange() {
+            const select = document.getElementById('cohort-select');
+            activeCohort = select.value;
+            syncCohortButtons();
+            renderSelectedCohort();
+        }
+
+        function setCohort(cohort) {
+            activeCohort = cohort;
+            document.getElementById('cohort-select').value = cohort;
+            syncCohortButtons();
+            renderSelectedCohort();
+        }
+
+        function syncCohortButtons() {
+            const btnU11 = document.getElementById('btn-u11');
+            const btnU14 = document.getElementById('btn-u14');
+            if (activeCohort === 'U11') {
+                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
+                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
+            } else {
+                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
+                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
+            }
+        }
+
+        function renderSelectedCohort() {
+            const divKeys = Object.keys(scoutingReportDatabase);
+            const targetDiv = divKeys.find(k => k.toUpperCase().includes(activeCohort) && k.toUpperCase().includes("AA")) ||
+                              divKeys.find(k => k.toUpperCase().includes(activeCohort)) || "";
+
+            if (!targetDiv || !scoutingReportDatabase[targetDiv]) {
+                document.getElementById('loading-state').innerHTML = `
+                    <p class="text-slate-600 font-bold font-mono text-xs uppercase">No division bracket detected for ${activeCohort} Eagles.</p>
+                `;
+                return;
+            }
+
+            const divisionPayload = scoutingReportDatabase[targetDiv];
+            const eaglesTeamName = Object.keys(divisionPayload).find(t => isBurlingtonEagles(t));
+
+            if (!eaglesTeamName || !divisionPayload[eaglesTeamName]) {
+                document.getElementById('loading-state').innerHTML = `
+                    <p class="text-slate-600 font-bold font-mono text-xs uppercase">Burlington Eagles not tracked in ${targetDiv}.</p>
+                `;
+                return;
+            }
+
+            const team = divisionPayload[eaglesTeamName];
+
+            // Hide loading, show dashboard
+            document.getElementById('loading-state').classList.add('hidden');
+            document.getElementById('dashboard-view').classList.remove('hidden');
+
+            // Header titles
+            document.getElementById('cohort-banner-label').innerText = `${team.division} Rep Hockey Analytics`;
+            document.getElementById('team-title').innerText = team.team_name;
+            document.getElementById('tracked-record-pill').innerText = `${team.w}W - ${team.l}L - ${team.t}T`;
+
+            // Contender badge
+            const hotBadge = document.getElementById('hot-badge');
+            if (hotTeamsDatabaseMap[targetDiv]?.includes(eaglesTeamName)) {
+                hotBadge.classList.remove('hidden');
+            } else {
+                hotBadge.classList.add('hidden');
+            }
+
+            // MHR Metrics
+            const masterCohort = rawHockeyDb.master_teams?.[targetDiv] || {};
+            let mhrData = masterCohort[eaglesTeamName];
+            if (!mhrData) {
+                const targetKey = cleanKey(eaglesTeamName);
+                for (const [mName, mObj] of Object.entries(masterCohort)) {
+                    if (cleanKey(mName) === targetKey || (mObj.aliases && mObj.aliases.some(a => cleanKey(a) === targetKey))) {
+                        mhrData = mObj;
+                        break;
+                    }
+                }
+            }
+            mhrData = mhrData || {};
+
+            document.getElementById('perf-gp').innerText = team.gp || 0;
+
+            const rankVal = mhrData.mhr_rank;
+            const rankEl = document.getElementById('perf-mhr-rank');
+            if (rankVal && String(rankVal) !== '0' && String(rankVal).toLowerCase() !== 'n/a') {
+                rankEl.innerText = `#${rankVal}`;
+                rankEl.className = "text-xl sm:text-2xl font-mono font-black text-white";
+            } else {
+                rankEl.innerText = "n/a";
+                rankEl.className = "text-xl sm:text-2xl font-mono font-bold text-slate-500";
+            }
+
+            const ratingVal = parseFloat(mhrData.mhr_rating || 0);
+            const ratingEl = document.getElementById('perf-mhr-rating');
+            if (ratingVal > 0) {
+                ratingEl.innerText = ratingVal.toFixed(2);
+                ratingEl.className = "text-xl sm:text-2xl font-mono font-black text-yellow-400";
+            } else {
+                ratingEl.innerText = "0.00";
+                ratingEl.className = "text-xl sm:text-2xl font-mono font-bold text-slate-500";
+            }
+
+            const sosEl = document.getElementById('perf-mhr-sos');
+            if (mhrData.sos_rank) {
+                sosEl.innerText = `#${mhrData.sos_rank}`;
+                sosEl.className = "text-xl sm:text-2xl font-mono font-black text-white";
+            } else if (mhrData.mhr_sched && parseFloat(mhrData.mhr_sched) > 0) {
+                sosEl.innerText = parseFloat(mhrData.mhr_sched).toFixed(1);
+                sosEl.className = "text-xl sm:text-2xl font-mono font-black text-white";
+            } else {
+                sosEl.innerText = "n/a";
+                sosEl.className = "text-xl sm:text-2xl font-mono font-bold text-slate-500";
+            }
+
+            // Comparison cards
+            document.getElementById('perf-mhr-record').innerText = mhrData.mhr_record || '-';
+            const mhrDiffEl = document.getElementById('perf-mhr-diff');
+            const agdVal = parseFloat(mhrData.mhr_agd || 0);
+            if (mhrData.mhr_agd !== undefined && mhrData.mhr_agd !== "") {
+                mhrDiffEl.innerText = agdVal > 0 ? `+${mhrData.mhr_agd}` : `${mhrData.mhr_agd}`;
+                mhrDiffEl.className = `text-base sm:text-xl font-mono font-black ${agdVal >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+            } else {
+                mhrDiffEl.innerText = "-";
+            }
+
+            document.getElementById('perf-tracked-record').innerText = `${team.w}-${team.l}-${team.t}`;
+            const trackedDiffEl = document.getElementById('perf-tracked-diff');
+            trackedDiffEl.innerText = team.diff >= 0 ? `+${team.diff}` : `${team.diff}`;
+            trackedDiffEl.className = `text-base sm:text-xl font-mono font-black ${team.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+
+            // Efficiency Gauges & Metrics
+            const allDivTeams = Object.values(divisionPayload);
+            const totalTeamsInDivision = allDivTeams.length;
+            document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
+
+            const metrics = allDivTeams.map(t => ({
+                name: t.team_name,
+                gfAvg: t.gp > 0 ? t.gf / t.gp : 0,
+                gaAvg: t.gp > 0 ? t.ga / t.gp : 0,
+                pimAvg: t.gp > 0 ? t.pim / t.gp : 0,
+                diffAvg: t.gp > 0 ? t.diff / t.gp : 0
+            }));
+
+            const curMetrics = metrics.find(x => x.name === eaglesTeamName) || { gfAvg: 0, gaAvg: 0, pimAvg: 0, diffAvg: 0 };
+            const sortedGF = [...metrics].sort((a, b) => b.gfAvg - a.gfAvg);
+            const sortedGA = [...metrics].sort((a, b) => a.gaAvg - b.gaAvg);
+            const sortedPIM = [...metrics].sort((a, b) => a.pimAvg - b.pimAvg);
+            const sortedDiff = [...metrics].sort((a, b) => b.diffAvg - a.diffAvg);
+
+            const gfRank = sortedGF.findIndex(x => x.name === eaglesTeamName) + 1;
+            const gaRank = sortedGA.findIndex(x => x.name === eaglesTeamName) + 1;
+            const pimRank = sortedPIM.findIndex(x => x.name === eaglesTeamName) + 1;
+            const diffRank = sortedDiff.findIndex(x => x.name === eaglesTeamName) + 1;
+
+            document.getElementById('stat-gf-val').innerText = curMetrics.gfAvg.toFixed(1);
+            document.getElementById('stat-ga-val').innerText = curMetrics.gaAvg.toFixed(1);
+            document.getElementById('stat-pim-val').innerText = curMetrics.pimAvg.toFixed(1);
+            document.getElementById('stat-diff-val').innerText = curMetrics.diffAvg >= 0 ? `+${curMetrics.diffAvg.toFixed(1)}` : curMetrics.diffAvg.toFixed(1);
+
+            const pctGF = totalTeamsInDivision > 1 ? 100 - (((gfRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctGA = totalTeamsInDivision > 1 ? ((gaRank - 1) / (totalTeamsInDivision - 1)) * 100 : 0;
+            const pctPIM = totalTeamsInDivision > 1 ? ((pimRank - 1) / (totalTeamsInDivision - 1)) * 100 : 0;
+            const pctDiff = totalTeamsInDivision > 1 ? 100 - (((diffRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+
+            document.getElementById('gauge-gf-indicator').style.left = `${pctGF}%`;
+            document.getElementById('gauge-ga-indicator').style.left = `${pctGA}%`;
+            document.getElementById('gauge-pim-indicator').style.left = `${pctPIM}%`;
+            document.getElementById('gauge-diff-indicator').style.left = `${pctDiff}%`;
+
+            document.getElementById('stat-gf-rank').innerText = `#${gfRank} of ${totalTeamsInDivision}`;
+            document.getElementById('stat-ga-rank').innerText = `#${gaRank} of ${totalTeamsInDivision}`;
+            document.getElementById('stat-pim-rank').innerText = `#${pimRank} of ${totalTeamsInDivision}`;
+            document.getElementById('stat-diff-rank').innerText = `#${diffRank} of ${totalTeamsInDivision}`;
+
+            // Special Teams
+            const ppg = team.ppg || 0;
+            const ppo = team.ppo || 0;
+            const ppga = team.ppga || 0;
+            const ppoa = team.ppoa || 0;
+            const shg = team.shg || 0;
+            const shga = team.shga || 0;
+
+            const ppPct = ppo > 0 ? ((ppg / ppo) * 100).toFixed(1) : "0.0";
+            const pkKilled = Math.max(0, ppoa - ppga);
+            const pkPct = ppoa > 0 ? ((pkKilled / ppoa) * 100).toFixed(1) : (team.gp > 0 ? "100.0" : "0.0");
+
+            document.getElementById('spec-pp-pct').innerText = `${ppPct}%`;
+            document.getElementById('spec-pp-ratio').innerText = `${ppg} / ${ppo} Opps`;
+            document.getElementById('spec-pk-pct').innerText = `${pkPct}%`;
+            document.getElementById('spec-pk-ratio').innerText = `${pkKilled} / ${ppoa} Killed`;
+            document.getElementById('spec-shgf').innerText = `${shg}`;
+            document.getElementById('spec-shga').innerText = `${shga}`;
+
+            // Top 15 Skaters (Sorted by GP)
+            const sortedSkaters = [...(team.roster || [])].sort((a, b) => {
+                if (b.total_gp !== a.total_gp) return b.total_gp - a.total_gp;
+                if (b.total_pts !== a.total_pts) return b.total_pts - a.total_pts;
+                return a.name.localeCompare(b.name);
+            }).slice(0, 15);
+
+            document.getElementById('skater-count-badge').innerText = `${sortedSkaters.length} Skaters (Top 15)`;
+            const rosterTbody = document.getElementById('roster-tbody');
+            rosterTbody.innerHTML = "";
+
+            if (sortedSkaters.length > 0) {
+                sortedSkaters.forEach((p, idx) => {
+                    const uniqueId = `skater-breakdown-${idx}`;
+                    rosterTbody.innerHTML += `
+                        <tr class="hover:bg-slate-800/40 transition-colors border-b border-slate-800/60 cursor-pointer" onclick="toggleRow('${uniqueId}')">
+                            <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${p.jersey || '-'}</td>
+                            <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
+                                <span class="truncate max-w-[150px] sm:max-w-xs">${p.name}</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ Log</span>
+                            </td>
+                            <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${p.total_gp}</td>
+                            <td class="py-2.5 px-3 text-center text-slate-300 font-mono">${p.total_g}</td>
+                            <td class="py-2.5 px-3 text-center text-slate-300 font-mono">${p.total_a}</td>
+                            <td class="py-2.5 px-3 text-center text-white font-mono font-black">${p.total_pts}</td>
+                            <td class="py-2.5 px-3 text-center font-mono ${p.total_pim > 10 ? 'text-amber-400 font-bold' : 'text-slate-500'}">${p.total_pim}</td>
+                        </tr>
+                        <tr id="${uniqueId}" class="hidden bg-slate-950/90">
+                            <td colspan="7" class="py-3 px-4">
+                                <div class="rounded-xl border border-slate-800 overflow-x-auto custom-scrollbar">
+                                    <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
+                                        <thead>
+                                            <tr class="bg-slate-950 border-b border-slate-800 text-[10px] text-slate-400 uppercase tracking-widest font-black">
+                                                <th class="py-1.5 px-3">Event Track Source</th>
+                                                <th class="py-1.5 px-3 text-center">Type</th>
+                                                <th class="py-1.5 px-3 text-center text-yellow-400">GP</th>
+                                                <th class="py-1.5 px-3 text-center">G</th>
+                                                <th class="py-1.5 px-3 text-center">A</th>
+                                                <th class="py-1.5 px-3 text-center text-white font-bold">PTS</th>
+                                                <th class="py-1.5 px-3 text-center">PIM</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                                            ${p.sources.map(s => `
+                                                <tr>
+                                                    <td class="py-1 px-3 font-sans font-extrabold text-slate-300 uppercase">${s.source_name}</td>
+                                                    <td class="py-1 px-3 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : 'text-blue-400 bg-blue-950/40'}">${s.source_type === 'tournament' ? 'TOURN' : 'LEAG'}</span></td>
+                                                    <td class="py-1 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                                    <td class="py-1 px-3 text-center">${s.g}</td>
+                                                    <td class="py-1 px-3 text-center">${s.a}</td>
+                                                    <td class="py-1 px-3 text-center font-bold text-white">${s.pts}</td>
+                                                    <td class="py-1 px-3 text-center text-slate-500">${s.pim}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                rosterTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No skater statistics on record.</td></tr>`;
+            }
+
+            // Top 2 Goalies (Sorted by GP)
+            const sortedGoalies = [...(team.goalies || [])].sort((a, b) => {
+                if (b.total_gp !== a.total_gp) return b.total_gp - a.total_gp;
+                return a.total_gaa - b.total_gaa;
+            }).slice(0, 2);
+
+            const goalieTbody = document.getElementById('goalie-tbody');
+            goalieTbody.innerHTML = "";
+
+            if (sortedGoalies.length > 0) {
+                sortedGoalies.forEach((g, idx) => {
+                    const uniqueId = `goalie-breakdown-${idx}`;
+                    goalieTbody.innerHTML += `
+                        <tr class="hover:bg-slate-800/40 transition-colors border-b border-slate-800/60 cursor-pointer" onclick="toggleRow('${uniqueId}')">
+                            <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${g.jersey || '-'}</td>
+                            <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
+                                <span class="truncate max-w-[150px] sm:max-w-xs">${g.name}</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ Log</span>
+                            </td>
+                            <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${g.total_gp}</td>
+                            <td class="py-2.5 px-3 text-center text-rose-400 font-mono font-extrabold">${g.total_ga}</td>
+                            <td class="py-2.5 px-3 text-center text-white font-mono font-black">${g.total_gaa.toFixed(2)}</td>
+                            <td class="py-2.5 px-3 text-center text-emerald-400 font-mono font-bold">${g.total_so}</td>
+                            <td class="py-2.5 px-3 text-center font-mono text-slate-300 text-xs">${g.total_w}-${g.total_l}-${g.total_t}</td>
+                        </tr>
+                        <tr id="${uniqueId}" class="hidden bg-slate-950/90">
+                            <td colspan="7" class="py-3 px-4">
+                                <div class="rounded-xl border border-slate-800 overflow-x-auto custom-scrollbar">
+                                    <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
+                                        <thead>
+                                            <tr class="bg-slate-950 border-b border-slate-800 text-[10px] text-slate-400 uppercase tracking-widest font-black">
+                                                <th class="py-1.5 px-3">Event Track Source</th>
+                                                <th class="py-1.5 px-3 text-center">Type</th>
+                                                <th class="py-1.5 px-3 text-center text-yellow-400">GP</th>
+                                                <th class="py-1.5 px-3 text-center text-rose-400">GA</th>
+                                                <th class="py-1.5 px-3 text-center">GAA</th>
+                                                <th class="py-1.5 px-3 text-center text-emerald-400">SO</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                                            ${g.sources.map(s => `
+                                                <tr>
+                                                    <td class="py-1 px-3 font-sans font-extrabold text-slate-300 uppercase">${s.source_name}</td>
+                                                    <td class="py-1 px-3 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : 'text-blue-400 bg-blue-950/40'}">${s.source_type === 'tournament' ? 'TOURN' : 'LEAG'}</span></td>
+                                                    <td class="py-1 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                                    <td class="py-1 px-3 text-center text-rose-400">${s.ga}</td>
+                                                    <td class="py-1 px-3 text-center font-black">${parseFloat(s.gaa).toFixed(2)}</td>
+                                                    <td class="py-1 px-3 text-center text-emerald-400 font-bold">${s.so}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                goalieTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No netminder statistics on record.</td></tr>`;
+            }
+
+            // Games & Form Guide
+            const teamGames = [...(team.games || [])].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+            const completedGames = teamGames.filter(g => g.status === 'final' && g.result);
+            const upcomingGames = teamGames.filter(g => g.status !== 'final').slice(0, 3);
+            const last5 = completedGames.slice(-5);
+
+            const formRow = document.getElementById('form-guide-row');
+            formRow.innerHTML = "";
+            if (last5.length > 0) {
+                last5.forEach(g => {
+                    let badgeClass = "bg-slate-800 text-slate-300";
+                    if (g.result === 'W') badgeClass = "bg-emerald-500 text-slate-950 font-black shadow-md";
+                    if (g.result === 'L') badgeClass = "bg-rose-600 text-white font-black";
+                    if (g.result === 'T') badgeClass = "bg-yellow-400 text-slate-950 font-black";
+
+                    formRow.innerHTML += `
+                        <div title="${g.is_home ? 'vs' : '@'} ${g.opponent} (${g.score_str}) - ${g.date}" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-mono text-sm sm:text-base font-black cursor-pointer shadow-md ${badgeClass}">
+                            ${g.result}
+                        </div>
+                    `;
+                });
+            } else {
+                formRow.innerHTML = `<span class="text-xs font-mono text-slate-500 uppercase">No completed games on record</span>`;
+            }
+
+            // On Deck List
+            const onDeckList = document.getElementById('on-deck-list');
+            onDeckList.innerHTML = "";
+            if (upcomingGames.length > 0) {
+                upcomingGames.forEach(g => {
+                    onDeckList.innerHTML += `
+                        <div class="bg-slate-950 p-3 sm:p-3.5 rounded-xl border border-slate-800 flex justify-between items-center">
+                            <div>
+                                <div class="flex items-center space-x-2 text-[10px] font-mono text-slate-400 mb-0.5">
+                                    <span class="text-yellow-400 font-bold uppercase">${g.date}</span>
+                                    <span>•</span>
+                                    <span>${g.time || 'Official Time TBD'}</span>
+                                </div>
+                                <div class="font-bold text-white text-xs sm:text-sm uppercase tracking-tight">
+                                    <span class="text-slate-500">${g.is_home ? 'VS' : '@'}</span> ${g.opponent}
+                                </div>
+                            </div>
+                            <span class="px-2 py-1 rounded text-[10px] font-mono font-black uppercase bg-slate-900 border border-slate-700 text-yellow-400">${g.source_name || 'LEAGUE'}</span>
+                        </div>
+                    `;
+                });
+            } else {
+                onDeckList.innerHTML = `<div class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-center text-slate-500 text-xs uppercase font-mono">No upcoming matchups scheduled.</div>`;
+            }
+        }
+
+        function toggleRow(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', initApp);
     </script>
 </body>
 </html>
