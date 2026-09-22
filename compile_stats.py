@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timezone
 
 # 1. Setup Automated Authentication & Network Headers
-FIREBASE_API_KEY = "AIzaSyCk5pKBFxvCMuwPchzXgvvz4XmmscJTvs8"
+FIREBASE_API_KEY = os.environ.get("GEMINI_API_KEY")
 AUTH_GATEWAY_URL = "https://gateway-authserver-awy26srzoa-nn.a.run.app/auth/v4/tokens"
 
 GAMESHEET_EMAIL = os.environ.get("GAMESHEET_EMAIL", "").strip()
