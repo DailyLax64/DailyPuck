@@ -13,6 +13,8 @@
     "Belleville Early": { "id": 15909, "tier": "Auto" },
     "Orangeville Fall Classic": { "id": 15905, "tier": "Auto" },
     "Mary Parkinson Early Bird": { "id": 15746, "tier": "Auto" },
-    "TNT Early Bird": { "id": 15940, "tier": "Auto" }
+    "TNT Early Bird": { "id": 15940, "tier": "Auto" },
+    "Mustangs Early Bird": { "id": 15733, "tier": "Auto" },
+    "Vaughan Silver Stick": { "id": 15946, "tier": "Auto" }
   }
 }
