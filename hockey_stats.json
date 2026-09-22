@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-21T15:43:08.808663+00:00",
-  "total_skaters": 2027,
-  "total_goalies": 258,
+  "generated_at": "2026-09-22T13:56:40.737807+00:00",
+  "total_skaters": 2062,
+  "total_goalies": 263,
   "total_standings_rows": 333,
-  "total_games": 175,
+  "total_games": 179,
   "skaters": [
     {
       "name": "COLE EMOND",
@@ -3660,6 +3660,52 @@
       ]
     },
     {
+      "name": "CYLAS ARBUCKLE",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "14",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 4,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "NOAH CRICHTON",
       "team": "Burlington Eagles",
       "team_id": 534784,
@@ -3844,6 +3890,52 @@
       ]
     },
     {
+      "name": "HAYDEN HODNETT",
+      "team": "Halton Hills Thunder",
+      "team_id": 534740,
+      "jersey": "10",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 12,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 2,
+          "pts": 4,
+          "pim": 12
+        },
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LIAM HUDD",
       "team": "West Niagara Flying Aces",
       "team_id": 534727,
@@ -3886,6 +3978,52 @@
           "a": 3,
           "pts": 3,
           "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "NIKO ILIOPOULOS",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "11",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
         }
       ]
     },
@@ -4120,6 +4258,52 @@
       ]
     },
     {
+      "name": "CARTER MANES",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "27",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "HARRY NEALE",
       "team": "Niagara Falls Canucks",
       "team_id": 534795,
@@ -4161,6 +4345,52 @@
           "g": 1,
           "a": 0,
           "pts": 1,
+          "pim": 8
+        }
+      ]
+    },
+    {
+      "name": "ELLIOT PARSONS",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "91",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 4,
+      "total_a": 0,
+      "total_pts": 4,
+      "total_pim": 16,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 8
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
           "pim": 8
         }
       ]
@@ -4452,6 +4682,52 @@
       ]
     },
     {
+      "name": "REID SHODY",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "88",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "BRODY SISSON",
       "team": "Norfolk Knights",
       "team_id": 537289,
@@ -4504,6 +4780,52 @@
           "a": 1,
           "pts": 4,
           "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "CHARLIE SLATER",
+      "team": "Halton Hills Thunder",
+      "team_id": 534740,
+      "jersey": "29",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 2,
+          "pts": 4,
+          "pim": 0
+        },
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
         }
       ]
     },
@@ -9492,6 +9814,98 @@
       ]
     },
     {
+      "name": "MATTEO ABATE",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "98",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JAXSON BARBOUR",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "87",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "EZRA BEZZO",
       "team": "Norfolk Knights",
       "team_id": 537289,
@@ -9962,6 +10376,52 @@
       ]
     },
     {
+      "name": "ZACHARY HUDSON",
+      "team": "Halton Hills Thunder",
+      "team_id": 534740,
+      "jersey": "77",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "FINLEY KERR",
       "team": "Hamilton Steel",
       "team_id": 534787,
@@ -10141,6 +10601,52 @@
           "g": 0,
           "a": 2,
           "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ADAM MACDONALD",
+      "team": "Halton Hills Thunder",
+      "team_id": 534740,
+      "jersey": "19",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 0,
+      "total_pts": 2,
+      "total_pim": 8,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 8
+        },
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
           "pim": 0
         }
       ]
@@ -10425,7 +10931,7 @@
       "name": "BENJAMIN NEWMAN",
       "team": "Halton Hills Thunder",
       "team_id": 534724,
-      "jersey": "",
+      "jersey": "93",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -17018,32 +17524,6 @@
       ]
     },
     {
-      "name": "LEO KAPOLNAS",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "86",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 2,
-      "total_a": 0,
-      "total_pts": 2,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 2,
-          "a": 0,
-          "pts": 2,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "EWAN BAIRD",
       "team": "Ottawa Valley Silver Seven",
       "team_id": 533214,
@@ -18633,7 +19113,7 @@
       "name": "MATEO CALABRIA",
       "team": "Halton Hills Thunder",
       "team_id": 534724,
-      "jersey": "",
+      "jersey": "79",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -19937,7 +20417,7 @@
       "name": "ROSS MORTON",
       "team": "Halton Hills Thunder",
       "team_id": 534724,
-      "jersey": "",
+      "jersey": "18",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -30268,162 +30748,6 @@
       ]
     },
     {
-      "name": "NASH BLAXALL",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "63",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 1,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "NOAH DRAZHI",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "17",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 1,
-      "total_a": 0,
-      "total_pts": 1,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 2
-        }
-      ]
-    },
-    {
-      "name": "ANGUS GREENE",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "5",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 1,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "COHEN LAVE",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "9",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 1,
-      "total_a": 0,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "LEO MULLIN",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "10",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 1,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "ANDREW RALPH",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "18",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 1,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "MAXIME GUERIN",
       "team": "Cumberland Jr Grads",
       "team_id": 533220,
@@ -32762,42 +33086,6 @@
       ]
     },
     {
-      "name": "MATTEO ABATE",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "98",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "CHARLIE ACCETTURA",
       "team": "Flamborough Sabres",
       "team_id": 534725,
@@ -32936,12 +33224,12 @@
       ]
     },
     {
-      "name": "CYLAS ARBUCKLE",
+      "name": "KIERAN ARTEM",
       "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "14",
+      "team_id": 534702,
+      "jersey": "",
       "position": "F",
-      "age": "U14",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -33185,11 +33473,11 @@
       "name": "DEKLAN BECK",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "97",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -33209,7 +33497,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -33760,6 +34048,42 @@
       ]
     },
     {
+      "name": "DUSTIN BROWN",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JACOB BUNTING",
       "team": "Burlington Eagles",
       "team_id": 534747,
@@ -33849,6 +34173,52 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "BRUNO CABALLERO",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
       "total_a": 0,
@@ -33927,11 +34297,11 @@
       "name": "HUDSON CAPP",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "17",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -33951,7 +34321,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -34137,11 +34507,11 @@
       "name": "JACKSON COOPER",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "87",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -34161,7 +34531,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -34183,11 +34553,11 @@
       "name": "LIAM COTTIN",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "12",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -34207,7 +34577,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -34272,10 +34642,46 @@
       ]
     },
     {
+      "name": "CARTER CREMASCO",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "BRAYDEN CROKE",
       "team": "Halton Hills Thunder",
       "team_id": 534724,
-      "jersey": "",
+      "jersey": "16",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -34506,6 +34912,42 @@
       "team": "Milton Winterhawks",
       "team_id": 534777,
       "jersey": "37",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "EMERSON DEAN",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -35221,11 +35663,11 @@
       "name": "PATRICK FLEMING",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "11",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -35245,7 +35687,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -35520,6 +35962,42 @@
       ]
     },
     {
+      "name": "ELLIOTT GAGE",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ZACHARY GALLAGHER",
       "team": "Milton Winterhawks",
       "team_id": 534777,
@@ -35766,6 +36244,52 @@
       ]
     },
     {
+      "name": "DOMINIC GILMORE",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "93",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "KNOX GIROUX",
       "team": "Niagara Falls Canucks",
       "team_id": 534795,
@@ -35901,7 +36425,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -35921,7 +36445,17 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -36189,11 +36723,11 @@
       "name": "CARTER HENDRIKX",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "71",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -36213,7 +36747,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -36232,12 +36766,12 @@
       ]
     },
     {
-      "name": "HAYDEN HODNETT",
-      "team": "Halton Hills Thunder",
-      "team_id": 534740,
+      "name": "TOMMY HOOD",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
       "jersey": "",
       "position": "F",
-      "age": "U14",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -36259,16 +36793,6 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15940",
-          "source_name": "TNT Early Bird",
-          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -36396,52 +36920,6 @@
       ]
     },
     {
-      "name": "ZACHARY HUDSON",
-      "team": "Halton Hills Thunder",
-      "team_id": 534740,
-      "jersey": "",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15940",
-          "source_name": "TNT Early Bird",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "MAXIMUS IANNITELLI",
       "team": "Hamilton Steel",
       "team_id": 534790,
@@ -36468,42 +36946,6 @@
         {
           "source_id": "15559",
           "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "NIKO ILIOPOULOS",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "11",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
           "source_type": "league",
           "gp": 0,
           "g": 0,
@@ -36619,7 +37061,7 @@
       "name": "MASON KASZA",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "16",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -36665,11 +37107,11 @@
       "name": "ZACHARY KELLY",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "48",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -36689,7 +37131,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -36862,6 +37304,52 @@
       ]
     },
     {
+      "name": "SULLY LEGEIN",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "19",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LUCCA LESSARD",
       "team": "Oakville Rangers",
       "team_id": 534726,
@@ -36987,7 +37475,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -37007,7 +37495,17 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -37062,52 +37560,6 @@
       ]
     },
     {
-      "name": "ADAM MACDONALD",
-      "team": "Halton Hills Thunder",
-      "team_id": 534740,
-      "jersey": "",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15940",
-          "source_name": "TNT Early Bird",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "WILLIAM MACDONALD",
       "team": "Oakville Rangers",
       "team_id": 534726,
@@ -37136,42 +37588,6 @@
           "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "CARTER MANES",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "27",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -37311,9 +37727,55 @@
       "name": "ANDREW MAZZOCATO",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "98",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 4
+        },
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "AUSTIN MCBURNIE",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -37335,16 +37797,6 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15940",
-          "source_name": "TNT Early Bird",
-          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -37449,11 +37901,11 @@
       "name": "COLTON MCKINNON",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "72",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -37473,7 +37925,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -37587,7 +38039,7 @@
       "name": "ROMAN MEJIA",
       "team": "Halton Hills Thunder",
       "team_id": 534724,
-      "jersey": "",
+      "jersey": "13",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -37774,6 +38226,52 @@
       ]
     },
     {
+      "name": "PJ METCALFE",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "16",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "AUSTON MILLER",
       "team": "Flamborough Sabres",
       "team_id": 534725,
@@ -37931,11 +38429,11 @@
       "name": "BRENDAN NORTH",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "49",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -37955,7 +38453,7 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -38286,6 +38784,42 @@
       ]
     },
     {
+      "name": "PRESTON PETKOFF",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "WINSTON PIENKOSZ",
       "team": "Hamilton Steel",
       "team_id": 534790,
@@ -38460,6 +38994,42 @@
       ]
     },
     {
+      "name": "AUSTIN PROTO",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ROMAN QUESADA",
       "team": "Flamborough Sabres",
       "team_id": 534725,
@@ -38559,7 +39129,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -38579,7 +39149,17 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -39008,6 +39588,42 @@
       ]
     },
     {
+      "name": "SIDNEY SCOTT",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ELI SEATON",
       "team": "Centre Wellington Fusion",
       "team_id": 537297,
@@ -39054,12 +39670,12 @@
       ]
     },
     {
-      "name": "REID SHODY",
+      "name": "CONNOR SIMMONS",
       "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "88",
+      "team_id": 534702,
+      "jersey": "",
       "position": "F",
-      "age": "U14",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -39118,52 +39734,6 @@
           "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "CHARLIE SLATER",
-      "team": "Halton Hills Thunder",
-      "team_id": 534740,
-      "jersey": "",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15940",
-          "source_name": "TNT Early Bird",
-          "source_type": "tournament",
-          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -39267,9 +39837,55 @@
       "name": "LUCA SMITH",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
-      "jersey": "",
+      "jersey": "38",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "EMERSON SOLDA",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -39291,16 +39907,6 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15940",
-          "source_name": "TNT Early Bird",
-          "source_type": "tournament",
           "gp": 0,
           "g": 0,
           "a": 0,
@@ -39822,6 +40428,42 @@
       ]
     },
     {
+      "name": "DAMIAN TRAN",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "STERLING UNDERHILL",
       "team": "Centre Wellington Fusion",
       "team_id": 537288,
@@ -39967,7 +40609,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -39987,7 +40629,17 @@
           "source_id": "15556",
           "source_name": "OMHA Exhibition",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -40106,6 +40758,78 @@
           "source_name": "OMHA Exhibition",
           "source_type": "league",
           "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CLARKE- JAMES WASSILYN",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "LINCOLN WATSON",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -61150,6 +61874,32 @@
       ]
     },
     {
+      "name": "JACOB ALLEN",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "WILLIAM ALLMARK",
       "team": "Milton Winterhawks",
       "team_id": 558344,
@@ -61462,28 +62212,28 @@
       ]
     },
     {
-      "name": "NOAH CAMPBELL",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "77",
+      "name": "DENVER BURTON",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 0,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 2,
+      "total_pim": 0,
       "sources": [
         {
           "source_id": "15559",
           "source_name": "Alliance Exhibition",
           "source_type": "league",
-          "gp": 1,
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 2
+          "pim": 0
         }
       ]
     },
@@ -61748,12 +62498,64 @@
       ]
     },
     {
+      "name": "HUNTER ROBERT DAVIS",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "HAYDEN DEFOREST",
       "team": "Guelph Gryphons",
       "team_id": 558340,
       "jersey": "7",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "AIDEN DEMAITER",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "2",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -61796,32 +62598,6 @@
           "a": 0,
           "pts": 0,
           "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "KORBIN DENHARDER",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "97",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 4,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 4
         }
       ]
     },
@@ -61936,6 +62712,32 @@
       "jersey": "17",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "OWEN ELLIOT",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "7",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -62086,6 +62888,32 @@
       ]
     },
     {
+      "name": "NICHOLAS FLEUREN",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ADAM FOSTER",
       "team": "Burlington Eagles",
       "team_id": 558348,
@@ -62190,6 +63018,32 @@
       ]
     },
     {
+      "name": "JETT GALLOWAY",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "COOPER GENDREAU",
       "team": "Peterborough Petes",
       "team_id": 537926,
@@ -62248,6 +63102,32 @@
       "jersey": "13",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "NASH GIBSON",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "17",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -62346,14 +63226,14 @@
       ]
     },
     {
-      "name": "LUCAS HALISCHUK",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "98",
+      "name": "CARSON HALLIDAY",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "11",
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 0,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -62363,7 +63243,7 @@
           "source_id": "15559",
           "source_name": "Alliance Exhibition",
           "source_type": "league",
-          "gp": 1,
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -62528,32 +63408,6 @@
       ]
     },
     {
-      "name": "CARTER HENDRIKSEN",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "91",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "HUNTER HILL",
       "team": "Burlington Eagles",
       "team_id": 558348,
@@ -62598,32 +63452,6 @@
           "source_name": "Alliance Exhibition",
           "source_type": "league",
           "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "CONOR HOLMES",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "2",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -62762,6 +63590,32 @@
       ]
     },
     {
+      "name": "MAVRICK JACKSON",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "5",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ANDREAS JAIKARAN",
       "team": "Milton Winterhawks",
       "team_id": 558344,
@@ -62820,6 +63674,32 @@
       "jersey": "98",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "SUTTER JENNEN",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "4",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -63022,6 +63902,32 @@
       ]
     },
     {
+      "name": "CADEN KEMP",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "3",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "AMES KERWIN",
       "team": "Halton Hills Thunder",
       "team_id": 558343,
@@ -63118,32 +64024,6 @@
           "source_name": "Alliance Exhibition",
           "source_type": "league",
           "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "HUNTER KNOWLES",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "29",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -63360,6 +64240,32 @@
       ]
     },
     {
+      "name": "CONNOR LILLEY",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "TRIPP LOCKE",
       "team": "Flamborough Sabres",
       "team_id": 558346,
@@ -63534,32 +64440,6 @@
           "source_name": "Alliance Exhibition",
           "source_type": "league",
           "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "GRAYSON MAHOOD",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "12",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -64010,6 +64890,32 @@
       ]
     },
     {
+      "name": "CHARLIE MILLER",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "HUDSON MITCHES",
       "team": "Burlington Eagles",
       "team_id": 558348,
@@ -64040,6 +64946,32 @@
       "team": "Peterborough Petes",
       "team_id": 537926,
       "jersey": "15",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "GRIFFIN MOIR",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "12",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -64556,6 +65488,32 @@
       ]
     },
     {
+      "name": "LEVI PAYNE",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "EZRA PENNEY",
       "team": "Hespeler Shamrocks",
       "team_id": 558347,
@@ -64816,6 +65774,32 @@
       ]
     },
     {
+      "name": "RUBY RODGER",
+      "team": "South Simcoe Storm",
+      "team_id": 566826,
+      "jersey": "10",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LUKE ROGERS",
       "team": "Halton Hills Thunder",
       "team_id": 558343,
@@ -64848,6 +65832,32 @@
       "jersey": "48",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ATLAS RUDAKAS",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "15",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -65102,6 +66112,58 @@
       ]
     },
     {
+      "name": "RUE SIMPSON",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "WILF SIMPSON",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "COLE SLADE",
       "team": "Milton Winterhawks",
       "team_id": 558344,
@@ -65150,32 +66212,6 @@
           "a": 0,
           "pts": 0,
           "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "RYKER SOETEMANS",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "93",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 2
         }
       ]
     },
@@ -65258,12 +66294,116 @@
       ]
     },
     {
+      "name": "RYKER STOCKING",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "6",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JONAH STRAW",
       "team": "Flamborough Sabres",
       "team_id": 558346,
       "jersey": "13",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "SMITH TERRY",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "10",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "KEATON THORNICROFT",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MATTHEW TIMMERMANS",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -65310,6 +66450,32 @@
       ]
     },
     {
+      "name": "MAVERIK TOTH",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "KEATON VANGRONINGEN",
       "team": "Norfolk Knights",
       "team_id": 541468,
@@ -65328,6 +66494,32 @@
           "source_name": "Alliance Exhibition",
           "source_type": "league",
           "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CARSON VANMENSEL",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "16",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -65703,7 +66895,7 @@
       "name": "ZACHARY YOUNG",
       "team": "Oakville Rangers",
       "team_id": 558349,
-      "jersey": "87",
+      "jersey": "27",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -65732,6 +66924,32 @@
       "jersey": "16",
       "position": "F",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "GRIFFIN ZEHR",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "9",
+      "position": "F",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -75146,6 +76364,32 @@
       ]
     },
     {
+      "name": "JACK LAROCHELLE-WALL",
+      "team": "Copper Cliff Reds",
+      "team_id": 564806,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ZACHARIE LAVICTOIRE",
       "team": "Nickel City Cubs",
       "team_id": 564807,
@@ -75358,6 +76602,32 @@
       "team": "Nickel City Cubs",
       "team_id": 564807,
       "jersey": "53",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "S\u00c9BASTIEN PARIS\u00c9",
+      "team": "Copper Cliff Reds",
+      "team_id": 564806,
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -75980,6 +77250,109 @@
   ],
   "goalies": [
     {
+      "name": "BEN ETWELL",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "31",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "ISAAC KRON",
+      "team": "Halton Hills Thunder",
+      "team_id": 534740,
+      "jersey": "20",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 2,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "CORMAC CAMPBELL",
       "team": "Centre Wellington Fusion",
       "team_id": 537288,
@@ -76411,12 +77784,12 @@
       ]
     },
     {
-      "name": "SEBASTIAN BROWN",
-      "team": "Halton Hills Thunder",
-      "team_id": 534740,
+      "name": "DONATELLO BERNARDI MONTENEGRO",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
       "jersey": "",
       "position": "G",
-      "age": "U14",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_ga": 0,
@@ -76662,6 +78035,51 @@
       ]
     },
     {
+      "name": "MATTEO FRANCHETTO",
+      "team": "Guelph Gryphons",
+      "team_id": 534702,
+      "jersey": "",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "JASE HURTUBISE",
       "team": "Hamilton Steel",
       "team_id": 534790,
@@ -76778,100 +78196,10 @@
       ]
     },
     {
-      "name": "ISAAC KRON",
-      "team": "Halton Hills Thunder",
-      "team_id": 534740,
-      "jersey": "",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "COLTON MILLAR",
       "team": "Burlington Eagles",
       "team_id": 534747,
       "jersey": "1",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "Tri-County AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Exhibition",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "BEN MILLER",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "39",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -78670,12 +79998,76 @@
       ]
     },
     {
+      "name": "BENNETT FORD",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "1",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "SAMUEL HOLT",
       "team": "Oakville Rangers",
       "team_id": 558349,
       "jersey": "35",
       "position": "G",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "HUDSON JONES",
+      "team": "King Rebellion",
+      "team_id": 566828,
+      "jersey": "30",
+      "position": "G",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_ga": 0,
@@ -79054,12 +80446,76 @@
       ]
     },
     {
+      "name": "DEAKON SIMPSON",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "JAKE STOTT",
       "team": "Brampton 45s",
       "team_id": 558345,
       "jersey": "1",
       "position": "G",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Exhibition",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "KAREEM SULEIMAN",
+      "team": "West Mall Lightning",
+      "team_id": 566829,
+      "jersey": "",
+      "position": "G",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 0,
       "total_ga": 0,
@@ -81345,38 +82801,6 @@
       ]
     },
     {
-      "name": "BLAKE CONNOR",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "25",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 1,
-      "total_min": 0,
-      "total_gaa": 1.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 1,
-          "min": 0,
-          "gaa": 1.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "HUNTER NIELSEN",
       "team": "Oshawa Generals",
       "team_id": 542876,
@@ -82934,38 +84358,6 @@
       ]
     },
     {
-      "name": "WESLEY PEARCE",
-      "team": "London Jr Knights (White)",
-      "team_id": 541417,
-      "jersey": "75",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 2,
-      "total_min": 0,
-      "total_gaa": 2.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Exhibition",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 2,
-          "min": 0,
-          "gaa": 2.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "ARI DASILVA",
       "team": "Cumberland Jr Grads",
       "team_id": 533220,
@@ -83883,6 +85275,64 @@
           "source_type": "tournament",
           "gp": 2,
           "ga": 6,
+          "min": 0,
+          "gaa": 3.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "BEN MILLER",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "39",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 6,
+      "total_min": 0,
+      "total_gaa": 3.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 3,
+          "min": 0,
+          "gaa": 3.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 3,
           "min": 0,
           "gaa": 3.0,
           "so": 0,
@@ -86868,6 +88318,51 @@
           "source_id": "15764",
           "source_name": "Garden City Early",
           "source_type": "tournament",
+          "gp": 2,
+          "ga": 10,
+          "min": 0,
+          "gaa": 5.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "SEBASTIAN BROWN",
+      "team": "Halton Hills Thunder",
+      "team_id": 534740,
+      "jersey": "31",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 10,
+      "total_min": 0,
+      "total_gaa": 5.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "Tri-County AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Exhibition",
+          "source_type": "league",
           "gp": 2,
           "ga": 10,
           "min": 0,
@@ -93472,6 +94967,31 @@
       "shga": 0
     },
     {
+      "team_id": 541209,
+      "team_name": "Guelph Gryphons",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 2,
+      "w": 2,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 10,
+      "ga": 6,
+      "diff": 4,
+      "pim": 16,
+      "ppg": 4,
+      "ppo": 6,
+      "ppga": 4,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 0
+    },
+    {
       "team_id": 542916,
       "team_name": "Quinte West Golden Hawks",
       "division_title": "U14 AA",
@@ -93797,31 +95317,6 @@
       "shga": 1
     },
     {
-      "team_id": 541208,
-      "team_name": "Centre Wellington Fusion",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 1,
-      "w": 0,
-      "l": 0,
-      "t": 1,
-      "pts": 0,
-      "gf": 3,
-      "ga": 3,
-      "diff": 0,
-      "pim": 8,
-      "ppg": 0,
-      "ppo": 4,
-      "ppga": 1,
-      "ppoa": 4,
-      "shg": 0,
-      "shga": 0
-    },
-    {
       "team_id": 557713,
       "team_name": "Kitchener Jr Rangers (Red)",
       "division_title": "U14 AA",
@@ -93847,8 +95342,8 @@
       "shga": 0
     },
     {
-      "team_id": 542912,
-      "team_name": "North Durham Warriors",
+      "team_id": 541208,
+      "team_name": "Centre Wellington Fusion",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -93860,39 +95355,14 @@
       "l": 0,
       "t": 1,
       "pts": 0,
-      "gf": 2,
-      "ga": 2,
+      "gf": 3,
+      "ga": 3,
       "diff": 0,
-      "pim": 2,
+      "pim": 8,
       "ppg": 0,
-      "ppo": 2,
-      "ppga": 0,
-      "ppoa": 1,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 552221,
-      "team_name": "Markham Waxers",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 1,
-      "w": 0,
-      "l": 0,
-      "t": 1,
-      "pts": 0,
-      "gf": 2,
-      "ga": 2,
-      "diff": 0,
-      "pim": 4,
-      "ppg": 0,
-      "ppo": 1,
-      "ppga": 0,
-      "ppoa": 2,
+      "ppo": 4,
+      "ppga": 1,
+      "ppoa": 4,
       "shg": 0,
       "shga": 0
     },
@@ -93947,58 +95417,58 @@
       "shga": 0
     },
     {
-      "team_id": 557715,
-      "team_name": "Mt Brydges Cougars",
+      "team_id": 552221,
+      "team_name": "Markham Waxers",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
-      "gp": 0,
+      "gp": 1,
       "w": 0,
       "l": 0,
-      "t": 0,
+      "t": 1,
       "pts": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 2,
+      "ga": 2,
       "diff": 0,
-      "pim": 0,
+      "pim": 4,
       "ppg": 0,
-      "ppo": 0,
+      "ppo": 1,
       "ppga": 0,
-      "ppoa": 0,
+      "ppoa": 2,
       "shg": 0,
       "shga": 0
     },
     {
-      "team_id": 559563,
-      "team_name": "Vaughan Rangers",
+      "team_id": 542912,
+      "team_name": "North Durham Warriors",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
-      "gp": 0,
+      "gp": 1,
       "w": 0,
       "l": 0,
-      "t": 0,
+      "t": 1,
       "pts": 0,
-      "gf": 0,
-      "ga": 0,
+      "gf": 2,
+      "ga": 2,
       "diff": 0,
-      "pim": 0,
+      "pim": 2,
       "ppg": 0,
-      "ppo": 0,
+      "ppo": 2,
       "ppga": 0,
-      "ppoa": 0,
+      "ppoa": 1,
       "shg": 0,
       "shga": 0
     },
     {
-      "team_id": 557703,
-      "team_name": "Brantford 99ers",
+      "team_id": 557704,
+      "team_name": "Cambridge Hawks",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -94049,31 +95519,6 @@
     {
       "team_id": 541198,
       "team_name": "West Niagara Flying Aces",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 541199,
-      "team_name": "Halton Hills Thunder",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -94197,31 +95642,6 @@
       "shga": 0
     },
     {
-      "team_id": 541209,
-      "team_name": "Guelph Gryphons",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
       "team_id": 542914,
       "team_name": "Whitby Wildcats",
       "division_title": "U14 AA",
@@ -94322,8 +95742,8 @@
       "shga": 0
     },
     {
-      "team_id": 557704,
-      "team_name": "Cambridge Hawks",
+      "team_id": 557703,
+      "team_name": "Brantford 99ers",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -94474,6 +95894,56 @@
     {
       "team_id": 557712,
       "team_name": "Ajax Pickering Raiders",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 557715,
+      "team_name": "Mt Brydges Cougars",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 559563,
+      "team_name": "Vaughan Rangers",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -94693,6 +96163,31 @@
       "ppo": 2,
       "ppga": 1,
       "ppoa": 4,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 541199,
+      "team_name": "Halton Hills Thunder",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 2,
+      "w": 0,
+      "l": 2,
+      "t": 0,
+      "pts": 0,
+      "gf": 6,
+      "ga": 10,
+      "diff": -4,
+      "pim": 24,
+      "ppg": 4,
+      "ppo": 6,
+      "ppga": 4,
+      "ppoa": 6,
       "shg": 0,
       "shga": 0
     },
@@ -99334,26 +100829,6 @@
       "division": "U14 AA"
     },
     {
-      "game_id": 3021568,
-      "date": "Sep 20, 2026",
-      "time": "2:40 PM",
-      "timestamp": "2026-09-20T18:40:00Z",
-      "status": "scheduled",
-      "location": "",
-      "source_id": "15559",
-      "source_name": "Alliance Exhibition",
-      "source_type": "league",
-      "home_id": 541417,
-      "home_name": "London Jr Knights (White)",
-      "home_goals": null,
-      "home_result": null,
-      "visitor_id": 541459,
-      "visitor_name": "St Thomas Jr Stars",
-      "visitor_goals": null,
-      "visitor_result": null,
-      "division": "U11 AA"
-    },
-    {
       "game_id": 3021483,
       "date": "Sep 20, 2026",
       "time": "3:20 PM",
@@ -99454,24 +100929,84 @@
       "division": "U14 AA"
     },
     {
-      "game_id": 3021597,
+      "game_id": 3023622,
       "date": "Sep 21, 2026",
-      "time": "7:45 PM",
-      "timestamp": "2026-09-21T23:45:00Z",
+      "time": "7:10 PM",
+      "timestamp": "2026-09-21T23:10:00Z",
       "status": "scheduled",
       "location": "",
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
-      "home_id": 541209,
+      "home_id": 541013,
+      "home_name": "Glancaster Bombers",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 541015,
+      "visitor_name": "Stoney Creek Warriors",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U11 AA"
+    },
+    {
+      "game_id": 3023920,
+      "date": "Sep 21, 2026",
+      "time": "7:45 PM",
+      "timestamp": "2026-09-22T00:45:00Z",
+      "status": "final",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541199,
+      "home_name": "Halton Hills Thunder",
+      "home_goals": 3,
+      "home_result": "L",
+      "visitor_id": 541209,
+      "visitor_name": "Guelph Gryphons",
+      "visitor_goals": 5,
+      "visitor_result": "W",
+      "division": "U14 AA"
+    },
+    {
+      "game_id": 3023921,
+      "date": "Sep 21, 2026",
+      "time": "7:45 PM",
+      "timestamp": "2026-09-22T00:45:00Z",
+      "status": "final",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541199,
+      "home_name": "Halton Hills Thunder",
+      "home_goals": 3,
+      "home_result": "L",
+      "visitor_id": 541209,
+      "visitor_name": "Guelph Gryphons",
+      "visitor_goals": 5,
+      "visitor_result": "W",
+      "division": "U14 AA"
+    },
+    {
+      "game_id": 3023993,
+      "date": "Sep 22, 2026",
+      "time": "5:30 PM",
+      "timestamp": "2026-09-22T21:30:00Z",
+      "status": "scheduled",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541008,
       "home_name": "Guelph Gryphons",
       "home_goals": null,
       "home_result": null,
-      "visitor_id": 541199,
-      "visitor_name": "Halton Hills Thunder",
+      "visitor_id": 541010,
+      "visitor_name": "Flamborough Sabres",
       "visitor_goals": null,
       "visitor_result": null,
-      "division": "U14 AA"
+      "division": "U11 AA"
     },
     {
       "game_id": 3000193,
@@ -99774,6 +101309,26 @@
       "division": "U11 AA"
     },
     {
+      "game_id": 3024198,
+      "date": "Sep 26, 2026",
+      "time": "10:00 AM",
+      "timestamp": "2026-09-26T14:00:00Z",
+      "status": "scheduled",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541017,
+      "home_name": "Burlington Eagles",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 554665,
+      "visitor_name": "Waterloo Wolves",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U11 AA"
+    },
+    {
       "game_id": 3001192,
       "date": "Sep 26, 2026",
       "time": "10:20 AM",
@@ -99789,6 +101344,26 @@
       "home_result": null,
       "visitor_id": 557108,
       "visitor_name": "Kingston Canadians",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U14 AA"
+    },
+    {
+      "game_id": 3024258,
+      "date": "Sep 26, 2026",
+      "time": "11:10 AM",
+      "timestamp": "2026-09-26T15:10:00Z",
+      "status": "scheduled",
+      "location": "Benson (Pad 3)",
+      "source_id": "15454",
+      "source_name": "HEO AA",
+      "source_type": "league",
+      "home_id": 533212,
+      "home_name": "Seaway Valley Rapids",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 533219,
+      "visitor_name": "Kanata Blazers",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
