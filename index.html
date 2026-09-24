@@ -2267,9 +2267,23 @@
                 ? `${divName}__${cleanKey(myTeamName)}__VS__${cleanKey(oppTeamName)}`
                 : `${divName}__SOLO__${cleanKey(oppTeamName)}`;
 
-            if (!forceRefresh && aiInsightsCache[cacheKey]) {
-                renderAiCards(aiInsightsCache[cacheKey], oppTeamName, myTeamName, divName);
-                return;
+            // Check in-memory cache or persistent localStorage cache
+            if (!forceRefresh) {
+                if (aiInsightsCache[cacheKey]) {
+                    renderAiCards(aiInsightsCache[cacheKey], oppTeamName, myTeamName, divName);
+                    return;
+                }
+                try {
+                    const stored = localStorage.getItem("scout_cache_" + cacheKey);
+                    if (stored) {
+                        const parsedStored = JSON.parse(stored);
+                        if (parsedStored && Array.isArray(parsedStored.cards)) {
+                            aiInsightsCache[cacheKey] = parsedStored.cards;
+                            renderAiCards(parsedStored.cards, oppTeamName, myTeamName, divName);
+                            return;
+                        }
+                    }
+                } catch (e) {}
             }
 
             const aiContainer = document.getElementById('ai-insights-container');
@@ -2365,14 +2379,48 @@ Return a JSON array of exactly 3 analytical cards:
                     body: JSON.stringify({ prompt })
                 });
 
+                const data = await response.json();
+
                 if (!response.ok) {
-                    const errData = await response.json().catch(() => ({}));
-                    throw new Error(errData.error || `HTTP ${response.status}`);
+                    if (response.status === 429) {
+                        let waitSec = data.retryAfter || 30;
+                        aiContainer.innerHTML = `
+                            <div class="p-4 rounded-xl bg-amber-950/30 border border-amber-800 text-amber-300 text-xs font-mono space-y-2">
+                                <p class="font-bold">⏳ Free Tier Rate Limit Reached (20 requests/min)</p>
+                                <p class="text-slate-400">Google AI Studio quota window is resetting. Next retry unlocked in <span id="quota-timer" class="text-amber-400 font-bold">${waitSec}</span>s.</p>
+                                <div class="pt-1">
+                                    <button id="quota-retry-btn" disabled class="px-3 py-1 bg-slate-800 text-slate-500 font-bold rounded uppercase text-[10px] cursor-not-allowed">
+                                        Wait (${waitSec}s)
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                        const timerInterval = setInterval(() => {
+                            waitSec--;
+                            const timerEl = document.getElementById("quota-timer");
+                            const btnEl = document.getElementById("quota-retry-btn");
+                            if (timerEl) timerEl.innerText = waitSec;
+                            if (btnEl) btnEl.innerText = `Wait (${waitSec}s)`;
+                            if (waitSec <= 0) {
+                                clearInterval(timerInterval);
+                                if (btnEl) {
+                                    btnEl.disabled = false;
+                                    btnEl.className = "px-3 py-1 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold rounded uppercase text-[10px] cursor-pointer";
+                                    btnEl.innerText = "Retry Now";
+                                    btnEl.onclick = () => fetchTeamAiIntelligence(oppTeamName, divName, true);
+                                }
+                            }
+                        }, 1000);
+                        return;
+                    }
+                    throw new Error(data.error || `HTTP ${response.status}`);
                 }
 
-                const data = await response.json();
                 if (data.cards && Array.isArray(data.cards)) {
                     aiInsightsCache[cacheKey] = data.cards;
+                    try {
+                        localStorage.setItem("scout_cache_" + cacheKey, JSON.stringify({ cards: data.cards, time: Date.now() }));
+                    } catch(e) {}
                     renderAiCards(data.cards, oppTeamName, myTeamName, divName);
                 } else {
                     throw new Error("Invalid payload format received from scout server.");
