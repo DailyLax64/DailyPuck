@@ -1,6 +1,6 @@
 /**
  * Netlify Serverless Function: generate-scout.js
- * Calls Google gemini-3.6-flash directly with low thinking latency.
+ * High-speed proxy with automatic quota failover across Gemini models.
  */
 
 exports.handler = async function (event, context) {
@@ -55,64 +55,113 @@ exports.handler = async function (event, context) {
             };
         }
 
-        // Direct request to Gemini 3.6 Flash
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
-
-        const response = await fetch(apiUrl, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                contents: [
-                    {
-                        parts: [{ text: prompt }]
-                    }
-                ],
-                generationConfig: {
+        // Models with separate free-tier quota pools. If one hits 429, we immediately try the next.
+        const candidateModels = [
+            {
+                name: "gemini-3.6-flash",
+                config: {
                     responseMimeType: "application/json",
-                    thinkingConfig: {
-                        thinkingLevel: "low"
+                    thinkingConfig: { thinkingLevel: "low" }
+                }
+            },
+            {
+                name: "gemini-2.0-flash",
+                config: {
+                    responseMimeType: "application/json"
+                }
+            },
+            {
+                name: "gemini-2.0-flash-lite",
+                config: {
+                    responseMimeType: "application/json"
+                }
+            }
+        ];
+
+        let lastErr = null;
+        let retrySeconds = 30;
+
+        for (const { name: model, config: genConfig } of candidateModels) {
+            try {
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    signal: AbortSignal.timeout(6000), // 6s timeout per model to stay well within Netlify's 10s limit
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: genConfig
+                    })
+                });
+
+                if (!response.ok) {
+                    const errJson = await response.json().catch(() => ({}));
+                    const errMsg = errJson.error?.message || `HTTP ${response.status} on ${model}`;
+                    lastErr = errMsg;
+
+                    // If rate-limited, parse wait time and try the next candidate model
+                    if (response.status === 429) {
+                        const match = errMsg.match(/retry in ([0-9.]+)s/i);
+                        if (match) retrySeconds = Math.ceil(parseFloat(match[1]));
+                        console.warn(`[Gemini API] ${model} quota reached. Failing over to next model...`);
+                        continue;
+                    }
+
+                    console.warn(`[Gemini API] ${model} returned error: ${errMsg}`);
+                    continue;
+                }
+
+                const data = await response.json();
+                const candidate = data.candidates?.[0];
+                const parts = candidate?.content?.parts || [];
+
+                // Filter out reasoning thoughts and get output text
+                const textPart = parts.find(p => p.text && !p.thought) || parts[parts.length - 1];
+                let rawText = textPart?.text || "[]";
+
+                rawText = rawText.replace(/```json/gi, "").replace(/```/g, "").trim();
+
+                let parsed;
+                try {
+                    parsed = JSON.parse(rawText);
+                } catch (parseErr) {
+                    const match = rawText.match(/\[[\s\S]*\]/);
+                    if (match) {
+                        parsed = JSON.parse(match[0]);
+                    } else {
+                        throw new Error("Could not parse AI response into structured JSON.");
                     }
                 }
-            })
-        });
 
-        if (!response.ok) {
-            const errJson = await response.json().catch(() => ({}));
-            const errMsg = errJson.error?.message || `Google API error HTTP ${response.status}`;
-            throw new Error(errMsg);
-        }
+                const cards = Array.isArray(parsed) ? parsed : (parsed.cards || []);
 
-        const data = await response.json();
-        const candidate = data.candidates?.[0];
-        const parts = candidate?.content?.parts || [];
+                return {
+                    statusCode: 200,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*"
+                    },
+                    body: JSON.stringify({ cards })
+                };
 
-        // Isolate final text part, ignoring internal thinking tokens
-        const textPart = parts.find(p => p.text && !p.thought) || parts[parts.length - 1];
-        let rawText = textPart?.text || "[]";
-
-        rawText = rawText.replace(/```json/gi, "").replace(/```/g, "").trim();
-
-        let parsed;
-        try {
-            parsed = JSON.parse(rawText);
-        } catch (parseErr) {
-            const match = rawText.match(/\[[\s\S]*\]/);
-            if (match) {
-                parsed = JSON.parse(match[0]);
-            } else {
-                throw new Error("Could not parse AI response into JSON cards.");
+            } catch (err) {
+                lastErr = err.message;
+                console.warn(`[Gemini API] Request exception on ${model}: ${err.message}`);
             }
         }
 
-        const cards = Array.isArray(parsed) ? parsed : (parsed.cards || []);
-
+        // If all candidate models are exhausted
         return {
-            statusCode: 200,
+            statusCode: 429,
             headers: {
                 "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*"
             },
-            body: JSON.stringify({ cards })
+            body: JSON.stringify({
+                error: lastErr || "Quota exceeded across all Gemini models.",
+                retryAfter: retrySeconds
+            })
         };
 
     } catch (err) {
