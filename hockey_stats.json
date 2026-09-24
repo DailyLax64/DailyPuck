@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-24T14:05:21.271335+00:00",
-  "total_skaters": 2280,
+  "generated_at": "2026-09-24T14:11:47.150022+00:00",
+  "total_skaters": 2279,
   "total_goalies": 294,
   "total_standings_rows": 352,
   "total_games": 262,
@@ -78832,32 +78832,6 @@
       ]
     },
     {
-      "name": "WILLIAM CHAFE",
-      "team": "Brampton 45s",
-      "team_id": 564773,
-      "jersey": "",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15940",
-          "source_name": "TNT Early Bird",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "LEO CHENCINSKI",
       "team": "Markham Islanders",
       "team_id": 564804,
@@ -91212,6 +91186,19 @@
           "ga": 2,
           "min": 0,
           "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15940",
+          "source_name": "TNT Early Bird",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
           "so": 0,
           "w": 0,
           "l": 0,
