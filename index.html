@@ -2358,7 +2358,8 @@ Return a JSON array of exactly 3 analytical cards:
 ]`;
 
             try {
-                const response = await fetch('/api/generate-scout', {
+                // Direct native Netlify function endpoint invocation to prevent 404
+                const response = await fetch('/.netlify/functions/generate-scout', {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ prompt })
