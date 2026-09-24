@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timezone
 
 # 1. Setup Automated Authentication & Network Headers
-FIREBASE_API_KEY = os.environ.get("FIREBASE_API_KEY") or os.environ.get("GEMINI_API_KEY")
+FIREBASE_API_KEY = os.environ.get("GAMESHEET_FIREBASE_KEY", "").strip()
 AUTH_GATEWAY_URL = "https://gateway-authserver-awy26srzoa-nn.a.run.app/auth/v4/tokens"
 
 GAMESHEET_EMAIL = os.environ.get("GAMESHEET_EMAIL", "").strip()
@@ -24,6 +24,10 @@ headers = {
 
 def authenticate_gamesheet(email, password):
     """Logs into Firebase and exchanges the token with GameSheet's auth gateway."""
+    if not FIREBASE_API_KEY:
+        print("   ⚠️ GAMESHEET_FIREBASE_KEY is missing from environment secrets.")
+        return None
+
     try:
         firebase_url = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={FIREBASE_API_KEY}"
         fb_payload = json.dumps({
@@ -113,7 +117,6 @@ if not os.path.exists("sources.json"):
 with open("sources.json", "r", encoding="utf-8") as f:
     sources = json.load(f)
 
-# Load Exceptions File (if present)
 exceptions_db = []
 if os.path.exists("exceptions.json"):
     try:
@@ -174,7 +177,7 @@ def check_team_exception(team_name, source_id):
     return None
 
 def resolve_master_team(team_name, div_title="", source_name="", forced_tier=None, source_id=None):
-    # 1. Check if an explicit exception rule applies first
+    # Check exception rule first
     forced_cohort = check_team_exception(team_name, source_id)
     if forced_cohort:
         cohort = forced_cohort
@@ -193,7 +196,6 @@ def resolve_master_team(team_name, div_title="", source_name="", forced_tier=Non
                 return cohort, canonical
         return cohort, None
 
-    # 2. Standard resolution logic
     team_div_text = f"{team_name} {div_title}".upper()
     full_text = f"{team_div_text} {source_name}".upper()
 
@@ -275,7 +277,6 @@ for src in all_sources:
                 if t_id:
                     team_id_to_master[int(t_id)] = (cohort, canonical_name)
 
-                # Standard Standings Metrics
                 gp = int(stats.get("gp") or stats.get("GP") or 0)
                 w = int(stats.get("w") or stats.get("W") or 0)
                 l = int(stats.get("l") or stats.get("L") or 0)
@@ -286,7 +287,6 @@ for src in all_sources:
                 diff = int(stats.get("diff") or stats.get("DIFF") or 0)
                 pim = int(stats.get("pim") or stats.get("PIM") or 0)
 
-                # Raw Special Teams Opportunities & Goals
                 ppg = int(stats.get("ppg") or stats.get("PPG") or 0)
                 ppo = int(stats.get("ppo") or stats.get("PPO") or 0)
                 ppga = int(stats.get("ppga") or stats.get("PPGA") or 0)
