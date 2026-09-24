@@ -1,0 +1,11 @@
+{
+  "tournament_team_exceptions": [
+    {
+      "tournament_id": 15744,
+      "team_match": "Waterloo Wolves",
+      "target_division": "U11 AA",
+      "target_tier": "AA",
+      "notes": "Waterloo Wolves U11 AA playing in Hespeler U11 A tournament"
+    }
+  ]
+}
