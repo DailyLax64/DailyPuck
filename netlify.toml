@@ -1,7 +1,0 @@
-[[redirects]]
-  from = "/api/generate-scout"
-  to = "/.netlify/functions/generate-scout"
-  status = 200
-
-[functions]
-  timeout = 26
