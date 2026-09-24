@@ -1,10 +1,10 @@
 /**
  * Netlify Serverless Function: generate-scout.js
- * High-speed single-call proxy to Google's gemini-3.6-flash endpoint.
+ * Calls Google gemini-3.6-flash directly with low thinking latency.
  */
 
 exports.handler = async function (event, context) {
-    // 1. Handle CORS preflight
+    // 1. CORS Preflight
     if (event.httpMethod === "OPTIONS") {
         return {
             statusCode: 200,
@@ -55,7 +55,7 @@ exports.handler = async function (event, context) {
             };
         }
 
-        // Direct request to Google Gemini 3.6 Flash
+        // Direct request to Gemini 3.6 Flash
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
 
         const response = await fetch(apiUrl, {
@@ -86,11 +86,10 @@ exports.handler = async function (event, context) {
         const candidate = data.candidates?.[0];
         const parts = candidate?.content?.parts || [];
 
-        // Exclude internal thinking parts and select the text payload
+        // Isolate final text part, ignoring internal thinking tokens
         const textPart = parts.find(p => p.text && !p.thought) || parts[parts.length - 1];
         let rawText = textPart?.text || "[]";
 
-        // Strip any residual markdown wrappers
         rawText = rawText.replace(/```json/gi, "").replace(/```/g, "").trim();
 
         let parsed;
@@ -101,7 +100,7 @@ exports.handler = async function (event, context) {
             if (match) {
                 parsed = JSON.parse(match[0]);
             } else {
-                throw new Error("Could not parse AI response into structured JSON.");
+                throw new Error("Could not parse AI response into JSON cards.");
             }
         }
 
