@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timezone
 
 # 1. Setup Automated Authentication & Network Headers
-FIREBASE_API_KEY = os.environ.get("GEMINI_API_KEY")
+FIREBASE_API_KEY = os.environ.get("FIREBASE_API_KEY") or os.environ.get("GEMINI_API_KEY")
 AUTH_GATEWAY_URL = "https://gateway-authserver-awy26srzoa-nn.a.run.app/auth/v4/tokens"
 
 GAMESHEET_EMAIL = os.environ.get("GAMESHEET_EMAIL", "").strip()
@@ -102,7 +102,7 @@ def fetch_json(url):
         print(f"   ❌ Fetch error for {url}: {e}")
         return None
 
-# 2. Load Master Whitelist & Sources
+# 2. Load Master Whitelist, Sources, and Exceptions
 if not os.path.exists("master_teams.json"):
     raise FileNotFoundError("Critical error: master_teams.json is missing.")
 with open("master_teams.json", "r", encoding="utf-8") as f:
@@ -112,6 +112,17 @@ if not os.path.exists("sources.json"):
     raise FileNotFoundError("Critical error: sources.json is missing.")
 with open("sources.json", "r", encoding="utf-8") as f:
     sources = json.load(f)
+
+# Load Exceptions File (if present)
+exceptions_db = []
+if os.path.exists("exceptions.json"):
+    try:
+        with open("exceptions.json", "r", encoding="utf-8") as f:
+            exc_data = json.load(f)
+            exceptions_db = exc_data.get("tournament_team_exceptions", [])
+            print(f"📋 Loaded {len(exceptions_db)} tournament exception rule(s) from exceptions.json.")
+    except Exception as e:
+        print(f"⚠️ Warning: Failed to parse exceptions.json: {e}")
 
 all_sources = []
 for stype in ["leagues", "tournaments"]:
@@ -149,7 +160,40 @@ for cohort in ["U11 AA", "U14 AA"]:
             if a_base:
                 lookup[cohort][a_base] = canonical
 
-def resolve_master_team(team_name, div_title="", source_name="", forced_tier=None):
+def check_team_exception(team_name, source_id):
+    """Checks if a team/source combination matches a defined exception rule."""
+    if not source_id or not exceptions_db:
+        return None
+    sid_str = str(source_id).strip()
+    t_upper = str(team_name or "").upper().strip()
+    for rule in exceptions_db:
+        rule_sid = str(rule.get("tournament_id") or rule.get("source_id") or "").strip()
+        rule_match = str(rule.get("team_match") or "").upper().strip()
+        if rule_sid == sid_str and rule_match and rule_match in t_upper:
+            return rule.get("target_cohort") or rule.get("target_division") or "U11 AA"
+    return None
+
+def resolve_master_team(team_name, div_title="", source_name="", forced_tier=None, source_id=None):
+    # 1. Check if an explicit exception rule applies first
+    forced_cohort = check_team_exception(team_name, source_id)
+    if forced_cohort:
+        cohort = forced_cohort
+        t_norm = normalize(team_name)
+        if t_norm in lookup.get(cohort, {}):
+            return cohort, lookup[cohort][t_norm]
+
+        t_base = re.sub(r'\bU\d{1,2}AA\b|\b(U11|U14|U\d{1,2}|AA|AAA|A|BB|MD|MINOR|MAJOR)\b', '', t_norm).strip()
+        t_base = ' '.join(t_base.split())
+        if t_base in lookup.get(cohort, {}):
+            return cohort, lookup[cohort][t_base]
+
+        for canonical in master_teams_db.get(cohort, {}):
+            assoc_base = canonical.split()[0].upper()
+            if len(assoc_base) >= 4 and assoc_base in t_base:
+                return cohort, canonical
+        return cohort, None
+
+    # 2. Standard resolution logic
     team_div_text = f"{team_name} {div_title}".upper()
     full_text = f"{team_div_text} {source_name}".upper()
 
@@ -220,7 +264,7 @@ for src in all_sources:
                 row_div_title = clean_name(row.get("division", {}).get("title") or "")
                 effective_div = row_div_title or parent_div_title
 
-                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier, source_id=s_id)
 
                 if cohort and not canonical_name:
                     unmapped_audit.add((cohort, t_name, s_name, t_id))
@@ -309,7 +353,7 @@ for src in all_sources:
         if h_id and int(h_id) in team_id_to_master:
             h_cohort, h_canonical = team_id_to_master[int(h_id)]
         else:
-            h_cohort, h_canonical = resolve_master_team(h_name, g_div, s_name, forced_tier=s_tier)
+            h_cohort, h_canonical = resolve_master_team(h_name, g_div, s_name, forced_tier=s_tier, source_id=s_id)
             if h_cohort and h_canonical and h_id:
                 team_id_to_master[int(h_id)] = (h_cohort, h_canonical)
 
@@ -317,7 +361,7 @@ for src in all_sources:
         if v_id and int(v_id) in team_id_to_master:
             v_cohort, v_canonical = team_id_to_master[int(v_id)]
         else:
-            v_cohort, v_canonical = resolve_master_team(v_name, g_div, s_name, forced_tier=s_tier)
+            v_cohort, v_canonical = resolve_master_team(v_name, g_div, s_name, forced_tier=s_tier, source_id=s_id)
             if v_cohort and v_canonical and v_id:
                 team_id_to_master[int(v_id)] = (v_cohort, v_canonical)
 
@@ -427,7 +471,7 @@ for src in all_sources:
             if t_id and int(t_id) in team_id_to_master:
                 cohort, canonical_name = team_id_to_master[int(t_id)]
             else:
-                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier, source_id=s_id)
 
             if not cohort or not canonical_name:
                 skipped_sk += 1
@@ -505,7 +549,7 @@ for src in all_sources:
             if t_id and int(t_id) in team_id_to_master:
                 cohort, canonical_name = team_id_to_master[int(t_id)]
             else:
-                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier)
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier, source_id=s_id)
 
             if not cohort or not canonical_name:
                 skipped_gk += 1
