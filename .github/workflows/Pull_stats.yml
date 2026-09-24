@@ -22,10 +22,12 @@ jobs:
 
       - name: Run Stats Compiler
         env:
+          GAMESHEET_FIREBASE_KEY: ${{ secrets.GAMESHEET_FIREBASE_KEY }}
           GAMESHEET_EMAIL: ${{ secrets.GAMESHEET_EMAIL }}
           GAMESHEET_PASSWORD: ${{ secrets.GAMESHEET_PASSWORD }}
           GAMESHEET_COOKIE: ${{ secrets.GAMESHEET_COOKIE }}
           GAMESHEET_AUTH: ${{ secrets.GAMESHEET_AUTH }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python compile_stats.py
 
       - name: Commit and Push Updated Stats
