@@ -1,10 +1,10 @@
 /**
  * Netlify Serverless Function: generate-scout.js
- * Direct single-hop proxy calling gemini-3.6-flash with low thinking latency.
+ * High-speed single-call proxy to Google's gemini-3.6-flash endpoint.
  */
 
 exports.handler = async function (event, context) {
-    // 1. Handle CORS Preflight
+    // 1. Handle CORS preflight
     if (event.httpMethod === "OPTIONS") {
         return {
             statusCode: 200,
@@ -55,7 +55,7 @@ exports.handler = async function (event, context) {
             };
         }
 
-        // Direct single call to Google's designated Gemini 3.6 Flash endpoint
+        // Direct request to Google Gemini 3.6 Flash
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
 
         const response = await fetch(apiUrl, {
@@ -69,7 +69,6 @@ exports.handler = async function (event, context) {
                 ],
                 generationConfig: {
                     responseMimeType: "application/json",
-                    maxOutputTokens: 1000,
                     thinkingConfig: {
                         thinkingLevel: "low"
                     }
@@ -87,38 +86,26 @@ exports.handler = async function (event, context) {
         const candidate = data.candidates?.[0];
         const parts = candidate?.content?.parts || [];
 
-        // Isolate the final output text (ignoring thinking tokens)
+        // Exclude internal thinking parts and select the text payload
         const textPart = parts.find(p => p.text && !p.thought) || parts[parts.length - 1];
         let rawText = textPart?.text || "[]";
 
-        // Clean any residual markdown formatting
+        // Strip any residual markdown wrappers
         rawText = rawText.replace(/```json/gi, "").replace(/```/g, "").trim();
 
         let parsed;
         try {
             parsed = JSON.parse(rawText);
         } catch (parseErr) {
-            // Regex fallback if wrapped in extra text
-            const match = rawText.match(/\[\s*\{[\s\S]*\}\s*\]/);
+            const match = rawText.match(/\[[\s\S]*\]/);
             if (match) {
                 parsed = JSON.parse(match[0]);
             } else {
-                throw new Error("Could not parse AI response into JSON cards.");
+                throw new Error("Could not parse AI response into structured JSON.");
             }
         }
 
-        // Standardize output format
-        let cards = [];
-        if (Array.isArray(parsed)) {
-            cards = parsed;
-        } else if (parsed && Array.isArray(parsed.cards)) {
-            cards = parsed.cards;
-        } else if (parsed && typeof parsed === "object") {
-            cards = Object.entries(parsed).map(([k, v]) => ({
-                title: k,
-                data: typeof v === "string" ? v : JSON.stringify(v)
-            }));
-        }
+        const cards = Array.isArray(parsed) ? parsed : (parsed.cards || []);
 
         return {
             statusCode: 200,
