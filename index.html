@@ -2259,6 +2259,31 @@
         // 🧠 MATCHUP SCOUTING INSIGHTS ENGINE
         // =========================================================================
 
+        function getTimeUntilPacificMidnight() {
+            const now = new Date();
+            const ptFormatter = new Intl.DateTimeFormat("en-US", {
+                timeZone: "America/Los_Angeles",
+                year: "numeric", month: "numeric", day: "numeric",
+                hour: "numeric", minute: "numeric", second: "numeric",
+                hour12: false
+            });
+            const parts = ptFormatter.formatToParts(now);
+            const getPart = (type) => parseInt(parts.find(p => p.type === type).value, 10);
+            
+            const hour = getPart("hour");
+            const minute = getPart("minute");
+            const second = getPart("second");
+            
+            const totalSecondsInDay = 24 * 3600;
+            const currentSecondsPT = (hour % 24) * 3600 + minute * 60 + second;
+            const remainingSeconds = totalSecondsInDay - currentSecondsPT;
+            
+            const remainingHours = Math.floor(remainingSeconds / 3600);
+            const remainingMins = Math.floor((remainingSeconds % 3600) / 60);
+            
+            return `${remainingHours}h ${remainingMins}m (12:00 AM PT / 3:00 AM ET)`;
+        }
+
         async function fetchTeamAiIntelligence(oppTeamName, divName, forceRefresh = false) {
             const myTeamName = activeSelectedMyTeam || "";
             const isMatchup = myTeamName && myTeamName !== oppTeamName;
@@ -2267,7 +2292,7 @@
                 ? `${divName}__${cleanKey(myTeamName)}__VS__${cleanKey(oppTeamName)}`
                 : `${divName}__SOLO__${cleanKey(oppTeamName)}`;
 
-            // Check in-memory cache or persistent localStorage cache
+            // Check cache first
             if (!forceRefresh) {
                 if (aiInsightsCache[cacheKey]) {
                     renderAiCards(aiInsightsCache[cacheKey], oppTeamName, myTeamName, divName);
@@ -2299,6 +2324,8 @@
             const oppPayload = getOrCreateTeamProfile(divName, oppTeamName);
             if (!oppPayload) return;
 
+            const myPayload = isMatchup ? (getOrCreateTeamProfile(divName, myTeamName) || {}) : {};
+
             const oppCalculatedGp = oppPayload.gp > 0 ? oppPayload.gp : (oppPayload.games ? oppPayload.games.filter(g => g.status === 'final').length : 0);
             const oppGfAvg = oppCalculatedGp > 0 ? (oppPayload.gf / oppCalculatedGp).toFixed(1) : "0.0";
             const oppGaAvg = oppCalculatedGp > 0 ? (oppPayload.ga / oppCalculatedGp).toFixed(1) : "0.0";
@@ -2318,7 +2345,6 @@
 
             let myTeamContext = "";
             if (isMatchup) {
-                const myPayload = getOrCreateTeamProfile(divName, myTeamName) || {};
                 const myCalculatedGp = myPayload.gp > 0 ? myPayload.gp : (myPayload.games ? myPayload.games.filter(g => g.status === 'final').length : 0);
                 const myGf = myCalculatedGp > 0 ? (myPayload.gf / myCalculatedGp).toFixed(1) : "0.0";
                 const myGa = myCalculatedGp > 0 ? (myPayload.ga / myCalculatedGp).toFixed(1) : "0.0";
@@ -2372,47 +2398,36 @@ Return a JSON array of exactly 3 analytical cards:
 ]`;
 
             try {
-                // Direct native Netlify function endpoint invocation to prevent 404
                 const response = await fetch('/.netlify/functions/generate-scout', {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ prompt })
                 });
 
-                const data = await response.json();
+                const data = await response.json().catch(() => ({}));
+
+                // Check for daily quota exhaustion
+                const errMsg = String(data.error || "").toLowerCase();
+                if (response.status === 429 || data.quotaExceeded || errMsg.includes("quota")) {
+                    const timeRemaining = getTimeUntilPacificMidnight();
+                    aiContainer.innerHTML = `
+                        <div class="p-5 rounded-xl bg-slate-950 border border-amber-500/50 text-amber-300 text-xs font-mono space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-base">⏳</span>
+                                <span class="font-bold uppercase tracking-wider text-amber-400">Daily Quota Reached</span>
+                            </div>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                The daily Gemini API request limit has been reached for today.
+                            </p>
+                            <p class="text-slate-400 text-xs">
+                                <strong>Quota Refreshes:</strong> <span class="text-cyan-400 font-bold">${timeRemaining}</span>
+                            </p>
+                        </div>
+                    `;
+                    return;
+                }
 
                 if (!response.ok) {
-                    if (response.status === 429) {
-                        let waitSec = data.retryAfter || 30;
-                        aiContainer.innerHTML = `
-                            <div class="p-4 rounded-xl bg-amber-950/30 border border-amber-800 text-amber-300 text-xs font-mono space-y-2">
-                                <p class="font-bold">⏳ Free Tier Rate Limit Reached (20 requests/min)</p>
-                                <p class="text-slate-400">Google AI Studio quota window is resetting. Next retry unlocked in <span id="quota-timer" class="text-amber-400 font-bold">${waitSec}</span>s.</p>
-                                <div class="pt-1">
-                                    <button id="quota-retry-btn" disabled class="px-3 py-1 bg-slate-800 text-slate-500 font-bold rounded uppercase text-[10px] cursor-not-allowed">
-                                        Wait (${waitSec}s)
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-                        const timerInterval = setInterval(() => {
-                            waitSec--;
-                            const timerEl = document.getElementById("quota-timer");
-                            const btnEl = document.getElementById("quota-retry-btn");
-                            if (timerEl) timerEl.innerText = waitSec;
-                            if (btnEl) btnEl.innerText = `Wait (${waitSec}s)`;
-                            if (waitSec <= 0) {
-                                clearInterval(timerInterval);
-                                if (btnEl) {
-                                    btnEl.disabled = false;
-                                    btnEl.className = "px-3 py-1 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold rounded uppercase text-[10px] cursor-pointer";
-                                    btnEl.innerText = "Retry Now";
-                                    btnEl.onclick = () => fetchTeamAiIntelligence(oppTeamName, divName, true);
-                                }
-                            }
-                        }, 1000);
-                        return;
-                    }
                     throw new Error(data.error || `HTTP ${response.status}`);
                 }
 
@@ -2426,14 +2441,33 @@ Return a JSON array of exactly 3 analytical cards:
                     throw new Error("Invalid payload format received from scout server.");
                 }
             } catch (err) {
-                aiContainer.innerHTML = `
-                    <div class="p-4 rounded-xl bg-rose-950/30 border border-rose-800 text-rose-300 text-xs font-mono space-y-2">
-                        <p class="font-bold">⚠️ Scouting Report Unavailable: ${err.message}</p>
-                        <div class="pt-1">
-                            <button onclick="fetchTeamAiIntelligence('${oppTeamName}', '${divName}', true)" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold rounded uppercase text-[10px]">Retry</button>
+                const isQuota = err.message.toLowerCase().includes("quota") || err.message.includes("429");
+                if (isQuota) {
+                    const timeRemaining = getTimeUntilPacificMidnight();
+                    aiContainer.innerHTML = `
+                        <div class="p-5 rounded-xl bg-slate-950 border border-amber-500/50 text-amber-300 text-xs font-mono space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-base">⏳</span>
+                                <span class="font-bold uppercase tracking-wider text-amber-400">Daily Quota Reached</span>
+                            </div>
+                            <p class="text-slate-300 text-xs leading-relaxed">
+                                The daily Gemini API request limit has been reached for today.
+                            </p>
+                            <p class="text-slate-400 text-xs">
+                                <strong>Quota Refreshes:</strong> <span class="text-cyan-400 font-bold">${timeRemaining}</span>
+                            </p>
                         </div>
-                    </div>
-                `;
+                    `;
+                } else {
+                    aiContainer.innerHTML = `
+                        <div class="p-4 rounded-xl bg-rose-950/30 border border-rose-800 text-rose-300 text-xs font-mono space-y-2">
+                            <p class="font-bold">⚠️ Scouting Report Unavailable: ${err.message}</p>
+                            <div class="pt-1">
+                                <button onclick="fetchTeamAiIntelligence('${oppTeamName}', '${divName}', true)" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold rounded uppercase text-[10px]">Retry</button>
+                            </div>
+                        </div>
+                    `;
+                }
             }
         }
 
