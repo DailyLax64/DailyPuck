@@ -1,10 +1,270 @@
 {
-  "generated_at": "2026-09-23T14:06:54.975275+00:00",
-  "total_skaters": 331,
+  "generated_at": "2026-09-24T12:50:50.090634+00:00",
+  "total_skaters": 334,
   "total_goalies": 45,
   "total_standings_rows": 351,
-  "total_games": 246,
+  "total_games": 256,
   "skaters": [
+    {
+      "name": "KALEB BINGLEY",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "7",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 0,
+      "total_a": 3,
+      "total_pts": 3,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 3,
+          "pts": 3,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "ERIC LEGRAND",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "3",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 2,
+      "total_a": 1,
+      "total_pts": 3,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 2,
+          "a": 1,
+          "pts": 3,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CONNOR BONNEVILLE",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "93",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 1,
+      "total_a": 1,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MASON LEGUE",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "11",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 1,
+      "total_a": 1,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "WESTLEY ST-DENIS",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "94",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 1,
+      "total_a": 1,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "OWEN BEAUCLAIR",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "24",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "KANE COOPER",
+      "team": "Rideau St Lawrence Kings",
+      "team_id": 533211,
+      "jersey": "7",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "THOMAS LINDSAY",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "88",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JAMESON SUMMERS",
+      "team": "Rideau St Lawrence Kings",
+      "team_id": 533211,
+      "jersey": "9",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "NOAH WHELAN",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "63",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
     {
       "name": "LEVI AKESON",
       "team": "Ottawa Valley Silver Seven",
@@ -39,7 +299,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -49,7 +309,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -169,21 +429,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 4,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 4
         }
       ]
     },
@@ -318,32 +578,6 @@
       ]
     },
     {
-      "name": "OWEN BEAUCLAIR",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "24",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "MASON BEAUVAIS",
       "team": "Cumberland Jr Grads",
       "team_id": 533220,
@@ -400,32 +634,6 @@
       "team": "Cumberland Jr Grads",
       "team_id": 533220,
       "jersey": "18",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "KALEB BINGLEY",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "7",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -530,32 +738,6 @@
       "team": "Ottawa Sting",
       "team_id": 533216,
       "jersey": "9",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "CONNOR BONNEVILLE",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "93",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -793,21 +975,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -949,7 +1131,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -959,7 +1141,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -972,32 +1154,6 @@
       "team": "St Lawrence Steel",
       "team_id": 533221,
       "jersey": "10",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "KANE COOPER",
-      "team": "Rideau St Lawrence Kings",
-      "team_id": 533211,
-      "jersey": "7",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -1053,7 +1209,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -1063,7 +1219,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -1105,7 +1261,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -1115,7 +1271,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -1131,21 +1287,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -1469,21 +1625,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 12,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 12
         }
       ]
     },
@@ -1521,21 +1677,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -1703,7 +1859,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -1713,7 +1869,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -1859,7 +2015,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -1869,7 +2025,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -2145,7 +2301,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -2155,7 +2311,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -2405,21 +2561,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 12,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 12
         }
       ]
     },
@@ -2762,58 +2918,6 @@
       ]
     },
     {
-      "name": "ERIC LEGRAND",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "3",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "MASON LEGUE",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "11",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "EWAN LEIBBRANDT",
       "team": "Gloucester Rangers",
       "team_id": 533217,
@@ -2970,32 +3074,6 @@
       ]
     },
     {
-      "name": "THOMAS LINDSAY",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "88",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "TYLER LONG",
       "team": "Gloucester Rangers",
       "team_id": 533217,
@@ -3081,21 +3159,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -3182,6 +3260,32 @@
       "team": "Nepean Raiders",
       "team_id": 533218,
       "jersey": "93",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CHARLIE MATTE",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533215,
+      "jersey": "9",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -4043,21 +4147,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -4251,7 +4355,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -4261,7 +4365,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -4381,21 +4485,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -4634,32 +4738,6 @@
       ]
     },
     {
-      "name": "WESTLEY ST-DENIS",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "94",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "LEO STEPHEN",
       "team": "Ottawa Valley Silver Seven",
       "team_id": 533181,
@@ -4692,32 +4770,6 @@
       "jersey": "11",
       "position": "F",
       "age": "U11",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "JAMESON SUMMERS",
-      "team": "Rideau St Lawrence Kings",
-      "team_id": 533211,
-      "jersey": "9",
-      "position": "F",
-      "age": "U14",
       "tier": "AA",
       "total_gp": 0,
       "total_g": 0,
@@ -4823,7 +4875,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -4833,7 +4885,7 @@
           "source_id": "15454",
           "source_name": "HEO AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -5079,32 +5131,6 @@
       "name": "JACK WERELEY",
       "team": "Eastern Ontario Cobras",
       "team_id": 533213,
-      "jersey": "63",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "NOAH WHELAN",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
       "jersey": "63",
       "position": "F",
       "age": "U14",
@@ -6428,6 +6454,32 @@
       ]
     },
     {
+      "name": "DAVID GRANOVSKY",
+      "team": "Duffield Devils",
+      "team_id": 559236,
+      "jersey": "10",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LUKE GREENBERG",
       "team": "Toronto Attack",
       "team_id": 559243,
@@ -7134,6 +7186,32 @@
       "team": "Ted Reeve Thunder",
       "team_id": 559242,
       "jersey": "21",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "LUCA MIODRAG",
+      "team": "Duffield Devils",
+      "team_id": 559236,
+      "jersey": "93",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -8614,6 +8692,38 @@
   ],
   "goalies": [
     {
+      "name": "HAYDEN FLARO",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "39",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "AHSTON ANDERSON",
       "team": "Ottawa Valley Silver Seven",
       "team_id": 533181,
@@ -8714,38 +8824,6 @@
       "team": "Upper Ottawa Valley Aces",
       "team_id": 533215,
       "jersey": "89",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "HAYDEN FLARO",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "39",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -8934,106 +9012,10 @@
       ]
     },
     {
-      "name": "EMERSON MCINTYRE",
-      "team": "Seaway Valley Rapids",
-      "team_id": 533212,
-      "jersey": "37",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "OLIVER ORR",
-      "team": "Rideau St Lawrence Kings",
-      "team_id": 533211,
-      "jersey": "68",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "JAYDEN OSYPIEWSKI",
       "team": "St Lawrence Steel",
       "team_id": 533221,
       "jersey": "35",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "LIAM PETERS",
-      "team": "Rideau St Lawrence Kings",
-      "team_id": 533211,
-      "jersey": "88",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -10046,6 +10028,102 @@
           "ga": 0,
           "min": 0,
           "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "EMERSON MCINTYRE",
+      "team": "Seaway Valley Rapids",
+      "team_id": 533212,
+      "jersey": "37",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_ga": 1,
+      "total_min": 0,
+      "total_gaa": 1.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 1,
+          "min": 0,
+          "gaa": 1.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "LIAM PETERS",
+      "team": "Rideau St Lawrence Kings",
+      "team_id": 533211,
+      "jersey": "88",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_ga": 2,
+      "total_min": 0,
+      "total_gaa": 2.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 2,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "OLIVER ORR",
+      "team": "Rideau St Lawrence Kings",
+      "team_id": 533211,
+      "jersey": "68",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_ga": 4,
+      "total_min": 0,
+      "total_gaa": 4.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 4,
+          "min": 0,
+          "gaa": 4.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -13531,31 +13609,6 @@
       "shga": 1
     },
     {
-      "team_id": 533211,
-      "team_name": "Rideau St Lawrence Kings",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15454",
-      "source_name": "HEO AA",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
       "team_id": 533212,
       "team_name": "Seaway Valley Rapids",
       "division_title": "U14 AA",
@@ -13564,19 +13617,19 @@
       "source_id": "15454",
       "source_name": "HEO AA",
       "source_type": "league",
-      "gp": 0,
-      "w": 0,
+      "gp": 1,
+      "w": 1,
       "l": 0,
       "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
+      "pts": 2,
+      "gf": 6,
+      "ga": 1,
+      "diff": 5,
+      "pim": 10,
+      "ppg": 1,
+      "ppo": 2,
       "ppga": 0,
-      "ppoa": 0,
+      "ppoa": 1,
       "shg": 0,
       "shga": 0
     },
@@ -13802,6 +13855,31 @@
       "ppo": 0,
       "ppga": 0,
       "ppoa": 0,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 533211,
+      "team_name": "Rideau St Lawrence Kings",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15454",
+      "source_name": "HEO AA",
+      "source_type": "league",
+      "gp": 1,
+      "w": 0,
+      "l": 1,
+      "t": 0,
+      "pts": 0,
+      "gf": 1,
+      "ga": 6,
+      "diff": -5,
+      "pim": 32,
+      "ppg": 0,
+      "ppo": 1,
+      "ppga": 1,
+      "ppoa": 2,
       "shg": 0,
       "shga": 0
     },
@@ -14089,15 +14167,15 @@
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
-      "gp": 1,
-      "w": 1,
+      "gp": 2,
+      "w": 2,
       "l": 0,
       "t": 0,
       "pts": 0,
-      "gf": 15,
-      "ga": 1,
-      "diff": 14,
-      "pim": 4,
+      "gf": 32,
+      "ga": 2,
+      "diff": 30,
+      "pim": 6,
       "ppg": 0,
       "ppo": 0,
       "ppga": 0,
@@ -14289,19 +14367,19 @@
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
-      "gp": 1,
+      "gp": 2,
       "w": 1,
-      "l": 0,
+      "l": 1,
       "t": 0,
       "pts": 0,
-      "gf": 7,
-      "ga": 0,
-      "diff": 7,
-      "pim": 8,
+      "gf": 9,
+      "ga": 3,
+      "diff": 6,
+      "pim": 14,
       "ppg": 0,
-      "ppo": 2,
+      "ppo": 3,
       "ppga": 0,
-      "ppoa": 4,
+      "ppoa": 7,
       "shg": 1,
       "shga": 0
     },
@@ -14506,6 +14584,31 @@
       "shga": 2
     },
     {
+      "team_id": 541014,
+      "team_name": "Milton Winterhawks",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 2,
+      "w": 1,
+      "l": 1,
+      "t": 0,
+      "pts": 0,
+      "gf": 6,
+      "ga": 5,
+      "diff": 1,
+      "pim": 22,
+      "ppg": 2,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 1
+    },
+    {
       "team_id": 552111,
       "team_name": "Stouffville Clippers",
       "division_title": "U11 AA",
@@ -14556,8 +14659,8 @@
       "shga": 0
     },
     {
-      "team_id": 559089,
-      "team_name": "Woodstock Jr Navy Vets",
+      "team_id": 559085,
+      "team_name": "London Jr Knights (White)",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -14881,8 +14984,8 @@
       "shga": 0
     },
     {
-      "team_id": 559085,
-      "team_name": "London Jr Knights (White)",
+      "team_id": 559087,
+      "team_name": "Stratford Warriors",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -14906,8 +15009,8 @@
       "shga": 0
     },
     {
-      "team_id": 559087,
-      "team_name": "Stratford Warriors",
+      "team_id": 559089,
+      "team_name": "Woodstock Jr Navy Vets",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -14983,31 +15086,6 @@
     {
       "team_id": 559094,
       "team_name": "Mt Brydges Cougars",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 565788,
-      "team_name": "Mississauga Terriers",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -15156,31 +15234,6 @@
       "shga": 1
     },
     {
-      "team_id": 541014,
-      "team_name": "Milton Winterhawks",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 1,
-      "w": 0,
-      "l": 1,
-      "t": 0,
-      "pts": 0,
-      "gf": 2,
-      "ga": 4,
-      "diff": -2,
-      "pim": 16,
-      "ppg": 0,
-      "ppo": 1,
-      "ppga": 0,
-      "ppoa": 3,
-      "shg": 0,
-      "shga": 0
-    },
-    {
       "team_id": 541011,
       "team_name": "Oakville Rangers",
       "division_title": "U11 AA",
@@ -15202,6 +15255,31 @@
       "ppo": 2,
       "ppga": 1,
       "ppoa": 8,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 541008,
+      "team_name": "Guelph Gryphons",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 2,
+      "w": 1,
+      "l": 1,
+      "t": 0,
+      "pts": 0,
+      "gf": 4,
+      "ga": 7,
+      "diff": -3,
+      "pim": 30,
+      "ppg": 1,
+      "ppo": 8,
+      "ppga": 2,
+      "ppoa": 10,
       "shg": 0,
       "shga": 0
     },
@@ -15256,6 +15334,31 @@
       "shga": 0
     },
     {
+      "team_id": 565788,
+      "team_name": "Mississauga Terriers",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 1,
+      "w": 0,
+      "l": 1,
+      "t": 0,
+      "pts": 0,
+      "gf": 1,
+      "ga": 4,
+      "diff": -3,
+      "pim": 10,
+      "ppg": 0,
+      "ppo": 2,
+      "ppga": 2,
+      "ppoa": 4,
+      "shg": 1,
+      "shga": 0
+    },
+    {
       "team_id": 541009,
       "team_name": "Halton Hills Thunder",
       "division_title": "U11 AA",
@@ -15277,31 +15380,6 @@
       "ppo": 6,
       "ppga": 1,
       "ppoa": 2,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 541008,
-      "team_name": "Guelph Gryphons",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 1,
-      "w": 0,
-      "l": 1,
-      "t": 0,
-      "pts": 0,
-      "gf": 1,
-      "ga": 5,
-      "diff": -4,
-      "pim": 18,
-      "ppg": 1,
-      "ppo": 5,
-      "ppga": 2,
-      "ppoa": 9,
       "shg": 0,
       "shga": 0
     },
@@ -15439,14 +15517,14 @@
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
-      "gp": 1,
+      "gp": 2,
       "w": 0,
-      "l": 1,
+      "l": 2,
       "t": 0,
       "pts": 0,
-      "gf": 1,
-      "ga": 15,
-      "diff": -14,
+      "gf": 2,
+      "ga": 32,
+      "diff": -30,
       "pim": 0,
       "ppg": 0,
       "ppo": 2,
@@ -15656,6 +15734,31 @@
       "shga": 0
     },
     {
+      "team_id": 557704,
+      "team_name": "Cambridge Hawks",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 1,
+      "w": 1,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 5,
+      "ga": 3,
+      "diff": 2,
+      "pim": 10,
+      "ppg": 1,
+      "ppo": 6,
+      "ppga": 1,
+      "ppoa": 5,
+      "shg": 1,
+      "shga": 1
+    },
+    {
       "team_id": 557786,
       "team_name": "Mississauga Terriers",
       "division_title": "U14 AA",
@@ -15731,31 +15834,6 @@
       "shga": 0
     },
     {
-      "team_id": 558395,
-      "team_name": "Cumberland Jr Grads",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 1,
-      "w": 1,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 3,
-      "ga": 2,
-      "diff": 1,
-      "pim": 6,
-      "ppg": 0,
-      "ppo": 4,
-      "ppga": 0,
-      "ppoa": 1,
-      "shg": 1,
-      "shga": 0
-    },
-    {
       "team_id": 552214,
       "team_name": "Barrie Colts",
       "division_title": "U14 AA",
@@ -15778,6 +15856,31 @@
       "ppga": 1,
       "ppoa": 3,
       "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 558395,
+      "team_name": "Cumberland Jr Grads",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 1,
+      "w": 1,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 3,
+      "ga": 2,
+      "diff": 1,
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 1,
+      "shg": 1,
       "shga": 0
     },
     {
@@ -15851,31 +15954,6 @@
       "ppg": 1,
       "ppo": 4,
       "ppga": 0,
-      "ppoa": 4,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 541208,
-      "team_name": "Centre Wellington Fusion",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 1,
-      "w": 0,
-      "l": 0,
-      "t": 1,
-      "pts": 0,
-      "gf": 3,
-      "ga": 3,
-      "diff": 0,
-      "pim": 8,
-      "ppg": 0,
-      "ppo": 4,
-      "ppga": 1,
       "ppoa": 4,
       "shg": 0,
       "shga": 0
@@ -15981,8 +16059,8 @@
       "shga": 0
     },
     {
-      "team_id": 557704,
-      "team_name": "Cambridge Hawks",
+      "team_id": 557706,
+      "team_name": "London Jr Knights (White)",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -16281,31 +16359,6 @@
       "shga": 0
     },
     {
-      "team_id": 557706,
-      "team_name": "London Jr Knights (White)",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
       "team_id": 557707,
       "team_name": "Sarnia Jr Sting",
       "division_title": "U14 AA",
@@ -16581,6 +16634,31 @@
       "shga": 0
     },
     {
+      "team_id": 541208,
+      "team_name": "Centre Wellington Fusion",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 2,
+      "w": 0,
+      "l": 1,
+      "t": 1,
+      "pts": 0,
+      "gf": 6,
+      "ga": 8,
+      "diff": -2,
+      "pim": 20,
+      "ppg": 1,
+      "ppo": 9,
+      "ppga": 2,
+      "ppoa": 10,
+      "shg": 1,
+      "shga": 1
+    },
+    {
       "team_id": 557711,
       "team_name": "St Thomas Jr Stars",
       "division_title": "U14 AA",
@@ -16606,31 +16684,6 @@
       "shga": 0
     },
     {
-      "team_id": 552213,
-      "team_name": "TNT Tornados",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15556",
-      "source_name": "OMHA Exhibition",
-      "source_type": "league",
-      "gp": 2,
-      "w": 0,
-      "l": 1,
-      "t": 1,
-      "pts": 0,
-      "gf": 3,
-      "ga": 5,
-      "diff": -2,
-      "pim": 24,
-      "ppg": 0,
-      "ppo": 3,
-      "ppga": 2,
-      "ppoa": 8,
-      "shg": 0,
-      "shga": 0
-    },
-    {
       "team_id": 541199,
       "team_name": "Halton Hills Thunder",
       "division_title": "U14 AA",
@@ -16652,6 +16705,31 @@
       "ppo": 3,
       "ppga": 2,
       "ppoa": 3,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 552213,
+      "team_name": "TNT Tornados",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "gp": 2,
+      "w": 0,
+      "l": 1,
+      "t": 1,
+      "pts": 0,
+      "gf": 3,
+      "ga": 5,
+      "diff": -2,
+      "pim": 24,
+      "ppg": 0,
+      "ppo": 3,
+      "ppga": 2,
+      "ppoa": 8,
       "shg": 0,
       "shga": 0
     },
@@ -21997,37 +22075,157 @@
       "date": "Sep 23, 2026",
       "time": "6:30 PM",
       "timestamp": "2026-09-23T22:30:00Z",
-      "status": "scheduled",
-      "location": "",
+      "status": "final",
+      "location": "Innisfil Rec (Red)",
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
       "home_id": 552115,
       "home_name": "South Simcoe Storm",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 17,
+      "home_result": "W",
       "visitor_id": 552114,
       "visitor_name": "Markham Waxers",
-      "visitor_goals": null,
-      "visitor_result": null,
+      "visitor_goals": 1,
+      "visitor_result": "L",
       "division": "U11 AA"
+    },
+    {
+      "game_id": 3027442,
+      "date": "Sep 23, 2026",
+      "time": "7:00 PM",
+      "timestamp": "2026-09-23T23:00:00Z",
+      "status": "final",
+      "location": "Sherwood",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541014,
+      "home_name": "Milton Winterhawks",
+      "home_goals": 4,
+      "home_result": "W",
+      "visitor_id": 565788,
+      "visitor_name": "Mississauga Terriers",
+      "visitor_goals": 1,
+      "visitor_result": "L",
+      "division": "U11 AA"
+    },
+    {
+      "game_id": 3027516,
+      "date": "Sep 23, 2026",
+      "time": "6:00 PM",
+      "timestamp": "2026-09-23T23:00:00Z",
+      "status": "final",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541020,
+      "home_name": "Centre Wellington Fusion",
+      "home_goals": 2,
+      "home_result": "L",
+      "visitor_id": 541008,
+      "visitor_name": "Guelph Gryphons",
+      "visitor_goals": 3,
+      "visitor_result": "W",
+      "division": "U11 AA"
+    },
+    {
+      "game_id": 3027470,
+      "date": "Sep 23, 2026",
+      "time": "6:40 PM",
+      "timestamp": "2026-09-23T23:40:00Z",
+      "status": "final",
+      "location": "",
+      "source_id": "15454",
+      "source_name": "HEO AA",
+      "source_type": "league",
+      "home_id": 533212,
+      "home_name": "Seaway Valley Rapids",
+      "home_goals": 6,
+      "home_result": "W",
+      "visitor_id": 533211,
+      "visitor_name": "Rideau St Lawrence Kings",
+      "visitor_goals": 1,
+      "visitor_result": "L",
+      "division": "U14 AA"
     },
     {
       "game_id": 3025715,
       "date": "Sep 23, 2026",
       "time": "8:00 PM",
       "timestamp": "2026-09-24T00:00:00Z",
-      "status": "scheduled",
-      "location": "",
+      "status": "final",
+      "location": "Fergus (A)",
       "source_id": "15556",
       "source_name": "OMHA Exhibition",
       "source_type": "league",
       "home_id": 541208,
       "home_name": "Centre Wellington Fusion",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 3,
+      "home_result": "L",
       "visitor_id": 557704,
       "visitor_name": "Cambridge Hawks",
+      "visitor_goals": 5,
+      "visitor_result": "W",
+      "division": "U14 AA"
+    },
+    {
+      "game_id": 3027556,
+      "date": "Sep 24, 2026",
+      "time": "6:30 PM",
+      "timestamp": "2026-09-24T22:30:00Z",
+      "status": "scheduled",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541018,
+      "home_name": "Hamilton Steel",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 559094,
+      "visitor_name": "Mt Brydges Cougars",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U11 AA"
+    },
+    {
+      "game_id": 3027543,
+      "date": "Sep 24, 2026",
+      "time": "7:00 PM",
+      "timestamp": "2026-09-24T23:00:00Z",
+      "status": "scheduled",
+      "location": "",
+      "source_id": "15454",
+      "source_name": "HEO AA",
+      "source_type": "league",
+      "home_id": 533186,
+      "home_name": "Kanata Blazers",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 533184,
+      "visitor_name": "Gloucester Rangers",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U11 AA"
+    },
+    {
+      "game_id": 3027782,
+      "date": "Sep 24, 2026",
+      "time": "8:00 PM",
+      "timestamp": "2026-09-25T00:00:00Z",
+      "status": "scheduled",
+      "location": "",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 541197,
+      "home_name": "Milton Winterhawks",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 557786,
+      "visitor_name": "Mississauga Terriers",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
@@ -22933,21 +23131,21 @@
       "division": "U14 AA"
     },
     {
-      "game_id": 3002160,
+      "game_id": 3026415,
       "date": "Sep 28, 2026",
       "time": "6:00 PM",
       "timestamp": "2026-09-28T22:00:00Z",
       "status": "scheduled",
-      "location": "",
-      "source_id": "15448",
-      "source_name": "Alliance AA",
+      "location": "Wayne Gretzky Sports Complex (Rink 3)",
+      "source_id": "15559",
+      "source_name": "Alliance Exhibition",
       "source_type": "league",
-      "home_id": 533266,
-      "home_name": "Kitchener Jr Rangers (Red)",
+      "home_id": 541451,
+      "home_name": "Brantford 99ers",
       "home_goals": null,
       "home_result": null,
-      "visitor_id": 532688,
-      "visitor_name": "Brantford 99ers",
+      "visitor_id": 541470,
+      "visitor_name": "Kitchener Jr Rangers (Red)",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U11 AA"
@@ -23173,6 +23371,26 @@
       "division": "U11 AA"
     },
     {
+      "game_id": 3027544,
+      "date": "Sep 30, 2026",
+      "time": "6:30 PM",
+      "timestamp": "2026-09-30T22:30:00Z",
+      "status": "scheduled",
+      "location": "Earl Armstrong (Earl Armstrong)",
+      "source_id": "15454",
+      "source_name": "HEO AA",
+      "source_type": "league",
+      "home_id": 533217,
+      "home_name": "Gloucester Rangers",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 533218,
+      "visitor_name": "Nepean Raiders",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U14 AA"
+    },
+    {
       "game_id": 3018970,
       "date": "Sep 30, 2026",
       "time": "7:30 PM",
@@ -23248,6 +23466,26 @@
       "home_result": null,
       "visitor_id": 559266,
       "visitor_name": "East Enders Ticats",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U14 AA"
+    },
+    {
+      "game_id": 3027051,
+      "date": "Oct 1, 2026",
+      "time": "7:45 PM",
+      "timestamp": "2026-10-01T23:45:00Z",
+      "status": "scheduled",
+      "location": "Ray Friel Recreation Complex Pad #3",
+      "source_id": "15454",
+      "source_name": "HEO AA",
+      "source_type": "league",
+      "home_id": 533220,
+      "home_name": "Cumberland Jr Grads",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 533219,
+      "visitor_name": "Kanata Blazers",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
@@ -23751,6 +23989,46 @@
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
+    },
+    {
+      "game_id": 3026218,
+      "date": "Oct 5, 2026",
+      "time": "6:00 PM",
+      "timestamp": "2026-10-05T22:00:00Z",
+      "status": "scheduled",
+      "location": "Aurora Recreation Complex ",
+      "source_id": "15556",
+      "source_name": "OMHA Exhibition",
+      "source_type": "league",
+      "home_id": 552212,
+      "home_name": "Aurora Tigers",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 552210,
+      "visitor_name": "Newmarket Renegades",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U14 AA"
+    },
+    {
+      "game_id": 3027056,
+      "date": "Oct 6, 2026",
+      "time": "7:45 PM",
+      "timestamp": "2026-10-06T23:45:00Z",
+      "status": "scheduled",
+      "location": "Ray Friel Recreation Complex Pad #3",
+      "source_id": "15454",
+      "source_name": "HEO AA",
+      "source_type": "league",
+      "home_id": 533220,
+      "home_name": "Cumberland Jr Grads",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 533212,
+      "visitor_name": "Seaway Valley Rapids",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U14 AA"
     }
   ],
   "master_teams": {
@@ -23770,7 +24048,7 @@
         "mhr_record": "0-0-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Aurora Tigers": {
         "aliases": [
@@ -23784,7 +24062,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Barrie Colts": {
         "aliases": [
@@ -23795,10 +24073,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-1",
+        "mhr_record": "0-5-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Belleville Jr Bulls": {
         "aliases": [
@@ -23814,7 +24092,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Brampton 45s": {
         "aliases": [
@@ -23829,7 +24107,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Brantford 99ers": {
         "aliases": [
@@ -23840,10 +24118,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "3-2-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Burlington Eagles": {
         "aliases": [
@@ -23855,10 +24133,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "5-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Cambridge Hawks": {
         "aliases": [
@@ -23881,7 +24159,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Clarington Toros": {
         "aliases": [
@@ -23893,10 +24171,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
+        "mhr_record": "2-3-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Collingwood Jr Blues": {
         "aliases": [
@@ -23911,7 +24189,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Copper Cliff Reds": {
         "aliases": [
@@ -23924,7 +24202,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Cumberland Jr Grads": {
         "aliases": [
@@ -23945,7 +24223,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Dryden Paperkings": {
         "aliases": [
@@ -23958,7 +24236,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Duffield Devils": {
         "aliases": [
@@ -23971,7 +24249,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "East Enders Ticats": {
         "aliases": [
@@ -23984,7 +24262,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Eastern Ontario Cobras": {
         "aliases": [
@@ -24005,7 +24283,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Faustina Toros": {
         "aliases": [
@@ -24018,7 +24296,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Flamborough Sabres": {
         "aliases": [
@@ -24029,10 +24307,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-2-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Fort Frances Canadians": {
         "aliases": [
@@ -24045,7 +24323,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Glancaster Bombers": {
         "aliases": [
@@ -24056,10 +24334,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-2-2",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Gloucester Rangers": {
         "aliases": [
@@ -24072,7 +24350,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Guelph Gryphons": {
         "aliases": [
@@ -24083,10 +24361,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Halton Hills Thunder": {
         "aliases": [
@@ -24097,10 +24375,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "2-3-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Hamilton Steel": {
         "aliases": [
@@ -24112,10 +24390,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-4-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Humber Valley Sharks": {
         "aliases": [
@@ -24126,10 +24404,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "3-2-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "KC Sabres": {
         "aliases": [
@@ -24142,7 +24420,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Kanata Blazers": {
         "aliases": [
@@ -24155,7 +24433,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Kenora Thistles": {
         "aliases": [
@@ -24168,7 +24446,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "King Rebellion": {
         "aliases": [
@@ -24179,10 +24457,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-2-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Kingston Canadians": {
         "aliases": [
@@ -24197,7 +24475,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Kitchener Jr Rangers (Red)": {
         "aliases": [
@@ -24210,10 +24488,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "6-0-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Leaside Flames": {
         "aliases": [
@@ -24226,7 +24504,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "London Jr Knights (Green)": {
         "aliases": [
@@ -24239,10 +24517,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "6-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "London Jr Knights (White)": {
         "aliases": [
@@ -24257,7 +24535,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Markham Islanders": {
         "aliases": [
@@ -24270,7 +24548,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Markham Waxers": {
         "aliases": [
@@ -24284,7 +24562,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Milton Winterhawks": {
         "aliases": [
@@ -24298,7 +24576,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga Beast": {
         "aliases": [
@@ -24308,10 +24586,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-2-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga Jets": {
         "aliases": [
@@ -24324,7 +24602,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga North Stars": {
         "aliases": [
@@ -24337,7 +24615,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga Terriers": {
         "aliases": [
@@ -24350,7 +24628,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mt Brydges Cougars": {
         "aliases": [
@@ -24367,7 +24645,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Nepean Raiders": {
         "aliases": [
@@ -24380,7 +24658,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Newmarket Renegades": {
         "aliases": [
@@ -24394,7 +24672,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Niagara Falls Canucks": {
         "aliases": [
@@ -24405,10 +24683,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-3-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Nickel City Cubs": {
         "aliases": [
@@ -24421,7 +24699,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Norfolk Knights": {
         "aliases": [
@@ -24432,10 +24710,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "2-2-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North Bay Trappers": {
         "aliases": [
@@ -24448,7 +24726,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North Durham Warriors": {
         "aliases": [
@@ -24462,7 +24740,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North End Flames": {
         "aliases": [
@@ -24475,7 +24753,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North Toronto": {
         "aliases": [
@@ -24488,7 +24766,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North York Knights": {
         "aliases": [
@@ -24501,7 +24779,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Northumberland Nighthawks": {
         "aliases": [
@@ -24516,7 +24794,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Oakville Rangers": {
         "aliases": [
@@ -24531,10 +24809,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
+        "mhr_record": "1-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Orangeville Flyers": {
         "aliases": [
@@ -24548,7 +24826,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Oshawa Generals": {
         "aliases": [
@@ -24563,7 +24841,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Ottawa Sting": {
         "aliases": [
@@ -24576,7 +24854,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Ottawa Valley Silver Seven": {
         "aliases": [
@@ -24589,7 +24867,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Peterborough Petes": {
         "aliases": [
@@ -24604,7 +24882,7 @@
         "mhr_record": "0-1-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Quinte West Golden Hawks": {
         "aliases": [
@@ -24616,10 +24894,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "3-3-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Red Lake Rockets": {
         "aliases": [
@@ -24632,7 +24910,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Richmond Hill Jaguars": {
         "aliases": [
@@ -24643,10 +24921,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-4-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Rideau St Lawrence Kings": {
         "aliases": [
@@ -24677,7 +24955,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Scarborough Young Bruins": {
         "aliases": [
@@ -24690,7 +24968,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Seaway Valley Rapids": {
         "aliases": [
@@ -24703,7 +24981,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Sioux Lookout Jr Bombers": {
         "aliases": [
@@ -24716,7 +24994,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Soo Jr Greyhounds": {
         "aliases": [
@@ -24729,7 +25007,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "South Simcoe Storm": {
         "aliases": [
@@ -24743,7 +25021,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "St Catharines Jr Falcons": {
         "aliases": [
@@ -24762,10 +25040,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "2-0-0",
+        "mhr_record": "5-2-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "St Lawrence Steel": {
         "aliases": [
@@ -24790,7 +25068,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Stoney Creek Warriors": {
         "aliases": [
@@ -24804,7 +25082,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Stouffville Clippers": {
         "aliases": [
@@ -24818,7 +25096,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Stratford Warriors": {
         "aliases": [
@@ -24840,7 +25118,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Sudbury Wolves": {
         "aliases": [
@@ -24851,10 +25129,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-2-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Ted Reeve Thunder": {
         "aliases": [
@@ -24867,7 +25145,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Thunder Bay Elks": {
         "aliases": [
@@ -24880,7 +25158,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Timmins North Stars": {
         "aliases": [
@@ -24894,7 +25172,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "TNT Tornados": {
         "aliases": [
@@ -24910,7 +25188,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Toronto Aeros": {
         "aliases": [
@@ -24923,7 +25201,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Toronto Attack": {
         "aliases": [
@@ -24936,7 +25214,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Toronto Eagles": {
         "aliases": [
@@ -24949,7 +25227,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Toronto Wolverines": {
         "aliases": [
@@ -24962,7 +25240,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Upper Ottawa Valley Aces": {
         "aliases": [
@@ -24975,7 +25253,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Upper York Admirals": {
         "aliases": [
@@ -24989,7 +25267,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Vaughan Panthers": {
         "aliases": [
@@ -25002,7 +25280,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Vaughan Rangers": {
         "aliases": [
@@ -25015,7 +25293,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Volunteer Pool Bearcats": {
         "aliases": [
@@ -25028,7 +25306,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Waterloo Wolves": {
         "aliases": [
@@ -25039,10 +25317,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "6-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "West Mall Lightning": {
         "aliases": [
@@ -25053,10 +25331,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-3-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "West Niagara Flying Aces": {
         "aliases": [
@@ -25067,10 +25345,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-1-0",
+        "mhr_record": "3-3-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Westfort Rangers": {
         "aliases": [
@@ -25083,7 +25361,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Whitby Wildcats": {
         "aliases": [
@@ -25102,7 +25380,7 @@
         "mhr_record": "0-0-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Woodstock Jr Navy Vets": {
         "aliases": [
@@ -25113,10 +25391,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-2-2",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       }
     },
     "U14 AA": {
@@ -25135,7 +25413,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Aurora Tigers": {
         "aliases": [
@@ -25146,10 +25424,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "2-3-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Barrie Colts": {
         "aliases": [
@@ -25163,7 +25441,7 @@
         "mhr_record": "1-0-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Belleville Jr Bulls": {
         "aliases": [
@@ -25179,7 +25457,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Brampton 45s": {
         "aliases": [
@@ -25194,7 +25472,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Brantford 99ers": {
         "aliases": [
@@ -25208,7 +25486,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Burlington Eagles": {
         "aliases": [
@@ -25223,7 +25501,7 @@
         "mhr_record": "0-1-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Caledon Hawks": {
         "aliases": [
@@ -25234,10 +25512,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-4-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Cambridge Hawks": {
         "aliases": [
@@ -25260,7 +25538,7 @@
         "mhr_record": "0-0-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Clarington Toros": {
         "aliases": [
@@ -25272,10 +25550,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
+        "mhr_record": "3-2-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Collingwood Jr Blues": {
         "aliases": [
@@ -25290,7 +25568,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Copper Cliff Reds": {
         "aliases": [
@@ -25303,7 +25581,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Cumberland Jr Grads": {
         "aliases": [
@@ -25314,10 +25592,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Duffield Devils": {
         "aliases": [
@@ -25327,10 +25605,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-2-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "East Enders Ticats": {
         "aliases": [
@@ -25343,7 +25621,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Eastern Ontario Cobras": {
         "aliases": [
@@ -25357,7 +25635,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Faustina Toros": {
         "aliases": [
@@ -25370,7 +25648,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Flamborough Sabres": {
         "aliases": [
@@ -25381,10 +25659,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "2-3-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Forest Hill Force": {
         "aliases": [
@@ -25411,7 +25689,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Gloucester Rangers": {
         "aliases": [
@@ -25421,10 +25699,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Greater Toronto Capitals": {
         "aliases": [
@@ -25438,7 +25716,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Guelph Gryphons": {
         "aliases": [
@@ -25449,10 +25727,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Halton Hills Thunder": {
         "aliases": [
@@ -25463,10 +25741,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Hamilton Steel": {
         "aliases": [
@@ -25481,7 +25759,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Hespeler Shamrocks": {
         "aliases": [
@@ -25508,7 +25786,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Kanata Blazers": {
         "aliases": [
@@ -25521,7 +25799,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "King Rebellion": {
         "aliases": [
@@ -25535,7 +25813,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Kingston Canadians": {
         "aliases": [
@@ -25547,10 +25825,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Kitchener Jr Rangers (Red)": {
         "aliases": [
@@ -25566,7 +25844,7 @@
         "mhr_record": "1-0-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Leaside Flames": {
         "aliases": [
@@ -25579,7 +25857,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "London Jr Knights (Green)": {
         "aliases": [
@@ -25592,10 +25870,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "London Jr Knights (White)": {
         "aliases": [
@@ -25607,10 +25885,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-1",
+        "mhr_record": "3-2-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Markham Islanders": {
         "aliases": [
@@ -25623,7 +25901,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Markham Waxers": {
         "aliases": [
@@ -25637,7 +25915,7 @@
         "mhr_record": "0-0-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Milton Winterhawks": {
         "aliases": [
@@ -25648,10 +25926,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "5-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga Beast": {
         "aliases": [
@@ -25661,10 +25939,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-2-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga North Stars": {
         "aliases": [
@@ -25677,7 +25955,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga Rattlers": {
         "aliases": [
@@ -25690,7 +25968,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mississauga Terriers": {
         "aliases": [
@@ -25700,10 +25978,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Mt Brydges Cougars": {
         "aliases": [
@@ -25720,7 +25998,7 @@
         "mhr_record": "0-0-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Nepean Raiders": {
         "aliases": [
@@ -25730,10 +26008,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Newmarket Renegades": {
         "aliases": [
@@ -25747,7 +26025,7 @@
         "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Niagara Falls Canucks": {
         "aliases": [
@@ -25758,10 +26036,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "3-1-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Nickel City Cubs": {
         "aliases": [
@@ -25774,7 +26052,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Norfolk Knights": {
         "aliases": [
@@ -25788,7 +26066,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North Bay Trappers": {
         "aliases": [
@@ -25801,7 +26079,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North Durham Warriors": {
         "aliases": [
@@ -25812,10 +26090,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-1",
+        "mhr_record": "1-3-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North Toronto": {
         "aliases": [
@@ -25825,10 +26103,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "6-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "North York Knights": {
         "aliases": [
@@ -25841,7 +26119,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Northumberland Nighthawks": {
         "aliases": [
@@ -25853,10 +26131,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "0-3-2",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Oakville Rangers": {
         "aliases": [
@@ -25871,10 +26149,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
+        "mhr_record": "1-0-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Orangeville Flyers": {
         "aliases": [
@@ -25885,10 +26163,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Oshawa Generals": {
         "aliases": [
@@ -25903,7 +26181,7 @@
         "mhr_record": "2-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Ottawa Sting": {
         "aliases": [
@@ -25913,10 +26191,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Ottawa Valley Silver Seven": {
         "aliases": [
@@ -25926,10 +26204,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "4-2-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Peterborough Petes": {
         "aliases": [
@@ -25944,7 +26222,7 @@
         "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Quinte West Golden Hawks": {
         "aliases": [
@@ -25959,7 +26237,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Rideau St Lawrence Kings": {
         "aliases": [
@@ -25974,7 +26252,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Sarnia Jr Sting": {
         "aliases": [
@@ -25996,7 +26274,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Scarborough Young Bruins": {
         "aliases": [
@@ -26022,7 +26300,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Soo Jr Greyhounds": {
         "aliases": [
@@ -26035,7 +26313,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "South Simcoe Storm": {
         "aliases": [
@@ -26046,10 +26324,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
+        "mhr_record": "1-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "St Catharines Jr Falcons": {
         "aliases": [
@@ -26068,10 +26346,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
+        "mhr_record": "4-1-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "St Lawrence Steel": {
         "aliases": [
@@ -26093,10 +26371,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "4-2-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Stouffville Clippers": {
         "aliases": [
@@ -26110,7 +26388,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Stratford Warriors": {
         "aliases": [
@@ -26121,10 +26399,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "5-1-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Streetsville Tigers": {
         "aliases": [
@@ -26135,10 +26413,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-3-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Sudbury Wolves": {
         "aliases": [
@@ -26152,7 +26430,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Ted Reeve Thunder": {
         "aliases": [
@@ -26162,10 +26440,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
+        "mhr_record": "0-1-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Timmins North Stars": {
         "aliases": [
@@ -26179,7 +26457,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "TNT Tornados": {
         "aliases": [
@@ -26192,10 +26470,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Toronto Avalanche": {
         "aliases": [
@@ -26221,7 +26499,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Upper Ottawa Valley Aces": {
         "aliases": [
@@ -26234,7 +26512,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Upper York Admirals": {
         "aliases": [
@@ -26245,10 +26523,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "2-2-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Vaughan Rangers": {
         "aliases": [
@@ -26261,7 +26539,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Waterloo Wolves": {
         "aliases": [
@@ -26280,10 +26558,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-1-0",
+        "mhr_record": "2-3-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Whitby Wildcats": {
         "aliases": [
@@ -26299,10 +26577,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-2-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       },
       "Woodstock Jr Navy Vets": {
         "aliases": [
@@ -26313,10 +26591,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
+        "mhr_record": "4-1-2",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
       }
     }
   }
