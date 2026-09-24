@@ -192,12 +192,12 @@
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-700">Hockey Coaches</span>
                     </h2>
                     <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                        Welcome to your internal bench command center. This system links regular season league schedules, early-season tournaments, completed game logs, and synchronized skater & goalie data into an automated scouting suite.
+                        Bench command center linking regular season league schedules, tournaments, box scores, and roster statistics across OMHA, Alliance, and regional invitationals.
                     </p>
                     <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-200 text-left max-w-xl mx-auto lg:mx-0">
                         <span class="block text-xs font-mono font-bold uppercase tracking-widest text-cyan-700 mb-1.5">Automated Capabilities</span>
                         <p class="text-xs sm:text-sm text-slate-600 normal-case leading-relaxed">
-                            Calculates offensive depth, goals-against metrics, powerplay efficiency, penalty kill resilience, penalty trouble risk, and chronological schedule results across OMHA, Alliance, and regional tournaments.
+                            Calculates offensive depth, goals-against metrics, powerplay efficiency, penalty kill resilience, penalty risk, and chronological results.
                         </p>
                     </div>
                     <div class="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -273,15 +273,9 @@
                             <span id="scoreboard-results-count" class="text-xs font-mono text-slate-400">0 Games Final</span>
                         </div>
                         <div class="flex items-center space-x-2 w-full sm:w-auto justify-between sm:justify-end">
-                            <button onclick="stepScoreboardDate('results', -1)" title="Previous Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">
-                                ◀
-                            </button>
-                            <div id="scoreboard-results-date-pill" class="flex-1 sm:flex-initial px-3 py-2 sm:py-1 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono font-bold text-slate-200 min-w-[130px] sm:min-w-[150px] text-center select-none truncate">
-                                Loading...
-                            </div>
-                            <button onclick="stepScoreboardDate('results', 1)" title="Next Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">
-                                ▶
-                            </button>
+                            <button onclick="stepScoreboardDate('results', -1)" title="Previous Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">◀</button>
+                            <div id="scoreboard-results-date-pill" class="flex-1 sm:flex-initial px-3 py-2 sm:py-1 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono font-bold text-slate-200 min-w-[130px] sm:min-w-[150px] text-center select-none truncate">Loading...</div>
+                            <button onclick="stepScoreboardDate('results', 1)" title="Next Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">▶</button>
                         </div>
                     </div>
                     <div id="scoreboard-results-list" class="space-y-3"></div>
@@ -295,15 +289,9 @@
                             <span id="scoreboard-matchups-count" class="text-xs font-mono text-slate-400">0 Scheduled</span>
                         </div>
                         <div class="flex items-center space-x-2 w-full sm:w-auto justify-between sm:justify-end">
-                            <button onclick="stepScoreboardDate('matchups', -1)" title="Previous Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">
-                                ◀
-                            </button>
-                            <div id="scoreboard-matchups-date-pill" class="flex-1 sm:flex-initial px-3 py-2 sm:py-1 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono font-bold text-slate-200 min-w-[130px] sm:min-w-[150px] text-center select-none truncate">
-                                Loading...
-                            </div>
-                            <button onclick="stepScoreboardDate('matchups', 1)" title="Next Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">
-                                ▶
-                            </button>
+                            <button onclick="stepScoreboardDate('matchups', -1)" title="Previous Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">◀</button>
+                            <div id="scoreboard-matchups-date-pill" class="flex-1 sm:flex-initial px-3 py-2 sm:py-1 bg-slate-950 border border-slate-800 rounded-lg text-xs font-mono font-bold text-slate-200 min-w-[130px] sm:min-w-[150px] text-center select-none truncate">Loading...</div>
+                            <button onclick="stepScoreboardDate('matchups', 1)" title="Next Day" class="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500 text-cyan-400 font-black flex items-center justify-center transition-colors focus:outline-none active:scale-95">▶</button>
                         </div>
                     </div>
                     <div id="scoreboard-matchups-list" class="space-y-3"></div>
@@ -772,6 +760,10 @@
         let scoreboardMatchupsDate = "";
         let scoreboardCohortFilter = "";
 
+        function cleanKey(str) {
+            return String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
+        }
+
         function isBurlingtonEagles(teamName) {
             const clean = cleanKey(teamName);
             return clean.includes("BURLINGTON") && clean.includes("EAGLES");
@@ -884,8 +876,229 @@
             }
         }
 
-        function cleanKey(str) {
-            return String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
+        // =========================================================================
+        // 🛠️ CANONICAL TEAM & ROSTER RESOLVER
+        // =========================================================================
+
+        function getOrCreateTeamProfile(cohort, rawTeamName, teamId = null) {
+            if (!cohort || !rawTeamName) return null;
+            
+            let targetCohort = cohort.toUpperCase().includes("U14") ? "U14 AA" : (cohort.toUpperCase().includes("U11") ? "U11 AA" : cohort.trim());
+            
+            if (!scoutingReportDatabase[targetCohort]) {
+                scoutingReportDatabase[targetCohort] = {};
+            }
+            const cohortDb = scoutingReportDatabase[targetCohort];
+
+            let canonical = rawTeamName.trim();
+            const cleanRaw = cleanKey(rawTeamName);
+            
+            // 1. Cross-reference master_teams for canonical name
+            if (rawHockeyDb?.master_teams?.[targetCohort]) {
+                for (const [canon, data] of Object.entries(rawHockeyDb.master_teams[targetCohort])) {
+                    if (cleanKey(canon) === cleanRaw) {
+                        canonical = canon;
+                        break;
+                    }
+                    if (data.aliases && data.aliases.some(a => cleanKey(a) === cleanRaw)) {
+                        canonical = canon;
+                        break;
+                    }
+                    const cleanCanon = cleanKey(canon);
+                    if (cleanCanon.length >= 5 && (cleanRaw.includes(cleanCanon) || cleanCanon.includes(cleanRaw))) {
+                        canonical = canon;
+                        break;
+                    }
+                }
+            }
+
+            // 2. Check if canonical entry already exists
+            if (cohortDb[canonical]) {
+                if (teamId && !cohortDb[canonical].team_id) cohortDb[canonical].team_id = teamId;
+                return cohortDb[canonical];
+            }
+
+            // 3. Normalized alphanumeric search
+            for (const [name, prof] of Object.entries(cohortDb)) {
+                if (cleanKey(name) === cleanRaw) {
+                    if (teamId && !prof.team_id) prof.team_id = teamId;
+                    return prof;
+                }
+            }
+
+            // 4. Team ID search
+            if (teamId) {
+                for (const prof of Object.values(cohortDb)) {
+                    if (prof.team_id && String(prof.team_id) === String(teamId)) {
+                        return prof;
+                    }
+                }
+            }
+
+            // 5. Construct profile
+            const parts = targetCohort.split(' ');
+            cohortDb[canonical] = {
+                team_name: canonical,
+                team_id: teamId,
+                division: targetCohort,
+                age: parts[0] || "U11",
+                tier: parts[1] || "AA",
+                gp: 0, w: 0, l: 0, t: 0, pts: 0, gf: 0, ga: 0, diff: 0, pim: 0,
+                ppg: 0, ppo: 0, ppga: 0, ppoa: 0, shg: 0, shga: 0,
+                standings_entries: [],
+                roster: [],
+                goalies: [],
+                games: []
+            };
+            return cohortDb[canonical];
+        }
+
+        function buildScoutingReportDatabase() {
+            scoutingReportDatabase = {};
+
+            // 1. Seed master teams whitelist
+            if (rawHockeyDb?.master_teams) {
+                Object.entries(rawHockeyDb.master_teams).forEach(([cohort, teams]) => {
+                    if (!scoutingReportDatabase[cohort]) scoutingReportDatabase[cohort] = {};
+                    Object.keys(teams).forEach(teamName => {
+                        getOrCreateTeamProfile(cohort, teamName);
+                    });
+                });
+            }
+
+            // 2. Ingest Standings
+            (rawHockeyDb?.standings || []).forEach(row => {
+                const age = row.age || row.detected_age || "Other";
+                const tier = row.tier || "AA";
+                const divKey = `${age} ${tier}`.trim();
+                const teamProfile = getOrCreateTeamProfile(divKey, row.team_name, row.team_id);
+                if (!teamProfile) return;
+
+                teamProfile.gp += Number(row.gp) || 0;
+                teamProfile.w += Number(row.w) || 0;
+                teamProfile.l += Number(row.l) || 0;
+                teamProfile.t += Number(row.t) || 0;
+                teamProfile.pts += Number(row.pts) || 0;
+                teamProfile.gf += Number(row.gf) || 0;
+                teamProfile.ga += Number(row.ga) || 0;
+                teamProfile.diff += Number(row.diff) || 0;
+                teamProfile.pim += Number(row.pim) || 0;
+
+                teamProfile.ppg += Number(row.ppg) || 0;
+                teamProfile.ppo += Number(row.ppo) || 0;
+                teamProfile.ppga += Number(row.ppga) || 0;
+                teamProfile.ppoa += Number(row.ppoa) || 0;
+                teamProfile.shg += Number(row.shg) || 0;
+                teamProfile.shga += Number(row.shga) || 0;
+
+                teamProfile.standings_entries.push(row);
+            });
+
+            // 3. Ingest Skaters
+            (rawHockeyDb?.skaters || []).forEach(p => {
+                let cohort = "U11 AA";
+                if (p.division && p.division.toUpperCase().includes("U14")) cohort = "U14 AA";
+                else if (p.division && p.division.toUpperCase().includes("U11")) cohort = "U11 AA";
+                else if (p.age && String(p.age).toUpperCase().includes("14")) cohort = "U14 AA";
+                else if (p.age && String(p.age).toUpperCase().includes("11")) cohort = "U11 AA";
+                else if (p.cohort) cohort = p.cohort;
+
+                const teamProfile = getOrCreateTeamProfile(cohort, p.team, p.team_id);
+                if (teamProfile) {
+                    teamProfile.roster.push(p);
+                }
+            });
+
+            // 4. Ingest Goalies
+            (rawHockeyDb?.goalies || []).forEach(g => {
+                let cohort = "U11 AA";
+                if (g.division && g.division.toUpperCase().includes("U14")) cohort = "U14 AA";
+                else if (g.division && g.division.toUpperCase().includes("U11")) cohort = "U11 AA";
+                else if (g.age && String(g.age).toUpperCase().includes("14")) cohort = "U14 AA";
+                else if (g.age && String(g.age).toUpperCase().includes("11")) cohort = "U11 AA";
+                else if (g.cohort) cohort = g.cohort;
+
+                const teamProfile = getOrCreateTeamProfile(cohort, g.team, g.team_id);
+                if (teamProfile) {
+                    teamProfile.goalies.push(g);
+                }
+            });
+
+            // 5. Ingest Games & Matchups
+            (rawHockeyDb?.games || []).forEach(g => {
+                if (!g) return;
+                attachGameToMatchingTeams(g.home_name, g.home_id, g, true);
+                attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
+            });
+
+            // 6. Calculate Strength-of-Schedule
+            if (rawHockeyDb?.master_teams) {
+                Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
+                    const cohortTeams = rawHockeyDb.master_teams[divKey];
+                    const sortedBySched = Object.entries(cohortTeams)
+                        .map(([name, data]) => ({
+                            name,
+                            sched: parseFloat(data.mhr_sched || 0)
+                        }))
+                        .filter(t => t.sched > 0)
+                        .sort((a, b) => b.sched - a.sched);
+                    
+                    sortedBySched.forEach((item, idx) => {
+                        if (cohortTeams[item.name]) {
+                            cohortTeams[item.name].sos_rank = idx + 1;
+                        }
+                    });
+                });
+            }
+
+            // 7. Calculate Division Standings and Contender Status
+            hotTeamsDatabaseMap = {};
+            Object.keys(scoutingReportDatabase).forEach(divKey => {
+                const divTeams = Object.values(scoutingReportDatabase[divKey]);
+                divTeams.sort((a, b) => b.pts !== a.pts ? b.pts - a.pts : b.diff - a.diff);
+                divTeams.forEach((team, idx) => { team.rank = idx + 1; });
+
+                hotTeamsDatabaseMap[divKey] = [];
+                const hotCandidates = [...divTeams].filter(t => t.gp >= 2)
+                    .sort((a, b) => ((b.pts / Math.max(1, b.gp * 2)) - (a.pts / Math.max(1, a.gp * 2))));
+                if (hotCandidates.length > 0) {
+                    hotTeamsDatabaseMap[divKey].push(hotCandidates[0].team_name);
+                }
+            });
+        }
+
+        function attachGameToMatchingTeams(teamName, teamId, game, isHome) {
+            if (!teamName || !game || !game.division) return;
+            const targetDiv = game.division;
+            const teamProfile = getOrCreateTeamProfile(targetDiv, teamName, teamId);
+            if (!teamProfile) return;
+
+            const isFinal = game.status === 'final';
+            const teamGoals = isHome ? game.home_goals : game.visitor_goals;
+            const oppGoals = isHome ? game.visitor_goals : game.home_goals;
+            const result = isHome ? game.home_result : game.visitor_result;
+            const oppName = isHome ? game.visitor_name : game.home_name;
+            const oppId = isHome ? game.visitor_id : game.home_id;
+
+            const record = {
+                game_id: game.game_id,
+                date: game.date || "",
+                time: game.time || "",
+                timestamp: game.timestamp || "",
+                status: game.status || "scheduled",
+                location: game.location || "",
+                source_name: game.source_name || "",
+                source_type: game.source_type || "",
+                is_home: isHome,
+                opponent: oppName || "Opponent",
+                opponent_id: oppId,
+                team_goals: teamGoals,
+                opponent_goals: oppGoals,
+                result: result,
+                score_str: isFinal ? `${teamGoals} - ${oppGoals}` : (game.time || "Scheduled")
+            };
+
+            teamProfile.games.push(record);
         }
 
         function shiftDateStr(dateStr, days) {
@@ -1159,246 +1372,6 @@
                     </div>
                 `;
             }
-        }
-
-        // =========================================================================
-        // 🛠️ RESILIENT TEAM & ROSTER RESOLUTION ENGINE
-        // =========================================================================
-
-        function getPlayerCohort(p) {
-            if (p.division && (p.division.toUpperCase().includes("U11") || p.division.toUpperCase().includes("U14"))) {
-                return p.division.toUpperCase().includes("U11") ? "U11 AA" : "U14 AA";
-            }
-            if (p.cohort) {
-                return p.cohort.toUpperCase().includes("U11") ? "U11 AA" : "U14 AA";
-            }
-            const ageStr = String(p.age || "").toUpperCase();
-            if (ageStr.includes("14") || ageStr.includes("BANTAM")) return "U14 AA";
-            if (ageStr.includes("11") || ageStr.includes("ATOM")) return "U11 AA";
-            const tier = (p.tier || "AA").toUpperCase();
-            if (p.age) return `${p.age} ${tier}`.trim();
-            return "U11 AA";
-        }
-
-        function resolveOrCreateTeam(divKey, rawName, teamId = null) {
-            if (!divKey || !rawName) return null;
-            
-            let matchedDiv = Object.keys(scoutingReportDatabase).find(k => k.toUpperCase() === divKey.toUpperCase());
-            if (!matchedDiv) {
-                matchedDiv = divKey.trim();
-                scoutingReportDatabase[matchedDiv] = {};
-            }
-            const divBucket = scoutingReportDatabase[matchedDiv];
-
-            // 1. Direct key match
-            if (divBucket[rawName]) {
-                if (teamId && !divBucket[rawName].team_id) divBucket[rawName].team_id = teamId;
-                return divBucket[rawName];
-            }
-
-            const cleanTarget = cleanKey(rawName);
-
-            // 2. Alphanumeric normalized match
-            for (const name in divBucket) {
-                if (cleanKey(name) === cleanTarget) {
-                    if (teamId && !divBucket[name].team_id) divBucket[name].team_id = teamId;
-                    return divBucket[name];
-                }
-            }
-
-            // 3. ID match
-            if (teamId) {
-                for (const name in divBucket) {
-                    if (divBucket[name].team_id && String(divBucket[name].team_id) === String(teamId)) {
-                        return divBucket[name];
-                    }
-                }
-            }
-
-            // 4. Master Teams Whitelist alias match
-            if (rawHockeyDb?.master_teams?.[matchedDiv]) {
-                for (const [canonName, mData] of Object.entries(rawHockeyDb.master_teams[matchedDiv])) {
-                    if (cleanKey(canonName) === cleanTarget) {
-                        if (divBucket[canonName]) {
-                            if (teamId && !divBucket[canonName].team_id) divBucket[canonName].team_id = teamId;
-                            return divBucket[canonName];
-                        }
-                    }
-                    if (mData.aliases && mData.aliases.some(a => cleanKey(a) === cleanTarget)) {
-                        if (divBucket[canonName]) {
-                            if (teamId && !divBucket[canonName].team_id) divBucket[canonName].team_id = teamId;
-                            return divBucket[canonName];
-                        }
-                    }
-                }
-            }
-
-            // 5. Substring match
-            for (const name in divBucket) {
-                const cName = cleanKey(name);
-                if (cName.length >= 4 && cleanTarget.length >= 4) {
-                    if (cName.includes(cleanTarget) || cleanTarget.includes(cName)) {
-                        if (teamId && !divBucket[name].team_id) divBucket[name].team_id = teamId;
-                        return divBucket[name];
-                    }
-                }
-            }
-
-            // 6. Resilient Creation
-            const parts = matchedDiv.split(' ');
-            divBucket[rawName] = {
-                team_name: rawName,
-                team_id: teamId,
-                division: matchedDiv,
-                age: parts[0] || "U11",
-                tier: parts[1] || "AA",
-                gp: 0, w: 0, l: 0, t: 0, pts: 0, gf: 0, ga: 0, diff: 0, pim: 0,
-                ppg: 0, ppo: 0, ppga: 0, ppoa: 0, shg: 0, shga: 0,
-                standings_entries: [],
-                roster: [],
-                goalies: [],
-                games: []
-            };
-            return divBucket[rawName];
-        }
-
-        function buildScoutingReportDatabase() {
-            scoutingReportDatabase = {};
-
-            // 1. Seed master teams whitelist
-            if (rawHockeyDb.master_teams) {
-                Object.entries(rawHockeyDb.master_teams).forEach(([cohort, teams]) => {
-                    if (!scoutingReportDatabase[cohort]) scoutingReportDatabase[cohort] = {};
-                    Object.keys(teams).forEach(teamName => {
-                        resolveOrCreateTeam(cohort, teamName);
-                    });
-                });
-            }
-
-            // 2. Standings & Performance Ingestion
-            (rawHockeyDb.standings || []).forEach(row => {
-                const age = row.age || row.detected_age || "Other";
-                const tier = row.tier || "AA";
-                const divKey = `${age} ${tier}`.trim();
-                const teamName = row.team_name;
-                if (!divKey || !teamName) return;
-
-                const teamProfile = resolveOrCreateTeam(divKey, teamName, row.team_id);
-                if (!teamProfile) return;
-
-                teamProfile.gp += Number(row.gp) || 0;
-                teamProfile.w += Number(row.w) || 0;
-                teamProfile.l += Number(row.l) || 0;
-                teamProfile.t += Number(row.t) || 0;
-                teamProfile.pts += Number(row.pts) || 0;
-                teamProfile.gf += Number(row.gf) || 0;
-                teamProfile.ga += Number(row.ga) || 0;
-                teamProfile.diff += Number(row.diff) || 0;
-                teamProfile.pim += Number(row.pim) || 0;
-
-                teamProfile.ppg += Number(row.ppg) || 0;
-                teamProfile.ppo += Number(row.ppo) || 0;
-                teamProfile.ppga += Number(row.ppga) || 0;
-                teamProfile.ppoa += Number(row.ppoa) || 0;
-                teamProfile.shg += Number(row.shg) || 0;
-                teamProfile.shga += Number(row.shga) || 0;
-
-                teamProfile.standings_entries.push(row);
-            });
-
-            // 3. Skaters Ingestion
-            (rawHockeyDb.skaters || []).forEach(p => {
-                const cohort = getPlayerCohort(p);
-                const teamProfile = resolveOrCreateTeam(cohort, p.team, p.team_id);
-                if (teamProfile) {
-                    teamProfile.roster.push(p);
-                }
-            });
-
-            // 4. Goalies Ingestion
-            (rawHockeyDb.goalies || []).forEach(g => {
-                const cohort = getPlayerCohort(g);
-                const teamProfile = resolveOrCreateTeam(cohort, g.team, g.team_id);
-                if (teamProfile) {
-                    teamProfile.goalies.push(g);
-                }
-            });
-
-            // 5. Games & Head-to-Head Ingestion
-            (rawHockeyDb.games || []).forEach(g => {
-                if (!g) return;
-                attachGameToMatchingTeams(g.home_name, g.home_id, g, true);
-                attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
-            });
-
-            // 6. Master Teams & MHR Strength-of-Schedule calculation
-            if (rawHockeyDb.master_teams) {
-                Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
-                    const cohortTeams = rawHockeyDb.master_teams[divKey];
-                    const sortedBySched = Object.entries(cohortTeams)
-                        .map(([name, data]) => ({
-                            name,
-                            sched: parseFloat(data.mhr_sched || 0)
-                        }))
-                        .filter(t => t.sched > 0)
-                        .sort((a, b) => b.sched - a.sched);
-                    
-                    sortedBySched.forEach((item, idx) => {
-                        if (cohortTeams[item.name]) {
-                            cohortTeams[item.name].sos_rank = idx + 1;
-                        }
-                    });
-                });
-            }
-
-            // 7. Hot Teams & Ranks
-            hotTeamsDatabaseMap = {};
-            Object.keys(scoutingReportDatabase).forEach(divKey => {
-                const divTeams = Object.values(scoutingReportDatabase[divKey]);
-                divTeams.sort((a, b) => b.pts !== a.pts ? b.pts - a.pts : b.diff - a.diff);
-                divTeams.forEach((team, idx) => { team.rank = idx + 1; });
-
-                hotTeamsDatabaseMap[divKey] = [];
-                const hotCandidates = [...divTeams].filter(t => t.gp >= 2)
-                    .sort((a, b) => ((b.pts / Math.max(1, b.gp * 2)) - (a.pts / Math.max(1, a.gp * 2))));
-                if (hotCandidates.length > 0) {
-                    hotTeamsDatabaseMap[divKey].push(hotCandidates[0].team_name);
-                }
-            });
-        }
-
-        function attachGameToMatchingTeams(teamName, teamId, game, isHome) {
-            if (!teamName || !game || !game.division) return;
-            const targetDiv = game.division;
-            const teamProfile = resolveOrCreateTeam(targetDiv, teamName, teamId);
-            if (!teamProfile) return;
-
-            const isFinal = game.status === 'final';
-            const teamGoals = isHome ? game.home_goals : game.visitor_goals;
-            const oppGoals = isHome ? game.visitor_goals : game.home_goals;
-            const result = isHome ? game.home_result : game.visitor_result;
-            const oppName = isHome ? game.visitor_name : game.home_name;
-            const oppId = isHome ? game.visitor_id : game.home_id;
-
-            const record = {
-                game_id: game.game_id,
-                date: game.date || "",
-                time: game.time || "",
-                timestamp: game.timestamp || "",
-                status: game.status || "scheduled",
-                location: game.location || "",
-                source_name: game.source_name || "",
-                source_type: game.source_type || "",
-                is_home: isHome,
-                opponent: oppName || "Opponent",
-                opponent_id: oppId,
-                team_goals: teamGoals,
-                opponent_goals: oppGoals,
-                result: result,
-                score_str: isFinal ? `${teamGoals} - ${oppGoals}` : (game.time || "Scheduled")
-            };
-
-            teamProfile.games.push(record);
         }
 
         function populateDivisionSelector() {
@@ -1701,29 +1674,32 @@
             const dashboardView = document.getElementById('scouting-dashboard-view');
             const badgeContainer = document.getElementById('scout-hot-badge-container');
             
-            const divisionPayload = scoutingReportDatabase[divName];
-            const teamPayload = divisionPayload ? resolveOrCreateTeam(divName, teamName) : null;
+            if (!divName || !teamName) {
+                if (dashboardView) dashboardView.classList.add('hidden');
+                return;
+            }
 
-            if (!divName || !teamName || !teamPayload) {
+            const teamPayload = getOrCreateTeamProfile(divName, teamName);
+            if (!teamPayload) {
                 if (dashboardView) dashboardView.classList.add('hidden');
                 return;
             }
             
             dashboardView.classList.remove('hidden');
-            document.getElementById('scout-team-title').innerText = teamName;
+            document.getElementById('scout-team-title').innerText = teamPayload.team_name || teamName;
             
             if (badgeContainer) {
-                if (hotTeamsDatabaseMap[divName]?.includes(teamName)) {
+                if (hotTeamsDatabaseMap[divName]?.includes(teamPayload.team_name)) {
                     badgeContainer.innerHTML = `<span class="inline-flex items-center px-2.5 sm:px-3 py-1 rounded-xl text-[10px] sm:text-xs font-black bg-cyan-950 border border-cyan-500 text-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.5)] tracking-normal normal-case animate-pulse select-none">🔥 DIVISION CONTENDER</span>`;
                 } else {
                     badgeContainer.innerHTML = "";
                 }
             }
 
-            const masterCohort = rawHockeyDb.master_teams?.[divName] || {};
-            let mhrData = masterCohort[teamName];
+            const masterCohort = rawHockeyDb?.master_teams?.[divName] || {};
+            let mhrData = masterCohort[teamPayload.team_name];
             if (!mhrData) {
-                const cleanTarget = cleanKey(teamName);
+                const cleanTarget = cleanKey(teamPayload.team_name);
                 for (const [mName, mObj] of Object.entries(masterCohort)) {
                     if (cleanKey(mName) === cleanTarget) {
                         mhrData = mObj;
@@ -1880,7 +1856,7 @@
             pastMeetingsTbody.innerHTML = '';
 
             let h2hMatches = [];
-            if (activeSelectedMyTeam && activeSelectedMyTeam !== teamName) {
+            if (activeSelectedMyTeam && activeSelectedMyTeam !== teamPayload.team_name) {
                 const myClean = cleanKey(activeSelectedMyTeam);
                 h2hMatches = teamGames.filter(g => cleanKey(g.opponent) === myClean);
             }
@@ -1909,7 +1885,7 @@
                                 <span class="text-slate-500">${g.location || 'Standard Arena'}</span>
                             </td>
                             <td class="py-2.5 sm:py-3 px-3 sm:px-4">
-                                <span class="font-bold text-slate-200">${teamName}</span>
+                                <span class="font-bold text-slate-200">${teamPayload.team_name}</span>
                                 <span class="text-slate-500 text-xs px-1">${g.is_home ? 'vs' : '@'}</span>
                                 <span class="font-bold text-cyan-400">${activeSelectedMyTeam}</span>
                             </td>
@@ -1956,7 +1932,7 @@
             }
 
             // Gauges: Team Efficiency
-            const allDivTeams = Object.values(divisionPayload);
+            const allDivTeams = Object.values(scoutingReportDatabase[divName] || {});
             const totalTeamsInDivision = allDivTeams.length;
             document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
 
@@ -1971,17 +1947,17 @@
                 };
             });
 
-            const curMetrics = metrics.find(x => x.name === teamName) || { gfAvg: 0, gaAvg: 0, pimAvg: 0, diffAvg: 0 };
+            const curMetrics = metrics.find(x => x.name === teamPayload.team_name) || { gfAvg: 0, gaAvg: 0, pimAvg: 0, diffAvg: 0 };
             
             const sortedGF = [...metrics].sort((a, b) => b.gfAvg - a.gfAvg);
             const sortedGA = [...metrics].sort((a, b) => a.gaAvg - b.gaAvg);
             const sortedPIM = [...metrics].sort((a, b) => a.pimAvg - b.pimAvg);
             const sortedDiff = [...metrics].sort((a, b) => b.diffAvg - a.diffAvg);
 
-            const gfRank = sortedGF.findIndex(x => x.name === teamName) + 1;
-            const gaRank = sortedGA.findIndex(x => x.name === teamName) + 1;
-            const pimRank = sortedPIM.findIndex(x => x.name === teamName) + 1;
-            const diffRank = sortedDiff.findIndex(x => x.name === teamName) + 1;
+            const gfRank = sortedGF.findIndex(x => x.name === teamPayload.team_name) + 1;
+            const gaRank = sortedGA.findIndex(x => x.name === teamPayload.team_name) + 1;
+            const pimRank = sortedPIM.findIndex(x => x.name === teamPayload.team_name) + 1;
+            const diffRank = sortedDiff.findIndex(x => x.name === teamPayload.team_name) + 1;
 
             const elGfVal = document.getElementById('stat-gf-val');
             const elGaVal = document.getElementById('stat-ga-val');
@@ -2037,10 +2013,10 @@
             const sortedSHGF = [...specMetrics].sort((a, b) => b.shgf - a.shgf);
             const sortedSHGA = [...specMetrics].sort((a, b) => a.shga - b.shga);
 
-            const ppRank = sortedPP.findIndex(x => x.name === teamName) + 1;
-            const pkRank = sortedPK.findIndex(x => x.name === teamName) + 1;
-            const shgfRank = sortedSHGF.findIndex(x => x.name === teamName) + 1;
-            const shgaRank = sortedSHGA.findIndex(x => x.name === teamName) + 1;
+            const ppRank = sortedPP.findIndex(x => x.name === teamPayload.team_name) + 1;
+            const pkRank = sortedPK.findIndex(x => x.name === teamPayload.team_name) + 1;
+            const shgfRank = sortedSHGF.findIndex(x => x.name === teamPayload.team_name) + 1;
+            const shgaRank = sortedSHGA.findIndex(x => x.name === teamPayload.team_name) + 1;
 
             const pctPP = totalTeamsInDivision > 1 ? 100 - (((ppRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
             const pctPK = totalTeamsInDivision > 1 ? 100 - (((pkRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
@@ -2075,8 +2051,17 @@
             rosterTbody.innerHTML = '';
             const skaterCountEl = document.getElementById('scout-skater-count');
             
-            const totalRosterCount = (teamPayload.roster || []).length;
-            const sortedSkaters = [...(teamPayload.roster || [])].sort((a, b) => {
+            const uniqueSkaters = [];
+            const seenSkaterKeys = new Set();
+            (teamPayload.roster || []).forEach(p => {
+                const key = `${p.name || ''}_${p.jersey || ''}`.toUpperCase();
+                if (!seenSkaterKeys.has(key)) {
+                    seenSkaterKeys.add(key);
+                    uniqueSkaters.push(p);
+                }
+            });
+
+            const sortedSkaters = uniqueSkaters.sort((a, b) => {
                 const ptsA = Number(a.total_pts ?? a.pts ?? 0);
                 const ptsB = Number(b.total_pts ?? b.pts ?? 0);
                 if (ptsB !== ptsA) return ptsB - ptsA;
@@ -2090,7 +2075,7 @@
             }).slice(0, 5);
 
             if (skaterCountEl) {
-                skaterCountEl.innerText = `${sortedSkaters.length} Shown (${totalRosterCount} Tracked)`;
+                skaterCountEl.innerText = `${sortedSkaters.length} Shown (${uniqueSkaters.length} Tracked)`;
             }
             
             if (sortedSkaters.length > 0) {
@@ -2135,13 +2120,13 @@
                                         <tbody class="divide-y divide-slate-800/60 text-slate-300">
                                             ${(p.sources || []).map(src => `
                                                 <tr class="hover:bg-slate-900/50">
-                                                    <td class="py-1.5 sm:py-2 px-3 sm:px-4 font-sans font-extrabold text-slate-400 truncate max-w-xs uppercase text-xs">${src.source_name}</td>
+                                                    <td class="py-1.5 sm:py-2 px-3 sm:px-4 font-sans font-extrabold text-slate-400 truncate max-w-xs uppercase text-xs">${src.source_name || 'Event'}</td>
                                                     <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${src.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : 'text-cyan-400 bg-cyan-950/40'}">${src.source_type === 'tournament' ? 'TOURN' : 'LEAG'}</span></td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center font-extrabold text-cyan-400">${src.gp}</td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-300 font-bold">${src.g}</td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-300 font-bold">${src.a}</td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-blue-400 font-black">${src.pts}</td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-500">${src.pim}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center font-extrabold text-cyan-400">${src.gp || 0}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-300 font-bold">${src.g || 0}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-300 font-bold">${src.a || 0}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-blue-400 font-black">${src.pts || 0}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-500">${src.pim || 0}</td>
                                                 </tr>
                                             `).join('')}
                                         </tbody>
@@ -2159,7 +2144,18 @@
             const goalieCapsule = document.getElementById('capsule-goalies');
             const goalieTbody = document.getElementById('scout-goalie-tbody');
             goalieTbody.innerHTML = '';
-            const goaliesList = [...(teamPayload.goalies || [])].sort((a, b) => {
+            
+            const uniqueGoalies = [];
+            const seenGoalieKeys = new Set();
+            (teamPayload.goalies || []).forEach(g => {
+                const key = `${g.name || ''}_${g.jersey || ''}`.toUpperCase();
+                if (!seenGoalieKeys.has(key)) {
+                    seenGoalieKeys.add(key);
+                    uniqueGoalies.push(g);
+                }
+            });
+
+            const goaliesList = uniqueGoalies.sort((a, b) => {
                 const gpA = Number(a.total_gp ?? a.gp ?? 0);
                 const gpB = Number(b.total_gp ?? b.gp ?? 0);
                 if (gpB !== gpA) return gpB - gpA;
@@ -2210,12 +2206,12 @@
                                         <tbody class="divide-y divide-slate-800/60 text-slate-300">
                                             ${(g.sources || []).map(src => `
                                                 <tr class="hover:bg-slate-900/50">
-                                                    <td class="py-1.5 sm:py-2 px-3 sm:px-4 font-sans font-extrabold text-slate-400 uppercase text-xs">${src.source_name}</td>
+                                                    <td class="py-1.5 sm:py-2 px-3 sm:px-4 font-sans font-extrabold text-slate-400 uppercase text-xs">${src.source_name || 'Event'}</td>
                                                     <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${src.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : 'text-cyan-400 bg-cyan-950/40'}">${src.source_type === 'tournament' ? 'TOURN' : 'LEAG'}</span></td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center font-extrabold text-cyan-400">${src.gp}</td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-rose-400 font-extrabold">${src.ga}</td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-200 font-black">${parseFloat(src.gaa).toFixed(2)}</td>
-                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-emerald-400 font-bold">${src.so}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center font-extrabold text-cyan-400">${src.gp || 0}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-rose-400 font-extrabold">${src.ga || 0}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-slate-200 font-black">${parseFloat(src.gaa || 0).toFixed(2)}</td>
+                                                    <td class="py-1.5 sm:py-2 px-2 sm:px-4 text-center text-emerald-400 font-bold">${src.so || 0}</td>
                                                 </tr>
                                             `).join('')}
                                         </tbody>
@@ -2286,7 +2282,7 @@
                 </div>
             `;
 
-            const oppPayload = resolveOrCreateTeam(divName, oppTeamName);
+            const oppPayload = getOrCreateTeamProfile(divName, oppTeamName);
             if (!oppPayload) return;
 
             const oppCalculatedGp = oppPayload.gp > 0 ? oppPayload.gp : (oppPayload.games ? oppPayload.games.filter(g => g.status === 'final').length : 0);
@@ -2308,7 +2304,7 @@
 
             let myTeamContext = "";
             if (isMatchup) {
-                const myPayload = resolveOrCreateTeam(divName, myTeamName) || {};
+                const myPayload = getOrCreateTeamProfile(divName, myTeamName) || {};
                 const myCalculatedGp = myPayload.gp > 0 ? myPayload.gp : (myPayload.games ? myPayload.games.filter(g => g.status === 'final').length : 0);
                 const myGf = myCalculatedGp > 0 ? (myPayload.gf / myCalculatedGp).toFixed(1) : "0.0";
                 const myGa = myCalculatedGp > 0 ? (myPayload.ga / myCalculatedGp).toFixed(1) : "0.0";
