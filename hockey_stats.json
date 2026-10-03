@@ -1,10 +1,46 @@
 {
-  "generated_at": "2026-10-03T14:38:07.826400+00:00",
-  "total_skaters": 2743,
-  "total_goalies": 360,
-  "total_standings_rows": 380,
-  "total_games": 454,
+  "generated_at": "2026-10-03T15:15:26.095771+00:00",
+  "total_skaters": 2771,
+  "total_goalies": 364,
+  "total_standings_rows": 383,
+  "total_games": 455,
   "skaters": [
+    {
+      "name": "BRAYDEN APPOTIVE",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "24",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 18,
+      "total_a": 6,
+      "total_pts": 24,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 8,
+          "a": 5,
+          "pts": 13,
+          "pim": 2
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 10,
+          "a": 1,
+          "pts": 11,
+          "pim": 0
+        }
+      ]
+    },
     {
       "name": "COLE EMOND",
       "team": "St Catharines Jr Falcons",
@@ -608,6 +644,78 @@
       ]
     },
     {
+      "name": "SCOTLAND IRWIN",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "66",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 8,
+      "total_a": 3,
+      "total_pts": 11,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 6,
+          "a": 0,
+          "pts": 6,
+          "pim": 4
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 2,
+          "a": 3,
+          "pts": 5,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JAMIE WEITZNER",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "86",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 9,
+      "total_g": 3,
+      "total_a": 8,
+      "total_pts": 11,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 5,
+          "g": 3,
+          "a": 1,
+          "pts": 4,
+          "pim": 0
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 7,
+          "pts": 7,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "BRADEN ARMSTRONG",
       "team": "Kitchener Jr Rangers (Red)",
       "team_id": 533266,
@@ -1120,6 +1228,42 @@
           "a": 3,
           "pts": 5,
           "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "MATEO KUPESIC",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "27",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 6,
+      "total_a": 4,
+      "total_pts": 10,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 3,
+          "a": 1,
+          "pts": 4,
+          "pim": 2
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 3,
+          "a": 3,
+          "pts": 6,
+          "pim": 0
         }
       ]
     },
@@ -1819,7 +1963,7 @@
     },
     {
       "name": "DYLAN WINTER",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -2509,7 +2653,7 @@
     },
     {
       "name": "JESSE INTREVADO",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -3321,7 +3465,7 @@
     },
     {
       "name": "SANTINO FUSCHINO",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -5442,6 +5586,42 @@
       ]
     },
     {
+      "name": "BENNETT GOLDBERG",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "88",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 3,
+      "total_a": 3,
+      "total_pts": 6,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 3,
+          "a": 3,
+          "pts": 6,
+          "pim": 0
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "NICHOLAS KING",
       "team": "Duffield Devils",
       "team_id": 550577,
@@ -5509,6 +5689,42 @@
           "g": 0,
           "a": 1,
           "pts": 1,
+          "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "LOGAN MINTZ",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "93",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 5,
+      "total_a": 1,
+      "total_pts": 6,
+      "total_pim": 6,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 4
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 3,
+          "a": 1,
+          "pts": 4,
           "pim": 2
         }
       ]
@@ -8416,6 +8632,42 @@
       ]
     },
     {
+      "name": "LUCAS EMERY",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "22",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 2,
+      "total_a": 3,
+      "total_pts": 5,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JACOB JOYNER",
       "team": "Niagara Falls Canucks",
       "team_id": 558472,
@@ -8568,6 +8820,32 @@
           "a": 2,
           "pts": 5,
           "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DAMIAN POLYZOTIS",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "16",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 4,
+      "total_a": 1,
+      "total_pts": 5,
+      "total_pim": 6,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 4,
+          "a": 1,
+          "pts": 5,
+          "pim": 6
         }
       ]
     },
@@ -10861,7 +11139,7 @@
       "name": "DECLAN ST. LOUIS",
       "team": "Ajax Pickering Raiders",
       "team_id": 534529,
-      "jersey": "13",
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -12572,6 +12850,78 @@
           "a": 1,
           "pts": 4,
           "pim": 6
+        }
+      ]
+    },
+    {
+      "name": "CODY SEIDLER",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "9",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "pim": 0
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MILLER MENKES",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "18",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 0,
+      "total_a": 4,
+      "total_pts": 4,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 2
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 4,
+          "pts": 4,
+          "pim": 0
         }
       ]
     },
@@ -18919,7 +19269,7 @@
     },
     {
       "name": "JAMES KORNACKI",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "18",
       "position": "F",
@@ -19063,7 +19413,7 @@
     },
     {
       "name": "AMRI ANOZIE",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -19391,7 +19741,7 @@
     },
     {
       "name": "CARTER HOOPER",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -19427,7 +19777,7 @@
     },
     {
       "name": "MARCUS KULIBABA",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -19810,6 +20160,42 @@
           "a": 2,
           "pts": 2,
           "pim": 2
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "LANDRY LEVINE",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "14",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 1,
+      "total_a": 2,
+      "total_pts": 3,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 4
         },
         {
           "source_id": "15946",
@@ -20327,7 +20713,7 @@
     },
     {
       "name": "ALEXANDER CUNDARI",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 559274,
       "jersey": "27",
       "position": "F",
@@ -20382,6 +20768,32 @@
       "team": "Ted Reeve Thunder",
       "team_id": 559242,
       "jersey": "27",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 2,
+      "total_pts": 3,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JACK DYMOND",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "72",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -32009,7 +32421,7 @@
     },
     {
       "name": "CHRISTIAN BEBIS",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -32127,7 +32539,7 @@
     },
     {
       "name": "MARCUS PICCONE",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -32323,6 +32735,42 @@
           "g": 0,
           "a": 2,
           "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MASON HORNE",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "8",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 2
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
           "pim": 0
         }
       ]
@@ -32682,6 +33130,42 @@
           "a": 0,
           "pts": 0,
           "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JACK KOVEN",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "59",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 9,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 10,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 5,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 6
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 4
         }
       ]
     },
@@ -33226,6 +33710,32 @@
       ]
     },
     {
+      "name": "BENJAMIN AZAGURY",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "55",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 2,
+      "total_a": 0,
+      "total_pts": 2,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 4
+        }
+      ]
+    },
+    {
       "name": "FRANCESCO BILLOTA",
       "team": "Mississauga Rattlers",
       "team_id": 559271,
@@ -33382,6 +33892,58 @@
       ]
     },
     {
+      "name": "LOGAN DANIELS",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "18",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 1,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MATTEO DE FRANCESCO",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "66",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "CROSS DE LA ROCHE",
       "team": "East Enders Ticats",
       "team_id": 559266,
@@ -33402,6 +33964,32 @@
           "gp": 3,
           "g": 1,
           "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "BRODY DENG",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "22",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 2,
           "pts": 2,
           "pim": 0
         }
@@ -33461,7 +34049,7 @@
     },
     {
       "name": "ZACHARY GLADMAN",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 559274,
       "jersey": "22",
       "position": "F",
@@ -33876,6 +34464,32 @@
       ]
     },
     {
+      "name": "BRADY PUTERMAN",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "13",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 1,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "FINN REITH",
       "team": "Ted Reeve Thunder",
       "team_id": 559242,
@@ -34006,6 +34620,32 @@
       ]
     },
     {
+      "name": "TYSON TAKSA",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "86",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "FINLEY TRAN",
       "team": "Vaughan Panthers",
       "team_id": 559244,
@@ -34028,6 +34668,32 @@
           "a": 1,
           "pts": 2,
           "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "MASON UROWITZ",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "9",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 10,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 10
         }
       ]
     },
@@ -34111,7 +34777,7 @@
     },
     {
       "name": "SANDREYEN BEALS",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "61",
       "position": "F",
@@ -34319,7 +34985,7 @@
     },
     {
       "name": "CARTER MOASE",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "93",
       "position": "F",
@@ -34527,7 +35193,7 @@
     },
     {
       "name": "REID WICKHAM",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "71",
       "position": "F",
@@ -50175,7 +50841,7 @@
     },
     {
       "name": "SAM BIENIAS",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -50403,7 +51069,7 @@
     },
     {
       "name": "MATTHEW KARPINSKYY",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "19",
       "position": "F",
@@ -50563,7 +51229,7 @@
     },
     {
       "name": "AUSTIN MCKENZIE",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "10",
       "position": "F",
@@ -50753,7 +51419,7 @@
     },
     {
       "name": "LUCAS SIMONICK",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -50805,7 +51471,7 @@
     },
     {
       "name": "DANTE AGUIAR",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -50877,7 +51543,7 @@
     },
     {
       "name": "ALFREDO CUCONATO",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -51994,6 +52660,42 @@
           "a": 0,
           "pts": 1,
           "pim": 4
+        }
+      ]
+    },
+    {
+      "name": "LEE NAYOT",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "23",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
         }
       ]
     },
@@ -53224,6 +53926,58 @@
       ]
     },
     {
+      "name": "HARRY CLARFIELD",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "5",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "WINNIE COHEN",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "14",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "PETER CORTESE",
       "team": "Vaughan Rangers",
       "team_id": 559275,
@@ -53718,6 +54472,32 @@
       ]
     },
     {
+      "name": "AUSTON HERBERT",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "98",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "LUCA IVES",
       "team": "Mississauga North Stars",
       "team_id": 559241,
@@ -54187,7 +54967,7 @@
     },
     {
       "name": "GABRIEL OMAZIC",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 559274,
       "jersey": "8",
       "position": "F",
@@ -54286,6 +55066,32 @@
           "a": 1,
           "pts": 1,
           "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "WILL PELTIER",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "71",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
         }
       ]
     },
@@ -54707,7 +55513,7 @@
     },
     {
       "name": "ERIK EASTMAN",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "14",
       "position": "F",
@@ -54889,7 +55695,7 @@
     },
     {
       "name": "MICHAEL LANDRY",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "98",
       "position": "F",
@@ -54915,7 +55721,7 @@
     },
     {
       "name": "DIMITRI LIAKOPOULOS",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "98",
       "position": "F",
@@ -54941,7 +55747,7 @@
     },
     {
       "name": "DANIEL LOUGHEED",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "5",
       "position": "F",
@@ -54967,7 +55773,7 @@
     },
     {
       "name": "WILLIAM MACLEOD",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "71",
       "position": "F",
@@ -54993,7 +55799,7 @@
     },
     {
       "name": "HARRINGTON MAXFIELD",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "77",
       "position": "F",
@@ -55019,7 +55825,7 @@
     },
     {
       "name": "ANDRE MESSERE",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "11",
       "position": "F",
@@ -55097,7 +55903,7 @@
     },
     {
       "name": "LUKE NAUMOV",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "10",
       "position": "F",
@@ -55331,7 +56137,7 @@
     },
     {
       "name": "WESLEY WILSON",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "13",
       "position": "F",
@@ -55357,7 +56163,7 @@
     },
     {
       "name": "LOGAN WRIGHT",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "7",
       "position": "F",
@@ -55493,7 +56299,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -55503,7 +56309,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -55753,21 +56559,21 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 1,
           "pts": 1,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -55779,7 +56585,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -55789,7 +56595,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -55857,7 +56663,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -55867,7 +56673,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -55898,6 +56704,32 @@
           "a": 0,
           "pts": 1,
           "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "BLAKE SIDNEY",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 561040,
+      "jersey": "9",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15975",
+          "source_name": "Kingston Canadians Series",
+          "source_type": "tournament",
+          "gp": 3,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
         }
       ]
     },
@@ -55961,7 +56793,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -55971,7 +56803,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -55987,7 +56819,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -55997,7 +56829,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -59799,7 +60631,7 @@
       "name": "EVAN JOHNSTONE",
       "team": "St Thomas Jr Stars",
       "team_id": 532765,
-      "jersey": "97",
+      "jersey": "77",
       "position": "F",
       "age": "U11",
       "tier": "AA",
@@ -66387,11 +67219,11 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
@@ -66407,11 +67239,11 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -87117,7 +87949,7 @@
     },
     {
       "name": "JASE ALVES",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "66",
       "position": "F",
@@ -87195,7 +88027,7 @@
     },
     {
       "name": "RANAK BAINS",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "25",
       "position": "F",
@@ -87247,7 +88079,7 @@
     },
     {
       "name": "JUDE BARREN",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -87299,7 +88131,7 @@
     },
     {
       "name": "JACKSON BENNETT",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -87469,7 +88301,7 @@
     },
     {
       "name": "JACK CAMMISA",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -87645,7 +88477,7 @@
     },
     {
       "name": "WILL CRAWFORD",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -87671,7 +88503,7 @@
     },
     {
       "name": "ALEX CUNDARI",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -87733,7 +88565,7 @@
     },
     {
       "name": "BRYCE DALRYMPLE",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -87847,7 +88679,7 @@
     },
     {
       "name": "BRENNAN DONALDSON",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -87935,7 +88767,7 @@
     },
     {
       "name": "CAM DUNN",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -88049,7 +88881,7 @@
     },
     {
       "name": "XAVIER GALIVAN",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -88173,7 +89005,7 @@
     },
     {
       "name": "ZACH GLADMAN",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -88459,7 +89291,7 @@
     },
     {
       "name": "LUKE KROKKER",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "97",
       "position": "F",
@@ -88733,7 +89565,7 @@
     },
     {
       "name": "THOMAS MACPHERSON",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "34",
       "position": "F",
@@ -88847,7 +89679,7 @@
     },
     {
       "name": "LIAM MARKOVIC",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "71",
       "position": "F",
@@ -88961,7 +89793,7 @@
     },
     {
       "name": "RAMSEY MAZUR",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -89101,7 +89933,7 @@
     },
     {
       "name": "PHILIP MILNER",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "55",
       "position": "F",
@@ -89163,7 +89995,7 @@
     },
     {
       "name": "SPENCER NICOLETTI",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "0",
       "position": "F",
@@ -89353,7 +90185,7 @@
     },
     {
       "name": "HUDSON NUDDS",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "23",
       "position": "F",
@@ -89431,7 +90263,7 @@
     },
     {
       "name": "VINNY PIGNATARO",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -89565,7 +90397,7 @@
     },
     {
       "name": "ILARIO ROSE",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -89617,7 +90449,7 @@
     },
     {
       "name": "NATHAN SAME",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -89819,7 +90651,7 @@
     },
     {
       "name": "GAVIN SZEMATOWICZ",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -89845,7 +90677,7 @@
     },
     {
       "name": "TROY TALEVSKI",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "94",
       "position": "F",
@@ -90037,7 +90869,7 @@
     },
     {
       "name": "GAVIN WEIXLMANN",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -90115,7 +90947,7 @@
     },
     {
       "name": "RIKU YAGI FORNOS",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "65",
       "position": "F",
@@ -90141,7 +90973,7 @@
     },
     {
       "name": "EVAN ZIEMBA",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -90167,7 +90999,7 @@
     },
     {
       "name": "ETHAN ZWOLINKIEWICZ",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "0",
       "position": "F",
@@ -94132,6 +94964,42 @@
       ]
     },
     {
+      "name": "GABRIEL HENRIQUES",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "2",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 10,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 6,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 2
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "HARVEY JOHNSTON",
       "team": "Richmond Hill Jaguars",
       "team_id": 550557,
@@ -96734,6 +97602,32 @@
       ]
     },
     {
+      "name": "CLAYTON CHEN",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "11",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "WILLIAM CIEKIEWICZ",
       "team": "Mississauga North Stars",
       "team_id": 559241,
@@ -98815,7 +99709,7 @@
     },
     {
       "name": "JOSEPH ALLMAN",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "10",
       "position": "F",
@@ -98841,7 +99735,7 @@
     },
     {
       "name": "COLTON ANDREWS",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "9",
       "position": "F",
@@ -98867,7 +99761,7 @@
     },
     {
       "name": "WYATT BENNETT",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "27",
       "position": "F",
@@ -98893,7 +99787,7 @@
     },
     {
       "name": "LUCIANO BORGESE",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "72",
       "position": "F",
@@ -98919,7 +99813,7 @@
     },
     {
       "name": "BENNETT CIAMAGA",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "19",
       "position": "F",
@@ -98945,7 +99839,7 @@
     },
     {
       "name": "LINCOLN DAVIS",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "17",
       "position": "F",
@@ -98971,7 +99865,7 @@
     },
     {
       "name": "WINSTON DAVIS",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "6",
       "position": "F",
@@ -98997,7 +99891,7 @@
     },
     {
       "name": "COLTON GORMAN",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "29",
       "position": "F",
@@ -99023,7 +99917,7 @@
     },
     {
       "name": "COLIN HANAVAN",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "67",
       "position": "F",
@@ -99049,7 +99943,7 @@
     },
     {
       "name": "KEVIN KOBA",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "7",
       "position": "F",
@@ -99075,7 +99969,7 @@
     },
     {
       "name": "LANDON KOBYLSKI",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "37",
       "position": "F",
@@ -99101,7 +99995,7 @@
     },
     {
       "name": "MAXIMUS MAZZUTO",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "43",
       "position": "F",
@@ -99127,7 +100021,7 @@
     },
     {
       "name": "CHARLIE MCGOWAN",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "20",
       "position": "F",
@@ -99153,7 +100047,7 @@
     },
     {
       "name": "GRANT SCHAEFER",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "15",
       "position": "F",
@@ -99179,7 +100073,7 @@
     },
     {
       "name": "LINCOLN SIEJAK",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "8",
       "position": "F",
@@ -99205,7 +100099,7 @@
     },
     {
       "name": "DOMINIC SUGOROVSKIY",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "89",
       "position": "F",
@@ -99231,7 +100125,7 @@
     },
     {
       "name": "JEFFREY TRANSKI",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "98",
       "position": "F",
@@ -99361,7 +100255,7 @@
     },
     {
       "name": "ETHAN BOSEVSKI",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "26",
       "position": "F",
@@ -99387,7 +100281,7 @@
     },
     {
       "name": "DALLAS BOTELHO",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "20",
       "position": "F",
@@ -99413,7 +100307,7 @@
     },
     {
       "name": "JACKSON BRADBURN",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "64",
       "position": "F",
@@ -99699,7 +100593,7 @@
     },
     {
       "name": "JACK FAIRHEAD",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "17",
       "position": "F",
@@ -99751,7 +100645,7 @@
     },
     {
       "name": "ASHER GARDNER",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "11",
       "position": "F",
@@ -99881,7 +100775,7 @@
     },
     {
       "name": "THOMAS GRAVEL",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "96",
       "position": "F",
@@ -99933,7 +100827,7 @@
     },
     {
       "name": "DAVIS HAN",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "8",
       "position": "F",
@@ -99985,7 +100879,7 @@
     },
     {
       "name": "AJ HARBAJAN",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "52",
       "position": "F",
@@ -100011,7 +100905,7 @@
     },
     {
       "name": "JOSIAH HUGHES",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "12",
       "position": "F",
@@ -100063,7 +100957,7 @@
     },
     {
       "name": "J.D. JACKSON",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "3",
       "position": "F",
@@ -100297,7 +101191,7 @@
     },
     {
       "name": "LUKE MCLEAN",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "97",
       "position": "F",
@@ -100349,7 +101243,7 @@
     },
     {
       "name": "AMEDEO MORELLO",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "53",
       "position": "F",
@@ -100479,7 +101373,7 @@
     },
     {
       "name": "KANE PETTIT",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "2",
       "position": "F",
@@ -100531,7 +101425,7 @@
     },
     {
       "name": "ARIA SAFARLOO",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "8",
       "position": "F",
@@ -100557,7 +101451,7 @@
     },
     {
       "name": "JUDAH SUALIM",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "97",
       "position": "F",
@@ -100609,7 +101503,7 @@
     },
     {
       "name": "WYATT TONG",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "29",
       "position": "F",
@@ -100713,7 +101607,7 @@
     },
     {
       "name": "KYLE WU",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "92",
       "position": "F",
@@ -100745,7 +101639,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -100755,7 +101649,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -100771,7 +101665,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -100781,7 +101675,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -100823,7 +101717,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -100833,7 +101727,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -100849,21 +101743,21 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -100901,7 +101795,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -100911,7 +101805,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -100953,7 +101847,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -100963,7 +101857,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -100979,7 +101873,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -100989,7 +101883,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101031,7 +101925,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101041,7 +101935,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101057,7 +101951,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101067,7 +101961,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101109,7 +102003,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101119,7 +102013,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101161,7 +102055,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101171,7 +102065,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101291,7 +102185,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101301,7 +102195,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101317,7 +102211,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101327,7 +102221,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101343,7 +102237,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101353,7 +102247,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101447,21 +102341,21 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -101473,7 +102367,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101483,7 +102377,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101551,7 +102445,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101561,7 +102455,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101629,21 +102523,21 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 4,
+      "total_pim": 6,
       "sources": [
         {
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 4
+          "pim": 6
         }
       ]
     },
@@ -101655,7 +102549,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101665,7 +102559,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101681,7 +102575,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101691,37 +102585,11 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
           "pim": 6
-        }
-      ]
-    },
-    {
-      "name": "BLAKE SIDNEY",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 561040,
-      "jersey": "9",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15975",
-          "source_name": "Kingston Canadians Series",
-          "source_type": "tournament",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
         }
       ]
     },
@@ -101837,7 +102705,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101847,7 +102715,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101863,7 +102731,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -101873,7 +102741,7 @@
           "source_id": "15975",
           "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -102155,7 +103023,7 @@
     },
     {
       "name": "JULIUS ZAJAC",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "6",
       "position": "G",
@@ -104596,7 +105464,7 @@
     },
     {
       "name": "HUGO PHILLIPS",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "35",
       "position": "G",
@@ -105492,7 +106360,7 @@
     },
     {
       "name": "BRADLEY FALKNER",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "27",
       "position": "G",
@@ -105524,7 +106392,7 @@
     },
     {
       "name": "ZACHARY SCHWAB",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "11",
       "position": "G",
@@ -105556,7 +106424,7 @@
     },
     {
       "name": "JOHN WIELINSKI",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 567918,
       "jersey": "1",
       "position": "G",
@@ -106135,7 +107003,7 @@
     },
     {
       "name": "MATTHEW MARRELLI",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 559274,
       "jersey": "29",
       "position": "G",
@@ -106217,6 +107085,51 @@
           "min": 0,
           "gaa": 0.5,
           "so": 1,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "LUKE SUCHER",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "33",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 6,
+      "total_ga": 5,
+      "total_min": 0,
+      "total_gaa": 0.83,
+      "total_so": 2,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 4,
+          "ga": 5,
+          "min": 0,
+          "gaa": 1.25,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 2,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 2,
           "w": 0,
           "l": 0,
           "t": 0
@@ -107692,7 +108605,7 @@
     },
     {
       "name": "MATEO DIPLACIDO",
-      "team": "Vaughan Rangers",
+      "team": "Vaughan Panthers",
       "team_id": 570711,
       "jersey": "33",
       "position": "G",
@@ -110253,7 +111166,7 @@
     },
     {
       "name": "JAIMAN ACHARYA",
-      "team": "Mississauga Beast",
+      "team": "Mississauga Rattlers",
       "team_id": 557293,
       "jersey": "30",
       "position": "G",
@@ -111545,6 +112458,38 @@
       ]
     },
     {
+      "name": "BENNETT MCCALLUM",
+      "team": "Ottawa Sting",
+      "team_id": 561037,
+      "jersey": "33",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 5,
+      "total_min": 0,
+      "total_gaa": 2.5,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15975",
+          "source_name": "Kingston Canadians Series",
+          "source_type": "tournament",
+          "gp": 2,
+          "ga": 5,
+          "min": 0,
+          "gaa": 2.5,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "LOGAN COLE",
       "team": "Mt Brydges Cougars",
       "team_id": 533302,
@@ -112041,6 +112986,51 @@
       ]
     },
     {
+      "name": "SHELLY WEITZNER",
+      "team": "Forest Hill Force",
+      "team_id": 550551,
+      "jersey": "30",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 5,
+      "total_ga": 14,
+      "total_min": 0,
+      "total_gaa": 2.8,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 3,
+          "ga": 12,
+          "min": 0,
+          "gaa": 4.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 2,
+          "ga": 2,
+          "min": 0,
+          "gaa": 1.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "RIKU CRAMPTON",
       "team": "Aurora Tigers",
       "team_id": 534102,
@@ -112211,6 +113201,51 @@
           "source_type": "tournament",
           "gp": 3,
           "ga": 9,
+          "min": 0,
+          "gaa": 3.0,
+          "so": 1,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "KAYDEN MCINNIS",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533182,
+      "jersey": "",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 6,
+      "total_min": 0,
+      "total_gaa": 3.0,
+      "total_so": 1,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15975",
+          "source_name": "Kingston Canadians Series",
+          "source_type": "tournament",
+          "gp": 2,
+          "ga": 6,
           "min": 0,
           "gaa": 3.0,
           "so": 1,
@@ -114279,6 +115314,38 @@
       ]
     },
     {
+      "name": "JONAH KOTOVIETS",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "88",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 7,
+      "total_min": 0,
+      "total_gaa": 3.5,
+      "total_so": 1,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 2,
+          "ga": 7,
+          "min": 0,
+          "gaa": 3.5,
+          "so": 1,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "GARIEL SUSCHENKO",
       "team": "Mississauga North Stars",
       "team_id": 559241,
@@ -114312,7 +115379,7 @@
     },
     {
       "name": "CAMERON FASH",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "73",
       "position": "G",
@@ -114330,6 +115397,38 @@
         {
           "source_id": "15970",
           "source_name": "South Simcoe",
+          "source_type": "tournament",
+          "gp": 2,
+          "ga": 7,
+          "min": 0,
+          "gaa": 3.5,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "ROHAN SODHA",
+      "team": "Ottawa Sting",
+      "team_id": 561037,
+      "jersey": "29",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 7,
+      "total_min": 0,
+      "total_gaa": 3.5,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15975",
+          "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
           "gp": 2,
           "ga": 7,
@@ -115599,7 +116698,7 @@
     },
     {
       "name": "WESTON AGAR",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 574115,
       "jersey": "1",
       "position": "G",
@@ -117285,7 +118384,7 @@
     },
     {
       "name": "OWEN PODRECCA",
-      "team": "West Niagara Flying Aces",
+      "team": "West Mall Lightning",
       "team_id": 561145,
       "jersey": "36",
       "position": "G",
@@ -117303,38 +118402,6 @@
         {
           "source_id": "15970",
           "source_name": "South Simcoe",
-          "source_type": "tournament",
-          "gp": 1,
-          "ga": 5,
-          "min": 0,
-          "gaa": 5.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "BENNETT MCCALLUM",
-      "team": "Ottawa Sting",
-      "team_id": 561037,
-      "jersey": "33",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 5,
-      "total_min": 0,
-      "total_gaa": 5.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15975",
-          "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
           "gp": 1,
           "ga": 5,
@@ -117837,51 +118904,6 @@
       ]
     },
     {
-      "name": "KAYDEN MCINNIS",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 533182,
-      "jersey": "",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 6,
-      "total_min": 0,
-      "total_gaa": 6.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15975",
-          "source_name": "Kingston Canadians Series",
-          "source_type": "tournament",
-          "gp": 1,
-          "ga": 6,
-          "min": 0,
-          "gaa": 6.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "MASON SAVIGNAC",
       "team": "Sudbury Wolves",
       "team_id": 561146,
@@ -117901,38 +118923,6 @@
         {
           "source_id": "15970",
           "source_name": "South Simcoe",
-          "source_type": "tournament",
-          "gp": 1,
-          "ga": 6,
-          "min": 0,
-          "gaa": 6.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "ROHAN SODHA",
-      "team": "Ottawa Sting",
-      "team_id": 561037,
-      "jersey": "29",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 6,
-      "total_min": 0,
-      "total_gaa": 6.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15975",
-          "source_name": "Kingston Canadians Series",
           "source_type": "tournament",
           "gp": 1,
           "ga": 6,
@@ -117984,6 +118974,38 @@
       "jersey": "36",
       "position": "G",
       "age": "U14",
+      "tier": "AA",
+      "total_gp": 1,
+      "total_ga": 7,
+      "total_min": 0,
+      "total_gaa": 7.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15946",
+          "source_name": "Vaughan Silver Stick",
+          "source_type": "tournament",
+          "gp": 1,
+          "ga": 7,
+          "min": 0,
+          "gaa": 7.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "MILES WOLFSTADT",
+      "team": "Goulding Park Rangers",
+      "team_id": 559239,
+      "jersey": "29",
+      "position": "G",
+      "age": "U11",
       "tier": "AA",
       "total_gp": 1,
       "total_ga": 7,
@@ -118165,7 +119187,7 @@
     },
     {
       "name": "GAVIN WEIR",
-      "team": "West Mall Lightning",
+      "team": "West Hill Golden Hawks",
       "team_id": 561104,
       "jersey": "41",
       "position": "G",
@@ -121734,7 +122756,7 @@
     },
     {
       "team_id": 557293,
-      "team_name": "Mississauga Beast",
+      "team_name": "Mississauga Rattlers",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -123334,7 +124356,7 @@
     },
     {
       "team_id": 570711,
-      "team_name": "Vaughan Rangers",
+      "team_name": "Vaughan Panthers",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -124009,7 +125031,7 @@
     },
     {
       "team_id": 574115,
-      "team_name": "West Niagara Flying Aces",
+      "team_name": "West Mall Lightning",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -125154,6 +126176,31 @@
       "ppo": 22,
       "ppga": 2,
       "ppoa": 13,
+      "shg": 2,
+      "shga": 0
+    },
+    {
+      "team_id": 550551,
+      "team_name": "Forest Hill Force",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15746",
+      "source_name": "Mary Parkinson AA",
+      "source_type": "tournament",
+      "gp": 6,
+      "w": 4,
+      "l": 1,
+      "t": 1,
+      "pts": 9,
+      "gf": 29,
+      "ga": 17,
+      "diff": 12,
+      "pim": 28,
+      "ppg": 4,
+      "ppo": 10,
+      "ppga": 3,
+      "ppoa": 9,
       "shg": 2,
       "shga": 0
     },
@@ -126758,6 +127805,31 @@
       "shga": 0
     },
     {
+      "team_id": 559238,
+      "team_name": "Forest Hill Force",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15946",
+      "source_name": "Vaughan Silver Stick",
+      "source_type": "tournament",
+      "gp": 4,
+      "w": 4,
+      "l": 0,
+      "t": 0,
+      "pts": 8,
+      "gf": 21,
+      "ga": 2,
+      "diff": 19,
+      "pim": 6,
+      "ppg": 0,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 3,
+      "shg": 2,
+      "shga": 0
+    },
+    {
       "team_id": 559240,
       "team_name": "Humber Valley Sharks",
       "division_title": "U11 AA",
@@ -126908,6 +127980,31 @@
       "shga": 0
     },
     {
+      "team_id": 559239,
+      "team_name": "Goulding Park Rangers",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15946",
+      "source_name": "Vaughan Silver Stick",
+      "source_type": "tournament",
+      "gp": 4,
+      "w": 1,
+      "l": 3,
+      "t": 0,
+      "pts": 2,
+      "gf": 12,
+      "ga": 17,
+      "diff": -5,
+      "pim": 26,
+      "ppg": 1,
+      "ppo": 7,
+      "ppga": 5,
+      "ppoa": 10,
+      "shg": 0,
+      "shga": 0
+    },
+    {
       "team_id": 559236,
       "team_name": "Duffield Devils",
       "division_title": "U11 AA",
@@ -126959,7 +128056,7 @@
     },
     {
       "team_id": 559274,
-      "team_name": "Vaughan Rangers",
+      "team_name": "Vaughan Panthers",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -127359,7 +128456,7 @@
     },
     {
       "team_id": 567918,
-      "team_name": "West Mall Lightning",
+      "team_name": "West Hill Golden Hawks",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -127484,7 +128581,7 @@
     },
     {
       "team_id": 561104,
-      "team_name": "West Mall Lightning",
+      "team_name": "West Hill Golden Hawks",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -127584,7 +128681,7 @@
     },
     {
       "team_id": 561145,
-      "team_name": "West Niagara Flying Aces",
+      "team_name": "West Mall Lightning",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -127758,31 +128855,6 @@
       "shga": 1
     },
     {
-      "team_id": 561037,
-      "team_name": "Ottawa Sting",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15975",
-      "source_name": "Kingston Canadians Series",
-      "source_type": "tournament",
-      "gp": 2,
-      "w": 0,
-      "l": 2,
-      "t": 0,
-      "pts": 0,
-      "gf": 2,
-      "ga": 11,
-      "diff": -9,
-      "pim": 16,
-      "ppg": 1,
-      "ppo": 5,
-      "ppga": 2,
-      "ppoa": 6,
-      "shg": 0,
-      "shga": 1
-    },
-    {
       "team_id": 561040,
       "team_name": "Upper Ottawa Valley Aces",
       "division_title": "U11 AA",
@@ -127791,19 +128863,44 @@
       "source_id": "15975",
       "source_name": "Kingston Canadians Series",
       "source_type": "tournament",
-      "gp": 2,
-      "w": 0,
+      "gp": 3,
+      "w": 1,
       "l": 2,
       "t": 0,
-      "pts": 0,
-      "gf": 3,
+      "pts": 2,
+      "gf": 4,
       "ga": 13,
-      "diff": -10,
-      "pim": 4,
+      "diff": -9,
+      "pim": 10,
       "ppg": 1,
-      "ppo": 4,
+      "ppo": 7,
       "ppga": 2,
-      "ppoa": 2,
+      "ppoa": 5,
+      "shg": 0,
+      "shga": 1
+    },
+    {
+      "team_id": 561037,
+      "team_name": "Ottawa Sting",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15975",
+      "source_name": "Kingston Canadians Series",
+      "source_type": "tournament",
+      "gp": 3,
+      "w": 0,
+      "l": 3,
+      "t": 0,
+      "pts": 0,
+      "gf": 2,
+      "ga": 12,
+      "diff": -10,
+      "pim": 22,
+      "ppg": 1,
+      "ppo": 8,
+      "ppga": 2,
+      "ppoa": 9,
       "shg": 0,
       "shga": 1
     },
@@ -128109,7 +129206,7 @@
       "home_goals": 2,
       "home_result": "L",
       "visitor_id": 557293,
-      "visitor_name": "Mississauga Beast",
+      "visitor_name": "Mississauga Rattlers",
       "visitor_goals": 4,
       "visitor_result": "W",
       "division": "U11 AA"
@@ -132149,7 +133246,7 @@
       "home_goals": 1,
       "home_result": "T",
       "visitor_id": 570711,
-      "visitor_name": "Vaughan Rangers",
+      "visitor_name": "Vaughan Panthers",
       "visitor_goals": 1,
       "visitor_result": "T",
       "division": "U14 AA"
@@ -132775,6 +133872,26 @@
       "division": "U11 AA"
     },
     {
+      "game_id": 3029589,
+      "date": "Sep 28, 2026",
+      "time": "6:15 PM",
+      "timestamp": "2026-09-28T22:15:00Z",
+      "status": "final",
+      "location": "Sports Village Rink D",
+      "source_id": "15946",
+      "source_name": "Vaughan Silver Stick",
+      "source_type": "tournament",
+      "home_id": 559238,
+      "home_name": "Forest Hill Force",
+      "home_goals": 3,
+      "home_result": "W",
+      "visitor_id": 559239,
+      "visitor_name": "Goulding Park Rangers",
+      "visitor_goals": 1,
+      "visitor_result": "L",
+      "division": "U11 AA"
+    },
+    {
       "game_id": 3029590,
       "date": "Sep 28, 2026",
       "time": "6:15 PM",
@@ -132829,7 +133946,7 @@
       "home_goals": 3,
       "home_result": "L",
       "visitor_id": 559274,
-      "visitor_name": "Vaughan Rangers",
+      "visitor_name": "Vaughan Panthers",
       "visitor_goals": 4,
       "visitor_result": "W",
       "division": "U14 AA"
@@ -133025,7 +134142,7 @@
       "source_name": "Vaughan Silver Stick",
       "source_type": "tournament",
       "home_id": 559274,
-      "home_name": "Vaughan Rangers",
+      "home_name": "Vaughan Panthers",
       "home_goals": 7,
       "home_result": "W",
       "visitor_id": 559269,
@@ -133169,7 +134286,7 @@
       "home_goals": 4,
       "home_result": "W",
       "visitor_id": 574115,
-      "visitor_name": "West Niagara Flying Aces",
+      "visitor_name": "West Mall Lightning",
       "visitor_goals": 1,
       "visitor_result": "L",
       "division": "U14 AA"
@@ -133265,7 +134382,7 @@
       "source_name": "South Simcoe",
       "source_type": "tournament",
       "home_id": 561145,
-      "home_name": "West Niagara Flying Aces",
+      "home_name": "West Mall Lightning",
       "home_goals": 0,
       "home_result": "L",
       "visitor_id": 561148,
@@ -133429,7 +134546,7 @@
       "home_goals": 0,
       "home_result": "L",
       "visitor_id": 559274,
-      "visitor_name": "Vaughan Rangers",
+      "visitor_name": "Vaughan Panthers",
       "visitor_goals": 5,
       "visitor_result": "W",
       "division": "U14 AA"
@@ -133445,7 +134562,7 @@
       "source_name": "South Simcoe",
       "source_type": "tournament",
       "home_id": 561104,
-      "home_name": "West Mall Lightning",
+      "home_name": "West Hill Golden Hawks",
       "home_goals": 2,
       "home_result": "L",
       "visitor_id": 561105,
@@ -133689,7 +134806,7 @@
       "home_goals": 8,
       "home_result": "W",
       "visitor_id": 561104,
-      "visitor_name": "West Mall Lightning",
+      "visitor_name": "West Hill Golden Hawks",
       "visitor_goals": 1,
       "visitor_result": "L",
       "division": "U11 AA"
@@ -133705,7 +134822,7 @@
       "source_name": "Vaughan Silver Stick",
       "source_type": "tournament",
       "home_id": 559274,
-      "home_name": "Vaughan Rangers",
+      "home_name": "Vaughan Panthers",
       "home_goals": 5,
       "home_result": "W",
       "visitor_id": 559268,
@@ -133769,7 +134886,7 @@
       "home_goals": 0,
       "home_result": "L",
       "visitor_id": 561145,
-      "visitor_name": "West Niagara Flying Aces",
+      "visitor_name": "West Mall Lightning",
       "visitor_goals": 3,
       "visitor_result": "W",
       "division": "U14 AA"
@@ -134025,7 +135142,7 @@
       "source_name": "South Simcoe",
       "source_type": "tournament",
       "home_id": 561104,
-      "home_name": "West Mall Lightning",
+      "home_name": "West Hill Golden Hawks",
       "home_goals": 1,
       "home_result": "L",
       "visitor_id": 561107,
@@ -134099,19 +135216,19 @@
       "date": "Oct 3, 2026",
       "time": "9:40 AM",
       "timestamp": "2026-10-03T13:40:00Z",
-      "status": "scheduled",
+      "status": "final",
       "location": "INVISTA (Desjardins)",
       "source_id": "15975",
       "source_name": "Kingston Canadians Series",
       "source_type": "tournament",
       "home_id": 561037,
       "home_name": "Ottawa Sting",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 0,
+      "home_result": "L",
       "visitor_id": 561040,
       "visitor_name": "Upper Ottawa Valley Aces",
-      "visitor_goals": null,
-      "visitor_result": null,
+      "visitor_goals": 1,
+      "visitor_result": "W",
       "division": "U11 AA"
     },
     {
@@ -134145,7 +135262,7 @@
       "source_name": "South Simcoe",
       "source_type": "tournament",
       "home_id": 561145,
-      "home_name": "West Niagara Flying Aces",
+      "home_name": "West Mall Lightning",
       "home_goals": null,
       "home_result": null,
       "visitor_id": 561147,
@@ -134249,7 +135366,7 @@
       "home_goals": null,
       "home_result": null,
       "visitor_id": 561104,
-      "visitor_name": "West Mall Lightning",
+      "visitor_name": "West Hill Golden Hawks",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U11 AA"
@@ -135109,7 +136226,7 @@
       "home_goals": null,
       "home_result": null,
       "visitor_id": 561145,
-      "visitor_name": "West Niagara Flying Aces",
+      "visitor_name": "West Mall Lightning",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
@@ -136345,7 +137462,7 @@
       "source_name": "Hamilton Steel",
       "source_type": "tournament",
       "home_id": 567918,
-      "home_name": "West Mall Lightning",
+      "home_name": "West Hill Golden Hawks",
       "home_goals": null,
       "home_result": null,
       "visitor_id": 567893,
@@ -136429,7 +137546,7 @@
       "home_goals": null,
       "home_result": null,
       "visitor_id": 567918,
-      "visitor_name": "West Mall Lightning",
+      "visitor_name": "West Hill Golden Hawks",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U11 AA"
@@ -136769,7 +137886,7 @@
       "home_goals": null,
       "home_result": null,
       "visitor_id": 567918,
-      "visitor_name": "West Mall Lightning",
+      "visitor_name": "West Hill Golden Hawks",
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U11 AA"
@@ -136865,7 +137982,7 @@
       "source_name": "Hamilton Steel",
       "source_type": "tournament",
       "home_id": 567918,
-      "home_name": "West Mall Lightning",
+      "home_name": "West Hill Golden Hawks",
       "home_goals": null,
       "home_result": null,
       "visitor_id": 567910,
@@ -136927,12 +138044,12 @@
           "Ajax-Pickering",
           "Raiders"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "39",
+        "mhr_rating": 87.8,
+        "mhr_record": "0-3-3",
+        "mhr_agd": "-1.5",
+        "mhr_sched": "89.3",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Aurora Tigers": {
         "aliases": [
@@ -136941,12 +138058,12 @@
           "Aurora Tigers U11AA",
           "Aurora"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "28",
+        "mhr_rating": 89.6,
+        "mhr_record": "3-1-1",
+        "mhr_agd": "1.2",
+        "mhr_sched": "88.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Barrie Colts": {
         "aliases": [
@@ -136955,12 +138072,12 @@
           "Barrie Colts U11AA",
           "Barrie"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "36",
+        "mhr_rating": 88.1,
         "mhr_record": "0-5-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-2.0",
+        "mhr_sched": "90.1",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Belleville Jr Bulls": {
         "aliases": [
@@ -136971,12 +138088,12 @@
           "Belleville Bulls",
           "Belleville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "2",
+        "mhr_rating": 96.1,
+        "mhr_record": "4-1-1",
+        "mhr_agd": "3.4",
+        "mhr_sched": "92.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Brampton 45s": {
         "aliases": [
@@ -136986,12 +138103,12 @@
           "Brampton 45's",
           "Brampton"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "55",
+        "mhr_rating": 85.2,
+        "mhr_record": "1-5-0",
+        "mhr_agd": "-3.1",
+        "mhr_sched": "88.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Brantford 99ers": {
         "aliases": [
@@ -137000,12 +138117,12 @@
           "Brantford 99ers U11AA",
           "Brantford"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "50",
+        "mhr_rating": 86.8,
         "mhr_record": "3-2-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "1.5",
+        "mhr_sched": "85.3",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Burlington Eagles": {
         "aliases": [
@@ -137015,12 +138132,12 @@
           "Burlington Eagles (Gold)",
           "Burlington"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "5-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "21",
+        "mhr_rating": 90.1,
+        "mhr_record": "5-1-1",
+        "mhr_agd": "0.7",
+        "mhr_sched": "89.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Cambridge Hawks": {
         "aliases": [
@@ -137028,7 +138145,13 @@
           "Cambridge Hawks U11",
           "Cambridge Hawks U11AA",
           "Cambridge"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Centre Wellington Fusion": {
         "aliases": [
@@ -137038,12 +138161,12 @@
           "Centre Wellington",
           "CW Fusion"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "38",
+        "mhr_rating": 88.0,
+        "mhr_record": "4-3-0",
+        "mhr_agd": "0.5",
+        "mhr_sched": "87.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Clarington Toros": {
         "aliases": [
@@ -137053,12 +138176,12 @@
           "CLARINGTON AA U11",
           "Clarington"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "2-3-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "52",
+        "mhr_rating": 86.4,
+        "mhr_record": "2-4-0",
+        "mhr_agd": "-1.1",
+        "mhr_sched": "87.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Collingwood Jr Blues": {
         "aliases": [
@@ -137068,12 +138191,12 @@
           "Collingwood Blues",
           "Collingwood"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "49",
+        "mhr_rating": 87.0,
+        "mhr_record": "0-2-2",
+        "mhr_agd": "-1.0",
+        "mhr_sched": "88.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Copper Cliff Reds": {
         "aliases": [
@@ -137081,12 +138204,12 @@
           "Copper Cliff Reds U11",
           "Copper Cliff Reds U11AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "25",
+        "mhr_rating": 89.8,
+        "mhr_record": "0-1-1",
+        "mhr_agd": "-3.0",
+        "mhr_sched": "92.8",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Cumberland Jr Grads": {
         "aliases": [
@@ -137094,59 +138217,69 @@
           "Cumberland Jr Grads U11",
           "Cumberland Jr Grads U11AA",
           "Cumberland"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Current River Jr Storm": {
         "aliases": [
           "Current River Jr Storm U11 AA",
           "Current River Jr Storm U11",
-          "Current River Jr Storm U11AA"
+          "Current River Jr Storm U11AA",
+          "Current"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Dryden Paperkings": {
         "aliases": [
           "Dryden Paperkings U11 AA",
           "Dryden Paperkings U11",
-          "Dryden Paperkings U11AA"
+          "Dryden Paperkings U11AA",
+          "Dryden"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Duffield Devils": {
         "aliases": [
           "Duffield Devils U11 AA",
           "Duffield Devils U11",
-          "Duffield Devils U11AA"
+          "Duffield Devils U11AA",
+          "Duffield"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-0-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "East Enders Ticats": {
         "aliases": [
           "East Enders Ticats U11 AA",
           "East Enders Ticats U11",
-          "East Enders Ticats U11AA"
+          "East Enders Ticats U11AA",
+          "East"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-0-1",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Eastern Ontario Cobras": {
         "aliases": [
@@ -137154,7 +138287,13 @@
           "Eastern Ontario Cobras U11",
           "Eastern Ontario Cobras U11AA",
           "Eastern Ontario"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Emo Cowboys": {
         "aliases": [
@@ -137167,7 +138306,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Faustina Toros": {
         "aliases": [
@@ -137180,7 +138319,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Flamborough Sabres": {
         "aliases": [
@@ -137189,25 +138328,41 @@
           "Flamborough Sabres U11AA",
           "Flamborough"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-2-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "31",
+        "mhr_rating": 89.3,
+        "mhr_record": "2-2-1",
+        "mhr_agd": "0.6",
+        "mhr_sched": "88.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "Forest Hill Force": {
+        "aliases": [
+          "Forest Hill Force U11 AA",
+          "Forest Hill Force U11",
+          "Forest Hill Force U11AA",
+          "Forest Hill Force",
+          "Forest Hill"
+        ],
+        "mhr_rank": "8",
+        "mhr_rating": 92.3,
+        "mhr_record": "5-1-1",
+        "mhr_agd": "1.7",
+        "mhr_sched": "90.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Fort Frances Canadians": {
         "aliases": [
           "Fort Frances Canadians U11 AA",
           "Fort Frances Canadians U11",
-          "Fort Frances Canadians U11AA"
+          "Fort Frances Canadians U11AA",
+          "Fort"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Glancaster Bombers": {
         "aliases": [
@@ -137216,25 +138371,41 @@
           "Glancaster Bombers U11AA",
           "Glancaster"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-2-2",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "38",
+        "mhr_rating": 87.9,
+        "mhr_record": "1-2-2",
+        "mhr_agd": "-0.6",
+        "mhr_sched": "88.5",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Gloucester Rangers": {
         "aliases": [
           "Gloucester Rangers U11 AA",
           "Gloucester Rangers U11",
-          "Gloucester Rangers U11AA"
+          "Gloucester Rangers U11AA",
+          "Gloucester"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "Goulding Park Rangers": {
+        "aliases": [
+          "Goulding Park Rangers U11 AA",
+          "Goulding Park Rangers U11",
+          "Goulding Park Rangers U11AA",
+          "Goulding Park Rangers",
+          "Goulding Park"
+        ],
+        "mhr_rank": "18",
+        "mhr_rating": 90.3,
+        "mhr_record": "0-1-0",
+        "mhr_agd": "-2.0",
+        "mhr_sched": "92.3",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Guelph Gryphons": {
         "aliases": [
@@ -137243,12 +138414,12 @@
           "Guelph Gryphons U11AA",
           "Guelph"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "2-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "48",
+        "mhr_rating": 87.2,
+        "mhr_record": "5-2-0",
+        "mhr_agd": "1.2",
+        "mhr_sched": "85.9",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Halton Hills Thunder": {
         "aliases": [
@@ -137257,12 +138428,12 @@
           "Halton Hills Thunder U11AA",
           "Halton Hills"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "53",
+        "mhr_rating": 86.3,
         "mhr_record": "2-3-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-2.4",
+        "mhr_sched": "88.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Hamilton Steel": {
         "aliases": [
@@ -137272,12 +138443,12 @@
           "Hamilton Huskies",
           "Hamilton"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-4-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "58",
+        "mhr_rating": 83.3,
+        "mhr_record": "0-5-0",
+        "mhr_agd": "-5.2",
+        "mhr_sched": "88.5",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Humber Valley Sharks": {
         "aliases": [
@@ -137286,12 +138457,12 @@
           "Humber Valley Sharks U11AA",
           "Humber Valley"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "3-2-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "9",
+        "mhr_rating": 91.6,
+        "mhr_record": "4-2-0",
+        "mhr_agd": "1.1",
+        "mhr_sched": "90.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "KC Sabres": {
         "aliases": [
@@ -137304,33 +138475,35 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Kanata Blazers": {
         "aliases": [
           "Kanata Blazers U11 AA",
           "Kanata Blazers U11",
-          "Kanata Blazers U11AA"
+          "Kanata Blazers U11AA",
+          "Kanata"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Kenora Thistles": {
         "aliases": [
           "Kenora Thistles U11 AA",
           "Kenora Thistles U11",
-          "Kenora Thistles U11AA"
+          "Kenora Thistles U11AA",
+          "Kenora"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "King Rebellion": {
         "aliases": [
@@ -137339,12 +138512,12 @@
           "King Rebellion U11AA",
           "King"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "13",
+        "mhr_rating": 91.0,
         "mhr_record": "2-2-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "0.2",
+        "mhr_sched": "90.8",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Kingston Canadians": {
         "aliases": [
@@ -137354,12 +138527,12 @@
           "KINGSTON AA U11",
           "Kingston"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "4",
+        "mhr_rating": 93.8,
+        "mhr_record": "1-1-0",
+        "mhr_agd": "0.5",
+        "mhr_sched": "93.3",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Kitchener Jr Rangers (Red)": {
         "aliases": [
@@ -137370,12 +138543,12 @@
           "Kitchener Red",
           "Kitchener Jr Rangers"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "3",
+        "mhr_rating": 93.9,
         "mhr_record": "6-0-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "4.1",
+        "mhr_sched": "89.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Leaside Flames": {
         "aliases": [
@@ -137383,12 +138556,12 @@
           "Leaside Flames U11",
           "Leaside Flames U11AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "34",
+        "mhr_rating": 89.0,
+        "mhr_record": "2-2-1",
+        "mhr_agd": "0.2",
+        "mhr_sched": "88.8",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "London Jr Knights (Green)": {
         "aliases": [
@@ -137399,12 +138572,12 @@
           "London Green",
           "London Jr Knights"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "6",
+        "mhr_rating": 92.5,
         "mhr_record": "6-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "3.6",
+        "mhr_sched": "88.8",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "London Jr Knights (White)": {
         "aliases": [
@@ -137414,25 +138587,26 @@
           "London Jr Knights White",
           "London White"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "30",
+        "mhr_rating": 89.3,
+        "mhr_record": "4-1-1",
+        "mhr_agd": "1.6",
+        "mhr_sched": "87.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Markham Islanders": {
         "aliases": [
           "Markham Islanders U11 AA",
           "Markham Islanders U11",
-          "Markham Islanders U11AA"
+          "Markham Islanders U11AA",
+          "Markham"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "35",
+        "mhr_rating": 88.1,
         "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-6.5",
+        "mhr_sched": "94.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Markham Waxers": {
         "aliases": [
@@ -137441,12 +138615,12 @@
           "Markham Waxers U11AA",
           "Markham"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "60",
+        "mhr_rating": 82.1,
+        "mhr_record": "0-2-0",
+        "mhr_agd": "-7.0",
+        "mhr_sched": "89.1",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Milton Winterhawks": {
         "aliases": [
@@ -137457,62 +138631,80 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga Beast": {
         "aliases": [
           "Mississauga Beast U11 AA",
           "Mississauga Beast U11",
-          "Mississauga Beast U11AA"
+          "Mississauga Beast U11AA",
+          "Mississauga"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "15",
+        "mhr_rating": 90.6,
         "mhr_record": "2-2-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "0.5",
+        "mhr_sched": "90.1",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga Jets": {
         "aliases": [
           "Mississauga Jets U11 AA",
           "Mississauga Jets U11",
-          "Mississauga Jets U11AA"
+          "Mississauga Jets U11AA",
+          "Mississauga"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "57",
+        "mhr_rating": 84.2,
+        "mhr_record": "0-1-0",
+        "mhr_agd": "-1.0",
+        "mhr_sched": "85.2",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga North Stars": {
         "aliases": [
           "Mississauga North Stars U11 AA",
           "Mississauga North Stars U11",
-          "Mississauga North Stars U11AA"
+          "Mississauga North Stars U11AA",
+          "Mississauga"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "Mississauga Rattlers": {
+        "aliases": [
+          "Mississauga Rattlers U11 AA",
+          "Mississauga Rattlers U11",
+          "Mississauga Rattlers U11AA",
+          "Mississauga Rattlers"
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "1-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga Terriers": {
         "aliases": [
           "Mississauga Terriers U11 AA",
           "Mississauga Terriers U11",
-          "Mississauga Terriers U11AA"
+          "Mississauga Terriers U11AA",
+          "Mississauga"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mt Brydges Cougars": {
         "aliases": [
@@ -137524,25 +138716,26 @@
           "Mt Brydges",
           "Mount Brydges"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "22",
+        "mhr_rating": 90.0,
+        "mhr_record": "2-1-0",
+        "mhr_agd": "2.3",
+        "mhr_sched": "87.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Nepean Raiders": {
         "aliases": [
           "Nepean Raiders U11 AA",
           "Nepean Raiders U11",
-          "Nepean Raiders U11AA"
+          "Nepean Raiders U11AA",
+          "Nepean"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Newmarket Renegades": {
         "aliases": [
@@ -137551,12 +138744,12 @@
           "Newmarket Renegades U11AA",
           "Newmarket"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "44",
+        "mhr_rating": 87.5,
+        "mhr_record": "1-3-2",
+        "mhr_agd": "-2.1",
+        "mhr_sched": "89.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Niagara Falls Canucks": {
         "aliases": [
@@ -137565,25 +138758,26 @@
           "Niagara Falls Canucks U11AA",
           "Niagara Falls"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "43",
+        "mhr_rating": 87.6,
         "mhr_record": "2-3-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "0.5",
+        "mhr_sched": "87.1",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Nickel City Cubs": {
         "aliases": [
           "Nickel City Cubs U11 AA",
           "Nickel City Cubs U11",
-          "Nickel City Cubs U11AA"
+          "Nickel City Cubs U11AA",
+          "Nickel"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Norfolk Knights": {
         "aliases": [
@@ -137592,25 +138786,26 @@
           "Norfolk Knights U11AA",
           "Norfolk"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "2-2-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "24",
+        "mhr_rating": 89.9,
+        "mhr_record": "3-2-1",
+        "mhr_agd": "-0.3",
+        "mhr_sched": "90.2",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North Bay Trappers": {
         "aliases": [
           "North Bay Trappers U11 AA",
           "North Bay Trappers U11",
-          "North Bay Trappers U11AA"
+          "North Bay Trappers U11AA",
+          "North"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "3-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North Durham Warriors": {
         "aliases": [
@@ -137619,51 +138814,54 @@
           "North Durham Warriors U11AA",
           "North Durham"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "7",
+        "mhr_rating": 92.5,
+        "mhr_record": "4-1-2",
+        "mhr_agd": "1.8",
+        "mhr_sched": "90.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North End Flames": {
         "aliases": [
           "North End Flames U11 AA",
           "North End Flames U11",
-          "North End Flames U11AA"
+          "North End Flames U11AA",
+          "North"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North Toronto": {
         "aliases": [
           "North Toronto U11 AA",
           "North Toronto U11",
-          "North Toronto U11AA"
+          "North Toronto U11AA",
+          "North"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "19",
+        "mhr_rating": 90.3,
+        "mhr_record": "2-2-0",
+        "mhr_agd": "-1.2",
+        "mhr_sched": "91.5",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North York Knights": {
         "aliases": [
           "North York Knights U11 AA",
           "North York Knights U11",
-          "North York Knights U11AA"
+          "North York Knights U11AA",
+          "North"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "46",
+        "mhr_rating": 87.3,
+        "mhr_record": "1-3-1",
+        "mhr_agd": "-0.8",
+        "mhr_sched": "88.1",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Northumberland Nighthawks": {
         "aliases": [
@@ -137673,12 +138871,26 @@
           "NORTHUMBERLAND AA U11",
           "Northumberland"
         ],
+        "mhr_rank": "59",
+        "mhr_rating": 82.4,
+        "mhr_record": "1-1-0",
+        "mhr_agd": "-2.5",
+        "mhr_sched": "84.9",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "Norwest Stars": {
+        "aliases": [
+          "Norwest Stars U11 AA",
+          "Norwest Stars U11",
+          "Norwest Stars U11AA",
+          "Norwest Stars"
+        ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Oakville Rangers": {
         "aliases": [
@@ -137691,12 +138903,12 @@
           "Oakville Red",
           "Oakville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "37",
+        "mhr_rating": 88.0,
+        "mhr_record": "2-3-1",
+        "mhr_agd": "-0.5",
+        "mhr_sched": "88.5",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Orangeville Flyers": {
         "aliases": [
@@ -137705,12 +138917,12 @@
           "Orangeville Flyers U11AA",
           "Orangeville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "40",
+        "mhr_rating": 87.8,
+        "mhr_record": "2-3-2",
+        "mhr_agd": "-0.7",
+        "mhr_sched": "88.5",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Oshawa Generals": {
         "aliases": [
@@ -137720,38 +138932,40 @@
           "OSHAWA AA U11",
           "Oshawa"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "1",
+        "mhr_rating": 97.7,
+        "mhr_record": "1-0-0",
+        "mhr_agd": "7.0",
+        "mhr_sched": "90.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Ottawa Sting": {
         "aliases": [
           "Ottawa Sting U11 AA",
           "Ottawa Sting U11",
-          "Ottawa Sting U11AA"
+          "Ottawa Sting U11AA",
+          "Ottawa"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Ottawa Valley Silver Seven": {
         "aliases": [
           "Ottawa Valley Silver Seven U11 AA",
           "Ottawa Valley Silver Seven U11",
-          "Ottawa Valley Silver Seven U11AA"
+          "Ottawa Valley Silver Seven U11AA",
+          "Ottawa"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_rank": "5",
+        "mhr_rating": 93.6,
+        "mhr_record": "2-3-0",
         "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_sched": "93.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Peterborough Petes": {
         "aliases": [
@@ -137761,12 +138975,12 @@
           "PETERBOROUGH AA U11",
           "Peterborough"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "29",
+        "mhr_rating": 89.5,
+        "mhr_record": "2-1-1",
+        "mhr_agd": "0.5",
+        "mhr_sched": "89.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Quinte West Golden Hawks": {
         "aliases": [
@@ -137776,12 +138990,12 @@
           "QUINTE WEST AA U11",
           "Quinte West"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "17",
+        "mhr_rating": 90.5,
         "mhr_record": "3-3-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "0.3",
+        "mhr_sched": "90.2",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Red Lake Rockets": {
         "aliases": [
@@ -137794,7 +139008,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Richmond Hill Jaguars": {
         "aliases": [
@@ -137803,12 +139017,12 @@
           "Richmond Hill Jaguars U11AA",
           "Richmond Hill"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "54",
+        "mhr_rating": 85.8,
         "mhr_record": "0-4-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-5.5",
+        "mhr_sched": "91.3",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Rideau St Lawrence Kings": {
         "aliases": [
@@ -137817,7 +139031,13 @@
           "Rideau St Lawrence Kings U11AA",
           "Rideau St. Lawrence Kings",
           "Rideau St Lawrence"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Sarnia Jr Sting": {
         "aliases": [
@@ -137826,59 +139046,69 @@
           "Sarnia Jr Sting U11AA",
           "Sarnia Jr. Sting",
           "Sarnia"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Scarborough Ice Raiders": {
         "aliases": [
           "Scarborough Ice Raiders U11 AA",
           "Scarborough Ice Raiders U11",
-          "Scarborough Ice Raiders U11AA"
+          "Scarborough Ice Raiders U11AA",
+          "Scarborough"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "47",
+        "mhr_rating": 87.2,
+        "mhr_record": "1-3-0",
+        "mhr_agd": "-1.7",
+        "mhr_sched": "89.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Scarborough Young Bruins": {
         "aliases": [
           "Scarborough Young Bruins U11 AA",
           "Scarborough Young Bruins U11",
-          "Scarborough Young Bruins U11AA"
+          "Scarborough Young Bruins U11AA",
+          "Scarborough"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "61",
+        "mhr_rating": 80.4,
+        "mhr_record": "0-2-0",
+        "mhr_agd": "-4.0",
+        "mhr_sched": "84.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Seaway Valley Rapids": {
         "aliases": [
           "Seaway Valley Rapids U11 AA",
           "Seaway Valley Rapids U11",
-          "Seaway Valley Rapids U11AA"
+          "Seaway Valley Rapids U11AA",
+          "Seaway"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Sioux Lookout Jr Bombers": {
         "aliases": [
           "Sioux Lookout Jr Bombers U11 AA",
           "Sioux Lookout Jr Bombers U11",
-          "Sioux Lookout Jr Bombers U11AA"
+          "Sioux Lookout Jr Bombers U11AA",
+          "Sioux"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Soo Jr Greyhounds": {
         "aliases": [
@@ -137888,10 +139118,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-2-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "South Simcoe Storm": {
         "aliases": [
@@ -137900,12 +139130,12 @@
           "South Simcoe Storm U11AA",
           "South Simcoe"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "33",
+        "mhr_rating": 89.1,
+        "mhr_record": "5-1-0",
+        "mhr_agd": "3.3",
+        "mhr_sched": "85.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "St Catharines Jr Falcons": {
         "aliases": [
@@ -137922,12 +139152,12 @@
           "St Catharines Falcons",
           "Garden City"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "5-2-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "10",
+        "mhr_rating": 91.5,
+        "mhr_record": "6-2-0",
+        "mhr_agd": "4.1",
+        "mhr_sched": "87.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "St Lawrence Steel": {
         "aliases": [
@@ -137935,7 +139165,13 @@
           "St Lawrence Steel U11",
           "St Lawrence Steel U11AA",
           "St. Lawrence Steel"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "St Thomas Jr Stars": {
         "aliases": [
@@ -137947,12 +139183,12 @@
           "St Thomas",
           "St. Thomas"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "53",
+        "mhr_rating": 86.3,
         "mhr_record": "0-1-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-3.0",
+        "mhr_sched": "89.3",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Stoney Creek Warriors": {
         "aliases": [
@@ -137961,12 +139197,12 @@
           "Stoney Creek Warriors U11AA",
           "Stoney Creek"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "56",
+        "mhr_rating": 84.9,
+        "mhr_record": "0-1-0",
+        "mhr_agd": "-3.0",
+        "mhr_sched": "87.9",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Stouffville Clippers": {
         "aliases": [
@@ -137975,12 +139211,12 @@
           "Stouffville Clippers U11AA",
           "Stouffville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "35",
+        "mhr_rating": 88.7,
+        "mhr_record": "3-1-2",
+        "mhr_agd": "0.5",
+        "mhr_sched": "88.2",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Stratford Warriors": {
         "aliases": [
@@ -137988,7 +139224,13 @@
           "Stratford Warriors U11",
           "Stratford Warriors U11AA",
           "Stratford"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.0",
+        "mhr_sched": "0.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Streetsville Tigers": {
         "aliases": [
@@ -137997,12 +139239,12 @@
           "Streetsville Tigers U11AA",
           "Streetsville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "38",
+        "mhr_rating": 87.9,
+        "mhr_record": "0-4-0",
+        "mhr_agd": "-4.2",
+        "mhr_sched": "92.1",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Sudbury Wolves": {
         "aliases": [
@@ -138011,12 +139253,12 @@
           "Sudbury Wolves U11AA",
           "Sudbury"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "11",
+        "mhr_rating": 91.4,
         "mhr_record": "2-2-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "1.5",
+        "mhr_sched": "89.9",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Ted Reeve Thunder": {
         "aliases": [
@@ -138029,20 +139271,21 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Thunder Bay Elks": {
         "aliases": [
           "Thunder Bay Elks U11 AA",
           "Thunder Bay Elks U11",
-          "Thunder Bay Elks U11AA"
+          "Thunder Bay Elks U11AA",
+          "Thunder"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Timmins North Stars": {
         "aliases": [
@@ -138053,10 +139296,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-2-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "TNT Tornados": {
         "aliases": [
@@ -138067,77 +139310,54 @@
           "TNT Tornadoes",
           "TNT"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
-      },
-      "Toronto Aeros": {
-        "aliases": [
-          "Toronto Aeros U11 AA",
-          "Toronto Aeros U11",
-          "Toronto Aeros U11AA"
-        ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "16",
+        "mhr_rating": 90.6,
+        "mhr_record": "4-1-1",
+        "mhr_agd": "2.1",
+        "mhr_sched": "88.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Toronto Attack": {
         "aliases": [
           "Toronto Attack U11 AA",
           "Toronto Attack U11",
-          "Toronto Attack U11AA"
+          "Toronto Attack U11AA",
+          "Toronto"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "14",
+        "mhr_rating": 90.6,
+        "mhr_record": "0-1-0",
+        "mhr_agd": "-1.0",
+        "mhr_sched": "91.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Toronto Eagles": {
         "aliases": [
           "Toronto Eagles U11 AA",
           "Toronto Eagles U11",
-          "Toronto Eagles U11AA"
+          "Toronto Eagles U11AA",
+          "Toronto"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
-      },
-      "Toronto Wolverines": {
-        "aliases": [
-          "Toronto Wolverines U11 AA",
-          "Toronto Wolverines U11",
-          "Toronto Wolverines U11AA"
-        ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Upper Ottawa Valley Aces": {
         "aliases": [
           "Upper Ottawa Valley Aces U11 AA",
           "Upper Ottawa Valley Aces U11",
-          "Upper Ottawa Valley Aces U11AA"
+          "Upper Ottawa Valley Aces U11AA",
+          "Upper"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Upper York Admirals": {
         "aliases": [
@@ -138146,51 +139366,54 @@
           "Upper York Admirals U11AA",
           "Upper York"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "14",
+        "mhr_rating": 90.7,
+        "mhr_record": "1-3-1",
+        "mhr_agd": "-2.0",
+        "mhr_sched": "92.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Vaughan Panthers": {
         "aliases": [
           "Vaughan Panthers U11 AA",
           "Vaughan Panthers U11",
-          "Vaughan Panthers U11AA"
+          "Vaughan Panthers U11AA",
+          "Vaughan"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Vaughan Rangers": {
         "aliases": [
           "Vaughan Rangers U11 AA",
           "Vaughan Rangers U11",
-          "Vaughan Rangers U11AA"
+          "Vaughan Rangers U11AA",
+          "Vaughan"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Volunteer Pool Bearcats": {
         "aliases": [
           "Volunteer Pool Bearcats U11 AA",
           "Volunteer Pool Bearcats U11",
-          "Volunteer Pool Bearcats U11AA"
+          "Volunteer Pool Bearcats U11AA",
+          "Volunteer"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Waterloo Wolves": {
         "aliases": [
@@ -138199,12 +139422,27 @@
           "Waterloo Wolves U11AA",
           "Waterloo"
         ],
+        "mhr_rank": "51",
+        "mhr_rating": 86.4,
+        "mhr_record": "6-0-1",
+        "mhr_agd": "3.0",
+        "mhr_sched": "83.4",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "West Hill Golden Hawks": {
+        "aliases": [
+          "West Hill Golden Hawks U11 AA",
+          "West Hill Golden Hawks U11",
+          "West Hill Golden Hawks U11AA",
+          "West Hill Golden Hawks",
+          "West Hill"
+        ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "6-0-0",
+        "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "West Mall Lightning": {
         "aliases": [
@@ -138213,12 +139451,12 @@
           "West Mall Lightning U11AA",
           "Westmall Lightning"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-3-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "44",
+        "mhr_rating": 87.5,
+        "mhr_record": "2-3-0",
+        "mhr_agd": "-2.2",
+        "mhr_sched": "89.7",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "West Niagara Flying Aces": {
         "aliases": [
@@ -138227,12 +139465,12 @@
           "West Niagara Flying Aces U11AA",
           "West Niagara"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "3-3-0",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "36",
+        "mhr_rating": 88.1,
+        "mhr_record": "3-4-0",
+        "mhr_agd": "0.1",
+        "mhr_sched": "88.0",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Westfort Rangers": {
         "aliases": [
@@ -138245,7 +139483,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.0",
         "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Whitby Wildcats": {
         "aliases": [
@@ -138259,12 +139497,12 @@
           "Whitby White",
           "Whitby"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-1",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "12",
+        "mhr_rating": 91.1,
+        "mhr_record": "4-0-3",
+        "mhr_agd": "2.4",
+        "mhr_sched": "88.6",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Woodstock Jr Navy Vets": {
         "aliases": [
@@ -138273,12 +139511,12 @@
           "Woodstock Jr Navy Vets U11AA",
           "Woodstock"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "56",
+        "mhr_rating": 85.0,
         "mhr_record": "0-2-2",
-        "mhr_agd": "0.0",
-        "mhr_sched": "0.0",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-1.2",
+        "mhr_sched": "86.3",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       }
     },
     "U14 AA": {
@@ -138292,12 +139530,12 @@
           "Ajax-Pickering",
           "Raiders"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "35",
+        "mhr_rating": 82.36,
+        "mhr_record": "2-2-0",
+        "mhr_agd": "-0.50",
+        "mhr_sched": "82.86",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Aurora Tigers": {
         "aliases": [
@@ -138306,12 +139544,12 @@
           "Aurora Tigers U14AA",
           "Aurora"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "42",
+        "mhr_rating": 81.71,
         "mhr_record": "2-3-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-0.33",
+        "mhr_sched": "82.04",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Barrie Colts": {
         "aliases": [
@@ -138322,10 +139560,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "1-0-1",
+        "mhr_record": "1-0-2",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Belleville Jr Bulls": {
         "aliases": [
@@ -138336,12 +139574,12 @@
           "Belleville Bulls",
           "Belleville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "30",
+        "mhr_rating": 82.77,
+        "mhr_record": "2-4-0",
+        "mhr_agd": "-1.33",
+        "mhr_sched": "84.11",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Brampton 45s": {
         "aliases": [
@@ -138356,7 +139594,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Brantford 99ers": {
         "aliases": [
@@ -138365,12 +139603,12 @@
           "Brantford 99ers U14AA",
           "Brantford"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "25",
+        "mhr_rating": 83.1,
+        "mhr_record": "2-1-0",
+        "mhr_agd": "0.33",
+        "mhr_sched": "82.77",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Burlington Eagles": {
         "aliases": [
@@ -138385,7 +139623,7 @@
         "mhr_record": "0-1-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Caledon Hawks": {
         "aliases": [
@@ -138394,12 +139632,12 @@
           "Caledon Hawks U14AA",
           "Caledon"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-4-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "57",
+        "mhr_rating": 78.84,
+        "mhr_record": "0-5-0",
+        "mhr_agd": "-3.40",
+        "mhr_sched": "82.24",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Cambridge Hawks": {
         "aliases": [
@@ -138407,7 +139645,13 @@
           "Cambridge Hawks U14",
           "Cambridge Hawks U14AA",
           "Cambridge"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.00",
+        "mhr_sched": "0.00",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Centre Wellington Fusion": {
         "aliases": [
@@ -138417,12 +139661,12 @@
           "Centre Wellington",
           "CW Fusion"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "34",
+        "mhr_rating": 82.39,
+        "mhr_record": "1-3-2",
+        "mhr_agd": "-0.50",
+        "mhr_sched": "82.89",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Clarington Toros": {
         "aliases": [
@@ -138432,12 +139676,12 @@
           "CLARINGTON AA U14",
           "Clarington"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "3-2-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "43",
+        "mhr_rating": 81.65,
+        "mhr_record": "4-2-0",
+        "mhr_agd": "0.66",
+        "mhr_sched": "80.98",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Collingwood Jr Blues": {
         "aliases": [
@@ -138447,12 +139691,12 @@
           "Collingwood Blues",
           "Collingwood"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "55",
+        "mhr_rating": 79.41,
+        "mhr_record": "1-4-0",
+        "mhr_agd": "-2.20",
+        "mhr_sched": "81.61",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Copper Cliff Reds": {
         "aliases": [
@@ -138460,12 +139704,12 @@
           "Copper Cliff Reds U14",
           "Copper Cliff Reds U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "13",
+        "mhr_rating": 83.96,
+        "mhr_record": "5-2-0",
+        "mhr_agd": "2.85",
+        "mhr_sched": "81.10",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Cumberland Jr Grads": {
         "aliases": [
@@ -138474,12 +139718,12 @@
           "Cumberland Jr Grads U14AA",
           "Cumberland"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "5",
+        "mhr_rating": 84.96,
+        "mhr_record": "5-2-0",
+        "mhr_agd": "1.14",
+        "mhr_sched": "83.82",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Duffield Devils": {
         "aliases": [
@@ -138487,12 +139731,12 @@
           "Duffield Devils U14",
           "Duffield Devils U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "52",
+        "mhr_rating": 80.2,
         "mhr_record": "1-2-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-1.25",
+        "mhr_sched": "81.45",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "East Enders Ticats": {
         "aliases": [
@@ -138505,7 +139749,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Eastern Ontario Cobras": {
         "aliases": [
@@ -138514,12 +139758,12 @@
           "Eastern Ontario Cobras U14AA",
           "Eastern Ontario"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "50",
+        "mhr_rating": 80.27,
+        "mhr_record": "0-1-0",
+        "mhr_agd": "-4.00",
+        "mhr_sched": "84.27",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Faustina Toros": {
         "aliases": [
@@ -138532,7 +139776,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Flamborough Sabres": {
         "aliases": [
@@ -138541,25 +139785,27 @@
           "Flamborough Sabres U14AA",
           "Flamborough"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "2-3-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "47",
+        "mhr_rating": 80.93,
+        "mhr_record": "3-4-0",
+        "mhr_agd": "-0.85",
+        "mhr_sched": "81.79",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Forest Hill Force": {
         "aliases": [
           "Forest Hill Force U14 AA",
           "Forest Hill Force U14",
-          "Forest Hill Force U14AA"
+          "Forest Hill Force U14AA",
+          "Forest Hill Force",
+          "Forest Hill"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Glancaster Bombers": {
         "aliases": [
@@ -138568,12 +139814,12 @@
           "Glancaster Bombers U14AA",
           "Glancaster"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "39",
+        "mhr_rating": 82.01,
+        "mhr_record": "0-4-1",
+        "mhr_agd": "-2.00",
+        "mhr_sched": "84.01",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Gloucester Rangers": {
         "aliases": [
@@ -138581,12 +139827,12 @@
           "Gloucester Rangers U14",
           "Gloucester Rangers U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "2-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "10",
+        "mhr_rating": 84.27,
+        "mhr_record": "7-0-1",
+        "mhr_agd": "2.62",
+        "mhr_sched": "81.64",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Greater Toronto Capitals": {
         "aliases": [
@@ -138597,10 +139843,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "1-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Guelph Gryphons": {
         "aliases": [
@@ -138609,12 +139855,12 @@
           "Guelph Gryphons U14AA",
           "Guelph"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "11",
+        "mhr_rating": 84.22,
         "mhr_record": "1-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "2.00",
+        "mhr_sched": "82.22",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Halton Hills Thunder": {
         "aliases": [
@@ -138623,12 +139869,12 @@
           "Halton Hills Thunder U14AA",
           "Halton Hills"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "37",
+        "mhr_rating": 82.22,
+        "mhr_record": "2-3-0",
+        "mhr_agd": "0.60",
+        "mhr_sched": "81.62",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Hamilton Steel": {
         "aliases": [
@@ -138638,25 +139884,26 @@
           "Hamilton Huskies",
           "Hamilton"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "31",
+        "mhr_rating": 82.75,
+        "mhr_record": "2-3-0",
+        "mhr_agd": "-1.00",
+        "mhr_sched": "83.75",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Hespeler Shamrocks": {
         "aliases": [
           "Hespeler Shamrocks U14 AA",
           "Hespeler Shamrocks U14",
-          "Hespeler Shamrocks U14AA"
+          "Hespeler Shamrocks U14AA",
+          "Hespeler"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Humber Valley Sharks": {
         "aliases": [
@@ -138667,10 +139914,10 @@
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Kanata Blazers": {
         "aliases": [
@@ -138683,7 +139930,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "King Rebellion": {
         "aliases": [
@@ -138692,12 +139939,12 @@
           "King Rebellion U14AA",
           "King"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "28",
+        "mhr_rating": 82.86,
+        "mhr_record": "2-1-0",
+        "mhr_agd": "1.66",
+        "mhr_sched": "81.19",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Kingston Canadians": {
         "aliases": [
@@ -138707,12 +139954,12 @@
           "KINGSTON AA U14",
           "Kingston"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "6",
+        "mhr_rating": 84.87,
+        "mhr_record": "5-1-0",
+        "mhr_agd": "2.00",
+        "mhr_sched": "82.87",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Kitchener Jr Rangers (Red)": {
         "aliases": [
@@ -138723,12 +139970,12 @@
           "Kitchener Red",
           "Kitchener Jr Rangers"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "7",
+        "mhr_rating": 84.76,
+        "mhr_record": "5-1-2",
+        "mhr_agd": "1.00",
+        "mhr_sched": "83.76",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Leaside Flames": {
         "aliases": [
@@ -138736,12 +139983,12 @@
           "Leaside Flames U14",
           "Leaside Flames U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_rank": "3",
+        "mhr_rating": 85.43,
+        "mhr_record": "0-0-1",
         "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_sched": "85.43",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "London Jr Knights (Green)": {
         "aliases": [
@@ -138752,12 +139999,12 @@
           "London Green",
           "London Jr Knights"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "14",
+        "mhr_rating": 83.81,
+        "mhr_record": "6-2-0",
+        "mhr_agd": "1.50",
+        "mhr_sched": "82.31",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "London Jr Knights (White)": {
         "aliases": [
@@ -138767,12 +140014,12 @@
           "London Jr Knights White",
           "London White"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "3-2-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "38",
+        "mhr_rating": 82.07,
+        "mhr_record": "4-2-1",
+        "mhr_agd": "0.28",
+        "mhr_sched": "81.78",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Markham Islanders": {
         "aliases": [
@@ -138780,12 +140027,12 @@
           "Markham Islanders U14",
           "Markham Islanders U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "56",
+        "mhr_rating": 79.08,
+        "mhr_record": "1-3-0",
+        "mhr_agd": "-2.75",
+        "mhr_sched": "81.83",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Markham Waxers": {
         "aliases": [
@@ -138794,12 +140041,12 @@
           "Markham Waxers U14AA",
           "Markham"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "49",
+        "mhr_rating": 80.31,
         "mhr_record": "0-0-1",
         "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_sched": "80.31",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Milton Winterhawks": {
         "aliases": [
@@ -138808,12 +140055,12 @@
           "Milton Winterhawks U14AA",
           "Milton"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "5-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "8",
+        "mhr_rating": 84.7,
+        "mhr_record": "5-1-1",
+        "mhr_agd": "2.71",
+        "mhr_sched": "81.99",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga Beast": {
         "aliases": [
@@ -138821,12 +140068,12 @@
           "Mississauga Beast U14",
           "Mississauga Beast U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "2",
+        "mhr_rating": 85.82,
         "mhr_record": "2-2-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-2.50",
+        "mhr_sched": "88.32",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga North Stars": {
         "aliases": [
@@ -138839,7 +140086,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga Rattlers": {
         "aliases": [
@@ -138852,7 +140099,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mississauga Terriers": {
         "aliases": [
@@ -138860,12 +140107,12 @@
           "Mississauga Terriers U14",
           "Mississauga Terriers U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "3",
+        "mhr_rating": 85.43,
+        "mhr_record": "1-0-2",
+        "mhr_agd": "0.66",
+        "mhr_sched": "84.76",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Mt Brydges Cougars": {
         "aliases": [
@@ -138877,12 +140124,12 @@
           "Mt Brydges",
           "Mount Brydges"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "27",
+        "mhr_rating": 82.9,
+        "mhr_record": "2-2-1",
+        "mhr_agd": "0.80",
+        "mhr_sched": "82.10",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Nepean Raiders": {
         "aliases": [
@@ -138890,12 +140137,12 @@
           "Nepean Raiders U14",
           "Nepean Raiders U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "44",
+        "mhr_rating": 81.56,
+        "mhr_record": "2-4-0",
+        "mhr_agd": "-1.00",
+        "mhr_sched": "82.56",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Newmarket Renegades": {
         "aliases": [
@@ -138904,12 +140151,12 @@
           "Newmarket Renegades U14AA",
           "Newmarket"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "26",
+        "mhr_rating": 82.87,
+        "mhr_record": "1-2-1",
+        "mhr_agd": "-0.50",
+        "mhr_sched": "83.37",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Niagara Falls Canucks": {
         "aliases": [
@@ -138918,12 +140165,12 @@
           "Niagara Falls Canucks U14AA",
           "Niagara Falls"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "22",
+        "mhr_rating": 83.45,
         "mhr_record": "3-1-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "1.80",
+        "mhr_sched": "81.65",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Nickel City Cubs": {
         "aliases": [
@@ -138931,12 +140178,12 @@
           "Nickel City Cubs U14",
           "Nickel City Cubs U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "59",
+        "mhr_rating": 78.22,
+        "mhr_record": "0-4-0",
+        "mhr_agd": "-2.75",
+        "mhr_sched": "80.97",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Norfolk Knights": {
         "aliases": [
@@ -138950,7 +140197,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North Bay Trappers": {
         "aliases": [
@@ -138963,7 +140210,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North Durham Warriors": {
         "aliases": [
@@ -138972,12 +140219,12 @@
           "North Durham Warriors U14AA",
           "North Durham"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-3-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "49",
+        "mhr_rating": 80.31,
+        "mhr_record": "1-4-1",
+        "mhr_agd": "-1.16",
+        "mhr_sched": "81.48",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North Toronto": {
         "aliases": [
@@ -138985,12 +140232,12 @@
           "North Toronto U14",
           "North Toronto U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "6-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "14",
+        "mhr_rating": 83.81,
+        "mhr_record": "7-1-0",
+        "mhr_agd": "1.87",
+        "mhr_sched": "81.94",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "North York Knights": {
         "aliases": [
@@ -138998,12 +140245,12 @@
           "North York Knights U14",
           "North York Knights U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "36",
+        "mhr_rating": 82.24,
+        "mhr_record": "1-3-0",
+        "mhr_agd": "-1.25",
+        "mhr_sched": "83.49",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Northumberland Nighthawks": {
         "aliases": [
@@ -139013,12 +140260,12 @@
           "NORTHUMBERLAND AA U14",
           "Northumberland"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-3-2",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "51",
+        "mhr_rating": 80.24,
+        "mhr_record": "0-4-2",
+        "mhr_agd": "-1.66",
+        "mhr_sched": "81.91",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Oakville Rangers": {
         "aliases": [
@@ -139031,12 +140278,12 @@
           "Oakville Red",
           "Oakville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "32",
+        "mhr_rating": 82.66,
+        "mhr_record": "3-2-1",
+        "mhr_agd": "-0.66",
+        "mhr_sched": "83.33",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Orangeville Flyers": {
         "aliases": [
@@ -139045,12 +140292,12 @@
           "Orangeville Flyers U14AA",
           "Orangeville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "15",
+        "mhr_rating": 83.8,
+        "mhr_record": "4-2-1",
+        "mhr_agd": "0.71",
+        "mhr_sched": "83.08",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Oshawa Generals": {
         "aliases": [
@@ -139060,12 +140307,12 @@
           "OSHAWA AA U14",
           "Oshawa"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "2-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "9",
+        "mhr_rating": 84.47,
+        "mhr_record": "7-1-0",
+        "mhr_agd": "1.75",
+        "mhr_sched": "82.72",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Ottawa Sting": {
         "aliases": [
@@ -139073,12 +140320,12 @@
           "Ottawa Sting U14",
           "Ottawa Sting U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "41",
+        "mhr_rating": 81.8,
+        "mhr_record": "0-3-1",
+        "mhr_agd": "-2.00",
+        "mhr_sched": "83.80",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Ottawa Valley Silver Seven": {
         "aliases": [
@@ -139086,12 +140333,12 @@
           "Ottawa Valley Silver Seven U14",
           "Ottawa Valley Silver Seven U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "24",
+        "mhr_rating": 83.3,
         "mhr_record": "4-2-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "1.66",
+        "mhr_sched": "81.63",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Peterborough Petes": {
         "aliases": [
@@ -139101,12 +140348,12 @@
           "PETERBOROUGH AA U14",
           "Peterborough"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "33",
+        "mhr_rating": 82.61,
+        "mhr_record": "2-1-0",
+        "mhr_agd": "0.33",
+        "mhr_sched": "82.28",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Quinte West Golden Hawks": {
         "aliases": [
@@ -139116,12 +140363,12 @@
           "QUINTE WEST AA U14",
           "Quinte West"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "1",
+        "mhr_rating": 86.39,
+        "mhr_record": "2-0-0",
+        "mhr_agd": "4.00",
+        "mhr_sched": "82.39",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Rideau St Lawrence Kings": {
         "aliases": [
@@ -139131,12 +140378,12 @@
           "Rideau St. Lawrence Kings",
           "Rideau St Lawrence"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "26",
+        "mhr_rating": 82.99,
+        "mhr_record": "1-3-0",
+        "mhr_agd": "-0.25",
+        "mhr_sched": "83.24",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Sarnia Jr Sting": {
         "aliases": [
@@ -139145,7 +140392,13 @@
           "Sarnia Jr Sting U14AA",
           "Sarnia Jr. Sting",
           "Sarnia"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.00",
+        "mhr_sched": "0.00",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Scarborough Ice Raiders": {
         "aliases": [
@@ -139158,7 +140411,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Scarborough Young Bruins": {
         "aliases": [
@@ -139171,7 +140424,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Seaway Valley Rapids": {
         "aliases": [
@@ -139184,7 +140437,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Soo Jr Greyhounds": {
         "aliases": [
@@ -139192,12 +140445,12 @@
           "Soo Jr Greyhounds U14",
           "Soo Jr Greyhounds U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "48",
+        "mhr_rating": 80.46,
+        "mhr_record": "0-2-0",
+        "mhr_agd": "-3.50",
+        "mhr_sched": "83.96",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "South Simcoe Storm": {
         "aliases": [
@@ -139206,12 +140459,12 @@
           "South Simcoe Storm U14AA",
           "South Simcoe"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "1-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "12",
+        "mhr_rating": 84.15,
+        "mhr_record": "3-4-0",
+        "mhr_agd": "0.57",
+        "mhr_sched": "83.58",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "St Catharines Jr Falcons": {
         "aliases": [
@@ -139228,12 +140481,12 @@
           "St Catharines Falcons",
           "Garden City"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "4-1-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "17",
+        "mhr_rating": 83.7,
+        "mhr_record": "5-1-1",
+        "mhr_agd": "2.57",
+        "mhr_sched": "81.13",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "St Lawrence Steel": {
         "aliases": [
@@ -139241,7 +140494,13 @@
           "St Lawrence Steel U14",
           "St Lawrence Steel U14AA",
           "St. Lawrence Steel"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.00",
+        "mhr_sched": "0.00",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "St Thomas Jr Stars": {
         "aliases": [
@@ -139253,12 +140512,12 @@
           "St Thomas",
           "St. Thomas"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "4-2-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "36",
+        "mhr_rating": 82.33,
+        "mhr_record": "4-3-1",
+        "mhr_agd": "-0.12",
+        "mhr_sched": "82.45",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Stouffville Clippers": {
         "aliases": [
@@ -139272,7 +140531,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Stratford Warriors": {
         "aliases": [
@@ -139281,12 +140540,12 @@
           "Stratford Warriors U14AA",
           "Stratford"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "5-1-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "19",
+        "mhr_rating": 83.54,
+        "mhr_record": "5-2-1",
+        "mhr_agd": "2.00",
+        "mhr_sched": "81.54",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Streetsville Tigers": {
         "aliases": [
@@ -139295,12 +140554,12 @@
           "Streetsville Tigers U14AA",
           "Streetsville"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "60",
+        "mhr_rating": 77.89,
         "mhr_record": "0-3-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-4.50",
+        "mhr_sched": "82.39",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Sudbury Wolves": {
         "aliases": [
@@ -139314,7 +140573,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Ted Reeve Thunder": {
         "aliases": [
@@ -139322,12 +140581,12 @@
           "Ted Reeve Thunder U14",
           "Ted Reeve Thunder U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "38",
+        "mhr_rating": 82.16,
         "mhr_record": "0-1-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-0.50",
+        "mhr_sched": "82.66",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Timmins North Stars": {
         "aliases": [
@@ -139336,12 +140595,12 @@
           "Timmins North Stars U14AA",
           "Timmins"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "61",
+        "mhr_rating": 77.27,
+        "mhr_record": "0-1-0",
+        "mhr_agd": "-7.00",
+        "mhr_sched": "84.27",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "TNT Tornados": {
         "aliases": [
@@ -139352,12 +140611,12 @@
           "TNT Tornadoes",
           "TNT"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-1-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "27",
+        "mhr_rating": 82.91,
+        "mhr_record": "5-2-1",
+        "mhr_agd": "0.50",
+        "mhr_sched": "82.41",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Toronto Avalanche": {
         "aliases": [
@@ -139370,7 +140629,7 @@
         "mhr_record": "0-0-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-17T20:39:22.684719+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Toronto Eagles": {
         "aliases": [
@@ -139378,12 +140637,25 @@
           "Toronto Eagles U14",
           "Toronto Eagles U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_rank": "28",
+        "mhr_rating": 82.87,
+        "mhr_record": "0-2-0",
+        "mhr_agd": "-1.50",
+        "mhr_sched": "84.37",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "Toronto Wolverines": {
+        "aliases": [
+          "Toronto Wolverines U14 AA",
+          "Toronto Wolverines U14",
+          "Toronto Wolverines U14AA"
+        ],
+        "mhr_rank": "58",
+        "mhr_rating": 78.27,
+        "mhr_record": "0-2-0",
+        "mhr_agd": "-7.00",
+        "mhr_sched": "85.27",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Upper Ottawa Valley Aces": {
         "aliases": [
@@ -139391,12 +140663,12 @@
           "Upper Ottawa Valley Aces U14",
           "Upper Ottawa Valley Aces U14AA"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_rank": "19",
+        "mhr_rating": 83.54,
+        "mhr_record": "2-2-1",
         "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_sched": "83.54",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Upper York Admirals": {
         "aliases": [
@@ -139405,25 +140677,40 @@
           "Upper York Admirals U14AA",
           "Upper York"
         ],
+        "mhr_rank": "48",
+        "mhr_rating": 80.89,
+        "mhr_record": "2-2-0",
+        "mhr_agd": "-0.75",
+        "mhr_sched": "81.64",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "Vaughan Panthers": {
+        "aliases": [
+          "Vaughan Panthers U14 AA",
+          "Vaughan Panthers U14",
+          "Vaughan Panthers U14AA",
+          "Vaughan"
+        ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "2-2-0",
+        "mhr_record": "1-0-1",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Vaughan Rangers": {
         "aliases": [
           "Vaughan Rangers U14 AA",
           "Vaughan Rangers U14",
-          "Vaughan Rangers U14AA"
+          "Vaughan Rangers U14AA",
+          "Vaughan"
         ],
         "mhr_rank": "n/a",
         "mhr_rating": 0.0,
-        "mhr_record": "0-0-0",
+        "mhr_record": "0-1-0",
         "mhr_agd": "0.00",
         "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Waterloo Wolves": {
         "aliases": [
@@ -139431,7 +140718,26 @@
           "Waterloo Wolves U14",
           "Waterloo Wolves U14AA",
           "Waterloo"
-        ]
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.00",
+        "mhr_sched": "0.00",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
+      },
+      "West Mall Lightning": {
+        "aliases": [
+          "West Mall Lightning U14 AA",
+          "West Mall Lightning U14",
+          "West Mall Lightning U14AA"
+        ],
+        "mhr_rank": "n/a",
+        "mhr_rating": 0.0,
+        "mhr_record": "0-0-0",
+        "mhr_agd": "0.00",
+        "mhr_sched": "0.00",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "West Niagara Flying Aces": {
         "aliases": [
@@ -139440,12 +140746,12 @@
           "West Niagara Flying Aces U14AA",
           "West Niagara"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "49",
+        "mhr_rating": 80.82,
         "mhr_record": "2-3-1",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "-0.50",
+        "mhr_sched": "81.32",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Whitby Wildcats": {
         "aliases": [
@@ -139459,12 +140765,12 @@
           "Whitby White",
           "Whitby"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "46",
+        "mhr_rating": 81.2,
         "mhr_record": "1-2-1",
         "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_sched": "81.20",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       },
       "Woodstock Jr Navy Vets": {
         "aliases": [
@@ -139473,12 +140779,12 @@
           "Woodstock Jr Navy Vets U14AA",
           "Woodstock"
         ],
-        "mhr_rank": "n/a",
-        "mhr_rating": 0.0,
+        "mhr_rank": "23",
+        "mhr_rating": 83.24,
         "mhr_record": "4-1-2",
-        "mhr_agd": "0.00",
-        "mhr_sched": "0.00",
-        "mhr_updated_at": "2026-09-23T14:46:18.432156+00:00"
+        "mhr_agd": "2.28",
+        "mhr_sched": "80.96",
+        "mhr_updated_at": "2026-10-03T15:00:00.000000+00:00"
       }
     }
   }
