@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-05T15:25:16.337452+00:00",
-  "total_skaters": 2811,
-  "total_goalies": 369,
+  "generated_at": "2026-10-06T13:47:14.450735+00:00",
+  "total_skaters": 2826,
+  "total_goalies": 373,
   "total_standings_rows": 383,
-  "total_games": 520,
+  "total_games": 521,
   "skaters": [
     {
       "name": "BRAYDEN APPOTIVE",
@@ -450,6 +450,52 @@
       ]
     },
     {
+      "name": "ROXTEN VANDERKOLFF",
+      "team": "Aurora Tigers",
+      "team_id": 534102,
+      "jersey": "91",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 8,
+      "total_g": 11,
+      "total_a": 2,
+      "total_pts": 13,
+      "total_pim": 8,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 4,
+          "a": 0,
+          "pts": 4,
+          "pim": 2
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 5,
+          "g": 7,
+          "a": 2,
+          "pts": 9,
+          "pim": 6
+        }
+      ]
+    },
+    {
       "name": "EMMETT WILLIAMS-KRPAN",
       "team": "South Simcoe Storm",
       "team_id": 534137,
@@ -808,52 +854,6 @@
           "a": 7,
           "pts": 12,
           "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "ROXTEN VANDERKOLFF",
-      "team": "Aurora Tigers",
-      "team_id": 534102,
-      "jersey": "91",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 7,
-      "total_g": 10,
-      "total_a": 2,
-      "total_pts": 12,
-      "total_pim": 8,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 3,
-          "a": 0,
-          "pts": 3,
-          "pim": 2
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15746",
-          "source_name": "Mary Parkinson AA",
-          "source_type": "tournament",
-          "gp": 5,
-          "g": 7,
-          "a": 2,
-          "pts": 9,
-          "pim": 6
         }
       ]
     },
@@ -7458,6 +7458,52 @@
       ]
     },
     {
+      "name": "NOAH TSIMICALIS",
+      "team": "Aurora Tigers",
+      "team_id": 534102,
+      "jersey": "10",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 8,
+      "total_g": 3,
+      "total_a": 3,
+      "total_pts": 6,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 5,
+          "g": 2,
+          "a": 2,
+          "pts": 4,
+          "pim": 4
+        }
+      ]
+    },
+    {
       "name": "NATE DRURY",
       "team": "South Simcoe Storm",
       "team_id": 534140,
@@ -8150,6 +8196,42 @@
           "a": 2,
           "pts": 4,
           "pim": 29
+        }
+      ]
+    },
+    {
+      "name": "ZAYDEN WOODS",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "17",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 2,
+      "total_a": 4,
+      "total_pts": 6,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 4,
+          "pts": 5,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
         }
       ]
     },
@@ -10242,6 +10324,32 @@
       ]
     },
     {
+      "name": "RYAN CUMMER",
+      "team": "Kanata Blazers",
+      "team_id": 533219,
+      "jersey": "13",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 1,
+      "total_a": 4,
+      "total_pts": 5,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 3,
+          "g": 1,
+          "a": 4,
+          "pts": 5,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LAKEN HITCHMAN",
       "team": "St Lawrence Steel",
       "team_id": 533221,
@@ -10536,6 +10644,52 @@
           "a": 3,
           "pts": 3,
           "pim": 6
+        }
+      ]
+    },
+    {
+      "name": "DAMIEN DEVRIES",
+      "team": "Aurora Tigers",
+      "team_id": 534102,
+      "jersey": "9",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 8,
+      "total_g": 2,
+      "total_a": 3,
+      "total_pts": 5,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 4
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 5,
+          "g": 2,
+          "a": 2,
+          "pts": 4,
+          "pim": 0
         }
       ]
     },
@@ -10950,52 +11104,6 @@
           "a": 2,
           "pts": 3,
           "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "NOAH TSIMICALIS",
-      "team": "Aurora Tigers",
-      "team_id": 534102,
-      "jersey": "10",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 7,
-      "total_g": 3,
-      "total_a": 2,
-      "total_pts": 5,
-      "total_pim": 4,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15746",
-          "source_name": "Mary Parkinson AA",
-          "source_type": "tournament",
-          "gp": 5,
-          "g": 2,
-          "a": 2,
-          "pts": 4,
-          "pim": 4
         }
       ]
     },
@@ -11650,6 +11758,98 @@
       ]
     },
     {
+      "name": "HUDSON FALK",
+      "team": "Glancaster Bombers",
+      "team_id": 534728,
+      "jersey": "97",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 7,
+      "total_g": 2,
+      "total_a": 3,
+      "total_pts": 5,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 1,
+          "pts": 3,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "St. Catharines Early Bird AA",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "NIKO ILIOPOULOS",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "11",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 2,
+      "total_a": 3,
+      "total_pts": 5,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "pim": 2
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JACK LUMLEY",
       "team": "St Catharines Jr Falcons",
       "team_id": 534743,
@@ -11737,6 +11937,62 @@
           "g": 1,
           "a": 1,
           "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "WILLIAM DWYNE",
+      "team": "Hamilton Steel",
+      "team_id": 534790,
+      "jersey": "23",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 2,
+      "total_a": 3,
+      "total_pts": 5,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 4
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "pim": 0
+        },
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
           "pim": 0
         }
       ]
@@ -13822,32 +14078,6 @@
       ]
     },
     {
-      "name": "RYAN CUMMER",
-      "team": "Kanata Blazers",
-      "team_id": 533219,
-      "jersey": "13",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 1,
-      "total_a": 3,
-      "total_pts": 4,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 3,
-          "pts": 4,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "JACKSON GARVEY",
       "team": "St Lawrence Steel",
       "team_id": 533221,
@@ -14008,6 +14238,78 @@
       ]
     },
     {
+      "name": "JONATHON KYTE",
+      "team": "Newmarket Renegades",
+      "team_id": 534100,
+      "jersey": "96",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 4,
+      "total_a": 0,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 3,
+          "a": 0,
+          "pts": 3,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DYLAN BALNEAVES",
+      "team": "Newmarket Renegades",
+      "team_id": 534100,
+      "jersey": "8",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 3,
+      "total_a": 1,
+      "total_pts": 4,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 4
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "MYLES CAWKELL",
       "team": "King Rebellion",
       "team_id": 534151,
@@ -14044,6 +14346,52 @@
       ]
     },
     {
+      "name": "JAMIE KWOK",
+      "team": "Aurora Tigers",
+      "team_id": 534102,
+      "jersey": "15",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 8,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 6,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 2
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 5,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 4
+        }
+      ]
+    },
+    {
       "name": "MASON MACRI",
       "team": "King Rebellion",
       "team_id": 534151,
@@ -14076,6 +14424,42 @@
           "a": 1,
           "pts": 2,
           "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "LOGAN O'DONNELL",
+      "team": "Newmarket Renegades",
+      "team_id": 534100,
+      "jersey": "16",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 3,
+      "total_a": 1,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
         }
       ]
     },
@@ -14261,7 +14645,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 1,
       "total_a": 3,
       "total_pts": 4,
@@ -14271,7 +14655,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -14346,52 +14730,6 @@
       ]
     },
     {
-      "name": "DAMIEN DEVRIES",
-      "team": "Aurora Tigers",
-      "team_id": 534102,
-      "jersey": "9",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 7,
-      "total_g": 2,
-      "total_a": 2,
-      "total_pts": 4,
-      "total_pim": 4,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 4
-        },
-        {
-          "source_id": "15746",
-          "source_name": "Mary Parkinson AA",
-          "source_type": "tournament",
-          "gp": 5,
-          "g": 2,
-          "a": 2,
-          "pts": 4,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "JULIAN GAO",
       "team": "Aurora Tigers",
       "team_id": 534102,
@@ -14399,7 +14737,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 2,
       "total_a": 2,
       "total_pts": 4,
@@ -14409,7 +14747,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -15754,6 +16092,42 @@
       ]
     },
     {
+      "name": "MASON COCHREN",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "24",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 2,
+          "pts": 3,
+          "pim": 2
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ROSS MORTON",
       "team": "Halton Hills Thunder",
       "team_id": 534724,
@@ -15842,98 +16216,6 @@
           "a": 1,
           "pts": 1,
           "pim": 2
-        }
-      ]
-    },
-    {
-      "name": "HUDSON FALK",
-      "team": "Glancaster Bombers",
-      "team_id": 534728,
-      "jersey": "97",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 6,
-      "total_g": 1,
-      "total_a": 3,
-      "total_pts": 4,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "St. Catharines Early Bird AA",
-          "source_type": "tournament",
-          "gp": 4,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "NIKO ILIOPOULOS",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "11",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 2,
-      "total_a": 2,
-      "total_pts": 4,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
         }
       ]
     },
@@ -16076,6 +16358,42 @@
       ]
     },
     {
+      "name": "CASEY PARKER",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "16",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 3,
+      "total_a": 1,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "CALEB PILGRIM",
       "team": "Burlington Eagles",
       "team_id": 534747,
@@ -16107,6 +16425,52 @@
           "g": 0,
           "a": 2,
           "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "REID SHODY",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "88",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
           "pim": 0
         }
       ]
@@ -16296,6 +16660,52 @@
       ]
     },
     {
+      "name": "JACOB KITSON",
+      "team": "Glancaster Bombers",
+      "team_id": 534728,
+      "jersey": "16",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 7,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "St. Catharines Early Bird AA",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "OWEN KLASSEN",
       "team": "Norfolk Knights",
       "team_id": 537289,
@@ -16352,6 +16762,52 @@
       ]
     },
     {
+      "name": "ROMAN PINTO",
+      "team": "Glancaster Bombers",
+      "team_id": 534728,
+      "jersey": "31",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 7,
+      "total_g": 2,
+      "total_a": 2,
+      "total_pts": 4,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15764",
+          "source_name": "St. Catharines Early Bird AA",
+          "source_type": "tournament",
+          "gp": 4,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "LIAM SAUNDERS",
       "team": "St Catharines Jr Falcons",
       "team_id": 534701,
@@ -16393,6 +16849,62 @@
           "g": 1,
           "a": 1,
           "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "MASON SAUNDERS",
+      "team": "Hamilton Steel",
+      "team_id": 534790,
+      "jersey": "93",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 3,
+      "total_a": 1,
+      "total_pts": 4,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 2,
+          "a": 1,
+          "pts": 3,
+          "pim": 0
+        },
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
           "pim": 0
         }
       ]
@@ -20032,6 +20544,32 @@
       ]
     },
     {
+      "name": "LIAM GRANT",
+      "team": "Kanata Blazers",
+      "team_id": 533219,
+      "jersey": "9",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 3,
+      "total_a": 0,
+      "total_pts": 3,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 3,
+          "g": 3,
+          "a": 0,
+          "pts": 3,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "GRAYSON HEWITT",
       "team": "Rideau St Lawrence Kings",
       "team_id": 533211,
@@ -20352,6 +20890,42 @@
       ]
     },
     {
+      "name": "COLTON TONELLI",
+      "team": "Newmarket Renegades",
+      "team_id": 534100,
+      "jersey": "48",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 3,
+      "total_pts": 3,
+      "total_pim": 10,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 3,
+          "pts": 3,
+          "pim": 6
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 4
+        }
+      ]
+    },
+    {
       "name": "JOSH GLENCROSS",
       "team": "Upper York Admirals",
       "team_id": 534148,
@@ -20394,42 +20968,6 @@
           "a": 1,
           "pts": 1,
           "pim": 6
-        }
-      ]
-    },
-    {
-      "name": "JONATHON KYTE",
-      "team": "Newmarket Renegades",
-      "team_id": 534100,
-      "jersey": "96",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 3,
-      "total_a": 0,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 2,
-          "a": 0,
-          "pts": 2,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
         }
       ]
     },
@@ -20541,42 +21079,6 @@
           "g": 1,
           "a": 0,
           "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "DYLAN BALNEAVES",
-      "team": "Newmarket Renegades",
-      "team_id": 534100,
-      "jersey": "8",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 2,
-      "total_a": 1,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 2,
-          "a": 0,
-          "pts": 2,
           "pim": 0
         }
       ]
@@ -20727,7 +21229,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 1,
       "total_a": 2,
       "total_pts": 3,
@@ -20737,7 +21239,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -20824,52 +21326,6 @@
           "a": 0,
           "pts": 2,
           "pim": 10
-        }
-      ]
-    },
-    {
-      "name": "JAMIE KWOK",
-      "team": "Aurora Tigers",
-      "team_id": 534102,
-      "jersey": "15",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 7,
-      "total_g": 2,
-      "total_a": 1,
-      "total_pts": 3,
-      "total_pim": 6,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 2
-        },
-        {
-          "source_id": "15746",
-          "source_name": "Mary Parkinson AA",
-          "source_type": "tournament",
-          "gp": 5,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 4
         }
       ]
     },
@@ -20963,7 +21419,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 2,
       "total_a": 1,
       "total_pts": 3,
@@ -20973,7 +21429,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -21002,42 +21458,6 @@
       ]
     },
     {
-      "name": "LOGAN O'DONNELL",
-      "team": "Newmarket Renegades",
-      "team_id": 534100,
-      "jersey": "16",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 2,
-      "total_a": 1,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "TYLER XUEREB",
       "team": "Aurora Tigers",
       "team_id": 534102,
@@ -21045,7 +21465,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 1,
       "total_a": 2,
       "total_pts": 3,
@@ -21055,7 +21475,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -23484,6 +23904,118 @@
       ]
     },
     {
+      "name": "CHASE COLLINS",
+      "team": "Hamilton Steel",
+      "team_id": 534790,
+      "jersey": "80",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 1,
+      "total_a": 2,
+      "total_pts": 3,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "PIERCE GIBSON",
+      "team": "Hamilton Steel",
+      "team_id": 534790,
+      "jersey": "87",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 1,
+      "total_pts": 3,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 1,
+          "pts": 2,
+          "pim": 2
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "BRENNAN KINSELLA",
       "team": "Flamborough Sabres",
       "team_id": 534744,
@@ -23665,7 +24197,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 2,
       "total_a": 1,
       "total_pts": 3,
@@ -23675,7 +24207,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 1,
           "pts": 2,
@@ -23701,7 +24233,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 3,
       "total_pts": 3,
@@ -23711,7 +24243,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -23849,7 +24381,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 6,
+      "total_gp": 7,
       "total_g": 1,
       "total_a": 2,
       "total_pts": 3,
@@ -23859,7 +24391,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -24128,42 +24660,6 @@
       ]
     },
     {
-      "name": "CASEY PARKER",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "16",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 2,
-      "total_a": 1,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "EASTON POZIOMKA",
       "team": "West Niagara Flying Aces",
       "team_id": 534727,
@@ -24298,52 +24794,6 @@
           "a": 2,
           "pts": 2,
           "pim": 10
-        }
-      ]
-    },
-    {
-      "name": "REID SHODY",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "88",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 1,
-      "total_a": 2,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
         }
       ]
     },
@@ -24705,62 +25155,6 @@
           "g": 0,
           "a": 2,
           "pts": 2,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "WILLIAM DWYNE",
-      "team": "Hamilton Steel",
-      "team_id": 534790,
-      "jersey": "23",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 1,
-      "total_a": 2,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 2,
-          "pts": 3,
-          "pim": 0
-        },
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Ex",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
           "pim": 0
         }
       ]
@@ -25220,52 +25614,6 @@
       ]
     },
     {
-      "name": "JACOB KITSON",
-      "team": "Glancaster Bombers",
-      "team_id": 534728,
-      "jersey": "16",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 6,
-      "total_g": 1,
-      "total_a": 2,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "St. Catharines Early Bird AA",
-          "source_type": "tournament",
-          "gp": 4,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "CAMERON LAVIOLETTE",
       "team": "Niagara Falls Canucks",
       "team_id": 534795,
@@ -25599,7 +25947,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 2,
       "total_pts": 3,
@@ -25609,7 +25957,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -25686,52 +26034,6 @@
           "source_name": "St. Catharines Early Bird AA",
           "source_type": "tournament",
           "gp": 5,
-          "g": 1,
-          "a": 1,
-          "pts": 2,
-          "pim": 2
-        }
-      ]
-    },
-    {
-      "name": "ROMAN PINTO",
-      "team": "Glancaster Bombers",
-      "team_id": 534728,
-      "jersey": "31",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 6,
-      "total_g": 2,
-      "total_a": 1,
-      "total_pts": 3,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15764",
-          "source_name": "St. Catharines Early Bird AA",
-          "source_type": "tournament",
-          "gp": 4,
           "g": 1,
           "a": 1,
           "pts": 2,
@@ -25964,62 +26266,6 @@
       ]
     },
     {
-      "name": "MASON SAUNDERS",
-      "team": "Hamilton Steel",
-      "team_id": 534790,
-      "jersey": "93",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 2,
-      "total_a": 1,
-      "total_pts": 3,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 2,
-          "a": 1,
-          "pts": 3,
-          "pim": 0
-        },
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Ex",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "LUCA SMITH",
       "team": "Halton Hills Thunder",
       "team_id": 534740,
@@ -26185,7 +26431,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 6,
+      "total_gp": 7,
       "total_g": 2,
       "total_a": 1,
       "total_pts": 3,
@@ -26195,7 +26441,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -32052,6 +32298,32 @@
       ]
     },
     {
+      "name": "TJ ANAS",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533215,
+      "jersey": "7",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 2,
+          "pts": 2,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "CAMERON ANTOINE-BILMER",
       "team": "Seaway Valley Rapids",
       "team_id": 533212,
@@ -32156,32 +32428,6 @@
       ]
     },
     {
-      "name": "LIAM GRANT",
-      "team": "Kanata Blazers",
-      "team_id": 533219,
-      "jersey": "9",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 2,
-      "total_a": 0,
-      "total_pts": 2,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 2,
-          "g": 2,
-          "a": 0,
-          "pts": 2,
-          "pim": 2
-        }
-      ]
-    },
-    {
       "name": "RYAN HARPER",
       "team": "St Lawrence Steel",
       "team_id": 533221,
@@ -32215,7 +32461,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 1,
       "total_pts": 2,
@@ -32225,7 +32471,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 1,
           "pts": 2,
@@ -32319,7 +32565,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 1,
       "total_pts": 2,
@@ -32329,9 +32575,35 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 1,
+          "pts": 2,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "RORY SCOTT",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533215,
+      "jersey": "21",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 0,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 0,
           "pts": 2,
           "pim": 0
         }
@@ -32708,42 +32980,6 @@
       ]
     },
     {
-      "name": "COLTON TONELLI",
-      "team": "Newmarket Renegades",
-      "team_id": 534100,
-      "jersey": "48",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 2,
-      "total_pts": 2,
-      "total_pim": 8,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 2,
-          "pts": 2,
-          "pim": 4
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 4
-        }
-      ]
-    },
-    {
       "name": "LUCA ALTOMARE",
       "team": "Markham Waxers",
       "team_id": 534182,
@@ -32894,6 +33130,42 @@
           "a": 0,
           "pts": 1,
           "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "KIERAN GOLDSON",
+      "team": "Newmarket Renegades",
+      "team_id": 534100,
+      "jersey": "90",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 2,
+      "total_pts": 2,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 4
         }
       ]
     },
@@ -33509,7 +33781,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 2,
       "total_a": 0,
       "total_pts": 2,
@@ -33519,7 +33791,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -34215,7 +34487,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 0,
       "total_a": 2,
       "total_pts": 2,
@@ -34225,7 +34497,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -35491,7 +35763,7 @@
       "name": "REID GIGLIO",
       "team": "Ajax Pickering Raiders",
       "team_id": 534529,
-      "jersey": "14",
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -36866,6 +37138,52 @@
       ]
     },
     {
+      "name": "DOMINIC GILLMORE",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "93",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 2,
+      "total_a": 0,
+      "total_pts": 2,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 2,
+          "a": 0,
+          "pts": 2,
+          "pim": 2
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LUCCA LESSARD",
       "team": "Oakville Rangers",
       "team_id": 534726,
@@ -36965,21 +37283,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 1,
       "total_pts": 2,
-      "total_pim": 2,
+      "total_pim": 4,
       "sources": [
         {
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
-          "pim": 2
+          "pim": 4
         },
         {
           "source_id": "15556",
@@ -37474,6 +37792,42 @@
       ]
     },
     {
+      "name": "COLIN MIELCAREK",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "20",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 2,
+      "total_a": 0,
+      "total_pts": 2,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LOGAN PERENYI",
       "team": "Hamilton Steel",
       "team_id": 534787,
@@ -37537,7 +37891,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 6,
+      "total_gp": 7,
       "total_g": 2,
       "total_a": 0,
       "total_pts": 2,
@@ -37547,7 +37901,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -37583,21 +37937,21 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 6,
+      "total_gp": 7,
       "total_g": 1,
       "total_a": 1,
       "total_pts": 2,
-      "total_pim": 0,
+      "total_pim": 6,
       "sources": [
         {
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
-          "pim": 0
+          "pim": 6
         },
         {
           "source_id": "15556",
@@ -37838,42 +38192,6 @@
           "a": 0,
           "pts": 1,
           "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "ZAYDEN WOODS",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "17",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 1,
-      "total_a": 1,
-      "total_pts": 2,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 2
         }
       ]
     },
@@ -38435,7 +38753,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 2,
       "total_a": 0,
       "total_pts": 2,
@@ -38445,7 +38763,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -38813,7 +39131,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 1,
       "total_pts": 2,
@@ -38823,7 +39141,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -47748,36 +48066,10 @@
       ]
     },
     {
-      "name": "TJ ANAS",
+      "name": "RYKER BALL",
       "team": "Upper Ottawa Valley Aces",
       "team_id": 533215,
-      "jersey": "7",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 1,
-      "total_pts": 1,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 2
-        }
-      ]
-    },
-    {
-      "name": "CAMERON BARWELL",
-      "team": "Kanata Blazers",
-      "team_id": 533219,
-      "jersey": "15",
+      "jersey": "10",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -47796,6 +48088,32 @@
           "a": 0,
           "pts": 1,
           "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CAMERON BARWELL",
+      "team": "Kanata Blazers",
+      "team_id": 533219,
+      "jersey": "15",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 3,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
         }
       ]
     },
@@ -48002,6 +48320,32 @@
       ]
     },
     {
+      "name": "WAYLON BOOTH",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533215,
+      "jersey": "88",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "BLAKE BYRD",
       "team": "Rideau St Lawrence Kings",
       "team_id": 533211,
@@ -48061,21 +48405,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -48102,6 +48446,32 @@
           "a": 1,
           "pts": 1,
           "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JASE CRYSTAL",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533215,
+      "jersey": "2",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 4,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 4
         }
       ]
     },
@@ -48263,7 +48633,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -48273,7 +48643,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -48315,7 +48685,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -48325,7 +48695,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -48356,6 +48726,32 @@
           "a": 0,
           "pts": 1,
           "pim": 2
+        }
+      ]
+    },
+    {
+      "name": "LUKE JESSUP",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533215,
+      "jersey": "4",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
         }
       ]
     },
@@ -48445,7 +48841,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -48455,7 +48851,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -48631,7 +49027,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -48641,7 +49037,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -48657,7 +49053,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -48667,7 +49063,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -48823,7 +49219,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -48833,7 +49229,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -48864,32 +49260,6 @@
           "a": 1,
           "pts": 1,
           "pim": 2
-        }
-      ]
-    },
-    {
-      "name": "RORY SCOTT",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 533215,
-      "jersey": "21",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 1,
-      "total_a": 0,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
         }
       ]
     },
@@ -48953,21 +49323,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -49818,6 +50188,52 @@
       ]
     },
     {
+      "name": "LINCOLN MACRI",
+      "team": "Aurora Tigers",
+      "team_id": 534102,
+      "jersey": "48",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 8,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 5,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 2
+        }
+      ]
+    },
+    {
       "name": "OTIS MARSHALL",
       "team": "Collingwood Jr Blues",
       "team_id": 534175,
@@ -50419,21 +50835,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
-      "total_pim": 6,
+      "total_pim": 8,
       "sources": [
         {
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 2
+          "pim": 4
         },
         {
           "source_id": "15556",
@@ -50931,7 +51347,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -50941,7 +51357,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -51810,42 +52226,6 @@
       ]
     },
     {
-      "name": "KIERAN GOLDSON",
-      "team": "Newmarket Renegades",
-      "team_id": 534100,
-      "jersey": "90",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 1,
-      "total_pts": 1,
-      "total_pim": 4,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 0,
-          "a": 1,
-          "pts": 1,
-          "pim": 4
-        }
-      ]
-    },
-    {
       "name": "ELLIS GOODMAN",
       "team": "Collingwood Jr Blues",
       "team_id": 534175,
@@ -52195,7 +52575,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -52205,7 +52585,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -52369,7 +52749,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -52379,7 +52759,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -53213,7 +53593,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -53223,7 +53603,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -53515,7 +53895,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 4,
+      "total_gp": 5,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -53525,7 +53905,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -56372,6 +56752,42 @@
       ]
     },
     {
+      "name": "LOCHLAN BAGLEY",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "7",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 2
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "CAMDEN BENCH",
       "team": "Hamilton Steel",
       "team_id": 534787,
@@ -56546,6 +56962,98 @@
       ]
     },
     {
+      "name": "TRENT CZIRAKI",
+      "team": "Hamilton Steel",
+      "team_id": 534790,
+      "jersey": "18",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CAMDEN D'ALFONSO",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "37",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 2
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "JACKSON EGO",
       "team": "Glancaster Bombers",
       "team_id": 534746,
@@ -56638,18 +57146,18 @@
       ]
     },
     {
-      "name": "DOMINIC GILLMORE",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "93",
+      "name": "OLIVER GAUTHIER",
+      "team": "Hamilton Steel",
+      "team_id": 534790,
+      "jersey": "48",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 3,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
-      "total_pim": 0,
+      "total_pim": 4,
       "sources": [
         {
           "source_id": "15497",
@@ -56665,7 +57173,17 @@
           "source_id": "15556",
           "source_name": "OMHA Ex Rep",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 4
+        },
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -56793,7 +57311,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -56803,7 +57321,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -56814,6 +57332,52 @@
           "source_name": "OMHA Ex Rep",
           "source_type": "league",
           "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "NATHAN LYNCH",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "15",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_g": 0,
+      "total_a": 1,
+      "total_pts": 1,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 1,
+          "pts": 1,
+          "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -56977,7 +57541,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -56987,7 +57551,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 1,
           "a": 0,
           "pts": 1,
@@ -57023,7 +57587,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -57033,7 +57597,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -57059,7 +57623,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -57069,7 +57633,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 1,
           "pts": 1,
@@ -57120,6 +57684,42 @@
           "a": 1,
           "pts": 1,
           "pim": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DOMINIC REGO",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "15",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 4,
+      "total_g": 1,
+      "total_a": 0,
+      "total_pts": 1,
+      "total_pim": 2,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "g": 1,
+          "a": 0,
+          "pts": 1,
+          "pim": 2
         },
         {
           "source_id": "15556",
@@ -57667,7 +58267,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -57677,7 +58277,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -57773,98 +58373,6 @@
           "g": 1,
           "a": 0,
           "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "MASON COCHREN",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "24",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 1,
-      "total_a": 0,
-      "total_pts": 1,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 2
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "CHASE COLLINS",
-      "team": "Hamilton Steel",
-      "team_id": 534790,
-      "jersey": "80",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 1,
-      "total_a": 0,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Ex",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
           "pim": 0
         }
       ]
@@ -58469,21 +58977,21 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         },
         {
           "source_id": "15556",
@@ -58493,62 +59001,6 @@
           "g": 0,
           "a": 1,
           "pts": 1,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "PIERCE GIBSON",
-      "team": "Hamilton Steel",
-      "team_id": 534790,
-      "jersey": "87",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 1,
-      "total_a": 0,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
-        },
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Ex",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
           "pim": 0
         }
       ]
@@ -58709,7 +59161,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 6,
+      "total_gp": 7,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -58719,7 +59171,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -59123,7 +59575,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 1,
       "total_a": 0,
       "total_pts": 1,
@@ -59133,7 +59585,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -59250,42 +59702,6 @@
           "a": 1,
           "pts": 1,
           "pim": 2
-        }
-      ]
-    },
-    {
-      "name": "COLIN MIELCAREK",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "20",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 1,
-      "total_a": 0,
-      "total_pts": 1,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 1,
-          "a": 0,
-          "pts": 1,
-          "pim": 0
         }
       ]
     },
@@ -59435,7 +59851,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 5,
+      "total_gp": 6,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -59445,7 +59861,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -59665,7 +60081,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 1,
       "total_pts": 1,
@@ -59675,7 +60091,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -71461,21 +71877,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 0,
+      "total_pim": 2,
       "sources": [
         {
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         }
       ]
     },
@@ -71724,32 +72140,6 @@
       ]
     },
     {
-      "name": "RYKER BALL",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 533215,
-      "jersey": "10",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "KNOX BARNETT",
       "team": "Gloucester Rangers",
       "team_id": 533184,
@@ -71855,7 +72245,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -71865,7 +72255,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -71881,7 +72271,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -71891,7 +72281,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -71970,32 +72360,6 @@
           "source_name": "HEO AA-A",
           "source_type": "league",
           "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "WAYLON BOOTH",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 533215,
-      "jersey": "88",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -72378,32 +72742,6 @@
       ]
     },
     {
-      "name": "JASE CRYSTAL",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 533215,
-      "jersey": "2",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 2
-        }
-      ]
-    },
-    {
       "name": "JAKOB DASH",
       "team": "Kanata Blazers",
       "team_id": 533186,
@@ -72567,7 +72905,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -72577,7 +72915,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -72719,7 +73057,7 @@
       "name": "WILLIAM EDWARDS",
       "team": "Cumberland Jr Grads",
       "team_id": 533220,
-      "jersey": "78",
+      "jersey": "18",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -72883,7 +73221,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -72893,7 +73231,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -73744,32 +74082,6 @@
       ]
     },
     {
-      "name": "LUKE JESSUP",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 533215,
-      "jersey": "4",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "ROWAN JEWER",
       "team": "Upper Ottawa Valley Aces",
       "team_id": 533182,
@@ -73907,7 +74219,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -73917,7 +74229,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -74515,7 +74827,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -74525,7 +74837,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -74795,7 +75107,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -74805,7 +75117,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -75185,7 +75497,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -75195,7 +75507,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -75855,7 +76167,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 0,
+      "total_gp": 1,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -75865,7 +76177,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -76597,7 +76909,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -76607,7 +76919,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -76841,7 +77153,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -76851,7 +77163,7 @@
           "source_id": "15454",
           "source_name": "HEO AA-A",
           "source_type": "league",
-          "gp": 2,
+          "gp": 3,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -77043,7 +77355,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -77053,7 +77365,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -78431,7 +78743,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -78441,7 +78753,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -79245,7 +79557,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -79255,7 +79567,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -79310,14 +79622,14 @@
       ]
     },
     {
-      "name": "LINCOLN MACRI",
-      "team": "Aurora Tigers",
-      "team_id": 534102,
-      "jersey": "48",
+      "name": "NICHOLAS MAIO",
+      "team": "Newmarket Renegades",
+      "team_id": 534100,
+      "jersey": "15",
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -79327,57 +79639,11 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15746",
-          "source_name": "Mary Parkinson AA",
-          "source_type": "tournament",
-          "gp": 5,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
           "pim": 2
-        }
-      ]
-    },
-    {
-      "name": "NICHOLAS MAIO",
-      "team": "Newmarket Renegades",
-      "team_id": 534100,
-      "jersey": "15",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
         },
         {
           "source_id": "15556",
@@ -79399,7 +79665,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -79409,7 +79675,7 @@
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -80625,21 +80891,21 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 7,
+      "total_gp": 8,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 2,
+      "total_pim": 4,
       "sources": [
         {
           "source_id": "15489",
           "source_name": "YSMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         },
         {
           "source_id": "15556",
@@ -84700,14 +84966,14 @@
       ]
     },
     {
-      "name": "LOCHLAN BAGLEY",
+      "name": "CONNOR BALL",
       "team": "Milton Winterhawks",
       "team_id": 534777,
-      "jersey": "7",
+      "jersey": "77",
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -84717,47 +84983,11 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 2
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
           "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "CONNOR BALL",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "77",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
+          "pim": 2
         },
         {
           "source_id": "15556",
@@ -84825,7 +85055,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -84835,7 +85065,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -85315,21 +85545,21 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
-      "total_pim": 4,
+      "total_pim": 6,
       "sources": [
         {
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
-          "pim": 0
+          "pim": 2
         },
         {
           "source_id": "15556",
@@ -85479,7 +85709,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -85489,7 +85719,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -85892,98 +86122,6 @@
       ]
     },
     {
-      "name": "TRENT CZIRAKI",
-      "team": "Hamilton Steel",
-      "team_id": 534790,
-      "jersey": "18",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Ex",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "CAMDEN D'ALFONSO",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "37",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "PARKER DARBISHIRE",
       "team": "Norfolk Knights",
       "team_id": 537296,
@@ -86211,7 +86349,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -86221,7 +86359,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -86359,7 +86497,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 1,
+      "total_gp": 2,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -86369,7 +86507,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -86415,7 +86553,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -86425,7 +86563,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -86635,7 +86773,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -86645,7 +86783,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -86737,7 +86875,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -86747,7 +86885,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -86850,62 +86988,6 @@
           "source_name": "TNT Early Bird",
           "source_type": "tournament",
           "gp": 4,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
-      "name": "OLIVER GAUTHIER",
-      "team": "Hamilton Steel",
-      "team_id": 534790,
-      "jersey": "48",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 4,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 4
-        },
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Ex",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -87111,7 +87193,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -87121,7 +87203,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -87305,7 +87387,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -87315,7 +87397,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -87469,7 +87551,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -87479,7 +87561,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -87882,52 +87964,6 @@
       ]
     },
     {
-      "name": "NATHAN LYNCH",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "15",
-      "position": "F",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "CRISTIANO MACALUSO",
       "team": "Glancaster Bombers",
       "team_id": 534746,
@@ -88083,7 +88119,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 6,
+      "total_gp": 7,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -88093,7 +88129,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -88451,7 +88487,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 3,
+      "total_gp": 4,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -88461,7 +88497,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -88707,7 +88743,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -88717,7 +88753,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -89167,7 +89203,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -89177,7 +89213,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -89242,42 +89278,6 @@
       ]
     },
     {
-      "name": "DOMINIC REGO",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "15",
-      "position": "F",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 3,
-      "total_g": 0,
-      "total_a": 0,
-      "total_pts": 0,
-      "total_pim": 2,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 2
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "g": 0,
-          "a": 0,
-          "pts": 0,
-          "pim": 0
-        }
-      ]
-    },
-    {
       "name": "HARRISON REID",
       "team": "Glancaster Bombers",
       "team_id": 534728,
@@ -89285,7 +89285,7 @@
       "position": "F",
       "age": "U11",
       "tier": "AA",
-      "total_gp": 6,
+      "total_gp": 7,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -89295,7 +89295,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -90343,7 +90343,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -90353,7 +90353,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 0,
+          "gp": 1,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -90399,7 +90399,7 @@
       "position": "F",
       "age": "U14",
       "tier": "AA",
-      "total_gp": 2,
+      "total_gp": 3,
       "total_g": 0,
       "total_a": 0,
       "total_pts": 0,
@@ -90409,7 +90409,7 @@
           "source_id": "15497",
           "source_name": "TCMHL AA",
           "source_type": "league",
-          "gp": 1,
+          "gp": 2,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -94370,10 +94370,88 @@
       ]
     },
     {
+      "name": "LOGAN BROWN",
+      "team": "Halton Hills Thunder",
+      "team_id": 558343,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "BRUCE CARTWRIGHT",
+      "team": "Halton Hills Thunder",
+      "team_id": 558343,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "NATHAN CASSOLATO",
       "team": "Guelph Gryphons",
       "team_id": 558340,
       "jersey": "79",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "AHMED CHOUDHRY",
+      "team": "Halton Hills Thunder",
+      "team_id": 558343,
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -94526,6 +94604,32 @@
       ]
     },
     {
+      "name": "MATTEO DACOSTA",
+      "team": "Oakville Rangers",
+      "team_id": 558349,
+      "jersey": "21",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "HAYDEN DEFOREST",
       "team": "Guelph Gryphons",
       "team_id": 558340,
@@ -94556,6 +94660,32 @@
       "team": "Oakville Rangers",
       "team_id": 558349,
       "jersey": "5",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "COLTEN DESCHAMPS",
+      "team": "Hespeler Shamrocks",
+      "team_id": 558347,
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -94968,6 +95098,32 @@
       ]
     },
     {
+      "name": "JACK GOUDY",
+      "team": "Hespeler Shamrocks",
+      "team_id": 558347,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "CARTER GOUT",
       "team": "Brampton 45s",
       "team_id": 558345,
@@ -95124,6 +95280,32 @@
       ]
     },
     {
+      "name": "OWEN HEWITT",
+      "team": "Hespeler Shamrocks",
+      "team_id": 558347,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "HUNTER HILL",
       "team": "Burlington Eagles",
       "team_id": 558348,
@@ -95232,6 +95414,32 @@
       "team": "Oakville Rangers",
       "team_id": 558341,
       "jersey": "20",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CARTER INGLIS",
+      "team": "Halton Hills Thunder",
+      "team_id": 558343,
+      "jersey": "",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -95622,6 +95830,58 @@
       "team": "Guelph Gryphons",
       "team_id": 558340,
       "jersey": "59",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "LINDEN LAUWAERT",
+      "team": "Halton Hills Thunder",
+      "team_id": 558343,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CAYDEN LEE",
+      "team": "Oakville Rangers",
+      "team_id": 558349,
+      "jersey": "34",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -96580,6 +96840,32 @@
       ]
     },
     {
+      "name": "DECLAN ONER",
+      "team": "Oakville Rangers",
+      "team_id": 558349,
+      "jersey": "14",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "LUCAS OTTORINO",
       "team": "Halton Hills Thunder",
       "team_id": 558343,
@@ -96636,6 +96922,32 @@
       "team": "Milton Winterhawks",
       "team_id": 558344,
       "jersey": "34",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "CARTER PAYETTE",
+      "team": "Oakville Rangers",
+      "team_id": 558349,
+      "jersey": "10",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -96792,6 +97104,32 @@
       "team": "Guelph Gryphons",
       "team_id": 558340,
       "jersey": "15",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "DYLAN REN",
+      "team": "Oakville Rangers",
+      "team_id": 558349,
+      "jersey": "49",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -97155,7 +97493,33 @@
       "name": "DECLAN STINSON",
       "team": "Oakville Rangers",
       "team_id": 558349,
-      "jersey": "91",
+      "jersey": "44",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
+      "name": "JAMES TILLEY",
+      "team": "Oakville Rangers",
+      "team_id": 558341,
+      "jersey": "77",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -97542,10 +97906,36 @@
       ]
     },
     {
+      "name": "ALLAN XIE",
+      "team": "Oakville Rangers",
+      "team_id": 558349,
+      "jersey": "9",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0
+        }
+      ]
+    },
+    {
       "name": "ZACHARY YOUNG",
       "team": "Oakville Rangers",
       "team_id": 558349,
-      "jersey": "27",
+      "jersey": "87",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -104690,38 +105080,6 @@
       ]
     },
     {
-      "name": "BECKAM DUBREUIL",
-      "team": "Upper Ottawa Valley Aces",
-      "team_id": 533215,
-      "jersey": "89",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 0,
-      "total_ga": 0,
-      "total_min": 0,
-      "total_gaa": 0.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15454",
-          "source_name": "HEO AA-A",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "LUCAS DUFRESNE",
       "team": "Ottawa Sting",
       "team_id": 533183,
@@ -105414,6 +105772,51 @@
       ]
     },
     {
+      "name": "EDISON LU",
+      "team": "Aurora Tigers",
+      "team_id": 534102,
+      "jersey": "35",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "BODEN MOFFATT",
       "team": "Collingwood Jr Blues",
       "team_id": 534175,
@@ -106024,6 +106427,38 @@
       ]
     },
     {
+      "name": "JACOB HUSSAIN",
+      "team": "Oakville Rangers",
+      "team_id": 558349,
+      "jersey": "31",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "NATHAN JONES",
       "team": "Milton Winterhawks",
       "team_id": 558344,
@@ -106060,6 +106495,38 @@
       "team": "Oakville Rangers",
       "team_id": 558341,
       "jersey": "31",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "AARON LAFONTAINE",
+      "team": "Halton Hills Thunder",
+      "team_id": 558343,
+      "jersey": "",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -106284,6 +106751,38 @@
       "team": "Burlington Eagles",
       "team_id": 558348,
       "jersey": "31",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "EASTON SAMSON",
+      "team": "Halton Hills Thunder",
+      "team_id": 558343,
+      "jersey": "",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -107358,51 +107857,6 @@
       ]
     },
     {
-      "name": "JAX SUSTERAS",
-      "team": "Milton Winterhawks",
-      "team_id": 534777,
-      "jersey": "91",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 2,
-      "total_ga": 1,
-      "total_min": 0,
-      "total_gaa": 0.5,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 2,
-          "ga": 1,
-          "min": 0,
-          "gaa": 0.5,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "JAKE RYNBERK",
       "team": "Niagara Falls Canucks",
       "team_id": 534797,
@@ -108099,6 +108553,51 @@
       ]
     },
     {
+      "name": "JAX SUSTERAS",
+      "team": "Milton Winterhawks",
+      "team_id": 534777,
+      "jersey": "91",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 3,
+      "total_ga": 3,
+      "total_min": 0,
+      "total_gaa": 1.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 2,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 2,
+          "ga": 1,
+          "min": 0,
+          "gaa": 0.5,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "ASHER HAZAN",
       "team": "North Toronto",
       "team_id": 550580,
@@ -108529,10 +109028,10 @@
       ]
     },
     {
-      "name": "ALEX CRYTES",
-      "team": "Kanata Blazers",
-      "team_id": 533219,
-      "jersey": "31",
+      "name": "BECKAM DUBREUIL",
+      "team": "Upper Ottawa Valley Aces",
+      "team_id": 533215,
+      "jersey": "89",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -108611,51 +109110,6 @@
           "ga": 0,
           "min": 0,
           "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "NICK TOMPA",
-      "team": "Glancaster Bombers",
-      "team_id": 534728,
-      "jersey": "39",
-      "position": "G",
-      "age": "U11",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 1,
-      "total_min": 0,
-      "total_gaa": 1.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 1,
-          "min": 0,
-          "gaa": 1.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -110949,10 +111403,87 @@
       ]
     },
     {
+      "name": "ALEX CRYTES",
+      "team": "Kanata Blazers",
+      "team_id": 533219,
+      "jersey": "31",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 4,
+      "total_min": 0,
+      "total_gaa": 2.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 2,
+          "ga": 4,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
       "name": "WILLIAM LAZARIDIS",
       "team": "Markham Waxers",
       "team_id": 534182,
       "jersey": "27",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 4,
+      "total_min": 0,
+      "total_gaa": 2.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 2,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 2,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "BENJAMIN MCEACHNIE",
+      "team": "Newmarket Renegades",
+      "team_id": 534100,
+      "jersey": "50",
       "position": "G",
       "age": "U14",
       "tier": "AA",
@@ -111147,6 +111678,77 @@
           "ga": 4,
           "min": 0,
           "gaa": 4.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "JASE HURTUBISE",
+      "team": "Hamilton Steel",
+      "team_id": 534790,
+      "jersey": "31",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 4,
+      "total_min": 0,
+      "total_gaa": 2.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 2,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 2,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15559",
+          "source_name": "Alliance Ex",
+          "source_type": "league",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -111521,51 +112123,6 @@
       ]
     },
     {
-      "name": "BENJAMIN MCEACHNIE",
-      "team": "Newmarket Renegades",
-      "team_id": 534100,
-      "jersey": "50",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 2,
-      "total_min": 0,
-      "total_gaa": 2.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 2,
-          "min": 0,
-          "gaa": 2.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "DONATELLO BERNARDI MONTENEGRO",
       "team": "Guelph Gryphons",
       "team_id": 534702,
@@ -111648,77 +112205,6 @@
           "ga": 2,
           "min": 0,
           "gaa": 2.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
-      "name": "JASE HURTUBISE",
-      "team": "Hamilton Steel",
-      "team_id": 534790,
-      "jersey": "31",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 2,
-      "total_min": 0,
-      "total_gaa": 2.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 2,
-          "min": 0,
-          "gaa": 2.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15559",
-          "source_name": "Alliance Ex",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -112603,64 +113089,6 @@
       ]
     },
     {
-      "name": "RIKU CRAMPTON",
-      "team": "Aurora Tigers",
-      "team_id": 534102,
-      "jersey": "45",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 5,
-      "total_ga": 12,
-      "total_min": 0,
-      "total_gaa": 2.4,
-      "total_so": 1,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15489",
-          "source_name": "YSMHL AA",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 1,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 2,
-          "min": 0,
-          "gaa": 2.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15746",
-          "source_name": "Mary Parkinson AA",
-          "source_type": "tournament",
-          "gp": 3,
-          "ga": 10,
-          "min": 0,
-          "gaa": 3.33,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "PHINEAS RIENDEAU",
       "team": "Ajax Pickering Raiders",
       "team_id": 534529,
@@ -112711,6 +113139,64 @@
           "ga": 9,
           "min": 0,
           "gaa": 3.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "RIKU CRAMPTON",
+      "team": "Aurora Tigers",
+      "team_id": 534102,
+      "jersey": "45",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 6,
+      "total_ga": 15,
+      "total_min": 0,
+      "total_gaa": 2.5,
+      "total_so": 1,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15489",
+          "source_name": "YSMHL AA",
+          "source_type": "league",
+          "gp": 2,
+          "ga": 3,
+          "min": 0,
+          "gaa": 1.5,
+          "so": 1,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 2,
+          "min": 0,
+          "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 3,
+          "ga": 10,
+          "min": 0,
+          "gaa": 3.33,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -113136,6 +113622,51 @@
           "ga": 2,
           "min": 0,
           "gaa": 2.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "NICK TOMPA",
+      "team": "Glancaster Bombers",
+      "team_id": 534728,
+      "jersey": "39",
+      "position": "G",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 5,
+      "total_min": 0,
+      "total_gaa": 2.5,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 4,
+          "min": 0,
+          "gaa": 4.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 1,
+          "min": 0,
+          "gaa": 1.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -116147,64 +116678,6 @@
       ]
     },
     {
-      "name": "BEN MILLER",
-      "team": "Guelph Gryphons",
-      "team_id": 537298,
-      "jersey": "39",
-      "position": "G",
-      "age": "U14",
-      "tier": "AA",
-      "total_gp": 1,
-      "total_ga": 3,
-      "total_min": 0,
-      "total_gaa": 3.0,
-      "total_so": 0,
-      "total_w": 0,
-      "total_l": 0,
-      "total_t": 0,
-      "sources": [
-        {
-          "source_id": "15497",
-          "source_name": "TCMHL AA",
-          "source_type": "league",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15556",
-          "source_name": "OMHA Ex Rep",
-          "source_type": "league",
-          "gp": 1,
-          "ga": 3,
-          "min": 0,
-          "gaa": 3.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        },
-        {
-          "source_id": "15968",
-          "source_name": "Hamilton Steel",
-          "source_type": "tournament",
-          "gp": 0,
-          "ga": 0,
-          "min": 0,
-          "gaa": 0.0,
-          "so": 0,
-          "w": 0,
-          "l": 0,
-          "t": 0
-        }
-      ]
-    },
-    {
       "name": "GEORGIA BONNER",
       "team": "Mississauga Terriers",
       "team_id": 565788,
@@ -118339,6 +118812,64 @@
           "ga": 1,
           "min": 0,
           "gaa": 1.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        }
+      ]
+    },
+    {
+      "name": "BEN MILLER",
+      "team": "Guelph Gryphons",
+      "team_id": 537298,
+      "jersey": "39",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 2,
+      "total_ga": 8,
+      "total_min": 0,
+      "total_gaa": 4.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 5,
+          "min": 0,
+          "gaa": 5.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 1,
+          "ga": 3,
+          "min": 0,
+          "gaa": 3.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0
+        },
+        {
+          "source_id": "15968",
+          "source_name": "Hamilton Steel",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
           "so": 0,
           "w": 0,
           "l": 0,
@@ -122053,8 +122584,8 @@
       "shga": 0
     },
     {
-      "team_id": 533219,
-      "team_name": "Kanata Blazers",
+      "team_id": 533215,
+      "team_name": "Upper Ottawa Valley Aces",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -122066,14 +122597,39 @@
       "l": 0,
       "t": 0,
       "pts": 4,
-      "gf": 8,
-      "ga": 4,
-      "diff": 4,
-      "pim": 14,
-      "ppg": 0,
+      "gf": 6,
+      "ga": 3,
+      "diff": 3,
+      "pim": 16,
+      "ppg": 2,
       "ppo": 5,
-      "ppga": 0,
-      "ppoa": 2,
+      "ppga": 1,
+      "ppoa": 7,
+      "shg": 1,
+      "shga": 0
+    },
+    {
+      "team_id": 533219,
+      "team_name": "Kanata Blazers",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15454",
+      "source_name": "HEO AA-A",
+      "source_type": "league",
+      "gp": 3,
+      "w": 2,
+      "l": 1,
+      "t": 0,
+      "pts": 4,
+      "gf": 9,
+      "ga": 7,
+      "diff": 2,
+      "pim": 18,
+      "ppg": 0,
+      "ppo": 7,
+      "ppga": 1,
+      "ppoa": 4,
       "shg": 0,
       "shga": 0
     },
@@ -122125,31 +122681,6 @@
       "ppga": 0,
       "ppoa": 0,
       "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 533215,
-      "team_name": "Upper Ottawa Valley Aces",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15454",
-      "source_name": "HEO AA-A",
-      "source_type": "league",
-      "gp": 1,
-      "w": 1,
-      "l": 0,
-      "t": 0,
-      "pts": 2,
-      "gf": 3,
-      "ga": 2,
-      "diff": 1,
-      "pim": 10,
-      "ppg": 1,
-      "ppo": 3,
-      "ppga": 1,
-      "ppoa": 5,
-      "shg": 1,
       "shga": 0
     },
     {
@@ -122299,6 +122830,106 @@
       "ppo": 2,
       "ppga": 2,
       "ppoa": 6,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 533185,
+      "team_name": "Nepean Raiders",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15454",
+      "source_name": "HEO AA-A",
+      "source_type": "league",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 533186,
+      "team_name": "Kanata Blazers",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15454",
+      "source_name": "HEO AA-A",
+      "source_type": "league",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 533187,
+      "team_name": "Cumberland Jr Grads",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15454",
+      "source_name": "HEO AA-A",
+      "source_type": "league",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 533188,
+      "team_name": "St Lawrence Steel",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15454",
+      "source_name": "HEO AA-A",
+      "source_type": "league",
+      "gp": 0,
+      "w": 0,
+      "l": 0,
+      "t": 0,
+      "pts": 0,
+      "gf": 0,
+      "ga": 0,
+      "diff": 0,
+      "pim": 0,
+      "ppg": 0,
+      "ppo": 0,
+      "ppga": 0,
+      "ppoa": 0,
       "shg": 0,
       "shga": 0
     },
@@ -122455,106 +123086,6 @@
     {
       "team_id": 533184,
       "team_name": "Gloucester Rangers",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15454",
-      "source_name": "HEO AA-A",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 533185,
-      "team_name": "Nepean Raiders",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15454",
-      "source_name": "HEO AA-A",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 533186,
-      "team_name": "Kanata Blazers",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15454",
-      "source_name": "HEO AA-A",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 533187,
-      "team_name": "Cumberland Jr Grads",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15454",
-      "source_name": "HEO AA-A",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 533188,
-      "team_name": "St Lawrence Steel",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
@@ -122878,6 +123409,31 @@
       "shga": 0
     },
     {
+      "team_id": 534100,
+      "team_name": "Newmarket Renegades",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15489",
+      "source_name": "YSMHL AA",
+      "source_type": "league",
+      "gp": 2,
+      "w": 2,
+      "l": 0,
+      "t": 0,
+      "pts": 4,
+      "gf": 7,
+      "ga": 3,
+      "diff": 4,
+      "pim": 16,
+      "ppg": 2,
+      "ppo": 5,
+      "ppga": 0,
+      "ppoa": 6,
+      "shg": 0,
+      "shga": 0
+    },
+    {
       "team_id": 534166,
       "team_name": "Orangeville Flyers",
       "division_title": "U14 AA",
@@ -122911,19 +123467,19 @@
       "source_id": "15489",
       "source_name": "YSMHL AA",
       "source_type": "league",
-      "gp": 1,
+      "gp": 2,
       "w": 1,
-      "l": 0,
+      "l": 1,
       "t": 0,
       "pts": 2,
-      "gf": 5,
-      "ga": 0,
-      "diff": 5,
-      "pim": 10,
+      "gf": 7,
+      "ga": 3,
+      "diff": 4,
+      "pim": 14,
       "ppg": 1,
-      "ppo": 5,
-      "ppga": 0,
-      "ppoa": 5,
+      "ppo": 9,
+      "ppga": 1,
+      "ppoa": 7,
       "shg": 1,
       "shga": 0
     },
@@ -122945,31 +123501,6 @@
       "ga": 0,
       "diff": 4,
       "pim": 20,
-      "ppg": 1,
-      "ppo": 3,
-      "ppga": 0,
-      "ppoa": 2,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 534100,
-      "team_name": "Newmarket Renegades",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15489",
-      "source_name": "YSMHL AA",
-      "source_type": "league",
-      "gp": 1,
-      "w": 1,
-      "l": 0,
-      "t": 0,
-      "pts": 2,
-      "gf": 4,
-      "ga": 1,
-      "diff": 3,
-      "pim": 8,
       "ppg": 1,
       "ppo": 3,
       "ppga": 0,
@@ -123778,27 +124309,27 @@
       "shga": 0
     },
     {
-      "team_id": 534728,
-      "team_name": "Glancaster Bombers",
+      "team_id": 534777,
+      "team_name": "Milton Winterhawks",
       "division_title": "U11 AA",
       "age": "U11",
       "tier": "AA",
       "source_id": "15497",
       "source_name": "TCMHL AA",
       "source_type": "league",
-      "gp": 1,
+      "gp": 2,
       "w": 1,
-      "l": 0,
+      "l": 1,
       "t": 0,
       "pts": 2,
-      "gf": 4,
-      "ga": 1,
-      "diff": 3,
-      "pim": 10,
+      "gf": 6,
+      "ga": 5,
+      "diff": 1,
+      "pim": 20,
       "ppg": 0,
-      "ppo": 3,
-      "ppga": 0,
-      "ppoa": 4,
+      "ppo": 4,
+      "ppga": 1,
+      "ppoa": 6,
       "shg": 0,
       "shga": 0
     },
@@ -123824,6 +124355,31 @@
       "ppo": 3,
       "ppga": 1,
       "ppoa": 1,
+      "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 534728,
+      "team_name": "Glancaster Bombers",
+      "division_title": "U11 AA",
+      "age": "U11",
+      "tier": "AA",
+      "source_id": "15497",
+      "source_name": "TCMHL AA",
+      "source_type": "league",
+      "gp": 2,
+      "w": 1,
+      "l": 1,
+      "t": 0,
+      "pts": 2,
+      "gf": 6,
+      "ga": 6,
+      "diff": 0,
+      "pim": 16,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 0,
+      "ppoa": 6,
       "shg": 0,
       "shga": 0
     },
@@ -123924,31 +124480,6 @@
       "ppo": 0,
       "ppga": 0,
       "ppoa": 0,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 534777,
-      "team_name": "Milton Winterhawks",
-      "division_title": "U11 AA",
-      "age": "U11",
-      "tier": "AA",
-      "source_id": "15497",
-      "source_name": "TCMHL AA",
-      "source_type": "league",
-      "gp": 1,
-      "w": 0,
-      "l": 1,
-      "t": 0,
-      "pts": 0,
-      "gf": 1,
-      "ga": 3,
-      "diff": -2,
-      "pim": 12,
-      "ppg": 0,
-      "ppo": 2,
-      "ppga": 1,
-      "ppoa": 5,
       "shg": 0,
       "shga": 0
     },
@@ -124103,8 +124634,8 @@
       "shga": 0
     },
     {
-      "team_id": 537298,
-      "team_name": "Guelph Gryphons",
+      "team_id": 534790,
+      "team_name": "Hamilton Steel",
       "division_title": "U14 AA",
       "age": "U14",
       "tier": "AA",
@@ -124116,15 +124647,15 @@
       "l": 0,
       "t": 0,
       "pts": 2,
-      "gf": 4,
-      "ga": 1,
+      "gf": 5,
+      "ga": 2,
       "diff": 3,
-      "pim": 8,
-      "ppg": 0,
-      "ppo": 1,
-      "ppga": 1,
-      "ppoa": 4,
-      "shg": 1,
+      "pim": 6,
+      "ppg": 1,
+      "ppo": 3,
+      "ppga": 0,
+      "ppoa": 3,
+      "shg": 0,
       "shga": 0
     },
     {
@@ -124150,6 +124681,31 @@
       "ppga": 0,
       "ppoa": 0,
       "shg": 0,
+      "shga": 0
+    },
+    {
+      "team_id": 537298,
+      "team_name": "Guelph Gryphons",
+      "division_title": "U14 AA",
+      "age": "U14",
+      "tier": "AA",
+      "source_id": "15497",
+      "source_name": "TCMHL AA",
+      "source_type": "league",
+      "gp": 2,
+      "w": 1,
+      "l": 1,
+      "t": 0,
+      "pts": 2,
+      "gf": 6,
+      "ga": 6,
+      "diff": 0,
+      "pim": 14,
+      "ppg": 0,
+      "ppo": 4,
+      "ppga": 2,
+      "ppoa": 7,
+      "shg": 1,
       "shga": 0
     },
     {
@@ -124199,31 +124755,6 @@
       "ppo": 0,
       "ppga": 0,
       "ppoa": 2,
-      "shg": 0,
-      "shga": 0
-    },
-    {
-      "team_id": 534790,
-      "team_name": "Hamilton Steel",
-      "division_title": "U14 AA",
-      "age": "U14",
-      "tier": "AA",
-      "source_id": "15497",
-      "source_name": "TCMHL AA",
-      "source_type": "league",
-      "gp": 0,
-      "w": 0,
-      "l": 0,
-      "t": 0,
-      "pts": 0,
-      "gf": 0,
-      "ga": 0,
-      "diff": 0,
-      "pim": 0,
-      "ppg": 0,
-      "ppo": 0,
-      "ppga": 0,
-      "ppoa": 0,
       "shg": 0,
       "shga": 0
     },
@@ -139194,19 +139725,19 @@
       "date": "Oct 5, 2026",
       "time": "6:00 PM",
       "timestamp": "2026-10-05T22:00:00Z",
-      "status": "scheduled",
+      "status": "final",
       "location": "Aurora Rec Complex (Toyota)",
       "source_id": "15489",
       "source_name": "YSMHL AA",
       "source_type": "league",
       "home_id": 534102,
       "home_name": "Aurora Tigers",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 2,
+      "home_result": "L",
       "visitor_id": 534100,
       "visitor_name": "Newmarket Renegades",
-      "visitor_goals": null,
-      "visitor_result": null,
+      "visitor_goals": 3,
+      "visitor_result": "W",
       "division": "U14 AA"
     },
     {
@@ -139234,19 +139765,19 @@
       "date": "Oct 5, 2026",
       "time": "6:30 PM",
       "timestamp": "2026-10-05T22:30:00Z",
-      "status": "scheduled",
+      "status": "final",
       "location": "MSC (D)",
       "source_id": "15497",
       "source_name": "TCMHL AA",
       "source_type": "league",
       "home_id": 534777,
       "home_name": "Milton Winterhawks",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 5,
+      "home_result": "W",
       "visitor_id": 534728,
       "visitor_name": "Glancaster Bombers",
-      "visitor_goals": null,
-      "visitor_result": null,
+      "visitor_goals": 2,
+      "visitor_result": "L",
       "division": "U11 AA"
     },
     {
@@ -139254,19 +139785,19 @@
       "date": "Oct 5, 2026",
       "time": "7:15 PM",
       "timestamp": "2026-10-05T23:15:00Z",
-      "status": "scheduled",
+      "status": "final",
       "location": "WERC (2)",
       "source_id": "15497",
       "source_name": "TCMHL AA",
       "source_type": "league",
       "home_id": 537298,
       "home_name": "Guelph Gryphons",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 2,
+      "home_result": "L",
       "visitor_id": 534790,
       "visitor_name": "Hamilton Steel",
-      "visitor_goals": null,
-      "visitor_result": null,
+      "visitor_goals": 5,
+      "visitor_result": "W",
       "division": "U14 AA"
     },
     {
@@ -139274,19 +139805,19 @@
       "date": "Oct 5, 2026",
       "time": "8:30 PM",
       "timestamp": "2026-10-06T00:30:00Z",
-      "status": "scheduled",
+      "status": "final",
       "location": "Jack Charron (Jack Charron)",
       "source_id": "15454",
       "source_name": "HEO AA-A",
       "source_type": "league",
       "home_id": 533219,
       "home_name": "Kanata Blazers",
-      "home_goals": null,
-      "home_result": null,
+      "home_goals": 1,
+      "home_result": "L",
       "visitor_id": 533215,
       "visitor_name": "Upper Ottawa Valley Aces",
-      "visitor_goals": null,
-      "visitor_result": null,
+      "visitor_goals": 3,
+      "visitor_result": "W",
       "division": "U14 AA"
     },
     {
@@ -141228,6 +141759,26 @@
       "visitor_goals": null,
       "visitor_result": null,
       "division": "U14 AA"
+    },
+    {
+      "game_id": 3064402,
+      "date": "Oct 12, 2026",
+      "time": "7:30 PM",
+      "timestamp": "2026-10-12T23:30:00Z",
+      "status": "scheduled",
+      "location": "Bell Sensplex (Myers)",
+      "source_id": "15454",
+      "source_name": "HEO AA-A",
+      "source_type": "league",
+      "home_id": 533186,
+      "home_name": "Kanata Blazers",
+      "home_goals": null,
+      "home_result": null,
+      "visitor_id": 533187,
+      "visitor_name": "Cumberland Jr Grads",
+      "visitor_goals": null,
+      "visitor_result": null,
+      "division": "U11 AA"
     },
     {
       "game_id": 3059579,
