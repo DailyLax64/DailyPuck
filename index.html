@@ -1031,10 +1031,31 @@
                 attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
             });
 
-            // 6. Calculate Strength-of-Schedule
+            // 6. Calculate Dynamic MHR Rating Ranks & Strength-of-Schedule
             if (rawHockeyDb?.master_teams) {
                 Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
                     const cohortTeams = rawHockeyDb.master_teams[divKey];
+
+                    // Dynamically calculate MHR rank from rating (Highest MHR rating = #1 rank)
+                    const sortedByRating = Object.entries(cohortTeams)
+                        .map(([name, data]) => ({
+                            name,
+                            rating: parseFloat(data.mhr_rating || 0)
+                        }))
+                        .filter(t => t.rating > 0)
+                        .sort((a, b) => b.rating - a.rating);
+
+                    sortedByRating.forEach((item, idx) => {
+                        if (cohortTeams[item.name]) {
+                            const curRank = cohortTeams[item.name].mhr_rank;
+                            // For U11 AA, or whenever mhr_rank is missing / "n/a" / "0", assign rank by rating
+                            if (divKey.toUpperCase().includes("U11") || !curRank || String(curRank).toLowerCase() === 'n/a' || String(curRank) === '0') {
+                                cohortTeams[item.name].mhr_rank = String(idx + 1);
+                            }
+                        }
+                    });
+
+                    // Strength of Schedule Rank
                     const sortedBySched = Object.entries(cohortTeams)
                         .map(([name, data]) => ({
                             name,
@@ -1718,7 +1739,20 @@
             const calculatedGp = teamPayload.gp || (teamPayload.games ? teamPayload.games.filter(g => g.status === 'final').length : 0);
             if (gpEl) gpEl.innerText = calculatedGp;
 
-            const rankVal = mhrData.mhr_rank;
+            let rankVal = mhrData.mhr_rank;
+            // Dynamic fallback: compute rank by MHR rating position if rank is "n/a" or "0"
+            if ((!rankVal || String(rankVal).toLowerCase() === 'n/a' || String(rankVal) === '0') && parseFloat(mhrData.mhr_rating || 0) > 0) {
+                const sortedRatings = Object.values(masterCohort)
+                    .map(d => parseFloat(d.mhr_rating || 0))
+                    .filter(r => r > 0)
+                    .sort((a, b) => b - a);
+                const curRating = parseFloat(mhrData.mhr_rating || 0);
+                const rIdx = sortedRatings.indexOf(curRating);
+                if (rIdx !== -1) {
+                    rankVal = String(rIdx + 1);
+                }
+            }
+
             const rankEl = document.getElementById('perf-mhr-rank');
             if (rankEl) {
                 if (rankVal && String(rankVal).toLowerCase() !== 'n/a' && String(rankVal) !== '0') {
@@ -2316,7 +2350,7 @@
                 <div class="py-8 text-center flex flex-col items-center justify-center space-y-2">
                     <div class="w-6 h-6 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
                     <span id="ai-loading-text" class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">
-                        ${isMatchup ? `Synthesizing matchup scouting profile: ${myTeamName} vs ${oppTeamName}...` : `Synthesizing analytical breakdown for ${oppTeamName}...`}
+                        ${isMatchup ? `Synthesizing matchup scouting profile: ${myTeamName} vs${oppTeamName}...` : `Synthesizing analytical breakdown for ${oppTeamName}...`}
                     </span>
                 </div>
             `;
