@@ -30,7 +30,7 @@
     <div class="bg-slate-900 border-b border-slate-800 py-2.5 px-4 shadow-sm text-white">
         <div class="max-w-6xl mx-auto flex flex-row items-center justify-between gap-3 text-xs">
             <div class="flex items-center space-x-2">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span id="sync-ping" class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                 <span id="sync-status" class="font-mono font-bold text-slate-300 uppercase tracking-widest text-[11px]">Connecting to hockey_stats.json...</span>
             </div>
             <div class="flex items-center space-x-2">
@@ -72,7 +72,7 @@
         <!-- Loading Pill -->
         <div id="loading-state" class="py-16 text-center">
             <div class="w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
-            <p class="text-slate-600 font-mono font-bold uppercase tracking-wider text-xs">Parsing Burlington Eagles Metrics...</p>
+            <p id="loading-text" class="text-slate-600 font-mono font-bold uppercase tracking-wider text-xs">Parsing Burlington Eagles Metrics...</p>
         </div>
 
         <div id="dashboard-view" class="hidden space-y-6 animate-fade">
@@ -397,4 +397,789 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-eagles-navy text-center py-6 text-xs font-mono text-slate-400 uppercase tracking-widest border-t
+    <footer class="bg-eagles-navy text-center py-6 text-xs font-mono text-slate-400 uppercase tracking-widest border-t-2 border-yellow-400 mt-auto">
+        &copy; 2026 Burlington Eagles Analytics Hub | GameSheet Stats Stream
+    </footer>
+
+    <!-- Core Automation Script -->
+    <script>
+        let rawHockeyDb = null;
+        let scoutingReportDatabase = {};
+        let hotTeamsDatabaseMap = {};
+        let activeCohort = "U11";
+
+        const cleanKey = str => String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
+        const isBurlingtonEagles = name => {
+            const c = cleanKey(name);
+            return c.includes("BURLINGTON") && c.includes("EAGLES");
+        };
+
+        function getGradientColor(pct, type = 'rose-to-emerald') {
+            const p = Math.max(0, Math.min(100, pct)) / 100;
+            const rose = [244, 63, 94];
+            const amber = [251, 191, 36];
+            const emerald = [16, 185, 129];
+
+            let c1, c2, factor;
+            if (type === 'rose-to-emerald') {
+                if (p < 0.5) {
+                    c1 = rose;
+                    c2 = amber;
+                    factor = p / 0.5;
+                } else {
+                    c1 = amber;
+                    c2 = emerald;
+                    factor = (p - 0.5) / 0.5;
+                }
+            } else {
+                if (p < 0.5) {
+                    c1 = emerald;
+                    c2 = amber;
+                    factor = p / 0.5;
+                } else {
+                    c1 = amber;
+                    c2 = rose;
+                    factor = (p - 0.5) / 0.5;
+                }
+            }
+
+            const r = Math.round(c1[0] + factor * (c2[0] - c1[0]));
+            const g = Math.round(c1[1] + factor * (c2[1] - c1[1]));
+            const b = Math.round(c1[2] + factor * (c2[2] - c1[2]));
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        async function initApp() {
+            try {
+                const response = await fetch('hockey_stats.json?v=' + Date.now());
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                rawHockeyDb = await response.json();
+
+                const genDate = rawHockeyDb.generated_at ? new Date(rawHockeyDb.generated_at).toLocaleDateString() : 'Active';
+                document.getElementById('sync-status').innerText = `Synced: ${genDate}`;
+
+                buildDivisionTree();
+                renderSelectedCohort();
+
+            } catch (err) {
+                console.error("Error loading hockey_stats.json:", err);
+                document.getElementById('sync-status').innerText = "Database Offline";
+                document.getElementById('loading-state').innerHTML = `
+                    <p class="text-rose-600 font-bold font-mono text-xs uppercase">⚠️ Could not load hockey_stats.json. Ensure file exists in repository root.</p>
+                `;
+            }
+        }
+
+        function resolveCohortKey(divStr, ageStr) {
+            const combined = `${divStr || ''} ${ageStr || ''}`.toUpperCase();
+            if (combined.includes("U14") || combined.includes("14")) return "U14 AA";
+            if (combined.includes("U11") || combined.includes("11")) return "U11 AA";
+            return "U11 AA";
+        }
+
+        function getOrCreateTeamProfile(cohort, rawTeamName, teamId = null) {
+            if (!rawTeamName) return null;
+            const targetCohort = resolveCohortKey(cohort);
+            
+            if (!scoutingReportDatabase[targetCohort]) {
+                scoutingReportDatabase[targetCohort] = {};
+            }
+            const cohortDb = scoutingReportDatabase[targetCohort];
+
+            let canonical = rawTeamName.trim();
+            const cleanRaw = cleanKey(rawTeamName);
+            
+            // Cross-reference master_teams whitelist
+            if (rawHockeyDb?.master_teams?.[targetCohort]) {
+                for (const [canon, data] of Object.entries(rawHockeyDb.master_teams[targetCohort])) {
+                    if (cleanKey(canon) === cleanRaw) {
+                        canonical = canon;
+                        break;
+                    }
+                    if (data.aliases && data.aliases.some(a => cleanKey(a) === cleanRaw)) {
+                        canonical = canon;
+                        break;
+                    }
+                    const cleanCanon = cleanKey(canon);
+                    if (cleanCanon.length >= 5 && (cleanRaw.includes(cleanCanon) || cleanCanon.includes(cleanRaw))) {
+                        canonical = canon;
+                        break;
+                    }
+                }
+            }
+
+            if (cohortDb[canonical]) {
+                if (teamId && !cohortDb[canonical].team_id) cohortDb[canonical].team_id = teamId;
+                return cohortDb[canonical];
+            }
+
+            for (const [name, prof] of Object.entries(cohortDb)) {
+                if (cleanKey(name) === cleanRaw) {
+                    if (teamId && !prof.team_id) prof.team_id = teamId;
+                    return prof;
+                }
+            }
+
+            const parts = targetCohort.split(' ');
+            cohortDb[canonical] = {
+                team_name: canonical,
+                team_id: teamId,
+                division: targetCohort,
+                age: parts[0] || "U11",
+                tier: parts[1] || "AA",
+                gp: 0, w: 0, l: 0, t: 0, pts: 0, gf: 0, ga: 0, diff: 0, pim: 0,
+                ppg: 0, ppo: 0, ppga: 0, ppoa: 0, shg: 0, shga: 0,
+                standings_entries: [],
+                roster: [],
+                goalies: [],
+                games: []
+            };
+            return cohortDb[canonical];
+        }
+
+        function buildDivisionTree() {
+            scoutingReportDatabase = {
+                "U11 AA": {},
+                "U14 AA": {}
+            };
+
+            // 1. Seed master_teams whitelist
+            if (rawHockeyDb?.master_teams) {
+                Object.entries(rawHockeyDb.master_teams).forEach(([cohort, teams]) => {
+                    const normCohort = resolveCohortKey(cohort);
+                    Object.keys(teams).forEach(teamName => {
+                        getOrCreateTeamProfile(normCohort, teamName);
+                    });
+                });
+            }
+
+            // 2. Ingest Standings (League, Tournament, and Exhibition entries)
+            (rawHockeyDb.standings || []).forEach(row => {
+                const normCohort = resolveCohortKey(row.division || `${row.age || ''} ${row.tier || ''}`);
+                const teamProfile = getOrCreateTeamProfile(normCohort, row.team_name, row.team_id);
+                if (!teamProfile) return;
+
+                teamProfile.gp += Number(row.gp) || 0;
+                teamProfile.w += Number(row.w) || 0;
+                teamProfile.l += Number(row.l) || 0;
+                teamProfile.t += Number(row.t) || 0;
+                teamProfile.pts += Number(row.pts) || 0;
+                teamProfile.gf += Number(row.gf) || 0;
+                teamProfile.ga += Number(row.ga) || 0;
+                teamProfile.diff += Number(row.diff) || 0;
+                teamProfile.pim += Number(row.pim) || 0;
+
+                teamProfile.ppg += Number(row.ppg) || 0;
+                teamProfile.ppo += Number(row.ppo) || 0;
+                teamProfile.ppga += Number(row.ppga) || 0;
+                teamProfile.ppoa += Number(row.ppoa) || 0;
+                teamProfile.shg += Number(row.shg) || 0;
+                teamProfile.shga += Number(row.shga) || 0;
+
+                teamProfile.standings_entries.push(row);
+            });
+
+            // 3. Ingest Skaters
+            (rawHockeyDb.skaters || []).forEach(p => {
+                const normCohort = resolveCohortKey(p.division || p.cohort || p.age);
+                const teamProfile = getOrCreateTeamProfile(normCohort, p.team, p.team_id);
+                if (teamProfile) {
+                    teamProfile.roster.push(p);
+                }
+            });
+
+            // 4. Ingest Goalies
+            (rawHockeyDb.goalies || []).forEach(g => {
+                const normCohort = resolveCohortKey(g.division || g.cohort || g.age);
+                const teamProfile = getOrCreateTeamProfile(normCohort, g.team, g.team_id);
+                if (teamProfile) {
+                    teamProfile.goalies.push(g);
+                }
+            });
+
+            // 5. Ingest Games (Attaching both League, Tournament, and Exhibition Matchups)
+            (rawHockeyDb.games || []).forEach(g => {
+                if (!g) return;
+                const normCohort = resolveCohortKey(g.division);
+                attachGameToMatchingTeams(normCohort, g.home_name, g.home_id, g, true);
+                attachGameToMatchingTeams(normCohort, g.visitor_name, g.visitor_id, g, false);
+            });
+
+            // 6. Dynamic MHR Rank & SoS
+            if (rawHockeyDb?.master_teams) {
+                Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
+                    const normCohort = resolveCohortKey(divKey);
+                    const cohortTeams = rawHockeyDb.master_teams[divKey];
+
+                    const sortedByRating = Object.entries(cohortTeams)
+                        .map(([name, data]) => ({ name, rating: parseFloat(data.mhr_rating || 0) }))
+                        .filter(t => t.rating > 0)
+                        .sort((a, b) => b.rating - a.rating);
+
+                    sortedByRating.forEach((item, idx) => {
+                        if (cohortTeams[item.name]) {
+                            const curRank = cohortTeams[item.name].mhr_rank;
+                            if (normCohort.includes("U11") || !curRank || String(curRank).toLowerCase() === 'n/a' || String(curRank) === '0') {
+                                cohortTeams[item.name].mhr_rank = String(idx + 1);
+                            }
+                        }
+                    });
+
+                    const sortedBySched = Object.entries(cohortTeams)
+                        .map(([name, data]) => ({ name, sched: parseFloat(data.mhr_sched || 0) }))
+                        .filter(t => t.sched > 0)
+                        .sort((a, b) => b.sched - a.sched);
+                    
+                    sortedBySched.forEach((item, idx) => {
+                        if (cohortTeams[item.name]) {
+                            cohortTeams[item.name].sos_rank = idx + 1;
+                        }
+                    });
+                });
+            }
+
+            // 7. Contender Status
+            hotTeamsDatabaseMap = {};
+            Object.keys(scoutingReportDatabase).forEach(divKey => {
+                const divTeams = Object.values(scoutingReportDatabase[divKey]);
+                divTeams.sort((a, b) => b.pts !== a.pts ? b.pts - a.pts : b.diff - a.diff);
+                divTeams.forEach((team, idx) => { team.rank = idx + 1; });
+
+                hotTeamsDatabaseMap[divKey] = [];
+                const hotCandidates = [...divTeams].filter(t => t.gp >= 2)
+                    .sort((a, b) => ((b.pts / Math.max(1, b.gp * 2)) - (a.pts / Math.max(1, a.gp * 2))));
+                if (hotCandidates.length > 0) {
+                    hotTeamsDatabaseMap[divKey].push(hotCandidates[0].team_name);
+                }
+            });
+        }
+
+        function attachGameToMatchingTeams(targetCohort, teamName, teamId, game, isHome) {
+            if (!teamName || !game) return;
+            const teamProfile = getOrCreateTeamProfile(targetCohort, teamName, teamId);
+            if (!teamProfile) return;
+
+            const isFinal = game.status === 'final';
+            const team_goals = isHome ? game.home_goals : game.visitor_goals;
+            const opp_goals = isHome ? game.visitor_goals : game.home_goals;
+            const result = isHome ? game.home_result : game.visitor_result;
+            const oppName = isHome ? game.visitor_name : game.home_name;
+
+            const rec = {
+                date: game.date || "",
+                time: game.time || "",
+                status: game.status || "scheduled",
+                location: game.location || "",
+                source_name: game.source_name || "",
+                is_home: isHome,
+                opponent: oppName,
+                team_goals: team_goals,
+                opp_goals: opp_goals,
+                result: result,
+                score_str: isFinal ? `${team_goals} - ${opp_goals}` : (game.time || "Scheduled")
+            };
+
+            teamProfile.games.push(rec);
+        }
+
+        function onCohortChange() {
+            const select = document.getElementById('cohort-select');
+            activeCohort = select.value;
+            syncCohortButtons();
+            renderSelectedCohort();
+        }
+
+        function setCohort(cohort) {
+            activeCohort = cohort;
+            document.getElementById('cohort-select').value = cohort;
+            syncCohortButtons();
+            renderSelectedCohort();
+        }
+
+        function syncCohortButtons() {
+            const btnU11 = document.getElementById('btn-u11');
+            const btnU14 = document.getElementById('btn-u14');
+            if (activeCohort === 'U11') {
+                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
+                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
+            } else {
+                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
+                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
+            }
+        }
+
+        function renderSelectedCohort() {
+            const targetDiv = activeCohort === "U14" ? "U14 AA" : "U11 AA";
+            const divisionPayload = scoutingReportDatabase[targetDiv] || {};
+            const eaglesTeamName = Object.keys(divisionPayload).find(t => isBurlingtonEagles(t));
+
+            if (!eaglesTeamName || !divisionPayload[eaglesTeamName]) {
+                document.getElementById('loading-state').innerHTML = `
+                    <p class="text-slate-600 font-bold font-mono text-xs uppercase">Burlington Eagles not found in ${targetDiv}.</p>
+                `;
+                return;
+            }
+
+            const team = divisionPayload[eaglesTeamName];
+
+            document.getElementById('loading-state').classList.add('hidden');
+            document.getElementById('dashboard-view').classList.remove('hidden');
+
+            document.getElementById('cohort-banner-label').innerText = `${team.division} Rep Hockey Analytics`;
+            document.getElementById('team-title').innerText = team.team_name;
+
+            // Calculate overall record dynamically across league, tournament, and exhibition games
+            let totalW = 0, totalL = 0, totalT = 0;
+            const completedGames = (team.games || []).filter(g => g.status === 'final');
+            completedGames.forEach(g => {
+                if (g.result === 'W') totalW++;
+                else if (g.result === 'L') totalL++;
+                else if (g.result === 'T') totalT++;
+            });
+
+            if (completedGames.length === 0) {
+                totalW = team.w || 0;
+                totalL = team.l || 0;
+                totalT = team.t || 0;
+            }
+
+            const calculatedGp = completedGames.length > 0 ? completedGames.length : (team.gp || 0);
+            document.getElementById('tracked-record-pill').innerText = `${totalW}W - ${totalL}L - ${totalT}T`;
+
+            // Contender badge
+            const hotBadge = document.getElementById('hot-badge');
+            if (hotTeamsDatabaseMap[targetDiv]?.includes(eaglesTeamName)) {
+                hotBadge.classList.remove('hidden');
+            } else {
+                hotBadge.classList.add('hidden');
+            }
+
+            // MHR Metrics
+            const masterCohort = rawHockeyDb?.master_teams?.[targetDiv] || {};
+            let mhrData = masterCohort[eaglesTeamName];
+            if (!mhrData) {
+                const targetKey = cleanKey(eaglesTeamName);
+                for (const [mName, mObj] of Object.entries(masterCohort)) {
+                    if (cleanKey(mName) === targetKey || (mObj.aliases && mObj.aliases.some(a => cleanKey(a) === targetKey))) {
+                        mhrData = mObj;
+                        break;
+                    }
+                }
+            }
+            mhrData = mhrData || {};
+
+            document.getElementById('perf-gp').innerText = calculatedGp;
+
+            let rankVal = mhrData.mhr_rank;
+            if ((!rankVal || String(rankVal).toLowerCase() === 'n/a' || String(rankVal) === '0') && parseFloat(mhrData.mhr_rating || 0) > 0) {
+                const sortedRatings = Object.values(masterCohort)
+                    .map(d => parseFloat(d.mhr_rating || 0))
+                    .filter(r => r > 0)
+                    .sort((a, b) => b - a);
+                const curRating = parseFloat(mhrData.mhr_rating || 0);
+                const rIdx = sortedRatings.indexOf(curRating);
+                if (rIdx !== -1) rankVal = String(rIdx + 1);
+            }
+
+            const rankEl = document.getElementById('perf-mhr-rank');
+            if (rankVal && String(rankVal) !== '0' && String(rankVal).toLowerCase() !== 'n/a') {
+                rankEl.innerText = `#${rankVal}`;
+                rankEl.className = "text-xl sm:text-2xl font-mono font-black text-white";
+            } else {
+                rankEl.innerText = "n/a";
+                rankEl.className = "text-xl sm:text-2xl font-mono font-bold text-slate-500";
+            }
+
+            const ratingVal = parseFloat(mhrData.mhr_rating || 0);
+            const ratingEl = document.getElementById('perf-mhr-rating');
+            if (ratingVal > 0) {
+                ratingEl.innerText = ratingVal.toFixed(2);
+                ratingEl.className = "text-xl sm:text-2xl font-mono font-black text-yellow-400";
+            } else {
+                ratingEl.innerText = "0.00";
+                ratingEl.className = "text-xl sm:text-2xl font-mono font-bold text-slate-500";
+            }
+
+            const sosEl = document.getElementById('perf-mhr-sos');
+            if (mhrData.sos_rank) {
+                sosEl.innerText = `#${mhrData.sos_rank}`;
+                sosEl.className = "text-xl sm:text-2xl font-mono font-black text-white";
+            } else if (mhrData.mhr_sched && parseFloat(mhrData.mhr_sched) > 0) {
+                sosEl.innerText = parseFloat(mhrData.mhr_sched).toFixed(1);
+                sosEl.className = "text-xl sm:text-2xl font-mono font-black text-white";
+            } else {
+                sosEl.innerText = "n/a";
+                sosEl.className = "text-xl sm:text-2xl font-mono font-bold text-slate-500";
+            }
+
+            // Comparison cards
+            document.getElementById('perf-mhr-record').innerText = mhrData.mhr_record || '-';
+            const mhrDiffEl = document.getElementById('perf-mhr-diff');
+            const agdVal = parseFloat(mhrData.mhr_agd || 0);
+            if (mhrData.mhr_agd !== undefined && mhrData.mhr_agd !== "") {
+                mhrDiffEl.innerText = agdVal > 0 ? `+${mhrData.mhr_agd}` : `${mhrData.mhr_agd}`;
+                mhrDiffEl.className = `text-base sm:text-xl font-mono font-black ${agdVal >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+            } else {
+                mhrDiffEl.innerText = "-";
+            }
+
+            document.getElementById('perf-tracked-record').innerText = `${totalW}-${totalL}-${totalT}`;
+            const trackedDiffEl = document.getElementById('perf-tracked-diff');
+            trackedDiffEl.innerText = team.diff >= 0 ? `+${team.diff}` : `${team.diff}`;
+            trackedDiffEl.className = `text-base sm:text-xl font-mono font-black ${team.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+
+            // Efficiency Gauges & Metrics
+            const allDivTeams = Object.values(divisionPayload);
+            const totalTeamsInDivision = allDivTeams.length;
+            document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
+
+            const metrics = allDivTeams.map(t => {
+                const teamGp = t.gp > 0 ? t.gp : (t.games ? t.games.filter(g => g.status === 'final').length : 0);
+                return {
+                    name: t.team_name,
+                    gfAvg: teamGp > 0 ? t.gf / teamGp : 0,
+                    gaAvg: teamGp > 0 ? t.ga / teamGp : 0,
+                    pimAvg: teamGp > 0 ? t.pim / teamGp : 0,
+                    diffAvg: teamGp > 0 ? t.diff / teamGp : 0
+                };
+            });
+
+            const curMetrics = metrics.find(x => x.name === eaglesTeamName) || { gfAvg: 0, gaAvg: 0, pimAvg: 0, diffAvg: 0 };
+            const sortedGF = [...metrics].sort((a, b) => b.gfAvg - a.gfAvg);
+            const sortedGA = [...metrics].sort((a, b) => a.gaAvg - b.gaAvg);
+            const sortedPIM = [...metrics].sort((a, b) => a.pimAvg - b.pimAvg);
+            const sortedDiff = [...metrics].sort((a, b) => b.diffAvg - a.diffAvg);
+
+            const gfRank = sortedGF.findIndex(x => x.name === eaglesTeamName) + 1;
+            const gaRank = sortedGA.findIndex(x => x.name === eaglesTeamName) + 1;
+            const pimRank = sortedPIM.findIndex(x => x.name === eaglesTeamName) + 1;
+            const diffRank = sortedDiff.findIndex(x => x.name === eaglesTeamName) + 1;
+
+            const elGfVal = document.getElementById('stat-gf-val');
+            const elGaVal = document.getElementById('stat-ga-val');
+            const elPimVal = document.getElementById('stat-pim-val');
+            const elDiffVal = document.getElementById('stat-diff-val');
+
+            elGfVal.innerText = curMetrics.gfAvg.toFixed(1);
+            elGaVal.innerText = curMetrics.gaAvg.toFixed(1);
+            elPimVal.innerText = curMetrics.pimAvg.toFixed(1);
+            elDiffVal.innerText = curMetrics.diffAvg >= 0 ? `+${curMetrics.diffAvg.toFixed(1)}` : curMetrics.diffAvg.toFixed(1);
+
+            const pctGF = totalTeamsInDivision > 1 ? 100 - (((gfRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctGA = totalTeamsInDivision > 1 ? ((gaRank - 1) / (totalTeamsInDivision - 1)) * 100 : 0;
+            const pctPIM = totalTeamsInDivision > 1 ? ((pimRank - 1) / (totalTeamsInDivision - 1)) * 100 : 0;
+            const pctDiff = totalTeamsInDivision > 1 ? 100 - (((diffRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+
+            document.getElementById('gauge-gf-indicator').style.left = `${pctGF}%`;
+            document.getElementById('gauge-ga-indicator').style.left = `${pctGA}%`;
+            document.getElementById('gauge-pim-indicator').style.left = `${pctPIM}%`;
+            document.getElementById('gauge-diff-indicator').style.left = `${pctDiff}%`;
+
+            elGfVal.style.color = getGradientColor(pctGF, 'rose-to-emerald');
+            elGaVal.style.color = getGradientColor(pctGA, 'emerald-to-rose');
+            elDiffVal.style.color = getGradientColor(pctDiff, 'rose-to-emerald');
+            elPimVal.style.color = getGradientColor(pctPIM, 'emerald-to-rose');
+
+            document.getElementById('stat-gf-rank').innerText = `#${gfRank} of ${totalTeamsInDivision}`;
+            document.getElementById('stat-ga-rank').innerText = `#${gaRank} of ${totalTeamsInDivision}`;
+            document.getElementById('stat-pim-rank').innerText = `#${pimRank} of ${totalTeamsInDivision}`;
+            document.getElementById('stat-diff-rank').innerText = `#${diffRank} of ${totalTeamsInDivision}`;
+
+            // Special Teams Execution
+            const ppg = team.ppg || 0;
+            const ppo = team.ppo || 0;
+            const ppga = team.ppga || 0;
+            const ppoa = team.ppoa || 0;
+            const shg = team.shg || 0;
+            const shga = team.shga || 0;
+
+            const ppPct = ppo > 0 ? ((ppg / ppo) * 100).toFixed(1) : "0.0";
+            const pkKilled = Math.max(0, ppoa - ppga);
+            const pkPct = ppoa > 0 ? ((pkKilled / ppoa) * 100).toFixed(1) : (calculatedGp > 0 ? "100.0" : "0.0");
+
+            const elPpPct = document.getElementById('spec-pp-pct');
+            const elPkPct = document.getElementById('spec-pk-pct');
+            const elShgf = document.getElementById('spec-shgf');
+            const elShga = document.getElementById('spec-shga');
+
+            elPpPct.innerText = `${ppPct}%`;
+            document.getElementById('spec-pp-ratio').innerText = `${ppg} / ${ppo} Opps`;
+            elPkPct.innerText = `${pkPct}%`;
+            document.getElementById('spec-pk-ratio').innerText = `${pkKilled} / ${ppoa} Killed`;
+            elShgf.innerText = `${shg}`;
+            elShga.innerText = `${shga}`;
+
+            const specMetrics = allDivTeams.map(t => {
+                const tPpg = t.ppg || 0;
+                const tPpo = t.ppo || 0;
+                const tPpga = t.ppga || 0;
+                const tPpoa = t.ppoa || 0;
+                const tPpPct = tPpo > 0 ? (tPpg / tPpo) * 100 : 0;
+                const tPkKilled = Math.max(0, tPpoa - tPpga);
+                const teamGp = t.gp > 0 ? t.gp : (t.games ? t.games.filter(g => g.status === 'final').length : 0);
+                const tPkPct = tPpoa > 0 ? (tPkKilled / tPpoa) * 100 : (teamGp > 0 ? 100 : 0);
+                return {
+                    name: t.team_name,
+                    ppPct: tPpPct,
+                    pkPct: tPkPct,
+                    shgf: t.shg || 0,
+                    shga: t.shga || 0
+                };
+            });
+
+            const sortedPP = [...specMetrics].sort((a, b) => b.ppPct - a.ppPct);
+            const sortedPK = [...specMetrics].sort((a, b) => b.pkPct - a.pkPct);
+            const sortedSHGF = [...specMetrics].sort((a, b) => b.shgf - a.shgf);
+            const sortedSHGA = [...specMetrics].sort((a, b) => a.shga - b.shga);
+
+            const ppRank = sortedPP.findIndex(x => x.name === eaglesTeamName) + 1;
+            const pkRank = sortedPK.findIndex(x => x.name === eaglesTeamName) + 1;
+            const shgfRank = sortedSHGF.findIndex(x => x.name === eaglesTeamName) + 1;
+            const shgaRank = sortedSHGA.findIndex(x => x.name === eaglesTeamName) + 1;
+
+            const pctPP = totalTeamsInDivision > 1 ? 100 - (((ppRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctPK = totalTeamsInDivision > 1 ? 100 - (((pkRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctSHGF = totalTeamsInDivision > 1 ? 100 - (((shgfRank - 1) / (totalTeamsInDivision - 1)) * 100) : 100;
+            const pctSHGA = totalTeamsInDivision > 1 ? ((shgaRank - 1) / (totalTeamsInDivision - 1)) * 100 : 0;
+
+            document.getElementById('gauge-pp-indicator').style.left = `${pctPP}%`;
+            document.getElementById('gauge-pk-indicator').style.left = `${pctPK}%`;
+            document.getElementById('gauge-shgf-indicator').style.left = `${pctSHGF}%`;
+            document.getElementById('gauge-shga-indicator').style.left = `${pctSHGA}%`;
+
+            elPpPct.style.color = getGradientColor(pctPP, 'rose-to-emerald');
+            elPkPct.style.color = getGradientColor(pctPK, 'rose-to-emerald');
+            elShgf.style.color = getGradientColor(pctSHGF, 'rose-to-emerald');
+            elShga.style.color = getGradientColor(pctSHGA, 'emerald-to-rose');
+
+            document.getElementById('spec-pp-rank').innerText = `#${ppRank} of ${totalTeamsInDivision}`;
+            document.getElementById('spec-pk-rank').innerText = `#${pkRank} of ${totalTeamsInDivision}`;
+            document.getElementById('spec-shgf-rank').innerText = `#${shgfRank} of ${totalTeamsInDivision}`;
+            document.getElementById('spec-shga-rank').innerText = `#${shgaRank} of ${totalTeamsInDivision}`;
+
+            // Top 15 Skaters (Deduplicated across league, tournament, and exhibition games)
+            const uniqueSkaters = [];
+            const seenSkaterKeys = new Set();
+            (team.roster || []).forEach(p => {
+                const key = `${p.name || ''}_${p.jersey || ''}`.toUpperCase();
+                if (!seenSkaterKeys.has(key)) {
+                    seenSkaterKeys.add(key);
+                    uniqueSkaters.push(p);
+                }
+            });
+
+            const sortedSkaters = uniqueSkaters.sort((a, b) => {
+                const gpA = Number(a.total_gp ?? a.gp ?? 0);
+                const gpB = Number(b.total_gp ?? b.gp ?? 0);
+                if (gpB !== gpA) return gpB - gpA;
+                const ptsA = Number(a.total_pts ?? a.pts ?? 0);
+                const ptsB = Number(b.total_pts ?? b.pts ?? 0);
+                if (ptsB !== ptsA) return ptsB - ptsA;
+                return String(a.name || '').localeCompare(String(b.name || ''));
+            }).slice(0, 15);
+
+            document.getElementById('skater-count-badge').innerText = `${sortedSkaters.length} Skaters (${uniqueSkaters.length} Tracked)`;
+            const rosterTbody = document.getElementById('roster-tbody');
+            rosterTbody.innerHTML = "";
+
+            if (sortedSkaters.length > 0) {
+                sortedSkaters.forEach((p, idx) => {
+                    const uniqueId = `skater-breakdown-${idx}`;
+                    const gp = p.total_gp ?? p.gp ?? 0;
+                    const g = p.total_g ?? p.g ?? 0;
+                    const a = p.total_a ?? p.a ?? 0;
+                    const pts = p.total_pts ?? p.pts ?? (g + a);
+                    const pim = p.total_pim ?? p.pim ?? 0;
+
+                    rosterTbody.innerHTML += `
+                        <tr class="hover:bg-slate-800/40 transition-colors border-b border-slate-800/60 cursor-pointer" onclick="toggleRow('${uniqueId}')">
+                            <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${p.jersey || '-'}</td>
+                            <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
+                                <span class="truncate max-w-[150px] sm:max-w-xs">${p.name}</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ Log</span>
+                            </td>
+                            <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${gp}</td>
+                            <td class="py-2.5 px-3 text-center text-slate-300 font-mono">${g}</td>
+                            <td class="py-2.5 px-3 text-center text-slate-300 font-mono">${a}</td>
+                            <td class="py-2.5 px-3 text-center text-white font-mono font-black">${pts}</td>
+                            <td class="py-2.5 px-3 text-center font-mono ${pim > 10 ? 'text-amber-400 font-bold' : 'text-slate-500'}">${pim}</td>
+                        </tr>
+                        <tr id="${uniqueId}" class="hidden bg-slate-950/90">
+                            <td colspan="7" class="py-3 px-4">
+                                <div class="rounded-xl border border-slate-800 overflow-x-auto custom-scrollbar">
+                                    <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
+                                        <thead>
+                                            <tr class="bg-slate-950 border-b border-slate-800 text-[10px] text-slate-400 uppercase tracking-widest font-black">
+                                                <th class="py-1.5 px-3">Event Track Source</th>
+                                                <th class="py-1.5 px-3 text-center">Type</th>
+                                                <th class="py-1.5 px-3 text-center text-yellow-400">GP</th>
+                                                <th class="py-1.5 px-3 text-center">G</th>
+                                                <th class="py-1.5 px-3 text-center">A</th>
+                                                <th class="py-1.5 px-3 text-center text-white font-bold">PTS</th>
+                                                <th class="py-1.5 px-3 text-center">PIM</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                                            ${(p.sources || []).map(s => `
+                                                <tr>
+                                                    <td class="py-1 px-3 font-sans font-extrabold text-slate-300 uppercase">${s.source_name}</td>
+                                                    <td class="py-1 px-3 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : 'text-blue-400 bg-blue-950/40')}">${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : 'LEAG')}</span></td>
+                                                    <td class="py-1 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                                    <td class="py-1 px-3 text-center">${s.g}</td>
+                                                    <td class="py-1 px-3 text-center">${s.a}</td>
+                                                    <td class="py-1 px-3 text-center font-bold text-white">${s.pts}</td>
+                                                    <td class="py-1 px-3 text-center text-slate-500">${s.pim}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                rosterTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No skater statistics on record.</td></tr>`;
+            }
+
+            // Top 2 Goalies
+            const uniqueGoalies = [];
+            const seenGoalieKeys = new Set();
+            (team.goalies || []).forEach(g => {
+                const key = `${g.name || ''}_${g.jersey || ''}`.toUpperCase();
+                if (!seenGoalieKeys.has(key)) {
+                    seenGoalieKeys.add(key);
+                    uniqueGoalies.push(g);
+                }
+            });
+
+            const sortedGoalies = uniqueGoalies.sort((a, b) => {
+                const gpA = Number(a.total_gp ?? a.gp ?? 0);
+                const gpB = Number(b.total_gp ?? b.gp ?? 0);
+                if (gpB !== gpA) return gpB - gpA;
+                const gaaA = Number(a.total_gaa ?? a.gaa ?? 99);
+                const gaaB = Number(b.total_gaa ?? b.gaa ?? 99);
+                return gaaA - gaaB;
+            }).slice(0, 2);
+
+            const goalieTbody = document.getElementById('goalie-tbody');
+            goalieTbody.innerHTML = "";
+
+            if (sortedGoalies.length > 0) {
+                sortedGoalies.forEach((g, idx) => {
+                    const uniqueId = `goalie-breakdown-${idx}`;
+                    const gp = g.total_gp ?? g.gp ?? 0;
+                    const ga = g.total_ga ?? g.ga ?? 0;
+                    const gaa = Number(g.total_gaa ?? g.gaa ?? 0).toFixed(2);
+                    const so = g.total_so ?? g.so ?? 0;
+                    const rec = (g.total_w !== undefined) ? `${g.total_w}-${g.total_l}-${g.total_t}` : (g.record || '-');
+
+                    goalieTbody.innerHTML += `
+                        <tr class="hover:bg-slate-800/40 transition-colors border-b border-slate-800/60 cursor-pointer" onclick="toggleRow('${uniqueId}')">
+                            <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${g.jersey || '-'}</td>
+                            <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
+                                <span class="truncate max-w-[150px] sm:max-w-xs">${g.name}</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ Log</span>
+                            </td>
+                            <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${gp}</td>
+                            <td class="py-2.5 px-3 text-center text-rose-400 font-mono font-extrabold">${ga}</td>
+                            <td class="py-2.5 px-3 text-center text-white font-mono font-black">${gaa}</td>
+                            <td class="py-2.5 px-3 text-center text-emerald-400 font-mono font-bold">${so}</td>
+                            <td class="py-2.5 px-3 text-center font-mono text-slate-300 text-xs">${rec}</td>
+                        </tr>
+                        <tr id="${uniqueId}" class="hidden bg-slate-950/90">
+                            <td colspan="7" class="py-3 px-4">
+                                <div class="rounded-xl border border-slate-800 overflow-x-auto custom-scrollbar">
+                                    <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
+                                        <thead>
+                                            <tr class="bg-slate-950 border-b border-slate-800 text-[10px] text-slate-400 uppercase tracking-widest font-black">
+                                                <th class="py-1.5 px-3">Event Track Source</th>
+                                                <th class="py-1.5 px-3 text-center">Type</th>
+                                                <th class="py-1.5 px-3 text-center text-yellow-400">GP</th>
+                                                <th class="py-1.5 px-3 text-center text-rose-400">GA</th>
+                                                <th class="py-1.5 px-3 text-center">GAA</th>
+                                                <th class="py-1.5 px-3 text-center text-emerald-400">SO</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                                            ${(g.sources || []).map(s => `
+                                                <tr>
+                                                    <td class="py-1 px-3 font-sans font-extrabold text-slate-300 uppercase">${s.source_name}</td>
+                                                    <td class="py-1 px-3 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : 'text-blue-400 bg-blue-950/40')}">${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : 'LEAG')}</span></td>
+                                                    <td class="py-1 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                                    <td class="py-1 px-3 text-center text-rose-400">${s.ga}</td>
+                                                    <td class="py-1 px-3 text-center font-black">${parseFloat(s.gaa || 0).toFixed(2)}</td>
+                                                    <td class="py-1 px-3 text-center text-emerald-400 font-bold">${s.so}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                goalieTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No netminder statistics on record.</td></tr>`;
+            }
+
+            // Games & Form Guide (Including OMHA Exhibition Matchups)
+            const teamGames = [...(team.games || [])].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+            const finalGames = teamGames.filter(g => g.status === 'final' && g.result);
+            const upcomingGames = teamGames.filter(g => g.status !== 'final').slice(0, 3);
+            const last5 = finalGames.slice(-5);
+
+            const formRow = document.getElementById('form-guide-row');
+            formRow.innerHTML = "";
+            if (last5.length > 0) {
+                last5.forEach(g => {
+                    let badgeClass = "bg-slate-800 text-slate-300";
+                    if (g.result === 'W') badgeClass = "bg-emerald-500 text-slate-950 font-black shadow-md";
+                    if (g.result === 'L') badgeClass = "bg-rose-600 text-white font-black";
+                    if (g.result === 'T') badgeClass = "bg-yellow-400 text-slate-950 font-black";
+
+                    formRow.innerHTML += `
+                        <div title="${g.is_home ? 'vs' : '@'} ${g.opponent} (${g.score_str}) - ${g.date}" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-mono text-sm sm:text-base font-black cursor-pointer shadow-md ${badgeClass}">
+                            ${g.result}
+                        </div>
+                    `;
+                });
+            } else {
+                formRow.innerHTML = `<span class="text-xs font-mono text-slate-500 uppercase">No completed games on record</span>`;
+            }
+
+            // On Deck List
+            const onDeckList = document.getElementById('on-deck-list');
+            onDeckList.innerHTML = "";
+            if (upcomingGames.length > 0) {
+                upcomingGames.forEach(g => {
+                    onDeckList.innerHTML += `
+                        <div class="bg-slate-950 p-3 sm:p-3.5 rounded-xl border border-slate-800 flex justify-between items-center">
+                            <div>
+                                <div class="flex items-center space-x-2 text-[10px] font-mono text-slate-400 mb-0.5">
+                                    <span class="text-yellow-400 font-bold uppercase">${g.date}</span>
+                                    <span>•</span>
+                                    <span>${g.time || 'Official Time TBD'}</span>
+                                </div>
+                                <div class="font-bold text-white text-xs sm:text-sm uppercase tracking-tight">
+                                    <span class="text-slate-500">${g.is_home ? 'VS' : '@'}</span> ${g.opponent}
+                                </div>
+                            </div>
+                            <span class="px-2 py-1 rounded text-[10px] font-mono font-black uppercase bg-slate-900 border border-slate-700 text-yellow-400">${g.source_name || 'LEAGUE'}</span>
+                        </div>
+                    `;
+                });
+            } else {
+                onDeckList.innerHTML = `<div class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-center text-slate-500 text-xs uppercase font-mono">No upcoming matchups scheduled.</div>`;
+            }
+        }
+
+        function toggleRow(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
