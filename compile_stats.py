@@ -386,3 +386,278 @@ for src in all_sources:
                     "shg": shg,
                     "shga": shga
                 })
+    time.sleep(0.2)
+
+# 4. STAGE 2: INGEST UNIFIED GAMES
+games_dict = {}
+valid_final_states = ["final", "official", "completed", "complete", "played", "finished", "2", "3"]
+
+for src in all_sources:
+    s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
+    print(f"📥 Schedule Ingestion:   [{s_type.upper()}] {s_name} (ID: {s_id})...")
+
+    g_data = fetch_json(f"https://gamesheetstats.com/api/unified-games/{s_id}?filter[limit]=10000")
+    raw_games = g_data if isinstance(g_data, list) else (g_data.get("games") or g_data.get("data") or []) if isinstance(g_data, dict) else []
+
+    for g in raw_games:
+        gid = g.get("gameId")
+        if not gid:
+            continue
+
+        visitor_obj = g.get("visitor") or {}
+        home_obj = g.get("home") or {}
+        v_name = clean_name(visitor_obj.get("title") or visitor_obj.get("name", ""))
+        h_name = clean_name(home_obj.get("title") or home_obj.get("name", ""))
+        v_id = visitor_obj.get("id")
+        h_id = home_obj.get("id")
+
+        game_div_title = clean_name(g.get("division", {}).get("title") or "") if isinstance(g.get("division"), dict) else ""
+        v_div = clean_name(visitor_obj.get("division", {}).get("title") or "") if isinstance(visitor_obj.get("division"), dict) else ""
+        h_div = clean_name(home_obj.get("division", {}).get("title") or "") if isinstance(home_obj.get("division"), dict) else ""
+        g_div = game_div_title or v_div or h_div or ""
+
+        h_cohort, h_canonical = None, None
+        if h_id and int(h_id) in team_id_to_master:
+            h_cohort, h_canonical = team_id_to_master[int(h_id)]
+        else:
+            h_cohort, h_canonical = resolve_master_team(h_name, g_div, s_name, forced_tier=s_tier, source_id=s_id)
+            if h_cohort and h_canonical and h_id:
+                team_id_to_master[int(h_id)] = (h_cohort, h_canonical)
+
+        v_cohort, v_canonical = None, None
+        if v_id and int(v_id) in team_id_to_master:
+            v_cohort, v_canonical = team_id_to_master[int(v_id)]
+        else:
+            v_cohort, v_canonical = resolve_master_team(v_name, g_div, s_name, forced_tier=s_tier, source_id=s_id)
+            if v_cohort and v_canonical and v_id:
+                team_id_to_master[int(v_id)] = (v_cohort, v_canonical)
+
+        if not h_canonical and not v_canonical:
+            continue
+
+        assigned_cohort = h_cohort or v_cohort
+
+        raw_status = str(g.get("status") or "").strip().lower()
+        is_final = raw_status in valid_final_states
+        v_goals = int(visitor_obj.get("goals") or 0) if is_final else None
+        h_goals = int(home_obj.get("goals") or 0) if is_final else None
+
+        v_res, h_res = None, None
+        if is_final:
+            if v_goals > h_goals:
+                v_res, h_res = "W", "L"
+            elif h_goals > v_goals:
+                v_res, h_res = "L", "W"
+            else:
+                v_res, h_res = "T", "T"
+
+        games_dict[str(gid)] = {
+            "game_id": gid,
+            "date": g.get("date", ""),
+            "time": g.get("time", ""),
+            "timestamp": g.get("timeStampZulu", ""),
+            "status": "final" if is_final else "scheduled",
+            "location": g.get("location", ""),
+            "source_id": s_id,
+            "source_name": s_name,
+            "source_type": s_type,
+            "home_id": h_id,
+            "home_name": h_canonical or h_name,
+            "home_goals": h_goals,
+            "home_result": h_res,
+            "visitor_id": v_id,
+            "visitor_name": v_canonical or v_name,
+            "visitor_goals": v_goals,
+            "visitor_result": v_res,
+            "division": assigned_cohort
+        }
+    time.sleep(0.2)
+
+all_compiled_games = sorted(list(games_dict.values()), key=lambda x: x["timestamp"] or x["date"])
+
+# 5. STAGE 3: INGEST SKATERS & GOALIES (PAGINATED CHUNK FETCHING)
+skaters_db = {}
+goalies_db = {}
+
+for src in all_sources:
+    s_id, s_name, s_type, s_tier = src["id"], src["name"], src["type"], src["forced_tier"]
+    print(f"\n📥 Roster Ingestion:    [{s_type.upper()}] {s_name} (ID: {s_id})")
+
+    # --- SKATERS (Safe 1,000-record chunks with adaptive backoff) ---
+    raw_skaters = fetch_paginated_roster("players", s_id, s_name, label="Skaters")
+    print(f"   ✅ Total Skater records retrieved: {len(raw_skaters)}")
+
+    mapped_sk = 0
+    skipped_sk = 0
+
+    for p in raw_skaters:
+        p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}")
+        if not p_name:
+            skipped_sk += 1
+            continue
+        jersey, pos = p.get("jersey", ""), clean_name(p.get("position", "F"))
+        p_div = clean_name(p.get("division", {}).get("title") or "") if isinstance(p.get("division"), dict) else ""
+
+        for t in p.get("teams", []):
+            t_name = clean_name(t.get("title") or t.get("name", ""))
+            t_id = t.get("id")
+            t_div = clean_name(t.get("division", {}).get("title") or "") if isinstance(t.get("division"), dict) else ""
+            effective_div = t_div or p_div
+
+            st = t.get("stats", {})
+            gp = int(st.get("gp") or 0)
+            g = int(st.get("g") or 0)
+            a = int(st.get("a") or 0)
+            pts = int(st.get("pts") if st.get("pts") is not None else (g + a))
+            pim = int(st.get("pim") or 0)
+
+            cohort, canonical_name = None, None
+            if t_id and int(t_id) in team_id_to_master:
+                cohort, canonical_name = team_id_to_master[int(t_id)]
+            else:
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier, source_id=s_id)
+
+            if not cohort or not canonical_name:
+                skipped_sk += 1
+                continue
+
+            mapped_sk += 1
+            age, tier = cohort.split()[0], cohort.split()[1]
+            player_key = f"{p_name}_{canonical_name}_{age}".upper()
+            if player_key not in skaters_db:
+                skaters_db[player_key] = {
+                    "name": p_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": pos,
+                    "age": age, "tier": tier, "total_gp": 0, "total_g": 0, "total_a": 0, "total_pts": 0, "total_pim": 0,
+                    "sources": []
+                }
+            skaters_db[player_key]["total_gp"] += gp
+            skaters_db[player_key]["total_g"] += g
+            skaters_db[player_key]["total_a"] += a
+            skaters_db[player_key]["total_pts"] += pts
+            skaters_db[player_key]["total_pim"] += pim
+            skaters_db[player_key]["sources"].append({
+                "source_id": s_id, "source_name": s_name, "source_type": s_type,
+                "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
+            })
+    print(f"   🧮 Summary: {mapped_sk} Skaters mapped into dashboard | {skipped_sk} skipped.")
+    time.sleep(0.2)
+
+    # --- GOALIES (Safe 1,000-record chunks with adaptive backoff) ---
+    raw_goalies = fetch_paginated_roster("goalies", s_id, s_name, label="Goalies")
+    print(f"   ✅ Total Goalie records retrieved: {len(raw_goalies)}")
+
+    mapped_gk = 0
+    skipped_gk = 0
+
+    for g in raw_goalies:
+        g_name = clean_name(f"{g.get('firstName', '')} {g.get('lastName', '')}")
+        if not g_name:
+            skipped_gk += 1
+            continue
+        jersey = g.get("jersey", "")
+        g_div = clean_name(g.get("division", {}).get("title") or "") if isinstance(g.get("division"), dict) else ""
+
+        for t in g.get("teams", []):
+            t_name = clean_name(t.get("title") or t.get("name", ""))
+            t_id = t.get("id")
+            t_div = clean_name(t.get("division", {}).get("title") or "") if isinstance(t.get("division"), dict) else ""
+            effective_div = t_div or g_div
+
+            st = t.get("stats", {})
+            gp = int(st.get("gp") or 0)
+
+            cohort, canonical_name = None, None
+            if t_id and int(t_id) in team_id_to_master:
+                cohort, canonical_name = team_id_to_master[int(t_id)]
+            else:
+                cohort, canonical_name = resolve_master_team(t_name, effective_div, s_name, forced_tier=s_tier, source_id=s_id)
+
+            if not cohort or not canonical_name:
+                skipped_gk += 1
+                continue
+
+            mapped_gk += 1
+            age, tier = cohort.split()[0], cohort.split()[1]
+            ga = int(st.get("ga") or 0)
+            mins = int(st.get("min") or st.get("min_played") or 0)
+            gaa = float(st.get("gaa") or 0.0)
+            so = int(st.get("so") or st.get("shutouts") or 0)
+            w, l, t_val = int(st.get("w") or 0), int(st.get("l") or 0), int(st.get("t") or 0)
+
+            goalie_key = f"{g_name}_{canonical_name}_{age}".upper()
+            if goalie_key not in goalies_db:
+                goalies_db[goalie_key] = {
+                    "name": g_name, "team": canonical_name, "team_id": t_id, "jersey": jersey, "position": "G",
+                    "age": age, "tier": tier, "total_gp": 0, "total_ga": 0, "total_min": 0, "total_gaa": 0.0,
+                    "total_so": 0, "total_w": 0, "total_l": 0, "total_t": 0,
+                    "sources": []
+                }
+            goalies_db[goalie_key]["total_gp"] += gp
+            goalies_db[goalie_key]["total_ga"] += ga
+            goalies_db[goalie_key]["total_min"] += mins
+            goalies_db[goalie_key]["total_so"] += so
+            goalies_db[goalie_key]["total_w"] += w
+            goalies_db[goalie_key]["total_l"] += l
+            goalies_db[goalie_key]["total_t"] += t_val
+
+            tot_min = goalies_db[goalie_key]["total_min"]
+            tot_ga = goalies_db[goalie_key]["total_ga"]
+            tot_gp = goalies_db[goalie_key]["total_gp"]
+
+            if tot_min > 0:
+                goalies_db[goalie_key]["total_gaa"] = round((tot_ga * 45.0) / tot_min, 2)
+            elif tot_gp > 0:
+                goalies_db[goalie_key]["total_gaa"] = round(tot_ga / tot_gp, 2)
+            else:
+                goalies_db[goalie_key]["total_gaa"] = gaa
+
+            if mins > 0:
+                clean_gaa = round((ga * 45.0) / mins, 2)
+            elif gp > 0:
+                clean_gaa = round(ga / gp, 2)
+            else:
+                clean_gaa = gaa
+
+            goalies_db[goalie_key]["sources"].append({
+                "source_id": s_id, "source_name": s_name, "source_type": s_type,
+                "gp": gp, "ga": ga, "min": mins, "gaa": clean_gaa, "so": so, "w": w, "l": l, "t": t_val
+            })
+    print(f"   🧮 Summary: {mapped_gk} Goalies mapped into dashboard | {skipped_gk} skipped.")
+    time.sleep(0.2)
+
+# 6. EXPORT COMPILED STATS
+output_data = {
+    "generated_at": datetime.now(timezone.utc).isoformat(),
+    "total_skaters": len(skaters_db),
+    "total_goalies": len(goalies_db),
+    "total_standings_rows": len(standings_db),
+    "total_games": len(all_compiled_games),
+    "skaters": sorted(list(skaters_db.values()), key=lambda x: x["total_pts"], reverse=True),
+    "goalies": sorted(list(goalies_db.values()), key=lambda x: (x["total_gaa"], -x["total_gp"])),
+    "standings": standings_db,
+    "games": all_compiled_games,
+    "master_teams": master_teams_db
+}
+
+output_path = "hockey_stats.json"
+with open(output_path, "w", encoding="utf-8") as f:
+    json.dump(output_data, f, indent=2)
+
+print("\n" + "="*70)
+print("🎉 Clean U11 AA & U14 AA Compilation Complete!")
+print(f"🏒 Skaters Processed: {len(skaters_db)}")
+print(f"🥅 Goalies Processed: {len(goalies_db)}")
+print(f"📊 Standings Rows:    {len(standings_db)}")
+print(f"📋 Games Tracked:     {len(all_compiled_games)}")
+print(f"💾 Saved to {output_path}")
+print("="*70)
+
+# 7. UNMAPPED AUDIT REPORT
+print("\n📋 UNMAPPED TEAM AUDIT LOG")
+print("-" * 70)
+if unmapped_audit:
+    for cohort, name, src, tid in sorted(list(unmapped_audit)):
+        print(f"⚠️  [{cohort}] '{name}' (ID: {tid}) in {src}")
+else:
+    print("💯 Perfect Structural Integrity! All encountered teams were matched.")
+print("-" * 70)
