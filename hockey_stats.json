@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-13T19:55:38.220963+00:00",
-  "total_skaters": 3022,
+  "generated_at": "2026-10-13T23:17:22.219484+00:00",
+  "total_skaters": 3027,
   "total_goalies": 403,
   "total_standings_rows": 419,
   "total_games": 703,
@@ -2731,7 +2731,44 @@
           "a": 2,
           "pts": 5,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 2
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 2,
+              "a": 1,
+              "pts": 3,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -2742,7 +2779,32 @@
           "a": 2,
           "pts": 3,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 2
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -2753,7 +2815,80 @@
           "a": 3,
           "pts": 4,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 2
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -3532,7 +3667,44 @@
           "a": 4,
           "pts": 5,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 2
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 3,
+              "pts": 3,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -3543,7 +3715,32 @@
           "a": 2,
           "pts": 2,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 2
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -3554,7 +3751,80 @@
           "a": 1,
           "pts": 4,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 2,
+              "a": 0,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -5096,7 +5366,44 @@
           "a": 2,
           "pts": 5,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 2,
+              "a": 1,
+              "pts": 3,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 2
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -5107,7 +5414,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -5118,7 +5450,80 @@
           "a": 2,
           "pts": 5,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 3,
+              "a": 1,
+              "pts": 4,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            }
+          ]
         }
       ]
     },
@@ -5145,7 +5550,44 @@
           "a": 0,
           "pts": 4,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 3,
+              "a": 0,
+              "pts": 3,
+              "pim": 2
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -5156,7 +5598,32 @@
           "a": 0,
           "pts": 2,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 2,
+              "a": 0,
+              "pts": 2,
+              "pim": 2
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -5167,7 +5634,80 @@
           "a": 2,
           "pts": 4,
           "pim": 6,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            }
+          ]
         }
       ]
     },
@@ -6807,7 +7347,44 @@
           "a": 1,
           "pts": 3,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -6818,7 +7395,32 @@
           "a": 0,
           "pts": 2,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 2,
+              "a": 0,
+              "pts": 2,
+              "pim": 2
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -6829,7 +7431,80 @@
           "a": 2,
           "pts": 4,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -7058,7 +7733,44 @@
           "a": 1,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -7069,7 +7781,32 @@
           "a": 2,
           "pts": 4,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 2,
+              "a": 2,
+              "pts": 4,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -7080,7 +7817,80 @@
           "a": 1,
           "pts": 4,
           "pim": 4,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 4
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -8953,7 +9763,44 @@
           "a": 2,
           "pts": 3,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -8964,7 +9811,32 @@
           "a": 1,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -8975,7 +9847,80 @@
           "a": 2,
           "pts": 4,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -11830,7 +12775,44 @@
           "a": 2,
           "pts": 5,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 2,
+              "a": 1,
+              "pts": 3,
+              "pim": 2
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -11841,7 +12823,32 @@
           "a": 2,
           "pts": 2,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -11868,7 +12875,44 @@
           "a": 1,
           "pts": 3,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -11879,7 +12923,32 @@
           "a": 0,
           "pts": 0,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -11890,7 +12959,80 @@
           "a": 1,
           "pts": 4,
           "pim": 6,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 2
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 2
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -17244,7 +18386,44 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -17255,7 +18434,32 @@
           "a": 1,
           "pts": 1,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 2
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -17266,7 +18470,80 @@
           "a": 3,
           "pts": 5,
           "pim": 8,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 3,
+              "pts": 3,
+              "pim": 2
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 2
+            }
+          ]
         }
       ]
     },
@@ -21329,7 +22606,44 @@
           "a": 1,
           "pts": 5,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 4,
+              "a": 0,
+              "pts": 4,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -21340,7 +22654,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -22054,7 +23393,44 @@
           "a": 0,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -22065,7 +23441,32 @@
           "a": 2,
           "pts": 3,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 1,
+              "a": 2,
+              "pts": 3,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -22076,7 +23477,80 @@
           "a": 1,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -28824,7 +30298,44 @@
           "a": 3,
           "pts": 4,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -28835,7 +30346,32 @@
           "a": 0,
           "pts": 0,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -28933,7 +30469,44 @@
           "a": 3,
           "pts": 3,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -28944,7 +30517,32 @@
           "a": 0,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -29156,7 +30754,44 @@
           "a": 1,
           "pts": 3,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 2,
+              "a": 0,
+              "pts": 2,
+              "pim": 2
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -29167,7 +30802,32 @@
           "a": 0,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -39844,7 +41504,44 @@
           "a": 1,
           "pts": 3,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 2
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -39855,7 +41552,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -40067,7 +41789,44 @@
           "a": 2,
           "pts": 3,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -40078,7 +41837,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -40105,7 +41889,44 @@
           "a": 1,
           "pts": 2,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 1,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -40116,7 +41937,32 @@
           "a": 1,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -40268,7 +42114,44 @@
           "a": 2,
           "pts": 2,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 2,
+              "pts": 2,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -40279,7 +42162,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -40290,7 +42198,80 @@
           "a": 0,
           "pts": 1,
           "pim": 10,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 2
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 4
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            }
+          ]
         }
       ]
     },
@@ -40355,7 +42336,44 @@
           "a": 2,
           "pts": 2,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -40366,7 +42384,32 @@
           "a": 1,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -53824,7 +55867,7 @@
       "name": "DECLAN DOYLE",
       "team": "Belleville Jr Bulls",
       "team_id": 534525,
-      "jersey": "19",
+      "jersey": "68",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -56276,7 +58319,44 @@
           "a": 1,
           "pts": 2,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -56287,7 +58367,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -58947,7 +61052,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -58958,7 +61088,32 @@
           "a": 0,
           "pts": 2,
           "pim": 4,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 4
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 1,
+              "a": 0,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -59230,7 +61385,44 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -59241,7 +61433,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -59252,7 +61469,80 @@
           "a": 2,
           "pts": 2,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -59906,7 +62196,44 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -59917,7 +62244,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -59928,7 +62280,80 @@
           "a": 2,
           "pts": 2,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -77530,7 +79955,44 @@
           "a": 1,
           "pts": 1,
           "pim": 4,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 4
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -77541,7 +80003,32 @@
           "a": 0,
           "pts": 0,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -79343,7 +81830,44 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -79354,7 +81878,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -79365,7 +81914,80 @@
           "a": 1,
           "pts": 1,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 1,
+              "pts": 1,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -98899,6 +101521,55 @@
       ]
     },
     {
+      "name": "CONNOR ARTHURS",
+      "team": "North Durham Warriors",
+      "team_id": 534526,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15493",
+          "source_name": "LHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
       "name": "STEWART BELL",
       "team": "Oshawa Generals",
       "team_id": 534524,
@@ -98932,6 +101603,55 @@
           "a": 0,
           "pts": 0,
           "pim": 6,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "BENJAMIN BERNIER",
+      "team": "North Durham Warriors",
+      "team_id": 534526,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15493",
+          "source_name": "LHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
           "game_logs": []
         }
       ]
@@ -99216,6 +101936,55 @@
           "source_name": "OMHA Ex Rep",
           "source_type": "league",
           "gp": 2,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "LUCAS FINNEGAN",
+      "team": "North Durham Warriors",
+      "team_id": 534526,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15493",
+          "source_name": "LHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -100536,6 +103305,55 @@
       ]
     },
     {
+      "name": "NOLAN REVESZ",
+      "team": "North Durham Warriors",
+      "team_id": 534526,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15493",
+          "source_name": "LHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
       "name": "EDWARD RIZZO",
       "team": "King Rebellion",
       "team_id": 534521,
@@ -100614,6 +103432,55 @@
           "source_name": "OMHA Ex Rep",
           "source_type": "league",
           "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "HAYDEN RYAN",
+      "team": "North Durham Warriors",
+      "team_id": 534526,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15493",
+          "source_name": "LHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15746",
+          "source_name": "Mary Parkinson AA",
+          "source_type": "tournament",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -103983,7 +106850,44 @@
           "a": 0,
           "pts": 0,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -103994,7 +106898,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -104990,7 +107919,44 @@
           "a": 0,
           "pts": 0,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -105001,7 +107967,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -105012,7 +108003,80 @@
           "a": 0,
           "pts": 0,
           "pim": 2,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 2
+            },
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -105181,7 +108245,44 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -105192,7 +108293,32 @@
           "a": 0,
           "pts": 0,
           "pim": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "g": 0,
+              "a": 0,
+              "pts": 0,
+              "pim": 0
+            }
+          ]
         }
       ]
     },
@@ -113456,7 +116582,7 @@
       "name": "ZACHARY YOUNG",
       "team": "Oakville Rangers",
       "team_id": 558349,
-      "jersey": "87",
+      "jersey": "27",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -126741,7 +129867,20 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043505,
+              "date": "Oct 6, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 1",
+              "result": "W",
+              "ga": 1,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -126755,7 +129894,32 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995730,
+              "date": "Sep 12, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "ga": 3,
+              "min": 45,
+              "so": 0,
+              "decision": "L"
+            },
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "ga": 0,
+              "min": 22,
+              "so": 1,
+              "decision": "T"
+            }
+          ]
         }
       ]
     },
@@ -127915,7 +131079,32 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3036045,
+              "date": "Oct 4, 2026",
+              "opponent": "Halton Hills Thunder",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "ga": 2,
+              "min": 45,
+              "so": 0,
+              "decision": "T"
+            },
+            {
+              "game_id": 3060936,
+              "date": "Oct 11, 2026",
+              "opponent": "Oakville Rangers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "ga": 1,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -127929,7 +131118,20 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3055354,
+              "date": "Sep 13, 2026",
+              "opponent": "Barrie Colts",
+              "is_home": true,
+              "score_str": "2 - 2",
+              "result": "T",
+              "ga": 2,
+              "min": 22,
+              "so": 0,
+              "decision": "T"
+            }
+          ]
         }
       ]
     },
@@ -128731,7 +131933,32 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3043461,
+              "date": "Oct 6, 2026",
+              "opponent": "Stoney Creek Warriors",
+              "is_home": true,
+              "score_str": "6 - 1",
+              "result": "W",
+              "ga": 1,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            },
+            {
+              "game_id": 3060792,
+              "date": "Oct 11, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": false,
+              "score_str": "2 - 3",
+              "result": "L",
+              "ga": 3,
+              "min": 45,
+              "so": 0,
+              "decision": "L"
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -128745,7 +131972,32 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3024198,
+              "date": "Sep 26, 2026",
+              "opponent": "Waterloo Wolves",
+              "is_home": true,
+              "score_str": "1 - 1",
+              "result": "T",
+              "ga": 1,
+              "min": 45,
+              "so": 0,
+              "decision": "T"
+            },
+            {
+              "game_id": 3056106,
+              "date": "Oct 3, 2026",
+              "opponent": "Toronto Eagles",
+              "is_home": true,
+              "score_str": "7 - 2",
+              "result": "W",
+              "ga": 2,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            }
+          ]
         },
         {
           "source_id": "15764",
@@ -128759,7 +132011,44 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995059,
+              "date": "Sep 18, 2026",
+              "opponent": "Flamborough Sabres",
+              "is_home": true,
+              "score_str": "3 - 2",
+              "result": "W",
+              "ga": 2,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            },
+            {
+              "game_id": 2995074,
+              "date": "Sep 19, 2026",
+              "opponent": "Niagara Falls Canucks",
+              "is_home": false,
+              "score_str": "4 - 3",
+              "result": "W",
+              "ga": 3,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            },
+            {
+              "game_id": 3021001,
+              "date": "Sep 20, 2026",
+              "opponent": "St Catharines Jr Falcons",
+              "is_home": true,
+              "score_str": "2 - 1",
+              "result": "W",
+              "ga": 1,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            }
+          ]
         }
       ]
     },
@@ -138077,7 +141366,20 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 3057924,
+              "date": "Oct 10, 2026",
+              "opponent": "Norfolk Knights",
+              "is_home": true,
+              "score_str": "9 - 6",
+              "result": "W",
+              "ga": 6,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            }
+          ]
         },
         {
           "source_id": "15556",
@@ -138105,7 +141407,44 @@
           "w": 0,
           "l": 0,
           "t": 0,
-          "game_logs": []
+          "game_logs": [
+            {
+              "game_id": 2995068,
+              "date": "Sep 18, 2026",
+              "opponent": "Quinte West Golden Hawks",
+              "is_home": false,
+              "score_str": "7 - 5",
+              "result": "W",
+              "ga": 5,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            },
+            {
+              "game_id": 2995079,
+              "date": "Sep 19, 2026",
+              "opponent": "Glancaster Bombers",
+              "is_home": true,
+              "score_str": "4 - 1",
+              "result": "W",
+              "ga": 1,
+              "min": 45,
+              "so": 0,
+              "decision": "W"
+            },
+            {
+              "game_id": 3021348,
+              "date": "Sep 20, 2026",
+              "opponent": "London Jr Knights (Green)",
+              "is_home": false,
+              "score_str": "2 - 5",
+              "result": "L",
+              "ga": 4,
+              "min": 45,
+              "so": 0,
+              "decision": "L"
+            }
+          ]
         }
       ]
     },
