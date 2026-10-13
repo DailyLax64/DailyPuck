@@ -328,10 +328,13 @@
                 </div>
             </div>
 
-            <!-- 5. Top 15 Skaters (Sorted by Games Played) -->
+            <!-- 5. Top 15 Skaters (with Nested Interactive Source Game Logs) -->
             <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
                 <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
-                    <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🎯 Team Skaters (Top 15 by Games Played)</h3>
+                    <div>
+                        <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🎯 Team Skaters (Top 15 by Games Played)</h3>
+                        <p class="text-[11px] font-mono text-slate-400 mt-0.5">Click player to expand event sources, then click any source to view game-by-game stats.</p>
+                    </div>
                     <span id="skater-count-badge" class="text-[10px] sm:text-xs font-mono text-slate-400 font-bold uppercase"></span>
                 </div>
                 <div class="overflow-x-auto touch-scroll">
@@ -352,7 +355,7 @@
                 </div>
             </div>
 
-            <!-- 6. Top 2 Netminders (Sorted by Games Played) -->
+            <!-- 6. Top 2 Netminders (with Nested Interactive Source Game Logs) -->
             <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
                 <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60">
                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🧤 Team Netminders (Top 2 by Games Played)</h3>
@@ -392,6 +395,33 @@
 
             </div>
 
+            <!-- 8. Full Chronological Schedule & Complete Game Log -->
+            <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
+                <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">📋 Full Chronological Schedule & Game Log</h3>
+                        <p class="text-[11px] sm:text-xs font-mono text-slate-400 mt-0.5">Chronological record of completed games and scheduled fixtures across leagues, tournaments, exhibition, and paper gamesheets.</p>
+                    </div>
+                    <span id="all-games-count-badge" class="text-xs font-mono text-slate-400 font-bold uppercase"></span>
+                </div>
+                <div class="overflow-x-auto touch-scroll">
+                    <table class="w-full text-left border-collapse whitespace-nowrap text-xs sm:text-sm font-mono">
+                        <thead>
+                            <tr class="bg-slate-950 border-b border-slate-800 text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-black">
+                                <th class="py-3 px-3 sm:px-4 w-24 sm:w-28 text-center">Date</th>
+                                <th class="py-3 px-3 sm:px-4">Opposing Team</th>
+                                <th class="py-3 px-3 sm:px-4 text-center w-24 sm:w-32">Location / Arena</th>
+                                <th class="py-3 px-3 sm:px-4 text-center w-16 sm:w-20">Result</th>
+                                <th class="py-3 px-3 sm:px-4 text-center w-24 sm:w-28">Score / Time</th>
+                                <th class="py-3 px-3 sm:px-4 text-center w-28 sm:w-36">Event / Source</th>
+                                <th class="py-3 px-3 sm:px-4 text-center w-16 sm:w-20">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-games-tbody" class="divide-y divide-slate-800/40 text-slate-300 font-medium text-xs sm:text-sm"></tbody>
+                    </table>
+                </div>
+            </div>
+
         </div>
 
     </main>
@@ -404,10 +434,12 @@
     <!-- Core Automation Script -->
     <script>
         let rawHockeyDb = null;
+        let manualGamesData = [];
         let scoutingReportDatabase = {};
         let hotTeamsDatabaseMap = {};
         let activeCohort = "U11";
 
+        const clean_name = name => ' '.join(str(name || "").split()).trim();
         const cleanKey = str => String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
         const isBurlingtonEagles = name => {
             const c = cleanKey(name);
@@ -423,23 +455,15 @@
             let c1, c2, factor;
             if (type === 'rose-to-emerald') {
                 if (p < 0.5) {
-                    c1 = rose;
-                    c2 = amber;
-                    factor = p / 0.5;
+                    c1 = rose; c2 = amber; factor = p / 0.5;
                 } else {
-                    c1 = amber;
-                    c2 = emerald;
-                    factor = (p - 0.5) / 0.5;
+                    c1 = amber; c2 = emerald; factor = (p - 0.5) / 0.5;
                 }
             } else {
                 if (p < 0.5) {
-                    c1 = emerald;
-                    c2 = amber;
-                    factor = p / 0.5;
+                    c1 = emerald; c2 = amber; factor = p / 0.5;
                 } else {
-                    c1 = amber;
-                    c2 = rose;
-                    factor = (p - 0.5) / 0.5;
+                    c1 = amber; c2 = rose; factor = (p - 0.5) / 0.5;
                 }
             }
 
@@ -451,19 +475,40 @@
 
         async function initApp() {
             try {
-                const response = await fetch('hockey_stats.json?v=' + Date.now());
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                rawHockeyDb = await response.json();
+                // Fetch both hockey_stats.json and manual_games.json in parallel
+                const [statsRes, manualRes] = await Promise.allSettled([
+                    fetch('hockey_stats.json?v=' + Date.now()),
+                    fetch('manual_games.json?v=' + Date.now())
+                ]);
+
+                if (statsRes.status !== 'fulfilled' || !statsRes.value.ok) {
+                    throw new Error(`HTTP ${statsRes.value ? statsRes.value.status : 'Offline'}`);
+                }
+                rawHockeyDb = await statsRes.value.json();
+
+                if (manualRes.status === 'fulfilled' && manualRes.value.ok) {
+                    try {
+                        manualGamesData = await manualRes.value.json();
+                        console.log(`📋 Loaded ${manualGamesData.length} manual game records from manual_games.json`);
+                    } catch (e) {
+                        console.warn("Could not parse manual_games.json:", e);
+                        manualGamesData = [];
+                    }
+                } else {
+                    manualGamesData = [];
+                }
 
                 const genDate = rawHockeyDb.generated_at ? new Date(rawHockeyDb.generated_at).toLocaleDateString() : 'Active';
-                document.getElementById('sync-status').innerText = `Synced: ${genDate}`;
+                document.getElementById('sync-status').innerText = `Synced: ${genDate}${manualGamesData.length > 0 ? ` (+${manualGamesData.length} Manual Games)` : ''}`;
 
                 buildDivisionTree();
+                integrateManualGames();
                 renderSelectedCohort();
 
             } catch (err) {
-                console.error("Error loading hockey_stats.json:", err);
+                console.error("Error initializing Eagles dashboard:", err);
                 document.getElementById('sync-status').innerText = "Database Offline";
+                document.getElementById('sync-ping').className = "w-2 h-2 rounded-full bg-rose-500";
                 document.getElementById('loading-state').innerHTML = `
                     <p class="text-rose-600 font-bold font-mono text-xs uppercase">⚠️ Could not load hockey_stats.json. Ensure file exists in repository root.</p>
                 `;
@@ -553,7 +598,7 @@
                 });
             }
 
-            // 2. Ingest Standings (League, Tournament, and Exhibition entries)
+            // 2. Ingest Standings (Leagues, Tournaments, Exhibition)
             (rawHockeyDb.standings || []).forEach(row => {
                 const normCohort = resolveCohortKey(row.division || `${row.age || ''} ${row.tier || ''}`);
                 const teamProfile = getOrCreateTeamProfile(normCohort, row.team_name, row.team_id);
@@ -584,7 +629,7 @@
                 const normCohort = resolveCohortKey(p.division || p.cohort || p.age);
                 const teamProfile = getOrCreateTeamProfile(normCohort, p.team, p.team_id);
                 if (teamProfile) {
-                    teamProfile.roster.push(p);
+                    teamProfile.roster.push(JSON.parse(JSON.stringify(p)));
                 }
             });
 
@@ -593,11 +638,11 @@
                 const normCohort = resolveCohortKey(g.division || g.cohort || g.age);
                 const teamProfile = getOrCreateTeamProfile(normCohort, g.team, g.team_id);
                 if (teamProfile) {
-                    teamProfile.goalies.push(g);
+                    teamProfile.goalies.push(JSON.parse(JSON.stringify(g)));
                 }
             });
 
-            // 5. Ingest Games (Attaching both League, Tournament, and Exhibition Matchups)
+            // 5. Ingest Games
             (rawHockeyDb.games || []).forEach(g => {
                 if (!g) return;
                 const normCohort = resolveCohortKey(g.division);
@@ -605,7 +650,7 @@
                 attachGameToMatchingTeams(normCohort, g.visitor_name, g.visitor_id, g, false);
             });
 
-            // 6. Dynamic MHR Rank & SoS
+            // 6. Dynamic MHR Rating Ranks & SoS
             if (rawHockeyDb?.master_teams) {
                 Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
                     const normCohort = resolveCohortKey(divKey);
@@ -668,18 +713,215 @@
             const rec = {
                 date: game.date || "",
                 time: game.time || "",
+                timestamp: game.timestamp || (game.date ? new Date(game.date).toISOString() : ""),
                 status: game.status || "scheduled",
                 location: game.location || "",
                 source_name: game.source_name || "",
+                source_type: game.source_type || "league",
                 is_home: isHome,
                 opponent: oppName,
                 team_goals: team_goals,
                 opp_goals: opp_goals,
                 result: result,
-                score_str: isFinal ? `${team_goals} - ${opp_goals}` : (game.time || "Scheduled")
+                score_str: isFinal ? `${team_goals} - ${opp_goals}` : (game.time || "Scheduled"),
+                is_manual: false
             };
 
             teamProfile.games.push(rec);
+        }
+
+        // =========================================================================
+        // 📝 IMPROVEMENT #3: MANUAL GAMESHEETS INTEGRATION ENGINE
+        // =========================================================================
+        function integrateManualGames() {
+            if (!Array.isArray(manualGamesData) || manualGamesData.length === 0) return;
+
+            manualGamesData.forEach(mg => {
+                const normCohort = resolveCohortKey(mg.cohort || mg.division || activeCohort);
+                const team = getOrCreateTeamProfile(normCohort, "Burlington Eagles");
+                if (!team) return;
+
+                const isFinal = (mg.status || "final").toLowerCase() === "final";
+                const teamGoals = Number(mg.team_goals ?? mg.eagles_score ?? mg.home_goals ?? 0);
+                const oppGoals = Number(mg.opponent_goals ?? mg.opp_goals ?? mg.visitor_goals ?? 0);
+                
+                let res = mg.result;
+                if (!res && isFinal) {
+                    if (teamGoals > oppGoals) res = "W";
+                    else if (teamGoals < oppGoals) res = "L";
+                    else res = "T";
+                }
+
+                const isHome = mg.is_home !== false;
+                const rec = {
+                    date: mg.date || "",
+                    time: mg.time || "",
+                    timestamp: mg.timestamp || (mg.date ? new Date(mg.date).toISOString() : ""),
+                    status: isFinal ? "final" : "scheduled",
+                    location: mg.location || "Local Arena",
+                    source_name: mg.source_name || "Exhibition (Paper Sheet)",
+                    source_type: mg.source_type || "paper",
+                    is_home: isHome,
+                    opponent: mg.opponent || "Opponent",
+                    team_goals: teamGoals,
+                    opp_goals: oppGoals,
+                    result: res,
+                    score_str: isFinal ? `${teamGoals} - ${oppGoals}` : (mg.time || "Scheduled"),
+                    is_manual: true
+                };
+
+                team.games.push(rec);
+
+                if (isFinal) {
+                    team.gp += 1;
+                    team.gf += teamGoals;
+                    team.ga += oppGoals;
+                    team.diff += (teamGoals - oppGoals);
+                    if (res === 'W') { team.w += 1; team.pts += 2; }
+                    else if (res === 'L') { team.l += 1; }
+                    else if (res === 'T') { team.t += 1; team.pts += 1; }
+                }
+
+                // Merge Skater stats & game logs
+                (mg.skaters || []).forEach(sk => {
+                    const skName = (sk.name || "").trim().toUpperCase();
+                    if (!skName) return;
+
+                    let player = team.roster.find(p => cleanKey(p.name) === cleanKey(skName));
+                    if (!player) {
+                        player = {
+                            name: sk.name,
+                            team: team.team_name,
+                            jersey: sk.jersey || "-",
+                            position: sk.position || "F",
+                            age: team.age,
+                            tier: team.tier,
+                            total_gp: 0, total_g: 0, total_a: 0, total_pts: 0, total_pim: 0,
+                            sources: []
+                        };
+                        team.roster.push(player);
+                    }
+
+                    const g = Number(sk.g || 0);
+                    const a = Number(sk.a || 0);
+                    const pts = Number(sk.pts !== undefined ? sk.pts : (g + a));
+                    const pim = Number(sk.pim || 0);
+
+                    player.total_gp += 1;
+                    player.total_g += g;
+                    player.total_a += a;
+                    player.total_pts += pts;
+                    player.total_pim += pim;
+
+                    const srcName = mg.source_name || "Exhibition (Paper Sheet)";
+                    let srcEntry = player.sources.find(s => cleanKey(s.source_name) === cleanKey(srcName));
+                    if (!srcEntry) {
+                        srcEntry = {
+                            source_id: "manual",
+                            source_name: srcName,
+                            source_type: mg.source_type || "paper",
+                            gp: 0, g: 0, a: 0, pts: 0, pim: 0,
+                            game_logs: []
+                        };
+                        player.sources.push(srcEntry);
+                    }
+                    if (!srcEntry.game_logs) srcEntry.game_logs = [];
+
+                    srcEntry.gp += 1;
+                    srcEntry.g += g;
+                    srcEntry.a += a;
+                    srcEntry.pts += pts;
+                    srcEntry.pim += pim;
+                    srcEntry.game_logs.push({
+                        date: mg.date,
+                        opponent: mg.opponent,
+                        is_home: isHome,
+                        score_str: rec.score_str,
+                        result: res,
+                        g: g,
+                        a: a,
+                        pts: pts,
+                        pim: pim
+                    });
+                });
+
+                // Merge Goalie stats & game logs
+                (mg.goalies || []).forEach(gk => {
+                    const gkName = (gk.name || "").trim().toUpperCase();
+                    if (!gkName) return;
+
+                    let goalie = team.goalies.find(g => cleanKey(g.name) === cleanKey(gkName));
+                    if (!goalie) {
+                        goalie = {
+                            name: gk.name,
+                            team: team.team_name,
+                            jersey: gk.jersey || "-",
+                            position: "G",
+                            age: team.age,
+                            tier: team.tier,
+                            total_gp: 0, total_ga: 0, total_min: 0, total_gaa: 0.0, total_so: 0,
+                            total_w: 0, total_l: 0, total_t: 0,
+                            sources: []
+                        };
+                        team.goalies.push(goalie);
+                    }
+
+                    const ga = Number(gk.ga || 0);
+                    const min = Number(gk.min || 45);
+                    const so = Number(gk.so || (ga === 0 && isFinal ? 1 : 0));
+                    const w = Number(gk.w !== undefined ? gk.w : (res === 'W' ? 1 : 0));
+                    const l = Number(gk.l !== undefined ? gk.l : (res === 'L' ? 1 : 0));
+                    const t = Number(gk.t !== undefined ? gk.t : (res === 'T' ? 1 : 0));
+
+                    goalie.total_gp += 1;
+                    goalie.total_ga += ga;
+                    goalie.total_min += min;
+                    goalie.total_so += so;
+                    goalie.total_w += w;
+                    goalie.total_l += l;
+                    goalie.total_t += t;
+
+                    if (goalie.total_min > 0) {
+                        goalie.total_gaa = Number(((goalie.total_ga * 45.0) / goalie.total_min).toFixed(2));
+                    }
+
+                    const srcName = mg.source_name || "Exhibition (Paper Sheet)";
+                    let gkSrc = goalie.sources.find(s => cleanKey(s.source_name) === cleanKey(srcName));
+                    if (!gkSrc) {
+                        gkSrc = {
+                            source_id: "manual",
+                            source_name: srcName,
+                            source_type: mg.source_type || "paper",
+                            gp: 0, ga: 0, min: 0, gaa: 0.0, so: 0, w: 0, l: 0, t: 0,
+                            game_logs: []
+                        };
+                        goalie.sources.push(gkSrc);
+                    }
+                    if (!gkSrc.game_logs) gkSrc.game_logs = [];
+
+                    gkSrc.gp += 1;
+                    gkSrc.ga += ga;
+                    gkSrc.min += min;
+                    gkSrc.so += so;
+                    gkSrc.w += w;
+                    gkSrc.l += l;
+                    gkSrc.t += t;
+                    if (gkSrc.min > 0) {
+                        gkSrc.gaa = Number(((gkSrc.ga * 45.0) / gkSrc.min).toFixed(2));
+                    }
+                    gkSrc.game_logs.push({
+                        date: mg.date,
+                        opponent: mg.opponent,
+                        is_home: isHome,
+                        score_str: rec.score_str,
+                        result: res,
+                        ga: ga,
+                        min: min,
+                        so: so,
+                        decision: gk.decision || res
+                    });
+                });
+            });
         }
 
         function onCohortChange() {
@@ -708,6 +950,18 @@
             }
         }
 
+        function getStandardDateTimestamp(g) {
+            if (g.timestamp) {
+                const ts = new Date(g.timestamp).getTime();
+                if (!isNaN(ts)) return ts;
+            }
+            if (g.date) {
+                const d = new Date(g.date);
+                if (!isNaN(d.getTime())) return d.getTime();
+            }
+            return 0;
+        }
+
         function renderSelectedCohort() {
             const targetDiv = activeCohort === "U14" ? "U14 AA" : "U11 AA";
             const divisionPayload = scoutingReportDatabase[targetDiv] || {};
@@ -728,7 +982,7 @@
             document.getElementById('cohort-banner-label').innerText = `${team.division} Rep Hockey Analytics`;
             document.getElementById('team-title').innerText = team.team_name;
 
-            // Calculate overall record dynamically across league, tournament, and exhibition games
+            // Calculate overall record across all games
             let totalW = 0, totalL = 0, totalT = 0;
             const completedGames = (team.games || []).filter(g => g.status === 'final');
             completedGames.forEach(g => {
@@ -957,7 +1211,9 @@
             document.getElementById('spec-shgf-rank').innerText = `#${shgfRank} of ${totalTeamsInDivision}`;
             document.getElementById('spec-shga-rank').innerText = `#${shgaRank} of ${totalTeamsInDivision}`;
 
-            // Top 15 Skaters (Deduplicated across league, tournament, and exhibition games)
+            // =========================================================================
+            // 🎯 IMPROVEMENT #1: TOP 15 SKATERS WITH NESTED SOURCE GAME LOGS
+            // =========================================================================
             const uniqueSkaters = [];
             const seenSkaterKeys = new Set();
             (team.roster || []).forEach(p => {
@@ -991,12 +1247,92 @@
                     const pts = p.total_pts ?? p.pts ?? (g + a);
                     const pim = p.total_pim ?? p.pim ?? 0;
 
+                    let sourcesHtml = "";
+                    (p.sources || []).forEach((s, sIdx) => {
+                        const uniqueSourceRowId = `${uniqueId}-source-${sIdx}`;
+                        const hasLogs = Array.isArray(s.game_logs) && s.game_logs.length > 0;
+                        const logCountBadge = hasLogs 
+                            ? `<span class="text-yellow-400 font-bold bg-yellow-950/80 px-1.5 py-0.5 rounded border border-yellow-700/60 text-[10px]">▼ ${s.game_logs.length} Game${s.game_logs.length === 1 ? '' : 's'}</span>`
+                            : `<span class="text-slate-400 font-mono text-[10px]">Total Only</span>`;
+
+                        let gameLogInnerHtml = "";
+                        if (hasLogs) {
+                            gameLogInnerHtml = `
+                                <div class="overflow-x-auto rounded-lg border border-slate-700/70 bg-slate-900/90 p-2">
+                                    <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
+                                        <thead>
+                                            <tr class="text-[9px] text-slate-400 uppercase tracking-widest border-b border-slate-700 pb-1 font-black">
+                                                <th class="py-1 px-2">Date</th>
+                                                <th class="py-1 px-2">Matchup / Opponent</th>
+                                                <th class="py-1 px-2 text-center">Score</th>
+                                                <th class="py-1 px-2 text-center">Result</th>
+                                                <th class="py-1 px-2 text-center text-yellow-400">G</th>
+                                                <th class="py-1 px-2 text-center">A</th>
+                                                <th class="py-1 px-2 text-center text-white">PTS</th>
+                                                <th class="py-1 px-2 text-center">PIM</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-800 text-[11px] text-slate-200">
+                                            ${s.game_logs.map(gl => `
+                                                <tr class="hover:bg-slate-800/50">
+                                                    <td class="py-1 px-2 text-slate-400 font-bold">${gl.date || '-'}</td>
+                                                    <td class="py-1 px-2 font-bold uppercase"><span class="text-slate-500 mr-1">${gl.is_home ? 'vs' : '@'}</span>${gl.opponent || 'Opponent'}</td>
+                                                    <td class="py-1 px-2 text-center">${gl.score_str || '-'}</td>
+                                                    <td class="py-1 px-2 text-center font-black ${gl.result === 'W' ? 'text-emerald-400' : (gl.result === 'L' ? 'text-rose-400' : 'text-amber-400')}">${gl.result || '-'}</td>
+                                                    <td class="py-1 px-2 text-center font-bold text-yellow-400">${gl.g ?? 0}</td>
+                                                    <td class="py-1 px-2 text-center text-slate-300">${gl.a ?? 0}</td>
+                                                    <td class="py-1 px-2 text-center font-black text-white">${gl.pts ?? ((gl.g ?? 0) + (gl.a ?? 0))}</td>
+                                                    <td class="py-1 px-2 text-center text-slate-400">${gl.pim ?? 0}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            `;
+                        } else {
+                            gameLogInnerHtml = `
+                                <div class="py-2.5 px-3 text-center text-xs font-mono text-slate-400 bg-slate-900/60 rounded-lg border border-slate-800">
+                                    <span class="text-yellow-400 font-bold block mb-0.5">ℹ️ GameSheet Cumulative Event Record</span>
+                                    <span>GameSheet recorded aggregate event totals (${s.gp} GP, ${s.g}G, ${s.a}A, ${s.pts} PTS).</span>
+                                    <span class="block text-[10px] text-slate-500 mt-0.5">Individual game box scores can be logged into <code class="text-yellow-300">manual_games.json</code>.</span>
+                                </div>
+                            `;
+                        }
+
+                        sourcesHtml += `
+                            <tr class="hover:bg-slate-800/70 cursor-pointer transition-colors" onclick="event.stopPropagation(); toggleRow('${uniqueSourceRowId}')">
+                                <td class="py-1.5 px-3 font-sans font-extrabold text-slate-200 uppercase">
+                                    <div class="flex items-center space-x-1.5">
+                                        <span class="text-yellow-400 text-[10px]">▼</span>
+                                        <span>${s.source_name}</span>
+                                    </div>
+                                </td>
+                                <td class="py-1.5 px-3 text-center">
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : (s.source_type === 'paper' ? 'text-yellow-400 bg-yellow-950/40' : 'text-blue-400 bg-blue-950/40'))}">
+                                        ${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : (s.source_type === 'paper' ? 'PAPER' : 'LEAG'))}
+                                    </span>
+                                </td>
+                                <td class="py-1.5 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                <td class="py-1.5 px-3 text-center">${s.g}</td>
+                                <td class="py-1.5 px-3 text-center">${s.a}</td>
+                                <td class="py-1.5 px-3 text-center font-bold text-white">${s.pts}</td>
+                                <td class="py-1.5 px-3 text-center text-slate-400">${s.pim}</td>
+                                <td class="py-1.5 px-3 text-center">${logCountBadge}</td>
+                            </tr>
+                            <tr id="${uniqueSourceRowId}" class="hidden bg-slate-900/95">
+                                <td colspan="8" class="p-2.5 sm:p-3 bg-slate-950/90">
+                                    ${gameLogInnerHtml}
+                                </td>
+                            </tr>
+                        `;
+                    });
+
                     rosterTbody.innerHTML += `
                         <tr class="hover:bg-slate-800/40 transition-colors border-b border-slate-800/60 cursor-pointer" onclick="toggleRow('${uniqueId}')">
                             <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${p.jersey || '-'}</td>
                             <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
                                 <span class="truncate max-w-[150px] sm:max-w-xs">${p.name}</span>
-                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ Log</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ View Logs</span>
                             </td>
                             <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${gp}</td>
                             <td class="py-2.5 px-3 text-center text-slate-300 font-mono">${g}</td>
@@ -1005,32 +1341,23 @@
                             <td class="py-2.5 px-3 text-center font-mono ${pim > 10 ? 'text-amber-400 font-bold' : 'text-slate-500'}">${pim}</td>
                         </tr>
                         <tr id="${uniqueId}" class="hidden bg-slate-950/90">
-                            <td colspan="7" class="py-3 px-4">
+                            <td colspan="7" class="py-3 px-3 sm:px-6">
                                 <div class="rounded-xl border border-slate-800 overflow-x-auto custom-scrollbar">
                                     <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
                                         <thead>
                                             <tr class="bg-slate-950 border-b border-slate-800 text-[10px] text-slate-400 uppercase tracking-widest font-black">
-                                                <th class="py-1.5 px-3">Event Track Source</th>
-                                                <th class="py-1.5 px-3 text-center">Type</th>
-                                                <th class="py-1.5 px-3 text-center text-yellow-400">GP</th>
-                                                <th class="py-1.5 px-3 text-center">G</th>
-                                                <th class="py-1.5 px-3 text-center">A</th>
-                                                <th class="py-1.5 px-3 text-center text-white font-bold">PTS</th>
-                                                <th class="py-1.5 px-3 text-center">PIM</th>
+                                                <th class="py-2 px-3">Event Track Source</th>
+                                                <th class="py-2 px-3 text-center">Type</th>
+                                                <th class="py-2 px-3 text-center text-yellow-400">GP</th>
+                                                <th class="py-2 px-3 text-center">G</th>
+                                                <th class="py-2 px-3 text-center">A</th>
+                                                <th class="py-2 px-3 text-center text-white font-bold">PTS</th>
+                                                <th class="py-2 px-3 text-center">PIM</th>
+                                                <th class="py-2 px-3 text-center">Game Log</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-slate-800/60 text-slate-300">
-                                            ${(p.sources || []).map(s => `
-                                                <tr>
-                                                    <td class="py-1 px-3 font-sans font-extrabold text-slate-300 uppercase">${s.source_name}</td>
-                                                    <td class="py-1 px-3 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : 'text-blue-400 bg-blue-950/40')}">${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : 'LEAG')}</span></td>
-                                                    <td class="py-1 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
-                                                    <td class="py-1 px-3 text-center">${s.g}</td>
-                                                    <td class="py-1 px-3 text-center">${s.a}</td>
-                                                    <td class="py-1 px-3 text-center font-bold text-white">${s.pts}</td>
-                                                    <td class="py-1 px-3 text-center text-slate-500">${s.pim}</td>
-                                                </tr>
-                                            `).join('')}
+                                            ${sourcesHtml}
                                         </tbody>
                                     </table>
                                 </div>
@@ -1042,7 +1369,9 @@
                 rosterTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No skater statistics on record.</td></tr>`;
             }
 
-            // Top 2 Goalies
+            // =========================================================================
+            // 🧤 TOP 2 GOALIES WITH NESTED SOURCE GAME LOGS
+            // =========================================================================
             const uniqueGoalies = [];
             const seenGoalieKeys = new Set();
             (team.goalies || []).forEach(g => {
@@ -1074,12 +1403,88 @@
                     const so = g.total_so ?? g.so ?? 0;
                     const rec = (g.total_w !== undefined) ? `${g.total_w}-${g.total_l}-${g.total_t}` : (g.record || '-');
 
+                    let goalieSourcesHtml = "";
+                    (g.sources || []).forEach((s, sIdx) => {
+                        const uniqueSourceRowId = `${uniqueId}-source-${sIdx}`;
+                        const hasLogs = Array.isArray(s.game_logs) && s.game_logs.length > 0;
+                        const logCountBadge = hasLogs 
+                            ? `<span class="text-yellow-400 font-bold bg-yellow-950/80 px-1.5 py-0.5 rounded border border-yellow-700/60 text-[10px]">▼ ${s.game_logs.length} Game${s.game_logs.length === 1 ? '' : 's'}</span>`
+                            : `<span class="text-slate-400 font-mono text-[10px]">Total Only</span>`;
+
+                        let gameLogInnerHtml = "";
+                        if (hasLogs) {
+                            gameLogInnerHtml = `
+                                <div class="overflow-x-auto rounded-lg border border-slate-700/70 bg-slate-900/90 p-2">
+                                    <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
+                                        <thead>
+                                            <tr class="text-[9px] text-slate-400 uppercase tracking-widest border-b border-slate-700 pb-1 font-black">
+                                                <th class="py-1 px-2">Date</th>
+                                                <th class="py-1 px-2">Matchup / Opponent</th>
+                                                <th class="py-1 px-2 text-center">Score</th>
+                                                <th class="py-1 px-2 text-center text-rose-400">GA</th>
+                                                <th class="py-1 px-2 text-center">Min</th>
+                                                <th class="py-1 px-2 text-center text-emerald-400">SO</th>
+                                                <th class="py-1 px-2 text-center">Decision</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-800 text-[11px] text-slate-200">
+                                            ${s.game_logs.map(gl => `
+                                                <tr class="hover:bg-slate-800/50">
+                                                    <td class="py-1 px-2 text-slate-400 font-bold">${gl.date || '-'}</td>
+                                                    <td class="py-1 px-2 font-bold uppercase"><span class="text-slate-500 mr-1">${gl.is_home ? 'vs' : '@'}</span>${gl.opponent || 'Opponent'}</td>
+                                                    <td class="py-1 px-2 text-center">${gl.score_str || '-'}</td>
+                                                    <td class="py-1 px-2 text-center font-bold text-rose-400">${gl.ga ?? 0}</td>
+                                                    <td class="py-1 px-2 text-center text-slate-300">${gl.min ?? 45}</td>
+                                                    <td class="py-1 px-2 text-center text-emerald-400">${gl.so ?? 0}</td>
+                                                    <td class="py-1 px-2 text-center font-black ${gl.decision === 'W' ? 'text-emerald-400' : (gl.decision === 'L' ? 'text-rose-400' : 'text-amber-400')}">${gl.decision || '-'}</td>
+                                                </tr>
+                                            `).join('')}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            `;
+                        } else {
+                            gameLogInnerHtml = `
+                                <div class="py-2 px-3 text-center text-xs font-mono text-slate-400 bg-slate-900/60 rounded-lg border border-slate-800">
+                                    <span class="text-yellow-400 font-bold block mb-0.5">ℹ️ Cumulative Netminder Total</span>
+                                    <span>${s.gp} GP, ${s.ga} GA, ${parseFloat(s.gaa || 0).toFixed(2)} GAA, ${s.so || 0} SO.</span>
+                                </div>
+                            `;
+                        }
+
+                        goalieSourcesHtml += `
+                            <tr class="hover:bg-slate-800/70 cursor-pointer transition-colors" onclick="event.stopPropagation(); toggleRow('${uniqueSourceRowId}')">
+                                <td class="py-1.5 px-3 font-sans font-extrabold text-slate-200 uppercase">
+                                    <div class="flex items-center space-x-1.5">
+                                        <span class="text-yellow-400 text-[10px]">▼</span>
+                                        <span>${s.source_name}</span>
+                                    </div>
+                                </td>
+                                <td class="py-1.5 px-3 text-center">
+                                    <span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : (s.source_type === 'paper' ? 'text-yellow-400 bg-yellow-950/40' : 'text-blue-400 bg-blue-950/40'))}">
+                                        ${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : (s.source_type === 'paper' ? 'PAPER' : 'LEAG'))}
+                                    </span>
+                                </td>
+                                <td class="py-1.5 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                <td class="py-1.5 px-3 text-center text-rose-400">${s.ga}</td>
+                                <td class="py-1.5 px-3 text-center font-black">${parseFloat(s.gaa || 0).toFixed(2)}</td>
+                                <td class="py-1.5 px-3 text-center text-emerald-400 font-bold">${s.so}</td>
+                                <td class="py-1.5 px-3 text-center">${logCountBadge}</td>
+                            </tr>
+                            <tr id="${uniqueSourceRowId}" class="hidden bg-slate-900/95">
+                                <td colspan="7" class="p-2.5 sm:p-3 bg-slate-950/90">
+                                    ${gameLogInnerHtml}
+                                </td>
+                            </tr>
+                        `;
+                    });
+
                     goalieTbody.innerHTML += `
                         <tr class="hover:bg-slate-800/40 transition-colors border-b border-slate-800/60 cursor-pointer" onclick="toggleRow('${uniqueId}')">
                             <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${g.jersey || '-'}</td>
                             <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
                                 <span class="truncate max-w-[150px] sm:max-w-xs">${g.name}</span>
-                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ Log</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ View Logs</span>
                             </td>
                             <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${gp}</td>
                             <td class="py-2.5 px-3 text-center text-rose-400 font-mono font-extrabold">${ga}</td>
@@ -1088,30 +1493,22 @@
                             <td class="py-2.5 px-3 text-center font-mono text-slate-300 text-xs">${rec}</td>
                         </tr>
                         <tr id="${uniqueId}" class="hidden bg-slate-950/90">
-                            <td colspan="7" class="py-3 px-4">
+                            <td colspan="7" class="py-3 px-3 sm:px-6">
                                 <div class="rounded-xl border border-slate-800 overflow-x-auto custom-scrollbar">
                                     <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
                                         <thead>
                                             <tr class="bg-slate-950 border-b border-slate-800 text-[10px] text-slate-400 uppercase tracking-widest font-black">
-                                                <th class="py-1.5 px-3">Event Track Source</th>
-                                                <th class="py-1.5 px-3 text-center">Type</th>
-                                                <th class="py-1.5 px-3 text-center text-yellow-400">GP</th>
-                                                <th class="py-1.5 px-3 text-center text-rose-400">GA</th>
-                                                <th class="py-1.5 px-3 text-center">GAA</th>
-                                                <th class="py-1.5 px-3 text-center text-emerald-400">SO</th>
+                                                <th class="py-2 px-3">Event Track Source</th>
+                                                <th class="py-2 px-3 text-center">Type</th>
+                                                <th class="py-2 px-3 text-center text-yellow-400">GP</th>
+                                                <th class="py-2 px-3 text-center text-rose-400">GA</th>
+                                                <th class="py-2 px-3 text-center">GAA</th>
+                                                <th class="py-2 px-3 text-center text-emerald-400">SO</th>
+                                                <th class="py-2 px-3 text-center">Game Log</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-slate-800/60 text-slate-300">
-                                            ${(g.sources || []).map(s => `
-                                                <tr>
-                                                    <td class="py-1 px-3 font-sans font-extrabold text-slate-300 uppercase">${s.source_name}</td>
-                                                    <td class="py-1 px-3 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : 'text-blue-400 bg-blue-950/40')}">${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : 'LEAG')}</span></td>
-                                                    <td class="py-1 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
-                                                    <td class="py-1 px-3 text-center text-rose-400">${s.ga}</td>
-                                                    <td class="py-1 px-3 text-center font-black">${parseFloat(s.gaa || 0).toFixed(2)}</td>
-                                                    <td class="py-1 px-3 text-center text-emerald-400 font-bold">${s.so}</td>
-                                                </tr>
-                                            `).join('')}
+                                            ${goalieSourcesHtml}
                                         </tbody>
                                     </table>
                                 </div>
@@ -1123,11 +1520,11 @@
                 goalieTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No netminder statistics on record.</td></tr>`;
             }
 
-            // Games & Form Guide (Including OMHA Exhibition Matchups)
-            const teamGames = [...(team.games || [])].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
-            const finalGames = teamGames.filter(g => g.status === 'final' && g.result);
-            const upcomingGames = teamGames.filter(g => g.status !== 'final').slice(0, 3);
-            const last5 = finalGames.slice(-5);
+            // Games Form & On Deck
+            const sortedGames = [...(team.games || [])].sort((a, b) => getStandardDateTimestamp(a) - getStandardDateTimestamp(b));
+            const completedGamesList = sortedGames.filter(g => g.status === 'final' && g.result);
+            const upcomingGamesList = sortedGames.filter(g => g.status !== 'final').slice(0, 3);
+            const last5 = completedGamesList.slice(-5);
 
             const formRow = document.getElementById('form-guide-row');
             formRow.innerHTML = "";
@@ -1148,11 +1545,10 @@
                 formRow.innerHTML = `<span class="text-xs font-mono text-slate-500 uppercase">No completed games on record</span>`;
             }
 
-            // On Deck List
             const onDeckList = document.getElementById('on-deck-list');
             onDeckList.innerHTML = "";
-            if (upcomingGames.length > 0) {
-                upcomingGames.forEach(g => {
+            if (upcomingGamesList.length > 0) {
+                upcomingGamesList.forEach(g => {
                     onDeckList.innerHTML += `
                         <div class="bg-slate-950 p-3 sm:p-3.5 rounded-xl border border-slate-800 flex justify-between items-center">
                             <div>
@@ -1171,6 +1567,47 @@
                 });
             } else {
                 onDeckList.innerHTML = `<div class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-center text-slate-500 text-xs uppercase font-mono">No upcoming matchups scheduled.</div>`;
+            }
+
+            // =========================================================================
+            // 📋 IMPROVEMENT #2: FULL CHRONOLOGICAL SCHEDULE & GAME LOG TABLE
+            // =========================================================================
+            document.getElementById('all-games-count-badge').innerText = `${sortedGames.length} Total Games (${completedGamesList.length} Final)`;
+            const allGamesTbody = document.getElementById('all-games-tbody');
+            allGamesTbody.innerHTML = "";
+
+            if (sortedGames.length > 0) {
+                sortedGames.forEach(g => {
+                    const isFinal = g.status === 'final';
+                    let resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-900 border border-slate-700 text-slate-400">UPCOMING</span>`;
+                    
+                    if (isFinal) {
+                        if (g.result === 'W') resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-950 border border-emerald-500 text-emerald-400">WIN</span>`;
+                        else if (g.result === 'L') resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-black bg-rose-950 border border-rose-500 text-rose-400">LOSS</span>`;
+                        else resBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-950 border border-amber-500 text-amber-400">TIE</span>`;
+                    }
+
+                    allGamesTbody.innerHTML += `
+                        <tr class="hover:bg-slate-900/50 transition-colors">
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center text-slate-400 font-bold">${g.date || '-'}</td>
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4">
+                                <span class="text-slate-500 text-xs mr-1 font-sans">${g.is_home ? 'vs' : '@'}</span>
+                                <span class="font-sans font-bold text-slate-100 uppercase tracking-tight">${g.opponent}</span>
+                            </td>
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center text-xs text-slate-400 truncate max-w-xs">${g.location || 'Local Arena'}</td>
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center">${resBadge}</td>
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center font-bold ${isFinal ? 'text-white' : 'text-yellow-400'}">${g.score_str}</td>
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center text-xs text-slate-300 font-sans font-bold truncate max-w-xs">${g.source_name || 'Event'}</td>
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center">
+                                <span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${g.is_manual ? 'text-yellow-400 bg-yellow-950/40 border border-yellow-800/60' : (g.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(g.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : 'text-blue-400 bg-blue-950/40'))}">
+                                    ${g.is_manual ? 'PAPER' : (g.source_type === 'tournament' ? 'TOURN' : (String(g.source_name).toUpperCase().includes('EX') ? 'EXHIB' : 'LEAG'))}
+                                </span>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                allGamesTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No games recorded.</td></tr>`;
             }
         }
 
