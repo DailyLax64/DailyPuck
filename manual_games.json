@@ -1,7 +1,7 @@
 [
   {
     "cohort": "U11 AA",
-    "date": "Oct 4, 2026",
+    "date": "2026-10-04",
     "time": "1:15 PM",
     "opponent": "Mississauga Beast",
     "location": "Cwench Arena",
@@ -61,6 +61,48 @@
         "g": 0,
         "a": 0,
         "pim": 2
+      },
+      {
+        "name": "HENRY POLLARD",
+        "jersey": "72",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "NOAH CRICHTON",
+        "jersey": "10",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JACOB LEONARD",
+        "jersey": "88",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "TUCKER GRANT",
+        "jersey": "97",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "NIALL KEOGH",
+        "jersey": "8",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JOEY SCHEBESCH",
+        "jersey": "23",
+        "g": 0,
+        "a": 0,
+        "pim": 0
       }
     ],
     "goalies": [
