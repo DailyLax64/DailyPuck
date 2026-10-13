@@ -103,33 +103,31 @@ def is_burlington_eagles(name):
     c = clean_key(name)
     return "BURLINGTON" in c and "EAGLES" in c
 
-def fetch_json(url, max_retries=2, silent=False):
+def fetch_json(url, max_retries=3):
     """Fetches JSON with automatic retry on transient gateway errors."""
     req = urllib.request.Request(url, headers=headers)
     for attempt in range(max_retries):
         try:
-            with urllib.request.urlopen(req, timeout=15) as response:
+            with urllib.request.urlopen(req, timeout=25) as response:
                 return json.loads(response.read().decode('utf-8'))
         except urllib.error.HTTPError as e:
             if e.code in (502, 503, 504) and attempt < max_retries - 1:
-                time.sleep(1.0)
+                time.sleep(1.5)
                 continue
-            if not silent:
-                print(f"   ❌ Fetch error for {url}: {e}")
+            print(f"   ❌ Fetch error for {url}: {e}")
             return None
         except Exception as e:
             if attempt < max_retries - 1:
-                time.sleep(1.0)
+                time.sleep(1.5)
                 continue
-            if not silent:
-                print(f"   ❌ Fetch error for {url}: {e}")
+            print(f"   ❌ Fetch error for {url}: {e}")
             return None
     return None
 
 def fetch_paginated_roster(endpoint_name, s_id, s_name="", label="Roster"):
     """
     Fetches players or goalies in safe 1,000-record chunks with adaptive backoff
-    to eliminate HTTP 502 Bad Gateway timeouts on massive multi-division seasons.
+    to eliminate HTTP 502 Bad Gateway timeouts on massive seasons.
     """
     records = []
     offset = 0
@@ -180,34 +178,60 @@ def fetch_paginated_roster(endpoint_name, s_id, s_name="", label="Roster"):
 
     return records
 
-def parse_game_boxscore(g_data, is_home):
+def parse_game_boxscore(g_data, is_home, eagles_id=None):
     """
-    Robust box score extractor for GameSheet game endpoints.
-    Handles rosters, goals events, penalties, and goalie records.
+    Extracts individual player goals, assists, penalty minutes, and goalie performance
+    from GameSheet's /api/games/game/{game_id}/detail response.
     """
     if not g_data:
         return {}, []
 
     root = g_data.get("data") if isinstance(g_data, dict) and "data" in g_data and isinstance(g_data["data"], dict) else g_data
+    if isinstance(root, dict) and "game" in root and isinstance(root["game"], dict):
+        game_meta = root["game"]
+    else:
+        game_meta = root if isinstance(root, dict) else {}
+
     if not isinstance(root, dict):
         return {}, []
 
-    team_key = "home" if is_home else "visitor"
-    team_obj = root.get(team_key) or {}
-    team_id = team_obj.get("id") or team_obj.get("teamId")
+    home_obj = root.get("home") or root.get("homeTeam") or game_meta.get("home") or {}
+    visitor_obj = root.get("visitor") or root.get("visitorTeam") or game_meta.get("visitor") or {}
 
-    players_list = team_obj.get("players") or team_obj.get("roster") or team_obj.get("skaters") or []
-    goalies_list = team_obj.get("goalies") or []
+    eagles_obj = None
+    if eagles_id:
+        if str(home_obj.get("id") or home_obj.get("teamId")) == str(eagles_id):
+            eagles_obj = home_obj
+        elif str(visitor_obj.get("id") or visitor_obj.get("teamId")) == str(eagles_id):
+            eagles_obj = visitor_obj
+
+    if not eagles_obj:
+        if is_burlington_eagles(home_obj.get("title") or home_obj.get("name")):
+            eagles_obj = home_obj
+        elif is_burlington_eagles(visitor_obj.get("title") or visitor_obj.get("name")):
+            eagles_obj = visitor_obj
+        else:
+            eagles_obj = home_obj if is_home else visitor_obj
+
+    eagles_team_id = eagles_obj.get("id") or eagles_obj.get("teamId")
+
+    players_list = eagles_obj.get("players") or eagles_obj.get("roster") or eagles_obj.get("skaters") or []
+    goalies_list = eagles_obj.get("goalies") or []
+
+    if not goalies_list and players_list:
+        goalies_list = [p for p in players_list if str(p.get("position", "")).upper() == "G"]
 
     skater_stats = {}
     stats_already_on_players = False
 
     for p in players_list:
+        if str(p.get("position", "")).upper() == "G" and p in goalies_list:
+            continue
         p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}") or clean_name(p.get("name") or p.get("title") or "")
         if not p_name:
             continue
         p_id = p.get("id") or p.get("playerId")
-        jersey = str(p.get("jersey") or "")
+        jersey = str(p.get("jersey") or p.get("number") or "")
 
         st = p.get("stats") or {}
         g = int(st.get("g") or st.get("goals") or 0)
@@ -229,11 +253,15 @@ def parse_game_boxscore(g_data, is_home):
             "pim": pim
         }
 
+    # If stats were not pre-calculated on the roster objects, aggregate from event streams
     if not stats_already_on_players:
-        goals_events = root.get("goals") or []
+        goals_events = root.get("goals") or root.get("scoring") or game_meta.get("goals") or []
         for goal in goals_events:
             g_team_id = goal.get("teamId") or goal.get("team_id")
-            if team_id and g_team_id and str(g_team_id) != str(team_id):
+            if eagles_team_id and g_team_id and str(g_team_id) != str(eagles_team_id):
+                continue
+            g_team_name = goal.get("team") or goal.get("teamName") or ""
+            if g_team_name and not is_burlington_eagles(g_team_name) and not g_team_id:
                 continue
 
             scorer = goal.get("scoredBy") or goal.get("scorer") or goal.get("player") or {}
@@ -241,7 +269,7 @@ def parse_game_boxscore(g_data, is_home):
             if scorer_name:
                 s_key = clean_key(scorer_name)
                 if s_key not in skater_stats:
-                    skater_stats[s_key] = {"name": scorer_name, "id": scorer.get("id"), "jersey": str(scorer.get("jersey") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
+                    skater_stats[s_key] = {"name": scorer_name, "id": scorer.get("id"), "jersey": str(scorer.get("jersey") or scorer.get("number") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
                 skater_stats[s_key]["g"] += 1
                 skater_stats[s_key]["pts"] += 1
 
@@ -262,14 +290,14 @@ def parse_game_boxscore(g_data, is_home):
                 if ast_name:
                     a_key = clean_key(ast_name)
                     if a_key not in skater_stats:
-                        skater_stats[a_key] = {"name": ast_name, "id": ast.get("id"), "jersey": str(ast.get("jersey") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
+                        skater_stats[a_key] = {"name": ast_name, "id": ast.get("id"), "jersey": str(ast.get("jersey") or ast.get("number") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
                     skater_stats[a_key]["a"] += 1
                     skater_stats[a_key]["pts"] += 1
 
-        penalties_events = root.get("penalties") or []
+        penalties_events = root.get("penalties") or game_meta.get("penalties") or []
         for pen in penalties_events:
             p_team_id = pen.get("teamId") or pen.get("team_id")
-            if team_id and p_team_id and str(p_team_id) != str(team_id):
+            if eagles_team_id and p_team_id and str(p_team_id) != str(eagles_team_id):
                 continue
             p_player = pen.get("player") or pen.get("penalizedPlayer") or {}
             p_name = clean_name(f"{p_player.get('firstName', '')} {p_player.get('lastName', '')}") or clean_name(p_player.get("name") or p_player.get("title") or "")
@@ -277,7 +305,7 @@ def parse_game_boxscore(g_data, is_home):
             if p_name:
                 p_key = clean_key(p_name)
                 if p_key not in skater_stats:
-                    skater_stats[p_key] = {"name": p_name, "id": p_player.get("id"), "jersey": str(p_player.get("jersey") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
+                    skater_stats[p_key] = {"name": p_name, "id": p_player.get("id"), "jersey": str(p_player.get("jersey") or p_player.get("number") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
                 skater_stats[p_key]["pim"] += mins
 
     goalie_stats = []
@@ -285,7 +313,7 @@ def parse_game_boxscore(g_data, is_home):
         gk_name = clean_name(f"{gk.get('firstName', '')} {gk.get('lastName', '')}") or clean_name(gk.get("name") or gk.get("title") or "")
         if not gk_name:
             continue
-        jersey = str(gk.get("jersey") or "")
+        jersey = str(gk.get("jersey") or gk.get("number") or "")
         st = gk.get("stats") or {}
         ga = int(st.get("ga") or st.get("goalsAgainst") or 0)
         mins = int(st.get("min") or st.get("minutes") or st.get("min_played") or 45)
@@ -767,9 +795,6 @@ for g in all_compiled_games:
 
 print(f"🎯 Found {len(eagles_target_games)} final game(s) involving the Burlington Eagles to query for box scores.")
 
-# Discovered working pattern cache across games
-discovered_pattern = None
-
 for idx, g in enumerate(eagles_target_games, 1):
     gid = g.get("game_id")
     s_id = str(g.get("source_id", "")).strip()
@@ -786,50 +811,19 @@ for idx, g in enumerate(eagles_target_games, 1):
     score_str = f"{g.get('home_goals', 0)} - {g.get('visitor_goals', 0)}" if is_eagles_home else f"{g.get('visitor_goals', 0)} - {g.get('home_goals', 0)}"
     result = g.get("home_result") if is_eagles_home else g.get("visitor_result")
 
-    box_data = None
+    print(f"   [{idx}/{len(eagles_target_games)}] Box Score Query: Game #{gid} ({date_str} vs {opp_name})...")
 
-    if discovered_pattern:
-        url = discovered_pattern.format(gid=gid, s_id=s_id)
-        box_data = fetch_json(url, silent=True)
-    else:
-        # Probe candidate endpoints for GameSheet boxscore structure
-        candidate_urls = [
-            f"https://gamesheetstats.com/api/games/{gid}",
-            f"https://gamesheetstats.com/api/seasons/{s_id}/games/{gid}",
-            f"https://gamesheetstats.com/api/gamesheets/{gid}",
-            f"https://gamesheetstats.com/api/scoresheets/{gid}",
-            f"https://gamesheetstats.com/api/games/{gid}/boxscore",
-            f"https://gamesheetstats.com/api/game/{gid}",
-            f"https://gamesheetstats.com/api/gamesheet/{gid}",
-            f"https://gamesheetstats.com/api/scoresheet/{gid}",
-            f"https://gamesheetstats.com/api/unified-games/game/{gid}",
-        ]
-        patterns = [
-            "https://gamesheetstats.com/api/games/{gid}",
-            "https://gamesheetstats.com/api/seasons/{s_id}/games/{gid}",
-            "https://gamesheetstats.com/api/gamesheets/{gid}",
-            "https://gamesheetstats.com/api/scoresheets/{gid}",
-            "https://gamesheetstats.com/api/games/{gid}/boxscore",
-            "https://gamesheetstats.com/api/game/{gid}",
-            "https://gamesheetstats.com/api/gamesheet/{gid}",
-            "https://gamesheetstats.com/api/scoresheet/{gid}",
-            "https://gamesheetstats.com/api/unified-games/game/{gid}",
-        ]
-
-        for p_idx, test_url in enumerate(candidate_urls):
-            test_resp = fetch_json(test_url, silent=True)
-            if test_resp and isinstance(test_resp, (dict, list)):
-                box_data = test_resp
-                discovered_pattern = patterns[p_idx]
-                print(f"   🎯 Discovered working GameSheet box score endpoint: {discovered_pattern}")
-                break
+    # Confirmed GameSheet boxscore endpoint
+    box_url = f"https://gamesheetstats.com/api/games/game/{gid}/detail"
+    box_data = fetch_json(box_url)
 
     if not box_data:
-        print(f"   [{idx}/{len(eagles_target_games)}] Notice: Game #{gid} ({date_str} vs {opp_name}) boxscore not served by GameSheet API.")
+        print(f"      ⚠️ No response received for game #{gid}.")
         continue
 
-    print(f"   [{idx}/{len(eagles_target_games)}] Box Score Mapped: Game #{gid} ({date_str} vs {opp_name})")
-    skaters_stats, goalies_stats = parse_game_boxscore(box_data, is_home=is_eagles_home)
+    eagles_team_id = g.get("home_id") if is_eagles_home else g.get("visitor_id")
+    skaters_stats, goalies_stats = parse_game_boxscore(box_data, is_home=is_eagles_home, eagles_id=eagles_team_id)
+    print(f"      ✅ Mapped {len(skaters_stats)} skater(s) and {len(goalies_stats)} goalie(s).")
 
     # 1. Attach Skater Game Logs
     for sk_key, sk_val in skaters_stats.items():
@@ -845,12 +839,16 @@ for idx, g in enumerate(eagles_target_games, 1):
             matched_skater = {
                 "name": sk_val["name"],
                 "team": eagles_canonical,
-                "team_id": g.get("home_id") if is_eagles_home else g.get("visitor_id"),
+                "team_id": eagles_team_id,
                 "jersey": sk_val["jersey"],
                 "position": "F",
                 "age": age,
                 "tier": tier,
-                "total_gp": 0, "total_g": 0, "total_a": 0, "total_pts": 0, "total_pim": 0,
+                "total_gp": 0,
+                "total_g": 0,
+                "total_a": 0,
+                "total_pts": 0,
+                "total_pim": 0,
                 "sources": []
             }
             skaters_db[player_key] = matched_skater
@@ -901,7 +899,7 @@ for idx, g in enumerate(eagles_target_games, 1):
             matched_goalie = {
                 "name": gk_val["name"],
                 "team": eagles_canonical,
-                "team_id": g.get("home_id") if is_eagles_home else g.get("visitor_id"),
+                "team_id": eagles_team_id,
                 "jersey": gk_val["jersey"],
                 "position": "G",
                 "age": age,
@@ -943,7 +941,7 @@ for idx, g in enumerate(eagles_target_games, 1):
                 "decision": gk_val["decision"] or result
             })
 
-    time.sleep(0.2)
+    time.sleep(0.3)
 
 # 7. EXPORT COMPILED STATS
 output_data = {
