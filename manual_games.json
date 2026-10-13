@@ -1,6 +1,145 @@
 [
   {
     "cohort": "U11 AA",
+    "date": "Sep 12, 2026",
+    "time": "5:45 PM",
+    "opponent": "Brantford 99ers",
+    "location": "Wayne Gretzky Arena",
+    "is_home": false,
+    "team_goals": 3,
+    "opponent_goals": 1,
+    "result": "W",
+    "source_name": "Exhibition (Paper Sheet)",
+    "source_type": "paper",
+    "status": "final",
+    "skaters": [
+      {
+        "name": "NOAH CRICHTON",
+        "jersey": "10",
+        "g": 1,
+        "a": 1,
+        "pim": 0
+      },
+      {
+        "name": "RORY PTASZEK-ZANINI",
+        "jersey": "9",
+        "g": 1,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JACKSON RAND",
+        "jersey": "77",
+        "g": 1,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "RHYS MERRICK",
+        "jersey": "16",
+        "g": 0,
+        "a": 1,
+        "pim": 0
+      },
+      {
+        "name": "NIALL KEOGH",
+        "jersey": "8",
+        "g": 0,
+        "a": 1,
+        "pim": 0
+      },
+      {
+        "name": "HAYDEN TOMLINSON",
+        "jersey": "89",
+        "g": 0,
+        "a": 0,
+        "pim": 2
+      },
+      {
+        "name": "CHARLIE GRUSCYK",
+        "jersey": "4",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JACKSON PORTER",
+        "jersey": "17",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "CALVIN SMITKO",
+        "jersey": "22",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "BENNETT MONTAGUE",
+        "jersey": "12",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "HENRY POLLARD",
+        "jersey": "72",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JACOB LEONARD",
+        "jersey": "88",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "TUCKER GRANT",
+        "jersey": "97",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JOEY SCHEBESCH",
+        "jersey": "23",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "BRAYDEN MCINTOSH",
+        "jersey": "19",
+        "g": 0,
+        "a": 0,
+        "pim": 0
+      }
+    ],
+    "goalies": [
+      {
+        "name": "NATHAN TURKSTRA",
+        "jersey": "31",
+        "ga": 1,
+        "min": 23,
+        "so": 0,
+        "decision": "W"
+      },
+      {
+        "name": "JAXSON WARREN",
+        "jersey": "41",
+        "ga": 0,
+        "min": 22,
+        "so": 0,
+        "decision": "W"
+      }
+    ]
+  },
+  {
+    "cohort": "U11 AA",
     "date": "Oct 4, 2026",
     "time": "1:15 PM",
     "opponent": "Mississauga Beast",
