@@ -93,7 +93,6 @@
             <div class="bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
                 <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 block mb-3">🏆 Performance & Ranking Metrics</span>
                 
-                <!-- Top Row: Games, Rank, Rating, SoS -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 mb-3 sm:mb-4">
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 text-center">
                         <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Games Tracked</span>
@@ -113,7 +112,6 @@
                     </div>
                 </div>
 
-                <!-- Bottom Row: Comparison Cards (MHR vs GameSheet + Manual) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800">
                         <span class="block text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-widest text-yellow-400 mb-2">MyHockeyRankings Baseline</span>
@@ -150,7 +148,6 @@
                 <span class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 block mb-3">📊 Team Efficiency Profiles</span>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                     
-                    <!-- Goals For -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Goals For / Game</span>
@@ -170,7 +167,6 @@
                         </div>
                     </div>
 
-                    <!-- Goals Against -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Goals Against / Game</span>
@@ -190,7 +186,6 @@
                         </div>
                     </div>
 
-                    <!-- Average Goal Margin -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Average Goal Margin</span>
@@ -210,7 +205,6 @@
                         </div>
                     </div>
 
-                    <!-- Penalty Minutes -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Avg Penalty Minutes / G</span>
@@ -241,7 +235,6 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                     
-                    <!-- Power Play % -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Power Play %</span>
@@ -262,7 +255,6 @@
                         </div>
                     </div>
 
-                    <!-- Penalty Kill % -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">Penalty Kill %</span>
@@ -277,13 +269,12 @@
                                 <div id="gauge-pk-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
                             </div>
                             <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
-                                <span>1</span>
                                 <span class="gauge-total-teams-label">Total</span>
+                                <span>1</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Shorthanded Goals For -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals For</span>
@@ -304,7 +295,6 @@
                         </div>
                     </div>
 
-                    <!-- Shorthanded Goals Against -->
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800 flex flex-col justify-between">
                         <div>
                             <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-1">SH Goals Against</span>
@@ -381,13 +371,11 @@
             <!-- 7. Last 5 Form & Next On Deck Schedule -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 
-                <!-- Last 5 Form -->
                 <div class="lg:col-span-5 bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 mb-3">🔥 Recent Form (Last 5)</h3>
                     <div id="form-guide-row" class="flex flex-wrap gap-2"></div>
                 </div>
 
-                <!-- On Deck Fixtures -->
                 <div class="lg:col-span-7 bg-eagles-navy border border-slate-800 p-4 sm:p-6 rounded-2xl shadow-xl text-white">
                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 mb-3">📅 Upcoming Matchups</h3>
                     <div id="on-deck-list" class="space-y-2.5"></div>
@@ -487,9 +475,7 @@
                 if (manualRes.status === 'fulfilled' && manualRes.value.ok) {
                     try {
                         manualGamesData = await manualRes.value.json();
-                        console.log(`📋 Loaded ${manualGamesData.length} manual game records from manual_games.json`);
                     } catch (e) {
-                        console.warn("Could not parse manual_games.json:", e);
                         manualGamesData = [];
                     }
                 } else {
@@ -497,7 +483,7 @@
                 }
 
                 const genDate = rawHockeyDb.generated_at ? new Date(rawHockeyDb.generated_at).toLocaleDateString() : 'Active';
-                document.getElementById('sync-status').innerText = `Synced: ${genDate}${manualGamesData.length > 0 ? ` (+${manualGamesData.length} Manual Games)` : ''}`;
+                document.getElementById('sync-status').innerText = `Synced: ${genDate}${manualGamesData.length > 0 ? ` (+${manualGamesData.length} Manual Game)` : ''}`;
 
                 buildDivisionTree();
                 integrateManualGames();
@@ -586,7 +572,6 @@
                 "U14 AA": {}
             };
 
-            // 1. Seed master_teams whitelist
             if (rawHockeyDb?.master_teams) {
                 Object.entries(rawHockeyDb.master_teams).forEach(([cohort, teams]) => {
                     const normCohort = resolveCohortKey(cohort);
@@ -596,7 +581,6 @@
                 });
             }
 
-            // 2. Ingest Standings (Leagues, Tournaments, Exhibition)
             (rawHockeyDb.standings || []).forEach(row => {
                 const normCohort = resolveCohortKey(row.division || `${row.age || ''} ${row.tier || ''}`);
                 const teamProfile = getOrCreateTeamProfile(normCohort, row.team_name, row.team_id);
@@ -622,7 +606,6 @@
                 teamProfile.standings_entries.push(row);
             });
 
-            // 3. Ingest Skaters
             (rawHockeyDb.skaters || []).forEach(p => {
                 const normCohort = resolveCohortKey(p.division || p.cohort || p.age);
                 const teamProfile = getOrCreateTeamProfile(normCohort, p.team, p.team_id);
@@ -631,7 +614,6 @@
                 }
             });
 
-            // 4. Ingest Goalies
             (rawHockeyDb.goalies || []).forEach(g => {
                 const normCohort = resolveCohortKey(g.division || g.cohort || g.age);
                 const teamProfile = getOrCreateTeamProfile(normCohort, g.team, g.team_id);
@@ -640,7 +622,6 @@
                 }
             });
 
-            // 5. Ingest Games
             (rawHockeyDb.games || []).forEach(g => {
                 if (!g) return;
                 const normCohort = resolveCohortKey(g.division);
@@ -648,7 +629,6 @@
                 attachGameToMatchingTeams(normCohort, g.visitor_name, g.visitor_id, g, false);
             });
 
-            // 6. Dynamic MHR Rating Ranks & SoS
             if (rawHockeyDb?.master_teams) {
                 Object.keys(rawHockeyDb.master_teams).forEach(divKey => {
                     const normCohort = resolveCohortKey(divKey);
@@ -681,7 +661,6 @@
                 });
             }
 
-            // 7. Contender Status
             hotTeamsDatabaseMap = {};
             Object.keys(scoutingReportDatabase).forEach(divKey => {
                 const divTeams = Object.values(scoutingReportDatabase[divKey]);
@@ -729,15 +708,13 @@
             teamProfile.games.push(rec);
         }
 
-        // =========================================================================
-        // 📝 MANUAL GAMESHEETS INTEGRATION
-        // =========================================================================
         function integrateManualGames() {
             if (!Array.isArray(manualGamesData) || manualGamesData.length === 0) return;
 
             manualGamesData.forEach(mg => {
                 const normCohort = resolveCohortKey(mg.cohort || mg.division || activeCohort);
-                const team = getOrCreateTeamProfile(normCohort, "Burlington Eagles");
+                const eaglesTeamName = Object.keys(scoutingReportDatabase[normCohort] || {}).find(t => isBurlingtonEagles(t)) || "Burlington Eagles";
+                const team = getOrCreateTeamProfile(normCohort, eaglesTeamName);
                 if (!team) return;
 
                 const isFinal = (mg.status || "final").toLowerCase() === "final";
@@ -771,7 +748,7 @@
 
                 team.games.push(rec);
 
-                // Merge Skater stats & game logs
+                // Merge Skater points & game logs
                 (mg.skaters || []).forEach(sk => {
                     const skName = (sk.name || "").trim().toUpperCase();
                     if (!skName) return;
@@ -869,8 +846,6 @@
                     goalie.total_w += w;
                     goalie.total_l += l;
                     goalie.total_t += t;
-
-                    // True GAA formula: GA / GP
                     goalie.total_gaa = goalie.total_gp > 0 ? Number((goalie.total_ga / goalie.total_gp).toFixed(2)) : 0.0;
 
                     const srcName = mg.source_name || "Exhibition (Paper Sheet)";
@@ -910,11 +885,12 @@
             });
         }
 
-        // Dynamic Metric Aggregator across ALL completed games (GameSheet + Paper)
+        // Recomputes Burlington Eagles metrics across all games (GameSheet + Paper Sheets)
         function recalculateEaglesOverallMetrics() {
             ["U11 AA", "U14 AA"].forEach(cohort => {
-                const team = scoutingReportDatabase[cohort]?.["Burlington Eagles"];
-                if (!team) return;
+                const eaglesTeamName = Object.keys(scoutingReportDatabase[cohort] || {}).find(t => isBurlingtonEagles(t));
+                if (!eaglesTeamName) return;
+                const team = scoutingReportDatabase[cohort][eaglesTeamName];
 
                 const finalGames = (team.games || []).filter(g => g.status === 'final');
                 if (finalGames.length === 0) return;
@@ -923,8 +899,8 @@
                 let calcGF = 0, calcGA = 0;
 
                 finalGames.forEach(g => {
-                    calcGF += Number(g.team_goals || 0);
-                    calcGA += Number(g.opp_goals || 0);
+                    calcGF += Number(g.team_goals ?? 0);
+                    calcGA += Number(g.opp_goals ?? 0);
                     if (g.result === 'W') calcW++;
                     else if (g.result === 'L') calcL++;
                     else if (g.result === 'T') calcT++;
@@ -939,13 +915,38 @@
                 team.ga = calcGA;
                 team.diff = calcGF - calcGA;
 
-                // Total team PIM from all roster skaters
                 let totalPim = 0;
                 (team.roster || []).forEach(p => {
                     totalPim += Number(p.total_pim || 0);
                 });
                 team.pim = totalPim;
             });
+        }
+
+        function onCohortChange() {
+            const select = document.getElementById('cohort-select');
+            activeCohort = select.value;
+            syncCohortButtons();
+            renderSelectedCohort();
+        }
+
+        function setCohort(cohort) {
+            activeCohort = cohort;
+            document.getElementById('cohort-select').value = cohort;
+            syncCohortButtons();
+            renderSelectedCohort();
+        }
+
+        function syncCohortButtons() {
+            const btnU11 = document.getElementById('btn-u11');
+            const btnU14 = document.getElementById('btn-u14');
+            if (activeCohort === 'U11') {
+                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
+                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
+            } else {
+                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
+                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
+            }
         }
 
         function getStandardDateTimestamp(g) {
@@ -981,7 +982,6 @@
             document.getElementById('team-title').innerText = team.team_name;
             document.getElementById('tracked-record-pill').innerText = `${team.w}W - ${team.l}L - ${team.t}T`;
 
-            // Contender badge
             const hotBadge = document.getElementById('hot-badge');
             if (hotTeamsDatabaseMap[targetDiv]?.includes(eaglesTeamName)) {
                 hotBadge.classList.remove('hidden');
@@ -1062,7 +1062,7 @@
             trackedDiffEl.innerText = team.diff >= 0 ? `+${team.diff}` : `${team.diff}`;
             trackedDiffEl.className = `text-base sm:text-xl font-mono font-black ${team.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
 
-            // Efficiency Gauges & Metrics (Now correctly driven by all games)
+            // Efficiency Profiles (Directly driven by all tracked games)
             const allDivTeams = Object.values(divisionPayload);
             const totalTeamsInDivision = allDivTeams.length;
             document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
@@ -1119,7 +1119,7 @@
             document.getElementById('stat-pim-rank').innerText = `#${pimRank} of ${totalTeamsInDivision}`;
             document.getElementById('stat-diff-rank').innerText = `#${diffRank} of ${totalTeamsInDivision}`;
 
-            // Special Teams Execution
+            // Special Teams
             const ppg = team.ppg || 0;
             const ppo = team.ppo || 0;
             const ppga = team.ppga || 0;
@@ -1191,9 +1191,7 @@
             document.getElementById('spec-shgf-rank').innerText = `#${shgfRank} of ${totalTeamsInDivision}`;
             document.getElementById('spec-shga-rank').innerText = `#${shgaRank} of ${totalTeamsInDivision}`;
 
-            // =========================================================================
-            // 🎯 TEAM SKATERS (SORTED BY POINTS -> GOALS -> GP -> NAME)
-            // =========================================================================
+            // Skaters Table
             const uniqueSkaters = [];
             const seenSkaterKeys = new Set();
             (team.roster || []).forEach(p => {
@@ -1242,7 +1240,6 @@
                             displayGames = [...s.game_logs];
                         }
 
-                        // Also find any games the Eagles played in this event
                         const matchingTeamGames = (team.games || []).filter(g => 
                             (cleanKey(g.source_name) === cleanKey(s.source_name) || (g.source_id && String(g.source_id) === String(s.source_id))) &&
                             g.status === 'final'
@@ -1391,9 +1388,7 @@
                 rosterTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No skater statistics on record.</td></tr>`;
             }
 
-            // =========================================================================
-            // 🧤 TOP 2 GOALIES (GAA = GA / GP)
-            // =========================================================================
+            // Goalies Table
             const uniqueGoalies = [];
             const seenGoalieKeys = new Set();
             (team.goalies || []).forEach(g => {
@@ -1421,7 +1416,6 @@
                     const uniqueId = `goalie-breakdown-${idx}`;
                     const gp = g.total_gp ?? g.gp ?? 0;
                     const ga = g.total_ga ?? g.ga ?? 0;
-                    
                     const gaa = gp > 0 ? (ga / gp).toFixed(2) : Number(g.total_gaa || 0).toFixed(2);
                     const so = g.total_so ?? g.so ?? 0;
                     const rec = (g.total_w !== undefined) ? `${g.total_w}-${g.total_l}-${g.total_t}` : (g.record || '-');
@@ -1601,9 +1595,7 @@
                 onDeckList.innerHTML = `<div class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-center text-slate-500 text-xs uppercase font-mono">No upcoming matchups scheduled.</div>`;
             }
 
-            // =========================================================================
-            // 📋 FULL CHRONOLOGICAL SCHEDULE & GAME LOG TABLE
-            // =========================================================================
+            // Full Chronological Table
             document.getElementById('all-games-count-badge').innerText = `${sortedGames.length} Total Games (${completedGamesList.length} Final)`;
             const allGamesTbody = document.getElementById('all-games-tbody');
             allGamesTbody.innerHTML = "";
