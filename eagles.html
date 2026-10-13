@@ -557,6 +557,7 @@
                 age: parts[0] || "U11",
                 tier: parts[1] || "AA",
                 gp: 0, w: 0, l: 0, t: 0, pts: 0, gf: 0, ga: 0, diff: 0, pim: 0,
+                standings_pim: 0,
                 ppg: 0, ppo: 0, ppga: 0, ppoa: 0, shg: 0, shga: 0,
                 standings_entries: [],
                 roster: [],
@@ -595,6 +596,7 @@
                 teamProfile.ga += Number(row.ga) || 0;
                 teamProfile.diff += Number(row.diff) || 0;
                 teamProfile.pim += Number(row.pim) || 0;
+                teamProfile.standings_pim = (teamProfile.standings_pim || 0) + (Number(row.pim) || 0);
 
                 teamProfile.ppg += Number(row.ppg) || 0;
                 teamProfile.ppo += Number(row.ppo) || 0;
@@ -748,7 +750,7 @@
 
                 team.games.push(rec);
 
-                // Merge Skater points & game logs
+                // Merge Skaters
                 (mg.skaters || []).forEach(sk => {
                     const skName = (sk.name || "").trim().toUpperCase();
                     if (!skName) return;
@@ -811,7 +813,7 @@
                     });
                 });
 
-                // Merge Goalie stats & game logs
+                // Merge Goalies
                 (mg.goalies || []).forEach(gk => {
                     const gkName = (gk.name || "").trim().toUpperCase();
                     if (!gkName) return;
@@ -915,11 +917,15 @@
                 team.ga = calcGA;
                 team.diff = calcGF - calcGA;
 
-                let totalPim = 0;
-                (team.roster || []).forEach(p => {
-                    totalPim += Number(p.total_pim || 0);
+                // GameSheet standings PIM + manual game PIMs
+                let manualPimTotal = 0;
+                finalGames.filter(g => g.is_manual).forEach(mg => {
+                    const foundMg = manualGamesData.find(m => (m.date === mg.date && m.opponent === mg.opponent));
+                    if (foundMg && foundMg.skaters) {
+                        foundMg.skaters.forEach(sk => { manualPimTotal += Number(sk.pim || 0); });
+                    }
                 });
-                team.pim = totalPim;
+                team.pim = (team.standings_pim || team.pim || 0) + manualPimTotal;
             });
         }
 
@@ -1062,7 +1068,7 @@
             trackedDiffEl.innerText = team.diff >= 0 ? `+${team.diff}` : `${team.diff}`;
             trackedDiffEl.className = `text-base sm:text-xl font-mono font-black ${team.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
 
-            // Efficiency Profiles (Directly driven by all tracked games)
+            // Efficiency Profiles
             const allDivTeams = Object.values(divisionPayload);
             const totalTeamsInDivision = allDivTeams.length;
             document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
@@ -1247,8 +1253,8 @@
 
                         matchingTeamGames.forEach(tg => {
                             const alreadyLogged = displayGames.some(dg => 
-                                (dg.date && tg.date && dg.date === tg.date) ||
-                                (dg.opponent && tg.opponent && cleanKey(dg.opponent) === cleanKey(tg.opponent))
+                                (dg.game_id && tg.game_id && String(dg.game_id) === String(tg.game_id)) ||
+                                (dg.date && tg.date && dg.date === tg.date && cleanKey(dg.opponent || '') === cleanKey(tg.opponent || ''))
                             );
                             if (!alreadyLogged) {
                                 displayGames.push({
@@ -1546,7 +1552,7 @@
                 goalieTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-slate-500 uppercase font-black tracking-widest">No netminder statistics on record.</td></tr>`;
             }
 
-            // Games Form & On Deck
+            // Form Guide & On Deck
             const sortedGames = [...(team.games || [])].sort((a, b) => getStandardDateTimestamp(a) - getStandardDateTimestamp(b));
             const completedGamesList = sortedGames.filter(g => g.status === 'final' && g.result);
             const upcomingGamesList = sortedGames.filter(g => g.status !== 'final').slice(0, 3);
