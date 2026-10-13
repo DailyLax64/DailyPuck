@@ -113,7 +113,7 @@
                     </div>
                 </div>
 
-                <!-- Bottom Row: Comparison Cards (MHR vs GameSheet) -->
+                <!-- Bottom Row: Comparison Cards (MHR vs GameSheet + Manual) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800">
                         <span class="block text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-widest text-yellow-400 mb-2">MyHockeyRankings Baseline</span>
@@ -130,7 +130,7 @@
                     </div>
 
                     <div class="bg-slate-950 p-3 sm:p-4 rounded-xl border border-slate-800">
-                        <span class="block text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-widest text-blue-400 mb-2">GameSheet Ingested Feed</span>
+                        <span class="block text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-widest text-blue-400 mb-2">Tracked Performance (All Games)</span>
                         <div class="grid grid-cols-2 gap-2 text-center">
                             <div>
                                 <span class="block text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-wider mb-0.5">Tracked Record</span>
@@ -277,8 +277,8 @@
                                 <div id="gauge-pk-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
                             </div>
                             <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
-                                <span class="gauge-total-teams-label">Total</span>
                                 <span>1</span>
+                                <span class="gauge-total-teams-label">Total</span>
                             </div>
                         </div>
                     </div>
@@ -328,11 +328,11 @@
                 </div>
             </div>
 
-            <!-- 5. Team Skaters Ranked by PTS (Improvement #2: Points, Goals, GP, Name) -->
+            <!-- 5. Team Skaters Ranked by PTS (Points -> Goals -> GP -> Name) -->
             <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
                 <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
                     <div>
-                        <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🎯 Team Skaters (Ranked by PTS)</h3>
+                        <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🎯 Team Skaters (Ranked by Points)</h3>
                         <p class="text-[11px] font-mono text-slate-400 mt-0.5">Click player to expand event sources, then click any source to view game-by-game stats.</p>
                     </div>
                     <span id="skater-count-badge" class="text-[10px] sm:text-xs font-mono text-slate-400 font-bold uppercase"></span>
@@ -355,7 +355,7 @@
                 </div>
             </div>
 
-            <!-- 6. Top 2 Netminders (Improvement #1: Fixed GAA formula) -->
+            <!-- 6. Top 2 Netminders (GAA = GA / GP) -->
             <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
                 <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60">
                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🧤 Team Netminders (Top 2 by Games Played)</h3>
@@ -474,7 +474,6 @@
 
         async function initApp() {
             try {
-                // Fetch both hockey_stats.json and manual_games.json in parallel
                 const [statsRes, manualRes] = await Promise.allSettled([
                     fetch('hockey_stats.json?v=' + Date.now()),
                     fetch('manual_games.json?v=' + Date.now())
@@ -502,6 +501,7 @@
 
                 buildDivisionTree();
                 integrateManualGames();
+                recalculateEaglesOverallMetrics();
                 renderSelectedCohort();
 
             } catch (err) {
@@ -533,7 +533,6 @@
             let canonical = rawTeamName.trim();
             const cleanRaw = cleanKey(rawTeamName);
             
-            // Cross-reference master_teams whitelist
             if (rawHockeyDb?.master_teams?.[targetCohort]) {
                 for (const [canon, data] of Object.entries(rawHockeyDb.master_teams[targetCohort])) {
                     if (cleanKey(canon) === cleanRaw) {
@@ -710,6 +709,7 @@
             const oppName = isHome ? game.visitor_name : game.home_name;
 
             const rec = {
+                game_id: game.game_id,
                 date: game.date || "",
                 time: game.time || "",
                 timestamp: game.timestamp || (game.date ? new Date(game.date).toISOString() : ""),
@@ -730,7 +730,7 @@
         }
 
         // =========================================================================
-        // 📝 MANUAL GAMESHEETS INTEGRATION ENGINE
+        // 📝 MANUAL GAMESHEETS INTEGRATION
         // =========================================================================
         function integrateManualGames() {
             if (!Array.isArray(manualGamesData) || manualGamesData.length === 0) return;
@@ -770,16 +770,6 @@
                 };
 
                 team.games.push(rec);
-
-                if (isFinal) {
-                    team.gp += 1;
-                    team.gf += teamGoals;
-                    team.ga += oppGoals;
-                    team.diff += (teamGoals - oppGoals);
-                    if (res === 'W') { team.w += 1; team.pts += 2; }
-                    else if (res === 'L') { team.l += 1; }
-                    else if (res === 'T') { team.t += 1; team.pts += 1; }
-                }
 
                 // Merge Skater stats & game logs
                 (mg.skaters || []).forEach(sk => {
@@ -880,7 +870,7 @@
                     goalie.total_l += l;
                     goalie.total_t += t;
 
-                    // Fix #1: Calculate GAA purely as GA / GP
+                    // True GAA formula: GA / GP
                     goalie.total_gaa = goalie.total_gp > 0 ? Number((goalie.total_ga / goalie.total_gp).toFixed(2)) : 0.0;
 
                     const srcName = mg.source_name || "Exhibition (Paper Sheet)";
@@ -920,30 +910,42 @@
             });
         }
 
-        function onCohortChange() {
-            const select = document.getElementById('cohort-select');
-            activeCohort = select.value;
-            syncCohortButtons();
-            renderSelectedCohort();
-        }
+        // Dynamic Metric Aggregator across ALL completed games (GameSheet + Paper)
+        function recalculateEaglesOverallMetrics() {
+            ["U11 AA", "U14 AA"].forEach(cohort => {
+                const team = scoutingReportDatabase[cohort]?.["Burlington Eagles"];
+                if (!team) return;
 
-        function setCohort(cohort) {
-            activeCohort = cohort;
-            document.getElementById('cohort-select').value = cohort;
-            syncCohortButtons();
-            renderSelectedCohort();
-        }
+                const finalGames = (team.games || []).filter(g => g.status === 'final');
+                if (finalGames.length === 0) return;
 
-        function syncCohortButtons() {
-            const btnU11 = document.getElementById('btn-u11');
-            const btnU14 = document.getElementById('btn-u14');
-            if (activeCohort === 'U11') {
-                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
-                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
-            } else {
-                btnU14.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-yellow-400 text-slate-950 shadow-md";
-                btnU11.className = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider text-slate-300 hover:text-yellow-400 transition-all";
-            }
+                let calcW = 0, calcL = 0, calcT = 0;
+                let calcGF = 0, calcGA = 0;
+
+                finalGames.forEach(g => {
+                    calcGF += Number(g.team_goals || 0);
+                    calcGA += Number(g.opp_goals || 0);
+                    if (g.result === 'W') calcW++;
+                    else if (g.result === 'L') calcL++;
+                    else if (g.result === 'T') calcT++;
+                });
+
+                team.gp = finalGames.length;
+                team.w = calcW;
+                team.l = calcL;
+                team.t = calcT;
+                team.pts = (calcW * 2) + calcT;
+                team.gf = calcGF;
+                team.ga = calcGA;
+                team.diff = calcGF - calcGA;
+
+                // Total team PIM from all roster skaters
+                let totalPim = 0;
+                (team.roster || []).forEach(p => {
+                    totalPim += Number(p.total_pim || 0);
+                });
+                team.pim = totalPim;
+            });
         }
 
         function getStandardDateTimestamp(g) {
@@ -977,24 +979,7 @@
 
             document.getElementById('cohort-banner-label').innerText = `${team.division} Rep Hockey Analytics`;
             document.getElementById('team-title').innerText = team.team_name;
-
-            // Calculate overall record across all games
-            let totalW = 0, totalL = 0, totalT = 0;
-            const completedGames = (team.games || []).filter(g => g.status === 'final');
-            completedGames.forEach(g => {
-                if (g.result === 'W') totalW++;
-                else if (g.result === 'L') totalL++;
-                else if (g.result === 'T') totalT++;
-            });
-
-            if (completedGames.length === 0) {
-                totalW = team.w || 0;
-                totalL = team.l || 0;
-                totalT = team.t || 0;
-            }
-
-            const calculatedGp = completedGames.length > 0 ? completedGames.length : (team.gp || 0);
-            document.getElementById('tracked-record-pill').innerText = `${totalW}W - ${totalL}L - ${totalT}T`;
+            document.getElementById('tracked-record-pill').innerText = `${team.w}W - ${team.l}L - ${team.t}T`;
 
             // Contender badge
             const hotBadge = document.getElementById('hot-badge');
@@ -1018,7 +1003,7 @@
             }
             mhrData = mhrData || {};
 
-            document.getElementById('perf-gp').innerText = calculatedGp;
+            document.getElementById('perf-gp').innerText = team.gp || 0;
 
             let rankVal = mhrData.mhr_rank;
             if ((!rankVal || String(rankVal).toLowerCase() === 'n/a' || String(rankVal) === '0') && parseFloat(mhrData.mhr_rating || 0) > 0) {
@@ -1062,7 +1047,6 @@
                 sosEl.className = "text-xl sm:text-2xl font-mono font-bold text-slate-500";
             }
 
-            // Comparison cards
             document.getElementById('perf-mhr-record').innerText = mhrData.mhr_record || '-';
             const mhrDiffEl = document.getElementById('perf-mhr-diff');
             const agdVal = parseFloat(mhrData.mhr_agd || 0);
@@ -1073,12 +1057,12 @@
                 mhrDiffEl.innerText = "-";
             }
 
-            document.getElementById('perf-tracked-record').innerText = `${totalW}-${totalL}-${totalT}`;
+            document.getElementById('perf-tracked-record').innerText = `${team.w}-${team.l}-${team.t}`;
             const trackedDiffEl = document.getElementById('perf-tracked-diff');
             trackedDiffEl.innerText = team.diff >= 0 ? `+${team.diff}` : `${team.diff}`;
             trackedDiffEl.className = `text-base sm:text-xl font-mono font-black ${team.diff >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
 
-            // Efficiency Gauges & Metrics
+            // Efficiency Gauges & Metrics (Now correctly driven by all games)
             const allDivTeams = Object.values(divisionPayload);
             const totalTeamsInDivision = allDivTeams.length;
             document.querySelectorAll('.gauge-total-teams-label').forEach(el => el.innerText = totalTeamsInDivision);
@@ -1145,7 +1129,7 @@
 
             const ppPct = ppo > 0 ? ((ppg / ppo) * 100).toFixed(1) : "0.0";
             const pkKilled = Math.max(0, ppoa - ppga);
-            const pkPct = ppoa > 0 ? ((pkKilled / ppoa) * 100).toFixed(1) : (calculatedGp > 0 ? "100.0" : "0.0");
+            const pkPct = ppoa > 0 ? ((pkKilled / ppoa) * 100).toFixed(1) : (team.gp > 0 ? "100.0" : "0.0");
 
             const elPpPct = document.getElementById('spec-pp-pct');
             const elPkPct = document.getElementById('spec-pk-pct');
@@ -1208,7 +1192,7 @@
             document.getElementById('spec-shga-rank').innerText = `#${shgaRank} of ${totalTeamsInDivision}`;
 
             // =========================================================================
-            // 🎯 IMPROVEMENT #2: SORT SKATERS BY POINTS -> GOALS -> GP -> NAME
+            // 🎯 TEAM SKATERS (SORTED BY POINTS -> GOALS -> GP -> NAME)
             // =========================================================================
             const uniqueSkaters = [];
             const seenSkaterKeys = new Set();
@@ -1221,22 +1205,18 @@
             });
 
             const sortedSkaters = uniqueSkaters.sort((a, b) => {
-                // 1. Points (descending)
                 const ptsA = Number(a.total_pts ?? a.pts ?? 0);
                 const ptsB = Number(b.total_pts ?? b.pts ?? 0);
                 if (ptsB !== ptsA) return ptsB - ptsA;
 
-                // 2. Goals (descending)
                 const gA = Number(a.total_g ?? a.g ?? 0);
                 const gB = Number(b.total_g ?? b.g ?? 0);
                 if (gB !== gA) return gB - gA;
 
-                // 3. Games Played (descending)
                 const gpA = Number(a.total_gp ?? a.gp ?? 0);
                 const gpB = Number(b.total_gp ?? b.gp ?? 0);
                 if (gpB !== gpA) return gpB - gpA;
 
-                // 4. Player Name (alphabetical)
                 return String(a.name || '').localeCompare(String(b.name || ''));
             });
 
@@ -1257,9 +1237,6 @@
                     (p.sources || []).forEach((s, sIdx) => {
                         const uniqueSourceRowId = `${uniqueId}-source-${sIdx}`;
                         
-                        // =========================================================================
-                        // 🎯 IMPROVEMENT #3: POPULATE DETAILED GAME LOG FOR EACH SOURCE
-                        // =========================================================================
                         let displayGames = [];
                         if (Array.isArray(s.game_logs) && s.game_logs.length > 0) {
                             displayGames = [...s.game_logs];
@@ -1286,8 +1263,7 @@
                                     g: '—',
                                     a: '—',
                                     pts: '—',
-                                    pim: '—',
-                                    is_aggregate: true
+                                    pim: '—'
                                 });
                             }
                         });
@@ -1416,7 +1392,7 @@
             }
 
             // =========================================================================
-            // 🧤 TOP 2 GOALIES (IMPROVEMENT #1: FIXED GAA LOGIC)
+            // 🧤 TOP 2 GOALIES (GAA = GA / GP)
             // =========================================================================
             const uniqueGoalies = [];
             const seenGoalieKeys = new Set();
@@ -1446,7 +1422,6 @@
                     const gp = g.total_gp ?? g.gp ?? 0;
                     const ga = g.total_ga ?? g.ga ?? 0;
                     
-                    // Fix #1: True Goals Against Average per Game (GA / GP)
                     const gaa = gp > 0 ? (ga / gp).toFixed(2) : Number(g.total_gaa || 0).toFixed(2);
                     const so = g.total_so ?? g.so ?? 0;
                     const rec = (g.total_w !== undefined) ? `${g.total_w}-${g.total_l}-${g.total_t}` : (g.record || '-');
@@ -1627,7 +1602,7 @@
             }
 
             // =========================================================================
-            // 📋 IMPROVEMENT #2: FULL CHRONOLOGICAL SCHEDULE & GAME LOG TABLE
+            // 📋 FULL CHRONOLOGICAL SCHEDULE & GAME LOG TABLE
             // =========================================================================
             document.getElementById('all-games-count-badge').innerText = `${sortedGames.length} Total Games (${completedGamesList.length} Final)`;
             const allGamesTbody = document.getElementById('all-games-tbody');
