@@ -328,11 +328,11 @@
                 </div>
             </div>
 
-            <!-- 5. Top 15 Skaters (with Nested Interactive Source Game Logs) -->
+            <!-- 5. Team Skaters Ranked by PTS (Improvement #2: Points, Goals, GP, Name) -->
             <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
                 <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60 flex items-center justify-between">
                     <div>
-                        <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🎯 Team Skaters (Top 15 by Games Played)</h3>
+                        <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🎯 Team Skaters (Ranked by PTS)</h3>
                         <p class="text-[11px] font-mono text-slate-400 mt-0.5">Click player to expand event sources, then click any source to view game-by-game stats.</p>
                     </div>
                     <span id="skater-count-badge" class="text-[10px] sm:text-xs font-mono text-slate-400 font-bold uppercase"></span>
@@ -355,7 +355,7 @@
                 </div>
             </div>
 
-            <!-- 6. Top 2 Netminders (with Nested Interactive Source Game Logs) -->
+            <!-- 6. Top 2 Netminders (Improvement #1: Fixed GAA formula) -->
             <div class="bg-eagles-navy rounded-2xl border border-slate-800 overflow-hidden shadow-2xl text-white">
                 <div class="p-4 sm:p-5 border-b border-slate-800 bg-slate-950/60">
                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-widest text-yellow-400 drop-shadow">🧤 Team Netminders (Top 2 by Games Played)</h3>
@@ -439,7 +439,6 @@
         let hotTeamsDatabaseMap = {};
         let activeCohort = "U11";
 
-        const clean_name = name => ' '.join(str(name || "").split()).trim();
         const cleanKey = str => String(str || "").toUpperCase().replace(/[^A-Z0-9]/g, '');
         const isBurlingtonEagles = name => {
             const c = cleanKey(name);
@@ -731,7 +730,7 @@
         }
 
         // =========================================================================
-        // 📝 IMPROVEMENT #3: MANUAL GAMESHEETS INTEGRATION ENGINE
+        // 📝 MANUAL GAMESHEETS INTEGRATION ENGINE
         // =========================================================================
         function integrateManualGames() {
             if (!Array.isArray(manualGamesData) || manualGamesData.length === 0) return;
@@ -881,9 +880,8 @@
                     goalie.total_l += l;
                     goalie.total_t += t;
 
-                    if (goalie.total_min > 0) {
-                        goalie.total_gaa = Number(((goalie.total_ga * 45.0) / goalie.total_min).toFixed(2));
-                    }
+                    // Fix #1: Calculate GAA purely as GA / GP
+                    goalie.total_gaa = goalie.total_gp > 0 ? Number((goalie.total_ga / goalie.total_gp).toFixed(2)) : 0.0;
 
                     const srcName = mg.source_name || "Exhibition (Paper Sheet)";
                     let gkSrc = goalie.sources.find(s => cleanKey(s.source_name) === cleanKey(srcName));
@@ -906,9 +904,7 @@
                     gkSrc.w += w;
                     gkSrc.l += l;
                     gkSrc.t += t;
-                    if (gkSrc.min > 0) {
-                        gkSrc.gaa = Number(((gkSrc.ga * 45.0) / gkSrc.min).toFixed(2));
-                    }
+                    gkSrc.gaa = gkSrc.gp > 0 ? Number((gkSrc.ga / gkSrc.gp).toFixed(2)) : 0.0;
                     gkSrc.game_logs.push({
                         date: mg.date,
                         opponent: mg.opponent,
@@ -1212,7 +1208,7 @@
             document.getElementById('spec-shga-rank').innerText = `#${shgaRank} of ${totalTeamsInDivision}`;
 
             // =========================================================================
-            // 🎯 IMPROVEMENT #1: TOP 15 SKATERS WITH NESTED SOURCE GAME LOGS
+            // 🎯 IMPROVEMENT #2: SORT SKATERS BY POINTS -> GOALS -> GP -> NAME
             // =========================================================================
             const uniqueSkaters = [];
             const seenSkaterKeys = new Set();
@@ -1225,16 +1221,26 @@
             });
 
             const sortedSkaters = uniqueSkaters.sort((a, b) => {
-                const gpA = Number(a.total_gp ?? a.gp ?? 0);
-                const gpB = Number(b.total_gp ?? b.gp ?? 0);
-                if (gpB !== gpA) return gpB - gpA;
+                // 1. Points (descending)
                 const ptsA = Number(a.total_pts ?? a.pts ?? 0);
                 const ptsB = Number(b.total_pts ?? b.pts ?? 0);
                 if (ptsB !== ptsA) return ptsB - ptsA;
-                return String(a.name || '').localeCompare(String(b.name || ''));
-            }).slice(0, 15);
 
-            document.getElementById('skater-count-badge').innerText = `${sortedSkaters.length} Skaters (${uniqueSkaters.length} Tracked)`;
+                // 2. Goals (descending)
+                const gA = Number(a.total_g ?? a.g ?? 0);
+                const gB = Number(b.total_g ?? b.g ?? 0);
+                if (gB !== gA) return gB - gA;
+
+                // 3. Games Played (descending)
+                const gpA = Number(a.total_gp ?? a.gp ?? 0);
+                const gpB = Number(b.total_gp ?? b.gp ?? 0);
+                if (gpB !== gpA) return gpB - gpA;
+
+                // 4. Player Name (alphabetical)
+                return String(a.name || '').localeCompare(String(b.name || ''));
+            });
+
+            document.getElementById('skater-count-badge').innerText = `${sortedSkaters.length} Skaters Ranked`;
             const rosterTbody = document.getElementById('roster-tbody');
             rosterTbody.innerHTML = "";
 
@@ -1250,18 +1256,51 @@
                     let sourcesHtml = "";
                     (p.sources || []).forEach((s, sIdx) => {
                         const uniqueSourceRowId = `${uniqueId}-source-${sIdx}`;
-                        const hasLogs = Array.isArray(s.game_logs) && s.game_logs.length > 0;
-                        const logCountBadge = hasLogs 
-                            ? `<span class="text-yellow-400 font-bold bg-yellow-950/80 px-1.5 py-0.5 rounded border border-yellow-700/60 text-[10px]">▼ ${s.game_logs.length} Game${s.game_logs.length === 1 ? '' : 's'}</span>`
-                            : `<span class="text-slate-400 font-mono text-[10px]">Total Only</span>`;
+                        
+                        // =========================================================================
+                        // 🎯 IMPROVEMENT #3: POPULATE DETAILED GAME LOG FOR EACH SOURCE
+                        // =========================================================================
+                        let displayGames = [];
+                        if (Array.isArray(s.game_logs) && s.game_logs.length > 0) {
+                            displayGames = [...s.game_logs];
+                        }
+
+                        // Also find any games the Eagles played in this event
+                        const matchingTeamGames = (team.games || []).filter(g => 
+                            (cleanKey(g.source_name) === cleanKey(s.source_name) || (g.source_id && String(g.source_id) === String(s.source_id))) &&
+                            g.status === 'final'
+                        );
+
+                        matchingTeamGames.forEach(tg => {
+                            const alreadyLogged = displayGames.some(dg => 
+                                (dg.date && tg.date && dg.date === tg.date) ||
+                                (dg.opponent && tg.opponent && cleanKey(dg.opponent) === cleanKey(tg.opponent))
+                            );
+                            if (!alreadyLogged) {
+                                displayGames.push({
+                                    date: tg.date,
+                                    opponent: tg.opponent,
+                                    is_home: tg.is_home,
+                                    score_str: tg.score_str,
+                                    result: tg.result,
+                                    g: '—',
+                                    a: '—',
+                                    pts: '—',
+                                    pim: '—',
+                                    is_aggregate: true
+                                });
+                            }
+                        });
+
+                        const logCountBadge = `<span class="text-yellow-400 font-bold bg-yellow-950/80 px-2 py-0.5 rounded border border-yellow-700/60 text-[10px] hover:bg-yellow-900 transition-colors">▼ View Games (${displayGames.length})</span>`;
 
                         let gameLogInnerHtml = "";
-                        if (hasLogs) {
+                        if (displayGames.length > 0) {
                             gameLogInnerHtml = `
-                                <div class="overflow-x-auto rounded-lg border border-slate-700/70 bg-slate-900/90 p-2">
+                                <div class="overflow-x-auto rounded-lg border border-slate-700/70 bg-slate-900/95 p-2.5">
                                     <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
                                         <thead>
-                                            <tr class="text-[9px] text-slate-400 uppercase tracking-widest border-b border-slate-700 pb-1 font-black">
+                                            <tr class="text-[9px] text-slate-400 uppercase tracking-widest border-b border-slate-700 pb-1.5 font-black">
                                                 <th class="py-1 px-2">Date</th>
                                                 <th class="py-1 px-2">Matchup / Opponent</th>
                                                 <th class="py-1 px-2 text-center">Score</th>
@@ -1273,54 +1312,61 @@
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-slate-800 text-[11px] text-slate-200">
-                                            ${s.game_logs.map(gl => `
+                                            ${displayGames.map(gl => `
                                                 <tr class="hover:bg-slate-800/50">
                                                     <td class="py-1 px-2 text-slate-400 font-bold">${gl.date || '-'}</td>
                                                     <td class="py-1 px-2 font-bold uppercase"><span class="text-slate-500 mr-1">${gl.is_home ? 'vs' : '@'}</span>${gl.opponent || 'Opponent'}</td>
-                                                    <td class="py-1 px-2 text-center">${gl.score_str || '-'}</td>
+                                                    <td class="py-1 px-2 text-center font-bold">${gl.score_str || '-'}</td>
                                                     <td class="py-1 px-2 text-center font-black ${gl.result === 'W' ? 'text-emerald-400' : (gl.result === 'L' ? 'text-rose-400' : 'text-amber-400')}">${gl.result || '-'}</td>
-                                                    <td class="py-1 px-2 text-center font-bold text-yellow-400">${gl.g ?? 0}</td>
-                                                    <td class="py-1 px-2 text-center text-slate-300">${gl.a ?? 0}</td>
-                                                    <td class="py-1 px-2 text-center font-black text-white">${gl.pts ?? ((gl.g ?? 0) + (gl.a ?? 0))}</td>
-                                                    <td class="py-1 px-2 text-center text-slate-400">${gl.pim ?? 0}</td>
+                                                    <td class="py-1 px-2 text-center font-bold text-yellow-400">${gl.g}</td>
+                                                    <td class="py-1 px-2 text-center text-slate-300">${gl.a}</td>
+                                                    <td class="py-1 px-2 text-center font-black text-white">${gl.pts}</td>
+                                                    <td class="py-1 px-2 text-center text-slate-400">${gl.pim}</td>
                                                 </tr>
                                             `).join('')}
                                         </tbody>
+                                        <tfoot>
+                                            <tr class="border-t-2 border-slate-700 font-black text-[11px] text-yellow-400 bg-slate-950/40">
+                                                <td colspan="4" class="py-1.5 px-2 uppercase">Event Total (${s.source_name}):</td>
+                                                <td class="py-1.5 px-2 text-center text-yellow-400 font-bold">${s.g}</td>
+                                                <td class="py-1.5 px-2 text-center text-slate-300 font-bold">${s.a}</td>
+                                                <td class="py-1.5 px-2 text-center text-white font-black">${s.pts}</td>
+                                                <td class="py-1.5 px-2 text-center text-slate-400">${s.pim}</td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             `;
                         } else {
                             gameLogInnerHtml = `
                                 <div class="py-2.5 px-3 text-center text-xs font-mono text-slate-400 bg-slate-900/60 rounded-lg border border-slate-800">
-                                    <span class="text-yellow-400 font-bold block mb-0.5">ℹ️ GameSheet Cumulative Event Record</span>
-                                    <span>GameSheet recorded aggregate event totals (${s.gp} GP, ${s.g}G, ${s.a}A, ${s.pts} PTS).</span>
-                                    <span class="block text-[10px] text-slate-500 mt-0.5">Individual game box scores can be logged into <code class="text-yellow-300">manual_games.json</code>.</span>
+                                    <span>Recorded event totals: ${s.gp} GP, ${s.g}G, ${s.a}A, ${s.pts} PTS.</span>
                                 </div>
                             `;
                         }
 
                         sourcesHtml += `
                             <tr class="hover:bg-slate-800/70 cursor-pointer transition-colors" onclick="event.stopPropagation(); toggleRow('${uniqueSourceRowId}')">
-                                <td class="py-1.5 px-3 font-sans font-extrabold text-slate-200 uppercase">
+                                <td class="py-2 px-3 font-sans font-extrabold text-slate-200 uppercase">
                                     <div class="flex items-center space-x-1.5">
-                                        <span class="text-yellow-400 text-[10px]">▼</span>
+                                        <span class="text-yellow-400 text-[10px]">📁</span>
                                         <span>${s.source_name}</span>
                                     </div>
                                 </td>
-                                <td class="py-1.5 px-3 text-center">
+                                <td class="py-2 px-3 text-center">
                                     <span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : (s.source_type === 'paper' ? 'text-yellow-400 bg-yellow-950/40' : 'text-blue-400 bg-blue-950/40'))}">
                                         ${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : (s.source_type === 'paper' ? 'PAPER' : 'LEAG'))}
                                     </span>
                                 </td>
-                                <td class="py-1.5 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
-                                <td class="py-1.5 px-3 text-center">${s.g}</td>
-                                <td class="py-1.5 px-3 text-center">${s.a}</td>
-                                <td class="py-1.5 px-3 text-center font-bold text-white">${s.pts}</td>
-                                <td class="py-1.5 px-3 text-center text-slate-400">${s.pim}</td>
-                                <td class="py-1.5 px-3 text-center">${logCountBadge}</td>
+                                <td class="py-2 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                <td class="py-2 px-3 text-center">${s.g}</td>
+                                <td class="py-2 px-3 text-center">${s.a}</td>
+                                <td class="py-2 px-3 text-center font-bold text-white">${s.pts}</td>
+                                <td class="py-2 px-3 text-center text-slate-400">${s.pim}</td>
+                                <td class="py-2 px-3 text-center">${logCountBadge}</td>
                             </tr>
                             <tr id="${uniqueSourceRowId}" class="hidden bg-slate-900/95">
-                                <td colspan="8" class="p-2.5 sm:p-3 bg-slate-950/90">
+                                <td colspan="8" class="p-2 sm:p-3 bg-slate-950/90">
                                     ${gameLogInnerHtml}
                                 </td>
                             </tr>
@@ -1332,7 +1378,7 @@
                             <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${p.jersey || '-'}</td>
                             <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
                                 <span class="truncate max-w-[150px] sm:max-w-xs">${p.name}</span>
-                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ View Logs</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ View Game Logs</span>
                             </td>
                             <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${gp}</td>
                             <td class="py-2.5 px-3 text-center text-slate-300 font-mono">${g}</td>
@@ -1370,7 +1416,7 @@
             }
 
             // =========================================================================
-            // 🧤 TOP 2 GOALIES WITH NESTED SOURCE GAME LOGS
+            // 🧤 TOP 2 GOALIES (IMPROVEMENT #1: FIXED GAA LOGIC)
             // =========================================================================
             const uniqueGoalies = [];
             const seenGoalieKeys = new Set();
@@ -1386,8 +1432,8 @@
                 const gpA = Number(a.total_gp ?? a.gp ?? 0);
                 const gpB = Number(b.total_gp ?? b.gp ?? 0);
                 if (gpB !== gpA) return gpB - gpA;
-                const gaaA = Number(a.total_gaa ?? a.gaa ?? 99);
-                const gaaB = Number(b.total_gaa ?? b.gaa ?? 99);
+                const gaaA = a.total_gp > 0 ? (a.total_ga / a.total_gp) : 99;
+                const gaaB = b.total_gp > 0 ? (b.total_ga / b.total_gp) : 99;
                 return gaaA - gaaB;
             }).slice(0, 2);
 
@@ -1399,25 +1445,28 @@
                     const uniqueId = `goalie-breakdown-${idx}`;
                     const gp = g.total_gp ?? g.gp ?? 0;
                     const ga = g.total_ga ?? g.ga ?? 0;
-                    const gaa = Number(g.total_gaa ?? g.gaa ?? 0).toFixed(2);
+                    
+                    // Fix #1: True Goals Against Average per Game (GA / GP)
+                    const gaa = gp > 0 ? (ga / gp).toFixed(2) : Number(g.total_gaa || 0).toFixed(2);
                     const so = g.total_so ?? g.so ?? 0;
                     const rec = (g.total_w !== undefined) ? `${g.total_w}-${g.total_l}-${g.total_t}` : (g.record || '-');
 
                     let goalieSourcesHtml = "";
                     (g.sources || []).forEach((s, sIdx) => {
                         const uniqueSourceRowId = `${uniqueId}-source-${sIdx}`;
+                        const srcGaa = s.gp > 0 ? (s.ga / s.gp).toFixed(2) : "0.00";
                         const hasLogs = Array.isArray(s.game_logs) && s.game_logs.length > 0;
                         const logCountBadge = hasLogs 
-                            ? `<span class="text-yellow-400 font-bold bg-yellow-950/80 px-1.5 py-0.5 rounded border border-yellow-700/60 text-[10px]">▼ ${s.game_logs.length} Game${s.game_logs.length === 1 ? '' : 's'}</span>`
+                            ? `<span class="text-yellow-400 font-bold bg-yellow-950/80 px-2 py-0.5 rounded border border-yellow-700/60 text-[10px]">▼ ${s.game_logs.length} Game${s.game_logs.length === 1 ? '' : 's'}</span>`
                             : `<span class="text-slate-400 font-mono text-[10px]">Total Only</span>`;
 
                         let gameLogInnerHtml = "";
                         if (hasLogs) {
                             gameLogInnerHtml = `
-                                <div class="overflow-x-auto rounded-lg border border-slate-700/70 bg-slate-900/90 p-2">
+                                <div class="overflow-x-auto rounded-lg border border-slate-700/70 bg-slate-900/95 p-2.5">
                                     <table class="w-full text-left border-collapse text-xs font-mono whitespace-nowrap">
                                         <thead>
-                                            <tr class="text-[9px] text-slate-400 uppercase tracking-widest border-b border-slate-700 pb-1 font-black">
+                                            <tr class="text-[9px] text-slate-400 uppercase tracking-widest border-b border-slate-700 pb-1.5 font-black">
                                                 <th class="py-1 px-2">Date</th>
                                                 <th class="py-1 px-2">Matchup / Opponent</th>
                                                 <th class="py-1 px-2 text-center">Score</th>
@@ -1432,7 +1481,7 @@
                                                 <tr class="hover:bg-slate-800/50">
                                                     <td class="py-1 px-2 text-slate-400 font-bold">${gl.date || '-'}</td>
                                                     <td class="py-1 px-2 font-bold uppercase"><span class="text-slate-500 mr-1">${gl.is_home ? 'vs' : '@'}</span>${gl.opponent || 'Opponent'}</td>
-                                                    <td class="py-1 px-2 text-center">${gl.score_str || '-'}</td>
+                                                    <td class="py-1 px-2 text-center font-bold">${gl.score_str || '-'}</td>
                                                     <td class="py-1 px-2 text-center font-bold text-rose-400">${gl.ga ?? 0}</td>
                                                     <td class="py-1 px-2 text-center text-slate-300">${gl.min ?? 45}</td>
                                                     <td class="py-1 px-2 text-center text-emerald-400">${gl.so ?? 0}</td>
@@ -1440,39 +1489,47 @@
                                                 </tr>
                                             `).join('')}
                                         </tbody>
+                                        <tfoot>
+                                            <tr class="border-t-2 border-slate-700 font-black text-[11px] text-yellow-400 bg-slate-950/40">
+                                                <td colspan="3" class="py-1.5 px-2 uppercase">Source Total (${s.source_name}):</td>
+                                                <td class="py-1.5 px-2 text-center text-rose-400 font-bold">${s.ga}</td>
+                                                <td class="py-1.5 px-2 text-center text-slate-300">${s.min || (s.gp * 45)}</td>
+                                                <td class="py-1.5 px-2 text-center text-emerald-400">${s.so}</td>
+                                                <td class="py-1.5 px-2 text-center text-white">${s.w}-${s.l}-${s.t}</td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             `;
                         } else {
                             gameLogInnerHtml = `
-                                <div class="py-2 px-3 text-center text-xs font-mono text-slate-400 bg-slate-900/60 rounded-lg border border-slate-800">
-                                    <span class="text-yellow-400 font-bold block mb-0.5">ℹ️ Cumulative Netminder Total</span>
-                                    <span>${s.gp} GP, ${s.ga} GA, ${parseFloat(s.gaa || 0).toFixed(2)} GAA, ${s.so || 0} SO.</span>
+                                <div class="py-2.5 px-3 text-center text-xs font-mono text-slate-400 bg-slate-900/60 rounded-lg border border-slate-800">
+                                    <span>Cumulative Event Statistics: ${s.gp} GP, ${s.ga} GA, ${srcGaa} GAA, ${s.so} SO.</span>
                                 </div>
                             `;
                         }
 
                         goalieSourcesHtml += `
                             <tr class="hover:bg-slate-800/70 cursor-pointer transition-colors" onclick="event.stopPropagation(); toggleRow('${uniqueSourceRowId}')">
-                                <td class="py-1.5 px-3 font-sans font-extrabold text-slate-200 uppercase">
+                                <td class="py-2 px-3 font-sans font-extrabold text-slate-200 uppercase">
                                     <div class="flex items-center space-x-1.5">
-                                        <span class="text-yellow-400 text-[10px]">▼</span>
+                                        <span class="text-yellow-400 text-[10px]">📁</span>
                                         <span>${s.source_name}</span>
                                     </div>
                                 </td>
-                                <td class="py-1.5 px-3 text-center">
+                                <td class="py-2 px-3 text-center">
                                     <span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${s.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (String(s.source_name).toUpperCase().includes('EX') ? 'text-emerald-400 bg-emerald-950/40' : (s.source_type === 'paper' ? 'text-yellow-400 bg-yellow-950/40' : 'text-blue-400 bg-blue-950/40'))}">
                                         ${s.source_type === 'tournament' ? 'TOURN' : (String(s.source_name).toUpperCase().includes('EX') ? 'EXHIB' : (s.source_type === 'paper' ? 'PAPER' : 'LEAG'))}
                                     </span>
                                 </td>
-                                <td class="py-1.5 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
-                                <td class="py-1.5 px-3 text-center text-rose-400">${s.ga}</td>
-                                <td class="py-1.5 px-3 text-center font-black">${parseFloat(s.gaa || 0).toFixed(2)}</td>
-                                <td class="py-1.5 px-3 text-center text-emerald-400 font-bold">${s.so}</td>
-                                <td class="py-1.5 px-3 text-center">${logCountBadge}</td>
+                                <td class="py-2 px-3 text-center font-extrabold text-yellow-400">${s.gp}</td>
+                                <td class="py-2 px-3 text-center text-rose-400">${s.ga}</td>
+                                <td class="py-2 px-3 text-center font-black">${srcGaa}</td>
+                                <td class="py-2 px-3 text-center text-emerald-400 font-bold">${s.so}</td>
+                                <td class="py-2 px-3 text-center">${logCountBadge}</td>
                             </tr>
                             <tr id="${uniqueSourceRowId}" class="hidden bg-slate-900/95">
-                                <td colspan="7" class="p-2.5 sm:p-3 bg-slate-950/90">
+                                <td colspan="7" class="p-2 sm:p-3 bg-slate-950/90">
                                     ${gameLogInnerHtml}
                                 </td>
                             </tr>
@@ -1484,7 +1541,7 @@
                             <td class="py-2.5 px-3 text-center text-slate-400 font-mono">${g.jersey || '-'}</td>
                             <td class="py-2.5 px-4 font-black text-slate-100 flex items-center justify-between">
                                 <span class="truncate max-w-[150px] sm:max-w-xs">${g.name}</span>
-                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ View Logs</span>
+                                <span class="text-[10px] text-yellow-400/80 font-mono select-none">▸ View Game Logs</span>
                             </td>
                             <td class="py-2.5 px-3 text-center text-yellow-400 font-mono font-extrabold">${gp}</td>
                             <td class="py-2.5 px-3 text-center text-rose-400 font-mono font-extrabold">${ga}</td>
