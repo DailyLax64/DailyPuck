@@ -128,7 +128,7 @@ def fetch_json(url, max_retries=3):
 def fetch_paginated_roster(endpoint_name, s_id, s_name="", label="Roster"):
     """
     Fetches players or goalies in safe 1,000-record chunks with adaptive backoff
-    to eliminate HTTP 502 Bad Gateway timeouts on massive multi-division seasons like OMHA Exhibition.
+    to eliminate HTTP 502 Bad Gateway timeouts on massive seasons.
     """
     records = []
     offset = 0
@@ -155,7 +155,7 @@ def fetch_paginated_roster(endpoint_name, s_id, s_name="", label="Roster"):
                         chunk = data
                     else:
                         chunk = []
-                break  # Success
+                break
             except urllib.error.HTTPError as e:
                 print(f"   ⚠️ HTTP {e.code} on {label} offset {offset} (attempt {attempt+1}/{max_retries})")
                 if e.code in (502, 503, 504) and limit > 250:
@@ -181,8 +181,8 @@ def fetch_paginated_roster(endpoint_name, s_id, s_name="", label="Roster"):
 
 def parse_game_boxscore(g_data, is_home):
     """
-    Parses a GameSheet boxscore JSON to extract player and goalie statistics.
-    Handles pre-aggregated stats as well as discrete goals/penalties event logs.
+    Parses GameSheet box score payload from /useBoxScore/getGameStats
+    Extracts individual player goals, assists, penalty minutes, and goalie performance.
     """
     if not g_data:
         return {}, []
@@ -228,7 +228,7 @@ def parse_game_boxscore(g_data, is_home):
             "pim": pim
         }
 
-    # If stats were not provided directly on the player records, aggregate from game event lists
+    # If stats weren't pre-computed, extract from discrete scoring and penalty events
     if not stats_already_on_players:
         goals_events = root.get("goals") or []
         for goal in goals_events:
@@ -774,6 +774,9 @@ print(f"🎯 Found {len(eagles_target_games)} final game(s) involving the Burlin
 
 for idx, g in enumerate(eagles_target_games, 1):
     gid = g.get("game_id")
+    s_id = str(g.get("source_id", "")).strip()
+    s_name = g.get("source_name", "")
+    s_type = g.get("source_type", "league")
     cohort = g.get("division")
     age = cohort.split()[0]
     tier = cohort.split()[1]
@@ -781,21 +784,22 @@ for idx, g in enumerate(eagles_target_games, 1):
     eagles_canonical = "Burlington Eagles"
     opp_name = g.get("visitor_name") if is_eagles_home else g.get("home_name")
     date_str = g.get("date", "")
-    s_id = str(g.get("source_id", ""))
-    s_name = g.get("source_name", "")
-    s_type = g.get("source_type", "league")
 
     score_str = f"{g.get('home_goals', 0)} - {g.get('visitor_goals', 0)}" if is_eagles_home else f"{g.get('visitor_goals', 0)} - {g.get('home_goals', 0)}"
     result = g.get("home_result") if is_eagles_home else g.get("visitor_result")
 
-    print(f"   [{idx}/{len(eagles_target_games)}] Box Score Query: Game #{gid} ({date_str} vs {opp_name})...")
+    print(f"   [{idx}/{len(eagles_target_games)}] Box Score Query: Game #{gid} in season {s_id} ({date_str} vs {opp_name})...")
 
-    box_data = fetch_json(f"https://gamesheetstats.com/api/games/{gid}")
-    if not box_data:
-        box_data = fetch_json(f"https://gamesheetstats.com/api/game/{gid}")
+    # GameSheet's API endpoint for game boxscores
+    box_url = f"https://gamesheetstats.com/api/useBoxScore/getGameStats/{s_id}/games/{gid}"
+    box_data = fetch_json(box_url)
 
     if not box_data:
-        print(f"      ⚠️ No response received for game #{gid}.")
+        # Fallback to alternate route if season_id path varies
+        box_data = fetch_json(f"https://gamesheetstats.com/api/useBoxScore/{gid}")
+
+    if not box_data:
+        print(f"      ⚠️ No box score data received for game #{gid}.")
         continue
 
     skaters_stats, goalies_stats = parse_game_boxscore(box_data, is_home=is_eagles_home)
@@ -810,7 +814,6 @@ for idx, g in enumerate(eagles_target_games, 1):
                     break
 
         if not matched_skater:
-            # Create skater entry if they were not listed in the season leaderboard
             player_key = f"{sk_val['name']}_{eagles_canonical}_{age}".upper()
             matched_skater = {
                 "name": sk_val["name"],
@@ -829,7 +832,6 @@ for idx, g in enumerate(eagles_target_games, 1):
             }
             skaters_db[player_key] = matched_skater
 
-        # Find or create source entry
         src_entry = next((s for s in matched_skater["sources"] if str(s.get("source_id")) == s_id), None)
         if not src_entry:
             src_entry = next((s for s in matched_skater["sources"] if clean_key(s.get("source_name")) == clean_key(s_name)), None)
@@ -847,7 +849,6 @@ for idx, g in enumerate(eagles_target_games, 1):
         if "game_logs" not in src_entry:
             src_entry["game_logs"] = []
 
-        # Avoid duplicate logs for the same game
         if not any(log.get("game_id") == gid or (log.get("date") == date_str and log.get("opponent") == opp_name) for log in src_entry["game_logs"]):
             src_entry["game_logs"].append({
                 "game_id": gid,
