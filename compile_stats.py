@@ -90,12 +90,19 @@ else:
 def clean_name(name):
     return ' '.join(str(name or "").split()).strip()
 
+def clean_key(s):
+    return re.sub(r'[^A-Z0-9]', '', str(s or '').upper())
+
 def normalize(s):
     if not s:
         return ""
     s = str(s).upper()
     s = re.sub(r'[^A-Z0-9\s]', ' ', s)
     return ' '.join(s.split())
+
+def is_burlington_eagles(name):
+    c = clean_key(name)
+    return "BURLINGTON" in c and "EAGLES" in c
 
 def fetch_json(url, max_retries=3):
     """Fetches JSON with automatic retry on transient gateway errors."""
@@ -152,7 +159,6 @@ def fetch_paginated_roster(endpoint_name, s_id, s_name="", label="Roster"):
             except urllib.error.HTTPError as e:
                 print(f"   ⚠️ HTTP {e.code} on {label} offset {offset} (attempt {attempt+1}/{max_retries})")
                 if e.code in (502, 503, 504) and limit > 250:
-                    # Cut chunk size in half if server runs out of memory
                     limit = limit // 2
                     url = f"https://gamesheetstats.com/api/{endpoint_name}/standings/{s_id}?limit={limit}&offset={offset}"
                     req = urllib.request.Request(url, headers=headers)
@@ -172,6 +178,130 @@ def fetch_paginated_roster(endpoint_name, s_id, s_name="", label="Roster"):
         time.sleep(0.2)
 
     return records
+
+def parse_game_boxscore(g_data, is_home):
+    """
+    Parses a GameSheet boxscore JSON to extract player and goalie statistics.
+    Handles pre-aggregated stats as well as discrete goals/penalties event logs.
+    """
+    if not g_data:
+        return {}, []
+
+    root = g_data.get("data") if isinstance(g_data, dict) and "data" in g_data and isinstance(g_data["data"], dict) else g_data
+    if not isinstance(root, dict):
+        return {}, []
+
+    team_key = "home" if is_home else "visitor"
+    team_obj = root.get(team_key) or {}
+    team_id = team_obj.get("id") or team_obj.get("teamId")
+
+    players_list = team_obj.get("players") or team_obj.get("roster") or team_obj.get("skaters") or []
+    goalies_list = team_obj.get("goalies") or []
+
+    skater_stats = {}
+    stats_already_on_players = False
+
+    for p in players_list:
+        p_name = clean_name(f"{p.get('firstName', '')} {p.get('lastName', '')}") or clean_name(p.get("name") or p.get("title") or "")
+        if not p_name:
+            continue
+        p_id = p.get("id") or p.get("playerId")
+        jersey = str(p.get("jersey") or "")
+
+        st = p.get("stats") or {}
+        g = int(st.get("g") or st.get("goals") or 0)
+        a = int(st.get("a") or st.get("assists") or 0)
+        pts = int(st.get("pts") if st.get("pts") is not None else (g + a))
+        pim = int(st.get("pim") or st.get("penalties") or 0)
+
+        if "stats" in p and (g > 0 or a > 0 or pim > 0 or "g" in st or "goals" in st):
+            stats_already_on_players = True
+
+        key = clean_key(p_name)
+        skater_stats[key] = {
+            "name": p_name,
+            "id": p_id,
+            "jersey": jersey,
+            "g": g,
+            "a": a,
+            "pts": pts,
+            "pim": pim
+        }
+
+    # If stats were not provided directly on the player records, aggregate from game event lists
+    if not stats_already_on_players:
+        goals_events = root.get("goals") or []
+        for goal in goals_events:
+            g_team_id = goal.get("teamId") or goal.get("team_id")
+            if team_id and g_team_id and str(g_team_id) != str(team_id):
+                continue
+
+            scorer = goal.get("scoredBy") or goal.get("scorer") or goal.get("player") or {}
+            scorer_name = clean_name(f"{scorer.get('firstName', '')} {scorer.get('lastName', '')}") or clean_name(scorer.get("name") or scorer.get("title") or "")
+            if scorer_name:
+                s_key = clean_key(scorer_name)
+                if s_key not in skater_stats:
+                    skater_stats[s_key] = {"name": scorer_name, "id": scorer.get("id"), "jersey": str(scorer.get("jersey") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
+                skater_stats[s_key]["g"] += 1
+                skater_stats[s_key]["pts"] += 1
+
+            assists = goal.get("assists") or []
+            if isinstance(goal.get("assistedBy"), list):
+                assists = goal.get("assistedBy")
+            elif goal.get("assistedBy"):
+                assists = [goal.get("assistedBy")]
+            if goal.get("assist1"):
+                assists.append(goal.get("assist1"))
+            if goal.get("assist2"):
+                assists.append(goal.get("assist2"))
+
+            for ast in assists:
+                if not isinstance(ast, dict):
+                    continue
+                ast_name = clean_name(f"{ast.get('firstName', '')} {ast.get('lastName', '')}") or clean_name(ast.get("name") or ast.get("title") or "")
+                if ast_name:
+                    a_key = clean_key(ast_name)
+                    if a_key not in skater_stats:
+                        skater_stats[a_key] = {"name": ast_name, "id": ast.get("id"), "jersey": str(ast.get("jersey") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
+                    skater_stats[a_key]["a"] += 1
+                    skater_stats[a_key]["pts"] += 1
+
+        penalties_events = root.get("penalties") or []
+        for pen in penalties_events:
+            p_team_id = pen.get("teamId") or pen.get("team_id")
+            if team_id and p_team_id and str(p_team_id) != str(team_id):
+                continue
+            p_player = pen.get("player") or pen.get("penalizedPlayer") or {}
+            p_name = clean_name(f"{p_player.get('firstName', '')} {p_player.get('lastName', '')}") or clean_name(p_player.get("name") or p_player.get("title") or "")
+            mins = int(pen.get("minutes") or pen.get("pim") or 2)
+            if p_name:
+                p_key = clean_key(p_name)
+                if p_key not in skater_stats:
+                    skater_stats[p_key] = {"name": p_name, "id": p_player.get("id"), "jersey": str(p_player.get("jersey") or ""), "g": 0, "a": 0, "pts": 0, "pim": 0}
+                skater_stats[p_key]["pim"] += mins
+
+    goalie_stats = []
+    for gk in goalies_list:
+        gk_name = clean_name(f"{gk.get('firstName', '')} {gk.get('lastName', '')}") or clean_name(gk.get("name") or gk.get("title") or "")
+        if not gk_name:
+            continue
+        jersey = str(gk.get("jersey") or "")
+        st = gk.get("stats") or {}
+        ga = int(st.get("ga") or st.get("goalsAgainst") or 0)
+        mins = int(st.get("min") or st.get("minutes") or st.get("min_played") or 45)
+        so = int(st.get("so") or st.get("shutouts") or (1 if ga == 0 else 0))
+        decision = gk.get("decision") or st.get("decision") or ""
+
+        goalie_stats.append({
+            "name": gk_name,
+            "jersey": jersey,
+            "ga": ga,
+            "min": mins,
+            "so": so,
+            "decision": decision
+        })
+
+    return skater_stats, goalie_stats
 
 # 2. Load Master Whitelist, Sources, and Exceptions
 if not os.path.exists("master_teams.json"):
@@ -244,7 +374,6 @@ def check_team_exception(team_name, source_id):
     return None
 
 def resolve_master_team(team_name, div_title="", source_name="", forced_tier=None, source_id=None):
-    # Check exception rule first
     forced_cohort = check_team_exception(team_name, source_id)
     if forced_cohort:
         cohort = forced_cohort
@@ -475,7 +604,7 @@ for src in all_sources:
 
 all_compiled_games = sorted(list(games_dict.values()), key=lambda x: x["timestamp"] or x["date"])
 
-# 5. STAGE 3: INGEST SKATERS & GOALIES (PAGINATED CHUNK FETCHING)
+# 5. STAGE 3: INGEST SKATERS & GOALIES
 skaters_db = {}
 goalies_db = {}
 
@@ -537,7 +666,8 @@ for src in all_sources:
             skaters_db[player_key]["total_pim"] += pim
             skaters_db[player_key]["sources"].append({
                 "source_id": s_id, "source_name": s_name, "source_type": s_type,
-                "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim
+                "gp": gp, "g": g, "a": a, "pts": pts, "pim": pim,
+                "game_logs": []
             })
     print(f"   🧮 Summary: {mapped_sk} Skaters mapped into dashboard | {skipped_sk} skipped.")
     time.sleep(0.2)
@@ -620,12 +750,178 @@ for src in all_sources:
 
             goalies_db[goalie_key]["sources"].append({
                 "source_id": s_id, "source_name": s_name, "source_type": s_type,
-                "gp": gp, "ga": ga, "min": mins, "gaa": clean_gaa, "so": so, "w": w, "l": l, "t": t_val
+                "gp": gp, "ga": ga, "min": mins, "gaa": clean_gaa, "so": so, "w": w, "l": l, "t": t_val,
+                "game_logs": []
             })
     print(f"   🧮 Summary: {mapped_gk} Goalies mapped into dashboard | {skipped_gk} skipped.")
     time.sleep(0.2)
 
-# 6. EXPORT COMPILED STATS
+# 6. STAGE 4: INGEST INDIVIDUAL GAME BOX SCORES (U11 AA & U14 AA BURLINGTON EAGLES ONLY)
+print("\n" + "="*70)
+print("📥 Stage 4: Ingesting Game Box Scores (U11 AA & U14 AA Burlington Eagles Games)")
+print("="*70)
+
+eagles_target_games = []
+for g in all_compiled_games:
+    cohort = g.get("division")
+    if cohort in ["U11 AA", "U14 AA"] and g.get("status") == "final":
+        h_name = g.get("home_name", "")
+        v_name = g.get("visitor_name", "")
+        if is_burlington_eagles(h_name) or is_burlington_eagles(v_name):
+            eagles_target_games.append(g)
+
+print(f"🎯 Found {len(eagles_target_games)} final game(s) involving the Burlington Eagles to query for box scores.")
+
+for idx, g in enumerate(eagles_target_games, 1):
+    gid = g.get("game_id")
+    cohort = g.get("division")
+    age = cohort.split()[0]
+    tier = cohort.split()[1]
+    is_eagles_home = is_burlington_eagles(g.get("home_name"))
+    eagles_canonical = "Burlington Eagles"
+    opp_name = g.get("visitor_name") if is_eagles_home else g.get("home_name")
+    date_str = g.get("date", "")
+    s_id = str(g.get("source_id", ""))
+    s_name = g.get("source_name", "")
+    s_type = g.get("source_type", "league")
+
+    score_str = f"{g.get('home_goals', 0)} - {g.get('visitor_goals', 0)}" if is_eagles_home else f"{g.get('visitor_goals', 0)} - {g.get('home_goals', 0)}"
+    result = g.get("home_result") if is_eagles_home else g.get("visitor_result")
+
+    print(f"   [{idx}/{len(eagles_target_games)}] Box Score Query: Game #{gid} ({date_str} vs {opp_name})...")
+
+    box_data = fetch_json(f"https://gamesheetstats.com/api/games/{gid}")
+    if not box_data:
+        box_data = fetch_json(f"https://gamesheetstats.com/api/game/{gid}")
+
+    if not box_data:
+        print(f"      ⚠️ No response received for game #{gid}.")
+        continue
+
+    skaters_stats, goalies_stats = parse_game_boxscore(box_data, is_home=is_eagles_home)
+
+    # 1. Attach Skater Game Logs
+    for sk_key, sk_val in skaters_stats.items():
+        matched_skater = None
+        for p in skaters_db.values():
+            if p.get("team") == eagles_canonical and p.get("age") == age:
+                if clean_key(p.get("name")) == sk_key:
+                    matched_skater = p
+                    break
+
+        if not matched_skater:
+            # Create skater entry if they were not listed in the season leaderboard
+            player_key = f"{sk_val['name']}_{eagles_canonical}_{age}".upper()
+            matched_skater = {
+                "name": sk_val["name"],
+                "team": eagles_canonical,
+                "team_id": g.get("home_id") if is_eagles_home else g.get("visitor_id"),
+                "jersey": sk_val["jersey"],
+                "position": "F",
+                "age": age,
+                "tier": tier,
+                "total_gp": 0,
+                "total_g": 0,
+                "total_a": 0,
+                "total_pts": 0,
+                "total_pim": 0,
+                "sources": []
+            }
+            skaters_db[player_key] = matched_skater
+
+        # Find or create source entry
+        src_entry = next((s for s in matched_skater["sources"] if str(s.get("source_id")) == s_id), None)
+        if not src_entry:
+            src_entry = next((s for s in matched_skater["sources"] if clean_key(s.get("source_name")) == clean_key(s_name)), None)
+
+        if not src_entry:
+            src_entry = {
+                "source_id": s_id,
+                "source_name": s_name,
+                "source_type": s_type,
+                "gp": 0, "g": 0, "a": 0, "pts": 0, "pim": 0,
+                "game_logs": []
+            }
+            matched_skater["sources"].append(src_entry)
+
+        if "game_logs" not in src_entry:
+            src_entry["game_logs"] = []
+
+        # Avoid duplicate logs for the same game
+        if not any(log.get("game_id") == gid or (log.get("date") == date_str and log.get("opponent") == opp_name) for log in src_entry["game_logs"]):
+            src_entry["game_logs"].append({
+                "game_id": gid,
+                "date": date_str,
+                "opponent": opp_name,
+                "is_home": is_eagles_home,
+                "score_str": score_str,
+                "result": result,
+                "g": sk_val["g"],
+                "a": sk_val["a"],
+                "pts": sk_val["pts"],
+                "pim": sk_val["pim"]
+            })
+
+    # 2. Attach Goalie Game Logs
+    for gk_val in goalies_stats:
+        gk_key = clean_key(gk_val["name"])
+        matched_goalie = None
+        for g_entry in goalies_db.values():
+            if g_entry.get("team") == eagles_canonical and g_entry.get("age") == age:
+                if clean_key(g_entry.get("name")) == gk_key:
+                    matched_goalie = g_entry
+                    break
+
+        if not matched_goalie:
+            goalie_key = f"{gk_val['name']}_{eagles_canonical}_{age}".upper()
+            matched_goalie = {
+                "name": gk_val["name"],
+                "team": eagles_canonical,
+                "team_id": g.get("home_id") if is_eagles_home else g.get("visitor_id"),
+                "jersey": gk_val["jersey"],
+                "position": "G",
+                "age": age,
+                "tier": tier,
+                "total_gp": 0, "total_ga": 0, "total_min": 0, "total_gaa": 0.0, "total_so": 0,
+                "total_w": 0, "total_l": 0, "total_t": 0,
+                "sources": []
+            }
+            goalies_db[goalie_key] = matched_goalie
+
+        src_entry = next((s for s in matched_goalie["sources"] if str(s.get("source_id")) == s_id), None)
+        if not src_entry:
+            src_entry = next((s for s in matched_goalie["sources"] if clean_key(s.get("source_name")) == clean_key(s_name)), None)
+
+        if not src_entry:
+            src_entry = {
+                "source_id": s_id,
+                "source_name": s_name,
+                "source_type": s_type,
+                "gp": 0, "ga": 0, "min": 0, "gaa": 0.0, "so": 0, "w": 0, "l": 0, "t": 0,
+                "game_logs": []
+            }
+            matched_goalie["sources"].append(src_entry)
+
+        if "game_logs" not in src_entry:
+            src_entry["game_logs"] = []
+
+        if not any(log.get("game_id") == gid or (log.get("date") == date_str and log.get("opponent") == opp_name) for log in src_entry["game_logs"]):
+            src_entry["game_logs"].append({
+                "game_id": gid,
+                "date": date_str,
+                "opponent": opp_name,
+                "is_home": is_eagles_home,
+                "score_str": score_str,
+                "result": result,
+                "ga": gk_val["ga"],
+                "min": gk_val["min"],
+                "so": gk_val["so"],
+                "decision": gk_val["decision"] or result
+            })
+
+    time.sleep(0.2)
+
+# 7. EXPORT COMPILED STATS
 output_data = {
     "generated_at": datetime.now(timezone.utc).isoformat(),
     "total_skaters": len(skaters_db),
@@ -652,7 +948,7 @@ print(f"📋 Games Tracked:     {len(all_compiled_games)}")
 print(f"💾 Saved to {output_path}")
 print("="*70)
 
-# 7. UNMAPPED AUDIT REPORT
+# 8. UNMAPPED AUDIT REPORT
 print("\n📋 UNMAPPED TEAM AUDIT LOG")
 print("-" * 70)
 if unmapped_audit:
