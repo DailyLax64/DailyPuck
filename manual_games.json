@@ -1,0 +1,77 @@
+[
+  {
+    "cohort": "U11 AA",
+    "date": "2026-10-04",
+    "time": "1:15 PM",
+    "opponent": "Mississauga Beast",
+    "location": "Cwench Arena",
+    "is_home": false,
+    "team_goals": 6,
+    "opponent_goals": 3,
+    "result": "W",
+    "source_name": "Exhibition (Paper Sheet)",
+    "source_type": "paper",
+    "status": "final",
+    "skaters": [
+      {
+        "name": "RHYS MERRICK",
+        "jersey": "16",
+        "g": 2,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "CHARLIE GRUSCYK",
+        "jersey": "4",
+        "g": 1,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JACKSON PORTER",
+        "jersey": "17",
+        "g": 1,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "JACKSON RAND",
+        "jersey": "77",
+        "g": 1,
+        "a": 0,
+        "pim": 2
+      },
+      {
+        "name": "RORY PTASZEK-ZANINI",
+        "jersey": "9",
+        "g": 1,
+        "a": 0,
+        "pim": 0
+      },
+      {
+        "name": "CALVIN SMITKO",
+        "jersey": "22",
+        "g": 0,
+        "a": 0,
+        "pim": 2
+      },
+      {
+        "name": "BENNETT MONTAGUE",
+        "jersey": "12",
+        "g": 0,
+        "a": 0,
+        "pim": 2
+      }
+    ],
+    "goalies": [
+      {
+        "name": "JAXSON WARREN",
+        "jersey": "41",
+        "ga": 3,
+        "min": 45,
+        "so": 0,
+        "decision": "W"
+      }
+    ]
+  }
+]
