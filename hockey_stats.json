@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-13T14:43:21.548158+00:00",
-  "total_skaters": 3009,
-  "total_goalies": 402,
+  "generated_at": "2026-10-13T18:15:33.586744+00:00",
+  "total_skaters": 3021,
+  "total_goalies": 403,
   "total_standings_rows": 419,
   "total_games": 703,
   "skaters": [
@@ -68053,6 +68053,17 @@
           "pts": 1,
           "pim": 0,
           "game_logs": []
+        },
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
         }
       ]
     },
@@ -91153,6 +91164,17 @@
           "pts": 0,
           "pim": 0,
           "game_logs": []
+        },
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
         }
       ]
     },
@@ -93394,6 +93416,33 @@
       ]
     },
     {
+      "name": "JAXSON O\u2019SULLIVAN",
+      "team": "Cumberland Jr Grads",
+      "team_id": 533187,
+      "jersey": "28",
+      "position": "F",
+      "age": "U11",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
       "name": "ELLYSE PARDY",
       "team": "Upper Ottawa Valley Aces",
       "team_id": 533215,
@@ -93547,6 +93596,17 @@
           "source_name": "HEO AA-A",
           "source_type": "league",
           "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15454",
+          "source_name": "HEO AA-A",
+          "source_type": "league",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -101210,6 +101270,55 @@
       ]
     },
     {
+      "name": "NATHAN ANDERSON",
+      "team": "Norfolk Knights",
+      "team_id": 537296,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15996",
+          "source_name": "Newmarket AA",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
       "name": "CONNOR BALL",
       "team": "Milton Winterhawks",
       "team_id": 534777,
@@ -103385,6 +103494,55 @@
           "source_name": "Alliance Ex",
           "source_type": "league",
           "gp": 1,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "MASON MAILLET",
+      "team": "Norfolk Knights",
+      "team_id": 537296,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15497",
+          "source_name": "TCMHL AA",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15556",
+          "source_name": "OMHA Ex Rep",
+          "source_type": "league",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        },
+        {
+          "source_id": "15996",
+          "source_name": "Newmarket AA",
+          "source_type": "tournament",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -113298,7 +113456,7 @@
       "name": "ZACHARY YOUNG",
       "team": "Oakville Rangers",
       "team_id": 558349,
-      "jersey": "27",
+      "jersey": "87",
       "position": "F",
       "age": "U14",
       "tier": "AA",
@@ -119155,6 +119313,87 @@
       ]
     },
     {
+      "name": "NOAH SHANK",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "RIVER SAUVE",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "RYDER LAMARCHE",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "24",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
       "name": "JACE AUTTERSON",
       "team": "North Bay Trappers",
       "team_id": 570167,
@@ -119177,6 +119416,33 @@
           "a": 0,
           "pts": 0,
           "pim": 4,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "COLTON BADOWSKI",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
           "game_logs": []
         }
       ]
@@ -119285,6 +119551,33 @@
           "a": 0,
           "pts": 0,
           "pim": 2,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "MALCOLM COLLINS",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
           "game_logs": []
         }
       ]
@@ -119479,6 +119772,87 @@
       ]
     },
     {
+      "name": "IZAAK JEAN",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "WESTIN KLINE",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "BRUNO LAFOND",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
       "name": "EMMETT LANGDON",
       "team": "South Simcoe Storm",
       "team_id": 570169,
@@ -119605,6 +119979,33 @@
           "source_name": "Halton Best of Best",
           "source_type": "tournament",
           "gp": 4,
+          "g": 0,
+          "a": 0,
+          "pts": 0,
+          "pim": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "MERRICK MCMILLAN",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "F",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_g": 0,
+      "total_a": 0,
+      "total_pts": 0,
+      "total_pim": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
+          "source_type": "tournament",
+          "gp": 0,
           "g": 0,
           "a": 0,
           "pts": 0,
@@ -124227,6 +124628,39 @@
         {
           "source_id": "15970",
           "source_name": "South Simcoe",
+          "source_type": "tournament",
+          "gp": 0,
+          "ga": 0,
+          "min": 0,
+          "gaa": 0.0,
+          "so": 0,
+          "w": 0,
+          "l": 0,
+          "t": 0,
+          "game_logs": []
+        }
+      ]
+    },
+    {
+      "name": "CASH HAMPEL",
+      "team": "North Bay Trappers",
+      "team_id": 570250,
+      "jersey": "",
+      "position": "G",
+      "age": "U14",
+      "tier": "AA",
+      "total_gp": 0,
+      "total_ga": 0,
+      "total_min": 0,
+      "total_gaa": 0.0,
+      "total_so": 0,
+      "total_w": 0,
+      "total_l": 0,
+      "total_t": 0,
+      "sources": [
+        {
+          "source_id": "15997",
+          "source_name": "Halton Best of Best",
           "source_type": "tournament",
           "gp": 0,
           "ga": 0,
