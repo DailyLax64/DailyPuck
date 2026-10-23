@@ -89,6 +89,26 @@
     "Kingston Canadians Series": {
       "id": 15975,
       "tier": "Auto"
+    },
+    "Sean Mudge": {
+      "id": 16101,
+      "tier": "Auto"
+    },
+    "Forest City Fall Classic": {
+      "id": 16173,
+      "tier": "Auto"
+    },
+    "Peterborough AA": {
+      "id": 16185,
+      "tier": "Auto"
+    },
+    "Huronia Tournament": {
+      "id": 16189,
+      "tier": "Auto"
+    },
+    "Waterloo Memorial": {
+      "id": 16396,
+      "tier": "Auto"
     }
   }
 }
