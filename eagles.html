@@ -269,8 +269,8 @@
                                 <div id="gauge-pk-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
                             </div>
                             <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
-                                <span class="gauge-total-teams-label">Total</span>
                                 <span>1</span>
+                                <span class="gauge-total-teams-label">Total</span>
                             </div>
                         </div>
                     </div>
@@ -289,8 +289,8 @@
                                 <div id="gauge-shgf-indicator" class="absolute top-1/2 -translate-y-1/2 w-1.5 h-4 bg-white rounded shadow-md transition-all duration-300" style="left: 0%;"></div>
                             </div>
                             <div class="flex justify-between items-center mt-1.5 text-[10px] sm:text-xs font-mono text-slate-500">
-                                <span class="gauge-total-teams-label">Total</span>
                                 <span>1</span>
+                                <span class="gauge-total-teams-label">Total</span>
                             </div>
                         </div>
                     </div>
@@ -433,6 +433,13 @@
             return c.includes("BURLINGTON") && c.includes("EAGLES");
         };
 
+        function resolveCohortKey(divStr, ageStr) {
+            const combined = `${divStr || ''} ${ageStr || ''}`.toUpperCase();
+            if (combined.includes("U14") || combined.includes("14")) return "U14 AA";
+            if (combined.includes("U11") || combined.includes("11")) return "U11 AA";
+            return "U11 AA";
+        }
+
         function getGradientColor(pct, type = 'rose-to-emerald') {
             const p = Math.max(0, Math.min(100, pct)) / 100;
             const rose = [244, 63, 94];
@@ -498,13 +505,6 @@
                     <p class="text-rose-600 font-bold font-mono text-xs uppercase">⚠️ Could not load hockey_stats.json. Ensure file exists in repository root.</p>
                 `;
             }
-        }
-
-        function resolveCohortKey(divStr, ageStr) {
-            const combined = `${divStr || ''} ${ageStr || ''}`.toUpperCase();
-            if (combined.includes("U14") || combined.includes("14")) return "U14 AA";
-            if (combined.includes("U11") || combined.includes("11")) return "U11 AA";
-            return "U11 AA";
         }
 
         function getOrCreateTeamProfile(cohort, rawTeamName, teamId = null) {
@@ -582,8 +582,11 @@
                 });
             }
 
+            // Standings with U14 OMHA Ex filter
             (rawHockeyDb.standings || []).forEach(row => {
                 const normCohort = resolveCohortKey(row.division || `${row.age || ''} ${row.tier || ''}`);
+                if (normCohort === "U14 AA" && String(row.source_id) === "15556" && isBurlingtonEagles(row.team_name)) return;
+                
                 const teamProfile = getOrCreateTeamProfile(normCohort, row.team_name, row.team_id);
                 if (!teamProfile) return;
 
@@ -608,27 +611,74 @@
                 teamProfile.standings_entries.push(row);
             });
 
+            // Skaters with U14 OMHA Ex filter
             (rawHockeyDb.skaters || []).forEach(p => {
                 const normCohort = resolveCohortKey(p.division || p.cohort || p.age);
+                if (normCohort === "U14 AA" && isBurlingtonEagles(p.team)) {
+                    p.sources = (p.sources || []).filter(s => String(s.source_id) !== "15556");
+                    if (p.sources.length === 0) return;
+                    
+                    let newGp = 0, newG = 0, newA = 0, newPts = 0, newPim = 0;
+                    p.sources.forEach(s => {
+                        newGp += Number(s.gp || 0);
+                        newG += Number(s.g || 0);
+                        newA += Number(s.a || 0);
+                        newPts += Number(s.pts || 0);
+                        newPim += Number(s.pim || 0);
+                    });
+                    p.total_gp = newGp; p.total_g = newG; p.total_a = newA; p.total_pts = newPts; p.total_pim = newPim;
+                    p.gp = newGp; p.g = newG; p.a = newA; p.pts = newPts; p.pim = newPim;
+                }
+
                 const teamProfile = getOrCreateTeamProfile(normCohort, p.team, p.team_id);
                 if (teamProfile) {
                     teamProfile.roster.push(JSON.parse(JSON.stringify(p)));
                 }
             });
 
+            // Goalies with U14 OMHA Ex filter
             (rawHockeyDb.goalies || []).forEach(g => {
                 const normCohort = resolveCohortKey(g.division || g.cohort || g.age);
+                if (normCohort === "U14 AA" && isBurlingtonEagles(g.team)) {
+                    g.sources = (g.sources || []).filter(s => String(s.source_id) !== "15556");
+                    if (g.sources.length === 0) return;
+                    
+                    let newGp = 0, newGa = 0, newMin = 0, newSo = 0, newW = 0, newL = 0, newT = 0;
+                    g.sources.forEach(s => {
+                        newGp += Number(s.gp || 0);
+                        newGa += Number(s.ga || 0);
+                        newMin += Number(s.min || 0);
+                        newSo += Number(s.so || 0);
+                        newW += Number(s.w || 0);
+                        newL += Number(s.l || 0);
+                        newT += Number(s.t || 0);
+                    });
+                    g.total_gp = newGp; g.total_ga = newGa; g.total_min = newMin; g.total_so = newSo; 
+                    g.total_w = newW; g.total_l = newL; g.total_t = newT;
+                    g.total_gaa = newGp > 0 ? Number((newGa / newGp).toFixed(2)) : 0.0;
+                    g.gp = newGp; g.ga = newGa; g.so = newSo;
+                }
+
                 const teamProfile = getOrCreateTeamProfile(normCohort, g.team, g.team_id);
                 if (teamProfile) {
                     teamProfile.goalies.push(JSON.parse(JSON.stringify(g)));
                 }
             });
 
+            // Games with U14 OMHA Ex filter
             (rawHockeyDb.games || []).forEach(g => {
                 if (!g) return;
                 const normCohort = resolveCohortKey(g.division);
-                attachGameToMatchingTeams(normCohort, g.home_name, g.home_id, g, true);
-                attachGameToMatchingTeams(normCohort, g.visitor_name, g.visitor_id, g, false);
+                const isOmhaEx = String(g.source_id) === "15556";
+                
+                if (normCohort === "U14 AA" && isOmhaEx && isBurlingtonEagles(g.home_name)) {
+                    attachGameToMatchingTeams(normCohort, g.visitor_name, g.visitor_id, g, false);
+                } else if (normCohort === "U14 AA" && isOmhaEx && isBurlingtonEagles(g.visitor_name)) {
+                    attachGameToMatchingTeams(normCohort, g.home_name, g.home_id, g, true);
+                } else {
+                    attachGameToMatchingTeams(normCohort, g.home_name, g.home_id, g, true);
+                    attachGameToMatchingTeams(normCohort, g.visitor_name, g.visitor_id, g, false);
+                }
             });
 
             if (rawHockeyDb?.master_teams) {
@@ -713,7 +763,7 @@
         function integrateManualGames() {
             if (!Array.isArray(manualGamesData) || manualGamesData.length === 0) return;
 
-            manualGamesData.forEach(mg => {
+            manualGamesData.forEach((mg, idx) => {
                 const normCohort = resolveCohortKey(mg.cohort || mg.division || activeCohort);
                 const eaglesTeamName = Object.keys(scoutingReportDatabase[normCohort] || {}).find(t => isBurlingtonEagles(t)) || "Burlington Eagles";
                 const team = getOrCreateTeamProfile(normCohort, eaglesTeamName);
@@ -732,6 +782,7 @@
 
                 const isHome = mg.is_home !== false;
                 const rec = {
+                    game_id: `manual_${idx}`,
                     date: mg.date || "",
                     time: mg.time || "",
                     timestamp: mg.timestamp || (mg.date ? new Date(mg.date).toISOString() : ""),
@@ -801,6 +852,7 @@
                     srcEntry.pts += pts;
                     srcEntry.pim += pim;
                     srcEntry.game_logs.push({
+                        game_id: rec.game_id,
                         date: mg.date,
                         opponent: mg.opponent,
                         is_home: isHome,
@@ -873,6 +925,7 @@
                     gkSrc.t += t;
                     gkSrc.gaa = gkSrc.gp > 0 ? Number((gkSrc.ga / gkSrc.gp).toFixed(2)) : 0.0;
                     gkSrc.game_logs.push({
+                        game_id: rec.game_id,
                         date: mg.date,
                         opponent: mg.opponent,
                         is_home: isHome,
