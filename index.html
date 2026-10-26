@@ -991,11 +991,14 @@
                 });
             }
 
-            // 2. Ingest Standings
+            // 2. Ingest Standings (With OMHA Ex Rep filter for U14 Eagles)
             (rawHockeyDb?.standings || []).forEach(row => {
                 const age = row.age || row.detected_age || "Other";
                 const tier = row.tier || "AA";
                 const divKey = resolveCohortKey(`${age} ${tier}`);
+
+                if (divKey === "U14 AA" && String(row.source_id) === "15556" && isBurlingtonEagles(row.team_name)) return;
+
                 const teamProfile = getOrCreateTeamProfile(divKey, row.team_name, row.team_id);
                 if (!teamProfile) return;
 
@@ -1020,29 +1023,74 @@
                 teamProfile.standings_entries.push(row);
             });
 
-            // 3. Ingest Skaters
+            // 3. Ingest Skaters (With OMHA Ex Rep filter for U14 Eagles)
             (rawHockeyDb?.skaters || []).forEach(p => {
                 const cohort = resolveCohortKey(p.division || p.cohort || p.age);
+                if (cohort === "U14 AA" && isBurlingtonEagles(p.team)) {
+                    p.sources = (p.sources || []).filter(s => String(s.source_id) !== "15556");
+                    if (p.sources.length === 0) return;
+                    
+                    let newGp = 0, newG = 0, newA = 0, newPts = 0, newPim = 0;
+                    p.sources.forEach(s => {
+                        newGp += Number(s.gp || 0);
+                        newG += Number(s.g || 0);
+                        newA += Number(s.a || 0);
+                        newPts += Number(s.pts || 0);
+                        newPim += Number(s.pim || 0);
+                    });
+                    p.total_gp = newGp; p.total_g = newG; p.total_a = newA; p.total_pts = newPts; p.total_pim = newPim;
+                    p.gp = newGp; p.g = newG; p.a = newA; p.pts = newPts; p.pim = newPim;
+                }
+
                 const teamProfile = getOrCreateTeamProfile(cohort, p.team, p.team_id);
                 if (teamProfile) {
                     teamProfile.roster.push(JSON.parse(JSON.stringify(p)));
                 }
             });
 
-            // 4. Ingest Goalies
+            // 4. Ingest Goalies (With OMHA Ex Rep filter for U14 Eagles)
             (rawHockeyDb?.goalies || []).forEach(g => {
                 const cohort = resolveCohortKey(g.division || g.cohort || g.age);
+                if (cohort === "U14 AA" && isBurlingtonEagles(g.team)) {
+                    g.sources = (g.sources || []).filter(s => String(s.source_id) !== "15556");
+                    if (g.sources.length === 0) return;
+                    
+                    let newGp = 0, newGa = 0, newMin = 0, newSo = 0, newW = 0, newL = 0, newT = 0;
+                    g.sources.forEach(s => {
+                        newGp += Number(s.gp || 0);
+                        newGa += Number(s.ga || 0);
+                        newMin += Number(s.min || 0);
+                        newSo += Number(s.so || 0);
+                        newW += Number(s.w || 0);
+                        newL += Number(s.l || 0);
+                        newT += Number(s.t || 0);
+                    });
+                    g.total_gp = newGp; g.total_ga = newGa; g.total_min = newMin; g.total_so = newSo; 
+                    g.total_w = newW; g.total_l = newL; g.total_t = newT;
+                    g.total_gaa = newGp > 0 ? Number((newGa / newGp).toFixed(2)) : 0.0;
+                    g.gp = newGp; g.ga = newGa; g.so = newSo;
+                }
+
                 const teamProfile = getOrCreateTeamProfile(cohort, g.team, g.team_id);
                 if (teamProfile) {
                     teamProfile.goalies.push(JSON.parse(JSON.stringify(g)));
                 }
             });
 
-            // 5. Ingest Games & Matchups
+            // 5. Ingest Games & Matchups (With OMHA Ex Rep filter for U14 Eagles)
             (rawHockeyDb?.games || []).forEach(g => {
                 if (!g) return;
-                attachGameToMatchingTeams(g.home_name, g.home_id, g, true);
-                attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
+                const isU14 = resolveCohortKey(g.division) === "U14 AA";
+                const isOmhaEx = String(g.source_id) === "15556";
+                
+                if (isU14 && isOmhaEx && isBurlingtonEagles(g.home_name)) {
+                    attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
+                } else if (isU14 && isOmhaEx && isBurlingtonEagles(g.visitor_name)) {
+                    attachGameToMatchingTeams(g.home_name, g.home_id, g, true);
+                } else {
+                    attachGameToMatchingTeams(g.home_name, g.home_id, g, true);
+                    attachGameToMatchingTeams(g.visitor_name, g.visitor_id, g, false);
+                }
             });
 
             // 6. Calculate Dynamic MHR Rating Ranks & Strength-of-Schedule
@@ -1764,9 +1812,7 @@
                 return;
             }
 
-            currentDivisionTeams = Object.keys(scoutingReportDatabase[selectedDiv])
-                .filter(t => !isBurlingtonEagles(t))
-                .sort();
+            currentDivisionTeams = Object.keys(scoutingReportDatabase[selectedDiv]).sort();
 
             teamSearch.disabled = false;
             teamSearch.placeholder = "Type to search hockey club...";
@@ -2228,7 +2274,7 @@
                             <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center text-xs text-slate-400 truncate max-w-xs">${g.location || 'Local Rink'}</td>
                             <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center">${resBadge}</td>
                             <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center font-bold ${isFinal ? 'text-white' : 'text-cyan-400'}">${g.score_str}</td>
-                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${g.is_manual ? 'text-yellow-400 bg-yellow-950/40 border border-yellow-800/60' : (g.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : 'text-cyan-400 bg-cyan-950/40')}">${g.is_manual ? 'PAPER' : (g.source_type === 'tournament' ? 'TOURN' : 'LEAG')}</span></td>
+                            <td class="py-2.5 sm:py-3 px-3 sm:px-4 text-center"><span class="px-1.5 py-0.5 rounded text-[10px] font-black uppercase ${g.source_type === 'tournament' ? 'text-violet-400 bg-violet-950/40' : (g.is_manual ? 'text-yellow-400 bg-yellow-950/40 border border-yellow-800/60' : 'text-cyan-400 bg-cyan-950/40')}">${g.source_type === 'tournament' ? 'TOURN' : (g.is_manual ? 'PAPER' : 'LEAG')}</span></td>
                         </tr>
                     `;
                 });
@@ -2623,7 +2669,7 @@
                 <div class="py-8 text-center flex flex-col items-center justify-center space-y-2">
                     <div class="w-6 h-6 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
                     <span id="ai-loading-text" class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">
-                        ${isMatchup ? `Synthesizing matchup scouting profile: ${myTeamName} vs${oppTeamName}...` : `Synthesizing analytical breakdown for ${oppTeamName}...`}
+                        ${isMatchup ? `Synthesizing matchup scouting profile: ${myTeamName} vs ${oppTeamName}...` : `Synthesizing analytical breakdown for ${oppTeamName}...`}
                     </span>
                 </div>
             `;
@@ -2793,7 +2839,7 @@ Return a JSON array of exactly 3 analytical cards:
             let html = `
                 <div class="flex justify-between items-center mb-3">
                     <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-widest font-bold">
-                        ${isMatchup ? `● Live Matchup Scouting Profile: ${myTeamName} vs${oppTeamName}` : `● Live Scouting Profile: ${oppTeamName}`}
+                        ${isMatchup ? `● Live Matchup Scouting Profile: ${myTeamName} vs ${oppTeamName}` : `● Live Scouting Profile: ${oppTeamName}`}
                     </span>
                     <div class="flex items-center space-x-2 hide-on-print">
                         <button onclick="fetchTeamAiIntelligence('${oppTeamName}', '${divName}', true)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] font-mono uppercase transition-colors">🔄 Re-Analyze</button>
