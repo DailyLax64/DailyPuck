@@ -109,6 +109,22 @@
     "Waterloo Memorial": {
       "id": 16396,
       "tier": "Auto"
+    },
+    "Stratford Regional Silver Stick": {
+      "id": 16255,
+      "tier": "Auto"
+    },
+    "Ajax Pickering Fall Classic": {
+      "id": 16268,
+      "tier": "Auto"
+    },
+    "Georgina Silver Stick": {
+      "id": 16269,
+      "tier": "Auto"
+    },
+    "Kingston Canadians Tournament": {
+      "id": 16274,
+      "tier": "Auto"
     }
   }
 }
