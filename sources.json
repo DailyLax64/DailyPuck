@@ -125,6 +125,38 @@
     "Kingston Canadians Tournament": {
       "id": 16274,
       "tier": "Auto"
+    },
+    "Oshawa Challenge": {
+      "id": 16413,
+      "tier": "Auto"
+    },
+    "TNT Fall Classic": {
+      "id": 16419,
+      "tier": "Auto"
+    },
+    "Brampton Silver Stick": {
+      "id": 16427,
+      "tier": "Auto"
+    },
+    "Green & White": {
+      "id": 16432,
+      "tier": "Auto"
+    },
+    "Guelph PowerPlay": {
+      "id": 16459,
+      "tier": "Auto"
+    },
+    "Northumberland Silver Stick": {
+      "id": 16461,
+      "tier": "Auto"
+    },
+    "Pembroke Silver Stick": {
+      "id": 16470,
+      "tier": "Auto"
+    },
+    "Boston Pizza Cup": {
+      "id": 16476,
+      "tier": "Auto"
     }
   }
 }
